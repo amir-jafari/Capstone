@@ -1,0 +1,775 @@
+---
+title: "Brain Stroke Prediction"
+author: "Renganathan Laxmanan"
+date: "`r Sys.Date()`"
+output:  
+    rmdformats::readthedown:
+      toc_float: true
+      number_sections: true
+      
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(scipen = 999,  digits = 3, big.mark=",", warn = -1)
+```
+
+```{r basicfunct, include=FALSE}
+loadPkg = function(x) { if (!require(x,character.only=T, quietly =T)) { install.packages(x,dep=T,repos="http://cran.us.r-project.org"); if(!require(x,character.only=T)) stop("Package not found") } }
+```
+
+# Introduction
+
+This paper continues our discussion on [Brain Stroke Prediction](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset). Stroke is one of the leading causes of death and disability in the USA. Given this context our basic SMART question remains the same: What are the most accurate predictors of the likelihood of having a brain stroke? This results to be a classification problem on the target variable of having a stroke, and we will apply 3 different approaches and imbalance techniques learned throughout the course to try to solve it.
+
+Included in our discussion is some Exploratory Data Analysis (EDA) from our first assignment, along with some new models, including Logistic Regression, Decision Tree Classifier, and Random Forest Classifier.
+
+# Exploratory Data Analysis
+
+The following are excerpts and graphs from the EDA section of our previous report. We are including them here to remind the reader of our dataset's attributes, before we dive into the analysis.
+
+```{r basic_libraries, include=FALSE}
+library(ggplot2)
+library(gridExtra)
+library(corrplot)
+library(ROSE)
+library(dplyr)
+library(smotefamily)
+library(caTools)
+library(randomForest)
+library(rpart)
+library(rpart.plot)
+library("pROC")
+library(caret)
+```
+
+```{r load_csv, include=FALSE}
+stroke_df = read.csv("healthcare-dataset-stroke-data.csv")
+```
+
+```{r desc, include=TRUE}
+str(stroke_df)
+```
+
+```{r data_cleaning, include=FALSE}
+stroke_df = subset(stroke_df, select = -c(id))
+# converting the numeric variables to factor variables
+stroke_df$gender = as.factor(stroke_df$gender)
+stroke_df$hypertension = as.factor(stroke_df$hypertension)
+stroke_df$heart_disease = as.factor(stroke_df$heart_disease)
+stroke_df$ever_married = as.factor(stroke_df$ever_married)
+stroke_df$bmi = as.numeric(stroke_df$bmi)
+stroke_df$stroke = as.factor(stroke_df$stroke)
+stroke_df$work_type = as.factor(stroke_df$work_type)
+stroke_df$Residence_type = as.factor(stroke_df$Residence_type)
+stroke_df$smoking_status = as.factor(stroke_df$smoking_status)
+# To get the summary statistics of the dataset
+summary(stroke_df)
+```
+
+```{r find_na_fix, include=FALSE}
+# To find the NA's in the dataset
+paste("The NA's in the dataset is:",sum(is.na(stroke_df)))
+```
+
+```{r na_fix, include=FALSE}
+# Replacing NA values with average BMI value
+stroke_df$bmi[is.na(stroke_df$bmi)] = mean(stroke_df$bmi,na.rm = TRUE)
+paste("The NA's in the dataset after imputation of BMI with mean is:",sum(is.na(stroke_df)))
+```
+
+```{r summary_after_cleaning, include=FALSE}
+# since we had only 1 data point in others category for gender we are removing it
+stroke_df = subset(stroke_df,gender!="Other")
+summary(stroke_df)
+```
+
+```{r subsets, include=FALSE}
+# subsetting the data for various analyses 
+stroke_1 = subset(stroke_df, stroke == 1)
+stroke_0 = subset(stroke_df, stroke == 0)
+stroke_1_female = subset(stroke_df, stroke == 1 & gender == "Female")
+stroke_1_male = subset(stroke_df, stroke == 1 & gender == "Male")
+# creating different columns for bmi, age and average_glucose_level based on different bucketing for each variables
+dat <- within(stroke_df, {   
+  bmi.cat = NA # need to initialize variable
+  bmi.cat[bmi < 18.5] = "underweight"
+  bmi.cat[bmi >= 18.5 & bmi < 25] = "normal"
+  bmi.cat[bmi >= 25 & bmi < 30] = "overweight"
+  bmi.cat[bmi >= 30 & bmi < 40] = "obesity"
+  bmi.cat[bmi >=40] = "severe obesity" 
+  avg_gluc.cat = NA # need to initialize variable
+  avg_gluc.cat[avg_glucose_level < 60] = "Below 60"
+  avg_gluc.cat[avg_glucose_level >= 60 & avg_glucose_level < 90] = "60 - 90"
+  avg_gluc.cat[avg_glucose_level >= 90 & avg_glucose_level < 120] = "90 - 120"
+  avg_gluc.cat[avg_glucose_level >= 120 & avg_glucose_level < 180] = "120 - 180"
+  avg_gluc.cat[avg_glucose_level >= 180 & avg_glucose_level < 273] = "180 - 273"
+  age.cat = NA
+  age.cat[age<=20] = "Under 20"
+  age.cat[age>=21 & age<= 40 ] = "20-40"
+  age.cat[age>=41 & age<= 60 ] = "40-60"
+  age.cat[age>=61 & age<= 80 ] = "60-80"
+  age.cat[age>=80 ] = "above 80"
+   } )
+dat$bmi.cat<- factor(dat$bmi.cat,levels= c("underweight","normal","overweight","obesity","severe obesity" ))
+dat$avg_gluc.cat<- factor(dat$avg_gluc.cat,levels= c("Below 60","60 - 90","90 - 120","120 - 180","180 - 273" ))
+dat$age.cat<- factor(dat$age.cat,levels= c("Under 20","20-40","40-60","60-80","above 80"))
+dat$avg_gluc.cat = as.numeric(factor(dat$avg_gluc.cat))
+dat$bmi.cat = as.numeric(factor(dat$bmi.cat))
+dat$age.cat = as.numeric(factor(dat$age.cat))
+dat$avg_gluc.cat = factor(dat$avg_gluc.cat)
+dat$bmi.cat = factor(dat$bmi.cat)
+dat$age.cat = factor(dat$age.cat)
+str(dat)
+```
+
+```{r numerical_variable_dist, include=FALSE}
+ggplot(stroke_df, aes(x=age)) +  geom_density(fill="skyblue", color="skyblue", alpha=0.5)+ theme_bw() + theme()+ ggtitle("Distribution for age")
+ggplot(stroke_df, aes(x=bmi)) +  geom_density(fill="pink", color="pink", alpha=0.5)+ theme_bw() + theme()+ ggtitle("Distribution for BMI")
+ggplot(stroke_df, aes(x=avg_glucose_level)) +  geom_density(fill="lightgreen", color="lightgreen", alpha=0.5)+ theme_bw() + theme()+ ggtitle("Distribution for Average Glucose Level")
+```
+
+Out of 5110 observations, we can see there are 4860 no stroke observations, while there are 250 stroke observations.
+
+```{r target_var, include=TRUE}
+#library(dplyr)
+#stroke_df %>% count(stroke)
+ggplot(stroke_df, aes(x=stroke,fill=stroke))+geom_bar()+ggtitle("Distribution of Target variable (Stroke)")+ theme_bw() + theme()+ xlab("Stroke") + ylab("Count of people")
+```
+
+## Important Features Comparisions
+
+```{r age_bmi, include=TRUE}
+ggplot(stroke_1, aes(x=bmi, y=age, color=stroke))+geom_point(size=3)+ ggtitle("Scatter plot for age vs bmi for people who had a stroke")
+```
+
+From the scatterplot it is evident that most of the data points fall between the BMI range of 25-35 which is categorized as overweight and obese.
+
+```{r age_hypertension, include=TRUE}
+ggplot(data = stroke_df, aes(x=as.character(hypertension), y=age, fill=hypertension)) +
+    geom_boxplot() +
+    labs(title="Age distribution by hypertension", x="hypertension", y="age")
+```
+
+
+From the boxplot we can see that as age increases the chances of having Hypertension also increases, which can lead to an individual having a stroke.
+
+#  Modeling Techniques
+
+## Addressing the imbalance issue in the dataset
+
+A dataset is said to be imbalanced when the number of observations per class is not equally distributed among the training dataset. There has been a heavy class imbalance in our dataset as mentioned above.
+
+To reduce the imbalance dataset two sampling methods were performed. They are:
+
+**ROSE (Random OverSampler Examples)**
+
+**Combination of Under and Over sampling**
+
+
+
+```{r,include=TRUE}
+set.seed(80)
+# In the train data we are using under and oversampling to address the class imbalance problem
+ind <- sample(2, nrow(stroke_df), replace = TRUE, prob = c(0.7, 0.3))
+train <- stroke_df[ind==1,]
+test <- stroke_df[ind==2,]
+train <- ovun.sample(stroke~., data=train, method = "both",p = 0.5,seed = 222)$data
+r<-table(train$stroke)
+```
+
+## Feature Selection
+
+Random forest model is considered for feature selection. It consists of 4-12 hundred trees, each of them built over a random extraction of the characteristics within the dataset, and a random extraction of the features. Because some trees don't see all the features or all the observations, the trees are guaranteed to be de-correlated and consequently less likely to overfit. Every tree also consists of a series of yes-or-no questions depending on a single or several attributes. The dataset is split into two buckets at each node by the tree, with each bucket containing observations that are more similar to one another and distinct from those in the other bucket. The significance of each attribute is therefore determined by how "pure" each of the buckets is.
+
+
+```{r}
+clf = randomForest(x = train[-11],
+                             y = train$stroke,
+                             ntree = 500)
+
+# Predicting the Test set results
+y_pred = predict(clf, newdata = test[-11])
+
+# Confusion Matrix
+confusion = table(test$stroke, y_pred)
+varImpPlot(clf)
+
+```
+
+
+##  BOTH - Under and Over Sampling Technique.
+
+Both Under and Oversampling Technique is combined.Undersampling is a technique to balance uneven datasets by keeping all of the data in the minority class and decreasing the size of the majority class. oversampling involves randomly selecting examples from the minority class, with replacement, and adding them to the training dataset.
+
+
+### Logistic Regression - BOTH
+
+Logit is a type of generalized linear model (GLiM) that uses statistical analysis to predict an event based on known factors when using a dichotomous dependent variable. In the logit model the log odds of the outcome is modeled as a linear combination of the predictor variables.
+
+```{r, include=T}
+set.seed(123)
+
+#logistic regression
+
+logit  <- glm(stroke ~., family=binomial (link="logit"), data=train)
+
+# prediction 
+predlogit <- predict(logit, newdata=test[-11], type="response")
+pred = ifelse(predlogit>=0.5,1,0)
+pred = as.factor(pred)
+
+# Eval Metric
+confusion1 = confusionMatrix(pred,test$stroke,mode= "everything")
+confusion1
+
+test_prob = predict(logit, test[-11], type = "response")
+```
+
+```{r, include = TRUE}
+# AUC - ROC curve 
+test_roc = roc(test$stroke ~ test_prob, plot = TRUE, print.auc = TRUE)
+
+```
+
+
+### Logistic Regression with feature selected variables - BOTH
+
+
+```{r,include=F}
+set.seed(1234)
+# selecting the features based on the feature selection done above
+
+train_fe = subset(train, select = c(age,avg_glucose_level,work_type,hypertension,smoking_status,bmi,stroke))
+test_fe = subset(test, select = c(age,avg_glucose_level,work_type,hypertension,smoking_status,bmi,stroke))
+
+```
+
+```{r,include=T}
+
+# logistic regression model
+
+logit  <- glm(stroke ~., family=binomial (link="logit"), data=train_fe)
+# prediction 
+
+predlogit <- predict(logit, newdata=test_fe[-7], type="response")
+pred = ifelse(predlogit>=0.5,1,0)
+pred = as.factor(pred)
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(pred,test_fe$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+test_prob = predict(logit, test_fe[-7], type = "response")
+test_roc = roc(test_fe$stroke ~ test_prob, plot = TRUE, print.auc = TRUE)
+
+```
+
+### Decision Tree - BOTH
+
+Decision Trees are versatile machine learning algorithm that carry out both classification and regression tasks. They are extremely powerful algorithms that can successfully fit complex datasets.
+
+
+```{r}
+# decision tree fitting 
+
+fit <- rpart(stroke~ ., data = train , method = 'class')
+rpart.plot(fit, extra = 106)
+```
+
+```{r,include=T}
+
+# prediction 
+
+predict_unseen <-predict(fit, test[-11], type = 'class')
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(predict_unseen,test$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(fit,test[-11],type="prob")
+ROC_rf <- roc(test$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of Decision Tree: ", auc(ROC_rf))
+
+
+```
+### Decision Tree with Feature Selection - BOTH
+
+```{r,include=T}
+# decision tree fit
+
+fit <- rpart(stroke~ ., data = train_fe , method = 'class')
+rpart.plot(fit, extra = 106)
+```
+
+
+```{r,include=T}
+# Prediction
+
+predict_unseen <-predict(fit, test_fe[-7], type = 'class')
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(predict_unseen,test_fe$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(fit,test_fe[-7],type="prob")
+ROC_rf <- roc(test_fe$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of Decision Tree: ", auc(ROC_rf))
+```
+
+### Tuned Decision Tree - BOTH
+
+Decision tree in R has various parameters that control aspects of the fit. In rpart decision tree library, we can control the parameters using the rpart.control() function. In the following code we have introduced the parameters that need to be tuned.
+
+```{r,include=T}
+# parameter setting for decision tree
+
+control <- rpart.control(minsplit = 5,
+    minbucket = round(5 / 3),
+    maxdepth = 6,
+    cp = 0)
+
+# fitting the model
+tune_fit <- rpart(stroke~., data = train , method = 'class', control = control)
+rpart.plot(tune_fit, extra = 106)
+```
+
+
+```{r,include=T}
+
+# Prediction
+
+predict_unseen1 <-predict(tune_fit, test[-11], type = 'class')
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(predict_unseen1,test$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(tune_fit,test[-11],type="prob")
+ROC_rf <- roc(test$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of Decision Tree: ", auc(ROC_rf))
+```
+
+### Tuned Decision Tree with Feature Selection - BOTH
+
+```{r}
+# setting the parameters for the tree
+control <- rpart.control(minsplit = 5,
+    minbucket = round(5 / 3),
+    maxdepth = 6,
+    cp = 0)
+
+# fitting the model
+tune_fit <- rpart(stroke~., data = train_fe , method = 'class', control = control)
+rpart.plot(tune_fit, extra = 106)
+```
+
+
+```{r,include=T}
+predict_unseen1 <-predict(tune_fit, test_fe[-7], type = 'class')
+
+# Evaluation Metric
+confusion1= confusionMatrix(predict_unseen1,test_fe$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(tune_fit,test_fe[-7],type="prob")
+ROC_rf <- roc(test_fe$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of Decision Tree: ", auc(ROC_rf))
+```
+
+
+### Random Forest 
+Random Forest is a collection of decision trees. To obtain more precise predictions, it constructs and merges several decision trees. The classification algorithm is non-linear. When utilized independently, each decision tree model is used.
+
+
+
+```{r,include=F}
+# Random forest classifier
+classifier_RF = randomForest(x = train[-11],
+                             y = train$stroke,
+                             ntree = 500)
+  
+classifier_RF
+```
+
+```{r,include=T}
+
+# Predicting the Test set results
+y_pred = predict(classifier_RF, newdata = test[-11])
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(y_pred,test$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(classifier_RF,test[-11],type="prob")
+ROC_rf <- roc(test$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of random forest: ", auc(ROC_rf))
+```
+
+### Random Forest with Feature Selected Variables 
+
+```{r,include=F}
+# Random Forest Classifier 
+classifier_RF1 = randomForest(x = train_fe[-7],
+                             y = train_fe$stroke,
+                             ntree = 500)
+classifier_RF1
+```
+
+```{r,include=T}
+# Predicting the Test set results
+y_pred = predict(classifier_RF1, newdata = test_fe[-7])
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(y_pred,test_fe$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(classifier_RF1,test_fe[-7],type="prob")
+ROC_rf <- roc(test_fe$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of random forest: ", auc(ROC_rf))
+
+```
+
+
+
+## ROSE 
+
+ROSE is Random Over Sampling Examples. It expands the feature space of minority and majority class examples to provide a sample of synthetic data. Operationally, a conditional kernel density estimate of the two classes is used to generate the new samples.
+
+```{r}
+# splitting the data into train and test split
+set.seed(1234)
+trainIndex = sample(1:nrow(stroke_df), size=round(0.75*nrow(stroke_df)), replace=FALSE)
+train1 <- stroke_df[trainIndex,]
+test1  <- stroke_df[-trainIndex,]
+
+```
+
+ 
+```{r,include=F}
+# subsetting the train and test data based on feature selection 
+set.seed(1234)
+train_fe = subset(train1, select = c(age,avg_glucose_level,work_type,hypertension,smoking_status,bmi,stroke))
+test1_fe = subset(test1, select = c(age,avg_glucose_level,work_type,hypertension,smoking_status,bmi,stroke))
+str(train_fe)
+dim(test1_fe)
+```
+
+
+```{r,include=F}
+# applying rose sampling to train data which has feature selected variables 
+set.seed(1234)
+trainrose1<-ROSE(stroke~.,data=train_fe)$data
+```
+
+
+```{r}
+# applying rose sampling to data which has all the variables 
+set.seed(1234)
+trainrose<-ROSE(stroke~.,data=train1)$data
+
+```
+
+```{r}
+# making sure there are no negative values for data with all variables
+trainrose$age = abs(trainrose$age)
+trainrose$avg_glucose_level = abs(trainrose$avg_glucose_level)
+
+```
+
+
+```{r}
+# making sure there are no negative values for data with feature selected variables
+trainrose1$age = abs(trainrose1$age)
+trainrose1$avg_glucose_level = abs(trainrose1$avg_glucose_level)
+
+```
+
+### Logistic Regression - ROSE
+
+
+```{r,include=T}
+
+set.seed(1234)
+# logistic model
+logitrose  <- glm(stroke ~., family=binomial (link="logit"), data=trainrose)
+
+
+# Prediction
+predlogitrose <- predict(logitrose, newdata=test1[-11], type="response")
+pred = ifelse(predlogitrose>=0.5,1,0)
+pred = as.factor(pred)
+
+# Evaluation Metric
+confusion1= confusionMatrix(pred,test1$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+test_prob = predict(logitrose, test1[-11], type = "response")
+test_roc = roc(test1$stroke ~ test_prob, plot = TRUE, print.auc = TRUE)
+test_roc
+```
+
+
+### Logistic Regression with Feature Selection - ROSE 
+
+
+```{r}
+set.seed(1234)
+# Logistic Model
+logitrose  <- glm(stroke ~., family=binomial (link="logit"), data=trainrose1)
+
+# Prediction
+predlogitrose <- predict(logitrose, newdata=test1_fe[-7], type="response")
+pred = ifelse(predlogitrose>=0.5,1,0)
+pred = as.factor(pred)
+
+# Evaluation Metric
+confusion1= confusionMatrix(pred,test1_fe$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+test_prob = predict(logitrose, test1_fe[-11], type = "response")
+test_roc = roc(test1_fe$stroke ~ test_prob, plot = TRUE, print.auc = TRUE)
+```
+
+
+### DECISION TREE - ROSE
+
+```{r,include=T}
+fit <- rpart(stroke~ . , data = trainrose , method = 'class')
+rpart.plot(fit, extra = 106)
+```
+
+
+```{r,include=T}
+# prediction
+predict_unseen <-predict(fit, test1[-11], type = 'class')
+
+# Evaluation Metric
+confusion1= confusionMatrix(predict_unseen,test1$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(fit,test1[-11],type="prob")
+ROC_rf <- roc(test1$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of decision tree: ", auc(ROC_rf))
+```
+
+### DECISION TREE with Feature Selection - ROSE
+ 
+```{r,include=T}
+# fitting the decision tree
+fit <- rpart(stroke~ . , data = trainrose1 , method = 'class')
+rpart.plot(fit, extra = 106)
+```
+
+
+```{r}
+# prediction 
+predict_unseen <-predict(fit, test1_fe[-7], type = 'class')
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(predict_unseen,test1_fe$stroke,mode= "everything")
+confusion1
+
+
+# AUC-ROC curve
+
+prob=predict(fit,test1_fe[-7],type="prob")
+ROC_rf <- roc(test1_fe$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of decision tree: ", auc(ROC_rf))
+```
+
+
+### Tuned Decision Tree - ROSE
+
+```{r,include=T}
+
+# setting the parameters for decision tree
+control <- rpart.control(minsplit = 7,
+    minbucket = round(5 / 3),
+    maxdepth = 4,
+    cp = 0)
+
+# fitting the tree
+tune_fit <- rpart(stroke~., data = trainrose , method = 'class', control = control)
+rpart.plot(tune_fit, extra = 106)
+
+# Prediction
+
+predict_unseen1 <-predict(tune_fit, test1[-11], type = 'class')
+
+# Eval Metric
+confusion1= confusionMatrix(predict_unseen1,test1$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(tune_fit,test1[-11],type="prob")
+ROC_rf <- roc(test1$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of decision tree: ", auc(ROC_rf))
+```
+
+
+### Tuned Decision Tree with Feature Selection - ROSE 
+
+```{r,include=T}
+# setting the parameters for decision tree
+control <- rpart.control(minsplit = 7,
+    minbucket = round(5 / 3),
+    maxdepth = 4,
+    cp = 0)
+
+# fitting the tree
+tune_fit <- rpart(stroke~., data = trainrose1 , method = 'class', control = control)
+rpart.plot(tune_fit, extra = 106)
+
+# prediction
+predict_unseen1 <-predict(tune_fit, test1_fe[-7], type = 'class')
+
+# Evaluation Metric
+confusion1= confusionMatrix(predict_unseen,test1_fe$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(tune_fit,test1_fe[-7],type="prob")
+ROC_rf <- roc(test1_fe$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of decision tree: ", auc(ROC_rf))
+```
+
+### Random Forest 
+
+```{r,include=F}
+# random forest classifier 
+classifier_RF = randomForest(x = trainrose[-11],
+                             y = trainrose$stroke,
+                             ntree = 500)
+  
+```
+
+```{r,include=T}
+
+# Predicting the Test set results
+y_pred = predict(classifier_RF, newdata = test1[-11])
+
+# Evaluation Metric
+confusion1= confusionMatrix(y_pred,test1$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(classifier_RF,test1[-11],type="prob")
+ROC_rf <- roc(test1$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of random forest: ", auc(ROC_rf))
+
+```
+
+### Random Forest with feature selection 
+
+```{r, include=F}
+# random forest classifier 
+classifier_RF = randomForest(x = trainrose1[-7],
+                             y = trainrose1$stroke,
+                             ntree = 500)
+  
+classifier_RF
+```
+
+```{r}
+# Predicting the Test set results
+y_pred = predict(classifier_RF, newdata = test1_fe[-7])
+
+# Evaluation Metric
+
+confusion1= confusionMatrix(y_pred,test1_fe$stroke,mode= "everything")
+confusion1
+
+# AUC-ROC curve
+
+prob=predict(classifier_RF,test1_fe[-7],type="prob")
+ROC_rf <- roc(test1_fe$stroke, prob[,2])
+plot(ROC_rf)
+paste("Area under curve of random forest: ", auc(ROC_rf))
+```
+
+# Model Evaluation 
+
+As we have seen that this is a medical data, we know that the most important thing to look at is that, the model should not make mistake in predicting if a person has a stroke, i.e in case a person has a stroke and the model predicts that he/she does not have a stroke or vice-versa is very dangerous. Hence, we give more preference to recall than precision. 
+
+Here are the possible scenarios that can happen:
+
+• TN – True Negative : When a patient does not have a stroke and model classified them as having no stroke.
+
+• TP – True Positive : When a patient has a stroke and the model classified them as having a stroke.
+
+• FP – False Positive : When a patient who does not have a stroke is classified as a patient having a stroke.
+
+• FN – False Negative : When a Patient who has a stroke but is classified as the person not having a stroke.(Most dangerous case)
+
+As it is clear that the primary focus of this model is to correctly identify the ratio between the number of Positive samples correctly classified as Positive to the total number of Positive samples, which is nothing but our recall
+
+- Recall = TP / (TP + FN)
+
+The next metric that we considered is the accuracy of the model, which is the number of correctly predicted data points out of all the data points.
+
+- Accuracy = (TP + TN) / (TP + TN + FP + FN)
+
+The final metric that we considered to evaluate our model is the AUC-ROC score. As this gives us an idea about how well the model can distinguish between two classes.
+
+
+# Model Evaluation 
+
+We discovered that our model was performing poorly due to a data imbalance issue in the dataset, therefore we decided to balance the data using ROSE and a combination of under and over sampling before modeling. For both balancing techniques, we created three models: Logistic Regression, Decision Tree Classifier, and Random Forest Classifier. Later on, we intended to do feature selection on all of these models based on the Random Forest Classifier's feature importance plot.
+
+From these methods mentioned above and our model evaluation metrics we found the best model from both the sampling techniques which are:
+
+- ROSE - Random forest without feature selection performed better than the other models with a recall of 0.79, accuracy of 0.78 and an AUC score of 0.794.
+
+- Combination of Under and Over sampling - Random Forest without feature selection performed the best out of the other models with a recall of 0.94, accuracy of 0.916, and an AUC score of 0.84.
+
+We discovered that the combination of under and oversampling was the most beneficial of the two sampling approaches.
+
+
+# Conclusion
+
+The summary paper demonstrates how we addressed the data imbalance issue in our dataset and the modeling process. With the help of balancing techniques i.e. ROSE and combination of under and over sampling, we have found that random forest without feature selection using the combination of both under and oversampling performs the best compared to the other models. The main factors that can be used to predict the likelihood of a stroke are age, average glucose level, bmi, smoking status, work_type and hypertension based on the feature selection done with the help of Random Forest Classifier. 
+
+
+
+
