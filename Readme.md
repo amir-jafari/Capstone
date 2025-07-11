@@ -50,7 +50,7 @@
 
 1. [Capstone Group 1 : Advancing Temporal Forecasting: A Comparative Analysis of Conventional Paradigms and Deep Learning Architectures on Publicly Accessible Datasets](https://github.com/hslgao4/Capstone-Group-1)
 
-    - [Publication Link - UnderReview]()
+    - [Publication Link](https://link.springer.com/article/10.1007/s00521-025-11324-0)
 
 2. [Capstone Group 2 : Optimizing Information Retrieval: A Hybrid Model Leveraging MAR and RAPTOR Frameworks](https://github.com/Akamemz/MAR-RAPTOR-hybrid-model)
 
@@ -58,4 +58,4 @@
 
 3. [Capstone Group 5 : FolkRAG: A Retrieval-Augmented Generation System for Cultural Heritage Materials](https://github.com/GWU-MS-DS/Capstone)
 
-    - [Publication Link - UnderReview]()
+    - [Publication Link](https://link.springer.com/article/10.1007/s00521-025-11455-4)
