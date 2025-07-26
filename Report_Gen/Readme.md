@@ -17,6 +17,7 @@
 - instructor
 - instructor_email
 - github_repo
+- 
 ### 2. Run the  json_gen.py, it will generate input.json
 ### 3. Run the  script.py then you should have the markdown file.
 - Modify Year, Semester and Version Accordingly.

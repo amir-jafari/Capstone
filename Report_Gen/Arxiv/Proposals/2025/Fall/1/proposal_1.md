@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Intelligent Document Processing Workflow Optimization: AI-Enhanced Automation using n8n and Advanced NLP Techniques
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
-
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """1""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2025""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Intelligent Document Processing Workflow Optimization: AI-Enhanced Automation using n8n and Advanced NLP Techniques""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """ 
+## 1 Objective:  
+ 
             This project aims to develop and validate an intelligent document processing workflow optimization system that leverages 
             n8n automation platform enhanced with state-of-the-art Natural Language Processing (NLP) techniques. The research focuses 
             on creating novel algorithms that:
@@ -37,10 +22,13 @@ data_to_save = \
             6. **Implement real-time quality assessment** for processed documents using automated validation and error detection
 
             The research contributes novel NLP algorithms for document workflow optimization and provides a practical automation framework that significantly improves organizational document processing efficiency. This work targets publication in top-tier NLP and information systems venues such as EMNLP, NAACL, Information Systems, or ACM TOIS.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2025_Fall_1.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             The project leverages multiple comprehensive document processing datasets with established benchmarks:
 
             **Primary NLP Datasets with Clear Benchmarks:**
@@ -84,10 +72,10 @@ data_to_save = \
             **Synthetic and Augmented Datasets:**
             8. **Generated Document Workflows**: Custom synthetic workflows based on organizational patterns
             9. **Multilingual Document Processing**: Extended datasets for international document processing scenarios
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Organizations spend billions of hours annually on manual document processing, with studies showing that knowledge workers 
             spend 20-40% of their time searching for and processing documents. Current document processing workflows lack intelligent 
             optimization capabilities, leading to several critical research gaps:
@@ -122,10 +110,10 @@ data_to_save = \
             - **Information Systems Journal** (Impact Factor: 6.2) - Leading IS journal
             - **ACM Transactions on Information Systems** (Impact Factor: 5.6)
             - **IEEE Intelligent Systems** (Impact Factor: 5.1)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             **Research Methodology**: Experimental computer science approach combining advanced NLP model development, workflow optimization algorithms, and comprehensive empirical validation using established benchmarks
 
             **Phase 1: Data Preparation and Baseline Establishment (Weeks 1-2)**
@@ -173,10 +161,10 @@ data_to_save = \
             - Creation of detailed technical documentation and deployment guides
             - Preparation of demonstration system with interactive document processing scenarios
             - Development of benchmark suite for future document workflow optimization research
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             **Week 1**: Dataset acquisition, preprocessing, and comprehensive literature review of document processing and NLP workflow optimization
             **Week 2**: Baseline establishment, workflow pattern analysis, and performance metric framework development
             **Weeks 3-4**: Advanced document classification system development using transformer models (BERT/RoBERTa fine-tuning)
@@ -190,10 +178,11 @@ data_to_save = \
             **Week 14**: Real-world simulation testing and workflow efficiency validation
             **Week 15**: Research manuscript preparation and submission to target publication venue
             **Week 16**: Open-source framework documentation, demonstration system finalization, and presentation preparation
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             This project is designed for **1 student** with strong technical background in:
             - **Natural Language Processing and Machine Learning** (required): Experience with transformer models (BERT, RoBERTa), deep learning frameworks (PyTorch/TensorFlow), and NLP preprocessing techniques
             - **Software Development and API Integration** (required): Python programming, RESTful API development, and workflow automation platform integration
@@ -201,56 +190,10 @@ data_to_save = \
             - **Document Processing Knowledge** (preferred): Understanding of OCR, document classification, and information extraction techniques
 
             The focused scope on document processing workflow optimization ensures the single student can make substantial individual contributions suitable for first-author publication in a high-impact NLP or information systems venue. The project combines established NLP techniques with novel workflow optimization approaches, providing clear individual research contributions.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            **Novel Theoretical Contributions:**
-            1. **Context-Aware Document Classification Algorithms**: Novel transformer-based approaches that consider both document 
-            content and workflow context for optimal processing routing
-            2. **Predictive Workflow Optimization Framework**: New algorithms for predicting document processing bottlenecks and 
-            dynamically optimizing resource allocation
-            3. **Multi-Modal Document Understanding**: Integration of visual and textual features for enhanced document analysis and 
-            workflow decision-making
-            4. **Adaptive Quality Assessment System**: Intelligent quality control algorithms that adapt to document types and 
-            organizational processing standards
+            
 
-            **Methodological Contributions:**
-            1. **Comprehensive Document Processing Benchmark Suite**: Standardized evaluation metrics and datasets for document 
-            workflow optimization research
-            2. **Real-Time Workflow Optimization Methodology**: Framework for continuous workflow improvement based on processing 
-            patterns and performance feedback
-            3. **Cross-Domain Document Processing Evaluation**: Systematic approach for evaluating document processing systems across 
-            different organizational contexts
+## 7 Possible Issues:  
 
-            **Practical Contributions:**
-            1. **Open-Source Intelligent Document Processing Platform**: Complete n8n-based system for organizational document workflow optimization
-            2. **NLP Integration Toolkit**: APIs and frameworks for integrating advanced NLP models with workflow automation platforms
-            3. **Production-Ready Deployment Framework**: Scalable system architecture for real-world organizational implementation
-            4. **Interactive Workflow Monitoring Dashboard**: User-friendly interface for tracking and optimizing document processing performance
-
-            **Publication Strategy and Target Venues:**
-
-            **Primary Targets:**
-            - **EMNLP (Empirical Methods in Natural Language Processing)**: Premier venue for NLP applications and system development
-            - **NAACL (North American Chapter of ACL)**: Top-tier conference for language processing research with practical applications
-
-            **Secondary Targets:**
-            - **Information Systems Journal** (Impact Factor: 6.2): Leading venue for information systems and workflow optimization research
-            - **ACM Transactions on Information Systems** (Impact Factor: 5.6): Top journal for information retrieval and processing systems
-            - **IEEE Intelligent Systems** (Impact Factor: 5.1): Excellent venue for AI applications in organizational systems
-
-            **Workshop and Conference Venues:**
-            - **Workshop on Document Intelligence at AAAI**: Specialized venue for document processing research
-            - **ACM Symposium on Document Engineering**: Focused conference for document processing and workflow systems
-            - **ICDAR (International Conference on Document Analysis and Recognition)**: Premier venue for document processing research
-
-            **Expected Research Impact:**
-            This research addresses fundamental challenges in organizational document processing with immediate practical applications. The integration of advanced NLP techniques with workflow automation provides both theoretical contributions to natural language processing and practical solutions for organizational efficiency. The work is positioned for high citation impact due to the universal need for document processing optimization across industries and the novel application of transformer models to workflow automation systems.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             **Technical Challenges and Mitigation Strategies:**
 
             **Challenge 1: Document Dataset Quality and Diversity**
@@ -303,21 +246,10 @@ data_to_save = \
             **Risk: Review Process Timeline**
             - Mitigation: Target conferences with faster review cycles, prepare backup venue options, develop strong experimental 
             validation, and ensure reproducible research practices
-            """,
+            
 
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "github_repo": "https://github.com/amir-jafari/Capstone",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy('json_gen.py', output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari/Capstone](https://github.com/https://github.com/amir-jafari/Capstone)
