@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Smart School Food Service Analytics: AI-Driven Demand Forecasting and Waste Reduction using Fairfax County Public Schools Data
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
-
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """2""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2025""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Smart School Food Service Analytics: AI-Driven Demand Forecasting and Waste Reduction using Fairfax County Public Schools Data""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """ 
+## 1 Objective:  
+ 
             This project aims to develop and validate an intelligent school food service analytics system using comprehensive data
              from Fairfax County Public Schools (FCPS) that combines Point-of-Sale (POS) data with Production Records to create 
              advanced forecasting and optimization models. The research focuses on developing novel machine learning algorithms that:
@@ -42,10 +27,13 @@ data_to_save = \
              operations and provides practical optimization frameworks that can significantly reduce food waste, improve nutritional 
              outcomes, and optimize operational costs. This work targets publication in top-tier venues such as Operations Research 
              journals, Food Policy, Applied Economics, or specialized food service management journals.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2025_Fall_2.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             The project leverages comprehensive, real-world school food service data from Fairfax County Public Schools with multiple
              interconnected data sources:
 
@@ -95,10 +83,10 @@ data_to_save = \
             - Multi-level data aggregation (meal level, school level, district level)
             - Time-series data preparation with multiple temporal granularities (daily, weekly, seasonal)
             - Missing data imputation and data quality assessment protocols
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             School food service operations face significant challenges in balancing nutritional requirements, cost control, and waste 
             reduction. The USDA estimates that school districts waste approximately 530,000 tons of food annually, representing
              $1.2 billion in economic losses. Current school food service management relies heavily on manual forecasting 
@@ -138,10 +126,10 @@ data_to_save = \
             - **Applied Economics** (Impact Factor: 2.4) - Economics applications in food systems
             - **Journal of Foodservice Management & Education** - Specialized venue for food service research
             - **Computers & Operations Research** (Impact Factor: 4.6) - Computational approaches to operations
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             **Research Methodology**: Mixed-methods approach combining advanced machine learning model development, optimization
              algorithms, and comprehensive empirical validation using real-world school food service data
 
@@ -190,10 +178,10 @@ data_to_save = \
             - Creation of policy recommendations for school district food service management
             - Preparation of presentation materials for academic conferences and industry forums
             - Development of open-source toolkit for other school districts to implement similar systems
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             **Week 1**: Data integration, preprocessing, and comprehensive exploratory data analysis of FCPS datasets
             **Week 2**: Data quality assessment, missing data imputation, and baseline forecasting model establishment
             **Weeks 3-4**: Time-series demand forecasting model development (LSTM, ARIMA, Prophet) and external factor integration
@@ -207,10 +195,11 @@ data_to_save = \
             **Week 14**: Sensitivity analysis, robustness testing, and scenario analysis for different operational conditions
             **Week 15**: Research manuscript preparation and submission to target publication venue
             **Week 16**: Technical documentation, policy recommendations, and open-source toolkit development
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             This project is designed for **1 student** with strong technical background in:
             - **Machine Learning and Time-Series Analysis** (required): Experience with forecasting models, optimization algorithms, and statistical analysis
             - **Data Science and Analytics** (required): Python/R programming, data preprocessing, visualization, and statistical modeling
@@ -221,62 +210,10 @@ data_to_save = \
              contributions suitable for first-author publication in a high-impact operations research or food policy journal. 
              The project combines real-world data with advanced analytics techniques, providing clear individual research
               contributions.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            **Novel Theoretical Contributions:**
-            1. **Hierarchical Food Demand Forecasting Models**: New time-series algorithms that integrate POS data, production records, and external factors specifically for institutional food service settings
-            2. **Multi-Objective School Food Service Optimization**: Novel optimization frameworks that simultaneously consider cost, waste, nutrition, and student satisfaction constraints
-            3. **Predictive Food Waste Analytics**: Advanced machine learning models for predicting leftover quantities and optimizing production planning in school environments
-            4. **Student Preference Classification Algorithms**: New clustering and classification techniques for understanding dietary patterns and food selection behaviors
+            
 
-            **Methodological Contributions:**
-            1. **Integrated POS-Production Data Analysis Framework**: Comprehensive methodology for combining point-of-sale and kitchen production data for food service optimization
-            2. **Real-World Food Service Benchmarking Suite**: Standardized evaluation metrics and benchmarks for school food service forecasting and optimization systems
-            3. **Multi-Level Decision Support Methodology**: Framework for creating decision support systems that operate at meal, school, and district levels
+## 7 Possible Issues:  
 
-            **Practical Contributions:**
-            1. **School Food Service Analytics Platform**: Complete system for demand forecasting, production optimization, and cost analysis
-            2. **Open-Source Food Service Toolkit**: Reusable components for other school districts to implement similar analytics systems
-            3. **Policy Recommendation Framework**: Evidence-based guidelines for improving school food service operations and reducing waste
-            4. **Industry Implementation Guide**: Comprehensive documentation for deploying advanced analytics in school food service operations
-
-            **Publication Strategy and Target Venues:**
-
-            **Primary Targets:**
-            - **International Journal of Production Economics** (Impact Factor: 11.2): Premier venue for production and operations optimization research
-            - **Food Policy** (Impact Factor: 6.1): Leading journal for food systems, policy, and sustainability research
-            - **Operations Research** (Impact Factor: 2.7): Top venue for optimization algorithms and forecasting methodologies
-
-            **Secondary Targets:**
-            - **Computers & Operations Research** (Impact Factor: 4.6): Computational approaches to operations management
-            - **Applied Economics** (Impact Factor: 2.4): Economic analysis applications in food systems
-            - **International Journal of Hospitality Management** (Impact Factor: 9.9): Food service and hospitality operations
-
-            **Conference Venues:**
-            - **INFORMS Annual Meeting**: Premier operations research conference
-            - **Production and Operations Management Society (POMS)**: Leading operations management conference
-            - **International Conference on Industrial Engineering and Operations Management (IEOM)**
-            - **Food and Agricultural Organization (FAO) Conferences**: Food systems and sustainability venues
-
-            **Expected Research Impact:**
-            This research addresses critical challenges in school food service management with immediate practical applications for 
-            reducing waste, improving nutrition, and optimizing costs. The integration of advanced analytics with real-world 
-            operational data provides both theoretical contributions to operations research and practical solutions for educational 
-            institutions. The work is positioned for high citation impact due to the universal need for efficient food service 
-            operations in educational settings and the novel application of machine learning techniques to institutional food service
-             optimization.
-
-            **Broader Impact:**
-            - **Educational Policy**: Inform evidence-based policies for school nutrition programs
-            - **Sustainability**: Contribute to food waste reduction and environmental sustainability goals  
-            - **Public Health**: Improve nutritional outcomes for students through optimized meal planning
-            - **Economic Efficiency**: Provide frameworks for cost-effective school food service operations
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             **Technical Challenges and Mitigation Strategies:**
 
             **Challenge 1: Data Quality and Completeness**
@@ -345,21 +282,10 @@ data_to_save = \
             **Risk: Interdisciplinary Review Challenges**
             - Mitigation: Clearly position work within target venue contexts, collaborate with domain experts, prepare comprehensive
              literature reviews, and ensure methodological rigor across disciplines
-            """,
+            
 
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "github_repo": "https://github.com/amir-jafari/Capstone",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy('json_gen.py', output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari/Capstone](https://github.com/https://github.com/amir-jafari/Capstone)
