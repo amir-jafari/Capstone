@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Predictive Modeling and Explainable AI for Autism Spectrum Disorder Diagnosis: Advanced Machine Learning Analysis of SFARI-Supported Datasets
+### Proposed by: Dr. Amir Jafari and Dr. Gabriela Rosenblau in collaboration with Department of Psychological & Brain Sciences
+#### Email: ajafari@gwu.edu, grosenblau@email.gwu.edu>
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
-
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """3""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2025""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Predictive Modeling and Explainable AI for Autism Spectrum Disorder Diagnosis: Advanced Machine Learning Analysis of SFARI-Supported Datasets""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """ 
+## 1 Objective:  
+ 
             This project aims to develop and validate advanced machine learning models for autism spectrum disorder (ASD) 
             diagnosis prediction using comprehensive datasets from SFARI-supported research in collaboration with the Department of 
             Psychological & Brain Sciences. The research focuses on creating novel interpretable AI algorithms that:
@@ -46,10 +31,13 @@ data_to_save = \
              practical diagnostic tools that can enhance early identification and personalized intervention approaches. This work targets
               publication in top-tier venues such as Nature Machine Intelligence, JAMA Psychiatry, Molecular Autism, Autism Research, or
                specialized AI in healthcare journals, and aligns with SFARI's mission to advance autism research through data analysis.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2025_Fall_3.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             The project leverages comprehensive, real-world autism research datasets through established collaboration
              with the Department of Psychological & Brain Sciences and SFARI-supported resources:
 
@@ -104,10 +92,10 @@ data_to_save = \
             - Multi-modal data fusion techniques combining structured and unstructured data
             - Cross-dataset validation protocols for generalizability assessment
             - Privacy-preserving analysis methods compliant with HIPAA and IRB requirements
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Autism spectrum disorder affects 1 in 36 children, yet current diagnostic approaches rely heavily on 
             subjective clinical assessments that can delay diagnosis by years. Recent advances in machine learning have
              shown promising results for autism prediction, with some studies achieving 98% accuracy in children,
@@ -155,10 +143,10 @@ data_to_save = \
             This project directly supports SFARI's goal to "advance the basic science of autism and related 
             neurodevelopmental disorders" through innovative data analysis of existing resources, maximizing the value of 
             previous research investments while generating new scientific knowledge.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             **Research Methodology**: Experimental machine learning approach combining supervised learning for diagnosis 
             prediction, unsupervised learning for subtype discovery, natural language processing for text analysis, and 
             explainable AI techniques for model interpretation
@@ -209,10 +197,10 @@ data_to_save = \
             - Creation of open-source toolkit for autism researchers to apply developed methods
             - Preparation of SFARI grant application based on preliminary results for continued research
             - Documentation of best practices for autism ML research and interpretable AI in clinical settings
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             **Week 1**: Data integration, preprocessing, and comprehensive exploratory analysis of collaborative dataset
             **Week 2**: SFARI dataset access setup, text preprocessing, and establishment of evaluation frameworks
             **Weeks 3-4**: Supervised learning model development for autism diagnosis prediction using ensemble and deep learning approaches
@@ -226,10 +214,11 @@ data_to_save = \
             **Week 14**: Performance benchmarking against published results and comprehensive evaluation
             **Week 15**: High-impact journal manuscript preparation and submission to target venue
             **Week 16**: Clinical translation framework development, open-source toolkit creation, and future grant preparation
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             This project is designed for **1 student** with strong interdisciplinary background in:
             - **Machine Learning and Deep Learning** (required): Experience with ensemble methods, neural networks, 
             natural language processing, and explainable AI techniques
@@ -244,78 +233,10 @@ data_to_save = \
              single student can make substantial individual contributions suitable for first-author publication in a high-impact venue.
               The collaboration with Department of Psychological & Brain Sciences provides domain expertise while maintaining clear individual 
               research contributions for the student.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            **Novel Theoretical Contributions:**
-            1. **Multi-Modal Autism Prediction Framework**: New machine learning architecture that integrates structured 
-            behavioral data with unstructured text responses for enhanced diagnostic accuracy
-            2. **Autism Phenotype Discovery Algorithms**: Novel unsupervised learning approaches specifically designed for 
-            identifying autism subtypes using behavioral and linguistic patterns
-            3. **Interpretable AI for Clinical Autism Research**: Advanced explainable AI techniques adapted for autism 
-            research that provide clinically meaningful feature importance analysis
-            4. **Cross-Domain Generalization Methodology**: Frameworks for testing autism ML model performance across different 
-            experimental paradigms and populations
+            
 
-            **Methodological Contributions:**
-            1. **Autism-Specific NLP Pipeline**: Comprehensive natural language processing framework for analyzing social 
-            inference text responses in autism research
-            2. **Clinical Interpretability Framework**: Systematic approach for translating machine learning insights into 
-            clinically actionable information for autism diagnosis and intervention
-            3. **Multi-Dataset Validation Protocol**: Standardized methodology for evaluating autism prediction models across 
-            diverse SFARI-supported datasets
-            4. **Privacy-Preserving Autism Research Methods**: Techniques for conducting advanced ML analysis while maintaining
-             participant privacy and data security
+## 7 Possible Issues:  
 
-            **Practical Contributions:**
-            1. **Open-Source Autism ML Toolkit**: Complete software package for autism researchers to apply developed methods to new datasets
-            2. **Clinical Decision Support Prototype**: Interactive system for clinicians to understand autism risk factors and diagnostic predictions
-            3. **SFARI Data Analysis Framework**: Reusable pipeline for advanced analysis of SFARI-supported datasets
-            4. **Autism Subtype Characterization Tool**: System for identifying and characterizing autism phenotypes in research and clinical settings
-
-            **Publication Strategy and Target Venues:**
-
-            **Primary Targets:**
-            - **Nature Machine Intelligence** (Impact Factor: 25.9): Premier venue for AI applications in healthcare and biomedical research
-            - **JAMA Psychiatry** (Impact Factor: 19.3): Top-tier psychiatric research journal with high clinical impact
-            - **Molecular Autism** (Impact Factor: 6.3): Leading specialized venue for autism research with strong computational focus
-
-            **Secondary Targets:**
-            - **Nature Digital Medicine** (Impact Factor: 12.9): Digital health applications and AI in medicine
-            - **Autism Research** (Impact Factor: 4.9): Specialized autism research venue with established audience
-            - **Journal of Medical Internet Research** (Impact Factor: 7.4): Health informatics and digital health research
-
-            **Conference Venues:**
-            - **International Society for Autism Research (INSAR) Annual Meeting**: Premier autism research conference
-            - **NeurIPS Machine Learning for Health (ML4H) Workshop**: AI applications in healthcare
-            - **AAAI Conference on Artificial Intelligence**: AI methodology and applications
-            - **AMIA Annual Symposium**: Biomedical informatics and health AI
-
-            **SFARI-Specific Outcomes:**
-            - **SFARI Webinar Presentation**: Dissemination of results to autism research community
-            - **SFARI Annual Report Contribution**: Documentation of successful data utilization
-            - **Follow-up Grant Applications**: Foundation for larger-scale SFARI funding requests
-
-            **Expected Research Impact:**
-            This research addresses fundamental challenges in autism diagnosis and research through innovative application 
-            of explainable AI techniques. The integration of structured and unstructured data sources provides new insights 
-            into autism heterogeneity and diagnostic markers. The work is positioned for high citation impact due to:
-            - Direct clinical relevance for early autism identification
-            - Novel methodological contributions to interpretable machine learning in healthcare
-            - Comprehensive utilization of valuable SFARI-supported datasets
-            - Open-source tool development for broader research community adoption
-
-            **Broader Impact:**
-            - **Clinical Practice**: Improved diagnostic tools for earlier autism identification
-            - **Research Community**: Advanced methods for autism heterogeneity research
-            - **Public Health**: Population-level screening and risk assessment capabilities
-            - **Technology Transfer**: Foundation for commercial diagnostic tool development
-            - **Policy Influence**: Evidence-based insights for autism research funding and clinical guidelines
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             **Technical Challenges and Mitigation Strategies:**
 
             **Challenge 1: Data Quality and Heterogeneity Across Sources**
@@ -389,23 +310,10 @@ data_to_save = \
             **Risk: Alignment with SFARI Priorities and Review Criteria**
             - Mitigation: Carefully study SFARI mission and funding priorities, engage with SFARI scientific team during 
             development, prepare preliminary results that demonstrate feasibility, and ensure clear articulation of autism research relevance
-            """,
+            
 
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari and Dr. Gabriela Rosenblau in collaboration with Department of Psychological & Brain Sciences",
-        "Proposed by email": "ajafari@gwu.edu, grosenblau@email.gwu.edu>",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "Department of Psychological & Brain Sciences",
-        "funding_opportunity": "SFARI 2025 Data Analysis Request for Applications ($300,000 over 2 years)",
-        "github_repo": "https://github.com/amir-jafari/Capstone",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy('json_gen.py', output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari/Capstone](https://github.com/https://github.com/amir-jafari/Capstone)
