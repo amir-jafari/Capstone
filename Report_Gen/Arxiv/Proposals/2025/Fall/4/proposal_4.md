@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Contributing an Open Source Analysis Tool to the Global Community of Researchers Uncovering Social Media Manipulation
+### Proposed by: CIB Mango Tree
+#### Email: sandobenjamin@gmail.com
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
-
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """4""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2025""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Contributing an Open Source Analysis Tool to the Global Community of Researchers Uncovering Social Media Manipulation""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """ 
+## 1 Objective:  
+ 
             The goal of this project is to develop a free and open source analysis tool that can be used by non-technical 
             researchers to detect signs of inauthentic (bot) behavior in large datasets of social media activity. The tool
             will be integrated in the CIB Mango Tree (cibmangotree.org) application library. CIB Mango Tree is a DC-based
@@ -48,10 +33,13 @@ data_to_save = \
             Integrate this new methodological approach and data visualization dashboard into the CIB Mango Tree’s existing
             library of software tools, so that future researchers can use your methodology for their own research.
 
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2025_Fall_4.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             Open Measures (openmeasures.io) provides free API access to data from Truth Social and Bluesky. Students can 
             scrape large datasets of social media activity from these platforms for free, provided the data is over six 
             months old. This will allow students to analyze social media activity around relatively recent seminal political 
@@ -59,10 +47,10 @@ data_to_save = \
 
             Students are welcome to consider other platforms, though data access may require complex scraping methods. 
 
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Social media manipulation is a burgeoning issue and has been exacerbated by opaque social media algorithms 
             that promote content based on particular engagement metrics. Foreign and domestic influence actors are using
             networks of inauthentic accounts to simulate engagement and promote political content that may not reach 
@@ -72,10 +60,10 @@ data_to_save = \
             to build an analysis methodology that can be utilized by non-technical researchers around the world, through
             integration into the CIB Mango Tree tool library. In doing so, students will help future researchers raise
             awareness about inauthentic behavior and social media manipulation so as to force policy change.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
         [CIB Mango Tree Team Introduction] Students will get to know the existing CIB Mango Tree team of data scientists, 
         web developers, UX designers, and project managers to understand how to build software to align with project goals. 
         
@@ -97,10 +85,10 @@ data_to_save = \
         [Writing] Students will write an article explaining their development of an analysis method and application to
         social media data around a particular political event. 
 
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
         [CIB Mango Tree Team Introduction] 1 week
         [Data Extraction] 1 week
         [Methodology Development] 6 weeks
@@ -109,26 +97,17 @@ data_to_save = \
         [Integration] 2 weeks
         [Writing] 3 weeks
 
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             Given that the students are implementing one tool, and a requirement to engage closely with the existing CIB 
             Mango Tree team, a smaller student team of 1-3 students will be appropriate. 
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project will contribute to the global research community by providing an open-source tool for detecting 
-            coordinated inauthentic behavior on social media platforms. The tool will be designed for non-technical
-            researchers including journalists, activists, and social scientists. Research findings can be published in 
-            academic journals as well as popular media, helping to raise awareness about social media manipulation and 
-            pressure platforms to address these challenges. The methodology and tool will be integrated into the CIB Mango
-            Tree library for future researchers to utilize.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
+            
+
+## 7 Possible Issues:  
+
             Finding an effective methodology: Methodologies should be well-tailored so as to be able to uncover signs of 
             inauthentic behavior, yet simple enough so that future users and those consuming your research findings can 
             understand the methodology. If users and research consumers cannot grasp the methodology easily, it will be
@@ -150,23 +129,10 @@ data_to_save = \
             Beyond effective visualizations, students will have to familiarize themselves with the disinformation 
             research field so as to learn how to explain complex data science methodologies in the language understood by end users. 
 
-            """,
+            
 
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "CIB Mango Tree",
-        "Proposed by email": "sandobenjamin@gmail.com",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "Civic Tech DC",
-        "funding_opportunity": "Open Source Community Project",
-        "github_repo": "Link", # Note: The original document mentions "Github Repo: Link" but doesn't provide the actual URL
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy('json_gen.py', output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [Link](https://github.com/Link)
