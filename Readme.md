@@ -10,33 +10,21 @@
 
     - [Publication Link](https://link.springer.com/article/10.1007/s00521-024-10309-9)
 
-
-
 2. [Capstone Group 1 : Mapping Deprived Areas](https://github.com/akhil97/Capstone-Group1)
-
-
 
 3. [Capstone Group 3 : Neural Network SOM](https://github.com/amir-jafari/SOM)
 
    - [Package Link](https://pypi.org/project/NNSOM/)
 
-
-
 4. [Capstone Group 5 : RAG](https://github.com/arjbingly/grag)
 
    - [Package Link](https://pypi.org/project/grag/)
 
-
-
 5. [Capstone Group 8 : GNN Recommendation System](https://github.com/twallett/DynamicRecSys)
-
-
 
 6. [Capstone Group 9 : Medical Visual QA](https://github.com/KumarAditya98/Medical-Visual-Question-Answering-using-Multimodal-Fusion)
 
     - [Publication Link](https://link.springer.com/article/10.1007/s00521-024-10318-8)
-
-
 
 7. [Capstone Group 10 : GNN Fraud Detection](https://github.com/ChiragLakhanpal/Leveraging-Graph-Based-Learning-for-Enhanced-Fraud-Detection)
     
