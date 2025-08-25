@@ -59,3 +59,37 @@
 3. [Capstone Group 5 : FolkRAG: A Retrieval-Augmented Generation System for Cultural Heritage Materials](https://github.com/GWU-MS-DS/Capstone)
 
     - [Publication Link](https://link.springer.com/article/10.1007/s00521-025-11455-4)
+----
+
+## Spring 2025
+1. [Capstone Group 3 : Temporal Patterns and Pixel Precision Satellite-Based Crop Classification Using Deep Learning and Machine Learning](https://github.com/DishaKacha7/Capstone_Group_3/tree/main)
+
+    - [Publication Link]()
+   
+2. [Capstone Group 7 : Spatiotemporal Unemployment Forecasting in FEMA Region 9: A Comparative Analysis of Classical and Deep Learning Models](https://github.com/KhushJShah/Group-7-PDFM)
+
+    - [Publication Link]()
+
+3. [Capstone Group 8 : Reimagining Influence Detection in Social Networks via Graph Neural Networks](https://github.com/KanishkGoel1999/Group-8-Capstone-)
+
+    - [Publication Link]()
+
+4. [Capstone Group 9 : Unmasking Fraud in Transaction Networks: Harnessing Heterogeneous Graph Neural Networks for Enhanced Detection](https://github.com/KanishkGoel1999/Capstone_project_Kanishk_Goel)
+
+    - [Publication Link]()
+
+5. [Capstone Group 2 : MediSyn: A Synergistic multi-agent AI system for IPE in medical domain](https://github.com/parv-bhargava/MediSyn)
+
+    - [Publication Link]()
+
+6. [Capstone Group 6 : Improved Multi-Agent Knowledge Sharing System using Knowledge Graphs for News Bias Detection and Fact-Checking](https://github.com/Modupeolawuraola/Multi-Agent-System-with-Knowledge-Sharing-For-News-Evaluation)
+
+    - [Publication Link]()
+
+7. [Capstone Group 1 : An End-to-End Multi Agent AI System for Personal Finance: Synthetic Data Generation, Budget Optimization, and Investment Advisory](https://github.com/aman-jaglan/Capstone_Project)
+
+    - [Publication Link]()
+
+8. [Capstone Group x : Predicting Postoperative Complications in Laparoscopic General Surgery Using Machine and Deep Learning: A Classification Approach]()
+
+    - [Publication Link]()
