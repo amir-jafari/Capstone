@@ -5,20 +5,22 @@ import shutil
 import re
 
 
-class MyRenderer(mistune.HTMLRenderer):  # Correct base class
-    def list_item(self, text, level):
-        # Wrap each list item in <li> tags and add a line break
-        return f'<li>{text}</li>\n'
-
-
 def convert_md_to_html(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8', errors='replace') as md_file:
         md_content = md_file.read()
 
-        # Convert Markdown to HTML with mistune for better control
-        renderer = MyRenderer()
-        md_parser = mistune.create_markdown(renderer=renderer)
-        html_content = md_parser(md_content)
+        # Convert Markdown to HTML - compatible with different mistune versions
+        try:
+            # Try mistune v3 style
+            html_content = mistune.html(md_content)
+        except AttributeError:
+            try:
+                # Try mistune v2 style
+                markdown = mistune.create_markdown()
+                html_content = markdown(md_content)
+            except AttributeError:
+                # Try mistune v0.x/v1.x style
+                html_content = mistune.markdown(md_content)
 
         # Keep spaces after numbers and dots in enumeration
         html_content = re.sub(r'(\d+)\. ', r'\1. ', html_content)
@@ -69,7 +71,7 @@ def generate_readme(data, output_file_path):
 - Email: [{data['instructor_email']}](mailto:{data['instructor_email']})
 - GitHub: [{data['github_repo']}](https://github.com/{data['github_repo']})
 """
-    with open(output_file_path + f"proposal_{data['Version']}.md", "w") as readme_file:
+    with open(output_file_path + f"proposal_{data['Version']}.md", "w", encoding='utf-8') as readme_file:
         readme_file.write(readme_template)
 
 
@@ -77,7 +79,7 @@ if __name__ == "__main__":
     input_file_path = 'input.json'
     Year = "2025"
     Semester = "Fall"
-    Version = "4"
+    Version = "6"
 
     output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{Year}{os.sep}{Semester}{os.sep}{Version}{os.sep}'
     os.makedirs(output_file_path, exist_ok=True)

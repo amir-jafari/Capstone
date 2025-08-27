@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Reinforcement Learning for Pseudo-Labeling
+### Proposed by: Tyler Wallett
+#### Email: twallett@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """6""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2025""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Reinforcement Learning for Pseudo-Labeling""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to develop a reinforcement learning (RL) framework that can automatically 
             assign pseudo-labels to unlabeled data, improving the performance of semi-supervised learning models. 
             The tool will be designed for data scientists and researchers to experiment with different RL strategies 
@@ -38,15 +23,18 @@ data_to_save = \
 
             Integrate the pseudo-labeling methodology into an open-source library to allow other researchers to 
             leverage RL-based semi-supervised labeling for their own datasets.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2025_Fall_6.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             Publicly available classification datasets, such as: MNIST or CIFAR-10.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Semi-supervised learning is widely used when labeled data is limited, but manually labeling large datasets 
             is time-consuming and costly. Pseudo-labeling allows models to leverage unlabeled data by assigning estimated 
             labels, but existing heuristics may propagate errors and reduce model performance. 
@@ -55,10 +43,10 @@ data_to_save = \
             the most informative unlabeled examples and balances risk and reward in label assignment. This approach 
             reduces labeling errors, improves model accuracy, and provides a scalable solution for leveraging unlabeled 
             datasets in machine learning research.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             [Understanding the Reinforcement Learning (RL) Framework] 
             Students will learn how to formulate pseudo-labeling as an RL problem, including:
 
@@ -112,53 +100,34 @@ data_to_save = \
             - Run experiments with different datasets.
             - Record pseudo-labeling performance and downstream model classification metrics.
             - Export results for analysis.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             [Understanding RL Framework] 1 week
             [`model.py` & `train.py`] 2 weeks
             [`utils/env.py` & `test.py`] 7 weeks
             [`benchmark.py`] 2 weeks (start writting research paper here)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             Given the scope and complexity of the project, it is recommended to have 2-3 students working collaboratively.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project will contribute to machine learning research by providing an open-source RL framework for 
-            adaptive pseudo-labeling in semi-supervised learning. The methodology will enable researchers to assign 
-            high-quality pseudo-labels to unlabeled data, improving model performance and reducing labeling costs. 
-            Research findings can be published in academic journals or conferences, and the framework will be made 
-            available for future researchers to extend and apply to new datasets.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
+            
+
+## 7 Possible Issues:  
+
             - Reinforcement Learning concepts can be difficult for students to grasp, especially MDP assumptions.  
             - Designing state, action, and reward spaces for pseudo-labeling may be non-trivial.  
             - Training RL agents can be computationally expensive and time-consuming.  
             - Risk of overfitting to small datasets or poor generalization to new unlabeled data.  
             - Debugging custom environments and reward functions can be challenging.  
             - Evaluation of pseudo-label quality requires careful metric design.  
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Tyler Wallett",
-        "Proposed by email": "twallett@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "None",
-        "funding_opportunity": "Open Source Community Project",
-        "github_repo": "None",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy('json_gen.py', output_file_path)
-print(f"Data saved to {output_file_path}")
+            
+
+
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [None](https://github.com/None)
