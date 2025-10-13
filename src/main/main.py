@@ -9,8 +9,8 @@ Version: 1.0
 
 import os
 import sys
-# project_root = "/Users/hema/Desktop/GWU/Aug_2025/Capstone/fall-2025-group12"
-os.chdir('/../..')
+project_root = "/Users/hema/Desktop/GWU/Aug_2025/Capstone/fall-2025-group12"
+os.chdir(project_root)
 # sys.path.insert(0, '/Users/hema/Desktop/GWU/Aug_2025/Capstone/fall-2025-group12')
 from src.component.environment import * 
 

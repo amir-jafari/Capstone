@@ -9,6 +9,7 @@ Version: 1.0
 import numpy as np
 import gymnasium as gym
 import recsim.document
+import recsim.user
 
 class DriftingDocument(recsim.document.AbstractDocument):
   """
@@ -37,26 +38,6 @@ class DriftingDocument(recsim.document.AbstractDocument):
         "popularity": gym.spaces.Box(low=0.0, high=1.0, shape=(), dtype=np.float32),
         "quality": gym.spaces.Box(low=0.0, high=1.0, shape=(), dtype=np.float32)
     })
-
-# class DriftingDocumentSampler(recsim.document.AbstractDocumentSampler):
-#     def __init__(self, categories, alpha=0.1, a, b):
-#         self.categories = categories
-#         self.num_categories = len(categories)
-#         self.cat2id = {c: i for i, c in enumerate(categories)}
-#         self.alpha = np.full(self.num_categories, alpha)
-#         self.category_probs = np.random.dirichlet(self.alpha)
-#         self.a = a
-#         self.b = b
-
-#     def sample_document(self, doc_id):
-#         category_idx = np.random.choice(self.num_categories, p=self.category_probs)
-#         x = category_idx  # int ID for topic
-#         p = np.random.beta(self.a, self.b)
-#         q = np.random.beta(self.b, self.a)
-#         return DriftingDocument(doc_id, x, p, q, self.num_categories)
-
-#     def sample_documents(self, num_docs):
-#         return [self.sample_document(doc_id) for doc_id in range(num_docs)]
 
 class DriftingDocumentSampler(recsim.document.AbstractDocumentSampler):
   """
@@ -131,3 +112,66 @@ class DriftingUserSampler(recsim.user.AbstractUserSampler):
 
   def sample_users(self, num_users):
     return [self.sample_user(user_id) for user_id in range(num_users)]
+
+
+class DriftingResponseModel(recsim.user.AbstractResponse):
+    """
+    This class defines how a user reacts to a document, mapping (user state, document features) into probabilities of click.
+    """
+    def __init__(self, beta1=None, beta2=None):
+      self.beta1 = beta1
+      self.beta2 = beta2
+    
+    def sigmoid(x):
+      return 1.0 / (1.0 + np.exp(-x))
+
+    def score(self, user_state, doc):
+      epsilon = np.random.normal(0, 0.05)
+      theta_x = np.dot(user_state.theta, doc.x)
+      score = theta_x + self.beta1 * doc.q + self.beta2 * doc.p + epsilon
+      prob_click = self.sigmoid(score)
+      return prob_click
+
+    def simulate_response(self, user_state, doc):
+      click_prob = self.score(user_state, doc)
+      click = np.random.binomial(1, click_prob)
+      return click
+
+class DriftingUserModel(recsim.user.AbstractUserModel):
+    """
+    This class would coordinate the simulation: advancing the user state, calling the response model, and updating preferences via a drift process.
+    """
+    def __init__(self, alpha=None):
+      self.alpha = alpha
+
+    def update_user_state(self, user_state, doc):
+      epsilon = np.random.normal(0, 0.05, size=user_state.theta.shape)
+      user_state.theta = (1.0 - self.alpha) * user_state.theta + self.alpha * doc.x + epsilon
+      # user_state.tau += 1  
+      return user_state
+
+class DriftingEnvironment:
+    """
+    This class would combine the document sampler, user sampler, user model, and response model to create the full environment.
+    """
+    def __init__(self,users,documents, categories,seed):
+      np.random.seed(seed)
+      self.users = users
+      self.documents = documents
+      self.categories = categories
+      DriftingDocumentSampler(self.categories,alpha=0.1, a=2, b=5)
+      DriftingUserSampler(self.categories,alpha=0.1, a=2, b=5)
+      DriftingResponseModel(beta1=0.3, beta2=0.3)
+      DriftingUserModel(alpha=0.01)
+    
+    def step(self, user, doc):
+      response = DriftingResponseModel.simulate_response(user, doc)
+      user = DriftingUserModel.update_user_state(user, doc)
+      return response, user
+    
+    def reset(self):
+      self.users = DriftingUserSampler.sample_users(len(self.users))
+      self.documents = DriftingDocumentSampler.sample_documents(len(self.documents))
+      return self.users, self.documents
+
+    
