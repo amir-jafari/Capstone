@@ -48,9 +48,9 @@ env = DriftingEnvironment(NUM_USERS, NUM_DOCUMENTS,ALPHA,A,B,BETA1,BETA2, CATEGO
 
 NUM_STATES = len(CATEGORIES) 
 NUM_ACTIONS = NUM_DOCUMENTS
-EPSILON = 0.2
-ALPHA = 0.1
-GAMMA = 0.9
+EPSILON = 0.05
+ALPHA = 0.01
+GAMMA = 0.01
 
 
 # model = QLearning()
@@ -79,10 +79,6 @@ for round_index in range(NUM_ROUNDS):
         action = np.random.choice(NUM_DOCUMENTS)  
         selected_document = documents[action]   
         reward, updated_user = env.step(user, selected_document)  
-        print('Error'*20) 
-        print(updated_user.theta.sum())
-
-        print('Error'*20)
         print(f"User {user.create_observation()} responded to Document {selected_document.create_observation()}: {reward}")
         users[user_index] = updated_user             ##
         cumulative_reward_random += reward
@@ -94,11 +90,12 @@ users , documents = env.reset()
 latent_preference_list_tdq = []
 q_learning_model_rewards = []
 cumulative_reward_tdq = 0
-wh
+
 for round_index in range(NUM_ROUNDS):        
     print(f"--- Round {round_index + 1} ---")
     for user_index, user in enumerate(users):
-        action = model.esoft(user.theta, len(documents))  
+        r = env.response_model.score()
+        action = model.esoft(user.theta, len(documents))  # cant give theta to model
         selected_document = documents[action]   
         reward, updated_user = env.step(user, selected_document)  
         print(f"User {user.create_observation()} responded to Document {selected_document.create_observation()}: {reward}")

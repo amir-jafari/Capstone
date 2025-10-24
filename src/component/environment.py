@@ -102,14 +102,14 @@ class DriftingUserSampler(recsim.user.AbstractUserSampler):
     self.a = a
     self.b = b 
 
-  def sample_user(self, user_id):
+  def sample_user(self, user_id, seed):
     theta = np.ones(self.num_categories) / self.num_categories
     sigma = np.random.beta(self.a, self.b)
     phi = np.random.beta(self.b, self.a)                          
     return DriftingUserState(user_id, theta, sigma, phi, self.num_categories)
 
-  def sample_users(self, num_users):
-    return [self.sample_user(user_id) for user_id in range(num_users)]
+  def sample_users(self, num_users, seed):
+    return [self.sample_user(user_id, seed) for user_id in range(num_users)]
 
 
 class DriftingResponseModel(recsim.user.AbstractResponse):
@@ -179,7 +179,6 @@ class DriftingEnvironment:
   This class would combine the document sampler, user sampler, user model, and response model to create the full environment.
   """
   def __init__(self,num_users,num_documents,alpha,a,b,beta_1,beta_2, categories,seed):
-    np.random.seed(seed)
     self.num_users = num_users
     self.num_documents = num_documents
     self.categories = categories
@@ -188,8 +187,8 @@ class DriftingEnvironment:
     self.b = b
     self.beta_1 = beta_1
     self.beta_2 = beta_2
-    self.doc_sampler = DriftingDocumentSampler(self.categories,alpha=0.1, a=2, b=5)
-    self.user_sampler = DriftingUserSampler(self.categories,alpha=0.1, a=2, b=5)
+    self.doc_sampler = DriftingDocumentSampler(self.categories,alpha=0.1, a=2, b=5, seed = seed) 
+    self.user_sampler = DriftingUserSampler(self.categories,alpha=0.1, a=2, b=5, seed = seed)
     self.response_model = DriftingResponseModel(beta1=0.3, beta2=0.3)
     self.user_model = DriftingUserModel(alpha=0.01)
   
@@ -198,9 +197,9 @@ class DriftingEnvironment:
     user = self.user_model.update_state(user, doc)
     return response, user
   
-  def reset(self):
-    self.users = self.user_sampler.sample_users(self.num_users)
-    self.documents = self.doc_sampler.sample_documents(self.num_documents)
+  def reset(self, seed):
+    self.users = self.user_sampler.sample_users(self.num_users, seed=seed)
+    self.documents = self.doc_sampler.sample_documents(self.num_documents, seed=seed)
     return self.users, self.documents
 
     
