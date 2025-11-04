@@ -29,15 +29,20 @@ class DriftingDocumentSampler(recsim.document.AbstractDocumentSampler):
         self.CATEGORIES = CATEGORIES
         self.num_categories = len(CATEGORIES)
         self.cat2id = {c: i for i, c in enumerate(CATEGORIES)}
-        self.alpha = np.full(self.num_categories, alpha)
+        # self.alpha = np.full(self.num_categories, alpha)
+        self.alpha = alpha
+
         self.a = a
         self.b = b
-        self.rng = np.random.default_rng(seed)
+        self.seed = seed
+        # self.rng = np.random.default_rng(seed)
+        self.min_val = 0
 
     def sample_document(self, doc_id):
-        x = self.rng.dirichlet(self.alpha)
-        p = self.rng.beta(self.a, self.b)
-        q = self.rng.beta(self.b, self.a)
+        rng = np.random.default_rng(self.seed + (doc_id+1) * self.num_categories)
+        x = rng.dirichlet([(doc_id+1) * self.alpha] * self.num_categories)
+        p = rng.beta((doc_id+1) * self.a,(doc_id+1) * self.b)
+        q = rng.beta((doc_id+1) * self.b,(doc_id+1) * self.a)
         return DriftingDocument(doc_id, x, p, q, self.num_categories)
 
     def sample_documents(self, num_docs):
@@ -46,21 +51,16 @@ class DriftingDocumentSampler(recsim.document.AbstractDocumentSampler):
 
 class DriftingUserState(recsim.user.AbstractUserState):
     """Represents a user's latent preference state at time t."""
-    def __init__(self, user_id, theta, sigma, phi, num_categories, tau=0):
+    def __init__(self, user_id, theta, num_categories):
         self.theta = theta
-        self.sigma = sigma
-        self.phi = phi
-        self.tau = tau
         self.num_categories = num_categories
 
     def create_observation(self):
-        return {"theta": self.theta, "sigma": self.sigma, "phi": self.phi}
+        return {"theta": self.theta}
 
     def observation_space(self):
         return gym.spaces.Dict({
-            "theta": gym.spaces.Box(low=0.0, high=1.0, shape=(self.num_categories,), dtype=np.float32),
-            "sigma": gym.spaces.Box(low=0.0, high=1.0, shape=(self.num_categories,), dtype=np.float32),
-            "phi": gym.spaces.Box(low=0.0, high=1.0, shape=(self.num_categories,), dtype=np.float32),
+            "theta": gym.spaces.Box(low=0.0, high=1.0, shape=(self.num_categories,), dtype=np.float32)
         })
 
 
@@ -77,9 +77,8 @@ class DriftingUserSampler(recsim.user.AbstractUserSampler):
 
     def sample_user(self, user_id):
         theta = np.ones(self.num_categories) / self.num_categories
-        sigma = self.rng.beta(self.a, self.b)
-        phi = self.rng.beta(self.b, self.a)
-        return DriftingUserState(user_id, theta, sigma, phi, self.num_categories)
+        
+        return DriftingUserState(user_id, theta, self.num_categories)
 
     def sample_users(self, num_users):
         return [self.sample_user(user_id) for user_id in range(num_users)]
@@ -100,7 +99,7 @@ class DriftingResponseModel(recsim.user.AbstractResponse):
     def score(self, user_state, doc):
         epsilon = self.rng.normal(0, 0.05)
         theta_x = np.dot(user_state.theta, doc.x)
-        score = theta_x + self.beta1 * doc.q + self.beta2 * doc.p+ self.gamma1 * user_state.sigma + self.gamma2 * user_state.phi + epsilon
+        score = theta_x + self.beta1 * doc.q + self.beta2 * doc.p + epsilon
         prob_click = self.sigmoid(score)
         return prob_click
 
@@ -130,9 +129,6 @@ class DriftingUserModel(recsim.user.AbstractUserModel):
         epsilon_phi = self.rng.normal(0, 0.05)
         user_state.theta = (1.0 - self.alpha) * user_state.theta + self.alpha * doc.x + epsilon
         user_state.theta = user_state.theta / np.sum(user_state.theta)
-        
-        user_state.sigma =  (1-self.alpha)**2 * user_state.sigma + (self.alpha ** 2) * doc.p + (2* self.alpha * (1-self.alpha)) * doc.q  + epsilon_sigma
-        user_state.phi =  (1-self.alpha)**2 * user_state.phi + (2* self.alpha * (1-self.alpha)) * doc.p  + (self.alpha ** 2) * doc.q +epsilon_phi
         return user_state
 
     def is_terminal(self):
@@ -144,7 +140,7 @@ class DriftingUserModel(recsim.user.AbstractUserModel):
 
 class DriftingEnvironment:
     """Combines all components into a full environment."""
-    def __init__(self, num_users, num_documents, alpha, a, b, beta_1, beta_2, gamma1, gamma2, categories, seed=None):
+    def __init__(self, num_users, num_documents, alpha, a, b, beta_1, beta_2, gamma1, gamma2, categories, seed=None, seed_doc = None):
         self.num_users = num_users
         self.num_documents = num_documents
         self.categories = categories
@@ -154,18 +150,26 @@ class DriftingEnvironment:
         self.beta_1 = beta_1
         self.beta_2 = beta_2
         self.rng = np.random.default_rng(seed)
+        self.seed = seed
+        self.seed_doc = seed_doc
+        self.gamma1 = gamma1
+        self.gamma2 = gamma2
 
-        self.doc_sampler = DriftingDocumentSampler(categories, alpha=alpha, a=a, b=b, seed=seed)
+        self.doc_sampler = DriftingDocumentSampler(categories, alpha=alpha, a=a, b=b, seed=seed_doc)
         self.user_sampler = DriftingUserSampler(categories, alpha=alpha, a=a, b=b, seed=seed)
         self.response_model = DriftingResponseModel(beta1=beta_1, beta2=beta_2, gamma1 = gamma1,gamma2=gamma2, seed=seed)
         self.user_model = DriftingUserModel(alpha=0.01, seed=seed)
 
     def step(self, user, doc):
+        # self.response_model = DriftingResponseModel(beta1=self.beta_1, beta2=self.beta_2, gamma1 = self.gamma1,gamma2=self.gamma2, seed=self.seed)
+        # self.user_model = DriftingUserModel(alpha=0.01, seed=self.seed)
         response = self.response_model.simulate_response(user, doc)
         user = self.user_model.update_state(user, doc)
         return int(response), user
 
     def reset(self):
+        # self.doc_sampler = DriftingDocumentSampler(self.categories, alpha=self.alpha, a=self.a, b=self.b, seed=self.seed)
+        # self.user_sampler = DriftingUserSampler(self.categories, alpha=self.alpha, a=self.a, b=self.b, seed=self.seed)
         users = self.user_sampler.sample_users(self.num_users)
         documents = self.doc_sampler.sample_documents(self.num_documents)
         return users, documents
