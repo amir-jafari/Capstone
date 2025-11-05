@@ -83,6 +83,9 @@ all_latent_prefs_tdq = []
 tdq_cum_rew_list = []
 random_cum_rew_list = []
 
+last_latent_pref_tdq = []
+last_latent_pref_random = []
+
 users, documents = env.reset() 
 
 for episode in range(EPISODES):
@@ -106,6 +109,8 @@ for episode in range(EPISODES):
 
             if episode == 0:
                 all_latent_prefs_actual.append(updated_user.theta.copy())
+            if episode == EPISODES - 1:
+                last_latent_pref_random.append(updated_user.theta.copy())
     random_cum_rew_list.append(random_cum_rew)
         # step_reward = np.sum(step_reward)  
         # cumulative_reward_random += step_reward
@@ -118,6 +123,8 @@ for episode in range(EPISODES):
     tdq_cum_rew = 0
     # cumulative_reward_tdq = 0
     latent_preference_list_tdq = []
+
+    
 
 
     for step in range(NUM_ROUNDS):
@@ -142,6 +149,8 @@ for episode in range(EPISODES):
             click_probs_next = np.array([env.response_model.score(updated_user, doc) for doc in documents])
             next_state_key = tuple(np.round(click_probs_next, 4))
             model.update(action, state_key, next_state_key, scalar_reward)
+            if episode == EPISODES - 1:
+                last_latent_pref_tdq.append(updated_user.theta.copy())
            
     tdq_cum_rew_list.append(tdq_cum_rew)
     all_latent_prefs_tdq.append(np.array(latent_preference_list_tdq))
@@ -157,9 +166,10 @@ for episode in range(EPISODES):
 
         plt.xlabel('Time (Rounds)')
         plt.ylabel('Average Latent Preference Score')
-        plt.title('Average Latent Preferences Over Episodes: Random vs TDQ')
+        plt.title(f'Average Latent Preferences Over Episodes {episode}: Random vs TDQ')
         plt.legend(loc='upper right', fontsize='small', ncol=2)
         plt.show()
+    
 
 
 avg_random_rewards = np.mean(all_random_rewards, axis=0)
@@ -169,7 +179,20 @@ avg_tdq_rewards = np.mean(all_tdq_rewards, axis=0)
 avg_latent_prefs_random = np.mean(np.array(all_latent_prefs_random), axis=0)
 avg_latent_prefs_tdq = np.mean(np.array(all_latent_prefs_tdq), axis=0)
 
+#%%
 
+num_categories = avg_latent_prefs_tdq.shape[1]
+last_latent_pref_random = np.array(last_latent_pref_random)
+last_latent_pref_tdq = np.array(last_latent_pref_tdq)
+for category_index in range(num_categories):
+    plt.plot(last_latent_pref_random[:, category_index], linestyle='dashed', label=f'Random {CATEGORIES[category_index]}')
+    plt.plot(last_latent_pref_tdq[:, category_index], label=f'TDQ {CATEGORIES[category_index]}',color = color[category_index])
+
+plt.xlabel('Time (Rounds)')
+plt.ylabel('Last Latent Preference Score')
+plt.title('Last Latent Preferences: Random vs TDQ')
+plt.legend(loc='upper right', fontsize='small', ncol=2)
+plt.show()
 #%%
 
 plt.figure(figsize=(10, 6))
