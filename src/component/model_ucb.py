@@ -3,7 +3,6 @@
 # --------------------------
 import numpy as np
 import pandas as pd
-
 class UCB:
     def __init__(self, n_arms, manual_prior=None, random_seed=None):
         np.random.seed(random_seed)
@@ -55,7 +54,7 @@ class UCB:
             A = self.action()
             self.chosen_arms.append(A)
 
-            R, r_vec = self.p(data, A, t)
+            R, r_vec = self.bandit(data, A, t)
             self.update(A, R)
 
             regret_t = float(np.max(r_vec) - R)

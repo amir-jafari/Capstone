@@ -29,8 +29,8 @@ a, b: Beta distribution parameters for initial user/document preference distribu
 beta1, beta2: Coefficients controlling how document 'quality' and 'popularity' contribute to the user's click probability. (Higher beta1/beta2 increase the influence of quality/popularity in click scoring.)
 
 '''
-NUM_USERS = 1
-NUM_DOCUMENTS = 2 # more than one document to choose from
+NUM_USERS = 3
+NUM_DOCUMENTS = 4 # more than one document to choose from
 SEED_DOC = 64
 SEED = 1234
 CATEGORIES = ['Sports','Politics']
