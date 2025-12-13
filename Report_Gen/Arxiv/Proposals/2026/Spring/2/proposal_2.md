@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Multimodal Misinformation Detection: Cross-Modal Fusion for Fake News Identification
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """2""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Spring""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Multimodal Misinformation Detection: Cross-Modal Fusion for Fake News Identification""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to develop a state-of-the-art multimodal deep learning system that can 
             automatically detect misinformation by analyzing both textual content and accompanying images from 
             social media posts. Students will explore how fake news spreads through coordinated text-image 
@@ -47,10 +32,13 @@ data_to_save = \
                as a browser extension or fact-checking tool.
             7. Package the framework as an open-source toolkit with pre-trained models and comprehensive 
                documentation for researchers and fact-checkers.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Spring_2.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All datasets are publicly available with no access restrictions or approval needed:
 
             PRIMARY DATASETS (Immediate Download):
@@ -146,10 +134,10 @@ data_to_save = \
             - Time-align with any temporal features if available
 
             RECOMMENDED PRIMARY DATASET: Fakeddit (largest, most diverse, well-documented)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Misinformation on social media has become a critical societal challenge, influencing elections, 
             public health decisions (vaccine hesitancy, COVID-19 misinformation), and social cohesion. Modern 
             fake news increasingly combines manipulated or out-of-context images with misleading text to 
@@ -229,10 +217,10 @@ data_to_save = \
             - Ensure transparency in model decisions
             - Protect user privacy when using social media data
             - Avoid contributing to "liar's dividend" (dismissing real content as fake)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             PHASE 1: DATA COLLECTION & PREPROCESSING (Weeks 1-2)
 
             [Week 1: Dataset Acquisition & Exploration]
@@ -844,10 +832,10 @@ data_to_save = \
               * Intended use cases
               * Limitations and biases
               * Ethical considerations
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1:     Dataset Download & Exploration
             Week 2:     Data Preprocessing & Augmentation
             Week 3:     Text-Only Baseline Models
@@ -881,10 +869,11 @@ data_to_save = \
             - Blog post explaining the work
             - Presentation slides
             - Poster (for conferences)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION FOR 3 STUDENTS:
@@ -944,207 +933,10 @@ data_to_save = \
               * Statistical significance testing
               * Result visualization and analysis
               * Benchmark comparisons
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers substantial opportunities for novel research contributions:
+            
 
-            1. METHODOLOGICAL CONTRIBUTIONS:
+## 7 Possible Issues:  
 
-            A. Novel Cross-Modal Attention Mechanisms:
-               - Bidirectional attention between text and image patches
-               - Multi-scale attention (word-level, sentence-level, document-level)
-               - Temporal attention for sequential social media posts
-               - Graph-based attention over social network structure
-
-            B. Inconsistency Detection Framework:
-               - Contrastive learning for detecting text-image mismatches
-               - Semantic coherence scoring between modalities
-               - Out-of-context image detection using image search
-               - Caption-image entailment modeling
-
-            C. Fusion Architecture Innovations:
-               - Adaptive fusion (learn when to trust which modality)
-               - Hierarchical fusion (sentence-image, document-image pairs)
-               - Uncertainty-aware fusion (confidence-weighted combination)
-
-            D. Robustness Techniques:
-               - Adversarial training against multimodal attacks
-               - Domain-invariant feature learning
-               - Meta-learning for few-shot misinformation detection
-
-
-            2. EMPIRICAL CONTRIBUTIONS:
-
-            A. Comprehensive Benchmarking:
-               - Comparison of 15+ baseline and proposed models
-               - Cross-dataset evaluation (Fakeddit, MEME, FakeNewsNet)
-               - Cross-platform analysis (Twitter, Reddit, Facebook)
-               - Temporal evaluation (train on old data, test on new)
-
-            B. Ablation Studies:
-               - Impact of each modality (text-only, image-only, multimodal)
-               - Effect of pre-training (CLIP vs. separate pre-training)
-               - Contribution of data augmentation
-               - Importance of different fusion strategies
-               - Role of attention mechanisms
-
-            C. Analysis of Misinformation Types:
-               - Manipulated images with accurate captions
-               - Real images with misleading captions (out-of-context)
-               - Memes with embedded false claims
-               - Deepfakes and AI-generated images
-               - Comparison across categories
-
-            D. Failure Analysis:
-               - When do multimodal models fail?
-               - Satire vs. genuine misinformation
-               - Ambiguous cases requiring external knowledge
-               - Bias analysis (political, demographic)
-
-
-            3. INTERPRETABILITY CONTRIBUTIONS:
-
-            A. Attention Visualization Framework:
-               - Word-to-image-patch attention matrices
-               - Interactive visualization tool
-               - Temporal attention evolution (how attention changes over training)
-
-            B. Explanation Quality Evaluation:
-               - Human evaluation of explanation usefulness
-               - Faithfulness metrics (do explanations match model behavior?)
-               - Counterfactual explanations (what would change the prediction?)
-
-            C. Case Studies:
-               - Detailed analysis of specific misinformation campaigns
-               - COVID-19 misinformation examples
-               - Election misinformation examples
-               - Visualization of manipulation tactics
-
-
-            4. PRACTICAL CONTRIBUTIONS:
-
-            A. Open-Source Toolkit:
-               - Modular, extensible codebase
-               - Support for multiple datasets and architectures
-               - Easy-to-use API for researchers
-               - Pre-trained models for immediate use
-
-            B. Demo Application:
-               - Real-time misinformation detection
-               - Explainable predictions for end-users
-               - Browser extension prototype
-               - API for fact-checking organizations
-
-            C. Dataset Contributions:
-               - Cleaned and augmented versions of existing datasets
-               - New annotations (e.g., manipulation types)
-               - Benchmark leaderboard
-
-
-            5. PUBLICATION STRATEGY:
-
-            TARGET VENUES (Ranked by Fit):
-
-            Tier 1 - Top Conferences (Aim for These):
-            1. **ACL (Association for Computational Linguistics)**
-               - Track: Multimodal NLP, Social Media Analysis
-               - Deadline: Typically February (June conference)
-               - Acceptance rate: ~20%
-
-            2. **EMNLP (Empirical Methods in NLP)**
-               - Track: Applications, Misinformation Detection
-               - Deadline: Typically May (December conference)
-               - Acceptance rate: ~20%
-
-            3. **NAACL (North American Chapter of ACL)**
-               - Track: NLP Applications
-               - Deadline: Typically November (June conference)
-               - Acceptance rate: ~22%
-
-            4. **AAAI (Association for the Advancement of AI)**
-               - Track: AI for Social Impact, Multimodal Learning
-               - Deadline: August (February conference)
-               - Acceptance rate: ~20%
-
-            5. **ICWSM (Web and Social Media)**
-               - Perfect fit for social media misinformation
-               - Deadline: January (June conference)
-               - Acceptance rate: ~25%
-
-            Tier 2 - Workshops (Higher Acceptance, Still Prestigious):
-            1. **EMNLP Workshop on NLP for Social Good**
-            2. **ACL Workshop on Online Abuse and Harms**
-            3. **NAACL Workshop on Trustworthy NLP**
-            4. **ICWSM Workshop on Misinformation Detection**
-            5. **TheWebConf (WWW) Workshop on Misinformation**
-
-            Tier 3 - Journals (After Conference Feedback):
-            1. **Transactions on Social Computing (TSC)**
-            2. **Information Processing & Management**
-            3. **Journal of Artificial Intelligence Research (JAIR)**
-            4. **ACM Transactions on the Web**
-
-
-            PUBLICATION TIMELINE:
-            - Week 13-14: Complete draft paper
-            - Week 15-16: Internal review and revisions
-            - Submit to ACL or EMNLP
-            - If rejected: incorporate feedback, resubmit to workshop or next conference
-
-            EXPECTED OUTCOMES:
-            - 1 conference/workshop paper (8 pages)
-            - 1 GitHub repository (100+ stars within 6 months)
-            - 1 Hugging Face model (1000+ downloads)
-            - 1 demo application (deployed on Hugging Face Spaces)
-            - 1 blog post on Medium/Towards Data Science
-            - Potential media coverage (misinformation detection is newsworthy)
-
-
-            6. BROADER IMPACT & SOCIETAL CONTRIBUTIONS:
-
-            A. Platform Moderation:
-               - Tools for Twitter, Facebook, Reddit moderators
-               - Reduce burden on human fact-checkers
-               - Faster response to emerging misinformation
-
-            B. Public Education:
-               - Raise awareness about multimodal manipulation tactics
-               - Media literacy tool for educators
-               - Transparency in content moderation
-
-            C. Research Community:
-               - Benchmark datasets for future research
-               - Open-source tools accelerate research
-               - Reproducibility through detailed documentation
-
-            D. Ethical AI:
-               - Transparency and explainability standards
-               - Bias detection and mitigation
-               - Privacy-preserving detection methods
-
-
-            7. FUNDING OPPORTUNITIES:
-
-            - NSF: Secure and Trustworthy Cyberspace (SaTC)
-            - DARPA: Semantic Forensics (SemaFor)
-            - Google Research Grants: Misinformation & Fact-Checking
-            - Meta Research Grants: Content Moderation
-            - Knight Foundation: Media & Democracy
-
-
-            NOVELTY STATEMENT FOR PAPER:
-            "Unlike prior work that focuses on either text-only or image-only fake news detection, 
-            we present a comprehensive multimodal framework that jointly models cross-modal 
-            inconsistencies through bidirectional attention mechanisms. Our interpretability 
-            framework provides unprecedented insight into which textual and visual features drive 
-            misinformation classification, advancing both detection performance and public trust in 
-            AI-based fact-checking systems."
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES:
 
             1. Data Quality & Annotation Issues:
@@ -1353,295 +1145,10 @@ data_to_save = \
             - Use smaller models (DistilBERT, EfficientNet-B0)
             - Reduce dataset size (sample 10-20% stratified)
             - Apply for cloud credits from GCP, AWS, Azure
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            DATASET DOWNLOAD LINKS (All Immediately Accessible):
-
-            1. Fakeddit (PRIMARY DATASET - RECOMMENDED):
-               - Kaggle: https://www.kaggle.com/datasets/mdepak/fakeddit
-               - GitHub: https://github.com/entitize/Fakeddit
-               - Download command: 
-                 kaggle datasets download -d mdepak/fakeddit
-               - Size: ~3 GB (compressed), ~10 GB (uncompressed with images)
-               - Contains: 1M+ Reddit posts, 2-way and 6-way labels
-
-            2. MEME Dataset:
-               - GitHub: https://github.com/TIBHannover/MM-Claims
-               - Hugging Face: https://huggingface.co/datasets/limjiayi/hateful_memes_expanded
-               - Download: git clone or datasets.load_dataset()
-               - Size: ~500 MB
-
-            3. FakeNewsNet:
-               - GitHub: https://github.com/KaiDMML/FakeNewsNet
-               - Download: git clone https://github.com/KaiDMML/FakeNewsNet.git
-               - Size: ~2 GB
-
-            4. LIAR Dataset (text-only baseline):
-               - Direct: https://www.cs.ucsb.edu/~william/data/liar_dataset.zip
-               - Hugging Face: datasets.load_dataset("liar")
-               - Size: 10 MB
-
-            5. Twitter Fake News:
-               - Kaggle: https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
-               - Download: kaggle datasets download -d clmentbisaillon/fake-and-real-news-dataset
-               - Size: 150 MB
-
-            6. MultiOFF:
-               - GitHub: https://github.com/bharathichezhiyan/Multimodal-Offensive-Dataset
-               - Download: git clone
-               - Size: 300 MB
+            
 
 
-            PRE-TRAINED MODELS (Hugging Face):
-
-            Text Models:
-            1. BERT-base: bert-base-uncased
-            2. RoBERTa-base: roberta-base
-            3. DistilBERT: distilbert-base-uncased (faster)
-            4. ELECTRA: google/electra-base-discriminator
-
-            Vision Models:
-            1. ResNet-50: microsoft/resnet-50
-            2. ViT-base: google/vit-base-patch16-224
-            3. EfficientNet: google/efficientnet-b0
-            4. CLIP: openai/clip-vit-base-patch32
-
-            Multimodal Models:
-            1. CLIP: openai/clip-vit-base-patch32
-            2. BLIP: Salesforce/blip-image-captioning-base
-            3. VisualBERT: uclanlp/visualbert-vqa-coco-pre
-
-
-            KEY PAPERS TO CITE:
-
-            Foundational Papers:
-            1. "Attention Is All You Need" (Vaswani et al., 2017) - Transformers
-            2. "BERT: Pre-training of Deep Bidirectional Transformers" (Devlin et al., 2019)
-            3. "Learning Transferable Visual Models From Natural Language Supervision" (Radford et al., 2021) - CLIP
-            4. "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" (Dosovitskiy et al., 2021) - ViT
-
-            Misinformation Detection:
-            1. "Multimodal Fusion with Recurrent Neural Networks for Rumor Detection" (Jin et al., EMNLP 2017)
-            2. "EANN: Event Adversarial Neural Networks for Multi-Modal Fake News Detection" (Wang et al., KDD 2018)
-            3. "SpotFake: A Multi-modal Framework for Fake News Detection" (Singhal et al., BigMM 2019)
-            4. "Multimodal Emergent Fake News Detection via Meta Neural Process Networks" (Song et al., KDD 2021)
-            5. "SAFE: Similarity-Aware Multi-Modal Fake News Detection" (Zhou et al., PAKDD 2020)
-
-            Interpretability:
-            1. "Attention is not Explanation" (Jain & Wallace, NAACL 2019)
-            2. "Grad-CAM: Visual Explanations from Deep Networks" (Selvaraju et al., ICCV 2017)
-            3. "LIME: Local Interpretable Model-Agnostic Explanations" (Ribeiro et al., KDD 2016)
-
-            Datasets:
-            1. "Fakeddit: A New Multimodal Benchmark Dataset for Fine-grained Fake News Detection" (Nakamura et al., LREC 2020)
-            2. "FakeNewsNet: A Data Repository with News Content, Social Context and Spatiotemporal Information" (Shu et al., 2018)
-
-
-            TUTORIALS & CODE REPOSITORIES:
-
-            1. Hugging Face Multimodal Course:
-               - https://huggingface.co/learn/computer-vision-course/unit4/multimodal-models
-
-            2. CLIP Tutorial:
-               - https://github.com/openai/CLIP
-               - https://huggingface.co/docs/transformers/model_doc/clip
-
-            3. PyTorch Image Models (timm):
-               - https://github.com/huggingface/pytorch-image-models
-
-            4. Multimodal Transformers:
-               - https://github.com/georgian-io/Multimodal-Toolkit
-
-            5. Fake News Detection Repos:
-               - https://github.com/several27/FakeNewsDetection
-               - https://github.com/MKLab-ITI/image-verification-corpus
-
-
-            TOOLS & LIBRARIES:
-
-            Required Libraries (requirements.txt):
-            ```
-            torch>=2.0.0
-            torchvision>=0.15.0
-            transformers>=4.30.0
-            datasets>=2.12.0
-            Pillow>=9.5.0
-            numpy>=1.24.0
-            pandas>=2.0.0
-            scikit-learn>=1.3.0
-            matplotlib>=3.7.0
-            seaborn>=0.12.0
-            tqdm>=4.65.0
-            wandb>=0.15.0
-            tensorboard>=2.13.0
-            opencv-python>=4.7.0
-            easyocr>=1.7.0
-            pytesseract>=0.3.10
-            timm>=0.9.0
-            captum>=0.6.0  # For interpretability
-            lime>=0.2.0    # For LIME explanations
-            grad-cam>=1.4.0
-            streamlit>=1.24.0  # For demo
-            gradio>=3.35.0     # Alternative demo framework
-            ```
-
-            OCR Libraries:
-            - EasyOCR: pip install easyocr
-            - Tesseract: pip install pytesseract (also install tesseract-ocr system package)
-            - Google Cloud Vision (optional, requires API key)
-
-            Development Tools:
-            - Jupyter Notebook / JupyterLab
-            - VS Code with Python + PyTorch extensions
-            - Git / GitHub for version control
-            - Weights & Biases for experiment tracking (free for students)
-            - TensorBoard for training visualization
-
-
-            COMPUTATIONAL RESOURCES:
-
-            Minimum Requirements:
-            - GPU: NVIDIA RTX 3060 (12 GB VRAM) or better
-            - RAM: 16 GB
-            - Storage: 50 GB free space (for datasets + models)
-
-            Recommended:
-            - GPU: NVIDIA RTX 4090 (24 GB) or A100 (40 GB)
-            - RAM: 32 GB
-            - Storage: 100 GB SSD
-
-            Cloud Options (Free/Student Credits):
-            - Google Colab Pro ($10/month, T4/A100 GPUs)
-            - Kaggle Kernels (30 hours/week free GPU)
-            - Google Cloud Platform ($300 free credit for students)
-            - AWS Educate (free credits for students)
-            - Azure for Students ($100 free credit)
-            - Paperspace Gradient (free GPU tier)
-
-
-            ONLINE COURSES & LEARNING RESOURCES:
-
-            1. Hugging Face NLP Course:
-               - https://huggingface.co/course/chapter1
-
-            2. PyTorch Computer Vision:
-               - https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html
-
-            3. Stanford CS224N (NLP with Deep Learning):
-               - http://web.stanford.edu/class/cs224n/
-
-            4. Fast.ai Practical Deep Learning:
-               - https://course.fast.ai/
-
-            5. Multimodal Machine Learning Course:
-               - https://cmu-multicomp-lab.github.io/mmml-course/fall2022/
-
-
-            CONFERENCES & WORKSHOPS TO FOLLOW:
-
-            - ACL: https://www.aclweb.org/
-            - EMNLP: https://2024.emnlp.org/
-            - NAACL: https://naacl.org/
-            - AAAI: https://aaai.org/conference/aaai/
-            - ICWSM: https://www.icwsm.org/
-            - FAccT: https://facctconference.org/
-
-
-            FACT-CHECKING ORGANIZATIONS (For Validation):
-
-            - PolitiFact: https://www.politifact.com/
-            - Snopes: https://www.snopes.com/
-            - FactCheck.org: https://www.factcheck.org/
-            - Lead Stories: https://leadstories.com/
-            - AFP Fact Check: https://factcheck.afp.com/
-
-
-            ETHICAL AI GUIDELINES:
-
-            - ACM Code of Ethics: https://www.acm.org/code-of-ethics
-            - Montreal Declaration for Responsible AI: https://www.montrealdeclaration-responsibleai.com/
-            - EU AI Act: https://artificialintelligenceact.eu/
-
-
-            SAMPLE DATASET LOADING CODE:
-
-            ```python
-            # Load Fakeddit from Hugging Face
-            from datasets import load_dataset
-            fakeddit = load_dataset("mdepak/fakeddit")
-
-            # Load LIAR dataset
-            liar = load_dataset("liar")
-
-            # Load images with PyTorch
-            from torchvision import transforms
-            from PIL import Image
-
-            transform = transforms.Compose([
-                transforms.Resize((224, 224)),
-                transforms.ToTensor(),
-                transforms.Normalize(mean=[0.485, 0.456, 0.406], 
-                                   std=[0.229, 0.224, 0.225])
-            ])
-
-            image = Image.open('path/to/image.jpg')
-            tensor = transform(image)
-
-            # Load CLIP
-            from transformers import CLIPProcessor, CLIPModel
-
-            model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
-            processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
-
-            inputs = processor(
-                text=["fake news", "real news"],
-                images=image,
-                return_tensors="pt",
-                padding=True
-            )
-
-            outputs = model(**inputs)
-            logits_per_image = outputs.logits_per_image
-            probs = logits_per_image.softmax(dim=1)
-            ```
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "None",
-        "funding_opportunity": "Open Source Community Project / NSF SaTC / DARPA SemaFor / Meta Content Moderation Research",
-        "github_repo": "https://github.com/amir-jafari",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
-
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
-print("\n" + "=" * 80)
-print("DATASET DOWNLOAD INSTRUCTIONS")
-print("=" * 80)
-print("\n1. Fakeddit (PRIMARY - Largest multimodal dataset):")
-print("   Kaggle: https://www.kaggle.com/datasets/mdepak/fakeddit")
-print("   Download: kaggle datasets download -d mdepak/fakeddit")
-print("\n2. MEME Dataset:")
-print("   GitHub: https://github.com/TIBHannover/MM-Claims")
-print("   Or Hugging Face: datasets.load_dataset('limjiayi/hateful_memes_expanded')")
-print("\n3. FakeNewsNet:")
-print("   GitHub: https://github.com/KaiDMML/FakeNewsNet")
-print("   Download: git clone https://github.com/KaiDMML/FakeNewsNet.git")
-print("\n4. LIAR Dataset (text baseline):")
-print("   Direct: https://www.cs.ucsb.edu/~william/data/liar_dataset.zip")
-print("   Or: datasets.load_dataset('liar')")
-print("\n5. MultiOFF:")
-print("   GitHub: https://github.com/bharathichezhiyan/Multimodal-Offensive-Dataset")
-print("\n" + "=" * 80)
-print("All datasets are publicly available with no approval required!")
-print("=" * 80)
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari](https://github.com/https://github.com/amir-jafari)
