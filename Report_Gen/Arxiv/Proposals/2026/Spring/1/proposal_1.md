@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Multimodal Financial Market Prediction: Integrating Sentiment Analysis and Time Series Forecasting
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """1""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Spring""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Multimodal Financial Market Prediction: Integrating Sentiment Analysis and Time Series Forecasting""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to develop a multimodal deep learning framework that combines financial time 
             series data with natural language sentiment from news articles and social media to predict stock market 
             movements. Students will explore how textual sentiment influences market dynamics and build interpretable 
@@ -42,10 +27,13 @@ data_to_save = \
             5. Conduct ablation studies to understand the contribution of different data modalities and architectural 
                components.
             6. Package the framework as an open-source tool with clear documentation for reproducibility.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Spring_1.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All datasets are publicly available with no access restrictions:
 
             PRIMARY DATASETS (Immediate Download):
@@ -89,10 +77,10 @@ data_to_save = \
             DATASET PREPARATION:
             Students will align textual data with stock prices by timestamp, creating sequences where each time step 
             contains: [price_features, technical_indicators, aggregated_sentiment, news_embeddings].
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Financial markets are influenced by both quantitative factors (historical prices, trading volumes) and 
             qualitative factors (news sentiment, investor emotions, market narratives). Traditional time series models 
             often ignore textual information, while pure NLP approaches fail to capture temporal market dynamics.
@@ -122,10 +110,10 @@ data_to_save = \
             - AI + Finance: AAAI Workshop on AI in Finance, KDD FinTech Day
             - Finance Journals: Journal of Finance and Data Science, Expert Systems with Applications
             - Workshops: ACL Workshop on Economics and NLP, EMNLP FinNLP Workshop
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             PHASE 1: DATA COLLECTION & PREPROCESSING (Weeks 1-2)
 
             [Week 1: Data Acquisition]
@@ -293,10 +281,10 @@ data_to_save = \
             ├── README.md
             └── LICENSE
             ```
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1-2:   Data Collection & Preprocessing
             Week 3-4:   Baseline Models (Time Series + NLP separately)
             Week 5-6:   Early Fusion Architecture
@@ -314,10 +302,11 @@ data_to_save = \
             - Week 8: Multimodal models trained
             - Week 10: Ablation studies complete
             - Week 14: Paper submitted to workshop, code on GitHub
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION (for 3 students):
@@ -344,68 +333,10 @@ data_to_save = \
             FOR 2 STUDENTS:
             - Student 1: Data + Time Series + Fusion
             - Student 2: NLP + Sentiment + Interpretability
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers multiple avenues for novel research contributions:
+            
 
-            1. METHODOLOGICAL CONTRIBUTIONS:
-            - Novel cross-attention mechanism specifically designed for price-news alignment
-            - Temporal aggregation strategies for daily sentiment from multiple news sources
-            - Multi-horizon prediction framework (predict 1-day, 5-day, 20-day movements jointly)
-            - Graph-based multi-stock modeling with sentiment propagation
+## 7 Possible Issues:  
 
-            2. EMPIRICAL CONTRIBUTIONS:
-            - Comprehensive benchmark comparing 10+ baseline models
-            - Ablation study quantifying value of each modality and architectural component
-            - Analysis of sentiment predictive power across different market regimes
-            - Case studies on major market events (earnings, Fed decisions, black swans)
-
-            3. INTERPRETABILITY CONTRIBUTIONS:
-            - Attention-based explanation showing which news influenced predictions
-            - Saliency maps highlighting important words/phrases in financial text
-            - Temporal importance analysis: which time lags matter most?
-
-            4. PRACTICAL CONTRIBUTIONS:
-            - Open-source framework enabling reproducible research
-            - Pre-trained models for financial sentiment analysis
-            - Documentation and tutorials for practitioners
-
-            PUBLICATION STRATEGY:
-
-            Target Venues (in order of preference):
-            1. Workshop Papers (easier acceptance for students):
-               - NeurIPS Workshop on Machine Learning in Finance
-               - AAAI Workshop on AI for Financial Services
-               - ACL Workshop on Economics and NLP (ECONLP)
-               - EMNLP FinNLP Workshop
-
-            2. Main Conference Papers (if results are strong):
-               - KDD (ACM SIGKDD Conference on Knowledge Discovery and Data Mining)
-               - AAAI (Association for the Advancement of Artificial Intelligence)
-               - IJCAI (International Joint Conference on Artificial Intelligence)
-
-            3. Journal Papers (after workshop feedback):
-               - Expert Systems with Applications
-               - Journal of Finance and Data Science
-               - Information Sciences
-
-            EXPECTED OUTCOMES:
-            - 1 workshop paper submission (Week 14)
-            - 1 GitHub repository with 50+ stars (within 6 months)
-            - 1 blog post on Medium/Towards Data Science
-            - Potential collaboration with finance industry partners
-
-            BROADER IMPACT:
-            - Democratize access to advanced trading signals
-            - Improve financial market efficiency through better information processing
-            - Provide educational resource for students learning multimodal ML
-            - Foster transparency in algorithmic trading through interpretability
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES:
 
             1. Data Quality & Alignment:
@@ -475,132 +406,10 @@ data_to_save = \
             - Maintain detailed experiment logs (WandB, MLflow)
             - Have backup publication venue if main target rejects
             - Budget extra time for debugging (expect 20% of timeline for troubleshooting)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            DATASET DOWNLOAD LINKS (All Immediately Accessible):
-
-            1. Stock Price Data:
-               - Library: pip install yfinance
-               - Documentation: https://pypi.org/project/yfinance/
-               - Example Code:
-                 import yfinance as yf
-                 data = yf.download('AAPL', start='2015-01-01', end='2024-12-31')
-
-            2. Financial News Dataset:
-               - Kaggle: https://www.kaggle.com/datasets/miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests
-               - Download: Use Kaggle API or manual download (requires free Kaggle account)
-               - kaggle datasets download -d miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests
-
-            3. Twitter Financial Sentiment:
-               - Kaggle: https://www.kaggle.com/datasets/sulphatet/twitter-financial-news
-               - Download: kaggle datasets download -d sulphatet/twitter-financial-news
-
-            4. StockNet (Alternative):
-               - GitHub: https://github.com/yumoxu/stocknet-dataset
-               - Download: git clone https://github.com/yumoxu/stocknet-dataset.git
-
-            5. FinancialPhraseBank:
-               - Direct: https://www.researchgate.net/publication/251231364_FinancialPhraseBank-v10
-               - Also on Hugging Face: datasets.load_dataset("financial_phrasebank", "sentences_allagree")
-
-            6. Reddit WallStreetBets:
-               - Kaggle: https://www.kaggle.com/datasets/gpreda/reddit-wallstreetsbets-posts
-               - Download: kaggle datasets download -d gpreda/reddit-wallstreetsbets-posts
+            
 
 
-            PRE-TRAINED MODELS (Hugging Face):
-
-            1. FinBERT (Financial Sentiment):
-               - Model: ProsusAI/finbert
-               - Usage: transformers.AutoModelForSequenceClassification.from_pretrained('ProsusAI/finbert')
-
-            2. DistilBERT-Financial-Sentiment:
-               - Model: mrm8488/distilroberta-finetuned-financial-news-sentiment-analysis
-
-            3. RoBERTa-Financial:
-               - Model: cardiffnlp/twitter-roberta-base-sentiment
-
-
-            REFERENCE PAPERS:
-
-            Key Papers to Cite:
-            1. "StockNet: Deep Learning for Stock Movement Prediction" (Xu & Cohen, ACL 2018)
-            2. "Listening to Chaotic Whispers: A Deep Learning Framework for News-oriented Stock Trend Prediction" (Hu et al., WSDM 2018)
-            3. "FinBERT: Financial Sentiment Analysis with Pre-trained Language Models" (Araci, 2019)
-            4. "Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting" (Lim et al., 2021)
-            5. "Attention Is All You Need" (Vaswani et al., NeurIPS 2017)
-
-
-            TUTORIALS & CODE REPOSITORIES:
-
-            1. Hugging Face Financial NLP:
-               - https://huggingface.co/blog/sentiment-analysis-python
-
-            2. Time Series with Transformers:
-               - https://huggingface.co/blog/time-series-transformers
-
-            3. PyTorch Multimodal Tutorial:
-               - https://pytorch.org/tutorials/beginner/multimodal_tutorial.html
-
-            4. Example GitHub Repos:
-               - https://github.com/microsoft/qlib (Quantitative Finance Library)
-               - https://github.com/huseinzol05/Stock-Prediction-Models
-
-
-            TOOLS & LIBRARIES:
-
-            Required Libraries (requirements.txt):
-            - torch>=2.0.0
-            - transformers>=4.30.0
-            - yfinance>=0.2.0
-            - pandas>=2.0.0
-            - numpy>=1.24.0
-            - scikit-learn>=1.3.0
-            - matplotlib>=3.7.0
-            - seaborn>=0.12.0
-            - tqdm>=4.65.0
-            - wandb>=0.15.0 (for experiment tracking)
-            - ta (technical analysis library)
-            - statsmodels (for ARIMA)
-
-            Development Tools:
-            - Jupyter Notebook / JupyterLab
-            - VS Code with Python extension
-            - Git / GitHub for version control
-            - Weights & Biases or MLflow for experiment tracking
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "None",
-        "github_repo": "https://github.com/amir-jafari",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
-
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
-print("\n" + "=" * 80)
-print("DATASET DOWNLOAD INSTRUCTIONS")
-print("=" * 80)
-print("\n1. Stock Price Data:")
-print("   pip install yfinance")
-print("   python -c \"import yfinance as yf; yf.download('AAPL', start='2015-01-01').to_csv('aapl_prices.csv')\"")
-print("\n2. Financial News Dataset:")
-print("   https://www.kaggle.com/datasets/miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests")
-print(
-    "   Download manually or use: kaggle datasets download -d miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests")
-print("\n3. Twitter Financial Sentiment:")
-print("   https://www.kaggle.com/datasets/sulphatet/twitter-financial-news")
-print("   Download: kaggle datasets download -d sulphatet/twitter-financial-news")
-print("\n4. StockNet Dataset (Alternative):")
-print("   git clone https://github.com/yumoxu/stocknet-dataset.git")
-print("\n" + "=" * 80)
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari](https://github.com/https://github.com/amir-jafari)
