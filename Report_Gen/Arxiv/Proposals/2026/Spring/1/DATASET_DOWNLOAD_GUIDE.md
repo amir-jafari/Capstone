@@ -1,11 +1,11 @@
 # Dataset Download Guide
 ## Financial Market Sentiment Analysis Capstone Project
 
-### 🎯 All Datasets Are Immediately Available - No Waiting Period!
+###  All Datasets Are Immediately Available - No Waiting Period!
 
 ---
 
-## 📊 Dataset 1: Stock Price Data (Yahoo Finance)
+##  Dataset 1: Stock Price Data (Yahoo Finance)
 
 **Access:** Free, No Registration Required  
 **Size:** Depends on stocks and date range selected  
@@ -46,7 +46,7 @@ spy.to_csv('sp500_etf.csv')
 
 ---
 
-## 📰 Dataset 2: Financial News Dataset (Kaggle)
+## Dataset 2: Financial News Dataset (Kaggle)
 
 **Access:** Free Kaggle Account Required  
 **Size:** ~6 million articles, ~3 GB  
@@ -87,7 +87,7 @@ unzip massive-stock-news-analysis-db-for-nlpbacktests.zip
 
 ---
 
-## 🐦 Dataset 3: Twitter Financial News Sentiment
+##  Dataset 3: Twitter Financial News Sentiment
 
 **Access:** Free Kaggle Account Required  
 **Size:** 11,932 tweets, ~5 MB  
@@ -112,7 +112,7 @@ unzip twitter-financial-news.zip
 
 ---
 
-## 📈 Dataset 4: StockNet Dataset (GitHub)
+## Dataset 4: StockNet Dataset (GitHub)
 
 **Access:** Public GitHub Repository  
 **Size:** ~1 GB  
@@ -140,7 +140,7 @@ cd stocknet-dataset
 
 ---
 
-## 💬 Dataset 5: Reddit WallStreetBets Posts (Optional)
+##  Dataset 5: Reddit WallStreetBets Posts (Optional)
 
 **Access:** Free Kaggle Account  
 **Size:** ~500 MB  
@@ -163,7 +163,7 @@ unzip reddit-wallstreetsbets-posts.zip
 
 ---
 
-## 📚 Dataset 6: Financial PhraseBank (Optional - For Fine-tuning)
+## Dataset 6: Financial PhraseBank (Optional - For Fine-tuning)
 
 **Access:** Public Research Dataset  
 **Size:** 4,840 sentences, ~1 MB  
@@ -195,7 +195,7 @@ df.to_csv('financial_phrasebank.csv', index=False)
 
 ---
 
-## 🚀 Quick Start: Complete Download Script
+##  Quick Start: Complete Download Script
 
 Save this as `download_all_datasets.py`:
 
@@ -229,7 +229,7 @@ print("\nRun: kaggle datasets download -d <dataset-id> (after setting up Kaggle 
 
 ---
 
-## 📋 Dataset Summary Table
+##  Dataset Summary Table
 
 | Dataset | Size | Format | Access | Download Time |
 |---------|------|--------|--------|---------------|
@@ -244,7 +244,7 @@ print("\nRun: kaggle datasets download -d <dataset-id> (after setting up Kaggle 
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Kaggle API Not Working?
 ```bash
@@ -277,7 +277,7 @@ wget https://github.com/yumoxu/stocknet-dataset/archive/refs/heads/master.zip
 
 ---
 
-## ✅ Verification Checklist
+## Verification Checklist
 
 After downloading, verify you have:
 - [ ] Stock price CSV files (10+ stocks, 2015-2024)
@@ -288,14 +288,3 @@ After downloading, verify you have:
 
 Total disk space needed: ~5 GB
 
----
-
-## 📞 Support
-
-If you encounter issues:
-1. Check Kaggle account is verified (email confirmation)
-2. Ensure internet connection is stable for large downloads
-3. Try downloading during off-peak hours for faster speeds
-4. For Kaggle issues, visit: https://www.kaggle.com/discussions
-
-**All datasets confirmed working as of December 2024**
