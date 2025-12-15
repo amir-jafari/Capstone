@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Deep Learning for Video Understanding: Action Recognition and Temporal Feature Extraction
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """4""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Spring""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Deep Learning for Video Understanding: Action Recognition and Temporal Feature Extraction""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to develop a comprehensive video understanding system that can classify 
             human actions, extract temporal features, and perform exploratory data analysis on video datasets. 
             Students will explore state-of-the-art deep learning architectures for video processing and build 
@@ -75,10 +60,13 @@ data_to_save = \
                - REST API for batch video processing
                - Command-line tool for researchers
                - Documentation and tutorials
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Spring_4.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All datasets are publicly available with no access restrictions:
 
             PRIMARY DATASETS (Action Recognition):
@@ -211,10 +199,10 @@ data_to_save = \
             RECOMMENDED STARTING POINT:
             Use UCF101 for initial development (small, well-documented, fast to download), then scale up 
             to Kinetics-400 or Something-Something V2 for final experiments and paper results.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Video understanding is a fundamental challenge in computer vision with applications spanning 
             surveillance, autonomous vehicles, healthcare, sports analytics, entertainment, and human-computer 
             interaction. Unlike images, videos contain rich temporal information that requires specialized 
@@ -327,10 +315,10 @@ data_to_save = \
             - Education: Analyzing student engagement in online learning
             - Sports: Democratizing advanced analytics for amateur athletes
             - Environment: Wildlife monitoring and behavior analysis
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             (Due to character limits, this will be provided in the complete Python file)
             See complete implementation details in the full proposal document.
 
@@ -341,10 +329,10 @@ data_to_save = \
             PHASE 5: TEMPORAL FEATURE EXTRACTION & VISUALIZATION (Weeks 9-10)
             PHASE 6: DEPLOYMENT & APPLICATIONS (Weeks 11-12)
             PHASE 7: PAPER WRITING & WEB APPLICATION (Weeks 13-14)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1:     Dataset Download & Video EDA
             Week 2:     Advanced Feature Extraction (Frames, Optical Flow, Motion Analysis)
             Week 3:     2D CNN + LSTM Baseline
@@ -380,10 +368,11 @@ data_to_save = \
             - Comprehensive documentation and tutorials
             - Blog post explaining methodology
             - Presentation slides and poster
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION FOR 3 STUDENTS:
@@ -449,55 +438,10 @@ data_to_save = \
               * Error analysis
               * Benchmark comparisons with SOTA
               * Result visualization and paper figures
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers multiple avenues for impactful research contributions:
+            
 
-            1. METHODOLOGICAL CONTRIBUTIONS:
-            - Comprehensive benchmark study comparing 6+ architectures
-            - Efficient video transformers with sparse attention
-            - Novel temporal attention mechanisms
-            - Transfer learning strategies for video
+## 7 Possible Issues:  
 
-            2. EMPIRICAL CONTRIBUTIONS:
-            - Extensive ablation studies on frame sampling, resolution, architectures
-            - Temporal pattern analysis showing what models learn
-            - Robustness evaluation against compression and degradation
-            - Cross-dataset generalization study
-
-            3. FEATURE EXTRACTION CONTRIBUTIONS:
-            - Pre-trained video features for all major datasets
-            - Video embeddings analysis and visualization
-            - Action localization using temporal class activation maps
-
-            4. INTERPRETABILITY CONTRIBUTIONS:
-            - Attention visualization framework for video
-            - Human evaluation of attention quality
-            - Counterfactual analysis for video classification
-
-            5. PRACTICAL APPLICATION CONTRIBUTIONS:
-            - Open-source toolkit with pre-trained models
-            - Real-time webcam demo
-            - Video analysis tools (highlights, summarization, retrieval)
-
-            PUBLICATION TARGETS:
-            - CVPR, ICCV, ECCV (computer vision)
-            - NeurIPS, ICML (machine learning)
-            - ACM Multimedia (video understanding)
-            - Workshops and journals
-
-            EXPECTED OUTCOMES:
-            - 1 conference paper
-            - 1 GitHub repository (500+ stars)
-            - Pre-trained models
-            - Web demo
-            - Blog post
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES:
             1. Computational resources (3D CNNs, transformers are memory-intensive)
             2. Dataset size (Kinetics-400 is 450 GB)
@@ -513,63 +457,10 @@ data_to_save = \
             - Strong augmentation, regularization, early stopping
 
             See complete issue list and mitigation strategies in full proposal.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            DATASET DOWNLOAD LINKS:
+            
 
-            1. UCF101: https://www.kaggle.com/datasets/matthewjansen/ucf101-action-recognition
-            2. HMDB51: https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/
-            3. Kinetics-400-Mini: https://www.kaggle.com/datasets/shivamb/kinetics-400-mini
-            4. Something-Something V2: https://developer.qualcomm.com/software/ai-datasets/something-something
 
-            PRE-TRAINED MODELS:
-            - torchvision: r3d_18, r2plus1d_18, mc3_18
-            - Third-party: I3D, C3D, SlowFast, TimeSformer, ViViT, X3D
-
-            LIBRARIES:
-            - torch, torchvision, opencv-python, decord
-            - transformers, timm, einops
-            - matplotlib, seaborn, tqdm, wandb
-
-            See complete resources in full proposal document.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "None",
-        "funding_opportunity": "Open Source Community Project / NSF CAREER / Industry Partnerships",
-        "github_repo": "https://github.com/amir-jafari",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
-
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
-print("\n" + "=" * 80)
-print("DATASET DOWNLOAD INSTRUCTIONS")
-print("=" * 80)
-print("\n1. UCF101 (RECOMMENDED - Start Here):")
-print("   Kaggle: https://www.kaggle.com/datasets/matthewjansen/ucf101-action-recognition")
-print("   Download: kaggle datasets download -d matthewjansen/ucf101-action-recognition")
-print("\n2. HMDB51:")
-print("   Official: https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/")
-print("   Registration required (instant, free)")
-print("\n3. Kinetics-400 Mini (For Prototyping):")
-print("   Kaggle: https://www.kaggle.com/datasets/shivamb/kinetics-400-mini")
-print("   Download: kaggle datasets download -d shivamb/kinetics-400-mini")
-print("\n4. Something-Something V2:")
-print("   Official: https://developer.qualcomm.com/software/ai-datasets/something-something")
-print("   Registration required (instant approval)")
-print("\n" + "=" * 80)
-print("All datasets are publicly available!")
-print("Total size: ~35 GB (UCF101 + HMDB51 + Kinetics-Mini)")
-print("Recommended start: UCF101 (6.5 GB) only")
-print("=" * 80)
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari](https://github.com/https://github.com/amir-jafari)
