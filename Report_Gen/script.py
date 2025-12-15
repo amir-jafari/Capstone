@@ -79,7 +79,7 @@ if __name__ == "__main__":
     input_file_path = 'input.json'
     Year = "2026"
     Semester = "Spring"
-    Version = "2"
+    Version = "3"
 
     output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{Year}{os.sep}{Semester}{os.sep}{Version}{os.sep}'
     os.makedirs(output_file_path, exist_ok=True)
