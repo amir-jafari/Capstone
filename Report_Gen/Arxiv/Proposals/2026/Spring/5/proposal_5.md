@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Deep Learning for EEG-based Seizure Detection: Multi-Modal Analysis, Temporal Modeling, and Clinical Deployment
+### Proposed by: Dr. Mohamad Koubeissi 
+#### Email: mkoubeissi@email.gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """5""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Spring""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Deep Learning for EEG-based Seizure Detection: Multi-Modal Analysis, Temporal Modeling, and Clinical Deployment""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to develop a comprehensive, clinically-viable seizure detection system 
             using deep learning on EEG signals. This project will explore state-of-the-art architectures for 
             time-series analysis, implement multiple modeling techniques, and create an end-to-end pipeline 
@@ -131,10 +116,13 @@ data_to_save = \
                - HIPAA-compliant data handling
                - Comprehensive documentation
                - Clinical validation protocols
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Spring_5.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All datasets are publicly available for research purposes with proper attribution:
 
             PRIMARY DATASETS (Seizure Detection):
@@ -285,10 +273,10 @@ data_to_save = \
             - Recording hours: 1,500+ hours total
             - Sampling rates: 160-512 Hz
             - Channel counts: 1-64 channels (scalp), up to 128 (intracranial)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Epilepsy affects over 50 million people worldwide, with approximately 30% having drug-resistant 
             epilepsy. Automated seizure detection and prediction has the potential to dramatically improve 
             patient safety, enable timely intervention, and reduce the burden on healthcare providers.
@@ -441,10 +429,10 @@ data_to_save = \
             - Quality of Life: Give patients independence and peace of mind
             - Scientific Understanding: Reveal seizure mechanisms through interpretable AI
             - Technology Transfer: Methods applicable to other neurological conditions
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             PHASE 1: EEG DATA PIPELINE & EXPLORATORY DATA ANALYSIS (Weeks 1-2)
 
             Week 1: Data Acquisition and Understanding
@@ -1233,10 +1221,10 @@ data_to_save = \
             # Log visualizations
             wandb.log({"attention_heatmap": wandb.Image(fig)})
             ```
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1:     Dataset Download, EDF Parsing, Initial EDA
             Week 2:     Advanced Preprocessing, Feature Engineering, Spectral Analysis
             Week 3:     Traditional ML Baselines (Random Forest, SVM, XGBoost)
@@ -1274,10 +1262,11 @@ data_to_save = \
             - Presentation slides and poster
             - Blog post explaining methodology and clinical impact
             - Video demonstrations of real-time system
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION FOR 3 STUDENTS:
@@ -1356,100 +1345,10 @@ data_to_save = \
               * Comparison with SOTA methods from literature
               * Result visualization and paper figures
               * Clinical documentation and user manual
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers multiple avenues for impactful research contributions:
+            
 
-            1. METHODOLOGICAL CONTRIBUTIONS:
-            - Comprehensive benchmark of 10+ architectures on EEG seizure detection
-            - Novel transformer adaptations for medical time-series (EEG-BERT)
-            - Graph neural networks for EEG channel connectivity
-            - Multi-branch fusion architecture (raw + spectral + graph)
-            - Self-supervised pre-training strategies for EEG
-            - Patient-specific transfer learning framework
-            - Uncertainty quantification for clinical reliability
+## 7 Possible Issues:  
 
-            2. EMPIRICAL CONTRIBUTIONS:
-            - Multi-dataset evaluation (CHB-MIT, TUH, Siena, Bonn)
-            - Cross-dataset generalization study
-            - Extensive ablation studies:
-              * Window size (1s, 2s, 4s, 8s)
-              * Sampling rate (downsampling effects)
-              * Number of channels (minimal viable setup)
-              * Input representations (raw, spectrogram, wavelet)
-            - Robustness analysis:
-              * Electrode artifacts and missing channels
-              * Patient variability and age effects
-              * Medication effects
-            - Temporal analysis: detection latency, prediction horizon
-            - Statistical significance testing across all experiments
-
-            3. EXPLAINABILITY CONTRIBUTIONS:
-            - Attention visualization framework for EEG transformers
-            - SHAP values for feature importance in medical context
-            - Saliency maps showing critical time-frequency patterns
-            - Seizure propagation visualization through graph
-            - Human evaluation: clinical validation of attention quality
-            - Counterfactual analysis for model reasoning
-
-            4. CLINICAL IMPACT CONTRIBUTIONS:
-            - Real-time seizure detection system
-            - False positive suppression techniques (critical for clinical adoption)
-            - Patient-specific model adaptation with minimal data
-            - Uncertainty communication for clinical decision support
-            - Integration with existing hospital EEG systems
-            - Clinical validation protocol and results
-
-            5. OPEN-SOURCE CONTRIBUTIONS:
-            - Comprehensive toolkit with pre-trained models
-            - Preprocessing library for EEG (MNE-compatible)
-            - Interactive web application for clinicians
-            - Extensive documentation and tutorials
-            - Reproducible research with all code and configs
-            - Pre-processed datasets for faster research iteration
-
-            PUBLICATION TARGETS:
-
-            Primary Target (Choose 1-2):
-            - MIDL (Medical Imaging with Deep Learning) - June deadline
-            - MICCAI (Medical Image Computing) - March deadline
-            - CHIL (Conference on Health, Inference, and Learning) - January deadline
-            - ML4H @ NeurIPS (Machine Learning for Healthcare) - October deadline
-
-            Alternative Venues:
-            - EMBC (Engineering in Medicine and Biology)
-            - ICASSP (Signal Processing)
-            - Epilepsia Journal (clinical impact)
-            - IEEE TBME (biomedical engineering)
-            - Journal of Neural Engineering
-
-            Workshop Papers (For Interim Results):
-            - NeurIPS Workshop on Medical Imaging
-            - ICLR Workshop on AI for Health
-            - CVPR Workshop on Medical Computer Vision
-
-            EXPECTED OUTCOMES:
-            - 1-2 conference papers
-            - 1 journal paper (extended version)
-            - 1 GitHub repository (target: 200+ stars)
-            - Pre-trained models on Hugging Face
-            - Web demo with 100+ users
-            - Blog post (10,000+ views)
-            - Collaboration with GWU Medical Faculty Advancement
-
-            BROADER IMPACT:
-            - Improve patient safety through automated monitoring
-            - Reduce clinician workload in epilepsy monitoring units
-            - Enable home monitoring for epilepsy patients
-            - Accelerate epilepsy drug trials with automated seizure counting
-            - Provide open-source tools for epilepsy research community
-            - Potential for clinical deployment at GWU Hospital
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES AND SOLUTIONS:
 
             1. CLASS IMBALANCE (Seizures are rare events):
@@ -1577,267 +1476,10 @@ data_to_save = \
             - Weeks 9-10: Validate GNN graph construction, test multi-branch fusion
             - Weeks 11-12: Clinical validation, gather feedback from Dr. Koubeissi
             - Weeks 13-14: Deployment testing, latency benchmarking, final validation
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            DATASET DOWNLOAD LINKS:
-
-            1. CHB-MIT (PRIMARY): 
-               - PhysioNet: https://physionet.org/content/chbmit/1.0.0/
-               - Kaggle: https://www.kaggle.com/datasets/adibadea/chbmitseizuredataset
-               - Command: wget -r -N -c -np https://physionet.org/files/chbmit/1.0.0/
-
-            2. TUH Seizure Corpus:
-               - Official: https://isip.piconepress.com/projects/tuh_eeg/html/downloads.shtml
-               - Registration: Free, instant approval
-               - Download: Via provided scripts after registration
-
-            3. Siena Scalp EEG:
-               - PhysioNet: https://physionet.org/content/siena-scalp-eeg/1.0.0/
-               - Command: wget -r -N -c -np https://physionet.org/files/siena-scalp-eeg/1.0.0/
-
-            4. Bonn EEG:
-               - Official: http://epileptologie-bonn.de/cms/front_content.php?idcat=193
-               - Kaggle: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition
+            
 
 
-            KEY LIBRARIES AND TOOLS:
-
-            EEG Processing:
-            - MNE-Python: https://mne.tools/ (standard for EEG/MEG analysis)
-            - PyEDFlib: https://github.com/holgern/pyedflib (EDF file I/O)
-            - YASA: https://github.com/raphaelvallat/yasa (sleep analysis, useful for features)
-
-            Deep Learning:
-            - PyTorch: https://pytorch.org/
-            - PyTorch Lightning: https://www.pytorchlightning.ai/ (training framework)
-            - Hugging Face Transformers: https://huggingface.co/transformers/
-            - TimesNet: https://github.com/thuml/TimesNet
-            - PyTorch Geometric: https://pytorch-geometric.readthedocs.io/ (for GNNs)
-
-            Signal Processing:
-            - SciPy: https://scipy.org/
-            - PyWavelets: https://pywavelets.readthedocs.io/
-            - Librosa: https://librosa.org/ (audio processing, applicable to time-series)
-
-            Visualization:
-            - Matplotlib: https://matplotlib.org/
-            - Seaborn: https://seaborn.pydata.org/
-            - Plotly: https://plotly.com/ (interactive plots)
-            - Weights & Biases: https://wandb.ai/ (experiment tracking)
-
-            Explainability:
-            - SHAP: https://github.com/slundberg/shap
-            - Captum: https://captum.ai/ (PyTorch interpretability)
-
-            Deployment:
-            - Streamlit: https://streamlit.io/
-            - Gradio: https://gradio.app/
-            - FastAPI: https://fastapi.tiangolo.com/ (REST API)
-            - ONNX: https://onnx.ai/ (model optimization)
-
-
-            PRE-TRAINED MODELS (For Transfer Learning):
-
-            General Deep Learning:
-            - ImageNet pre-trained CNNs (ResNet, EfficientNet) - adapt to 1D
-            - BERT, GPT models (for transformer initialization)
-
-            EEG-Specific (if available):
-            - Check Hugging Face Model Hub for EEG models
-            - PhysioNet published models
-            - GitHub repositories with pre-trained weights
-
-
-            PAPERS TO READ (ESSENTIAL):
-
-            Foundational:
-            1. "A Large-Scale EEG Database for Epileptic Seizure Detection" (CHB-MIT paper)
-            2. "Attention Is All You Need" (Transformer architecture)
-            3. "BERT: Pre-training of Deep Bidirectional Transformers" (BERT paper)
-
-            EEG & Seizure Detection:
-            4. "Deep Learning for Electroencephalogram (EEG) Classification Tasks"
-            5. "Graph Convolutional Networks for EEG-based Emotion Recognition"
-            6. "A Survey on Deep Learning Methods for EEG Signals"
-            7. "Patient-Specific Seizure Prediction with Deep Learning"
-
-            Transformers for Time-Series:
-            8. "TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis"
-            9. "Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting"
-            10. "A Transformer-based Framework for Multivariate Time Series Representation Learning"
-
-            Medical AI:
-            11. "Clinically Applicable Deep Learning for Diagnosis from Medical Images"
-            12. "The Medical AI Safety Problem: A Unified Framework for Responsible Development"
-
-
-            TUTORIALS AND COURSES:
-
-            EEG Analysis:
-            - MNE-Python Tutorials: https://mne.tools/stable/auto_tutorials/index.html
-            - Mike X Cohen's EEG Course: https://www.udemy.com/course/solved-challenges-ineeg/
-
-            Deep Learning:
-            - Fast.ai: https://www.fast.ai/
-            - Stanford CS230 (Deep Learning): https://cs230.stanford.edu/
-            - PyTorch Tutorials: https://pytorch.org/tutorials/
-
-            Medical AI:
-            - Stanford AI in Healthcare: https://stanfordmlgroup.github.io/
-
-
-            COMPUTING RESOURCES:
-
-            Free Options:
-            - Google Colab (free tier): 12-16 GB GPU RAM
-            - Google Colab Pro ($10/month): Better GPUs, longer runtime
-            - Kaggle Kernels: Free GPU (30h/week)
-            - GWU SEAS GPU Cluster: Apply for access
-
-            Paid Options:
-            - AWS EC2 (p3.2xlarge): ~$3/hour
-            - Google Cloud Platform: Similar pricing
-            - Lambda Labs: GPU cloud, competitive pricing
-
-
-            CLINICAL COLLABORATION:
-
-            - Dr. Mohamad Koubeissi (mkoubeissi@email.gwu.edu)
-              * Clinical neurologist, epilepsy specialist
-              * Provides clinical guidance and validation
-              * Can help with:
-                - Understanding EEG physiology
-                - Seizure type classification
-                - Clinical relevance of features
-                - Evaluation metrics from clinical perspective
-                - Potential deployment at GWU Hospital
-
-
-            CODE REPOSITORIES (For Reference):
-
-            1. EEG-Transformer: https://github.com/vlawhern/arl-eegmodels
-            2. Seizure Detection Examples: Search GitHub for "seizure detection deep learning"
-            3. MNE-Python Examples: https://github.com/mne-tools/mne-python/tree/main/examples
-
-
-            RECOMMENDED SOFTWARE SETUP:
-
-            ```bash
-            # Create conda environment
-            conda create -n eeg-seizure python=3.9
-            conda activate eeg-seizure
-
-            # Install PyTorch (with CUDA if GPU available)
-            conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-
-            # Install EEG libraries
-            pip install mne pyedflib
-
-            # Install ML libraries
-            pip install scikit-learn xgboost lightgbm
-
-            # Install deep learning utilities
-            pip install pytorch-lightning transformers timm einops
-
-            # Install signal processing
-            pip install scipy pywavelets librosa
-
-            # Install visualization
-            pip install matplotlib seaborn plotly wandb
-
-            # Install explainability
-            pip install shap captum
-
-            # Install deployment
-            pip install streamlit gradio fastapi uvicorn
-
-            # Install GNN libraries
-            pip install torch-geometric torch-scatter torch-sparse
-
-            # Install Jupyter for notebooks
-            pip install jupyter ipywidgets
-            ```
-
-
-            DOCUMENTATION CHECKLIST:
-
-            README.md should include:
-            - Project overview and motivation
-            - Installation instructions
-            - Dataset download guide
-            - Preprocessing pipeline explanation
-            - Model training commands
-            - Evaluation scripts
-            - Pre-trained model links
-            - Web app deployment guide
-            - Citation information
-            - License (MIT or Apache 2.0)
-            - Acknowledgments
-
-            Code Documentation:
-            - Docstrings for all functions and classes
-            - Type hints (Python 3.9+)
-            - Inline comments for complex logic
-            - Configuration files (YAML or JSON)
-            - Example usage in notebooks
-
-
-            PROFESSIONAL DEVELOPMENT:
-
-            Conferences to Attend (Virtual Options Available):
-            - MIDL 2026 (July)
-            - MICCAI 2026 (October)
-            - NeurIPS 2026 (December)
-            - American Epilepsy Society Meeting
-
-            Networking:
-            - Join EEG/Epilepsy research communities on Twitter/X
-            - Participate in Kaggle competitions (seizure prediction)
-            - Contribute to open-source EEG libraries (MNE-Python)
-            - Present at GWU research seminars
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Mohamad Koubeissi ",
-        "Proposed by email": "mkoubeissi@email.gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "Dr. Mohamad Koubeissi (Clinical Neurologist, GWU Medical Faculty)",
-        "funding_opportunity": "NIH R01 for Epilepsy Research / NSF CAREER / GWU Cross-Disciplinary Research Fund",
-        "github_repo": "https://github.com/amir-jafari",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
-
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
-print("\n" + "=" * 80)
-print("EEG DATASET DOWNLOAD INSTRUCTIONS")
-print("=" * 80)
-print("\n1. CHB-MIT Scalp EEG (RECOMMENDED - Start Here):")
-print("   PhysioNet: https://physionet.org/content/chbmit/1.0.0/")
-print("   Kaggle: https://www.kaggle.com/datasets/adibadea/chbmitseizuredataset")
-print("   Download: kaggle datasets download -d adibadea/chbmitseizuredataset")
-print("   Or: wget -r -N -c -np https://physionet.org/files/chbmit/1.0.0/")
-print("\n2. Bonn University EEG (Quick Start - 100 MB):")
-print("   Kaggle: https://www.kaggle.com/datasets/harunshimanto/epileptic-seizure-recognition")
-print("   Download: kaggle datasets download -d harunshimanto/epileptic-seizure-recognition")
-print("\n3. TUH EEG Seizure Corpus (Advanced - Large Scale):")
-print("   Official: https://isip.piconepress.com/projects/tuh_eeg/html/downloads.shtml")
-print("   Requires free registration (instant approval)")
-print("\n4. Siena Scalp EEG:")
-print("   PhysioNet: https://physionet.org/content/siena-scalp-eeg/1.0.0/")
-print("   Download: wget -r -N -c -np https://physionet.org/files/siena-scalp-eeg/1.0.0/")
-print("\n" + "=" * 80)
-print("All datasets are publicly available for research!")
-print("Total size: ~15 GB (CHB-MIT + Bonn + Siena) for comprehensive study")
-print("Recommended start: CHB-MIT (10 GB) + Bonn (100 MB) for prototyping")
-print("=" * 80)
-print("\nClinical Collaborator: Dr. Mohamad Koubeissi (mkoubeissi@email.gwu.edu)")
-print("Clinical expertise available for guidance throughout the project!")
-print("=" * 80)
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari](https://github.com/https://github.com/amir-jafari)
