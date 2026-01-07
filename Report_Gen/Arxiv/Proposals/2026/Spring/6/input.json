@@ -1,0 +1,22 @@
+{
+  "Version": "6",
+  "Year": "2026",
+  "Semester": "Spring",
+  "project_name": "Google Trends and Inflation (Time Series Project)",
+  "Objective": "\n            The team is seeking support to evaluate the use of Google Trends data in estimating inflation and other\n            economic indicators. For this project, the students will review existing literature from the IMF\n            and other organizations that have used Google Trends data to assess economic activity, and they will\n            conduct their own analysis. The datasets will be the Consumer Price Index from countries with high \n            inflation and Google Trends data. After reviewing the literature, we expect the students to develop \n            a model to determine how CPI changes over time based on Google Trends data for specific terms.\n\n            ",
+  "Dataset": "\n            Google data is proprietary, and students will need to be hired as non-fee consultants at the World Bank\n            to access the data.       ",
+  "Rationale": "\n            \n            ",
+  "Approach": "\n            \n            ",
+  "Timeline": "\n            Week 1:    \n            Week 2:    \n            Week 3:    \n            Week 4:     \n            Week 5:    \n            Week 6:     \n            Week 7:     \n            Week 8:     \n            Week 9:     \n            Week 10:    \n            Week 11:    \n            Week 12:    \n            Week 13:    \n            Week 14:    \n\n            TOTAL: 14 weeks (one semester)\n\n            KEY MILESTONES:\n            - Week 2:  \n            - Week 4:  \n            - Week 6:  \n            - Week 8:  \n            - Week 10: \n            - Week 12: \n            - Week 14: \n            \n            DELIVERABLES BY WEEK 14:\n\n            ",
+  "Expected Number Students": "\n            RECOMMENDED: 1 students\n\n            ROLE DISTRIBUTION FOR 1 STUDENTS:\n\n            Student 1: \n            - Responsibilities:\n             \n            ",
+  "Research Contributions": "\n          \n            ",
+  "Possible Issues": "\n            TECHNICAL CHALLENGES AND SOLUTIONS:\n\n        \n            RISK MITIGATION TIMELINE:\n            - Weeks 1-2: \n            - Weeks 3-4: \n            - Weeks 5-6: \n            - Weeks 7-8: \n            - Weeks 9-10: \n            - Weeks 11-12: \n            - Weeks 13-14: \n            ",
+  "Additional Resources": "\n                     ",
+  "Proposed by": "World Bank ",
+  "Proposed by email": "",
+  "instructor": "Amir Jafari",
+  "instructor_email": "ajafari@gwu.edu",
+  "collaborator": "",
+  "funding_opportunity": "",
+  "github_repo": "https://github.com/amir-jafari"
+}
