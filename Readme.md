@@ -76,11 +76,11 @@
 
 7. [Capstone Group 1 : An End-to-End Multi Agent AI System for Personal Finance: Synthetic Data Generation, Budget Optimization, and Investment Advisory](https://github.com/aman-jaglan/Capstone_Project)
 
-    - [Publication Link]()
+    - [Publication Link](https://link.springer.com/article/10.1007/s00521-025-11749-7)
 
 8. [Capstone Group x : Predicting Postoperative Complications in Laparoscopic General Surgery Using Machine and Deep Learning: A Classification Approach]()
 
-    - [Publication Link]()
+    - [Publication Link](https://link.springer.com/article/10.1007/s00521-025-11813-2)
 
 ----
 
