@@ -124,6 +124,7 @@ data_to_save = \
         # -----------------------------------------------------------------------------------------------------------------------
     }
 
+
 os.makedirs(
     os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
     exist_ok=True)
