@@ -42,7 +42,7 @@
 
 2. [Capstone Group 2 : Optimizing Information Retrieval: A Hybrid Model Leveraging MAR and RAPTOR Frameworks](https://github.com/Akamemz/MAR-RAPTOR-hybrid-model)
 
-    - [Publication Link - UnderReview]()
+    - [Publication Link - UnderReview](https://link.springer.com/article/10.1007/s00521-025-11814-1)
 
 3. [Capstone Group 5 : FolkRAG: A Retrieval-Augmented Generation System for Cultural Heritage Materials](https://github.com/GWU-MS-DS/Capstone)
 
