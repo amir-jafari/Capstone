@@ -73,7 +73,7 @@
 
 6. [Capstone Group 8 : Reimagining Influence Detection in Social Networks via Graph Neural Networks](https://github.com/KanishkGoel1999/Group-8-Capstone-)
 
-    - [Publication Link]()
+    - [Publication Link](https://link.springer.com/article/10.1007/s00521-026-11998-0)
 
 7. [Capstone Group 9 : Unmasking Fraud in Transaction Networks: Harnessing Heterogeneous Graph Neural Networks for Enhanced Detection](https://github.com/KanishkGoel1999/Capstone_project_Kanishk_Goel)
 
