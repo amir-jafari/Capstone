@@ -20,13 +20,15 @@
 
    - [Package Link](https://pypi.org/project/grag/)
 
-5. [Capstone Group 8 : GNN Recommendation System](https://github.com/twallett/DynamicRecSys)
+5. [Capstone Group 8 : A benchmark for graph-based dynamic recommendation systems](https://github.com/twallett/research/tree/main/2024/dynamic-recommender-gnn)
+     
+     - [Publication Link](https://link.springer.com/article/10.1007/s00521-024-10425-6)
 
-6. [Capstone Group 9 : Medical Visual QA](https://github.com/KumarAditya98/Medical-Visual-Question-Answering-using-Multimodal-Fusion)
+6. [Capstone Group 9 : Medical Visual Question Answering using Multimodal Fusion](https://github.com/KumarAditya98/Medical-Visual-Question-Answering-using-Multimodal-Fusion)
 
     - [Publication Link](https://link.springer.com/article/10.1007/s00521-024-10318-8)
 
-7. [Capstone Group 10 : GNN Fraud Detection](https://github.com/ChiragLakhanpal/Leveraging-Graph-Based-Learning-for-Enhanced-Fraud-Detection)
+7. [Capstone Group 10 : Leveraging Graph-Based Learning for Enhanced Fraud Detection](https://github.com/ChiragLakhanpal/Leveraging-Graph-Based-Learning-for-Enhanced-Fraud-Detection)
     
     - [Publication Link](https://link.springer.com/article/10.1007/s00521-024-10397-7?utm_source=rct_congratemailt&utm_medium=email&utm_campaign=nonoa_20240917&utm_content=10.1007%2Fs00521-024-10397-7)
 
@@ -92,4 +94,24 @@
     - [Publication Link]()
 
 
+## Spring 2026
 
+1. [Capstone Group 0 : WB]()
+
+    - [Publication Link]()
+   
+2. [Capstone Group 1 : WB]()
+
+    - [Publication Link]()
+
+3. [Capstone Group 2 : WB]()
+   
+   - [Publication Link]()
+
+4. [Capstone Group 5 : WB]()
+
+    - [Publication Link]()
+   
+5. [Capstone Group 6 : WB]()
+
+    - [Publication Link]()
