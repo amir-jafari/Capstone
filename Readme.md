@@ -96,22 +96,22 @@
 
 ## Spring 2026
 
-1. [Capstone Group 0 : WB]()
+1. [Capstone Group 0 : World Bank Predicting Infalation using Google Trned]()
 
     - [Publication Link]()
    
-2. [Capstone Group 1 : WB]()
+2. [Capstone Group 1 : BRIDGE: Building Role-specific Interprofessional Dialogue and Guided Education (Version 2.0)](https://github.com/Anusha-raju/spring-2026-group1)
 
     - [Publication Link]()
 
-3. [Capstone Group 2 : WB]()
+3. [Capstone Group 2 : EEG Seizure Detection & Multi Model Analysis](https://github.com/askmy-stack/spring-2026-group2)
    
    - [Publication Link]()
 
-4. [Capstone Group 5 : WB]()
+4. [Capstone Group 5 : MorphGNN: Automated GNN Architecture Selection via Graph Property Profiling](https://github.com/shabnamRafat/spring-2026-group5)
 
     - [Publication Link]()
    
-5. [Capstone Group 6 : WB]()
+5. [Capstone Group 6 : Forecasting of Energy Prices Using Economic Indicators and GDELT Derived News Signals](https://github.com/AswinBalajiTR/spring-2026-group6)
 
     - [Publication Link]()
