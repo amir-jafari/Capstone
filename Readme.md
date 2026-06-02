@@ -92,7 +92,7 @@
 1. [Capstone Group 2 : Smart School Food Service Analysis: AI-Driven Demand Forecasting and Waste Reduction Using Fairfax County Public Schools Data](https://github.com/JupiK9/fall-2025-group2.git)
 
     - [Publication Link]()
-
+----
 
 ## Spring 2026
 
