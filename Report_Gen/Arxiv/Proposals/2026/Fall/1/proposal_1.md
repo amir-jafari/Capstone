@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Post-Training Analysis and Novelty Detection Using Neural Network Self-Organizing Maps (NNSOM)
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """1""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Post-Training Analysis and Novelty Detection Using Neural Network Self-Organizing Maps (NNSOM)""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to use Self-Organizing Maps (SOM) as a post-training diagnostic and
             interpretability tool for deep learning models. After a convolutional neural network (CNN) or any
             other supervised model is trained on a labeled dataset, students will apply the NNSOM library
@@ -47,10 +32,13 @@ data_to_save = \
                data augmentation for underrepresented cluster regions, and curriculum learning schedules.
             7. Produce a reusable analysis pipeline that can be applied to any dataset/model combination,
                packaged as open-source code with tutorials.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Fall_1.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All datasets listed below are publicly available with no access restrictions:
 
             PRIMARY DATASETS (choose one as the main experimental setting):
@@ -80,10 +68,10 @@ data_to_save = \
             - Split: 70% train / 15% validation / 15% test (stratified)
             - Normalize pixel values to [0, 1] or use ImageNet statistics for pretrained backbones
             - Record class distribution; note any imbalance for later SOM cluster analysis
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Deep learning models achieve impressive accuracy on benchmarks, yet practitioners frequently
             encounter surprising failures in deployment. Understanding why a model fails is as important
             as maximizing its average accuracy. Current interpretability tools (saliency maps, SHAP, LIME)
@@ -112,10 +100,10 @@ data_to_save = \
               genuine novelty opportunities for publication.
             - The NNSOM library is an in-house GWU research artifact; student contributions can directly
               extend and validate it, with potential co-authorship on follow-up papers.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             PHASE 1: MODEL TRAINING BASELINE (Weeks 1-2)
 
             [Week 1: Environment Setup & Data Pipeline]
@@ -219,10 +207,10 @@ data_to_save = \
             - README with installation instructions and step-by-step tutorial
             - Jupyter notebooks: one per phase (training, SOM analysis, novelty detection, retraining)
             - Requirements.txt with pinned dependencies
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1:    Environment setup, dataset download, data pipeline, CNN architecture selection
             Week 2:    Train baseline CNN; extract and save feature embeddings for all data splits
             Week 3:    Install NNSOM, configure SOM hyperparameters, train SOM, initial visualizations
@@ -256,10 +244,11 @@ data_to_save = \
             - Curriculum learning and targeted augmentation experiments
             - Research paper draft (6-8 pages)
             - GitHub repository with notebooks, scripts, and documentation
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION FOR 2 STUDENTS:
@@ -284,52 +273,10 @@ data_to_save = \
             Student 3: Evaluation, Benchmarking & Writing
             - Responsibilities: Design evaluation protocols, run ablation studies (SOM grid size, feature
               layer, dataset choice), write the research paper, manage GitHub repository
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers several avenues for novel and publishable research contributions:
+            
 
-            1. METHODOLOGICAL CONTRIBUTIONS:
-            - A systematic SOM-based post-training diagnostic framework applicable to any supervised model
-            - Dual novelty scoring (quantization error + U-Matrix) with a principled threshold calibration method
-            - A feedback loop connecting SOM cluster analysis to targeted retraining strategies
-              (hard example mining, curriculum learning, targeted augmentation)
+## 7 Possible Issues:  
 
-            2. EMPIRICAL CONTRIBUTIONS:
-            - Comprehensive comparison of SOM-based novelty detection against classical baselines
-              (Isolation Forest, One-Class SVM, Autoencoder) across multiple datasets
-            - Ablation studies: effect of SOM grid size, training epochs, and choice of feature
-              extraction layer on cluster quality and novelty detection accuracy
-            - Before/after analysis demonstrating that SOM-guided retraining measurably reduces
-              error rates in identified hotspot regions
-
-            3. INTERPRETABILITY CONTRIBUTIONS:
-            - Rich visual artifacts (SOM maps, U-Matrix overlays, error hotspot heatmaps) that make
-              model failure modes intuitive to non-experts
-            - Demonstration that SOM reveals population-level error patterns invisible to
-              sample-level XAI methods (saliency maps, LIME, SHAP)
-
-            4. LIBRARY CONTRIBUTIONS:
-            - New analysis modules contributed back to the NNSOM library:
-              novelty detection, error hotspot detection, curriculum learning interface
-            - Tutorial notebooks that lower the barrier to adoption for the research community
-
-            PUBLICATION VENUES:
-            - AAAI Workshop on Explainable Artificial Intelligence (XAI)
-            - ICLR Workshop on Trust and Reliability in Deep Learning
-            - IEEE IJCNN (International Joint Conference on Neural Networks) — SOM track
-            - Pattern Recognition Letters (journal)
-            - Expert Systems with Applications (journal)
-
-            EXPECTED OUTCOMES:
-            - 1 workshop paper submission (Week 14)
-            - 1 GitHub repository with tutorials and reusable modules
-            - Potential co-authorship on an extended NNSOM library paper
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES AND SOLUTIONS:
 
             1. SOM Grid Size Selection:
@@ -372,63 +319,10 @@ data_to_save = \
             - Weeks 9-10: Monitor retrained model for catastrophic forgetting on easy examples
             - Weeks 11-12: Cross-check all figures and numbers between students before paper writing
             - Weeks 13-14: Allow 3 days for code review and README verification before GitHub release
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            NNSOM LIBRARY:
-            - Project page: https://amir-jafari.github.io/SOM/
-            - GitHub: https://github.com/amir-jafari/SOM
-            - Installation: pip install nnsom
-            - Key classes: SOM (CPU), SOMGpu (GPU via CuPy)
-            - Built-in metrics: quantization_error(), topological_error(), distortion()
-            - Built-in visualizations: component planes, hit histogram, U-Matrix, scatter plots
-
-            KEY REFERENCE PAPERS:
-            1. Kohonen, T. (1990). "The self-organizing map." Proceedings of the IEEE, 78(9), 1464-1480.
-            2. Villmann, T. et al. (1997). "Topology preservation in self-organizing feature maps:
-               exact definition and measurement." IEEE TNN, 8(2), 256-266.
-            3. Marsland, S. et al. (2002). "A self-organizing network that grows when required."
-               Neural Networks, 15(8-9), 1041-1058. (novelty detection with SOM)
-            4. Rauber, A. et al. (2002). "The growing hierarchical self-organizing map: exploratory
-               analysis of high-dimensional data." IEEE TNN, 13(6), 1331-1341.
-            5. Hendrycks, D. & Gidaris, S. (2017). "A Baseline for Detecting Misclassified and
-               Out-of-Distribution Examples in Neural Networks." ICLR 2017.
-
-            REQUIRED LIBRARIES (requirements.txt):
-            - torch>=2.0.0
-            - torchvision>=0.15.0
-            - nnsom>=0.1.0
-            - numpy>=1.24.0
-            - scikit-learn>=1.3.0
-            - matplotlib>=3.7.0
-            - seaborn>=0.12.0
-            - pandas>=2.0.0
-            - tqdm>=4.65.0
-            - cupy-cuda12x>=12.0.0   # optional, for GPU SOM
-
-            TUTORIALS & NOTEBOOKS (starting points):
-            - NNSOM Iris tutorial: https://amir-jafari.github.io/SOM/ (Iris dataset end-to-end)
-            - PyTorch feature extraction: torch.nn hooks for intermediate activations
-            - scikit-learn IsolationForest, OneClassSVM (for novelty detection baselines)
-            - WandB or MLflow for experiment tracking across retraining runs
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "",
-        "funding_opportunity": "",
-        "github_repo": "https://github.com/amir-jafari/SOM",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
+            
 
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari/SOM](https://github.com/https://github.com/amir-jafari/SOM)
