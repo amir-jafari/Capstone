@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Classical Time Series Modeling, EDA, and Benchmarking Using the TimeSeries Toolbox and tseda
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """2""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Classical Time Series Modeling, EDA, and Benchmarking Using the TimeSeries Toolbox and tseda""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to conduct a rigorous, reproducible study of classical time series
             modeling and exploratory data analysis (EDA) across a diverse collection of real-world datasets,
             using two in-house GWU libraries: the TimeSeries Toolbox
@@ -49,10 +34,13 @@ data_to_save = \
                practical model-selection guidelines.
             5. Package the full pipeline — EDA, modeling, and benchmarking — as a reusable open-source
                Python framework with Jupyter notebooks and automated HTML reports.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Fall_2.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All datasets listed below are publicly available with no access restrictions.
             The project targets a minimum of 10 diverse time series datasets to enable meaningful
             cross-domain benchmarking.
@@ -94,10 +82,10 @@ data_to_save = \
             - Record: length, frequency, domain, trend presence, seasonality period, missing-value rate
             - Apply tseda forecastability scoring to rank datasets by modeling difficulty
             - Document all preprocessing steps (log transform, differencing) in a reproducible notebook
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Despite the rise of deep learning for forecasting, classical time series models remain
             highly relevant for several reasons:
             - They are interpretable: model coefficients directly encode lag dependencies and seasonal
@@ -128,10 +116,10 @@ data_to_save = \
               the resulting paper.
             - Practical guidelines ("which classical model for which data type") benefit forecasting
               practitioners in industry, government, and academia.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             PHASE 1: ENVIRONMENT SETUP & DATASET COLLECTION (Weeks 1-2)
 
             [Week 1: Setup & Library Exploration]
@@ -240,10 +228,10 @@ data_to_save = \
             - Jupyter notebooks: one per dataset and one summary benchmarking notebook
             - README with quickstart, dataset download instructions, reproduction commands
             - Requirements.txt with pinned dependencies
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1:    Library setup, dataset download, dataset_registry.csv, tutorial run-throughs
             Week 2:    Standardized data loaders, tseda EDA on all datasets, forecastability scoring
             Week 3:    Decomposition (classical + STL), seasonal strength, tseda HTML reports
@@ -277,10 +265,11 @@ data_to_save = \
             - Model-selection decision tree based on EDA findings
             - Research paper draft (8-10 pages)
             - GitHub repository with automated benchmarking script and notebooks
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION FOR 2 STUDENTS:
@@ -306,47 +295,10 @@ data_to_save = \
             - Responsibilities: Produce all publication-quality figures (heatmaps, forecast overlays,
               EDA-performance correlation plots), write research paper, manage GitHub repository,
               run additional datasets to expand benchmark coverage
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers several avenues for novel and publishable research contributions:
+            
 
-            1. EMPIRICAL CONTRIBUTIONS:
-            - The first systematic, reproducible benchmark of the complete Box-Jenkins family
-              (AR, MA, ARMA, ARIMA, SARIMA, ARX, ARMAX, BJTF) across 10+ heterogeneous datasets
-            - Quantitative evidence for which classical model class wins on which data type
-            - Correlation analysis linking tseda EDA metrics (trend/seasonal strength,
-              forecastability score, stationarity) to optimal model class and forecast accuracy
+## 7 Possible Issues:  
 
-            2. METHODOLOGICAL CONTRIBUTIONS:
-            - A standardized benchmarking protocol (rolling-origin CV, multi-horizon evaluation,
-              multi-metric leaderboard) that future studies can adopt for comparing classical vs.
-              deep learning forecasters
-            - A model-selection decision tree derived from EDA features — a practical tool for
-              practitioners who need to quickly choose a starting model for a new time series
-
-            3. LIBRARY CONTRIBUTIONS:
-            - New modules contributed to the TimeSeries Toolbox: automated grid search over
-              ARIMA orders, cross-validation wrapper, structured results export to CSV/HTML
-            - New modules contributed to tseda: batch EDA over a dataset registry,
-              EDA summary table generator, forecastability-vs-MSE scatter plot
-
-            PUBLICATION VENUES:
-            - International Journal of Forecasting (IJF) — premier forecasting journal
-            - Journal of Time Series Analysis
-            - AAAI Workshop on AI for Time Series (AI4TS)
-            - NeurIPS Workshop on Time Series in the Age of Large Models
-            - Expert Systems with Applications (journal)
-
-            EXPECTED OUTCOMES:
-            - 1 workshop or journal paper submission (Week 14)
-            - 1 GitHub repository with automated benchmarking script and reproducible notebooks
-            - Potential co-authorship on an extended TimeSeries Toolbox / tseda library paper
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES AND SOLUTIONS:
 
             1. Non-Stationarity:
@@ -393,63 +345,10 @@ data_to_save = \
             - Weeks 9-10: Cross-check CV results against statsmodels ARIMA as an independent reference
             - Weeks 11-12: Have both students verify cross-dataset numbers independently before paper
             - Weeks 13-14: 3-day code freeze for README and notebook review before GitHub release
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            PRIMARY LIBRARIES:
-            - TimeSeries Toolbox: https://amir-jafari.github.io/TimeSeries/
-              GitHub: https://github.com/amir-jafari/TimeSeries
-              Key functions: GPAC, ACF, PACF, parameter estimation (L-M), chi-square diagnostic,
-              pole-zero map, impulse response, one-step-ahead prediction, AIC/BIC/MSE comparison
-            - tseda (Time-Series-EDA): https://amir-jafari.github.io/Time-Series-EDA/
-              GitHub: https://github.com/amir-jafari/Time-Series-EDA
-              Key features: TimeSeries object, stationarity tests, decomposition (classical+STL),
-              seasonality detection, outlier detection, forecastability scoring, HTML report generation
-
-            KEY REFERENCE PAPERS:
-            1. Box, G.E.P., Jenkins, G.M., Reinsel, G.C., Ljung, G.M. (2015). "Time Series Analysis:
-               Forecasting and Control." 5th ed. Wiley. (foundational textbook)
-            2. Makridakis, S. et al. (2020). "The M4 Competition: 100,000 time series and 61 forecasting
-               methods." International Journal of Forecasting, 36(1), 54-74.
-            3. Hyndman, R.J. & Athanasopoulos, G. (2021). "Forecasting: Principles and Practice."
-               3rd ed. OTexts. (free online: https://otexts.com/fpp3/)
-            4. Cleveland, R.B. et al. (1990). "STL: A Seasonal-Trend Decomposition Procedure Based
-               on Loess." Journal of Official Statistics, 6(1), 3-73.
-            5. Ljung, L. (1999). "System Identification: Theory for the User." 2nd ed. Prentice Hall.
-
-            REQUIRED LIBRARIES (requirements.txt):
-            - pandas>=2.0.0
-            - numpy>=1.24.0
-            - scipy>=1.11.0
-            - statsmodels>=0.14.0     # reference ARIMA for cross-validation
-            - matplotlib>=3.7.0
-            - seaborn>=0.12.0
-            - tseda>=0.1.0
-            - jupyter>=1.0.0
-            - tqdm>=4.65.0
-
-            ADDITIONAL TOOLS:
-            - statsmodels.tsa: independent ARIMA implementation for cross-checking results
-            - pmdarima: auto_arima for automated order selection comparison
-            - GWU HPC cluster (Colonial One) for parallel cross-validation runs
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "",
-        "funding_opportunity": "",
-        "github_repo": "https://github.com/amir-jafari/TimeSeries",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
+            
 
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [https://github.com/amir-jafari/TimeSeries](https://github.com/https://github.com/amir-jafari/TimeSeries)
