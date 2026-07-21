@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## Regret-Theoretic Reinforcement Learning: Convergence Analysis and Empirical Benchmarking of Bandit, Tabular, Linear, and Deep RL Algorithms
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """3""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """Regret-Theoretic Reinforcement Learning: Convergence Analysis and Empirical Benchmarking of Bandit, Tabular, Linear, and Deep RL Algorithms""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             The goal of this project is to conduct a mathematically rigorous, reproducible study that
             connects theoretical regret and convergence guarantees in reinforcement learning (RL) to their
             empirical behavior, across four levels of problem structure: stochastic and contextual bandits,
@@ -56,10 +41,13 @@ data_to_save = \
             5. Package the full pipeline — theory notes, algorithm implementations, and the regret-vs-theory
                benchmarking framework — as a reusable open-source extension of modrl, with Jupyter notebooks
                and automated benchmark reports.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Fall_3.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All environments and datasets below are publicly available with no access restrictions.
             The project organizes environments into four tiers of increasing problem structure, mirroring
             the algorithm hierarchy studied in the Approach section.
@@ -100,10 +88,10 @@ data_to_save = \
             - Run >= 20 seeds per algorithm-environment pair; log per-episode return and cumulative regret
             - Document all preprocessing (feature construction, discretization, reward scaling) in a
               reproducible notebook per tier
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Reinforcement learning theory has produced precise, provable regret and convergence guarantees
             for many algorithm families:
             - Bandit algorithms (UCB1, Thompson Sampling, LinUCB) have tight, well-understood regret bounds
@@ -139,10 +127,10 @@ data_to_save = \
               modules to it and can co-author the resulting paper together with the library's maintainer.
             - The resulting "algorithm-selection by problem structure" guideline is directly useful to
               practitioners deciding between tabular, linear, and deep RL methods under a compute budget.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             PHASE 1: FOUNDATIONS & BANDIT THEORY (Weeks 1-3)
 
             [Week 1: Setup & Mathematical Foundations]
@@ -267,10 +255,10 @@ data_to_save = \
             - Jupyter notebooks: one per tier and one summary regret-vs-theory notebook
             - README with quickstart, environment setup, and reproduction commands
             - Requirements.txt with pinned dependencies; final presentation
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1:    Setup, MDP/Bellman formalism, regret definition, algorithm_registry.csv
             Week 2:    UCB1 / Thompson Sampling on K-armed bandits; O(log T) regret verification
             Week 3:    LinUCB / OFUL on contextual bandits (Yahoo R6, MovieLens); first regret-vs-theory plots
@@ -306,10 +294,11 @@ data_to_save = \
             - Algorithm-selection decision tree based on problem structure
             - Research paper draft (8-10 pages)
             - New benchmarking/diagnostic modules contributed to the modrl GitHub repository
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION FOR 2 STUDENTS:
@@ -338,51 +327,10 @@ data_to_save = \
               DataFrame, produce all publication-quality figures (regret overlays, slack heatmaps),
               own the modrl contribution (module structure, tests, documentation), coordinate with
               Tyler Wallett on integration into the library's main branch
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers several avenues for novel and publishable research contributions:
+            
 
-            1. EMPIRICAL CONTRIBUTIONS:
-            - The first systematic benchmark that overlays measured empirical regret against theoretical
-              regret bounds for algorithms spanning bandits, tabular MDPs, linear MDPs, and deep RL inside
-              one common framework and experiment protocol
-            - Quantitative theory-practice slack estimates per algorithm-environment pair, with confidence
-              intervals from >= 20 seeds
-            - Correlation analysis linking structural hardness metrics (effective horizon, feature
-              coherence, reward sparsity, minimum reachability) to the size of the theory-practice gap
+## 7 Possible Issues:  
 
-            2. METHODOLOGICAL CONTRIBUTIONS:
-            - A standardized regret-vs-theory benchmarking protocol (constant-fitting via log-log least
-              squares, multi-seed statistical testing, structured slack DataFrame) that future RL studies
-              can adopt when comparing new algorithms to their theoretical guarantees
-            - An algorithm-selection decision tree derived from problem-structure features — a practical
-              tool for practitioners choosing between tabular, linear, and deep RL under a compute budget
-
-            3. LIBRARY CONTRIBUTIONS:
-            - New modules contributed to modrl: a unified regret-tracking wrapper, a multi-seed benchmark
-              runner, a theoretical-bound registry, and structured results export to CSV/HTML
-            - Reference implementations of 15+ algorithms (UCB1, Thompson Sampling, LinUCB, Q-learning,
-              SARSA, UCBVI, PSRL, LSTD-Q, LSVI-UCB, DQN, Double DQN, Dueling DQN, REINFORCE, NPG, TRPO,
-              PPO, A2C, DDPG, TD3, SAC) validated against bsuite reference scores
-
-            PUBLICATION VENUES:
-            - Reinforcement Learning Conference (RLC) / Reinforcement Learning Journal (RLJ)
-            - NeurIPS Datasets & Benchmarks Track
-            - AAMAS (Autonomous Agents and Multi-Agent Systems)
-            - AAAI Workshop on Reinforcement Learning
-            - JMLR (Journal of Machine Learning Research) — open-source software / benchmark track
-
-            EXPECTED OUTCOMES:
-            - 1 workshop, benchmark-track, or journal paper submission (Week 15)
-            - 1 GitHub repository with automated benchmarking script and reproducible notebooks
-            - New benchmarking/diagnostic modules merged into the modrl library, with potential
-              co-authorship alongside the library's maintainer (Tyler Wallett)
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES AND SOLUTIONS:
 
             1. Compute Cost of Multi-Seed Deep RL Sweeps:
@@ -433,87 +381,10 @@ data_to_save = \
             - Weeks 8-11: Cross-check DQN/PPO/SAC results against Stable-Baselines3 reference runs
             - Weeks 12-13: Have both students independently verify theory-practice slack numbers
             - Weeks 14-16: 3-day code freeze for README and notebook review before modrl merge
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            PRIMARY LIBRARY:
-            - modrl (modular Bandit / Classical / Deep RL library): https://github.com/twallett/modrl
-              In-house GWU library under active development; project contact / collaborator: Tyler Wallett
-              Key features: unified Gymnasium-style API across bandit, tabular, and deep RL algorithms;
-              target module for this project's regret-tracking wrapper, benchmark runner, and
-              theoretical-bound registry
-
-            SUPPORTING BENCHMARK LIBRARIES:
-            - bsuite (Behaviour Suite for RL): https://github.com/google-deepmind/bsuite
-            - MinAtar: https://github.com/kenjyoung/MinAtar
-            - Gymnasium: https://gymnasium.farama.org/
-            - Stable-Baselines3 (reference implementations for cross-checking): https://stable-baselines3.readthedocs.io/
-
-            KEY REFERENCE PAPERS:
-            1. Sutton, R.S. & Barto, A.G. (2018). "Reinforcement Learning: An Introduction." 2nd ed.
-               MIT Press. (foundational textbook)
-            2. Auer, P., Cesa-Bianchi, N., Fischer, P. (2002). "Finite-time Analysis of the Multiarmed
-               Bandit Problem." Machine Learning, 47, 235-256. (UCB1)
-            3. Agrawal, S. & Goyal, N. (2012). "Analysis of Thompson Sampling for the Multi-armed Bandit
-               Problem." COLT.
-            4. Abbasi-Yadkori, Y., Pal, D., Szepesvari, C. (2011). "Improved Algorithms for Linear
-               Stochastic Bandits." NeurIPS. (OFUL / LinUCB regret bound)
-            5. Azar, M.G., Osband, I., Munos, R. (2017). "Minimax Regret Bounds for Reinforcement
-               Learning." ICML. (UCBVI)
-            6. Osband, I. & Van Roy, B. (2017). "Why is Posterior Sampling Better than Optimism for
-               Reinforcement Learning?" ICML. (PSRL)
-            7. Jin, C., Yang, Z., Wang, Z., Jordan, M.I. (2020). "Provably Efficient Reinforcement
-               Learning with Linear Function Approximation." COLT. (LSVI-UCB)
-            8. Munos, R. (2005). "Error Bounds for Approximate Value Iteration." AAAI.
-            9. Mnih, V. et al. (2015). "Human-level control through deep reinforcement learning."
-               Nature, 518, 529-533. (DQN)
-            10. van Hasselt, H., Guez, A., Silver, D. (2016). "Deep Reinforcement Learning with Double
-                Q-learning." AAAI.
-            11. Sutton, R.S., McAllester, D., Singh, S., Mansour, Y. (1999). "Policy Gradient Methods for
-                Reinforcement Learning with Function Approximation." NeurIPS.
-            12. Kakade, S. (2002). "A Natural Policy Gradient." NeurIPS.
-            13. Schulman, J. et al. (2015). "Trust Region Policy Optimization." ICML.
-            14. Schulman, J. et al. (2017). "Proximal Policy Optimization Algorithms." arXiv:1707.06347.
-            15. Haarnoja, T. et al. (2018). "Soft Actor-Critic: Off-Policy Maximum Entropy Deep
-                Reinforcement Learning with a Stochastic Actor." ICML.
-            16. Osband, I. et al. (2019). "Behaviour Suite for Reinforcement Learning." ICLR. (bsuite)
-
-            REQUIRED LIBRARIES (requirements.txt):
-            - numpy>=1.24.0
-            - scipy>=1.11.0
-            - torch>=2.1.0
-            - gymnasium>=0.29.0
-            - bsuite>=0.3.5
-            - stable-baselines3>=2.2.0   # reference implementations for cross-validation
-            - pandas>=2.0.0
-            - matplotlib>=3.7.0
-            - seaborn>=0.12.0
-            - jupyter>=1.0.0
-            - tqdm>=4.65.0
-            - tensorboard>=2.14.0
-
-            ADDITIONAL TOOLS:
-            - MinAtar: lightweight Atari-style environments for GPU-light deep RL sweeps
-            - Stable-Baselines3: independent DQN/PPO/SAC implementations for cross-checking results
-            - GWU HPC cluster (Colonial One) for parallel multi-seed benchmark runs
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "",
-        "funding_opportunity": "",
-        "github_repo": "",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
+            
 
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [](https://github.com/)
