@@ -1,30 +1,15 @@
-import json
-import os
-import shutil
+
+# Capstone Proposal
+## FactAgent-Bench: Do Multi-Agent Critique and Debate Pipelines Improve Factual Consistency in Natural Language Generation? A Single-GPU Benchmark Across Agent Topologies and Small Open-Weight LLMs
+### Proposed by: Dr. Amir Jafari
+#### Email: ajafari@gwu.edu
+#### Advisor: Amir Jafari
+#### The George Washington University, Washington DC  
+#### Data Science Program
 
 
-def save_to_json(data, output_file_path):
-    with open(output_file_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+## 1 Objective:  
 
-
-data_to_save = \
-    {
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Version":
-            """5""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Year":
-            """2026""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Semester":
-            """Fall""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "project_name":
-            """FactAgent-Bench: Do Multi-Agent Critique and Debate Pipelines Improve Factual Consistency in Natural Language Generation? A Single-GPU Benchmark Across Agent Topologies and Small Open-Weight LLMs""",
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Objective":
-            """
             Multi-agent LLM pipelines -- self-refinement, critique-revise, debate, and planner-executor-
             verifier architectures -- have been shown to reduce hallucination and improve factual
             consistency in text generation, but nearly all of that evidence comes from GPT-3.5/GPT-4-scale
@@ -58,10 +43,13 @@ data_to_save = \
             5. Validate the automatic factuality metrics against a held-out human evaluation, and package
                the full pipeline -- agents, topologies, metrics, and the resulting benchmarking DataFrame --
                as an open-source, config-driven repository (FactAgent-Bench).
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Dataset":
-            """
+            
+
+![Figure 1: Example figure](2026_Fall_5.png)
+*Figure 1: Caption*
+
+## 2 Dataset:  
+
             All datasets below are publicly available for research use with no restricted access. The
             project organizes them into three tiers: two generation tasks used for the main topology sweep,
             and a held-out stress test used only for generalization checks.
@@ -102,10 +90,10 @@ data_to_save = \
               grounding evidence, keeping the pipeline reproducible and free of flaky external dependencies
             - Fix a stratified evaluation sample per (task, tier) for both automatic metrics and the Week 14
               human evaluation, with a documented random seed
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Rationale":
-            """
+            
+
+## 3 Rationale:  
+
             Multi-agent LLM pipelines are one of the most active current threads in NLP: Self-Refine
             (Madaan et al., 2023) and Reflexion (Shinn et al., 2023) show a single agent can improve its own
             output through iterative self-critique; Du et al. (2023) show multi-agent debate improves
@@ -143,10 +131,10 @@ data_to_save = \
             - The entire pipeline runs on one AWS g5.2xlarge using 4-bit quantization and vLLM serving,
               specifically so the project stays tractable for a student team without a multi-GPU cluster or
               a frontier-model API budget.
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Approach":
-            """
+            
+
+## 4 Approach:  
+
             PHASE 1: FOUNDATIONS & INFRASTRUCTURE (Weeks 1-2)
 
             [Week 1: Setup & Data Pipeline]
@@ -278,10 +266,10 @@ data_to_save = \
             - Jupyter notebooks: one per phase and one cross-condition analysis notebook
             - README with quickstart, single-GPU reproduction guide, and vLLM serving setup instructions
             - requirements.txt with pinned dependencies; final presentation
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Timeline":
-            """
+            
+
+## 5 Timeline:  
+
             Week 1:    Setup, three-tier data pipeline, model_registry.csv, run_matrix.csv
             Week 2:    Three backbones deployed via vLLM (4-bit); throughput/latency/sanity checks
             Week 3:    T0 single-agent baseline on Tier 1; factuality-metric pipeline validated vs. AggreFact
@@ -320,10 +308,11 @@ data_to_save = \
             - A practical topology-selection guideline table for single-GPU agentic NLG deployment
             - Research paper draft (8-10 pages)
             - Open-source FactAgent-Bench repository with reproducible notebooks
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Expected Number Students":
-            """
+            
+
+
+## 6 Expected Number Students:  
+
             RECOMMENDED: 2-3 students
 
             ROLE DISTRIBUTION FOR 2 STUDENTS:
@@ -354,55 +343,10 @@ data_to_save = \
               SelfCheckGPT, ALCE), design and run the human-evaluation interface/protocol, produce all
               publication-quality figures (topology-fidelity curves, cost-quality Pareto frontier,
               homogeneous-vs-heterogeneous comparison), maintain the FactAgent-Bench repository structure
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Research Contributions":
-            """
-            This project offers several avenues for novel and publishable research contributions:
+            
 
-            1. EMPIRICAL CONTRIBUTIONS:
-            - The first benchmark testing whether multi-agent debate and critique-revise factuality gains,
-              established at GPT-3.5/GPT-4 scale (Du et al., 2023; Madaan et al., 2023), transfer to small
-              (7-8B parameter) open-weight LLMs under a single-GPU compute budget
-            - A direct homogeneous-vs-heterogeneous multi-agent backbone ensemble comparison at matched
-              agent count (H3), underexplored in prior multi-agent debate work
-            - A documented generalization check of topology-level factuality gains on held-out hallucination
-              stress-test benchmarks (HaluEval, RAGTruth) outside the tuning distribution
+## 7 Possible Issues:  
 
-            2. METHODOLOGICAL CONTRIBUTIONS:
-            - A factuality-gain-per-token-cost Pareto analysis connecting agentic NLG pipelines to the
-              test-time-compute-scaling literature (Snell et al., 2024) -- a practical framing for whether a
-              given topology's added inference cost is worth paying
-            - A human-validated automatic factuality-metric pipeline, correlated against inter-annotator-
-              agreement-checked human judgments, reusable by future small-model agentic NLG studies
-            - A standardized topology-sophistication benchmarking protocol (fixed round budgets, matched
-              compute across homogeneous/heterogeneous configurations) reusable for future agent-topology
-              comparisons
-
-            3. LIBRARY CONTRIBUTIONS:
-            - FactAgent-Bench: an open-source, config-driven repository implementing all five agent
-              topologies behind a common backbone-serving/evaluation interface
-            - Reference implementations of Self-Refine, CRITIC-style tool-augmented critiquing, multi-agent
-              debate, and a Planner-Executor-Verifier pipeline, all validated to run within a single AWS
-              g5.2xlarge instance's compute budget
-
-            PUBLICATION VENUES:
-            - ACL / EMNLP / NAACL (main conference or Findings)
-            - Workshops on Trustworthy NLG, LLM Agents, or Factuality in Generation (co-located with
-              ACL/EMNLP/NAACL)
-            - NeurIPS / ICLR workshops on multi-agent systems or LLM agents
-            - NeurIPS Datasets & Benchmarks Track
-
-            EXPECTED OUTCOMES:
-            - 1 workshop, Findings-track, or main-conference paper submission (Week 15)
-            - 1 GitHub repository (FactAgent-Bench) with automated benchmarking script and reproducible
-              notebooks
-            - A practical, citable guideline table for choosing an agent topology under a single-GPU
-              inference-cost budget
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Possible Issues":
-            """
             TECHNICAL CHALLENGES AND SOLUTIONS:
 
             1. Multi-Agent Pipelines Multiply Inference Cost on a Single GPU:
@@ -460,104 +404,10 @@ data_to_save = \
             - Weeks 13-14: Have both students independently verify the hypothesis-test results and
                           cross-check human-evaluation inter-annotator agreement
             - Weeks 15-16: 3-day code freeze for README and notebook review before public release
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Additional Resources":
-            """
-            PRIMARY LIBRARIES:
-            - vLLM (high-throughput local LLM serving, PagedAttention): https://github.com/vllm-project/vllm
-            - AutoGen (Microsoft multi-agent orchestration): https://github.com/microsoft/autogen
-            - HuggingFace transformers / accelerate / bitsandbytes / AutoAWQ for quantized backbone serving
-            - SummaC: https://github.com/tingofurro/summac
-            - SelfCheckGPT: https://github.com/potsawee/selfcheckgpt
-            - ALCE (citation-attribution evaluation for long-form QA): https://github.com/princeton-nlp/ALCE
-            - HaluEval: https://github.com/RUCAIBox/HaluEval
-            - RAGTruth: https://github.com/ParticleMedia/RAGTruth
-
-            KEY REFERENCE PAPERS:
-            1. Madaan, A. et al. (2023). "Self-Refine: Iterative Refinement with Self-Feedback." NeurIPS.
-            2. Shinn, N. et al. (2023). "Reflexion: Language Agents with Verbal Reinforcement Learning."
-               NeurIPS.
-            3. Du, Y. et al. (2023). "Improving Factuality and Reasoning in Language Models through
-               Multiagent Debate." arXiv:2305.14325.
-            4. Chan, C.-M. et al. (2023). "ChatEval: Towards Better LLM-based Evaluators through Multi-Agent
-               Debate." arXiv:2308.07201.
-            5. Gou, Z. et al. (2023). "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive
-               Critiquing." arXiv:2305.11738.
-            6. Wu, Q. et al. (2023). "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
-               Conversation." arXiv:2308.08155.
-            7. Li, G. et al. (2023). "CAMEL: Communicative Agents for 'Mind' Exploration of Large Language
-               Model Society." NeurIPS.
-            8. Hong, S. et al. (2023). "MetaGPT: Meta Programming for a Multi-Agent Collaborative
-               Framework." arXiv:2308.00352.
-            9. Narayan, S., Cohen, S.B., Lapata, M. (2018). "Don't Give Me the Details, Just the Summary!
-               Topic-Aware Convolutional Neural Networks for Extreme Summarization." EMNLP. (XSum)
-            10. See, A., Liu, P.J., Manning, C.D. (2017). "Get To The Point: Summarization with
-                Pointer-Generator Networks." ACL. (CNN/DailyMail)
-            11. Gliwa, B. et al. (2019). "SAMSum Corpus: A Human-annotated Dialogue Dataset for Abstractive
-                Summarization." EMNLP Workshop.
-            12. Kryscinski, W. et al. (2020). "Evaluating the Factual Consistency of Abstractive Text
-                Summarization." EMNLP. (FactCC)
-            13. Laban, P. et al. (2022). "SummaC: Re-Visiting NLI-based Models for Inconsistency Detection
-                in Summarization." TACL.
-            14. Tang, L. et al. (2023). "Understanding Factual Errors in Summarization: Errors, Summarizers,
-                Datasets, Error Detectors." ACL. (AggreFact)
-            15. Stelmakh, I. et al. (2022). "ASQA: Factoid Questions Meet Long-Form Answers." EMNLP.
-            16. Gao, T. et al. (2023). "Enabling Large Language Models to Generate Text with Citations."
-                EMNLP. (ALCE)
-            17. Fan, A. et al. (2019). "ELI5: Long Form Question Answering." ACL.
-            18. Li, J. et al. (2023). "HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large
-                Language Models." EMNLP.
-            19. Niu, C. et al. (2024). "RAGTruth: A Hallucination Corpus for Developing Trustworthy
-                Retrieval-Augmented Language Models." ACL.
-            20. Manakul, P., Liusie, A., Gales, M. (2023). "SelfCheckGPT: Zero-Resource Black-Box Hallucination
-                Detection for Generative Large Language Models." EMNLP.
-            21. Snell, C. et al. (2024). "Scaling LLM Test-Time Compute Optimally can be More Effective than
-                Scaling Model Parameters." arXiv:2408.03314.
-
-            REQUIRED LIBRARIES (requirements.txt):
-            - torch>=2.1.0
-            - vllm>=0.4.0
-            - transformers>=4.40.0
-            - accelerate>=0.29.0
-            - bitsandbytes>=0.43.0
-            - autoawq>=0.2.0
-            - pyautogen>=0.2.0
-            - summac>=0.0.4
-            - selfcheckgpt>=0.1.0
-            - bert-score>=0.3.13
-            - rouge-score>=0.1.2
-            - sentence-transformers>=2.6.0
-            - pandas>=2.0.0
-            - matplotlib>=3.7.0
-            - seaborn>=0.12.0
-            - jupyter>=1.0.0
-            - tqdm>=4.65.0
-            - wandb>=0.16.0            # or tensorboard, for experiment tracking
-
-            ADDITIONAL TOOLS:
-            - AWS g5.2xlarge (1x NVIDIA A10G, 24 GB VRAM, 8 vCPUs, 32 GiB RAM) as the target compute
-              environment; 4-bit AWQ/GPTQ/bitsandbytes quantization plus vLLM's PagedAttention keep three
-              backbones and multi-agent concurrent generation within budget
-            - Local OpenAI-compatible vLLM serving endpoint so every agent topology (single-agent through
-              planner-executor-verifier) is implemented against one consistent API regardless of backbone
-            """,
-        # -----------------------------------------------------------------------------------------------------------------------
-        "Proposed by": "Dr. Amir Jafari",
-        "Proposed by email": "ajafari@gwu.edu",
-        "instructor": "Amir Jafari",
-        "instructor_email": "ajafari@gwu.edu",
-        "collaborator": "",
-        "funding_opportunity": "",
-        "github_repo": "",
-        # -----------------------------------------------------------------------------------------------------------------------
-    }
+            
 
 
-os.makedirs(
-    os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}',
-    exist_ok=True)
-output_file_path = os.getcwd() + os.sep + f'Arxiv{os.sep}Proposals{os.sep}{data_to_save["Year"]}{os.sep}{data_to_save["Semester"]}{os.sep}{data_to_save["Version"]}{os.sep}'
-save_to_json(data_to_save, output_file_path + "input.json")
-shutil.copy(__file__, output_file_path)
-print(f"Data saved to {output_file_path}")
+## Contact
+- Author: Amir Jafari
+- Email: [ajafari@gwu.edu](mailto:ajafari@gwu.edu)
+- GitHub: [](https://github.com/)
