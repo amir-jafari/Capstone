@@ -12,7 +12,7 @@ data_to_save = \
     {
         # -----------------------------------------------------------------------------------------------------------------------
         "Version":
-            """5""",
+            """6""",
         # -----------------------------------------------------------------------------------------------------------------------
         "Year":
             """2026""",
@@ -21,305 +21,339 @@ data_to_save = \
             """Fall""",
         # -----------------------------------------------------------------------------------------------------------------------
         "project_name":
-            """FactAgent-Bench: Do Multi-Agent Critique and Debate Pipelines Improve Factual Consistency in Natural Language Generation? A Single-GPU Benchmark Across Agent Topologies and Small Open-Weight LLMs""",
+            """RegimeBench: Are Zero-Shot Time Series Foundation Models Robust to Structural Breaks? A Forecasting-Accuracy and Calibration Benchmark Under Regime Shift""",
         # -----------------------------------------------------------------------------------------------------------------------
         "Objective":
             """
-            Multi-agent LLM pipelines -- self-refinement, critique-revise, debate, and planner-executor-
-            verifier architectures -- have been shown to reduce hallucination and improve factual
-            consistency in text generation, but nearly all of that evidence comes from GPT-3.5/GPT-4-scale
-            agents. The goal of this project is to build a rigorous, reproducible benchmark that tests
-            whether those gains transfer to small (7-8B parameter) open-weight LLMs running entirely on a
-            single AWS g5.2xlarge instance (1x NVIDIA A10G, 24 GB VRAM, 8 vCPUs, 32 GiB RAM) -- the compute
-            budget an individual practitioner or small team actually has, as opposed to a frontier-model API
-            budget.
+            Zero-shot time series foundation models (TSFMs) -- Chronos, TimesFM, Moirai, Lag-Llama -- are
+            pretrained once on large cross-domain corpora and then forecast any new series without
+            re-estimation, and they now match or beat classical statistical and task-specific deep-learning
+            forecasters on standard benchmarks (Monash archive, M4/M5). Almost all of that evidence comes
+            from series whose statistical properties are roughly stable across the evaluation window. Real
+            deployment settings -- economic indicators around COVID-19, equity volatility around financial
+            crises, energy demand around supply shocks -- are dominated by structural breaks: abrupt shifts
+            in mean, variance, or trend. Classical statistical models (ARIMA, ETS) are refit on a rolling
+            window and can adapt to a new regime within a few observations; a zero-shot foundation model has
+            no such local re-estimation step and must generalize purely from pretraining. The goal of this
+            project is to build a rigorous, reproducible benchmark that directly tests whether zero-shot
+            TSFMs are actually robust to structural breaks, or whether their strong average-case benchmark
+            numbers hide a blind spot that only shows up right when accurate forecasts matter most, using
+            open-weight models small enough to run entirely on a single AWS g5.2xlarge instance (1x NVIDIA
+            A10G, 24 GB VRAM, 8 vCPUs, 32 GiB RAM).
 
             Key Objectives:
-            1. Implement five agent topologies of increasing sophistication: (T0) single-agent zero/few-
-               shot generation; (T1) Self-Refine, where one agent iteratively critiques and revises its own
-               output (Madaan et al., 2023); (T2) Critique-Revise with a dedicated Critic agent role,
-               optionally tool-augmented with an NLI-based fact-checking tool (CRITIC-style, Gou et al.,
-               2023); (T3) Multi-Agent Debate, where independent generator agents exchange critiques over
-               multiple rounds and converge via a judge/aggregator (Du et al., 2023; Chan et al., 2023);
-               (T4) a Planner-Executor-Verifier pipeline with claim-level fact verification and a bounded
-               revision loop (MetaGPT/CAMEL-style role specialization, Hong et al., 2023; Li et al., 2023).
-            2. Apply every topology to two natural language generation tasks where hallucination is a
-               well-documented failure mode: abstractive summarization and grounded long-form question
-               answering.
-            3. Run every topology across three small open-weight instruction-tuned backbones (Llama-3.1-8B-
-               Instruct, Mistral-7B-Instruct-v0.3, Qwen2.5-7B-Instruct), 4-bit quantized and served locally,
-               in both homogeneous (all agent roles share one backbone) and heterogeneous (each role uses a
-               different backbone) configurations, to test whether backbone diversity itself improves
-               factuality at matched agent count.
-            4. Measure, for every (topology, backbone, task) combination: automatic factual-consistency
-               scores, standard NLG quality metrics, citation-attribution accuracy for grounded QA, and --
-               critically -- the token cost and wall-clock latency each topology adds relative to the
-               single-agent baseline, to characterize the factuality-gain-per-compute-cost trade-off.
-            5. Validate the automatic factuality metrics against a held-out human evaluation, and package
-               the full pipeline -- agents, topologies, metrics, and the resulting benchmarking DataFrame --
-               as an open-source, config-driven repository (FactAgent-Bench).
+            1. Implement a controlled synthetic regime-shift generator (mean shift, variance shift, trend
+               shift, and frequency shift, injected at known times and magnitudes into ARIMA/GARCH-simulated
+               base series) that provides exact ground-truth break locations, complementing real-world data
+               where break timing must be estimated.
+            2. Build a change-point-detection pipeline (PELT, Bayesian Online Changepoint Detection, CUSUM)
+               to locate regime shifts in real-world series, validated against independently documented
+               historical events (the COVID-19 onset, the 2008 and 2020 financial shocks, the 2021 Texas
+               winter-storm energy shock) rather than trusted blindly.
+            3. Benchmark four zero-shot open-weight TSFMs (Chronos, TimesFM, Moirai, Lag-Llama) against
+               locally-refit classical statistical baselines (ARIMA, ETS, Theta) and per-dataset-trained
+               task-specific deep models (N-BEATS, PatchTST, DeepAR) on point-forecast accuracy as a
+               function of distance from the nearest detected or injected structural break.
+            4. Evaluate the calibration of each model class's probabilistic forecasts (CRPS, pinball loss,
+               prediction-interval coverage) before and after a break, and apply post-hoc adaptive conformal
+               inference (Gibbs & Candes, 2021) to measure how many post-break windows each model class needs
+               before nominal coverage is recovered.
+            5. Sweep model scale within each TSFM family (e.g., Chronos-tiny/small/base) to test whether
+               larger zero-shot foundation models are also more robust to regime shift, or whether scale and
+               shift-robustness are unrelated, and package the full pipeline -- synthetic generator,
+               change-point detector, forecasting models, calibration wrapper, and the resulting benchmarking
+               DataFrame -- as an open-source, config-driven repository (RegimeBench).
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Dataset":
             """
             All datasets below are publicly available for research use with no restricted access. The
-            project organizes them into three tiers: two generation tasks used for the main topology sweep,
-            and a held-out stress test used only for generalization checks.
+            project organizes them into four tiers: a controlled synthetic benchmark with exact ground-truth
+            break locations, a general-purpose zero-shot sanity check, a real-world documented-structural-
+            break benchmark, and a held-out generalization tier.
 
-            TIER 1 -- ABSTRACTIVE SUMMARIZATION (HIGH HALLUCINATION RISK):
-            1. XSum (Narayan et al., 2018) -- single-sentence, highly abstractive BBC news summaries;
-               the standard testbed for hallucination in summarization:
-               https://huggingface.co/datasets/EdinburghNLP/xsum
-            2. CNN/DailyMail (Hermann et al., 2015; See et al., 2017 non-anonymized version) -- longer,
-               more extractive news summaries, used as a lower-hallucination-risk contrast condition:
-               https://huggingface.co/datasets/abisee/cnn_dailymail
-            3. SAMSum (Gliwa et al., 2019) -- dialogue summarization, a distinct genre/register from news:
-               https://huggingface.co/datasets/Samsung/samsum
-            4. Human factual-consistency labels for metric validation: FactCC test set (Kryscinski et al.,
-               2020), SummaC benchmark (Laban et al., 2022), and AggreFact (Tang et al., 2023) -- used in
-               Week 3 to sanity-check the automatic factuality-metric pipeline before it is trusted for the
-               main sweep
+            TIER 1 -- SYNTHETIC REGIME-SHIFT BENCHMARK (GROUND-TRUTH BREAKS):
+            1. Base series simulated from ARIMA and GARCH processes (statsmodels/arch), with four injected
+               break types at controlled, known locations and magnitudes: mean shift, variance shift, trend
+               shift, and frequency/seasonality shift -- generated in Week 1, not downloaded; every break
+               timestamp and magnitude is logged for exact pre/post-break evaluation windows
+            2. A no-break control set (same generators, no injected shift) to establish each model's
+               baseline accuracy absent any regime change
 
-            TIER 2 -- GROUNDED LONG-FORM QUESTION ANSWERING:
-            5. ASQA (Stelmakh et al., 2022) -- ambiguous factoid questions requiring long-form, multi-aspect
-               answers grounded in provided Wikipedia passages, with the ALCE evaluation framework (Gao et
-               al., 2023) for citation-attribution precision/recall: https://github.com/princeton-nlp/ALCE
-            6. ELI5 (Fan et al., 2019) -- open-ended long-form QA with weaker grounding, used as a contrast
-               condition to ASQA's strong Wikipedia grounding:
-               https://huggingface.co/datasets/eli5_category
+            TIER 2 -- GENERAL-PURPOSE ZERO-SHOT SANITY CHECK (NO BREAK LABELING):
+            3. Monash Time Series Forecasting Archive (Godahewa et al., 2021) -- a curated multi-domain
+               collection (electricity, traffic, tourism, weather, retail, and more) used to confirm every
+               TSFM reproduces its published zero-shot benchmark numbers before it is trusted for the
+               regime-shift analysis: https://forecastingdata.org/ / https://huggingface.co/datasets/monash_tsf
+            4. M4 Competition dataset (Makridakis et al., 2020) -- 100k series across six frequencies,
+               a second independent zero-shot sanity check: https://github.com/Mcompetitions/M4-methods
 
-            TIER 3 -- HELD-OUT HALLUCINATION STRESS TEST (evaluation only, not tuned on):
-            7. HaluEval (Li et al., 2023) -- QA and summarization hallucination benchmark with sampled and
-               human-annotated hallucinated/non-hallucinated pairs: https://github.com/RUCAIBox/HaluEval
-            8. RAGTruth (Niu et al., 2024) -- span-level hallucination annotations for retrieval/context-
-               grounded generation: https://github.com/ParticleMedia/RAGTruth
+            TIER 3 -- REAL-WORLD DOCUMENTED STRUCTURAL BREAKS (MAIN EVALUATION):
+            5. U.S. retail sales and economic indicators around the COVID-19 onset (March-April 2020) from
+               FRED (Federal Reserve Economic Data): https://fred.stlouisfed.org/
+            6. CDC FluView ILINet influenza-like-illness surveillance data, which shows a sharp, well-
+               documented regime shift at the COVID-19 non-pharmaceutical-intervention onset:
+               https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html
+            7. Daily realized volatility / closing-price series for major equity indices (S&P 500, VIX)
+               spanning the 2008 global financial crisis and the March 2020 crash, both independently dated
+               in the financial-econometrics literature, via Yahoo Finance historical data
+            8. U.S. regional electricity demand around the February 2021 Texas winter-storm supply shock,
+               via the EIA (U.S. Energy Information Administration) hourly demand data:
+               https://www.eia.gov/opendata/
+            For every Tier 3 series, the change-point-detection pipeline (Week 2) proposes candidate break
+            timestamps, which are then cross-checked against the independently documented historical event
+            dates above rather than accepted automatically.
+
+            TIER 4 -- HELD-OUT GENERALIZATION (evaluation only, not tuned on):
+            9. M5 Competition dataset (Makridakis et al., 2022) -- Walmart retail sales, including the
+               COVID-19 period, used only in Week 12 as a final generalization check on data and a break
+               event not used to develop the pipeline in Weeks 1-11:
+               https://www.kaggle.com/competitions/m5-forecasting-accuracy
 
             DATASET / PIPELINE PREPARATION:
-            - Standardize every tier behind a common loader that pairs each source document/question with
-              its grounding evidence (source article, dialogue, or retrieved Wikipedia passages) so every
-              factuality metric and every Verifier-agent tool call has a fixed evidence set to check against
-            - No live web search or external retrieval API is required -- every dataset ships with its own
-              grounding evidence, keeping the pipeline reproducible and free of flaky external dependencies
-            - Fix a stratified evaluation sample per (task, tier) for both automatic metrics and the Week 14
-              human evaluation, with a documented random seed
+            - Standardize every tier behind a common loader that emits (context window, forecast horizon,
+              known-or-detected break timestamp) tuples, so every model and every metric consumes an
+              identical evaluation protocol regardless of tier
+            - Fix a stratified evaluation sample per (tier, break type) with a documented random seed, and a
+              fixed set of pre-break / at-break / post-break window offsets used consistently across every
+              experiment in Phases 4-6
+            - No live web APIs are required at run time -- Tier 3/4 sources are downloaded once in Week 2 and
+              cached locally, keeping the pipeline reproducible and free of flaky external dependencies
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Rationale":
             """
-            Multi-agent LLM pipelines are one of the most active current threads in NLP: Self-Refine
-            (Madaan et al., 2023) and Reflexion (Shinn et al., 2023) show a single agent can improve its own
-            output through iterative self-critique; Du et al. (2023) show multi-agent debate improves
-            factuality and reasoning; ChatEval (Chan et al., 2023) shows multi-agent debate improves
-            evaluation quality; CRITIC (Gou et al., 2023) shows tool-augmented critiquing corrects factual
-            errors; and MetaGPT (Hong et al., 2023) / CAMEL (Li et al., 2023) show role-specialized agent
-            pipelines can tackle complex tasks end to end. Frameworks like AutoGen (Wu et al., 2023) have
-            made these architectures easy to build.
+            Zero-shot time series foundation models are one of the most active current threads in
+            forecasting research: Chronos (Ansari et al., 2024) tokenizes real-valued series and reuses a
+            T5-style language-model architecture; TimesFM (Das et al., 2024) is a decoder-only foundation
+            model pretrained on ~100B real-world time points; Moirai (Woo et al., 2024) is a masked-encoder
+            model trained for universal, any-frequency forecasting; Lag-Llama (Rasul et al., 2024) is a
+            probabilistic decoder-only foundation model. All four report strong zero-shot accuracy on the
+            Monash archive and M4/M5-style benchmarks, in some cases matching or beating classical
+            statistical models and task-specific deep learners that were trained or refit directly on the
+            target series.
 
-            But almost all of this evidence was generated with GPT-3.5- or GPT-4-scale agents. Whether the
-            same gains hold when every agent is a small (7-8B parameter) open-weight model -- the regime an
-            individual practitioner or student team can actually afford to run continuously -- is an open
-            question with real practical stakes: if small agents cannot reliably critique or debate, then
-            multi-agent pipelines are simply a compute-cost multiplier with no factuality benefit at this
-            scale, and practitioners deploying on limited hardware should know that before adopting them.
+            But those benchmarks average performance across an entire evaluation window, and most of the
+            series in them do not contain a sharp structural break. Classical statistical models (ARIMA,
+            ETS) are refit on a rolling window and can absorb a regime shift within a handful of new
+            observations; task-specific deep models are trained per dataset and see the full history at
+            training time; a zero-shot foundation model, by construction, has no per-series re-estimation
+            step at all -- it must forecast a post-break regime purely by pattern-matching against whatever
+            it saw in pretraining. Whether this makes TSFMs systematically fragile exactly when a structural
+            break occurs -- a recession onset, a pandemic, a supply shock, precisely the moments where an
+            accurate forecast is most valuable -- is a question the standard average-case benchmarks cannot
+            answer, because they do not condition error on distance from a break.
 
-            No existing study directly benchmarks the full topology spectrum (single-agent through
-            planner-executor-verifier) against multiple small open-weight backbone families, in both
-            homogeneous and heterogeneous agent configurations, while also reporting the added inference
-            cost each topology imposes. This project fills that gap.
+            No existing published study directly benchmarks multiple open-weight zero-shot TSFM families
+            against locally-refit classical and task-specific baselines, conditioned explicitly on distance
+            from a structural break, on both a controlled synthetic benchmark with known break ground truth
+            and real-world series with independently documented historical break events, while also
+            evaluating probabilistic calibration (not just point accuracy) before and after the break. This
+            project fills that gap.
 
             WHY THIS PROJECT IS TIMELY AND PUBLISHABLE:
-            - Small-model agentic pipelines are an active, fast-moving research area with dedicated venues:
-              ACL/EMNLP/NAACL workshops on trustworthy NLG and LLM agents, and a growing multi-agent-systems
-              presence at NeurIPS/ICLR workshops.
-            - The factuality-gain-per-token-cost framing directly connects to the test-time-compute-scaling
-              literature (Snell et al., 2024), giving the project a clean, citable analytical contribution
-              beyond a simple accuracy leaderboard.
-            - The homogeneous-vs-heterogeneous backbone comparison (H3 below) is underexplored in prior
-              multi-agent debate work, which mostly uses identical or API-only agents, and is directly
-              testable once several small open-weight models are already deployed on the same GPU.
-            - A negative or plateauing result (small agents cannot reliably self-correct) is just as
-              publishable and useful to practitioners as a positive one -- the project is designed so every
-              outcome is a reportable finding, not a failure condition.
-            - The entire pipeline runs on one AWS g5.2xlarge using 4-bit quantization and vLLM serving,
-              specifically so the project stays tractable for a student team without a multi-GPU cluster or
-              a frontier-model API budget.
+            - Time series foundation models are the fastest-moving current thread in forecasting research,
+              with dedicated venues: the NeurIPS/ICML/ICLR workshops on time series and foundation models,
+              and increasing coverage at KDD, TMLR, and in the International Journal of Forecasting.
+            - The regime-shift-conditioned evaluation protocol (error and calibration as a function of
+              distance from a break, not an unconditional average) is a clean, citable methodological
+              contribution distinct from yet another leaderboard, and is directly reusable by future TSFM
+              studies regardless of which new foundation model is released next.
+            - The calibration and adaptive-conformal-recovery analysis (H2/H3 below) connects directly to the
+              distribution-shift and conformal-prediction literature (Gibbs & Candes, 2021), giving the
+              project a rigorous uncertainty-quantification angle beyond point-forecast accuracy.
+            - A negative or null result (TSFMs are just as robust to breaks as locally-refit baselines) is
+              just as publishable and useful to practitioners as a positive one -- the project is designed so
+              every outcome is a reportable finding, not a failure condition.
+            - The entire pipeline -- four TSFMs at their smallest/base checkpoints, classical statistical
+              refitting, and lightweight task-specific training -- runs comfortably on one AWS g5.2xlarge,
+              specifically so the project stays tractable for a student team without a multi-GPU cluster.
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Approach":
             """
-            PHASE 1: FOUNDATIONS & INFRASTRUCTURE (Weeks 1-2)
+            PHASE 1: FOUNDATIONS & DATA PIPELINE (Weeks 1-2)
 
-            [Week 1: Setup & Data Pipeline]
-            - Install vLLM, HuggingFace transformers/accelerate, bitsandbytes/AutoAWQ, an agent-orchestration
-              framework (AutoGen), and the factuality-metric libraries (SummaC, SelfCheckGPT, ALCE eval
-              scripts, rouge-score, bert-score)
-            - Build the three-tier data pipeline (Tiers 1-3) with fixed evaluation samples and seeds;
-              project structure: agents/, topologies/, datasets/, metrics/, benchmarks/, notebooks/
-            - Create a model_registry.csv (backbone, quantization, context length, measured throughput) and
-              a run_matrix.csv enumerating every planned (topology x backbone x task x
-              homogeneous/heterogeneous) experiment up front, to keep the total run count bounded
+            [Week 1: Setup & Synthetic Regime-Shift Generator]
+            - Install statsforecast/neuralforecast, sktime/darts, gluonts, the TSFM libraries (chronos-
+              forecasting, timesfm, uni2ts for Moirai, lag-llama), ruptures (change-point detection), and
+              conformal-prediction tooling (MAPIE or a custom adaptive-conformal-inference implementation)
+            - Build the Tier 1 synthetic regime-shift generator: ARIMA/GARCH-simulated base series (via
+              statsmodels/arch) with four injectable break types (mean, variance, trend, frequency shift) at
+              controlled, logged locations and magnitudes; project structure: data/, models/, changepoint/,
+              calibration/, benchmarks/, notebooks/
+            - Create a model_registry.csv (model family, checkpoint size, context/horizon limits) and a
+              run_matrix.csv enumerating every planned (model x tier x break-type x window-position)
+              experiment up front, to keep the total run count bounded
 
-            [Week 2: Backbone Serving & Sanity Checks]
-            - Deploy Llama-3.1-8B-Instruct, Mistral-7B-Instruct-v0.3, and Qwen2.5-7B-Instruct, 4-bit
-              quantized, behind a common local OpenAI-compatible vLLM serving endpoint on the g5.2xlarge
-            - Validate throughput/latency and basic instruction-following per backbone before any agent
-              pipeline is layered on top
-
-
-            PHASE 2: SINGLE-AGENT & SELF-REFINE BASELINES (Weeks 3-4)
-
-            [Week 3: T0 Baseline & Metric Validation]
-            - Implement T0 (single-agent zero/few-shot generation) on Tier 1 (summarization)
-            - Implement the automatic factuality-metric pipeline (FactCC, SummaC, BERTScore, ROUGE-L) and
-              validate it against AggreFact's human factual-consistency labels before trusting it for the
-              main sweep
-
-            [Week 4: T1 Self-Refine]
-            - Implement Self-Refine (Madaan et al., 2023): the same agent critiques and revises its own
-              output over a fixed round budget (up to 3 rounds, early-stopping on convergence)
-            - Run T0 and T1 across all three backbones on Tier 1
+            [Week 2: Real-World Data & Change-Point Detection Pipeline]
+            - Download and cache Tier 2 (Monash archive, M4) and Tier 3 (FRED retail/economic series, CDC
+              ILINet, S&P 500/VIX, EIA electricity demand) data
+            - Implement the change-point-detection pipeline (PELT via ruptures, Bayesian Online Changepoint
+              Detection, CUSUM) on Tier 3 series; cross-check detected break timestamps against independently
+              documented historical event dates (COVID-19 onset, 2008/2020 financial shocks, Feb. 2021 Texas
+              winter storm) before trusting the pipeline for later phases
 
 
-            PHASE 3: CRITIQUE-REVISE & TOOL-AUGMENTED VERIFICATION (Weeks 5-6)
+            PHASE 2: FOUNDATION MODEL ZERO-SHOT BASELINES (Weeks 3-4)
 
-            [Week 5: T2 Critique-Revise]
-            - Implement T2 with a dedicated Critic agent role (a distinct persona/prompt from the Generator),
-              optionally CRITIC-style tool-augmented (Gou et al., 2023): the Critic can call a lightweight
-              NLI entailment model (e.g., a DeBERTa-based NLI classifier) as a fact-checking tool against the
-              source document
+            [Week 3: Deploy & Sanity-Check TSFMs]
+            - Deploy the four zero-shot TSFMs at comparable small/base checkpoints (Chronos-t5-base,
+              TimesFM-1.0-200M, Moirai-1.0-R-base, Lag-Llama) on the g5.2xlarge
+            - Reproduce each model's published zero-shot accuracy on a Tier 2 (Monash/M4) subset before
+              trusting the deployment for the regime-shift analysis
 
-            [Week 6: Extend to Long-Form QA]
-            - Run T2 across all three backbones x Tier 1; extend T0/T1/T2 to Tier 2 (ASQA/ELI5), adding
-              ALCE-style citation-attribution precision/recall to the metric suite for grounded QA
-
-
-            PHASE 4: MULTI-AGENT DEBATE (Weeks 7-8)
-
-            [Week 7: Homogeneous Debate]
-            - Implement T3 Multi-Agent Debate (Du et al., 2023): 3 independent generator agents produce
-              initial answers, exchange critiques over up to 3 rounds, and converge via a judge/aggregator
-              agent (optionally ChatEval-style, Chan et al., 2023); homogeneous configuration first (all 3
-              debaters share one backbone)
-
-            [Week 8: Heterogeneous Debate]
-            - Add the heterogeneous-backbone configuration (one debater per backbone family) to directly
-              test H3; run T3 (homogeneous + heterogeneous) across Tiers 1-2
+            [Week 4: Zero-Shot Forecasts on the Synthetic Benchmark]
+            - Run all four TSFMs, fully zero-shot (no fine-tuning, no re-estimation), across Tier 1
+              (synthetic, all four break types plus the no-break control), under a fixed context-
+              window/horizon protocol identical across models
 
 
-            PHASE 5: PLANNER-EXECUTOR-VERIFIER PIPELINE (Weeks 9-10)
+            PHASE 3: CLASSICAL & TASK-SPECIFIC BASELINES (Weeks 5-6)
 
-            [Week 9: T4 Implementation]
-            - Implement T4: a Planner agent decomposes the source document/question into claims or an
-              answer outline; an Executor/Writer agent drafts the summary/answer per the plan; a Verifier
-              agent checks each claim against the source (reusing the NLI fact-checking tool from Phase 3)
-              and triggers a bounded revision loop on failed claims (MetaGPT/CAMEL-style role specialization,
-              Hong et al., 2023; Li et al., 2023)
+            [Week 5: Classical Statistical Baselines]
+            - Implement ARIMA, ETS, and Theta baselines (statsforecast) with rolling-window local
+              re-estimation -- refit at every forecast origin, exactly as they are used in practice, unlike
+              the zero-shot TSFMs
 
-            [Week 10: Full T4 Sweep]
-            - Run T4 across all three backbones x Tiers 1-2; log per-topology token cost and wall-clock
-              latency for every run in every phase so far -- required input for the Phase 6 Pareto analysis
-
-
-            PHASE 6: HALLUCINATION STRESS-TEST & CROSS-CONDITION ANALYSIS (Weeks 11-12)
-
-            [Week 11: Held-Out Generalization Check]
-            - Evaluate the best-performing configuration per topology (selected from Tiers 1-2) on the
-              held-out Tier 3 stress-test benchmarks (HaluEval, RAGTruth) to test whether factuality gains
-              generalize outside the tuning distribution
-
-            [Week 12: Master Benchmark Assembly]
-            - Assemble the full benchmarking DataFrame: (topology x backbone x task x
-              homogeneous/heterogeneous) -> factual-consistency score, ROUGE/BERTScore/citation-attribution,
-              token cost, latency
-            - Test the project's four central hypotheses:
-              H1: Does factual consistency improve monotonically as topology sophistication increases
-                  (T0 -> T4), or does it plateau/reverse because small agents cannot self-correct as
-                  reliably as the GPT-4-scale agents in prior work?
-              H2: Is the multi-agent benefit backbone-dependent -- do some small model families benefit
-                  more from agentic critique than others?
-              H3: Does a heterogeneous multi-agent ensemble outperform a homogeneous ensemble at matched
-                  agent count / compute?
-              H4: What is the factuality-gain-per-token-cost Pareto frontier -- which topology is worth
-                  its added inference cost under a fixed single-GPU latency budget?
+            [Week 6: Task-Specific Deep Learning Baselines]
+            - Train N-BEATS, PatchTST, and DeepAR (neuralforecast/gluonts) per dataset on Tier 1 and a Tier 2
+              subset; confirm the full three-model-class baseline suite (zero-shot TSFM, locally-refit
+              classical, per-dataset-trained task-specific) is evaluated under one identical protocol
 
 
-            PHASE 7: STATISTICAL ANALYSIS & HUMAN EVALUATION (Weeks 13-14)
+            PHASE 4: REGIME-SHIFT ROBUSTNESS EVALUATION (Weeks 7-8)
+
+            [Week 7: Synthetic Break Robustness]
+            - Run all three model classes across the full Tier 1 synthetic regime-shift benchmark; compute
+              point-forecast error (MASE, sMAPE) as a function of signed distance from the known break --
+              pre-break, at-break, and post-break windows at fixed offsets -- directly resolving H1 on
+              ground-truth breaks
+
+            [Week 8: Real-World Break Robustness]
+            - Extend the same protocol to Tier 3 real-world series, using the Week 2 change-point-detection
+              pipeline's validated break timestamps in place of ground truth; compare the real-world
+              degradation pattern against the synthetic-benchmark pattern from Week 7
+
+
+            PHASE 5: PROBABILISTIC CALIBRATION ANALYSIS (Weeks 9-10)
+
+            [Week 9: Pre/Post-Break Calibration]
+            - Compute probabilistic calibration metrics (CRPS, pinball loss, prediction-interval coverage
+              probability, interval width) for every model's forecasts across Tiers 1 and 3, split by
+              pre-break vs. post-break window, directly resolving H2
+
+            [Week 10: Adaptive Conformal Recalibration]
+            - Implement adaptive conformal inference (Gibbs & Candes, 2021) as a post-hoc recalibration
+              wrapper applicable to any model's point/quantile forecasts; measure, per model class, how many
+              post-break forecast origins are needed before nominal interval coverage is recovered --
+              directly resolving H3
+
+
+            PHASE 6: SCALE SWEEP & CROSS-CONDITION ANALYSIS (Weeks 11-12)
+
+            [Week 11: Within-Family Scale Sweep]
+            - Re-run the Tier 1 synthetic benchmark with the smallest and largest available checkpoint per
+              TSFM family (e.g., Chronos-tiny vs. Chronos-base, Moirai-small vs. Moirai-base) to test whether
+              larger zero-shot models are more or less robust to regime shift -- directly resolving H4
+
+            [Week 12: Master Benchmark Assembly & Held-Out Check]
+            - Assemble the full benchmarking DataFrame: (model x tier x break-type x window-position) ->
+              MASE/sMAPE, CRPS, PICP, coverage-recovery-lag
+            - Evaluate the best-performing configuration per model class on the held-out Tier 4 (M5) series
+              to test whether the Weeks 7-11 findings generalize to a dataset and break event not used to
+              develop the pipeline
+            - Formally state the project's four central hypotheses being tested against this DataFrame:
+              H1: Does zero-shot TSFM point-forecast accuracy degrade more sharply than locally-refit
+                  classical and per-dataset-trained task-specific baselines in the windows immediately
+                  following a structural break?
+              H2: Are TSFM probabilistic forecasts systematically mis-calibrated (over- or under-confident),
+                  and does calibration quality itself degrade disproportionately around a break, relative to
+                  the other two model classes?
+              H3: After adaptive conformal recalibration, do TSFMs need more post-break forecast origins than
+                  classical/task-specific baselines to recover nominal interval coverage?
+              H4: Within a TSFM family, is larger zero-shot model scale associated with greater robustness to
+                  regime shift, or are scale and shift-robustness unrelated?
+
+
+            PHASE 7: STATISTICAL TESTING & CHANGE-POINT VALIDATION (Weeks 13-14)
 
             [Week 13: Statistical Testing]
-            - Bootstrapped confidence intervals on every factuality delta; regression of factuality gain on
-              topology sophistication, backbone family, and token-cost multiplier, directly resolving
-              H1, H2, and H4
+            - Diebold-Mariano tests on pre-vs-post-break paired forecast-error deltas, per model and model
+              class; regression of error degradation on model class, break type, and break magnitude,
+              directly resolving H1 and H4 with significance levels attached
 
-            [Week 14: Human Evaluation]
-            - Both students independently rate a stratified sample (~150-200 outputs) for factual
-              consistency and fluency on a Likert scale, blinded to topology/backbone; compute
-              inter-annotator agreement (Cohen's kappa / Krippendorff's alpha) and correlate human
-              judgments with the automatic metrics to validate the automatic-metric pipeline used
-              throughout the project
+            [Week 14: Change-Point-Detection Pipeline Validation]
+            - Both students independently audit a stratified sample of Tier 3 detected break timestamps
+              against the independently documented historical record; compute detection precision/recall
+              against the known event dates and report it explicitly, rather than assuming the automatic
+              detector is correct throughout the benchmark
 
 
             PHASE 8: GUIDELINES, PAPER, AND CODE RELEASE (Weeks 15-16)
 
             [Week 15: Research Paper Draft]
-            Paper structure (8-10 pages, ACL/EMNLP/NAACL Findings or trustworthy-NLG/LLM-agents workshop
-            format):
-            1. Abstract: motivation, FactAgent-Bench scope, key findings (H1-H4)
-            2. Introduction: the small-model gap in the multi-agent-factuality literature
-            3. Related Work: Self-Refine, Reflexion, Multi-Agent Debate, ChatEval, CRITIC, MetaGPT/CAMEL
-            4. FactAgent-Bench: topologies, backbones, tasks, evaluation protocol
-            5. Results: topology-fidelity spectrum, backbone dependence, homogeneous vs. heterogeneous
-            6. The Factuality-per-Token-Cost Pareto Frontier
-            7. Practical Guidelines for Single-GPU Agentic NLG Deployment
-            8. Conclusion & Future Work: extension to tool-augmented RAG and larger agent counts
+            Paper structure (8-10 pages, NeurIPS/ICML/ICLR time-series-workshop or TMLR/International
+            Journal of Forecasting format):
+            1. Abstract: motivation, RegimeBench scope, key findings (H1-H4)
+            2. Introduction: the regime-shift blind spot in zero-shot TSFM benchmarking
+            3. Related Work: Chronos, TimesFM, Moirai, Lag-Llama, classical/task-specific forecasting,
+               change-point detection, conformal prediction under distribution shift
+            4. RegimeBench: synthetic generator, change-point pipeline, models, evaluation protocol
+            5. Results: break-conditioned accuracy degradation, calibration, conformal-recovery lag
+            6. The Scale-Robustness Relationship Within TSFM Families
+            7. Practical Guidelines for Forecasting Across a Suspected Regime Shift
+            8. Conclusion & Future Work: online/continual adaptation of TSFMs, multivariate regime shifts
 
             [Week 16: Code Release & Documentation]
-            - Publish the FactAgent-Bench GitHub repository: config-driven
-              run_benchmark.py --topology all --backbone all --task all
+            - Publish the RegimeBench GitHub repository: config-driven
+              run_benchmark.py --model all --tier all --break-type all
             - Jupyter notebooks: one per phase and one cross-condition analysis notebook
-            - README with quickstart, single-GPU reproduction guide, and vLLM serving setup instructions
+            - README with quickstart, single-GPU reproduction guide, and the synthetic-generator API
             - requirements.txt with pinned dependencies; final presentation
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Timeline":
             """
-            Week 1:    Setup, three-tier data pipeline, model_registry.csv, run_matrix.csv
-            Week 2:    Three backbones deployed via vLLM (4-bit); throughput/latency/sanity checks
-            Week 3:    T0 single-agent baseline on Tier 1; factuality-metric pipeline validated vs. AggreFact
-            Week 4:    T1 Self-Refine implemented and run across all backbones on Tier 1
-            Week 5:    T2 Critique-Revise with tool-augmented NLI fact-checking Critic agent
-            Week 6:    T0/T1/T2 extended to Tier 2 (ASQA/ELI5); ALCE citation-attribution metrics added
-            Week 7:    T3 Multi-Agent Debate, homogeneous-backbone configuration
-            Week 8:    T3 heterogeneous-backbone configuration (H3 test); full Tiers 1-2 sweep
-            Week 9:    T4 Planner-Executor-Verifier pipeline implemented
-            Week 10:   T4 full sweep across backbones/tasks; token-cost and latency logging finalized
-            Week 11:   Held-out generalization check on Tier 3 (HaluEval, RAGTruth)
-            Week 12:   Master benchmarking DataFrame assembled; H1-H4 hypothesis tests run
-            Week 13:   Statistical analysis; factuality-gain regression on topology/backbone/cost
-            Week 14:   Human evaluation (~150-200 outputs); inter-annotator agreement; metric validation
-            Week 15:   Research paper draft (ACL/EMNLP/NAACL Findings or workshop format)
-            Week 16:   FactAgent-Bench code release, README, notebooks, final presentation
+            Week 1:    Synthetic regime-shift generator (Tier 1), model_registry.csv, run_matrix.csv
+            Week 2:    Tier 2/3 data cached; change-point-detection pipeline validated vs. historical events
+            Week 3:    Four TSFMs deployed; zero-shot accuracy reproduced on Tier 2 (Monash/M4) sanity check
+            Week 4:    Zero-shot TSFM forecasts run across full Tier 1 synthetic regime-shift benchmark
+            Week 5:    Classical baselines (ARIMA/ETS/Theta) implemented with rolling-window local refitting
+            Week 6:    Task-specific baselines (N-BEATS/PatchTST/DeepAR) trained per dataset
+            Week 7:    Break-conditioned accuracy evaluation on Tier 1 (ground-truth breaks) -- H1 groundwork
+            Week 8:    Break-conditioned accuracy evaluation extended to Tier 3 real-world documented breaks
+            Week 9:    Pre/post-break probabilistic calibration metrics (CRPS, pinball loss, PICP) -- H2
+            Week 10:   Adaptive conformal recalibration; post-break coverage-recovery-lag measured -- H3
+            Week 11:   Within-TSFM-family scale sweep (tiny/small vs. base checkpoints) -- H4
+            Week 12:   Master benchmarking DataFrame assembled; Tier 4 (M5) held-out generalization check
+            Week 13:   Diebold-Mariano significance testing; error-degradation regression resolving H1/H4
+            Week 14:   Change-point-detection pipeline precision/recall validated against historical record
+            Week 15:   Research paper draft (NeurIPS/ICML/ICLR workshop or TMLR/IJF format)
+            Week 16:   RegimeBench code release, README, notebooks, final presentation
 
             TOTAL: 16 weeks (one semester)
 
             KEY MILESTONES:
-            - Week 4:  Single-agent and Self-Refine baselines complete on Tier 1
-            - Week 6:  Critique-Revise complete; pipeline extended to grounded long-form QA
-            - Week 8:  Multi-agent debate complete, including the heterogeneous-backbone test
-            - Week 10: Planner-Executor-Verifier complete; full cost/latency logging in place
+            - Week 4:  Zero-shot TSFM baselines complete on the synthetic ground-truth regime-shift benchmark
+            - Week 6:  Classical and task-specific baseline suite complete, matched to the TSFM protocol
+            - Week 8:  Break-conditioned accuracy evaluation complete on both synthetic and real-world tiers
+            - Week 10: Calibration and adaptive-conformal-recovery analysis complete
             - Week 12: All hypothesis tests (H1-H4) resolved in the master benchmarking DataFrame
-            - Week 14: Human evaluation complete; automatic metrics validated
-            - Week 16: Paper submitted; code released to the FactAgent-Bench GitHub repository
+            - Week 14: Change-point-detection pipeline formally validated against the historical record
+            - Week 16: Paper submitted; code released to the RegimeBench GitHub repository
 
             DELIVERABLES BY WEEK 16:
-            - A five-topology agent-sophistication benchmark (single-agent, self-refine, critique-revise,
-              multi-agent debate, planner-executor-verifier) spanning three small open-weight LLM backbones,
-              homogeneous and heterogeneous configurations, and two NLG tasks
-            - Quantitative answers to whether small-model multi-agent factuality gains hold, are backbone-
-              dependent, benefit from backbone heterogeneity, and are worth their added inference cost
-            - A human-validated automatic factuality-metric pipeline
-            - A practical topology-selection guideline table for single-GPU agentic NLG deployment
+            - A structural-break-conditioned forecasting benchmark spanning four zero-shot open-weight time
+              series foundation models, locally-refit classical baselines, and per-dataset task-specific deep
+              models, on synthetic (ground-truth) and real-world (documented) regime shifts
+            - Quantitative answers to whether zero-shot TSFM accuracy and calibration degrade disproportion-
+              ately around structural breaks, and whether model scale predicts shift-robustness
+            - A validated change-point-detection pipeline with reported precision/recall against real events
+            - A post-hoc adaptive-conformal-recalibration wrapper with measured post-break recovery lag
+            - A practical model-selection guideline table for forecasting across a suspected regime shift
             - Research paper draft (8-10 pages)
-            - Open-source FactAgent-Bench repository with reproducible notebooks
+            - Open-source RegimeBench repository with reproducible notebooks
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Expected Number Students":
@@ -328,32 +362,34 @@ data_to_save = \
 
             ROLE DISTRIBUTION FOR 2 STUDENTS:
 
-            Student 1: Serving Infrastructure, Single-Agent & Critique-Based Topologies (T0-T2)
-            - Responsibilities: vLLM multi-backbone serving setup, T0/T1/T2 implementation, the NLI-based
-              tool-augmented fact-checking Critic, automatic factuality-metric pipeline and its validation
-              against AggreFact, model_registry.csv maintenance
-            - Skills: LLM serving/quantization, prompt engineering, Python, NLI/NLP evaluation metrics
+            Student 1: Foundation Model Serving, Zero-Shot Benchmarking & Calibration
+            - Responsibilities: deploy and sanity-check the four TSFMs (Chronos, TimesFM, Moirai, Lag-Llama),
+              zero-shot forecasting sweep across Tiers 1-4, probabilistic calibration metrics (CRPS, pinball
+              loss, PICP), adaptive conformal recalibration wrapper and coverage-recovery-lag measurement,
+              within-family scale sweep (H4)
+            - Skills: deep learning / transformer inference, probabilistic forecasting, Python, uncertainty
+              quantification
 
-            Student 2: Multi-Agent Debate & Planner-Executor-Verifier (T3-T4)
-            - Responsibilities: multi-agent debate implementation (homogeneous + heterogeneous), the
-              Planner-Executor-Verifier pipeline, token-cost/latency instrumentation, master benchmarking
-              DataFrame and hypothesis testing (H1-H4)
-            - Skills: agent orchestration (AutoGen), statistical analysis, ALCE-style citation-attribution
-              evaluation
+            Student 2: Classical & Task-Specific Baselines, Change-Point Detection & Statistical Testing
+            - Responsibilities: ARIMA/ETS/Theta rolling-refit baselines, N-BEATS/PatchTST/DeepAR training,
+              the change-point-detection pipeline (PELT/BOCPD/CUSUM) and its historical-event validation,
+              master benchmarking DataFrame, Diebold-Mariano significance testing and hypothesis resolution
+              (H1-H4)
+            - Skills: classical time series econometrics, statistical testing, Python, change-point detection
 
             SHARED RESPONSIBILITIES (both students):
-            - Cross-condition analysis, human evaluation and inter-annotator agreement, guideline synthesis,
+            - Cross-condition analysis, break-conditioned evaluation-window design, guideline synthesis,
               paper writing, code documentation, final presentation
-            - Weekly integration meetings: every topology feeds the same fixed backbone-serving and
+            - Weekly integration meetings: every model class feeds the same fixed data pipeline and
               evaluation protocol from Phase 1
 
             FOR 3 STUDENTS (optional third role):
             Student 3: Benchmarking Infrastructure, Evaluation & Visualization
             - Responsibilities: build the config-driven multi-run experiment orchestrator and run_matrix.csv
-              tracker, own the factuality/citation-attribution evaluation pipeline integration (SummaC,
-              SelfCheckGPT, ALCE), design and run the human-evaluation interface/protocol, produce all
-              publication-quality figures (topology-fidelity curves, cost-quality Pareto frontier,
-              homogeneous-vs-heterogeneous comparison), maintain the FactAgent-Bench repository structure
+              tracker, own the synthetic regime-shift generator and its ground-truth logging, design the
+              Tier 3 historical-event cross-validation protocol, produce all publication-quality figures
+              (break-conditioned error curves, calibration-vs-distance-from-break plots, coverage-recovery
+              curves, scale-robustness scatter), maintain the RegimeBench repository structure
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Research Contributions":
@@ -361,174 +397,170 @@ data_to_save = \
             This project offers several avenues for novel and publishable research contributions:
 
             1. EMPIRICAL CONTRIBUTIONS:
-            - The first benchmark testing whether multi-agent debate and critique-revise factuality gains,
-              established at GPT-3.5/GPT-4 scale (Du et al., 2023; Madaan et al., 2023), transfer to small
-              (7-8B parameter) open-weight LLMs under a single-GPU compute budget
-            - A direct homogeneous-vs-heterogeneous multi-agent backbone ensemble comparison at matched
-              agent count (H3), underexplored in prior multi-agent debate work
-            - A documented generalization check of topology-level factuality gains on held-out hallucination
-              stress-test benchmarks (HaluEval, RAGTruth) outside the tuning distribution
+            - The first benchmark directly testing whether the strong average-case zero-shot accuracy of
+              open-weight time series foundation models (Chronos, TimesFM, Moirai, Lag-Llama) holds up when
+              conditioned on distance from a structural break, against locally-refit classical and
+              per-dataset-trained task-specific baselines
+            - A joint synthetic (ground-truth break location/magnitude) and real-world (independently
+              documented historical break event) evaluation design, allowing controlled and ecologically
+              valid regime-shift robustness claims side by side
+            - A documented generalization check of break-robustness findings on a held-out dataset and break
+              event (Tier 4, M5/COVID) outside the tuning distribution
 
             2. METHODOLOGICAL CONTRIBUTIONS:
-            - A factuality-gain-per-token-cost Pareto analysis connecting agentic NLG pipelines to the
-              test-time-compute-scaling literature (Snell et al., 2024) -- a practical framing for whether a
-              given topology's added inference cost is worth paying
-            - A human-validated automatic factuality-metric pipeline, correlated against inter-annotator-
-              agreement-checked human judgments, reusable by future small-model agentic NLG studies
-            - A standardized topology-sophistication benchmarking protocol (fixed round budgets, matched
-              compute across homogeneous/heterogeneous configurations) reusable for future agent-topology
-              comparisons
+            - A break-conditioned evaluation protocol (error and calibration as an explicit function of
+              signed distance from a structural break, not an unconditional window average) reusable by
+              future time series foundation model studies regardless of which new model is released next
+            - A post-hoc adaptive-conformal-recalibration coverage-recovery-lag metric connecting TSFM
+              evaluation to the distribution-shift conformal-prediction literature (Gibbs & Candes, 2021)
+            - A validated change-point-detection pipeline with reported precision/recall against an
+              independently documented historical event record, reusable for labeling regime shifts in other
+              real-world time series benchmarks
 
             3. LIBRARY CONTRIBUTIONS:
-            - FactAgent-Bench: an open-source, config-driven repository implementing all five agent
-              topologies behind a common backbone-serving/evaluation interface
-            - Reference implementations of Self-Refine, CRITIC-style tool-augmented critiquing, multi-agent
-              debate, and a Planner-Executor-Verifier pipeline, all validated to run within a single AWS
-              g5.2xlarge instance's compute budget
+            - RegimeBench: an open-source, config-driven repository implementing the synthetic regime-shift
+              generator, the change-point-detection pipeline, and a common evaluation interface across
+              zero-shot TSFMs, classical statistical models, and task-specific deep learners
+            - A reusable synthetic ARIMA/GARCH-based regime-shift generator (four break types, exact ground
+              truth) usable as a controlled stress test for any future forecasting model
 
             PUBLICATION VENUES:
-            - ACL / EMNLP / NAACL (main conference or Findings)
-            - Workshops on Trustworthy NLG, LLM Agents, or Factuality in Generation (co-located with
-              ACL/EMNLP/NAACL)
-            - NeurIPS / ICLR workshops on multi-agent systems or LLM agents
-            - NeurIPS Datasets & Benchmarks Track
+            - NeurIPS / ICML / ICLR workshops on time series, foundation models, or distribution shift
+            - TMLR (Transactions on Machine Learning Research)
+            - International Journal of Forecasting
+            - KDD / IEEE TKDE / ACM TKDD (applied time series mining track)
 
             EXPECTED OUTCOMES:
-            - 1 workshop, Findings-track, or main-conference paper submission (Week 15)
-            - 1 GitHub repository (FactAgent-Bench) with automated benchmarking script and reproducible
-              notebooks
-            - A practical, citable guideline table for choosing an agent topology under a single-GPU
-              inference-cost budget
+            - 1 workshop, journal, or main-conference paper submission (Week 15)
+            - 1 GitHub repository (RegimeBench) with automated benchmarking script and reproducible notebooks
+            - A practical, citable guideline table for choosing a forecasting model class when a regime shift
+              is suspected
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Possible Issues":
             """
             TECHNICAL CHALLENGES AND SOLUTIONS:
 
-            1. Multi-Agent Pipelines Multiply Inference Cost on a Single GPU:
-            - ISSUE: N agents x multiple rounds means T3/T4 can cost 5-15x the tokens of the T0 baseline
-            - SOLUTION: 4-bit quantization, vLLM continuous batching/PagedAttention, and a fixed max-round
-              budget (3 rounds) with early stopping on consensus/no-change; log cost as a first-class metric
-              feeding directly into the H4 Pareto analysis rather than being treated as a nuisance
+            1. Real-World Break Timestamps Are Estimated, Not Ground Truth:
+            - ISSUE: PELT/BOCPD/CUSUM can mislocate or miss breaks in Tier 3 real-world series, unlike the
+              exact synthetic ground truth in Tier 1
+            - SOLUTION: Cross-check every Tier 3 detected break against an independently documented
+              historical event date (Week 2), and formally validate detector precision/recall against that
+              record in Week 14 rather than trusting detected timestamps throughout
 
-            2. Small Models May Lack Reliable Self-Critique Ability:
-            - ISSUE: 7-8B models may not critique their own or each other's outputs as reliably as GPT-4-
-              scale agents did in prior work, so gains may be smaller, absent, or negative
-            - SOLUTION: This is the project's central research question (H1), not a bug to engineer away --
-              a plateau or reversal is a valid, reportable, and publishable finding; design the paper
-              narrative to accommodate any outcome from Week 1
+            2. Comparing a Zero-Shot Model to a Locally-Refit Model Is an Apples-to-Oranges Design by
+               Construction:
+            - ISSUE: Classical/task-specific baselines are allowed to re-estimate on recent data while TSFMs
+              are not, which could look like an unfair comparison
+            - SOLUTION: This asymmetry is the entire research question, not a confound to remove -- each
+              model class is evaluated exactly as it is used in practice (TSFMs zero-shot, classical models
+              refit), and the paper states this explicitly as the studied factor rather than a nuisance
+              variable
 
-            3. GPU Memory Pressure Serving Multiple Backbones and Concurrent Agent Contexts:
-            - ISSUE: 24 GB must hold model weights, KV cache, and multiple simultaneous agent contexts
-              (debate/planner-executor-verifier run several agents per example)
-            - SOLUTION: Serve one backbone at a time per experiment batch rather than all three
-              concurrently; 4-bit quantization; bounded context lengths; inference-only workload (no
-              optimizer state) keeps memory well within budget
+            3. TSFMs May Simply Be Robust to Regime Shift (Null Result):
+            - ISSUE: The central hypothesis (H1) could fail to hold -- TSFMs might degrade no more than the
+              baselines
+            - SOLUTION: A null result is a valid, reportable, and publishable finding (it would say TSFMs are
+              production-ready even under regime shift); the paper narrative and analysis pipeline are
+              designed from Week 1 to accommodate either outcome
 
-            4. Automatic Factuality Metrics Are Imperfect Proxies:
-            - ISSUE: FactCC/SummaC and similar NLI-based metrics are known to disagree with human judgment
-              in some cases
-            - SOLUTION: Week 3 validates the metric pipeline against AggreFact's human labels before it is
-              trusted for the main sweep, and Week 14's human evaluation re-validates it at the end,
-              reporting the human-automatic correlation explicitly rather than assuming it
+            4. Differing Context-Length / Frequency Requirements Across TSFM Families:
+            - ISSUE: Chronos, TimesFM, Moirai, and Lag-Llama differ in maximum context length and supported
+              frequencies, complicating a strictly identical protocol
+            - SOLUTION: Fix a common context window / horizon within each model's supported range, document
+              any per-model deviation in model_registry.csv, and verify Week 3 zero-shot sanity-check numbers
+              before trusting the deployment
 
-            5. Debate/Self-Refine Loops May Not Converge:
-            - ISSUE: Agents can oscillate between positions instead of converging to a consensus revision
-            - SOLUTION: Fixed max-round budget with early stopping on consensus or no measurable change;
-              log the non-convergence rate per topology/backbone as a reported statistic, not a discarded
-              failure case
+            5. Change-Point Detectors Have Their Own False-Positive/Negative Rate:
+            - ISSUE: An unvalidated detector could mislabel evaluation windows, contaminating the Tier 3
+              results
+            - SOLUTION: Week 2 validates the pipeline against known events before the main sweep, and Week 14
+              re-validates it with an independent manual audit, reporting precision/recall explicitly
 
             6. Total Run Count Across the Full Sweep:
-            - ISSUE: 5 topologies x 3 backbones x 2 tasks x homogeneous/heterogeneous configurations could
-              balloon the compute budget
+            - ISSUE: 4 TSFM families x scale variants x 3 classical/task-specific baselines x 4 tiers x
+              multiple break types/window positions could balloon the compute and analysis budget
             - SOLUTION: The full run matrix is enumerated in run_matrix.csv in Week 1 so the total is
-              bounded and auditable before any runs begin; heterogeneous configurations are only run for
-              topologies where they are meaningful (T3, T4), not the full matrix
+              bounded and auditable before any runs begin; the scale sweep (H4) is restricted to Tier 1 only
 
             7. Library / Version Drift:
-            - ISSUE: vLLM, AutoGen, and transformers are all actively maintained; API changes could break
-              reproducibility mid-semester
+            - ISSUE: The TSFM libraries (chronos-forecasting, timesfm, uni2ts, lag-llama) are all actively
+              maintained; API changes could break reproducibility mid-semester
             - SOLUTION: Pin all dependency versions in requirements.txt from Week 1
 
             RISK MITIGATION TIMELINE:
-            - Weeks 1-3:  Verify backbone serving throughput and the factuality-metric pipeline against
-                          known reference numbers (AggreFact) before the main sweep begins
-            - Weeks 4-10: Monitor per-topology token cost and non-convergence rate as each topology comes
-                          online; checkpoint intermediate results after every phase
-            - Weeks 11-12: Cross-check held-out stress-test results against the Tier 1-2 findings for
-                          consistency before finalizing H1-H4
-            - Weeks 13-14: Have both students independently verify the hypothesis-test results and
-                          cross-check human-evaluation inter-annotator agreement
+            - Weeks 1-3:  Verify TSFM zero-shot accuracy against published reference numbers (Monash/M4) and
+                          validate the change-point pipeline against historical events before the main sweep
+            - Weeks 4-11: Monitor per-model run completion and intermediate break-conditioned error curves as
+                          each phase comes online; checkpoint intermediate results after every phase
+            - Weeks 12-13: Cross-check held-out Tier 4 results against the Tier 1/3 findings for consistency
+                          before finalizing H1-H4
+            - Week 14:    Independent manual audit of change-point-detection precision/recall by both
+                          students
             - Weeks 15-16: 3-day code freeze for README and notebook review before public release
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Additional Resources":
             """
             PRIMARY LIBRARIES:
-            - vLLM (high-throughput local LLM serving, PagedAttention): https://github.com/vllm-project/vllm
-            - AutoGen (Microsoft multi-agent orchestration): https://github.com/microsoft/autogen
-            - HuggingFace transformers / accelerate / bitsandbytes / AutoAWQ for quantized backbone serving
-            - SummaC: https://github.com/tingofurro/summac
-            - SelfCheckGPT: https://github.com/potsawee/selfcheckgpt
-            - ALCE (citation-attribution evaluation for long-form QA): https://github.com/princeton-nlp/ALCE
-            - HaluEval: https://github.com/RUCAIBox/HaluEval
-            - RAGTruth: https://github.com/ParticleMedia/RAGTruth
+            - Chronos (Amazon zero-shot TSFM): https://github.com/amazon-science/chronos-forecasting
+            - TimesFM (Google zero-shot TSFM): https://github.com/google-research/timesfm
+            - Moirai / uni2ts (Salesforce zero-shot TSFM): https://github.com/SalesforceAIResearch/uni2ts
+            - Lag-Llama (probabilistic zero-shot TSFM): https://github.com/time-series-foundation-models/lag-llama
+            - statsforecast / neuralforecast (Nixtla, classical + deep baselines):
+              https://github.com/Nixtla/statsforecast , https://github.com/Nixtla/neuralforecast
+            - GluonTS (DeepAR and other probabilistic forecasters): https://github.com/awslabs/gluonts
+            - sktime / darts (unified forecasting interfaces): https://github.com/sktime/sktime ,
+              https://github.com/unit8co/darts
+            - ruptures (change-point detection, PELT/CUSUM): https://github.com/deepcharles/ruptures
+            - MAPIE (conformal prediction toolkit): https://github.com/scikit-learn-contrib/MAPIE
 
             KEY REFERENCE PAPERS:
-            1. Madaan, A. et al. (2023). "Self-Refine: Iterative Refinement with Self-Feedback." NeurIPS.
-            2. Shinn, N. et al. (2023). "Reflexion: Language Agents with Verbal Reinforcement Learning."
-               NeurIPS.
-            3. Du, Y. et al. (2023). "Improving Factuality and Reasoning in Language Models through
-               Multiagent Debate." arXiv:2305.14325.
-            4. Chan, C.-M. et al. (2023). "ChatEval: Towards Better LLM-based Evaluators through Multi-Agent
-               Debate." arXiv:2308.07201.
-            5. Gou, Z. et al. (2023). "CRITIC: Large Language Models Can Self-Correct with Tool-Interactive
-               Critiquing." arXiv:2305.11738.
-            6. Wu, Q. et al. (2023). "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent
-               Conversation." arXiv:2308.08155.
-            7. Li, G. et al. (2023). "CAMEL: Communicative Agents for 'Mind' Exploration of Large Language
-               Model Society." NeurIPS.
-            8. Hong, S. et al. (2023). "MetaGPT: Meta Programming for a Multi-Agent Collaborative
-               Framework." arXiv:2308.00352.
-            9. Narayan, S., Cohen, S.B., Lapata, M. (2018). "Don't Give Me the Details, Just the Summary!
-               Topic-Aware Convolutional Neural Networks for Extreme Summarization." EMNLP. (XSum)
-            10. See, A., Liu, P.J., Manning, C.D. (2017). "Get To The Point: Summarization with
-                Pointer-Generator Networks." ACL. (CNN/DailyMail)
-            11. Gliwa, B. et al. (2019). "SAMSum Corpus: A Human-annotated Dialogue Dataset for Abstractive
-                Summarization." EMNLP Workshop.
-            12. Kryscinski, W. et al. (2020). "Evaluating the Factual Consistency of Abstractive Text
-                Summarization." EMNLP. (FactCC)
-            13. Laban, P. et al. (2022). "SummaC: Re-Visiting NLI-based Models for Inconsistency Detection
-                in Summarization." TACL.
-            14. Tang, L. et al. (2023). "Understanding Factual Errors in Summarization: Errors, Summarizers,
-                Datasets, Error Detectors." ACL. (AggreFact)
-            15. Stelmakh, I. et al. (2022). "ASQA: Factoid Questions Meet Long-Form Answers." EMNLP.
-            16. Gao, T. et al. (2023). "Enabling Large Language Models to Generate Text with Citations."
-                EMNLP. (ALCE)
-            17. Fan, A. et al. (2019). "ELI5: Long Form Question Answering." ACL.
-            18. Li, J. et al. (2023). "HaluEval: A Large-Scale Hallucination Evaluation Benchmark for Large
-                Language Models." EMNLP.
-            19. Niu, C. et al. (2024). "RAGTruth: A Hallucination Corpus for Developing Trustworthy
-                Retrieval-Augmented Language Models." ACL.
-            20. Manakul, P., Liusie, A., Gales, M. (2023). "SelfCheckGPT: Zero-Resource Black-Box Hallucination
-                Detection for Generative Large Language Models." EMNLP.
-            21. Snell, C. et al. (2024). "Scaling LLM Test-Time Compute Optimally can be More Effective than
-                Scaling Model Parameters." arXiv:2408.03314.
+            1. Ansari, A.F. et al. (2024). "Chronos: Learning the Language of Time Series." arXiv:2403.07815.
+            2. Das, A. et al. (2024). "A Decoder-Only Foundation Model for Time-Series Forecasting." ICML /
+               arXiv:2310.10688. (TimesFM)
+            3. Woo, G. et al. (2024). "Unified Training of Universal Time Series Forecasting Transformers."
+               ICML / arXiv:2402.02592. (Moirai)
+            4. Rasul, K. et al. (2024). "Lag-Llama: Towards Foundation Models for Probabilistic Time Series
+               Forecasting." arXiv:2310.08278.
+            5. Oreshkin, B.N. et al. (2020). "N-BEATS: Neural Basis Expansion Analysis for Interpretable Time
+               Series Forecasting." ICLR.
+            6. Nie, Y. et al. (2023). "A Time Series is Worth 64 Words: Long-Term Forecasting with
+               Transformers." ICLR. (PatchTST)
+            7. Salinas, D. et al. (2020). "DeepAR: Probabilistic Forecasting with Autoregressive Recurrent
+               Networks." International Journal of Forecasting.
+            8. Killick, R., Fearnhead, P., Eckley, I.A. (2012). "Optimal Detection of Changepoints With a
+               Linear Computational Cost." Journal of the American Statistical Association. (PELT)
+            9. Adams, R.P., MacKay, D.J.C. (2007). "Bayesian Online Changepoint Detection." arXiv:0710.3742.
+            10. Gibbs, I., Candes, E. (2021). "Adaptive Conformal Inference Under Distribution Shift."
+                NeurIPS.
+            11. Diebold, F.X., Mariano, R.S. (1995). "Comparing Predictive Accuracy." Journal of Business &
+                Economic Statistics.
+            12. Godahewa, R. et al. (2021). "Monash Time Series Forecasting Archive." NeurIPS Datasets and
+                Benchmarks Track.
+            13. Makridakis, S., Spiliotis, E., Assimakopoulos, V. (2020). "The M4 Competition: 100,000 Time
+                Series and 61 Forecasting Methods." International Journal of Forecasting.
+            14. Makridakis, S., Spiliotis, E., Assimakopoulos, V. (2022). "M5 Accuracy Competition: Results,
+                Findings, and Conclusions." International Journal of Forecasting.
+            15. Hyndman, R.J., Athanasopoulos, G. (2021). "Forecasting: Principles and Practice." 3rd ed.
+                (ARIMA/ETS/Theta reference)
 
             REQUIRED LIBRARIES (requirements.txt):
             - torch>=2.1.0
-            - vllm>=0.4.0
-            - transformers>=4.40.0
-            - accelerate>=0.29.0
-            - bitsandbytes>=0.43.0
-            - autoawq>=0.2.0
-            - pyautogen>=0.2.0
-            - summac>=0.0.4
-            - selfcheckgpt>=0.1.0
-            - bert-score>=0.3.13
-            - rouge-score>=0.1.2
-            - sentence-transformers>=2.6.0
+            - chronos-forecasting>=1.4.0
+            - timesfm>=1.2.0
+            - uni2ts>=1.1.0
+            - gluonts>=0.15.0
+            - statsforecast>=1.7.0
+            - neuralforecast>=1.7.0
+            - sktime>=0.28.0
+            - darts>=0.29.0
+            - ruptures>=1.1.9
+            - mapie>=0.8.0
+            - statsmodels>=0.14.0
+            - arch>=6.3.0                # GARCH simulation
             - pandas>=2.0.0
+            - numpy>=1.26.0
             - matplotlib>=3.7.0
             - seaborn>=0.12.0
             - jupyter>=1.0.0
@@ -537,10 +569,10 @@ data_to_save = \
 
             ADDITIONAL TOOLS:
             - AWS g5.2xlarge (1x NVIDIA A10G, 24 GB VRAM, 8 vCPUs, 32 GiB RAM) as the target compute
-              environment; 4-bit AWQ/GPTQ/bitsandbytes quantization plus vLLM's PagedAttention keep three
-              backbones and multi-agent concurrent generation within budget
-            - Local OpenAI-compatible vLLM serving endpoint so every agent topology (single-agent through
-              planner-executor-verifier) is implemented against one consistent API regardless of backbone
+              environment; all four TSFM checkpoints at small/base scale, plus classical and task-specific
+              training, fit comfortably within this single-GPU budget without quantization
+            - FRED, CDC FluView, EIA, and Yahoo Finance data are all accessed via free public APIs/downloads
+              with no institutional access required; all Tier 3 sources are cached locally after Week 2
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Proposed by": "Dr. Amir Jafari",
