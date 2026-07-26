@@ -1,5 +1,5 @@
 [project]
-name = "mycalculator" # REQUIRED
+name = "Capstone" # REQUIRED
 version = "0.0.1" # REQUIRED
 authors = [
     { name = "Example Author", email = "author@example.com" },
