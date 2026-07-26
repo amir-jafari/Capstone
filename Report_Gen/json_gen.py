@@ -12,7 +12,7 @@ data_to_save = \
     {
         # -----------------------------------------------------------------------------------------------------------------------
         "Version":
-            """6""",
+            """7""",
         # -----------------------------------------------------------------------------------------------------------------------
         "Year":
             """2026""",
@@ -21,339 +21,333 @@ data_to_save = \
             """Fall""",
         # -----------------------------------------------------------------------------------------------------------------------
         "project_name":
-            """RegimeBench: Are Zero-Shot Time Series Foundation Models Robust to Structural Breaks? A Forecasting-Accuracy and Calibration Benchmark Under Regime Shift""",
+            """SAE-Faithful: Are Sparse Autoencoder Features Causally Faithful to Their Auto-Generated Labels? A Steering-Intervention Benchmark for LLM Interpretability""",
         # -----------------------------------------------------------------------------------------------------------------------
         "Objective":
             """
-            Zero-shot time series foundation models (TSFMs) -- Chronos, TimesFM, Moirai, Lag-Llama -- are
-            pretrained once on large cross-domain corpora and then forecast any new series without
-            re-estimation, and they now match or beat classical statistical and task-specific deep-learning
-            forecasters on standard benchmarks (Monash archive, M4/M5). Almost all of that evidence comes
-            from series whose statistical properties are roughly stable across the evaluation window. Real
-            deployment settings -- economic indicators around COVID-19, equity volatility around financial
-            crises, energy demand around supply shocks -- are dominated by structural breaks: abrupt shifts
-            in mean, variance, or trend. Classical statistical models (ARIMA, ETS) are refit on a rolling
-            window and can adapt to a new regime within a few observations; a zero-shot foundation model has
-            no such local re-estimation step and must generalize purely from pretraining. The goal of this
-            project is to build a rigorous, reproducible benchmark that directly tests whether zero-shot
-            TSFMs are actually robust to structural breaks, or whether their strong average-case benchmark
-            numbers hide a blind spot that only shows up right when accurate forecasts matter most, using
-            open-weight models small enough to run entirely on a single AWS g5.2xlarge instance (1x NVIDIA
-            A10G, 24 GB VRAM, 8 vCPUs, 32 GiB RAM).
+            Sparse autoencoders (SAEs) trained on the internal activations of large language models are the
+            centerpiece of the current mechanistic-interpretability research program: they decompose a
+            model's dense, polysemantic activations into a much larger set of sparse, ostensibly
+            monosemantic "features," each of which can be given a human-readable label by an automated
+            interpretability pipeline (an explainer LLM shown the feature's max-activating text examples).
+            These labels are treated as explanations of what a feature represents and, increasingly, as a
+            basis for steering model behavior. But an auto-generated label is a plausible-sounding story
+            about a feature, not a proof that clamping the feature actually causes the labeled behavior --
+            the same gap that undermined faithfulness in classical feature-attribution methods like LIME and
+            SHAP. The goal of this project is to build a rigorous, reproducible benchmark that directly
+            measures whether SAE feature labels are causally faithful, using open-weight models and
+            pretrained SAEs small enough to run entirely on a single AWS g5.2xlarge instance (1x NVIDIA A10G,
+            24 GB VRAM, 8 vCPUs, 32 GiB RAM).
 
             Key Objectives:
-            1. Implement a controlled synthetic regime-shift generator (mean shift, variance shift, trend
-               shift, and frequency shift, injected at known times and magnitudes into ARIMA/GARCH-simulated
-               base series) that provides exact ground-truth break locations, complementing real-world data
-               where break timing must be estimated.
-            2. Build a change-point-detection pipeline (PELT, Bayesian Online Changepoint Detection, CUSUM)
-               to locate regime shifts in real-world series, validated against independently documented
-               historical events (the COVID-19 onset, the 2008 and 2020 financial shocks, the 2021 Texas
-               winter-storm energy shock) rather than trusted blindly.
-            3. Benchmark four zero-shot open-weight TSFMs (Chronos, TimesFM, Moirai, Lag-Llama) against
-               locally-refit classical statistical baselines (ARIMA, ETS, Theta) and per-dataset-trained
-               task-specific deep models (N-BEATS, PatchTST, DeepAR) on point-forecast accuracy as a
-               function of distance from the nearest detected or injected structural break.
-            4. Evaluate the calibration of each model class's probabilistic forecasts (CRPS, pinball loss,
-               prediction-interval coverage) before and after a break, and apply post-hoc adaptive conformal
-               inference (Gibbs & Candes, 2021) to measure how many post-break windows each model class needs
-               before nominal coverage is recovered.
-            5. Sweep model scale within each TSFM family (e.g., Chronos-tiny/small/base) to test whether
-               larger zero-shot foundation models are also more robust to regime shift, or whether scale and
-               shift-robustness are unrelated, and package the full pipeline -- synthetic generator,
-               change-point detector, forecasting models, calibration wrapper, and the resulting benchmarking
-               DataFrame -- as an open-source, config-driven repository (RegimeBench).
+            1. Obtain pretrained SAEs across multiple layers of two open-weight LLMs (GPT-2-small via
+               SAELens; Gemma-2-2B via Gemma Scope), and additionally train from-scratch ReLU, TopK (Gao et
+               al., 2024), and JumpReLU (Rajamanoharan et al., 2024) SAEs on one GPT-2-small layer to enable
+               a controlled architecture comparison.
+            2. Sample a stratified set of SAE latents per layer/model/architecture by activation frequency
+               (rare, medium, common) and run an automated interpretability labeling pipeline (Bills et al.,
+               2023 style: an explainer LLM shown each latent's max-activating examples produces a
+               natural-language label and a confidence score) to build a labeled-latent dataset.
+            3. For every labeled latent, run activation-steering interventions (clamping the latent at
+               several magnitudes during generation) and score, with an LLM judge validated against human
+               ratings, whether the steered continuations actually exhibit the labeled concept -- and
+               separately measure the latent's precision/recall as a concept detector on contrastive
+               concept-present/concept-absent prompts drawn from curated concept datasets.
+            4. Train fully supervised linear concept probes on the same models' residual-stream activations
+               for the identical target concepts, and run the same steering-faithfulness and
+               concept-detection protocol on probe-derived steering vectors, to directly compare unsupervised
+               SAE latents against a supervised baseline at matched concepts.
+            5. Characterize where causal faithfulness breaks down -- layer depth, latent activation
+               frequency/sparsity, SAE architecture, and auto-interp label confidence -- and package the full
+               pipeline -- SAE training/loading, auto-interp labeling, steering intervention, concept
+               detection, probe baseline, and the resulting benchmarking DataFrame -- as an open-source,
+               config-driven repository (SAE-Faithful).
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Dataset":
             """
-            All datasets below are publicly available for research use with no restricted access. The
-            project organizes them into four tiers: a controlled synthetic benchmark with exact ground-truth
-            break locations, a general-purpose zero-shot sanity check, a real-world documented-structural-
-            break benchmark, and a held-out generalization tier.
+            All resources below are publicly available for research use with no restricted access. The
+            project organizes them into four tiers: pretrained models and SAEs, a text corpus for mining
+            max-activating examples, concept datasets for the steering/detection protocol, and a held-out
+            generalization tier.
 
-            TIER 1 -- SYNTHETIC REGIME-SHIFT BENCHMARK (GROUND-TRUTH BREAKS):
-            1. Base series simulated from ARIMA and GARCH processes (statsmodels/arch), with four injected
-               break types at controlled, known locations and magnitudes: mean shift, variance shift, trend
-               shift, and frequency/seasonality shift -- generated in Week 1, not downloaded; every break
-               timestamp and magnitude is logged for exact pre/post-break evaluation windows
-            2. A no-break control set (same generators, no injected shift) to establish each model's
-               baseline accuracy absent any regime change
+            TIER 1 -- MODELS AND PRETRAINED SPARSE AUTOENCODERS:
+            1. GPT-2-small (124M) with pretrained residual-stream SAEs across all 12 layers, via SAELens'
+               hosted SAE repository: https://github.com/jbloomAus/SAELens
+            2. Gemma-2-2B with pretrained JumpReLU SAEs across multiple layers, via Gemma Scope (DeepMind):
+               https://huggingface.co/google/gemma-scope
+            3. From-scratch ReLU, TopK, and JumpReLU SAEs trained in Week 2 on one GPT-2-small layer's
+               residual stream (not downloaded), enabling a controlled same-layer architecture comparison
+            4. Neuronpedia's existing auto-interpretability labels/dashboards, used as an independent
+               cross-check on this project's own auto-interp pipeline: https://www.neuronpedia.org/
 
-            TIER 2 -- GENERAL-PURPOSE ZERO-SHOT SANITY CHECK (NO BREAK LABELING):
-            3. Monash Time Series Forecasting Archive (Godahewa et al., 2021) -- a curated multi-domain
-               collection (electricity, traffic, tourism, weather, retail, and more) used to confirm every
-               TSFM reproduces its published zero-shot benchmark numbers before it is trusted for the
-               regime-shift analysis: https://forecastingdata.org/ / https://huggingface.co/datasets/monash_tsf
-            4. M4 Competition dataset (Makridakis et al., 2020) -- 100k series across six frequencies,
-               a second independent zero-shot sanity check: https://github.com/Mcompetitions/M4-methods
+            TIER 2 -- TEXT CORPUS FOR MAX-ACTIVATING EXAMPLE MINING:
+            5. OpenWebText (Gokaslan & Cohen, 2019) -- the standard public reproduction of GPT-2's training
+               distribution, used to find each SAE latent's top-activating text spans:
+               https://huggingface.co/datasets/Skylion007/openwebtext
+            6. The Pile (uncopyrighted subset, Gao et al., 2020) -- a broader-domain corpus used as a second
+               source of max-activating examples for the Gemma-2-2B latents:
+               https://huggingface.co/datasets/monology/pile-uncopyrighted
 
-            TIER 3 -- REAL-WORLD DOCUMENTED STRUCTURAL BREAKS (MAIN EVALUATION):
-            5. U.S. retail sales and economic indicators around the COVID-19 onset (March-April 2020) from
-               FRED (Federal Reserve Economic Data): https://fred.stlouisfed.org/
-            6. CDC FluView ILINet influenza-like-illness surveillance data, which shows a sharp, well-
-               documented regime shift at the COVID-19 non-pharmaceutical-intervention onset:
-               https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html
-            7. Daily realized volatility / closing-price series for major equity indices (S&P 500, VIX)
-               spanning the 2008 global financial crisis and the March 2020 crash, both independently dated
-               in the financial-econometrics literature, via Yahoo Finance historical data
-            8. U.S. regional electricity demand around the February 2021 Texas winter-storm supply shock,
-               via the EIA (U.S. Energy Information Administration) hourly demand data:
-               https://www.eia.gov/opendata/
-            For every Tier 3 series, the change-point-detection pipeline (Week 2) proposes candidate break
-            timestamps, which are then cross-checked against the independently documented historical event
-            dates above rather than accepted automatically.
+            TIER 3 -- CONCEPT DATASETS FOR STEERING AND DETECTION (MAIN EVALUATION):
+            7. Geometry of Truth (Marks & Tegmark, 2023) -- curated true/false factual statement datasets
+               with a clean concept boundary, used for concrete factuality-concept probing:
+               https://github.com/saprmarks/geometry-of-truth
+            8. Representation Engineering (RepE) concept-pair datasets (Zou et al., 2023) -- contrastive
+               prompt pairs for concepts spanning sentiment, honesty, and other abstract behavioral
+               dimensions: https://github.com/andyzoujm/representation-engineering
+            9. A custom curated concept list spanning concrete/lexical concepts (e.g., specific topics,
+               named entities) to abstract/semantic concepts (e.g., sentiment, formality, refusal),
+               constructed in Week 7 to give the concreteness-vs-abstractness axis needed for H3/H4 explicit
+               coverage beyond what Geometry-of-Truth/RepE alone provide
 
             TIER 4 -- HELD-OUT GENERALIZATION (evaluation only, not tuned on):
-            9. M5 Competition dataset (Makridakis et al., 2022) -- Walmart retail sales, including the
-               COVID-19 period, used only in Week 12 as a final generalization check on data and a break
-               event not used to develop the pipeline in Weeks 1-11:
-               https://www.kaggle.com/competitions/m5-forecasting-accuracy
+            10. Pretrained SAEs for a third open-weight model not used in Weeks 1-12 (e.g., Llama-3.2-1B/3B
+                community SAEs hosted on SAELens/HuggingFace), used only in Week 12 as a final generalization
+                check on a model and layer set not used to develop the pipeline
 
             DATASET / PIPELINE PREPARATION:
-            - Standardize every tier behind a common loader that emits (context window, forecast horizon,
-              known-or-detected break timestamp) tuples, so every model and every metric consumes an
-              identical evaluation protocol regardless of tier
-            - Fix a stratified evaluation sample per (tier, break type) with a documented random seed, and a
-              fixed set of pre-break / at-break / post-break window offsets used consistently across every
-              experiment in Phases 4-6
-            - No live web APIs are required at run time -- Tier 3/4 sources are downloaded once in Week 2 and
-              cached locally, keeping the pipeline reproducible and free of flaky external dependencies
+            - Standardize every tier behind a common loader that emits (model, layer, SAE architecture,
+              latent id, auto-interp label, concept-dataset pairing) tuples, so every steering intervention
+              and every metric consumes an identical evaluation protocol regardless of tier
+            - Fix a stratified evaluation sample of latents per (model, layer, activation-frequency bucket)
+              with a documented random seed, and a fixed steering-magnitude grid used consistently across
+              every experiment in Phases 3-6
+            - No live web APIs are required at run time -- all corpora, concept datasets, and SAE checkpoints
+              are downloaded once in Weeks 1-2 and cached locally, keeping the pipeline reproducible and free
+              of flaky external dependencies
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Rationale":
             """
-            Zero-shot time series foundation models are one of the most active current threads in
-            forecasting research: Chronos (Ansari et al., 2024) tokenizes real-valued series and reuses a
-            T5-style language-model architecture; TimesFM (Das et al., 2024) is a decoder-only foundation
-            model pretrained on ~100B real-world time points; Moirai (Woo et al., 2024) is a masked-encoder
-            model trained for universal, any-frequency forecasting; Lag-Llama (Rasul et al., 2024) is a
-            probabilistic decoder-only foundation model. All four report strong zero-shot accuracy on the
-            Monash archive and M4/M5-style benchmarks, in some cases matching or beating classical
-            statistical models and task-specific deep learners that were trained or refit directly on the
-            target series.
+            Sparse autoencoder interpretability is the fastest-moving current thread in mechanistic
+            interpretability and AI safety research: Bricken et al. (2023, "Towards Monosemanticity")
+            showed dictionary learning decomposes a small transformer's polysemantic neurons into sparse,
+            more interpretable features; Templeton et al. (2024, "Scaling Monosemanticity") scaled the same
+            approach to Claude 3 Sonnet and demonstrated that clamping individual features ("Golden Gate
+            Claude") produces visible, targeted behavior changes; Cunningham et al. (2023), Gao et al. (2024,
+            TopK SAEs), and Rajamanoharan et al. (2024, JumpReLU SAEs / Gemma Scope) have driven rapid
+            architectural progress; and Bills et al. (2023) introduced the now-standard automated
+            interpretability pipeline, where an explainer LLM reads a feature's max-activating text examples
+            and produces a human-readable label. SAE latents and their auto-generated labels are now widely
+            treated, in both research and applied safety work, as legitimate explanations of what a model
+            represents.
 
-            But those benchmarks average performance across an entire evaluation window, and most of the
-            series in them do not contain a sharp structural break. Classical statistical models (ARIMA,
-            ETS) are refit on a rolling window and can absorb a regime shift within a handful of new
-            observations; task-specific deep models are trained per dataset and see the full history at
-            training time; a zero-shot foundation model, by construction, has no per-series re-estimation
-            step at all -- it must forecast a post-break regime purely by pattern-matching against whatever
-            it saw in pretraining. Whether this makes TSFMs systematically fragile exactly when a structural
-            break occurs -- a recession onset, a pandemic, a supply shock, precisely the moments where an
-            accurate forecast is most valuable -- is a question the standard average-case benchmarks cannot
-            answer, because they do not condition error on distance from a break.
+            But an auto-generated label is fundamentally a plausible post-hoc story fit to a handful of
+            examples, and classical explainable-AI research has already shown that this kind of
+            example-driven explanation can be unfaithful -- LIME and SHAP attributions are well documented to
+            sometimes describe a model's behavior without actually being causally responsible for it. Whether
+            SAE feature labels have the same problem -- whether a label that looks confident and specific
+            actually predicts what happens when the feature is clamped -- is not yet systematically
+            benchmarked. The closest related work, RAVEL (Huang et al., 2024), evaluates whether
+            interpretability methods can disentangle distinct attributes in a representation, which is a
+            different question from whether a specific feature's auto-generated label is a causally faithful
+            description of that feature's effect on generation.
 
-            No existing published study directly benchmarks multiple open-weight zero-shot TSFM families
-            against locally-refit classical and task-specific baselines, conditioned explicitly on distance
-            from a structural break, on both a controlled synthetic benchmark with known break ground truth
-            and real-world series with independently documented historical break events, while also
-            evaluating probabilistic calibration (not just point accuracy) before and after the break. This
-            project fills that gap.
+            No existing published study directly benchmarks the causal faithfulness of SAE auto-interp labels
+            via steering interventions, across multiple SAE architectures and layers, against a fully
+            supervised linear-probe baseline at matched concepts, on open-weight models small enough for a
+            single-GPU student project. This project fills that gap.
 
             WHY THIS PROJECT IS TIMELY AND PUBLISHABLE:
-            - Time series foundation models are the fastest-moving current thread in forecasting research,
-              with dedicated venues: the NeurIPS/ICML/ICLR workshops on time series and foundation models,
-              and increasing coverage at KDD, TMLR, and in the International Journal of Forecasting.
-            - The regime-shift-conditioned evaluation protocol (error and calibration as a function of
-              distance from a break, not an unconditional average) is a clean, citable methodological
-              contribution distinct from yet another leaderboard, and is directly reusable by future TSFM
-              studies regardless of which new foundation model is released next.
-            - The calibration and adaptive-conformal-recovery analysis (H2/H3 below) connects directly to the
-              distribution-shift and conformal-prediction literature (Gibbs & Candes, 2021), giving the
-              project a rigorous uncertainty-quantification angle beyond point-forecast accuracy.
-            - A negative or null result (TSFMs are just as robust to breaks as locally-refit baselines) is
-              just as publishable and useful to practitioners as a positive one -- the project is designed so
-              every outcome is a reportable finding, not a failure condition.
-            - The entire pipeline -- four TSFMs at their smallest/base checkpoints, classical statistical
-              refitting, and lightweight task-specific training -- runs comfortably on one AWS g5.2xlarge,
-              specifically so the project stays tractable for a student team without a multi-GPU cluster.
+            - Mechanistic interpretability via SAEs is arguably the single most active current thread in AI
+              safety research, with dedicated venues: the NeurIPS/ICML/ICLR workshops on interpretability and
+              mechanistic interpretability, and increasing coverage at ACL/EMNLP and in TMLR.
+            - The steering-faithfulness protocol (does clamping a labeled feature actually produce the
+              labeled behavior, scored and human-validated, not just assumed) is a clean, citable
+              methodological contribution distinct from yet another feature-labeling leaderboard, and is
+              directly reusable by future SAE studies regardless of which new architecture is released next.
+            - The supervised-probe baseline comparison (H2 below) directly tests a claim implicit in most SAE
+              papers -- that unsupervised dictionary learning discovers meaningful concepts "for free" --
+              against the simplest fully supervised alternative, echoing the "does the fancy method actually
+              beat the boring baseline" framing that has proven valuable elsewhere in ML benchmarking.
+            - A negative or null result (auto-interp labels are just as faithful as they look, or SAE latents
+              do not beat supervised probes) is just as publishable and useful to the interpretability
+              community as a positive one -- the project is designed so every outcome is a reportable
+              finding, not a failure condition.
+            - The entire pipeline -- two small open-weight models, pretrained SAEs, lightweight from-scratch
+              SAE training, and linear probes -- runs comfortably on one AWS g5.2xlarge, specifically so the
+              project stays tractable for a student team without a multi-GPU cluster.
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Approach":
             """
-            PHASE 1: FOUNDATIONS & DATA PIPELINE (Weeks 1-2)
+            PHASE 1: FOUNDATIONS & SAE SETUP (Weeks 1-2)
 
-            [Week 1: Setup & Synthetic Regime-Shift Generator]
-            - Install statsforecast/neuralforecast, sktime/darts, gluonts, the TSFM libraries (chronos-
-              forecasting, timesfm, uni2ts for Moirai, lag-llama), ruptures (change-point detection), and
-              conformal-prediction tooling (MAPIE or a custom adaptive-conformal-inference implementation)
-            - Build the Tier 1 synthetic regime-shift generator: ARIMA/GARCH-simulated base series (via
-              statsmodels/arch) with four injectable break types (mean, variance, trend, frequency shift) at
-              controlled, logged locations and magnitudes; project structure: data/, models/, changepoint/,
-              calibration/, benchmarks/, notebooks/
-            - Create a model_registry.csv (model family, checkpoint size, context/horizon limits) and a
-              run_matrix.csv enumerating every planned (model x tier x break-type x window-position)
-              experiment up front, to keep the total run count bounded
+            [Week 1: Environment & Pretrained SAE Loading]
+            - Install TransformerLens (model internals/hooks), SAELens (pretrained SAE loading/training),
+              the Neuronpedia API client, and an LLM-judge/explainer client (open-weight or API-based)
+            - Load pretrained SAEs for GPT-2-small (all 12 layers, via SAELens) and Gemma-2-2B (multiple
+              layers, via Gemma Scope); project structure: models/, saes/, autointerp/, steering/, probes/,
+              benchmarks/, notebooks/
+            - Create a model_registry.csv (model, layer, SAE architecture, checkpoint source, dictionary
+              size) and a run_matrix.csv enumerating every planned (model x layer x architecture x latent
+              sample) experiment up front, to keep the total run count bounded
 
-            [Week 2: Real-World Data & Change-Point Detection Pipeline]
-            - Download and cache Tier 2 (Monash archive, M4) and Tier 3 (FRED retail/economic series, CDC
-              ILINet, S&P 500/VIX, EIA electricity demand) data
-            - Implement the change-point-detection pipeline (PELT via ruptures, Bayesian Online Changepoint
-              Detection, CUSUM) on Tier 3 series; cross-check detected break timestamps against independently
-              documented historical event dates (COVID-19 onset, 2008/2020 financial shocks, Feb. 2021 Texas
-              winter storm) before trusting the pipeline for later phases
+            [Week 2: From-Scratch SAE Training for the Architecture Comparison]
+            - Train ReLU, TopK (Gao et al., 2024), and JumpReLU (Rajamanoharan et al., 2024) SAEs from
+              scratch on one GPT-2-small layer's residual-stream activations (collected over an OpenWebText
+              sample), matching dictionary size and training budget across architectures
+            - Validate reconstruction loss and L0 sparsity against published reference numbers before
+              trusting any from-scratch SAE for later phases
 
 
-            PHASE 2: FOUNDATION MODEL ZERO-SHOT BASELINES (Weeks 3-4)
+            PHASE 2: LATENT SAMPLING & AUTO-INTERPRETABILITY LABELING (Weeks 3-4)
 
-            [Week 3: Deploy & Sanity-Check TSFMs]
-            - Deploy the four zero-shot TSFMs at comparable small/base checkpoints (Chronos-t5-base,
-              TimesFM-1.0-200M, Moirai-1.0-R-base, Lag-Llama) on the g5.2xlarge
-            - Reproduce each model's published zero-shot accuracy on a Tier 2 (Monash/M4) subset before
-              trusting the deployment for the regime-shift analysis
+            [Week 3: Latent Sampling & Max-Activating Examples]
+            - Sample a stratified set of latents per (model, layer, architecture) by activation frequency
+              (rare, medium, common), and mine each sampled latent's max-activating text spans from Tier 2
+              (OpenWebText / Pile) via TransformerLens hooks
 
-            [Week 4: Zero-Shot Forecasts on the Synthetic Benchmark]
-            - Run all four TSFMs, fully zero-shot (no fine-tuning, no re-estimation), across Tier 1
-              (synthetic, all four break types plus the no-break control), under a fixed context-
-              window/horizon protocol identical across models
-
-
-            PHASE 3: CLASSICAL & TASK-SPECIFIC BASELINES (Weeks 5-6)
-
-            [Week 5: Classical Statistical Baselines]
-            - Implement ARIMA, ETS, and Theta baselines (statsforecast) with rolling-window local
-              re-estimation -- refit at every forecast origin, exactly as they are used in practice, unlike
-              the zero-shot TSFMs
-
-            [Week 6: Task-Specific Deep Learning Baselines]
-            - Train N-BEATS, PatchTST, and DeepAR (neuralforecast/gluonts) per dataset on Tier 1 and a Tier 2
-              subset; confirm the full three-model-class baseline suite (zero-shot TSFM, locally-refit
-              classical, per-dataset-trained task-specific) is evaluated under one identical protocol
+            [Week 4: Automated Interpretability Labeling]
+            - Run the auto-interpretability pipeline (Bills et al., 2023 style: an explainer LLM reads a
+              latent's max-activating examples and produces a natural-language label plus a confidence
+              score) to build a labeled-latent dataset of roughly 500-800 latents
+            - Spot-check a subsample of labels against Neuronpedia's existing dashboards as an independent
+              cross-check on the labeling pipeline itself
 
 
-            PHASE 4: REGIME-SHIFT ROBUSTNESS EVALUATION (Weeks 7-8)
+            PHASE 3: STEERING-INTERVENTION FAITHFULNESS PROTOCOL (Weeks 5-6)
 
-            [Week 7: Synthetic Break Robustness]
-            - Run all three model classes across the full Tier 1 synthetic regime-shift benchmark; compute
-              point-forecast error (MASE, sMAPE) as a function of signed distance from the known break --
-              pre-break, at-break, and post-break windows at fixed offsets -- directly resolving H1 on
-              ground-truth breaks
+            [Week 5: Activation-Steering Pipeline]
+            - Implement the activation-steering intervention (clamp a latent's activation to fixed
+              magnitudes across a magnitude grid during generation, via TransformerLens hooks) and generate
+              steered continuations for a fixed prompt set per labeled latent
 
-            [Week 8: Real-World Break Robustness]
-            - Extend the same protocol to Tier 3 real-world series, using the Week 2 change-point-detection
-              pipeline's validated break timestamps in place of ground truth; compare the real-world
-              degradation pattern against the synthetic-benchmark pattern from Week 7
-
-
-            PHASE 5: PROBABILISTIC CALIBRATION ANALYSIS (Weeks 9-10)
-
-            [Week 9: Pre/Post-Break Calibration]
-            - Compute probabilistic calibration metrics (CRPS, pinball loss, prediction-interval coverage
-              probability, interval width) for every model's forecasts across Tiers 1 and 3, split by
-              pre-break vs. post-break window, directly resolving H2
-
-            [Week 10: Adaptive Conformal Recalibration]
-            - Implement adaptive conformal inference (Gibbs & Candes, 2021) as a post-hoc recalibration
-              wrapper applicable to any model's point/quantile forecasts; measure, per model class, how many
-              post-break forecast origins are needed before nominal interval coverage is recovered --
-              directly resolving H3
+            [Week 6: LLM-Judge Faithfulness Scoring]
+            - Build the LLM-judge protocol that scores whether a steered continuation exhibits the labeled
+              concept (0-1 faithfulness score per latent per magnitude); both students independently rate a
+              validation subsample to check judge reliability before trusting it for the full sweep
 
 
-            PHASE 6: SCALE SWEEP & CROSS-CONDITION ANALYSIS (Weeks 11-12)
+            PHASE 4: CONCEPT-INJECTION DETECTION PROTOCOL (Weeks 7-8)
 
-            [Week 11: Within-Family Scale Sweep]
-            - Re-run the Tier 1 synthetic benchmark with the smallest and largest available checkpoint per
-              TSFM family (e.g., Chronos-tiny vs. Chronos-base, Moirai-small vs. Moirai-base) to test whether
-              larger zero-shot models are more or less robust to regime shift -- directly resolving H4
+            [Week 7: Contrastive Concept Datasets]
+            - Assemble Tier 3 contrastive concept-present/concept-absent prompt sets from Geometry of Truth,
+              RepE concept pairs, and a custom concrete-to-abstract concept list built this week to give
+              explicit coverage of the concreteness axis needed for later analysis
 
-            [Week 12: Master Benchmark Assembly & Held-Out Check]
-            - Assemble the full benchmarking DataFrame: (model x tier x break-type x window-position) ->
-              MASE/sMAPE, CRPS, PICP, coverage-recovery-lag
-            - Evaluate the best-performing configuration per model class on the held-out Tier 4 (M5) series
-              to test whether the Weeks 7-11 findings generalize to a dataset and break event not used to
-              develop the pipeline
-            - Formally state the project's four central hypotheses being tested against this DataFrame:
-              H1: Does zero-shot TSFM point-forecast accuracy degrade more sharply than locally-refit
-                  classical and per-dataset-trained task-specific baselines in the windows immediately
-                  following a structural break?
-              H2: Are TSFM probabilistic forecasts systematically mis-calibrated (over- or under-confident),
-                  and does calibration quality itself degrade disproportionately around a break, relative to
-                  the other two model classes?
-              H3: After adaptive conformal recalibration, do TSFMs need more post-break forecast origins than
-                  classical/task-specific baselines to recover nominal interval coverage?
-              H4: Within a TSFM family, is larger zero-shot model scale associated with greater robustness to
-                  regime shift, or are scale and shift-robustness unrelated?
+            [Week 8: Concept-Detection Scoring & Master Faithfulness Table]
+            - Measure each labeled latent's activation as a concept detector (precision/recall/AUROC across
+              the contrastive prompt sets); assemble the master per-latent faithfulness table: (model x
+              layer x architecture x latent) -> auto-interp label, steering-faithfulness score,
+              concept-detection AUROC -- resolving the core causal-faithfulness question
 
 
-            PHASE 7: STATISTICAL TESTING & CHANGE-POINT VALIDATION (Weeks 13-14)
+            PHASE 5: SUPERVISED PROBE BASELINE (Weeks 9-10)
+
+            [Week 9: Linear Concept Probes]
+            - Train linear (logistic-regression) concept probes directly on residual-stream activations for
+              the identical target concepts used in Phase 4, at matched layers -- the fully supervised
+              comparison point
+
+            [Week 10: Probe Steering & Detection, Head-to-Head Comparison]
+            - Run the identical steering-faithfulness (Phase 3) and concept-detection (Phase 4) protocol on
+              probe-derived steering vectors; directly compare unsupervised SAE latents against supervised
+              probes at matched concepts -- directly resolving H2
+
+
+            PHASE 6: CROSS-CONDITION ANALYSIS (Weeks 11-12)
+
+            [Week 11: Layer Depth & Sparsity Analysis]
+            - Analyze steering-faithfulness and concept-detection AUROC as a function of layer depth and
+              latent activation frequency/sparsity across the master faithfulness table -- directly resolving
+              H3
+
+            [Week 12: Architecture & Label-Confidence Analysis, Held-Out Check]
+            - Analyze faithfulness as a function of SAE architecture (ReLU vs. TopK vs. JumpReLU, from the
+              Week 2 controlled comparison) and of auto-interp label confidence -- directly resolving H1 and
+              H4
+            - Evaluate the best-performing configuration on the held-out Tier 4 model/layer set to test
+              whether the Weeks 3-11 findings generalize beyond the models used to develop the pipeline
+            - Formally state the project's four central hypotheses being tested against the master table:
+              H1: Do confident, specific-sounding auto-interp labels predict causal steering faithfulness, or
+                  are label confidence and faithfulness decoupled?
+              H2: Do unsupervised SAE latents match or exceed supervised linear probes at concept-detection
+                  precision/recall and steering faithfulness, at matched target concepts?
+              H3: Does causal faithfulness degrade with layer depth (more abstract, later-layer
+                  representations) or with latent activation sparsity/rarity?
+              H4: Does SAE architecture (ReLU vs. TopK vs. JumpReLU) trade off reconstruction/sparsity
+                  quality against causal faithfulness of the resulting labeled features?
+
+
+            PHASE 7: STATISTICAL TESTING & HUMAN VALIDATION (Weeks 13-14)
 
             [Week 13: Statistical Testing]
-            - Diebold-Mariano tests on pre-vs-post-break paired forecast-error deltas, per model and model
-              class; regression of error degradation on model class, break type, and break magnitude,
-              directly resolving H1 and H4 with significance levels attached
+            - Regression of steering-faithfulness score on label confidence, layer depth, latent sparsity,
+              and SAE architecture, with significance tests; bootstrapped confidence intervals on the
+              SAE-vs-probe faithfulness and detection-AUROC deltas, directly resolving H1, H3, and H4
 
-            [Week 14: Change-Point-Detection Pipeline Validation]
-            - Both students independently audit a stratified sample of Tier 3 detected break timestamps
-              against the independently documented historical record; compute detection precision/recall
-              against the known event dates and report it explicitly, rather than assuming the automatic
-              detector is correct throughout the benchmark
+            [Week 14: Human Evaluation of the LLM Judge]
+            - Both students independently score a stratified sample of steered generations (blinded to
+              latent/condition) to validate the Week 6 LLM-judge faithfulness scores; compute inter-annotator
+              agreement (Cohen's kappa) and correlate human judgments with the automatic judge, reporting the
+              correlation explicitly rather than assuming it
 
 
             PHASE 8: GUIDELINES, PAPER, AND CODE RELEASE (Weeks 15-16)
 
             [Week 15: Research Paper Draft]
-            Paper structure (8-10 pages, NeurIPS/ICML/ICLR time-series-workshop or TMLR/International
-            Journal of Forecasting format):
-            1. Abstract: motivation, RegimeBench scope, key findings (H1-H4)
-            2. Introduction: the regime-shift blind spot in zero-shot TSFM benchmarking
-            3. Related Work: Chronos, TimesFM, Moirai, Lag-Llama, classical/task-specific forecasting,
-               change-point detection, conformal prediction under distribution shift
-            4. RegimeBench: synthetic generator, change-point pipeline, models, evaluation protocol
-            5. Results: break-conditioned accuracy degradation, calibration, conformal-recovery lag
-            6. The Scale-Robustness Relationship Within TSFM Families
-            7. Practical Guidelines for Forecasting Across a Suspected Regime Shift
-            8. Conclusion & Future Work: online/continual adaptation of TSFMs, multivariate regime shifts
+            Paper structure (8-10 pages, NeurIPS/ICML/ICLR interpretability-workshop or TMLR format):
+            1. Abstract: motivation, SAE-Faithful scope, key findings (H1-H4)
+            2. Introduction: the causal-faithfulness gap in SAE auto-interpretability
+            3. Related Work: SAEs (Bricken, Templeton, Cunningham, Gao, Rajamanoharan), automated
+               interpretability (Bills et al.), RAVEL, classical XAI faithfulness (LIME/SHAP)
+            4. SAE-Faithful: latent sampling, auto-interp labeling, steering protocol, concept detection,
+               probe baseline
+            5. Results: steering faithfulness vs. label confidence, SAE vs. probe, layer/sparsity effects
+            6. The Architecture-Faithfulness Trade-off (ReLU vs. TopK vs. JumpReLU)
+            7. Practical Guidelines for Trusting (or Not Trusting) an SAE Auto-Interp Label
+            8. Conclusion & Future Work: circuit-level faithfulness, cross-model feature universality
 
             [Week 16: Code Release & Documentation]
-            - Publish the RegimeBench GitHub repository: config-driven
-              run_benchmark.py --model all --tier all --break-type all
+            - Publish the SAE-Faithful GitHub repository: config-driven
+              run_benchmark.py --model all --layer all --architecture all
             - Jupyter notebooks: one per phase and one cross-condition analysis notebook
-            - README with quickstart, single-GPU reproduction guide, and the synthetic-generator API
+            - README with quickstart, single-GPU reproduction guide, and the auto-interp/steering API
             - requirements.txt with pinned dependencies; final presentation
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Timeline":
             """
-            Week 1:    Synthetic regime-shift generator (Tier 1), model_registry.csv, run_matrix.csv
-            Week 2:    Tier 2/3 data cached; change-point-detection pipeline validated vs. historical events
-            Week 3:    Four TSFMs deployed; zero-shot accuracy reproduced on Tier 2 (Monash/M4) sanity check
-            Week 4:    Zero-shot TSFM forecasts run across full Tier 1 synthetic regime-shift benchmark
-            Week 5:    Classical baselines (ARIMA/ETS/Theta) implemented with rolling-window local refitting
-            Week 6:    Task-specific baselines (N-BEATS/PatchTST/DeepAR) trained per dataset
-            Week 7:    Break-conditioned accuracy evaluation on Tier 1 (ground-truth breaks) -- H1 groundwork
-            Week 8:    Break-conditioned accuracy evaluation extended to Tier 3 real-world documented breaks
-            Week 9:    Pre/post-break probabilistic calibration metrics (CRPS, pinball loss, PICP) -- H2
-            Week 10:   Adaptive conformal recalibration; post-break coverage-recovery-lag measured -- H3
-            Week 11:   Within-TSFM-family scale sweep (tiny/small vs. base checkpoints) -- H4
-            Week 12:   Master benchmarking DataFrame assembled; Tier 4 (M5) held-out generalization check
-            Week 13:   Diebold-Mariano significance testing; error-degradation regression resolving H1/H4
-            Week 14:   Change-point-detection pipeline precision/recall validated against historical record
-            Week 15:   Research paper draft (NeurIPS/ICML/ICLR workshop or TMLR/IJF format)
-            Week 16:   RegimeBench code release, README, notebooks, final presentation
+            Week 1:    Pretrained SAEs loaded (GPT-2-small, Gemma-2-2B), model_registry.csv, run_matrix.csv
+            Week 2:    From-scratch ReLU/TopK/JumpReLU SAEs trained on one layer; sparsity/loss validated
+            Week 3:    Stratified latent sample drawn; max-activating examples mined from Tiers 2 corpora
+            Week 4:    Auto-interp labeling pipeline run; ~500-800 labeled-latent dataset built
+            Week 5:    Activation-steering intervention pipeline implemented; steered continuations generated
+            Week 6:    LLM-judge faithfulness scoring built and validated against a human-rated subsample
+            Week 7:    Contrastive concept datasets assembled (Geometry of Truth, RepE, custom concept list)
+            Week 8:    Concept-detection scoring complete; master per-latent faithfulness table assembled
+            Week 9:    Supervised linear concept probes trained at matched concepts and layers
+            Week 10:   Probe steering/detection run; SAE-vs-probe head-to-head comparison -- H2
+            Week 11:   Layer-depth / sparsity faithfulness analysis -- H3
+            Week 12:   Architecture / label-confidence analysis -- H1, H4; Tier 4 held-out generalization check
+            Week 13:   Regression/significance testing on faithfulness drivers; bootstrapped CIs
+            Week 14:   Human validation of the LLM judge; inter-annotator agreement computed
+            Week 15:   Research paper draft (NeurIPS/ICML/ICLR interpretability workshop or TMLR format)
+            Week 16:   SAE-Faithful code release, README, notebooks, final presentation
 
             TOTAL: 16 weeks (one semester)
 
             KEY MILESTONES:
-            - Week 4:  Zero-shot TSFM baselines complete on the synthetic ground-truth regime-shift benchmark
-            - Week 6:  Classical and task-specific baseline suite complete, matched to the TSFM protocol
-            - Week 8:  Break-conditioned accuracy evaluation complete on both synthetic and real-world tiers
-            - Week 10: Calibration and adaptive-conformal-recovery analysis complete
-            - Week 12: All hypothesis tests (H1-H4) resolved in the master benchmarking DataFrame
-            - Week 14: Change-point-detection pipeline formally validated against the historical record
-            - Week 16: Paper submitted; code released to the RegimeBench GitHub repository
+            - Week 4:  Labeled-latent dataset complete across models, layers, and SAE architectures
+            - Week 8:  Steering-faithfulness and concept-detection master table complete
+            - Week 10: Supervised-probe baseline comparison complete (H2 resolved)
+            - Week 12: All hypothesis tests (H1-H4) resolved; held-out generalization check complete
+            - Week 14: LLM-judge faithfulness scores validated against human ratings
+            - Week 16: Paper submitted; code released to the SAE-Faithful GitHub repository
 
             DELIVERABLES BY WEEK 16:
-            - A structural-break-conditioned forecasting benchmark spanning four zero-shot open-weight time
-              series foundation models, locally-refit classical baselines, and per-dataset task-specific deep
-              models, on synthetic (ground-truth) and real-world (documented) regime shifts
-            - Quantitative answers to whether zero-shot TSFM accuracy and calibration degrade disproportion-
-              ately around structural breaks, and whether model scale predicts shift-robustness
-            - A validated change-point-detection pipeline with reported precision/recall against real events
-            - A post-hoc adaptive-conformal-recalibration wrapper with measured post-break recovery lag
-            - A practical model-selection guideline table for forecasting across a suspected regime shift
+            - A causal-faithfulness benchmark spanning two open-weight LLMs, multiple layers, three SAE
+              architectures, and a supervised linear-probe baseline, evaluated via steering interventions and
+              contrastive concept detection
+            - Quantitative answers to whether SAE auto-interp label confidence predicts causal faithfulness,
+              whether SAE latents beat supervised probes, and how faithfulness varies with depth/sparsity/
+              architecture
+            - A human-validated LLM-judge protocol for scoring steering faithfulness
+            - A practical guideline table for when to trust an SAE auto-interp label
             - Research paper draft (8-10 pages)
-            - Open-source RegimeBench repository with reproducible notebooks
+            - Open-source SAE-Faithful repository with reproducible notebooks
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Expected Number Students":
@@ -362,34 +356,32 @@ data_to_save = \
 
             ROLE DISTRIBUTION FOR 2 STUDENTS:
 
-            Student 1: Foundation Model Serving, Zero-Shot Benchmarking & Calibration
-            - Responsibilities: deploy and sanity-check the four TSFMs (Chronos, TimesFM, Moirai, Lag-Llama),
-              zero-shot forecasting sweep across Tiers 1-4, probabilistic calibration metrics (CRPS, pinball
-              loss, PICP), adaptive conformal recalibration wrapper and coverage-recovery-lag measurement,
-              within-family scale sweep (H4)
-            - Skills: deep learning / transformer inference, probabilistic forecasting, Python, uncertainty
-              quantification
+            Student 1: SAE Infrastructure, Auto-Interpretability & Steering Faithfulness
+            - Responsibilities: load/train pretrained and from-scratch SAEs (ReLU/TopK/JumpReLU), the
+              auto-interp labeling pipeline, the activation-steering intervention pipeline and LLM-judge
+              faithfulness scoring, architecture-comparison analysis (H1, H4)
+            - Skills: deep learning / transformer internals, Python, prompt engineering, TransformerLens
 
-            Student 2: Classical & Task-Specific Baselines, Change-Point Detection & Statistical Testing
-            - Responsibilities: ARIMA/ETS/Theta rolling-refit baselines, N-BEATS/PatchTST/DeepAR training,
-              the change-point-detection pipeline (PELT/BOCPD/CUSUM) and its historical-event validation,
-              master benchmarking DataFrame, Diebold-Mariano significance testing and hypothesis resolution
-              (H1-H4)
-            - Skills: classical time series econometrics, statistical testing, Python, change-point detection
+            Student 2: Concept Datasets, Supervised Probes & Statistical Testing
+            - Responsibilities: contrastive concept-dataset assembly, concept-detection scoring, supervised
+              linear-probe training and its steering/detection comparison against SAE latents (H2), master
+              benchmarking DataFrame, layer-depth/sparsity analysis (H3), regression/significance testing
+            - Skills: classical ML (logistic regression/probing), statistical testing, Python, evaluation
+              design
 
             SHARED RESPONSIBILITIES (both students):
-            - Cross-condition analysis, break-conditioned evaluation-window design, guideline synthesis,
-              paper writing, code documentation, final presentation
-            - Weekly integration meetings: every model class feeds the same fixed data pipeline and
+            - Cross-condition analysis, human validation of the LLM judge, guideline synthesis, paper
+              writing, code documentation, final presentation
+            - Weekly integration meetings: every model/architecture feeds the same fixed latent-sampling and
               evaluation protocol from Phase 1
 
             FOR 3 STUDENTS (optional third role):
             Student 3: Benchmarking Infrastructure, Evaluation & Visualization
             - Responsibilities: build the config-driven multi-run experiment orchestrator and run_matrix.csv
-              tracker, own the synthetic regime-shift generator and its ground-truth logging, design the
-              Tier 3 historical-event cross-validation protocol, produce all publication-quality figures
-              (break-conditioned error curves, calibration-vs-distance-from-break plots, coverage-recovery
-              curves, scale-robustness scatter), maintain the RegimeBench repository structure
+              tracker, own the max-activating-example mining and latent-sampling pipeline, design the human
+              LLM-judge-validation protocol, produce all publication-quality figures (faithfulness-vs-
+              label-confidence scatter, SAE-vs-probe comparison plots, layer/sparsity heatmaps,
+              architecture-comparison plots), maintain the SAE-Faithful repository structure
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Research Contributions":
@@ -397,168 +389,158 @@ data_to_save = \
             This project offers several avenues for novel and publishable research contributions:
 
             1. EMPIRICAL CONTRIBUTIONS:
-            - The first benchmark directly testing whether the strong average-case zero-shot accuracy of
-              open-weight time series foundation models (Chronos, TimesFM, Moirai, Lag-Llama) holds up when
-              conditioned on distance from a structural break, against locally-refit classical and
-              per-dataset-trained task-specific baselines
-            - A joint synthetic (ground-truth break location/magnitude) and real-world (independently
-              documented historical break event) evaluation design, allowing controlled and ecologically
-              valid regime-shift robustness claims side by side
-            - A documented generalization check of break-robustness findings on a held-out dataset and break
-              event (Tier 4, M5/COVID) outside the tuning distribution
+            - The first benchmark directly measuring whether SAE auto-interp labels are causally faithful --
+              whether steering a labeled latent actually produces the labeled behavior -- across multiple SAE
+              architectures, layers, and two open-weight LLMs
+            - A direct head-to-head comparison of unsupervised SAE latents against fully supervised linear
+              concept probes at matched target concepts, on both steering faithfulness and concept-detection
+              accuracy
+            - A documented generalization check of faithfulness findings on a held-out model/layer set (Tier
+              4) outside the models used to develop the pipeline
 
             2. METHODOLOGICAL CONTRIBUTIONS:
-            - A break-conditioned evaluation protocol (error and calibration as an explicit function of
-              signed distance from a structural break, not an unconditional window average) reusable by
-              future time series foundation model studies regardless of which new model is released next
-            - A post-hoc adaptive-conformal-recalibration coverage-recovery-lag metric connecting TSFM
-              evaluation to the distribution-shift conformal-prediction literature (Gibbs & Candes, 2021)
-            - A validated change-point-detection pipeline with reported precision/recall against an
-              independently documented historical event record, reusable for labeling regime shifts in other
-              real-world time series benchmarks
+            - A steering-intervention faithfulness protocol (does clamping a labeled latent produce the
+              labeled behavior, scored by a human-validated LLM judge, not assumed from the label alone)
+              reusable by future SAE studies regardless of which new architecture is released next
+            - A concreteness-stratified contrastive concept-detection protocol connecting SAE evaluation to
+              the representation-engineering and linear-probing literature (Zou et al., 2023; Marks &
+              Tegmark, 2023)
+            - A controlled same-layer, same-budget SAE architecture comparison (ReLU vs. TopK vs. JumpReLU)
+              isolating architecture as the sole variable in the faithfulness analysis
 
             3. LIBRARY CONTRIBUTIONS:
-            - RegimeBench: an open-source, config-driven repository implementing the synthetic regime-shift
-              generator, the change-point-detection pipeline, and a common evaluation interface across
-              zero-shot TSFMs, classical statistical models, and task-specific deep learners
-            - A reusable synthetic ARIMA/GARCH-based regime-shift generator (four break types, exact ground
-              truth) usable as a controlled stress test for any future forecasting model
+            - SAE-Faithful: an open-source, config-driven repository implementing SAE loading/training,
+              auto-interp labeling, activation steering, concept detection, and the supervised-probe baseline
+              behind a common evaluation interface
+            - A reusable labeled-latent faithfulness dataset (model x layer x architecture x latent ->
+              label, steering-faithfulness score, detection AUROC) usable as a reference set for future
+              interpretability-method evaluations
 
             PUBLICATION VENUES:
-            - NeurIPS / ICML / ICLR workshops on time series, foundation models, or distribution shift
+            - NeurIPS / ICML / ICLR workshops on interpretability or mechanistic interpretability
             - TMLR (Transactions on Machine Learning Research)
-            - International Journal of Forecasting
-            - KDD / IEEE TKDE / ACM TKDD (applied time series mining track)
+            - ACL / EMNLP (interpretability and analysis tracks)
+            - AI safety / alignment workshops (e.g., co-located with NeurIPS/ICML)
 
             EXPECTED OUTCOMES:
             - 1 workshop, journal, or main-conference paper submission (Week 15)
-            - 1 GitHub repository (RegimeBench) with automated benchmarking script and reproducible notebooks
-            - A practical, citable guideline table for choosing a forecasting model class when a regime shift
-              is suspected
+            - 1 GitHub repository (SAE-Faithful) with automated benchmarking script and reproducible notebooks
+            - A practical, citable guideline table for when an SAE auto-interp label can be trusted
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Possible Issues":
             """
             TECHNICAL CHALLENGES AND SOLUTIONS:
 
-            1. Real-World Break Timestamps Are Estimated, Not Ground Truth:
-            - ISSUE: PELT/BOCPD/CUSUM can mislocate or miss breaks in Tier 3 real-world series, unlike the
-              exact synthetic ground truth in Tier 1
-            - SOLUTION: Cross-check every Tier 3 detected break against an independently documented
-              historical event date (Week 2), and formally validate detector precision/recall against that
-              record in Week 14 rather than trusting detected timestamps throughout
+            1. The LLM Judge Scoring Steering Faithfulness Could Itself Be Unreliable:
+            - ISSUE: If the judge's faithfulness scores are noisy or biased, the entire benchmark inherits
+              that noise
+            - SOLUTION: Week 6 validates the judge against a human-rated subsample before trusting it for the
+              full sweep, and Week 14 re-validates it with an independent human audit, reporting the
+              human-judge correlation explicitly rather than assuming it
 
-            2. Comparing a Zero-Shot Model to a Locally-Refit Model Is an Apples-to-Oranges Design by
+            2. Comparing Unsupervised SAE Latents to Supervised Probes Is an Apples-to-Oranges Design by
                Construction:
-            - ISSUE: Classical/task-specific baselines are allowed to re-estimate on recent data while TSFMs
-              are not, which could look like an unfair comparison
-            - SOLUTION: This asymmetry is the entire research question, not a confound to remove -- each
-              model class is evaluated exactly as it is used in practice (TSFMs zero-shot, classical models
-              refit), and the paper states this explicitly as the studied factor rather than a nuisance
-              variable
+            - ISSUE: Probes are trained directly on the target concept while SAE latents are discovered
+              unsupervised, which could look like an unfair comparison
+            - SOLUTION: This asymmetry is the entire research question, not a confound to remove -- SAEs are
+              evaluated exactly as they are used in practice (unsupervised, then labeled post-hoc) against
+              probes exactly as they are used in practice (supervised), and the paper states this explicitly
+              as the studied factor rather than a nuisance variable
 
-            3. TSFMs May Simply Be Robust to Regime Shift (Null Result):
-            - ISSUE: The central hypothesis (H1) could fail to hold -- TSFMs might degrade no more than the
-              baselines
-            - SOLUTION: A null result is a valid, reportable, and publishable finding (it would say TSFMs are
-              production-ready even under regime shift); the paper narrative and analysis pipeline are
+            3. SAE Labels May Simply Be Faithful (Null Result):
+            - ISSUE: The central hypothesis (H1) could fail to hold -- auto-interp labels might already be
+              reliably faithful, with no gap to report
+            - SOLUTION: A null result is a valid, reportable, and publishable finding (it would validate the
+              auto-interp pipeline the field already relies on); the paper narrative and analysis pipeline are
               designed from Week 1 to accommodate either outcome
 
-            4. Differing Context-Length / Frequency Requirements Across TSFM Families:
-            - ISSUE: Chronos, TimesFM, Moirai, and Lag-Llama differ in maximum context length and supported
-              frequencies, complicating a strictly identical protocol
-            - SOLUTION: Fix a common context window / horizon within each model's supported range, document
-              any per-model deviation in model_registry.csv, and verify Week 3 zero-shot sanity-check numbers
-              before trusting the deployment
+            4. Steering Effects Can Be Context- or Magnitude-Dependent:
+            - ISSUE: A latent might faithfully produce its labeled behavior at one clamping magnitude or
+              prompt but not another, complicating a single faithfulness score per latent
+            - SOLUTION: Sweep a fixed magnitude grid and a fixed prompt set per latent (Week 5), and report
+              faithfulness as a curve over magnitude rather than collapsing prematurely to one number
 
-            5. Change-Point Detectors Have Their Own False-Positive/Negative Rate:
-            - ISSUE: An unvalidated detector could mislabel evaluation windows, contaminating the Tier 3
-              results
-            - SOLUTION: Week 2 validates the pipeline against known events before the main sweep, and Week 14
-              re-validates it with an independent manual audit, reporting precision/recall explicitly
+            5. From-Scratch SAE Training May Not Match Published Reconstruction/Sparsity Numbers:
+            - ISSUE: A poorly trained from-scratch SAE would contaminate the Week 2 architecture-comparison
+              arm (H4)
+            - SOLUTION: Week 2 validates reconstruction loss and L0 sparsity against published reference
+              numbers before any from-scratch SAE is used in later phases; pretrained SAEs (Tier 1a/1b) are
+              used for every other analysis so H4 is the only arm depending on from-scratch training quality
 
             6. Total Run Count Across the Full Sweep:
-            - ISSUE: 4 TSFM families x scale variants x 3 classical/task-specific baselines x 4 tiers x
-              multiple break types/window positions could balloon the compute and analysis budget
+            - ISSUE: 2 models x multiple layers x 3-4 SAE architectures x hundreds of latents x a steering-
+              magnitude grid x a probe baseline could balloon the compute and annotation budget
             - SOLUTION: The full run matrix is enumerated in run_matrix.csv in Week 1 so the total is
-              bounded and auditable before any runs begin; the scale sweep (H4) is restricted to Tier 1 only
+              bounded and auditable before any runs begin; the architecture comparison (H4) is restricted to
+              one GPT-2-small layer rather than the full model
 
             7. Library / Version Drift:
-            - ISSUE: The TSFM libraries (chronos-forecasting, timesfm, uni2ts, lag-llama) are all actively
-              maintained; API changes could break reproducibility mid-semester
+            - ISSUE: TransformerLens, SAELens, and the Gemma Scope checkpoints are all actively maintained;
+              API changes could break reproducibility mid-semester
             - SOLUTION: Pin all dependency versions in requirements.txt from Week 1
 
             RISK MITIGATION TIMELINE:
-            - Weeks 1-3:  Verify TSFM zero-shot accuracy against published reference numbers (Monash/M4) and
-                          validate the change-point pipeline against historical events before the main sweep
-            - Weeks 4-11: Monitor per-model run completion and intermediate break-conditioned error curves as
-                          each phase comes online; checkpoint intermediate results after every phase
-            - Weeks 12-13: Cross-check held-out Tier 4 results against the Tier 1/3 findings for consistency
+            - Weeks 1-3:  Verify pretrained-SAE reconstruction quality and from-scratch SAE training against
+                          published reference numbers before the main labeling/steering sweep begins
+            - Weeks 4-11: Monitor per-model/layer run completion and intermediate faithfulness scores as each
+                          phase comes online; checkpoint intermediate results after every phase
+            - Weeks 12-13: Cross-check held-out Tier 4 results against the Tiers 1-3 findings for consistency
                           before finalizing H1-H4
-            - Week 14:    Independent manual audit of change-point-detection precision/recall by both
-                          students
+            - Week 14:    Independent human audit of the LLM-judge faithfulness scores by both students
             - Weeks 15-16: 3-day code freeze for README and notebook review before public release
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Additional Resources":
             """
             PRIMARY LIBRARIES:
-            - Chronos (Amazon zero-shot TSFM): https://github.com/amazon-science/chronos-forecasting
-            - TimesFM (Google zero-shot TSFM): https://github.com/google-research/timesfm
-            - Moirai / uni2ts (Salesforce zero-shot TSFM): https://github.com/SalesforceAIResearch/uni2ts
-            - Lag-Llama (probabilistic zero-shot TSFM): https://github.com/time-series-foundation-models/lag-llama
-            - statsforecast / neuralforecast (Nixtla, classical + deep baselines):
-              https://github.com/Nixtla/statsforecast , https://github.com/Nixtla/neuralforecast
-            - GluonTS (DeepAR and other probabilistic forecasters): https://github.com/awslabs/gluonts
-            - sktime / darts (unified forecasting interfaces): https://github.com/sktime/sktime ,
-              https://github.com/unit8co/darts
-            - ruptures (change-point detection, PELT/CUSUM): https://github.com/deepcharles/ruptures
-            - MAPIE (conformal prediction toolkit): https://github.com/scikit-learn-contrib/MAPIE
+            - TransformerLens (model internals, hooks, activation patching):
+              https://github.com/TransformerLensOrg/TransformerLens
+            - SAELens (pretrained SAE loading/training for GPT-2-small and other models):
+              https://github.com/jbloomAus/SAELens
+            - Gemma Scope (DeepMind pretrained JumpReLU SAEs for Gemma-2):
+              https://huggingface.co/google/gemma-scope
+            - Neuronpedia (SAE feature dashboards and existing auto-interp labels for cross-checking):
+              https://www.neuronpedia.org/
+            - Representation Engineering (RepE, concept-pair datasets and steering-vector reference code):
+              https://github.com/andyzoujm/representation-engineering
+            - Geometry of Truth (true/false statement concept datasets):
+              https://github.com/saprmarks/geometry-of-truth
 
             KEY REFERENCE PAPERS:
-            1. Ansari, A.F. et al. (2024). "Chronos: Learning the Language of Time Series." arXiv:2403.07815.
-            2. Das, A. et al. (2024). "A Decoder-Only Foundation Model for Time-Series Forecasting." ICML /
-               arXiv:2310.10688. (TimesFM)
-            3. Woo, G. et al. (2024). "Unified Training of Universal Time Series Forecasting Transformers."
-               ICML / arXiv:2402.02592. (Moirai)
-            4. Rasul, K. et al. (2024). "Lag-Llama: Towards Foundation Models for Probabilistic Time Series
-               Forecasting." arXiv:2310.08278.
-            5. Oreshkin, B.N. et al. (2020). "N-BEATS: Neural Basis Expansion Analysis for Interpretable Time
-               Series Forecasting." ICLR.
-            6. Nie, Y. et al. (2023). "A Time Series is Worth 64 Words: Long-Term Forecasting with
-               Transformers." ICLR. (PatchTST)
-            7. Salinas, D. et al. (2020). "DeepAR: Probabilistic Forecasting with Autoregressive Recurrent
-               Networks." International Journal of Forecasting.
-            8. Killick, R., Fearnhead, P., Eckley, I.A. (2012). "Optimal Detection of Changepoints With a
-               Linear Computational Cost." Journal of the American Statistical Association. (PELT)
-            9. Adams, R.P., MacKay, D.J.C. (2007). "Bayesian Online Changepoint Detection." arXiv:0710.3742.
-            10. Gibbs, I., Candes, E. (2021). "Adaptive Conformal Inference Under Distribution Shift."
-                NeurIPS.
-            11. Diebold, F.X., Mariano, R.S. (1995). "Comparing Predictive Accuracy." Journal of Business &
-                Economic Statistics.
-            12. Godahewa, R. et al. (2021). "Monash Time Series Forecasting Archive." NeurIPS Datasets and
-                Benchmarks Track.
-            13. Makridakis, S., Spiliotis, E., Assimakopoulos, V. (2020). "The M4 Competition: 100,000 Time
-                Series and 61 Forecasting Methods." International Journal of Forecasting.
-            14. Makridakis, S., Spiliotis, E., Assimakopoulos, V. (2022). "M5 Accuracy Competition: Results,
-                Findings, and Conclusions." International Journal of Forecasting.
-            15. Hyndman, R.J., Athanasopoulos, G. (2021). "Forecasting: Principles and Practice." 3rd ed.
-                (ARIMA/ETS/Theta reference)
+            1. Bricken, T. et al. (2023). "Towards Monosemanticity: Decomposing Language Models With
+               Dictionary Learning." Transformer Circuits Thread.
+            2. Templeton, A. et al. (2024). "Scaling Monosemanticity: Extracting Interpretable Features from
+               Claude 3 Sonnet." Transformer Circuits Thread. (Anthropic)
+            3. Cunningham, H. et al. (2023). "Sparse Autoencoders Find Highly Interpretable Features in
+               Language Models." arXiv:2309.08600.
+            4. Gao, L. et al. (2024). "Scaling and Evaluating Sparse Autoencoders." arXiv:2406.04093. (TopK
+               SAEs, OpenAI)
+            5. Rajamanoharan, S. et al. (2024). "Jumping Ahead: Improving Reconstruction Fidelity with
+               JumpReLU Sparse Autoencoders." arXiv:2407.14435. (DeepMind / Gemma Scope)
+            6. Bills, S. et al. (2023). "Language Models Can Explain Neurons in Language Models." OpenAI.
+               (automated interpretability)
+            7. Huang, J. et al. (2024). "RAVEL: Evaluating Interpretability Methods on Disentangling Language
+               Model Representations." ACL.
+            8. Zou, A. et al. (2023). "Representation Engineering: A Top-Down Approach to AI Transparency."
+               arXiv:2310.01405. (RepE)
+            9. Marks, S., Tegmark, M. (2023). "The Geometry of Truth: Emergent Linear Structure in Large
+               Language Model Representations of True/False Datasets." arXiv:2310.06824.
+            10. Ribeiro, M.T., Singh, S., Guestrin, C. (2016). "'Why Should I Trust You?': Explaining the
+                Predictions of Any Classifier." KDD. (LIME, classical XAI faithfulness reference)
+            11. Lundberg, S.M., Lee, S.-I. (2017). "A Unified Approach to Interpreting Model Predictions."
+                NeurIPS. (SHAP)
+            12. Elhage, N. et al. (2022). "Toy Models of Superposition." Transformer Circuits Thread.
+                (motivates why dictionary learning/SAEs are needed at all)
 
             REQUIRED LIBRARIES (requirements.txt):
             - torch>=2.1.0
-            - chronos-forecasting>=1.4.0
-            - timesfm>=1.2.0
-            - uni2ts>=1.1.0
-            - gluonts>=0.15.0
-            - statsforecast>=1.7.0
-            - neuralforecast>=1.7.0
-            - sktime>=0.28.0
-            - darts>=0.29.0
-            - ruptures>=1.1.9
-            - mapie>=0.8.0
-            - statsmodels>=0.14.0
-            - arch>=6.3.0                # GARCH simulation
+            - transformer-lens>=2.0.0
+            - sae-lens>=4.0.0
+            - transformers>=4.40.0
+            - accelerate>=0.29.0
+            - scikit-learn>=1.4.0          # linear concept probes
+            - datasets>=2.19.0
             - pandas>=2.0.0
             - numpy>=1.26.0
             - matplotlib>=3.7.0
@@ -569,10 +551,12 @@ data_to_save = \
 
             ADDITIONAL TOOLS:
             - AWS g5.2xlarge (1x NVIDIA A10G, 24 GB VRAM, 8 vCPUs, 32 GiB RAM) as the target compute
-              environment; all four TSFM checkpoints at small/base scale, plus classical and task-specific
-              training, fit comfortably within this single-GPU budget without quantization
-            - FRED, CDC FluView, EIA, and Yahoo Finance data are all accessed via free public APIs/downloads
-              with no institutional access required; all Tier 3 sources are cached locally after Week 2
+              environment; GPT-2-small, Gemma-2-2B, their pretrained SAEs, and from-scratch SAE training all
+              fit comfortably within this single-GPU budget
+            - An explainer/judge LLM (open-weight or API-based) for the auto-interpretability labeling
+              pipeline and the steering-faithfulness scoring protocol
+            - OpenWebText and Pile (uncopyrighted) are accessed via free public HuggingFace downloads with no
+              institutional access required; all Tier 2/3 sources are cached locally after Week 1
             """,
         # -----------------------------------------------------------------------------------------------------------------------
         "Proposed by": "Dr. Amir Jafari",
