@@ -6,6 +6,12 @@
 
 ---
 
+## Resources
+
+- 🔌 **[Public API Catalog](API/README.md)** — 60 free APIs across news, social media, weather, finance, census, political science, health, science, engineering, transportation, and culture, each with sign-up steps, a runnable Python example, and sample output.
+
+---
+
 ## At a Glance
 
 | Semester | Projects | ✅ Published | 🔄 Under Review | 📦 Packages | ⏳ Pending |
