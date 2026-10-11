@@ -1,0 +1,28 @@
+# live 2026-10-11 19:09
+[
+  {
+    "country": "JPN",
+    "year": 2021,
+    "life_expectancy": 84.3
+  },
+  {
+    "country": "USA",
+    "year": 2021,
+    "life_expectancy": 76.4
+  },
+  {
+    "country": "BRA",
+    "year": 2021,
+    "life_expectancy": 72.4
+  },
+  {
+    "country": "IND",
+    "year": 2021,
+    "life_expectancy": 68.1
+  },
+  {
+    "country": "NGA",
+    "year": 2021,
+    "life_expectancy": 61.6
+  }
+]

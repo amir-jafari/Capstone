@@ -1,0 +1,30 @@
+# live 2026-10-11 19:09
+{
+  "drug": "semaglutide",
+  "top_reported_reactions": [
+    {
+      "term": "NAUSEA",
+      "count": 10674
+    },
+    {
+      "term": "OFF LABEL USE",
+      "count": 7325
+    },
+    {
+      "term": "VOMITING",
+      "count": 6964
+    },
+    {
+      "term": "DIARRHOEA",
+      "count": 6462
+    },
+    {
+      "term": "DECREASED APPETITE",
+      "count": 4905
+    },
+    {
+      "term": "CONSTIPATION",
+      "count": 4724
+    }
+  ]
+}

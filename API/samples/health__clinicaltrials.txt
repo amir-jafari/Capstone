@@ -1,0 +1,44 @@
+# live 2026-10-11 19:09
+{
+  "total_recruiting": 634,
+  "studies": [
+    {
+      "nct": "NCT05820919",
+      "title": "Enhancing Sleep Quality for Nursing Home Residents With Dementia - R33 Phase",
+      "phase": [
+        "NA"
+      ],
+      "sponsor": "University of Alabama, Tuscaloosa"
+    },
+    {
+      "nct": "NCT07721467",
+      "title": "Neuroplasticity Enhancement From Cognitive Training Reinforced by Psilocybin",
+      "phase": [
+        "PHASE2"
+      ],
+      "sponsor": "National Institute on Aging (NIA)"
+    },
+    {
+      "nct": "NCT06611878",
+      "title": "Memory for Music: Individual Intensive Musical Training in Alzheimer's Disease",
+      "phase": [
+        "NA"
+      ],
+      "sponsor": "NORCE Norwegian Research Centre AS"
+    },
+    {
+      "nct": "NCT06869135",
+      "title": "Saliva and Extracellular Vesicles for Neurodegenerative Diseases",
+      "phase": null,
+      "sponsor": "Fondazione Don Carlo Gnocchi ETS"
+    },
+    {
+      "nct": "NCT07766174",
+      "title": "Transforming Maternal Mental Health Care",
+      "phase": [
+        "NA"
+      ],
+      "sponsor": "University of Utah"
+    }
+  ]
+}

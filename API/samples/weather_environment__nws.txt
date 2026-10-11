@@ -1,0 +1,29 @@
+# live 2026-10-11 19:09
+{
+  "office": "LWX",
+  "forecast": [
+    {
+      "name": "Tonight",
+      "temperature": 62,
+      "temperatureUnit": "F",
+      "shortForecast": "Showers And Thunderstorms"
+    },
+    {
+      "name": "Columbus Day",
+      "temperature": 73,
+      "temperatureUnit": "F",
+      "shortForecast": "Rain Showers Likely then Mostly Cloudy"
+    },
+    {
+      "name": "Monday Night",
+      "temperature": 58,
+      "temperatureUnit": "F",
+      "shortForecast": "Partly Cloudy"
+    }
+  ],
+  "active_alerts_VA": [
+    "Coastal Flood Advisory issued October 11 at 6:58PM EDT until October 11 at 11:00PM EDT by NWS Baltimore MD/Washington DC",
+    "Flood Watch issued October 11 at 3:01PM EDT until October 12 at 2:00AM EDT by NWS Baltimore MD/Washington DC",
+    "Beach Hazards Statement issued October 11 at 1:38PM EDT until October 11 at 8:00PM EDT by NWS Wakefield VA"
+  ]
+}

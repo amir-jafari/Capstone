@@ -1,0 +1,38 @@
+# live 2026-10-11 19:09
+[
+  {
+    "stateabbr": "VA",
+    "locationname": "Radford",
+    "measure": "Depression among adults",
+    "data_value": "30.0",
+    "year": "2023"
+  },
+  {
+    "stateabbr": "VA",
+    "locationname": "Norton",
+    "measure": "Depression among adults",
+    "data_value": "27.1",
+    "year": "2023"
+  },
+  {
+    "stateabbr": "VA",
+    "locationname": "Tazewell",
+    "measure": "Depression among adults",
+    "data_value": "26.9",
+    "year": "2023"
+  },
+  {
+    "stateabbr": "VA",
+    "locationname": "Harrisonburg",
+    "measure": "Depression among adults",
+    "data_value": "26.9",
+    "year": "2023"
+  },
+  {
+    "stateabbr": "VA",
+    "locationname": "Buena Vista",
+    "measure": "Depression among adults",
+    "data_value": "26.9",
+    "year": "2023"
+  }
+]

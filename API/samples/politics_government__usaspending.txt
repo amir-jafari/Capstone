@@ -1,0 +1,23 @@
+# live 2026-10-11 19:09
+[
+  {
+    "agency": "Department of Health and Human Services",
+    "obligated_usd": 2024158651519
+  },
+  {
+    "agency": "Social Security Administration",
+    "obligated_usd": 1634789118457
+  },
+  {
+    "agency": "Department of Defense",
+    "obligated_usd": 501689539224
+  },
+  {
+    "agency": "Department of Veterans Affairs",
+    "obligated_usd": 287885676666
+  },
+  {
+    "agency": "Department of Agriculture",
+    "obligated_usd": 186422112686
+  }
+]

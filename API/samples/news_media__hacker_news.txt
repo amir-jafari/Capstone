@@ -1,0 +1,38 @@
+# live 2026-10-11 19:09
+[
+  {
+    "title": "Total Annihilation, rebuilt for modern computers",
+    "url": "https://nanolathe.gg",
+    "score": 291,
+    "by": "jttnr",
+    "descendants": 122
+  },
+  {
+    "title": "Cartographers of North Korea",
+    "url": "https://cartographers-nk.wonyoung.so/",
+    "score": 130,
+    "by": "edent",
+    "descendants": 20
+  },
+  {
+    "title": "The gap in shared understanding of LLM capability is widening",
+    "url": "https://twitter.com/karpathy/status/2109361546505966046",
+    "score": 131,
+    "by": "albertzeyer",
+    "descendants": 173
+  },
+  {
+    "title": "So, You’d Like To Sell Your Print Issues Of The Onion?",
+    "url": "https://theonion.com/archivehunt/",
+    "score": 213,
+    "by": "mooreds",
+    "descendants": 25
+  },
+  {
+    "title": "Google Data Centers around the world",
+    "url": "https://datacenters.google/locations/",
+    "score": 4,
+    "by": "andsoitis",
+    "descendants": 0
+  }
+]

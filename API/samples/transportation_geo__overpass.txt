@@ -1,0 +1,33 @@
+# live 2026-10-11 19:10
+[
+  {
+    "name": "Starbucks",
+    "lat": 38.8961368,
+    "lon": -77.0446667,
+    "opening_hours": "Mo-Fr 06:00-19:00; Sa-Su 07:00-17:30"
+  },
+  {
+    "name": "Starbucks",
+    "lat": 38.9010118,
+    "lon": -77.0507502,
+    "opening_hours": null
+  },
+  {
+    "name": "Starbucks",
+    "lat": 38.902294,
+    "lon": -77.043818,
+    "opening_hours": null
+  },
+  {
+    "name": "SecreTea",
+    "lat": 38.8961397,
+    "lon": -77.044562,
+    "opening_hours": null
+  },
+  {
+    "name": "Cafe Aria",
+    "lat": 38.897517,
+    "lon": -77.043879,
+    "opening_hours": null
+  }
+]

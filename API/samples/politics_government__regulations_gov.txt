@@ -1,0 +1,38 @@
+# live 2026-10-11 19:09
+[
+  {
+    "title": "Hearings, Meetings, Proceedings, etc.: Application of the Personal Responsibility and Work Opportunity Reconciliation Act to the Refunded Portion of Certain Fed...",
+    "agencyId": "IRS",
+    "postedDate": "2026-10-09T04:00:00Z",
+    "commentEndDate": null,
+    "id": "IRS-2026-1057-14754"
+  },
+  {
+    "title": "Extensions of Credit to Insiders",
+    "agencyId": "FDIC",
+    "postedDate": "2026-10-09T04:00:00Z",
+    "commentEndDate": "2026-11-05T04:59:59Z",
+    "id": "FDIC-2026-1981-0001"
+  },
+  {
+    "title": "Requirements for Additional Traceability Records for Certain Foods: Enforcement Policy for Certain Retail Food Establishments and Restaurants; Draft Guidance fo...",
+    "agencyId": "FDA",
+    "postedDate": "2026-10-09T04:00:00Z",
+    "commentEndDate": "2026-11-24T04:59:59Z",
+    "id": "FDA-2025-D-6952-0001"
+  },
+  {
+    "title": "Marketing Order: Almonds Grown in California",
+    "agencyId": "AMS",
+    "postedDate": "2026-10-08T04:00:00Z",
+    "commentEndDate": null,
+    "id": "AMS_FRDOC_0001-2764"
+  },
+  {
+    "title": "Air Quality State Implementation Plans; Approvals and Promulgations: Arizona; Maricopa County Air Quality Department; New Source Review; Emission Reduction Cred...",
+    "agencyId": "EPA",
+    "postedDate": "2026-10-08T04:00:00Z",
+    "commentEndDate": "2026-11-10T04:59:59Z",
+    "id": "EPA-R09-OAR-2026-4654-0001"
+  }
+]

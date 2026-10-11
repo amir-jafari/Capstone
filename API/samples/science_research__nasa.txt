@@ -1,0 +1,42 @@
+# live 2026-10-11 19:09
+{
+  "count": 6,
+  "asteroids": [
+    {
+      "name": "499496 (2010 MR87)",
+      "diameter_m_max": 755,
+      "hazardous": false,
+      "miss_km": 28345948,
+      "velocity_kph": 67816
+    },
+    {
+      "name": "(2008 TX3)",
+      "diameter_m_max": 62,
+      "hazardous": false,
+      "miss_km": 65905706,
+      "velocity_kph": 60405
+    },
+    {
+      "name": "(2014 RX22)",
+      "diameter_m_max": 38,
+      "hazardous": false,
+      "miss_km": 37754644,
+      "velocity_kph": 46816
+    },
+    {
+      "name": "(2016 FB)",
+      "diameter_m_max": 110,
+      "hazardous": false,
+      "miss_km": 64412687,
+      "velocity_kph": 39905
+    },
+    {
+      "name": "(2018 LC1)",
+      "diameter_m_max": 62,
+      "hazardous": false,
+      "miss_km": 71893233,
+      "velocity_kph": 30362
+    },
+    "... (1 more)"
+  ]
+}

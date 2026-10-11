@@ -1,0 +1,29 @@
+# live 2026-10-11 19:09
+{
+  "profile": {
+    "handle": "bsky.app",
+    "displayName": "Bluesky",
+    "followersCount": 35225915,
+    "postsCount": 867
+  },
+  "recent_posts": [
+    {
+      "text": "Students made their first minicomics in my intro making course - mostly standard format but this student, a first time maker(!), did something so off the charts...",
+      "likes": 3957,
+      "reposts": 867,
+      "createdAt": "2026-10-10T19:19:54.753Z"
+    },
+    {
+      "text": " Australopithecus 3 million years ago:",
+      "likes": 7773,
+      "reposts": 1504,
+      "createdAt": "2026-10-11T06:28:42.288Z"
+    },
+    {
+      "text": "i got so many people calling this tweet fakeposting back when i made it but since this is bluesky and things have less reach on here im just going to post the p...",
+      "likes": 19785,
+      "reposts": 5040,
+      "createdAt": "2026-10-10T19:49:31.289Z"
+    }
+  ]
+}

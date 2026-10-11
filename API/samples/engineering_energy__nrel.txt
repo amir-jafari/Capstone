@@ -1,0 +1,41 @@
+# live 2026-10-11 19:12
+{
+  "station_counts_near_DC": 630,
+  "stations": [
+    {
+      "station_name": "1750 H St. NW. Garage",
+      "ev_network": "FLASH",
+      "ev_level2_evse_num": 1,
+      "ev_dc_fast_num": null,
+      "distance_mi": 0.03
+    },
+    {
+      "station_name": "1875 Pennsylvania Ave NW",
+      "ev_network": "Blink Network",
+      "ev_level2_evse_num": 1,
+      "ev_dc_fast_num": null,
+      "distance_mi": 0.14
+    },
+    {
+      "station_name": "World Bank",
+      "ev_network": "EV Connect",
+      "ev_level2_evse_num": 2,
+      "ev_dc_fast_num": null,
+      "distance_mi": 0.17
+    },
+    {
+      "station_name": "The Hay-Adams - Tesla Destination",
+      "ev_network": "Tesla Destination",
+      "ev_level2_evse_num": 1,
+      "ev_dc_fast_num": null,
+      "distance_mi": 0.17
+    },
+    {
+      "station_name": "World Bank",
+      "ev_network": "EV Connect",
+      "ev_level2_evse_num": 4,
+      "ev_dc_fast_num": null,
+      "distance_mi": 0.18
+    }
+  ]
+}

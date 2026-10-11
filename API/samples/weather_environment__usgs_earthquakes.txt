@@ -1,0 +1,38 @@
+# live 2026-10-11 19:09
+[
+  {
+    "mag": 5.3,
+    "place": "150 km W of Gorontalo, Indonesia",
+    "time_ms": 1791754493822,
+    "depth_km": 110.467,
+    "tsunami": 0
+  },
+  {
+    "mag": 5.2,
+    "place": "101 km SSW of Severo-Kuril’sk, Russia",
+    "time_ms": 1791738029277,
+    "depth_km": 83.386,
+    "tsunami": 0
+  },
+  {
+    "mag": 6.2,
+    "place": "79 km SSE of Panguna, Papua New Guinea",
+    "time_ms": 1791727643188,
+    "depth_km": 53.473,
+    "tsunami": 0
+  },
+  {
+    "mag": 5.2,
+    "place": "18 km SSE of Camaná, Peru",
+    "time_ms": 1791726179788,
+    "depth_km": 44.92,
+    "tsunami": 0
+  },
+  {
+    "mag": 5.2,
+    "place": "180 km S of Pelabuhanratu, Indonesia",
+    "time_ms": 1791689417430,
+    "depth_km": 10,
+    "tsunami": 0
+  }
+]

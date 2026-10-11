@@ -1,0 +1,41 @@
+# live 2026-10-11 19:09
+{
+  "total": 88218,
+  "repos": [
+    {
+      "repo": "huggingface/transformers",
+      "stars": 167522,
+      "forks": 34839,
+      "open_issues": 2335,
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "pytorch/pytorch",
+      "stars": 104458,
+      "forks": 32100,
+      "open_issues": 17703,
+      "license": "NOASSERTION"
+    },
+    {
+      "repo": "d2l-ai/d2l-zh",
+      "stars": 81567,
+      "forks": 12421,
+      "open_issues": 127,
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "openbq-org/OpenBB",
+      "stars": 74118,
+      "forks": 7659,
+      "open_issues": 102,
+      "license": "NOASSERTION"
+    },
+    {
+      "repo": "scikit-learn/scikit-learn",
+      "stars": 67553,
+      "forks": 27504,
+      "open_issues": 2166,
+      "license": "BSD-3-Clause"
+    }
+  ]
+}

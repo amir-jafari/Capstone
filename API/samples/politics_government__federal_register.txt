@@ -1,0 +1,36 @@
+# live 2026-10-11 19:09
+{
+  "count": 1571,
+  "results": [
+    {
+      "title": "Emergency Tax Relief on Diesel Fuel",
+      "executive_order_number": "14435",
+      "signing_date": "2026-10-05",
+      "publication_date": "2026-10-09"
+    },
+    {
+      "title": "Inaugurating the Era of Super Intelligence",
+      "executive_order_number": "14434",
+      "signing_date": "2026-09-29",
+      "publication_date": "2026-10-02"
+    },
+    {
+      "title": "Eliminating Disease-Carrying Pests and Restoring Enjoyment of the Great Outdoors",
+      "executive_order_number": "14433",
+      "signing_date": "2026-09-29",
+      "publication_date": "2026-10-02"
+    },
+    {
+      "title": "Streamlining Access to Government Services Through America.gov",
+      "executive_order_number": "14432",
+      "signing_date": "2026-09-29",
+      "publication_date": "2026-10-02"
+    },
+    {
+      "title": "Enhancing Program Integrity and Interagency Coordination in the Administration of the H-1B Nonimmigrant Visa Program",
+      "executive_order_number": "14431",
+      "signing_date": "2026-09-18",
+      "publication_date": "2026-09-23"
+    }
+  ]
+}

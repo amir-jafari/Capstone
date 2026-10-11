@@ -1,0 +1,41 @@
+# live 2026-10-11 19:09
+{
+  "total": 77,
+  "cves": [
+    {
+      "id": "CVE-2021-43811",
+      "published": "2021-12-08",
+      "severity": "HIGH",
+      "score": 7.8,
+      "description": "Sockeye is an open-source sequence-to-sequence framework for Neural Machine Translation built on PyTorch. Sockeye uses YAML to store model a..."
+    },
+    {
+      "id": "CVE-2021-4118",
+      "published": "2021-12-23",
+      "severity": "HIGH",
+      "score": 7.8,
+      "description": "pytorch-lightning is vulnerable to Deserialization of Untrusted Data"
+    },
+    {
+      "id": "CVE-2022-0845",
+      "published": "2022-03-05",
+      "severity": "CRITICAL",
+      "score": 9.8,
+      "description": "Code Injection in GitHub repository pytorchlightning/pytorch-lightning prior to 1.6.0."
+    },
+    {
+      "id": "CVE-2022-45907",
+      "published": "2022-11-26",
+      "severity": "CRITICAL",
+      "score": 9.8,
+      "description": "In PyTorch before trunk/89695, torch.jit.annotations.parse_type_line can cause arbitrary code execution because eval is used unsafely."
+    },
+    {
+      "id": "CVE-2023-43654",
+      "published": "2023-09-28",
+      "severity": "CRITICAL",
+      "score": 10.0,
+      "description": "TorchServe is a tool for serving and scaling PyTorch models in production. TorchServe default configuration lacks proper input validation, e..."
+    }
+  ]
+}

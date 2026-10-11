@@ -1,0 +1,33 @@
+# live 2026-10-11 19:09
+[
+  {
+    "id": "BAAI/bge-reranker-v2-m3",
+    "downloads": 16162257,
+    "likes": 1229,
+    "library_name": "sentence-transformers"
+  },
+  {
+    "id": "ProsusAI/finbert",
+    "downloads": 4377369,
+    "likes": 1264,
+    "library_name": "transformers"
+  },
+  {
+    "id": "BAAI/bge-reranker-base",
+    "downloads": 3877205,
+    "likes": 248,
+    "library_name": "sentence-transformers"
+  },
+  {
+    "id": "SamLowe/roberta-base-go_emotions",
+    "downloads": 3745871,
+    "likes": 696,
+    "library_name": "transformers"
+  },
+  {
+    "id": "meta-llama/Prompt-Guard-86M",
+    "downloads": 2805342,
+    "likes": 422,
+    "library_name": "transformers"
+  }
+]

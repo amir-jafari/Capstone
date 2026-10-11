@@ -1,0 +1,33 @@
+# live 2026-10-11 19:09
+[
+  {
+    "name": "BIDEN, JOSEPH R JR",
+    "party": "DEM",
+    "receipts": 1187297098.58,
+    "disbursements": 1185795517.32
+  },
+  {
+    "name": "HARRIS, KAMALA",
+    "party": "DEM",
+    "receipts": 1175903792.49,
+    "disbursements": 1176074620.47
+  },
+  {
+    "name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+    "party": "IND",
+    "receipts": 67278247.27,
+    "disbursements": 66539069.36
+  },
+  {
+    "name": "RAMASWAMY, VIVEK",
+    "party": "REP",
+    "receipts": 66197196.43,
+    "disbursements": 66197196.43
+  },
+  {
+    "name": "HALEY, NIKKI",
+    "party": "REP",
+    "receipts": 58378347.5,
+    "disbursements": 56690680.61
+  }
+]

@@ -1,0 +1,27 @@
+# live 2026-10-11 19:09
+{
+  "series": "CUUR0000SA0 (CPI-U, all items, 1982-84=100)",
+  "data": [
+    {
+      "period": "2026-August",
+      "value": "334.980"
+    },
+    {
+      "period": "2026-July",
+      "value": "333.918"
+    },
+    {
+      "period": "2026-June",
+      "value": "333.952"
+    },
+    {
+      "period": "2026-May",
+      "value": "335.123"
+    },
+    {
+      "period": "2026-April",
+      "value": "333.020"
+    },
+    "... (1 more)"
+  ]
+}

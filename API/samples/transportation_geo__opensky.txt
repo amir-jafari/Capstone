@@ -1,0 +1,47 @@
+# live 2026-10-11 19:09
+{
+  "aircraft_in_box": 58,
+  "sample": [
+    {
+      "callsign": "EJA738",
+      "origin_country": "United States",
+      "lat": 38.9503,
+      "lon": -77.4432,
+      "baro_alt_m": null,
+      "velocity_mps": 6.69
+    },
+    {
+      "callsign": "SWA4523",
+      "origin_country": "United States",
+      "lat": 38.8439,
+      "lon": -77.0411,
+      "baro_alt_m": null,
+      "velocity_mps": 1.03
+    },
+    {
+      "callsign": "ENY4169",
+      "origin_country": "United States",
+      "lat": 38.8479,
+      "lon": -77.0388,
+      "baro_alt_m": null,
+      "velocity_mps": 1.03
+    },
+    {
+      "callsign": "AAL544",
+      "origin_country": "United States",
+      "lat": 38.8427,
+      "lon": -77.0383,
+      "baro_alt_m": null,
+      "velocity_mps": 0
+    },
+    {
+      "callsign": "SWA2160",
+      "origin_country": "United States",
+      "lat": 39.0548,
+      "lon": -76.7812,
+      "baro_alt_m": 1242.06,
+      "velocity_mps": 106.76
+    },
+    "... (53 more)"
+  ]
+}

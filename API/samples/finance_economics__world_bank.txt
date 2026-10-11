@@ -1,0 +1,28 @@
+# live 2026-10-11 19:09
+[
+  {
+    "country": "Brazil",
+    "year": "2023",
+    "gdp_per_capita_usd": 10378
+  },
+  {
+    "country": "China",
+    "year": "2023",
+    "gdp_per_capita_usd": 12951
+  },
+  {
+    "country": "India",
+    "year": "2023",
+    "gdp_per_capita_usd": 2434
+  },
+  {
+    "country": "Nigeria",
+    "year": "2023",
+    "gdp_per_capita_usd": 2139
+  },
+  {
+    "country": "United States",
+    "year": "2023",
+    "gdp_per_capita_usd": 82587
+  }
+]

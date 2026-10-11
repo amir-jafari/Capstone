@@ -1,0 +1,10 @@
+# live 2026-10-11 19:09
+[
+  {
+    "display_name": "George Washington University, Ward 2, Washington, District of Columbia, 20037, United States",
+    "lat": "38.8998650",
+    "lon": "-77.0474485",
+    "category": "place",
+    "type": "neighbourhood"
+  }
+]

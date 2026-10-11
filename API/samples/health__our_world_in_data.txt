@@ -1,0 +1,33 @@
+# live 2026-10-11 19:14
+[
+  {
+    "entity": "Brazil",
+    "code": "BRA",
+    "year": "2025",
+    "cantril_ladder_score": "6.634"
+  },
+  {
+    "entity": "Finland",
+    "code": "FIN",
+    "year": "2025",
+    "cantril_ladder_score": "7.764"
+  },
+  {
+    "entity": "Germany",
+    "code": "DEU",
+    "year": "2025",
+    "cantril_ladder_score": "6.882"
+  },
+  {
+    "entity": "India",
+    "code": "IND",
+    "year": "2025",
+    "cantril_ladder_score": "4.536"
+  },
+  {
+    "entity": "United States",
+    "code": "USA",
+    "year": "2025",
+    "cantril_ladder_score": "6.816"
+  }
+]

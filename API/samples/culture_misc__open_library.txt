@@ -1,0 +1,50 @@
+# live 2026-10-11 19:10
+{
+  "numFound": 32288,
+  "docs": [
+    {
+      "author_name": [
+        "Joel Grus"
+      ],
+      "edition_count": 4,
+      "first_publish_year": 2015,
+      "title": "Data science from scratch"
+    },
+    {
+      "author_name": [
+        "Tiffany-Anne Timbers",
+        "Trevor Campbell",
+        "Melissa Lee"
+      ],
+      "edition_count": 6,
+      "first_publish_year": 2022,
+      "title": "Data Science"
+    },
+    {
+      "author_name": [
+        "Foster Provost",
+        "Tom Fawcett"
+      ],
+      "edition_count": 5,
+      "first_publish_year": 2013,
+      "title": "Data Science for Business"
+    },
+    {
+      "author_name": [
+        "Lillian Pierson"
+      ],
+      "edition_count": 10,
+      "first_publish_year": 2015,
+      "title": "Data science for dummies"
+    },
+    {
+      "author_name": [
+        "Nick Singh",
+        "Kevin Huo"
+      ],
+      "edition_count": 1,
+      "first_publish_year": 2021,
+      "title": "Ace the Data Science Interview"
+    }
+  ]
+}

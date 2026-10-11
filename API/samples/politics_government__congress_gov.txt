@@ -1,0 +1,33 @@
+# live 2026-10-11 19:09
+[
+  {
+    "bill": "S 3018",
+    "title": "A bill to permit visiting dignitaries and service members from Taiwan to display the flag of the Republic of China.",
+    "latestAction": "Placed on Senate Legislative Calendar under General Orders. Calendar No. 499.",
+    "date": "2026-07-27"
+  },
+  {
+    "bill": "HR 5744",
+    "title": "Targeting Online Sales of Fentanyl Act",
+    "latestAction": "Referred to the Committee on Energy and Commerce, and in addition to the Committee on the Judiciary, for a period to be subsequently determined by the Speaker, ...",
+    "date": "2025-10-10"
+  },
+  {
+    "bill": "HCONRES 29",
+    "title": "Expressing support for the withdrawal of the United States from the Paris Agreement.",
+    "latestAction": "Referred to the House Committee on Foreign Affairs.",
+    "date": "2025-04-21"
+  },
+  {
+    "bill": "S 2943",
+    "title": "ACE Veterans Act",
+    "latestAction": "Read twice and referred to the Committee on Veterans' Affairs.",
+    "date": "2025-09-30"
+  },
+  {
+    "bill": "SRES 542",
+    "title": "A resolution commemorating the 50th anniversary of Southeast Asian refugee resettlement and the many contributions and sacrifices of Southeast Asian Americans t...",
+    "latestAction": "Referred to the Committee on the Judiciary. (text: CR S8676)",
+    "date": "2025-12-11"
+  }
+]

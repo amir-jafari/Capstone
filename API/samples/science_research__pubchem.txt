@@ -1,0 +1,27 @@
+# live 2026-10-11 19:12
+[
+  {
+    "CID": 2519,
+    "MolecularFormula": "C8H10N4O2",
+    "MolecularWeight": "194.19",
+    "ConnectivitySMILES": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+    "XLogP": -0.1,
+    "HBondDonorCount": 0
+  },
+  {
+    "CID": 2244,
+    "MolecularFormula": "C9H8O4",
+    "MolecularWeight": "180.16",
+    "ConnectivitySMILES": "CC(=O)OC1=CC=CC=C1C(=O)O",
+    "XLogP": 1.2,
+    "HBondDonorCount": 1
+  },
+  {
+    "CID": 3672,
+    "MolecularFormula": "C13H18O2",
+    "MolecularWeight": "206.28",
+    "ConnectivitySMILES": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+    "XLogP": 3.5,
+    "HBondDonorCount": 1
+  }
+]

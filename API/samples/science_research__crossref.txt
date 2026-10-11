@@ -1,0 +1,24 @@
+# live 2026-10-11 19:09
+[
+  {
+    "DOI": "10.1006/meth.2001.1262",
+    "title": "Analysis of Relative Gene Expression Data Using Real-Time Quantitative PCR and the 2−ΔΔCT Method",
+    "journal": "Methods",
+    "year": 2001,
+    "cited_by": 166791
+  },
+  {
+    "DOI": "10.1186/s13059-014-0550-8",
+    "title": "Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2",
+    "journal": "Genome Biology",
+    "year": 2014,
+    "cited_by": 92838
+  },
+  {
+    "DOI": "10.1016/0927-0256(96)00008-0",
+    "title": "Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave basis set",
+    "journal": "Computational Materials Science",
+    "year": 1996,
+    "cited_by": 74879
+  }
+]
