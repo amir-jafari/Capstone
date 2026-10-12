@@ -1,6 +1,6 @@
 # Public API Catalog for Data Science Capstones
 
-> A curated, runnable list of free APIs across news, social media, weather, finance, census,
+> A curated, runnable list of free APIs across news, social media, weather, finance, census, housing,
 > political science, health, education, science, AI & machine learning, engineering, transportation,
 > sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
@@ -57,64 +57,81 @@ python build_readme.py          # re-run everything & regenerate this README
 | 26 | 👥 Census & Demographics | [IPUMS API (microdata)](#ipums-api-microdata) | 🔑 key | `IPUMS_API_KEY` | [`ipums.py`](scripts/census_demographics/ipums.py) |
 | 27 | 👥 Census & Demographics | [UN Data Portal — World Population Prospects](#un-data-portal--world-population-prospects) | 🔑 key | `UN_POP_TOKEN` | [`un_population.py`](scripts/census_demographics/un_population.py) |
 | 28 | 👥 Census & Demographics | [US Census Bureau Data API](#us-census-bureau-data-api) | 🔑 key | `CENSUS_API_KEY` | [`us_census.py`](scripts/census_demographics/us_census.py) |
-| 29 | 🏛️ Political Science & Government | [ACLED (Armed Conflict Location & Event Data)](#acled-armed-conflict-location--event-data) | 🔑 key | `ACLED_EMAIL, ACLED_PASSWORD` | [`acled.py`](scripts/politics_government/acled.py) |
-| 30 | 🏛️ Political Science & Government | [Congress.gov API](#congressgov-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`congress_gov.py`](scripts/politics_government/congress_gov.py) |
-| 31 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
-| 32 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
-| 33 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
-| 34 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
-| 35 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
-| 36 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
-| 37 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
-| 38 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
-| 39 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
-| 40 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
-| 41 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
-| 42 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
-| 43 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
-| 44 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
-| 45 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
-| 46 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
-| 47 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
-| 48 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 49 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 50 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 51 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 52 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 53 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 54 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 55 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 56 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 57 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 58 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 59 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 60 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 61 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 62 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 63 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 64 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 65 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 66 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 67 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 68 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 69 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 70 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 71 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 72 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 73 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 74 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 75 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 76 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 77 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 78 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 79 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 80 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 81 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 82 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 83 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 84 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 85 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 86 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 29 | 🏠 Housing & Real Estate | [CFPB Consumer Complaint Database](#cfpb-consumer-complaint-database) | 🟢 no key | — | [`cfpb_complaints.py`](scripts/housing/cfpb_complaints.py) |
+| 30 | 🏠 Housing & Real Estate | [FHFA House Price Index](#fhfa-house-price-index) | 🟢 no key | — | [`fhfa_hpi.py`](scripts/housing/fhfa_hpi.py) |
+| 31 | 🏠 Housing & Real Estate | [HMDA Data Browser (mortgage applications)](#hmda-data-browser-mortgage-applications) | 🟢 no key | — | [`hmda.py`](scripts/housing/hmda.py) |
+| 32 | 🏠 Housing & Real Estate | [HUD User API (Fair Market Rents, Income Limits, ZIP crosswalk)](#hud-user-api-fair-market-rents-income-limits-zip-crosswalk) | 🔑 key | `HUD_API_TOKEN` | [`hud_user.py`](scripts/housing/hud_user.py) |
+| 33 | 🏠 Housing & Real Estate | [OpenFEMA — Flood Insurance Claims & Disaster Declarations](#openfema--flood-insurance-claims--disaster-declarations) | 🟢 no key | — | [`openfema_nfip.py`](scripts/housing/openfema_nfip.py) |
+| 34 | 🏠 Housing & Real Estate | [Redfin Data Center (housing market tracker)](#redfin-data-center-housing-market-tracker) | 🟢 no key | — | [`redfin_data_center.py`](scripts/housing/redfin_data_center.py) |
+| 35 | 🏠 Housing & Real Estate | [RentCast (property records, rent & value estimates)](#rentcast-property-records-rent--value-estimates) | 🔑 key | `RENTCAST_API_KEY` | [`rentcast.py`](scripts/housing/rentcast.py) |
+| 36 | 🏠 Housing & Real Estate | [Zillow Research Data (ZHVI home values, ZORI rents)](#zillow-research-data-zhvi-home-values-zori-rents) | 🟢 no key | — | [`zillow_research.py`](scripts/housing/zillow_research.py) |
+| 37 | 🏛️ Political Science & Government | [ACLED (Armed Conflict Location & Event Data)](#acled-armed-conflict-location--event-data) | 🔑 key | `ACLED_EMAIL, ACLED_PASSWORD` | [`acled.py`](scripts/politics_government/acled.py) |
+| 38 | 🏛️ Political Science & Government | [Congress.gov API](#congressgov-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`congress_gov.py`](scripts/politics_government/congress_gov.py) |
+| 39 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
+| 40 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
+| 41 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
+| 42 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
+| 43 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
+| 44 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
+| 45 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
+| 46 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
+| 47 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
+| 48 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
+| 49 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
+| 50 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
+| 51 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
+| 52 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
+| 53 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
+| 54 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
+| 55 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
+| 56 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 57 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 58 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 59 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 60 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 61 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 62 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 63 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 64 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 65 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 66 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 67 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 68 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 69 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 70 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 71 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 72 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 73 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 74 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 75 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 76 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 77 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 78 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 79 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 80 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 81 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 82 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 83 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 84 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 85 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 86 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 87 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 88 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 89 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 90 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 91 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 92 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 93 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 94 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 95 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 96 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 97 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 98 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 99 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 100 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 101 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 102 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 103 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -2175,6 +2192,625 @@ def main():
   {"NAME": "Maryland", "population": "6161707", "median_household_income": "98461"},
   {"NAME": "Virginia", "population": "8624511", "median_household_income": "87249"}
 ]
+```
+</details>
+
+---
+
+## 🏠 Housing & Real Estate
+
+### CFPB Consumer Complaint Database
+
+| | |
+|:--|:--|
+| **Docs** | https://cfpb.github.io/api/ccdb/api.html |
+| **Auth** | None |
+| **Register / token** | No registration. 5M+ complaints about mortgages, credit reports, debt collection, banks, student loans... |
+| **Script** | [`scripts/housing/cfpb_complaints.py`](scripts/housing/cfpb_complaints.py) |
+
+**What you can get:**
+
+- Each complaint: product, sub-product, issue, company, state, ZIP, date, company response, timeliness
+- Consumer narrative text (when the consumer consented)
+- Built-in aggregations by issue, company, state, product
+
+**Capstone ideas:** NLP on complaint narratives, ranking mortgage servicers, linking complaints to local economic stress.
+
+**Endpoint:** `GET https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `product / sub_product` | Product filter (repeatable) | `Mortgage` |
+| `state / zip_code / company` | Location or company filter (repeatable) | `DC` |
+| `date_received_min / date_received_max` | Date range YYYY-MM-DD | `2025-01-01` |
+| `search_term` | Full-text search across complaint fields, including narratives | `foreclosure` |
+| `has_narrative` | true -> only complaints with published narratives | `true` |
+| `size / frm / sort` | Page size, offset, created_date_desc \| relevance_desc | `5 / 0 / created_date_desc` |
+| `format` | json \| csv (with no_aggs=true for bulk export) | `csv` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/", params={
+        "product": "Mortgage", "state": "DC", "date_received_min": "2025-01-01", "size": 3, "sort": "created_date_desc"})
+    issues = d["aggregations"]["issue"]["issue"]["buckets"]
+    show({"mortgage_complaints_DC_since_2025": d["hits"]["total"]["value"],
+          "top_issues": [{"issue": b["key"], "complaints": b["doc_count"]} for b in issues[:4]],
+          "latest": [{k: h["_source"][k] for k in ("date_received", "company", "issue", "company_response")}
+                     for h in d["hits"]["hits"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "mortgage_complaints_DC_since_2025": 198,
+  "top_issues": [
+    {
+      "issue": "Trouble during payment process",
+      "complaints": 93
+    },
+    {
+      "issue": "Struggling to pay mortgage",
+      "complaints": 54
+    },
+    {
+      "issue": "Applying for a mortgage or refinancing an existing mortgage",
+      "complaints": 26
+    },
+    {
+      "issue": "Closing on a mortgage",
+      "complaints": 18
+    }
+  ],
+  "latest": [
+    {
+      "date_received": "2026-09-29T12:57:10.000Z",
+      "company": "Rocket Mortgage, LLC",
+      "issue": "Struggling to pay mortgage",
+      "company_response": "Closed with explanation"
+    },
+    {
+      "date_received": "2026-09-25T18:00:53.000Z",
+      "company": "Rocket Mortgage, LLC",
+      "issue": "Trouble during payment process",
+      "company_response": "Closed with explanation"
+    },
+    {
+      "date_received": "2026-09-22T14:33:55.000Z",
+      "company": "CREDIT CARD MANAGEMENT SERVICES INC",
+      "issue": "Applying for a mortgage or refinancing an existing mortgage",
+      "company_response": "Closed with explanation"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### FHFA House Price Index
+
+| | |
+|:--|:--|
+| **Docs** | https://www.fhfa.gov/data/hpi |
+| **Auth** | None (CSV download) |
+| **Register / token** | No registration; no REST API. The master CSV (~17 MB) holds every published index; smaller files by geography are on the docs page. Many series are also on FRED (needs a FRED key). |
+| **Script** | [`scripts/housing/fhfa_hpi.py`](scripts/housing/fhfa_hpi.py) |
+
+**What you can get:**
+
+- Repeat-sales house price indexes since 1975 (purchase-only, all-transactions, expanded-data)
+- National, census division, state, metro (MSA), and (annually) county, ZIP and tract levels
+- Seasonally adjusted and not adjusted
+
+**Capstone ideas:** Long-run price appreciation by region, house prices vs. local employment, housing-wealth effects.
+
+**Endpoint:** `GET https://www.fhfa.gov/hpi/download/monthly/hpi_master.csv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `hpi_type` | traditional \| distress-free \| ... | `traditional` |
+| `hpi_flavor` | purchase-only \| all-transactions \| expanded-data | `purchase-only` |
+| `frequency` | monthly \| quarterly | `monthly` |
+| `level` | USA or Census Division \| State \| MSA \| ... | `USA or Census Division` |
+| `place_name / place_id` | Geography name / code | `United States / USA` |
+| `yr / period / index_nsa / index_sa` | Year, month or quarter, index values (1991 = 100 for monthly) | `2026 / 7` |
+
+```python
+import csv
+import io
+
+from _common import get, show
+
+
+def main():
+    rows = csv.DictReader(io.StringIO(get("https://www.fhfa.gov/hpi/download/monthly/hpi_master.csv", as_json=False)))
+    us = [r for r in rows if r["place_id"] == "USA" and r["hpi_flavor"] == "purchase-only" and r["frequency"] == "monthly"]
+    latest, year_ago = us[-1], us[-13]
+    show({"series": "US purchase-only HPI, seasonally adjusted (Jan 1991 = 100)",
+          "latest": [{"month": f'{r["yr"]}-{int(r["period"]):02d}', "index_sa": float(r["index_sa"])} for r in us[-4:]],
+          "yoy_change_pct": round(100 * (float(latest["index_sa"]) / float(year_ago["index_sa"]) - 1), 2)})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "series": "US purchase-only HPI, seasonally adjusted (Jan 1991 = 100)",
+  "latest": [
+    {
+      "month": "2026-04",
+      "index_sa": 440.89
+    },
+    {
+      "month": "2026-05",
+      "index_sa": 442.29
+    },
+    {
+      "month": "2026-06",
+      "index_sa": 442.34
+    },
+    {
+      "month": "2026-07",
+      "index_sa": 443.52
+    }
+  ],
+  "yoy_change_pct": 2.57
+}
+```
+</details>
+
+---
+
+### HMDA Data Browser (mortgage applications)
+
+| | |
+|:--|:--|
+| **Docs** | https://ffiec.cfpb.gov/documentation/api/data-browser/ |
+| **Auth** | None |
+| **Register / token** | No registration. Home Mortgage Disclosure Act data: nearly every US mortgage application since 2018, published each year by the CFPB/FFIEC. |
+| **Script** | [`scripts/housing/hmda.py`](scripts/housing/hmda.py) |
+
+**What you can get:**
+
+- Loan-level records: action taken (originated/denied), loan amount, purpose, type, interest rate, property value
+- Applicant race, ethnicity, sex, age, income; denial reasons; lender (LEI)
+- Census tract of the property
+
+**Capstone ideas:** Fair-lending / mortgage-denial disparities, credit access by neighborhood, lender behavior over the rate cycle.
+
+**Endpoint:** `GET https://ffiec.cfpb.gov/v2/data-browser-api/view/{aggregations \| csv}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `years` | Data year(s) | `2023` |
+| `states / msamds / counties / leis` | Geography or lender filter (one required); msamds uses metro-division codes | `states=DC, msamds=47894` |
+| `actions_taken` | 1 originated, 2 approved not accepted, 3 denied, 4 withdrawn, ... (comma list) | `1,3` |
+| `races / ethnicities / sexes` | Applicant demographics (comma lists; each value returns its own row). Aggregations accept at most 2 of these filter variables per query | `White,Black or African American,Asian` |
+| `loan_purposes / loan_types` | 1 purchase, 2 improvement, 31 refinance, 32 cash-out; 1 conventional, 2 FHA, 3 VA, 4 USDA | `1` |
+| `/view/csv` | Same filters, redirects to a CSV file of the matching loan-level rows | `/view/csv?years=2023&states=DC` |
+
+```python
+from collections import defaultdict
+
+from _common import get, show
+
+
+def main():
+    d = get("https://ffiec.cfpb.gov/v2/data-browser-api/view/aggregations", params={
+        "years": 2023, "states": "DC", "actions_taken": "1,3",
+        "races": "White,Black or African American,Asian"})["aggregations"]
+    by_race = defaultdict(dict)
+    for row in d:  # one row per (action_taken, race)
+        by_race[row["races"]]["originated" if row["actions_taken"] == "1" else "denied"] = row["count"]
+    # denial rate among decided applications only: denied / (denied + originated)
+    show([{"race": r, **c, "denial_rate": round(c["denied"] / (c["denied"] + c["originated"]), 3)}
+          for r, c in by_race.items()])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+[
+  {
+    "race": "White",
+    "denied": 703,
+    "originated": 3779,
+    "denial_rate": 0.157
+  },
+  {
+    "race": "Asian",
+    "originated": 423,
+    "denied": 119,
+    "denial_rate": 0.22
+  },
+  {
+    "race": "Black or African American",
+    "denied": 1298,
+    "originated": 1995,
+    "denial_rate": 0.394
+  }
+]
+```
+</details>
+
+---
+
+### HUD User API (Fair Market Rents, Income Limits, ZIP crosswalk)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.huduser.gov/portal/dataset/fmr-api.html |
+| **Auth** | Access token (header `Authorization: Bearer`) |
+| **Register / token** | Register at https://www.huduser.gov/hudapi/public/register, log in, and create an access token. Free. |
+| **Env var** | `HUD_API_TOKEN` |
+| **Script** | [`scripts/housing/hud_user.py`](scripts/housing/hud_user.py) |
+
+**What you can get:**
+
+- Fair Market Rents (FMR) by bedroom count for every metro and county; Small Area FMRs by ZIP
+- Income limits (very low / extremely low / low income) by household size
+- USPS ZIP crosswalk: ZIP <-> tract, county, CBSA, congressional district with address-share ratios
+
+**Capstone ideas:** Rent burden and voucher policy studies, joining ZIP-level data to Census tracts via the crosswalk.
+
+**Endpoint:** `GET https://www.huduser.gov/hudapi/public/{dataset}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `fmr/statedata/{state}` | FMRs for every metro and county in a state | `fmr/statedata/DC` |
+| `fmr/data/{entityid}` | FMRs for one area (metro code or 10-digit county code) | `fmr/data/METRO47900M47900` |
+| `il/data/{entityid}` | Income limits for one area | `il/data/METRO47900M47900` |
+| `usps?type=&query=` | ZIP crosswalk; type 1 ZIP-tract, 2 ZIP-county, 3 ZIP-CBSA, ... query = ZIP, or All | `type=1&query=20052` |
+| `year` | Fiscal year (default latest) | `2026` |
+| `Authorization (header)` | Bearer token | `Bearer <HUD_API_TOKEN>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://www.huduser.gov/hudapi/public/fmr/statedata/DC",
+            headers={"Authorization": f"Bearer {key('HUD_API_TOKEN')}"})["data"]
+    show([{k: m.get(k) for k in ("metro_name", "code", "Efficiency", "One-Bedroom", "Two-Bedroom", "Three-Bedroom",
+                                 "Four-Bedroom")} for m in d["metroareas"]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"metro_name": "Washington-Arlington-Alexandria, DC-VA-MD HUD Metro FMR Area", "code": "METRO47900M47900",
+   "Efficiency": 1855, "One-Bedroom": 1906, "Two-Bedroom": 2167, "Three-Bedroom": 2687, "Four-Bedroom": 3192}
+]
+```
+</details>
+
+---
+
+### OpenFEMA — Flood Insurance Claims & Disaster Declarations
+
+| | |
+|:--|:--|
+| **Docs** | https://www.fema.gov/about/openfema/api |
+| **Auth** | None |
+| **Register / token** | No registration. Note: the older v2 claims endpoint (FimaNfipClaims) is deprecated and removed after Oct 15, 2026 - use v3 NfipClaims as below. |
+| **Script** | [`scripts/housing/openfema_nfip.py`](scripts/housing/openfema_nfip.py) |
+
+**What you can get:**
+
+- 2.7M+ National Flood Insurance Program claims: date of loss, flood zone, building/contents payouts, cause, county
+- NFIP policies, disaster declarations (every federal disaster since 1953), housing-assistance grants by ZIP
+- OData-style filtering, sorting, selection and counts
+
+**Capstone ideas:** Climate risk and home values, flood-zone mapping accuracy, disaster recovery and housing assistance equity.
+
+**Endpoint:** `GET https://www.fema.gov/api/open/v3/NfipClaims`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `$filter` | OData filter (eq, gt, lt, and, or); add amountPaidOnBuildingClaim gt 0 before sorting by payout (nulls sort first) | `state eq 'VA' and yearOfLoss eq 2024` |
+| `$select` | Columns to return | `dateOfLoss,countyCode,ratedFloodZone,amountPaidOnBuildingClaim` |
+| `$orderby` | Sort (desc / asc) | `amountPaidOnBuildingClaim desc` |
+| `$top / $skip` | Paging (max 10,000 per call) | `5` |
+| `$count` | true -> include the total match count in metadata | `true` |
+| `/api/open/v2/DisasterDeclarationsSummaries` | Sibling dataset: every disaster declaration (state, incidentType, dates) | `$filter=state eq 'DC'` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://www.fema.gov/api/open/v3/NfipClaims", params={
+        "$filter": "state eq 'VA' and yearOfLoss eq 2024 and amountPaidOnBuildingClaim gt 0",  # skip unpaid claims
+        "$orderby": "amountPaidOnBuildingClaim desc",
+        "$select": "dateOfLoss,countyCode,ratedFloodZone,amountPaidOnBuildingClaim,amountPaidOnContentsClaim",
+        "$top": 5, "$count": "true"})
+    show({"VA_paid_claims_2024": d["metadata"]["count"], "largest_building_payouts": [
+        {**c, "dateOfLoss": c["dateOfLoss"][:10]} for c in d["NfipClaims"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "VA_paid_claims_2024": 184,
+  "largest_building_payouts": [
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51155",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 500000,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-08-30",
+      "countyCode": "51730",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 397838.64,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51750",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 379425.03,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51191",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 231542.96,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51121",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 220000,
+      "amountPaidOnContentsClaim": 100000
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Redfin Data Center (housing market tracker)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.redfin.com/news/data-center/ |
+| **Auth** | None (TSV downloads) |
+| **Register / token** | No registration; no REST API. Gzipped TSVs on a public S3 bucket, updated monthly (weekly files also available). National file ~0.5 MB; metro/county/ZIP/city files are much larger. Cite Redfin. |
+| **Script** | [`scripts/housing/redfin_data_center.py`](scripts/housing/redfin_data_center.py) |
+
+**What you can get:**
+
+- Median sale & list price, price per sq ft, homes sold, pending sales, new listings, inventory, months of supply
+- Days on market, sale-to-list ratio, share sold above list, price drops
+- By national, state, metro, county, city, ZIP, neighborhood and property type
+
+**Capstone ideas:** Market-cycle detection, inventory vs. price dynamics, mortgage-rate shocks on local markets.
+
+**Endpoint:** `GET https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/{level}_market_tracker.tsv000.gz`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `level` | us_national \| state \| redfin_metro \| county \| city \| zip_code \| neighborhood | `us_national` |
+| `PROPERTY_TYPE` | All Residential \| Single Family Residential \| Condo/Co-op \| Townhouse \| Multi-Family (2-4 Unit) | `All Residential` |
+| `IS_SEASONALLY_ADJUSTED` | true \| false | `false` |
+| `PERIOD_BEGIN / PERIOD_DURATION` | Month start date; 30 = monthly rows (90-day rolling in some files) | `2026-04-01 / 30` |
+| `metrics` | MEDIAN_SALE_PRICE, HOMES_SOLD, INVENTORY, MONTHS_OF_SUPPLY, MEDIAN_DOM, AVG_SALE_TO_LIST, ... (+ _MOM / _YOY) | `—` |
+
+```python
+import csv
+import gzip
+import io
+
+import requests
+
+from _common import USER_AGENT, show
+
+URL = "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/us_national_market_tracker.tsv000.gz"
+
+
+def main():
+    raw = requests.get(URL, headers={"User-Agent": USER_AGENT}, timeout=60).content
+    rows = csv.DictReader(io.StringIO(gzip.decompress(raw).decode()), delimiter="\t")
+    rows = sorted((r for r in rows if r["PROPERTY_TYPE"] == "All Residential" and r["IS_SEASONALLY_ADJUSTED"] == "false"),
+                  key=lambda r: r["PERIOD_BEGIN"])
+    show([{"month": r["PERIOD_BEGIN"][:7], "median_sale_price": int(float(r["MEDIAN_SALE_PRICE"])),
+           "price_yoy_pct": round(100 * float(r["MEDIAN_SALE_PRICE_YOY"]), 1), "homes_sold": int(float(r["HOMES_SOLD"])),
+           "inventory": int(float(r["INVENTORY"])), "months_of_supply": round(float(r["MONTHS_OF_SUPPLY"]), 1)}
+          for r in rows[-4:]])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+[
+  {
+    "month": "2026-02",
+    "median_sale_price": 429061,
+    "price_yoy_pct": 0.8,
+    "homes_sold": 320726,
+    "inventory": 1336670,
+    "months_of_supply": 4.2
+  },
+  {
+    "month": "2026-03",
+    "median_sale_price": 436487,
+    "price_yoy_pct": 1.1,
+    "homes_sold": 417012,
+    "inventory": 1393358,
+    "months_of_supply": 3.3
+  },
+  {
+    "month": "2026-04",
+    "median_sale_price": 442054,
+    "price_yoy_pct": 0.9,
+    "homes_sold": 446632,
+    "inventory": 1468301,
+    "months_of_supply": 3.3
+  },
+  {
+    "month": "2026-05",
+    "median_sale_price": 449846,
+    "price_yoy_pct": 2.2,
+    "homes_sold": 464811,
+    "inventory": 1460440,
+    "months_of_supply": 3.1
+  }
+]
+```
+</details>
+
+---
+
+### RentCast (property records, rent & value estimates)
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.rentcast.io/reference/introduction |
+| **Auth** | API key (header `X-Api-Key`) |
+| **Register / token** | Create an account at https://app.rentcast.io/app/api and activate the free Developer plan (50 requests/month; paid plans for more). Commercial terms apply - read them before publishing data. |
+| **Env var** | `RENTCAST_API_KEY` |
+| **Script** | [`scripts/housing/rentcast.py`](scripts/housing/rentcast.py) |
+
+**What you can get:**
+
+- Property records for 140M+ US properties: beds, baths, sq ft, year built, last sale, tax assessments
+- Automated rent and value estimates (AVM) with comparable listings
+- Active sale/rental listings and ZIP-level market statistics with history
+
+**Capstone ideas:** Rent-prediction models, landlord/investor yield analysis, small-area rent trends.
+
+**Endpoint:** `GET https://api.rentcast.io/v1/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `markets?zipCode=&dataType=&historyRange=` | ZIP market stats; dataType All \| Sale \| Rental; history in months | `zipCode=20052&dataType=Rental` |
+| `avm/rent/long-term?address=&propertyType=&bedrooms=` | Rent estimate + comparables for an address | `address=2121 I St NW, Washington, DC 20052` |
+| `avm/value?address=` | Value estimate + comparables | `—` |
+| `properties?address= / ?zipCode=` | Property records | `zipCode=20052&limit=5` |
+| `listings/rental/long-term?city=&state=&status=` | Active rental listings | `city=Washington&state=DC&status=Active` |
+| `X-Api-Key (header)` | Your key | `<RENTCAST_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://api.rentcast.io/v1/markets", headers={"X-Api-Key": key("RENTCAST_API_KEY")},
+            params={"zipCode": "20052", "dataType": "All", "historyRange": 6})
+    rent, sale = d.get("rentalData", {}), d.get("saleData", {})
+    show({"zipCode": d["zipCode"],
+          "rental": {k: rent.get(k) for k in ("averageRent", "medianRent", "minRent", "maxRent", "totalListings")},
+          "sale": {k: sale.get(k) for k in ("averagePrice", "medianPrice", "totalListings")}})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "zipCode": "20052",
+  "rental": {"averageRent": 2850, "medianRent": 2600, "minRent": 1450, "maxRent": 7900, "totalListings": 214},
+  "sale": {"averagePrice": 612000, "medianPrice": 489000, "totalListings": 38}
+}
+```
+</details>
+
+---
+
+### Zillow Research Data (ZHVI home values, ZORI rents)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.zillow.com/research/data/ |
+| **Auth** | None (CSV downloads) |
+| **Register / token** | No registration; there is no public REST API - the research page publishes monthly CSVs. Pick a series and geography on the page and copy the CSV link. Cite Zillow per its terms. |
+| **Script** | [`scripts/housing/zillow_research.py`](scripts/housing/zillow_research.py) |
+
+**What you can get:**
+
+- ZHVI: typical home value by metro, state, county, city, ZIP, neighborhood (monthly since 2000)
+- ZORI: typical observed market rent
+- Inventory, new listings, days on market, sale-to-list ratio, forecasts
+
+**Capstone ideas:** Home-price forecasting, rent burden vs. income (join Census ACS), effect of transit or flood risk on values.
+
+**Endpoint:** `GET https://files.zillowstatic.com/research/public_csvs/{series}/{Geography}_{series}_….csv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `series folder` | zhvi (home values), zori (rents), invt_fs (inventory), ... | `zhvi` |
+| `Geography` | Metro \| State \| County \| City \| Zip \| Neighborhood | `Metro` |
+| `file name` | Encodes home type, price tier, smoothing, seasonal adjustment | `Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv` |
+| `columns` | RegionID, SizeRank, RegionName, RegionType, StateName, then one column per month | `2026-08-31` |
+
+```python
+import csv
+import io
+
+from _common import get, show
+
+URL = "https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv"
+
+
+def main():
+    rows = list(csv.DictReader(io.StringIO(get(URL, as_json=False))))  # ~4.5 MB
+    months = [c for c in rows[0] if c[:2] in ("19", "20")]
+    out = []
+    for r in rows[:6]:  # rows are sorted by SizeRank: US first, then the largest metros
+        now, year_ago = float(r[months[-1]]), float(r[months[-13]])
+        out.append({"region": r["RegionName"], "typical_home_value": round(now), "yoy_change_pct": round(100 * (now / year_ago - 1), 1)})
+    show({"month": months[-1], "metros": out}, max_items=6)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "month": "2026-08-31",
+  "metros": [
+    {
+      "region": "United States",
+      "typical_home_value": 368697,
+      "yoy_change_pct": 1.2
+    },
+    {
+      "region": "New York, NY",
+      "typical_home_value": 735075,
+      "yoy_change_pct": 4.7
+    },
+    {
+      "region": "Los Angeles, CA",
+      "typical_home_value": 952601,
+      "yoy_change_pct": 1.2
+    },
+    {
+      "region": "Chicago, IL",
+      "typical_home_value": 357265,
+      "yoy_change_pct": 4.9
+    },
+    {
+      "region": "Dallas, TX",
+      "typical_home_value": 360437,
+      "yoy_change_pct": -2.3
+    },
+    {
+      "region": "Houston, TX",
+      "typical_home_value": 305001,
+      "yoy_change_pct": -1.9
+    }
+  ]
+}
 ```
 </details>
 
@@ -5643,6 +6279,591 @@ def main():
 
 ## 🗺️ Transportation & Geospatial
 
+### Bureau of Transportation Statistics (BTS) Open Data
+
+| | |
+|:--|:--|
+| **Docs** | https://data.bts.gov/ (Socrata SODA API; same query language as the CDC entry) |
+| **Auth** | None (optional Socrata app token) |
+| **Register / token** | No registration. Every dataset page has an API button with its 4x4 ID. Airline on-time performance is a separate bulk download at https://www.transtats.bts.gov. |
+| **Env var** | `SOCRATA_APP_TOKEN (optional)` |
+| **Script** | [`scripts/transportation_geo/bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+
+**What you can get:**
+
+- Border crossings by port, month and mode (trucks, buses, pedestrians, personal vehicles)
+- Monthly Transportation Statistics: air/transit ridership, freight, fuel prices, safety
+- Freight flows, transportation employment, pipeline and rail statistics
+
+**Capstone ideas:** Trade/mobility shocks at the border, transportation as an economic indicator, post-pandemic travel recovery.
+
+**Endpoint:** `GET https://data.bts.gov/resource/{dataset-id}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `dataset-id` | 4x4 ID from the dataset page | `keg4-3bc2 (Border Crossing Entry Data)` |
+| `$select / $where / $group / $order` | SQL-like query clauses (see the CDC entry) | `$select=port_name,sum(value)&$group=port_name` |
+| `column=value` | Equality filter | `measure=Trucks` |
+| `$limit / $offset` | Paging (default 1,000) | `5` |
+| `X-App-Token (header)` | Optional app token | `<SOCRATA_APP_TOKEN>` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://data.bts.gov/resource/keg4-3bc2.json", params={
+        "$select": "port_name,state,sum(value) as trucks", "measure": "Trucks", "border": "US-Mexico Border",
+        "$where": "date >= '2025-01-01T00:00:00' AND date < '2026-01-01T00:00:00'",
+        "$group": "port_name,state", "$order": "trucks DESC", "$limit": 5})
+    show({"busiest_US_Mexico_truck_crossings_2025": d})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "busiest_US_Mexico_truck_crossings_2025": [
+    {
+      "port_name": "Laredo",
+      "state": "Texas",
+      "trucks": "2945388"
+    },
+    {
+      "port_name": "Otay Mesa",
+      "state": "California",
+      "trucks": "990111"
+    },
+    {
+      "port_name": "Hidalgo",
+      "state": "Texas",
+      "trucks": "719184"
+    },
+    {
+      "port_name": "Ysleta",
+      "state": "Texas",
+      "trucks": "641729"
+    },
+    {
+      "port_name": "Calexico East",
+      "state": "California",
+      "trucks": "446835"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### US Census Geocoder
+
+| | |
+|:--|:--|
+| **Docs** | https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html |
+| **Auth** | None |
+| **Register / token** | No registration. Batch mode geocodes up to 10,000 addresses per uploaded CSV. |
+| **Script** | [`scripts/transportation_geo/census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+
+**What you can get:**
+
+- US address -> matched address, lat/lon
+- Census geographies for the point: state, county, tract, block group, block (GEOIDs)
+- Congressional and state legislative districts
+
+**Capstone ideas:** The bridge between addresses and Census data: geocode once, then join ACS demographics by tract GEOID.
+
+**Endpoint:** `GET https://geocoding.geo.census.gov/geocoder/{returntype}/{searchtype}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `returntype` | locations (coordinates only) \| geographies (coordinates + census areas) | `geographies` |
+| `searchtype` | onelineaddress \| address \| coordinates \| addressbatch (POST CSV) | `onelineaddress` |
+| `address / street, city, state, zip` | Address input | `2121 I St NW, Washington, DC 20052` |
+| `x / y` | Longitude / latitude for searchtype=coordinates | `-77.0486 / 38.8997` |
+| `benchmark / vintage` | Address and boundary versions | `Public_AR_Current / Current_Current` |
+| `layers` | Which geographies to return | `Census Tracts,Counties` |
+| `format` | json \| html | `json` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress", params={
+        "address": "2121 I St NW, Washington, DC 20052", "benchmark": "Public_AR_Current",
+        "vintage": "Current_Current", "format": "json"})["result"]["addressMatches"][0]
+    geo = d["geographies"]
+    block = next(v[0] for k, v in geo.items() if k.endswith("Census Blocks"))  # layer names carry the vintage year
+    district = next(v[0] for k, v in geo.items() if k.endswith("Congressional Districts"))
+    show({"matched": d["matchedAddress"], "lon": d["coordinates"]["x"], "lat": d["coordinates"]["y"],
+          "county": geo["Counties"][0]["NAME"], "tract_GEOID": geo["Census Tracts"][0]["GEOID"],
+          "block_group_GEOID": block["GEOID"][:12],  # a block GEOID's first 12 digits are its block group
+          "congressional_district": district["NAME"]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "matched": "2121 I ST NW, WASHINGTON, DC, 20037",
+  "lon": -77.0467239318,
+  "lat": 38.900750817068,
+  "county": "District of Columbia",
+  "tract_GEOID": "11001010800",
+  "block_group_GEOID": "110010108001",
+  "congressional_district": "Delegate District (at Large)"
+}
+```
+</details>
+
+---
+
+### Chicago Taxi & Rideshare Trips
+
+| | |
+|:--|:--|
+| **Docs** | https://data.cityofchicago.org/Transportation/Taxi-Trips-2024-/ajtu-isnz |
+| **Auth** | None (optional Socrata app token) |
+| **Register / token** | No registration. Large tables: always filter by date and aggregate server-side ($select + $group) rather than pulling raw rows. Rideshare (TNP) trips are a separate dataset on the same portal. |
+| **Env var** | `SOCRATA_APP_TOKEN (optional)` |
+| **Script** | [`scripts/transportation_geo/chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+
+**What you can get:**
+
+- Every taxi trip since 2024: start/end time (15-min), duration, miles, community areas, fare, tip, payment type, company
+- Pickup/dropoff centroids (lat/lon), hashed taxi IDs
+- Older trips (2013-2023) in a separate dataset
+
+**Capstone ideas:** Fare and tip prediction, demand forecasting by area/hour, taxi vs. rideshare competition.
+
+**Endpoint:** `GET https://data.cityofchicago.org/resource/ajtu-isnz.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `$where` | Filter rows - always bound trip_start_timestamp | `trip_start_timestamp between '2026-09-01T00:00:00' and '2026-09-08T00:00:00'` |
+| `$select + $group` | Server-side aggregation | `payment_type, count(*) as trips, avg(fare)` |
+| `$order / $limit` | Sort and limit | `trips DESC / 5` |
+| `columns` | trip_seconds, trip_miles, pickup_community_area, fare, tips, payment_type, company, ... | `—` |
+| `X-App-Token (header)` | Optional app token | `<SOCRATA_APP_TOKEN>` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://data.cityofchicago.org/resource/ajtu-isnz.json", timeout=120, params={
+        "$select": "payment_type, count(*) as trips, avg(fare) as avg_fare, avg(tips) as avg_tip, avg(trip_miles) as avg_miles",
+        "$where": "trip_start_timestamp between '2026-09-01T00:00:00' and '2026-09-08T00:00:00'",
+        "$group": "payment_type", "$order": "trips DESC", "$limit": 5})
+    show([{k: (round(float(v), 2) if k.startswith("avg") else v) for k, v in r.items()} for r in d])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+[
+  {
+    "payment_type": "Mobile",
+    "trips": "47705",
+    "avg_fare": 15.77,
+    "avg_tip": 1.32,
+    "avg_miles": 3.68
+  },
+  {
+    "payment_type": "Credit Card",
+    "trips": "41964",
+    "avg_fare": 30.13,
+    "avg_tip": 6.16,
+    "avg_miles": 8.28
+  },
+  {
+    "payment_type": "Cash",
+    "trips": "27946",
+    "avg_fare": 23.03,
+    "avg_tip": 0.0,
+    "avg_miles": 5.26
+  },
+  {
+    "payment_type": "Prcard",
+    "trips": "9185",
+    "avg_fare": 25.65,
+    "avg_tip": 0.09,
+    "avg_miles": 7.23
+  },
+  {
+    "payment_type": "Unknown",
+    "trips": "2580",
+    "avg_fare": 26.14,
+    "avg_tip": 0.01,
+    "avg_miles": 7.31
+  }
+]
+```
+</details>
+
+---
+
+### GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/MobilityData/gbfs (spec) · system list: https://github.com/MobilityData/gbfs/blob/master/systems.csv |
+| **Auth** | None |
+| **Register / token** | No registration. GBFS is an open standard: every public bike/scooter-share system publishes the same JSON feeds. Trip-history CSVs for Capital Bikeshare: https://capitalbikeshare.com/system-data. |
+| **Script** | [`scripts/transportation_geo/gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+
+**What you can get:**
+
+- Real-time station status: bikes / e-bikes / docks available, renting/returning flags
+- Station information: name, lat/lon, capacity
+- Free-floating vehicles, pricing plans, system alerts
+
+**Capstone ideas:** Rebalancing / demand forecasting, equity of station access, weather effects on micromobility.
+
+**Endpoint:** `GET https://gbfs.lyft.com/gbfs/2.3/dca-cabi/en/{feed}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `gbfs.json` | Auto-discovery: lists every feed URL for the system | `gbfs/2.3/dca-cabi/gbfs.json` |
+| `station_information` | Static: station_id, name, lat, lon, capacity | `station_information.json` |
+| `station_status` | Real time: num_bikes_available, num_ebikes_available, num_docks_available | `station_status.json` |
+| `free_bike_status / vehicle_status` | Dockless vehicles with location | `free_bike_status.json` |
+| `system_id` | Other systems: bay-wheels, cdc-divvy (Chicago), bkn (Citi Bike NYC)... | `dca-cabi` |
+
+```python
+from _common import get, show
+
+BASE = "https://gbfs.lyft.com/gbfs/2.3/dca-cabi/en"
+
+
+def main():
+    info = {s["station_id"]: s for s in get(f"{BASE}/station_information.json")["data"]["stations"]}
+    status = get(f"{BASE}/station_status.json")
+    stations = status["data"]["stations"]
+    top = sorted(stations, key=lambda s: -s["num_bikes_available"])[:5]
+    show({"stations": len(stations), "bikes_available_total": sum(s["num_bikes_available"] for s in stations),
+          "fullest_stations": [{"name": info[s["station_id"]]["name"], "bikes": s["num_bikes_available"],
+                                "ebikes": s.get("num_ebikes_available"), "docks_free": s["num_docks_available"]}
+                               for s in top if s["station_id"] in info]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "stations": 865,
+  "bikes_available_total": 5937,
+  "fullest_stations": [
+    {
+      "name": "13th & H St NE",
+      "bikes": 31,
+      "ebikes": 8,
+      "docks_free": 0
+    },
+    {
+      "name": "13th & D St NE",
+      "bikes": 29,
+      "ebikes": 9,
+      "docks_free": 5
+    },
+    {
+      "name": "10th St & Constitution Ave NW",
+      "bikes": 28,
+      "ebikes": 2,
+      "docks_free": 19
+    },
+    {
+      "name": "31st & K St NW",
+      "bikes": 28,
+      "ebikes": 2,
+      "docks_free": 0
+    },
+    {
+      "name": "Wisconsin Ave & K St NW",
+      "bikes": 27,
+      "ebikes": 15,
+      "docks_free": 7
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### MBTA V3 API (Boston transit)
+
+| | |
+|:--|:--|
+| **Docs** | https://api-v3.mbta.com/docs/swagger/index.html |
+| **Auth** | None (20 req/min) / free key (1,000 req/min, header `x-api-key`) |
+| **Register / token** | Works keyless at low volume. Register at https://api-v3.mbta.com/register for a key. A good example of a modern JSON:API transit API (WMATA's needs a key; GTFS-Realtime feeds exist for most US agencies). |
+| **Env var** | `MBTA_API_KEY (optional)` |
+| **Script** | [`scripts/transportation_geo/mbta.py`](scripts/transportation_geo/mbta.py) |
+
+**What you can get:**
+
+- Real-time predictions and vehicle positions for subway, bus, commuter rail, ferry
+- Routes, stops, schedules, service alerts
+- include= joins related resources in one call
+
+**Capstone ideas:** Transit reliability (predicted vs. scheduled), headway analysis, alert text mining.
+
+**Endpoint:** `GET https://api-v3.mbta.com/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `resource` | predictions \| vehicles \| schedules \| alerts \| routes \| stops \| trips | `predictions` |
+| `filter[stop] / filter[route]` | Filter by stop or route ID (comma lists) | `filter[stop]=place-pktrm` |
+| `filter[route_type]` | 0 light rail, 1 subway, 2 commuter rail, 3 bus, 4 ferry | `1` |
+| `include` | Embed related resources | `route,trip` |
+| `sort` | Attribute to sort by (prefix - for descending) | `arrival_time` |
+| `page[limit] / page[offset]` | Paging | `5` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api-v3.mbta.com/predictions", params={
+        "filter[stop]": "place-pktrm", "sort": "arrival_time", "page[limit]": 12, "include": "trip"})
+    trips = {t["id"]: t["attributes"]["headsign"] for t in d.get("included", []) if t["type"] == "trip"}
+    show([{"route": p["relationships"]["route"]["data"]["id"],
+           "headsign": trips.get(p["relationships"]["trip"]["data"]["id"]),
+           "arrival_time": p["attributes"]["arrival_time"],  # null at a trip's first stop
+           "departure_time": p["attributes"]["departure_time"]}
+          for p in d["data"] if p["attributes"]["arrival_time"] or p["attributes"]["departure_time"]],  # drop skipped stops
+         max_items=6)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+[
+  {
+    "route": "Green-C",
+    "headsign": "Cleveland Circle",
+    "arrival_time": "2026-10-11T21:03:05-04:00",
+    "departure_time": "2026-10-11T21:04:22-04:00"
+  },
+  {
+    "route": "Green-D",
+    "headsign": "Union Square",
+    "arrival_time": "2026-10-11T21:03:39-04:00",
+    "departure_time": "2026-10-11T21:04:47-04:00"
+  },
+  {
+    "route": "Green-C",
+    "headsign": "Government Center",
+    "arrival_time": "2026-10-11T21:04:24-04:00",
+    "departure_time": "2026-10-11T21:05:32-04:00"
+  },
+  {
+    "route": "Red",
+    "headsign": "Ashmont",
+    "arrival_time": "2026-10-11T21:06:25-04:00",
+    "departure_time": "2026-10-11T21:07:47-04:00"
+  },
+  {
+    "route": "Green-B",
+    "headsign": "Government Center",
+    "arrival_time": "2026-10-11T21:06:26-04:00",
+    "departure_time": "2026-10-11T21:07:34-04:00"
+  },
+  {
+    "route": "Green-D",
+    "headsign": "Riverside",
+    "arrival_time": "2026-10-11T21:07:40-04:00",
+    "departure_time": "2026-10-11T21:08:58-04:00"
+  },
+  "... (5 more)"
+]
+```
+</details>
+
+---
+
+### NHTSA Recalls, Complaints & Safety Ratings
+
+| | |
+|:--|:--|
+| **Docs** | https://www.nhtsa.gov/nhtsa-datasets-and-apis |
+| **Auth** | None |
+| **Register / token** | No registration. |
+| **Script** | [`scripts/transportation_geo/nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+
+**What you can get:**
+
+- Recalls by vehicle: campaign number, component, summary, consequence, remedy
+- Owner complaints: crash/fire/injury flags, component, free-text description
+- NCAP 5-star crash-test ratings (overall, frontal, side, rollover)
+
+**Capstone ideas:** NLP on complaint narratives to detect defects early, recall timing analysis, safety-rating vs. crash outcomes.
+
+**Endpoint:** `GET https://api.nhtsa.gov/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `recalls/recallsByVehicle?make=&model=&modelYear=` | Recalls for a vehicle | `make=honda&model=accord&modelYear=2020` |
+| `complaints/complaintsByVehicle?make=&model=&modelYear=` | Owner complaints for a vehicle | `make=tesla&model=model 3&modelYear=2022` |
+| `SafetyRatings/modelyear/{year}/make/{make}/model/{model}` | Returns vehicle variants with VehicleId | `modelyear/2024/make/toyota/model/camry` |
+| `SafetyRatings/VehicleId/{id}` | Star ratings for one variant | `VehicleId/19000` |
+| `recalls/campaignNumber?campaignNumber=` | One recall campaign | `campaignNumber=20V682000` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    q = {"make": "tesla", "model": "model 3", "modelYear": 2022}
+    recalls = get("https://api.nhtsa.gov/recalls/recallsByVehicle", params=q)["results"]
+    complaints = get("https://api.nhtsa.gov/complaints/complaintsByVehicle", params=q)["results"]
+    variants = get("https://api.nhtsa.gov/SafetyRatings/modelyear/2022/make/tesla/model/model%203")["Results"]
+    rating = get(f'https://api.nhtsa.gov/SafetyRatings/VehicleId/{variants[0]["VehicleId"]}')["Results"][0]
+    show({"vehicle": "2022 Tesla Model 3",
+          "recalls": [{"campaign": r["NHTSACampaignNumber"], "component": r["Component"]} for r in recalls],
+          "complaints": len(complaints),
+          "top_complaint_components": Counter(c["components"] for c in complaints).most_common(4),
+          "ncap": {k: rating.get(k) for k in ("VehicleDescription", "OverallRating", "OverallFrontCrashRating",
+                                              "OverallSideCrashRating", "RolloverRating")}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+
+```json
+{
+  "vehicle": "2022 Tesla Model 3",
+  "recalls": [
+    {
+      "campaign": "22V037000",
+      "component": "ELECTRICAL SYSTEM:ADAS:AUTONOMOUS/SELF DRIVING:SOFTWARE"
+    },
+    {
+      "campaign": "22V045000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    {
+      "campaign": "22V050000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    {
+      "campaign": "22V063000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    {
+      "campaign": "22V235000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    "... (13 more)"
+  ],
+  "complaints": 766,
+  "top_complaint_components": [
+    [
+      "FORWARD COLLISION AVOIDANCE",
+      263
+    ],
+    [
+      "VEHICLE SPEED CONTROL,FORWARD COLLISION AVOIDANCE",
+      77
+    ],
+    [
+      "SERVICE BRAKES,FORWARD COLLISION AVOIDANCE",
+      72
+    ],
+    [
+      "VEHICLE SPEED CONTROL,SERVICE BRAKES,FORWARD COLLISION AVOIDANCE",
+      48
+    ]
+  ],
+  "ncap": {
+    "VehicleDescription": "2022 Tesla Model 3 4 DR AWD",
+    "OverallRating": "5",
+    "OverallFrontCrashRating": "5",
+    "OverallSideCrashRating": "5",
+    "RolloverRating": "5"
+  }
+}
+```
+</details>
+
+---
+
+### NHTSA vPIC (vehicle VIN decoder)
+
+| | |
+|:--|:--|
+| **Docs** | https://vpic.nhtsa.dot.gov/api/ |
+| **Auth** | None |
+| **Register / token** | No registration. Batch decoding of up to 50 VINs per request via POST DecodeVINValuesBatch. |
+| **Script** | [`scripts/transportation_geo/nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+
+**What you can get:**
+
+- Decode any VIN: make, model, year, body class, engine, fuel type, drive type, plant, safety features
+- All makes, models per make/year, manufacturer details, vehicle types
+
+**Capstone ideas:** Enriching crash/registration/insurance data with vehicle attributes; EV adoption studies from VIN registries.
+
+**Endpoint:** `GET https://vpic.nhtsa.dot.gov/api/vehicles/{operation}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `DecodeVinValues/{VIN}?format=json&modelyear=` | Flat key/value decode of one VIN (partial VINs with * allowed) | `DecodeVinValues/1HGCV1F34LA000000` |
+| `DecodeVINValuesBatch/ (POST)` | Body DATA=VIN1,year;VIN2,year (up to 50) | `DATA=5UXWX7C5*BA,2011;...` |
+| `GetModelsForMakeYear/make/{make}/modelyear/{year}` | Models a maker sold in a year; make matches substrings, so filter on Make_Name | `make/tesla/modelyear/2024` |
+| `GetAllMakes` | Every make in the database | `—` |
+| `format` | json \| csv \| xml | `json` |
+
+```python
+from _common import get, show
+
+FIELDS = ["Make", "Model", "ModelYear", "BodyClass", "FuelTypePrimary", "ElectrificationLevel", "DriveType", "PlantCountry"]
+
+
+def main():
+    vin = get("https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVinValues/5YJ3E1EA7KF000000", params={"format": "json"})
+    models = get("https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeYear/make/ford/modelyear/2025",
+                 params={"format": "json"})
+    show({"decoded_vin": {k: vin["Results"][0][k] for k in FIELDS},
+          # make= matches substrings (e.g. "Bradford"), so keep exact matches only
+          "ford_2025_models": sorted(m["Model_Name"] for m in models["Results"] if m["Make_Name"] == "FORD")},
+         max_items=8)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
+
+```json
+{
+  "decoded_vin": {
+    "Make": "TESLA",
+    "Model": "Model 3",
+    "ModelYear": "2019",
+    "BodyClass": "Sedan/Saloon",
+    "FuelTypePrimary": "Electric",
+    "ElectrificationLevel": "BEV (Battery Electric Vehicle)",
+    "DriveType": "",
+    "PlantCountry": "UNITED STATES (USA)"
+  },
+  "ford_2025_models": [
+    "'34",
+    "Bronco",
+    "Bronco Sport",
+    "Commercial Chassis",
+    "E-350",
+    "E-450",
+    "Escape",
+    "Expedition",
+    "... (26 more)"
+  ]
+}
+```
+</details>
+
+---
+
 ### OpenStreetMap Nominatim (geocoding)
 
 | | |
@@ -5681,7 +6902,7 @@ def main():
     show([{k: r[k] for k in ("display_name", "lat", "lon", "category", "type")} for r in d])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
 
 ```json
 [
@@ -5738,55 +6959,128 @@ def main():
          "velocity_mps": s[9]} for s in states]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
 
 ```json
 {
-  "aircraft_in_box": 58,
+  "aircraft_in_box": 51,
   "sample": [
     {
-      "callsign": "EJA738",
+      "callsign": "AAL3238",
       "origin_country": "United States",
-      "lat": 38.9503,
-      "lon": -77.4432,
-      "baro_alt_m": null,
-      "velocity_mps": 6.69
+      "lat": 38.7546,
+      "lon": -77.4392,
+      "baro_alt_m": 952.5,
+      "velocity_mps": 110.62
     },
     {
-      "callsign": "SWA4523",
+      "callsign": "SWA1469",
       "origin_country": "United States",
-      "lat": 38.8439,
-      "lon": -77.0411,
-      "baro_alt_m": null,
-      "velocity_mps": 1.03
+      "lat": 39.159,
+      "lon": -76.6585,
+      "baro_alt_m": 304.8,
+      "velocity_mps": 86.18
     },
     {
-      "callsign": "ENY4169",
+      "callsign": "SWA1044",
       "origin_country": "United States",
-      "lat": 38.8479,
-      "lon": -77.0388,
-      "baro_alt_m": null,
-      "velocity_mps": 1.03
+      "lat": 39.1083,
+      "lon": -76.6769,
+      "baro_alt_m": 830.58,
+      "velocity_mps": 125.16
     },
     {
-      "callsign": "AAL544",
+      "callsign": "N416KC",
       "origin_country": "United States",
-      "lat": 38.8427,
-      "lon": -77.0383,
+      "lat": 38.962,
+      "lon": -77.4725,
       "baro_alt_m": null,
-      "velocity_mps": 0
+      "velocity_mps": 9.77
     },
     {
-      "callsign": "SWA2160",
+      "callsign": "SCX3053",
       "origin_country": "United States",
-      "lat": 39.0548,
-      "lon": -76.7812,
-      "baro_alt_m": 1242.06,
-      "velocity_mps": 106.76
+      "lat": 39.1867,
+      "lon": -76.6832,
+      "baro_alt_m": 106.68,
+      "velocity_mps": 77.39
     },
-    "... (53 more)"
+    "... (46 more)"
   ]
 }
+```
+</details>
+
+---
+
+### OSRM (routing on OpenStreetMap)
+
+| | |
+|:--|:--|
+| **Docs** | https://project-osrm.org/docs/v5.24.0/api/ |
+| **Auth** | None |
+| **Register / token** | The public demo server allows light use only (~1 request/second, no bulk jobs). For real projects run your own OSRM with Docker on an OSM extract (car, bike or foot profiles). |
+| **Script** | [`scripts/transportation_geo/osrm.py`](scripts/transportation_geo/osrm.py) |
+
+**What you can get:**
+
+- Fastest route between points: distance, duration, turn-by-turn steps, geometry
+- Travel-time / distance matrices between many points (table service)
+- Snap GPS traces to roads (match), nearest road, travelling-salesman trips
+
+**Capstone ideas:** Accessibility measures (travel time to hospitals/jobs), commute-time features for housing models.
+
+**Endpoint:** `GET https://router.project-osrm.org/{service}/v1/{profile}/{lon,lat;lon,lat;...}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `service` | route \| table \| nearest \| match \| trip | `route` |
+| `profile` | driving on the demo server (car \| bike \| foot on self-hosted) | `driving` |
+| `coordinates` | lon,lat pairs separated by ; (note: longitude first) | `-77.0486,38.8997;-77.0091,38.8899` |
+| `overview` | full \| simplified \| false (route geometry) | `false` |
+| `steps` | true -> turn-by-turn instructions | `true` |
+| `annotations (table)` | duration \| distance \| duration,distance | `duration,distance` |
+| `sources / destinations (table)` | Indexes of coordinates to use as origins / destinations | `sources=0` |
+
+```python
+from _common import get, show
+
+PLACES = {"GWU": (-77.0486, 38.8997), "Union Station": (-77.0063, 38.8973),
+          "Reagan Airport": (-77.0402, 38.8512), "Dulles Airport": (-77.4565, 38.9531)}
+
+
+def main():
+    coords = ";".join(f"{lon},{lat}" for lon, lat in PLACES.values())
+    d = get(f"https://router.project-osrm.org/table/v1/driving/{coords}",
+            params={"sources": 0, "annotations": "duration,distance"})
+    names = list(PLACES)
+    show([{"from": "GWU", "to": names[i], "drive_min": round(d["durations"][0][i] / 60, 1),
+           "km": round(d["distances"][0][i] / 1000, 1)} for i in range(1, len(names))])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
+
+```json
+[
+  {
+    "from": "GWU",
+    "to": "Union Station",
+    "drive_min": 7.9,
+    "km": 4.6
+  },
+  {
+    "from": "GWU",
+    "to": "Reagan Airport",
+    "drive_min": 12.1,
+    "km": 9.3
+  },
+  {
+    "from": "GWU",
+    "to": "Dulles Airport",
+    "drive_min": 52.3,
+    "km": 45.0
+  }
+]
 ```
 </details>
 
@@ -5837,7 +7131,7 @@ def main():
            "opening_hours": e["tags"].get("opening_hours")} for e in r.json()["elements"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:10</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
 
 ```json
 [
@@ -5871,6 +7165,59 @@ def main():
     "lon": -77.043879,
     "opening_hours": null
   }
+]
+```
+</details>
+
+---
+
+### Transitland (GTFS transit data worldwide)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.transit.land/documentation/rest-api/ |
+| **Auth** | API key (header `apikey`) |
+| **Register / token** | Sign up for a free key at https://www.transit.land/documentation#signing-up-for-an-api-key (free tier for non-commercial use). Aggregates 2,500+ GTFS feeds. |
+| **Env var** | `TRANSITLAND_API_KEY` |
+| **Script** | [`scripts/transportation_geo/transitland.py`](scripts/transportation_geo/transitland.py) |
+
+**What you can get:**
+
+- Transit agencies, routes, stops and schedules from GTFS feeds worldwide in one API
+- Stop departures, route shapes (GeoJSON), feed versions over time
+- Search near a point or inside a bounding box
+
+**Capstone ideas:** Transit-access scores for neighborhoods, comparing service levels across cities, service-change history.
+
+**Endpoint:** `GET https://transit.land/api/v2/rest/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `resource` | agencies \| routes \| stops \| feeds \| stops/{key}/departures | `routes` |
+| `search` | Text search on names | `metro` |
+| `lat / lon / radius` | Near a point (radius in metres) | `38.8997 / -77.0486 / 500` |
+| `bbox` | min_lon,min_lat,max_lon,max_lat | `-77.12,38.80,-76.91,38.99` |
+| `route_type` | GTFS route type: 1 subway, 3 bus, ... | `1` |
+| `limit / after` | Paging (cursor in meta.after) | `5` |
+| `apikey (header)` | Your key | `<TRANSITLAND_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://transit.land/api/v2/rest/routes", headers={"apikey": key("TRANSITLAND_API_KEY")},
+            params={"lat": 38.8997, "lon": -77.0486, "radius": 1000, "route_type": 1, "limit": 5})
+    show([{"route": r["route_short_name"], "long_name": r["route_long_name"], "agency": r["agency"]["agency_name"],
+           "route_type": r["route_type"]} for r in d["routes"]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"route": "RD", "long_name": "Red Line", "agency": "Washington Metropolitan Area Transit Authority", "route_type": 1},
+  {"route": "BL", "long_name": "Blue Line", "agency": "Washington Metropolitan Area Transit Authority", "route_type": 1}
 ]
 ```
 </details>

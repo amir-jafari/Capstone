@@ -1,0 +1,24 @@
+# live 2026-10-11 21:04
+{
+  "decoded_vin": {
+    "Make": "TESLA",
+    "Model": "Model 3",
+    "ModelYear": "2019",
+    "BodyClass": "Sedan/Saloon",
+    "FuelTypePrimary": "Electric",
+    "ElectrificationLevel": "BEV (Battery Electric Vehicle)",
+    "DriveType": "",
+    "PlantCountry": "UNITED STATES (USA)"
+  },
+  "ford_2025_models": [
+    "'34",
+    "Bronco",
+    "Bronco Sport",
+    "Commercial Chassis",
+    "E-350",
+    "E-450",
+    "Escape",
+    "Expedition",
+    "... (26 more)"
+  ]
+}

@@ -1,0 +1,41 @@
+# live 2026-10-11 21:03
+{
+  "VA_paid_claims_2024": 184,
+  "largest_building_payouts": [
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51155",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 500000,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-08-30",
+      "countyCode": "51730",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 397838.64,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51750",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 379425.03,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51191",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 231542.96,
+      "amountPaidOnContentsClaim": 0
+    },
+    {
+      "dateOfLoss": "2024-09-27",
+      "countyCode": "51121",
+      "ratedFloodZone": "AE",
+      "amountPaidOnBuildingClaim": 220000,
+      "amountPaidOnContentsClaim": 100000
+    }
+  ]
+}

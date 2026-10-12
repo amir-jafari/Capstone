@@ -1,0 +1,21 @@
+# live 2026-10-11 21:04
+[
+  {
+    "from": "GWU",
+    "to": "Union Station",
+    "drive_min": 7.9,
+    "km": 4.6
+  },
+  {
+    "from": "GWU",
+    "to": "Reagan Airport",
+    "drive_min": 12.1,
+    "km": 9.3
+  },
+  {
+    "from": "GWU",
+    "to": "Dulles Airport",
+    "drive_min": 52.3,
+    "km": 45.0
+  }
+]

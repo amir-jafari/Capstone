@@ -1,0 +1,21 @@
+# live 2026-10-11 21:03
+[
+  {
+    "race": "White",
+    "denied": 703,
+    "originated": 3779,
+    "denial_rate": 0.157
+  },
+  {
+    "race": "Asian",
+    "originated": 423,
+    "denied": 119,
+    "denial_rate": 0.22
+  },
+  {
+    "race": "Black or African American",
+    "denied": 1298,
+    "originated": 1995,
+    "denial_rate": 0.394
+  }
+]

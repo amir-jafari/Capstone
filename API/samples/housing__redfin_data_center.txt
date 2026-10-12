@@ -1,0 +1,35 @@
+# live 2026-10-11 21:03
+[
+  {
+    "month": "2026-02",
+    "median_sale_price": 429061,
+    "price_yoy_pct": 0.8,
+    "homes_sold": 320726,
+    "inventory": 1336670,
+    "months_of_supply": 4.2
+  },
+  {
+    "month": "2026-03",
+    "median_sale_price": 436487,
+    "price_yoy_pct": 1.1,
+    "homes_sold": 417012,
+    "inventory": 1393358,
+    "months_of_supply": 3.3
+  },
+  {
+    "month": "2026-04",
+    "median_sale_price": 442054,
+    "price_yoy_pct": 0.9,
+    "homes_sold": 446632,
+    "inventory": 1468301,
+    "months_of_supply": 3.3
+  },
+  {
+    "month": "2026-05",
+    "median_sale_price": 449846,
+    "price_yoy_pct": 2.2,
+    "homes_sold": 464811,
+    "inventory": 1460440,
+    "months_of_supply": 3.1
+  }
+]

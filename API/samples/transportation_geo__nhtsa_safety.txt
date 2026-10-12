@@ -1,0 +1,53 @@
+# live 2026-10-11 21:03
+{
+  "vehicle": "2022 Tesla Model 3",
+  "recalls": [
+    {
+      "campaign": "22V037000",
+      "component": "ELECTRICAL SYSTEM:ADAS:AUTONOMOUS/SELF DRIVING:SOFTWARE"
+    },
+    {
+      "campaign": "22V045000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    {
+      "campaign": "22V050000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    {
+      "campaign": "22V063000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    {
+      "campaign": "22V235000",
+      "component": "ELECTRICAL SYSTEM:SOFTWARE"
+    },
+    "... (13 more)"
+  ],
+  "complaints": 766,
+  "top_complaint_components": [
+    [
+      "FORWARD COLLISION AVOIDANCE",
+      263
+    ],
+    [
+      "VEHICLE SPEED CONTROL,FORWARD COLLISION AVOIDANCE",
+      77
+    ],
+    [
+      "SERVICE BRAKES,FORWARD COLLISION AVOIDANCE",
+      72
+    ],
+    [
+      "VEHICLE SPEED CONTROL,SERVICE BRAKES,FORWARD COLLISION AVOIDANCE",
+      48
+    ]
+  ],
+  "ncap": {
+    "VehicleDescription": "2022 Tesla Model 3 4 DR AWD",
+    "OverallRating": "5",
+    "OverallFrontCrashRating": "5",
+    "OverallSideCrashRating": "5",
+    "RolloverRating": "5"
+  }
+}

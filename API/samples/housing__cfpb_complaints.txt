@@ -1,0 +1,42 @@
+# live 2026-10-11 21:03
+{
+  "mortgage_complaints_DC_since_2025": 198,
+  "top_issues": [
+    {
+      "issue": "Trouble during payment process",
+      "complaints": 93
+    },
+    {
+      "issue": "Struggling to pay mortgage",
+      "complaints": 54
+    },
+    {
+      "issue": "Applying for a mortgage or refinancing an existing mortgage",
+      "complaints": 26
+    },
+    {
+      "issue": "Closing on a mortgage",
+      "complaints": 18
+    }
+  ],
+  "latest": [
+    {
+      "date_received": "2026-09-29T12:57:10.000Z",
+      "company": "Rocket Mortgage, LLC",
+      "issue": "Struggling to pay mortgage",
+      "company_response": "Closed with explanation"
+    },
+    {
+      "date_received": "2026-09-25T18:00:53.000Z",
+      "company": "Rocket Mortgage, LLC",
+      "issue": "Trouble during payment process",
+      "company_response": "Closed with explanation"
+    },
+    {
+      "date_received": "2026-09-22T14:33:55.000Z",
+      "company": "CREDIT CARD MANAGEMENT SERVICES INC",
+      "issue": "Applying for a mortgage or refinancing an existing mortgage",
+      "company_response": "Closed with explanation"
+    }
+  ]
+}

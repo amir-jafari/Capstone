@@ -1,0 +1,30 @@
+# live 2026-10-11 21:03
+{
+  "busiest_US_Mexico_truck_crossings_2025": [
+    {
+      "port_name": "Laredo",
+      "state": "Texas",
+      "trucks": "2945388"
+    },
+    {
+      "port_name": "Otay Mesa",
+      "state": "California",
+      "trucks": "990111"
+    },
+    {
+      "port_name": "Hidalgo",
+      "state": "Texas",
+      "trucks": "719184"
+    },
+    {
+      "port_name": "Ysleta",
+      "state": "Texas",
+      "trucks": "641729"
+    },
+    {
+      "port_name": "Calexico East",
+      "state": "California",
+      "trucks": "446835"
+    }
+  ]
+}

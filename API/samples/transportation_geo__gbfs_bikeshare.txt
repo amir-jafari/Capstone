@@ -1,0 +1,37 @@
+# live 2026-10-11 21:03
+{
+  "stations": 865,
+  "bikes_available_total": 5937,
+  "fullest_stations": [
+    {
+      "name": "13th & H St NE",
+      "bikes": 31,
+      "ebikes": 8,
+      "docks_free": 0
+    },
+    {
+      "name": "13th & D St NE",
+      "bikes": 29,
+      "ebikes": 9,
+      "docks_free": 5
+    },
+    {
+      "name": "10th St & Constitution Ave NW",
+      "bikes": 28,
+      "ebikes": 2,
+      "docks_free": 19
+    },
+    {
+      "name": "31st & K St NW",
+      "bikes": 28,
+      "ebikes": 2,
+      "docks_free": 0
+    },
+    {
+      "name": "Wisconsin Ave & K St NW",
+      "bikes": 27,
+      "ebikes": 15,
+      "docks_free": 7
+    }
+  ]
+}

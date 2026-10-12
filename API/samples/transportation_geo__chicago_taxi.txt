@@ -1,0 +1,38 @@
+# live 2026-10-11 21:03
+[
+  {
+    "payment_type": "Mobile",
+    "trips": "47705",
+    "avg_fare": 15.77,
+    "avg_tip": 1.32,
+    "avg_miles": 3.68
+  },
+  {
+    "payment_type": "Credit Card",
+    "trips": "41964",
+    "avg_fare": 30.13,
+    "avg_tip": 6.16,
+    "avg_miles": 8.28
+  },
+  {
+    "payment_type": "Cash",
+    "trips": "27946",
+    "avg_fare": 23.03,
+    "avg_tip": 0.0,
+    "avg_miles": 5.26
+  },
+  {
+    "payment_type": "Prcard",
+    "trips": "9185",
+    "avg_fare": 25.65,
+    "avg_tip": 0.09,
+    "avg_miles": 7.23
+  },
+  {
+    "payment_type": "Unknown",
+    "trips": "2580",
+    "avg_fare": 26.14,
+    "avg_tip": 0.01,
+    "avg_miles": 7.31
+  }
+]

@@ -1,0 +1,10 @@
+# live 2026-10-11 21:03
+{
+  "matched": "2121 I ST NW, WASHINGTON, DC, 20037",
+  "lon": -77.0467239318,
+  "lat": 38.900750817068,
+  "county": "District of Columbia",
+  "tract_GEOID": "11001010800",
+  "block_group_GEOID": "110010108001",
+  "congressional_district": "Delegate District (at Large)"
+}
