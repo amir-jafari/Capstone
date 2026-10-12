@@ -1,0 +1,33 @@
+# live 2026-10-12 10:58
+{
+  "flow": "US imports from China, 2024",
+  "total_bn_usd": 462.6,
+  "top_hs_chapters": [
+    {
+      "hs": "85",
+      "name": "Electrical machinery",
+      "bn_usd": 127.1
+    },
+    {
+      "hs": "84",
+      "name": "Machinery & computers",
+      "bn_usd": 85.1
+    },
+    {
+      "hs": "95",
+      "name": "Toys & sports goods",
+      "bn_usd": 32.0
+    },
+    {
+      "hs": "39",
+      "name": "Plastics",
+      "bn_usd": 21.5
+    },
+    {
+      "hs": "94",
+      "name": "Furniture & lighting",
+      "bn_usd": 20.9
+    },
+    "... (1 more)"
+  ]
+}

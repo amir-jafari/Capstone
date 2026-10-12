@@ -1,0 +1,26 @@
+# live 2026-10-12 10:58
+{
+  "market": "WTI-PHYSICAL - NEW YORK MERCANTILE EXCHANGE",
+  "weeks": [
+    {
+      "date": "2026-10-06",
+      "open_interest": 1889422,
+      "noncommercial_net_long": 99060
+    },
+    {
+      "date": "2026-09-29",
+      "open_interest": 1878576,
+      "noncommercial_net_long": 109463
+    },
+    {
+      "date": "2026-09-22",
+      "open_interest": 1841811,
+      "noncommercial_net_long": 141106
+    },
+    {
+      "date": "2026-09-15",
+      "open_interest": 1955764,
+      "noncommercial_net_long": 135905
+    }
+  ]
+}

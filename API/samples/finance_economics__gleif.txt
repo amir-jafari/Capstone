@@ -1,0 +1,16 @@
+# live 2026-10-12 10:58
+{
+  "lei": "5493006MHB84DD0ZWV18",
+  "legal_name": "ALPHABET INC.",
+  "jurisdiction": "US-DE",
+  "status": "ACTIVE",
+  "hq_city": "Mountain View",
+  "direct_children_registered": 33,
+  "examples": [
+    "GOOGLE CLOUD FRANCE",
+    "Google Payment Lithuania, UAB",
+    "GOOGLE ARGENTINA S.R.L.",
+    "GOOGLE CHILE LIMITADA",
+    "GOC INTERNATIONAL LLC"
+  ]
+}

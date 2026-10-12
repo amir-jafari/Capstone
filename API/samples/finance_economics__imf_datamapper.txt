@@ -1,0 +1,90 @@
+# live 2026-10-12 10:58
+{
+  "indicators": "real GDP growth % / inflation % (IMF WEO; 2026-2027 are forecasts)",
+  "data": {
+    "USA": {
+      "2025": {
+        "gdp_growth": 2.1,
+        "inflation": 2.7
+      },
+      "2026": {
+        "gdp_growth": 2.3,
+        "inflation": 3.2
+      },
+      "2027": {
+        "gdp_growth": 2.1,
+        "inflation": 2.1
+      }
+    },
+    "CHN": {
+      "2025": {
+        "gdp_growth": 5,
+        "inflation": 0
+      },
+      "2026": {
+        "gdp_growth": 4.4,
+        "inflation": 1.2
+      },
+      "2027": {
+        "gdp_growth": 4,
+        "inflation": 1.5
+      }
+    },
+    "DEU": {
+      "2025": {
+        "gdp_growth": 0.2,
+        "inflation": 2.3
+      },
+      "2026": {
+        "gdp_growth": 0.8,
+        "inflation": 2.7
+      },
+      "2027": {
+        "gdp_growth": 1.2,
+        "inflation": 2.3
+      }
+    },
+    "IND": {
+      "2025": {
+        "gdp_growth": 7.6,
+        "inflation": 2.1
+      },
+      "2026": {
+        "gdp_growth": 6.5,
+        "inflation": 4.7
+      },
+      "2027": {
+        "gdp_growth": 6.5,
+        "inflation": 4
+      }
+    },
+    "BRA": {
+      "2025": {
+        "gdp_growth": 2.3,
+        "inflation": 5
+      },
+      "2026": {
+        "gdp_growth": 1.9,
+        "inflation": 4
+      },
+      "2027": {
+        "gdp_growth": 2,
+        "inflation": 3.4
+      }
+    },
+    "JPN": {
+      "2025": {
+        "gdp_growth": 1.2,
+        "inflation": 3.2
+      },
+      "2026": {
+        "gdp_growth": 0.7,
+        "inflation": 2.2
+      },
+      "2027": {
+        "gdp_growth": 0.6,
+        "inflation": 2.3
+      }
+    }
+  }
+}

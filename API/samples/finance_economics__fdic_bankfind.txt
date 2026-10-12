@@ -1,0 +1,81 @@
+# live 2026-10-12 10:58
+{
+  "active_insured_banks": 4220,
+  "largest_by_assets_thousands_usd": [
+    {
+      "CITY": "Columbus",
+      "ASSET": 4091315000,
+      "STALP": "OH",
+      "DEP": 2820284000,
+      "NAME": "JPMorgan Chase Bank, National Association",
+      "ID": "628"
+    },
+    {
+      "CITY": "Charlotte",
+      "ASSET": 2654645000,
+      "STALP": "NC",
+      "DEP": 2121804000,
+      "NAME": "Bank of America, National Association",
+      "ID": "3510"
+    },
+    {
+      "CITY": "Sioux Falls",
+      "ASSET": 1976180000,
+      "STALP": "SD",
+      "DEP": 1547586000,
+      "NAME": "Citibank, National Association",
+      "ID": "7213"
+    },
+    {
+      "CITY": "Sioux Falls",
+      "ASSET": 1907928000,
+      "STALP": "SD",
+      "DEP": 1563534000,
+      "NAME": "Wells Fargo Bank, National Association",
+      "ID": "3511"
+    },
+    {
+      "CITY": "New York",
+      "ASSET": 758788000,
+      "STALP": "NY",
+      "DEP": 498804000,
+      "NAME": "Goldman Sachs Bank USA",
+      "ID": "33124"
+    }
+  ],
+  "recent_failures": [
+    {
+      "COST": 5671,
+      "QBFASSET": 72947,
+      "FAILDATE": "7/17/2026",
+      "CITYST": "LENEXA, KS",
+      "NAME": "SMALL BUSINESS BANK",
+      "ID": "4117"
+    },
+    {
+      "COST": 1194,
+      "QBFASSET": 3808,
+      "FAILDATE": "7/10/2026",
+      "CITYST": "KENTLAND, IN",
+      "NAME": "KENTLAND FS&LA",
+      "ID": "4116"
+    },
+    {
+      "COST": 97284,
+      "QBFASSET": 305716,
+      "FAILDATE": "5/1/2026",
+      "CITYST": "LAGRANGE, GA",
+      "NAME": "COMMUNITY BANK AND TRUST - WEST GEORGIA",
+      "ID": "4115"
+    },
+    {
+      "COST": 19647,
+      "QBFASSET": 261185,
+      "FAILDATE": "1/30/2026",
+      "CITYST": "CHICAGO, IL",
+      "NAME": "METROPOLITAN CAPITAL B&T",
+      "ID": "4114"
+    }
+  ],
+  "failures_since_1934": 4117
+}

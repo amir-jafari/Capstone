@@ -1,33 +1,33 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 10:58
 [
   {
     "name": "Bitcoin",
-    "current_price": 83647,
-    "market_cap": 1681037143329,
-    "price_change_percentage_24h": 0.77903
+    "current_price": 82489,
+    "market_cap": 1657896424482,
+    "price_change_percentage_24h": -0.69002
   },
   {
     "name": "Ethereum",
-    "current_price": 2534.12,
-    "market_cap": 309481162747,
-    "price_change_percentage_24h": 1.06014
+    "current_price": 2521.05,
+    "market_cap": 307896209848,
+    "price_change_percentage_24h": 0.64319
   },
   {
     "name": "Tether",
-    "current_price": 0.999133,
-    "market_cap": 184090665514,
-    "price_change_percentage_24h": -0.00873
+    "current_price": 0.999208,
+    "market_cap": 184098895555,
+    "price_change_percentage_24h": 0.01447
   },
   {
     "name": "BNB",
-    "current_price": 753.42,
-    "market_cap": 100323096959,
-    "price_change_percentage_24h": 0.3609
+    "current_price": 745.61,
+    "market_cap": 99293767411,
+    "price_change_percentage_24h": -0.50439
   },
   {
     "name": "XRP",
-    "current_price": 1.41,
-    "market_cap": 88842983516,
-    "price_change_percentage_24h": 0.288
+    "current_price": 1.37,
+    "market_cap": 86656126484,
+    "price_change_percentage_24h": -1.889
   }
 ]
