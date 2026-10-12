@@ -14,6 +14,16 @@ META = dict(
    "country": "Kenya", "location": "Nairobi", "fatalities": 0,
    "notes": "On 28 September 2026, students demonstrated outside parliament against tuition increases..."}
 ]""",
+    endpoint="GET https://acleddata.com/api/acled/read  (token: POST https://acleddata.com/oauth/token)",
+    params=[
+        ("country / iso", "Country name or ISO numeric code", "Kenya / 404"),
+        ("event_date + event_date_where", "Date filter; BETWEEN takes start|end", "2026-01-01|2026-09-30, BETWEEN"),
+        ("event_type", "Battles | Protests | Riots | Violence against civilians | Explosions/Remote violence | Strategic developments", "Protests"),
+        ("fields", "Pipe-separated columns to return", "event_date|event_type|fatalities"),
+        ("limit / page", "Rows per page (default 5,000)", "5"),
+        ("_format", "json | csv", "json"),
+        ("Authorization (header)", "Bearer token from /oauth/token (valid 24 h)", "Bearer <token>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import requests

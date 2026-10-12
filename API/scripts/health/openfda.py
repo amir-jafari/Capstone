@@ -8,6 +8,15 @@ META = dict(
     provides=["Adverse event reports for drugs, devices, food (FAERS)", "Drug labels, recalls/enforcement, NDC directory",
               "`count=` aggregations directly in the API"],
     ideas="Pharmacovigilance / adverse-event signal detection, recall analysis.",
+    endpoint="GET https://api.fda.gov/{category}/{endpoint}.json",
+    params=[
+        ("category/endpoint", "drug/event, drug/label, drug/enforcement, device/event, food/enforcement, ...", "drug/event"),
+        ("search", "field:term with AND/OR (+), ranges [A TO B]", "patient.drug.openfda.generic_name:\"semaglutide\""),
+        ("count", "Aggregate counts by a field (.exact for whole phrases)", "patient.reaction.reactionmeddrapt.exact"),
+        ("limit / skip", "Max 1,000 per request; skip up to 25,000", "6"),
+        ("sort", "field:asc|desc", "receivedate:desc"),
+        ("api_key", "Optional key", "<OPENFDA_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

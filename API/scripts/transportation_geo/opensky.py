@@ -8,6 +8,15 @@ META = dict(
     provides=["Live aircraft state vectors: callsign, origin country, lat/lon, altitude, velocity, heading",
               "Arrivals/departures by airport, flight tracks (authenticated)"],
     ideas="Air-traffic pattern mining, emissions estimation, delay propagation.",
+    endpoint="GET https://opensky-network.org/api/states/all",
+    params=[
+        ("lamin / lomin / lamax / lomax", "Bounding box", "38.6 / -77.6 / 39.2 / -76.6"),
+        ("icao24", "One or more aircraft transponder addresses", "a0b1c2"),
+        ("time", "Unix seconds (past states need an account)", "1760200000"),
+        ("extended", "1 → include aircraft category", "1"),
+        ("/flights/arrival?airport=&begin=&end=", "Sibling endpoint (account): arrivals at an airport (also /flights/departure)", "airport=KIAD"),
+        ("/flights/aircraft?icao24=&begin=&end=", "Sibling endpoint (account): flights by aircraft", "icao24=a0b1c2"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

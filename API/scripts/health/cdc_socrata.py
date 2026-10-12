@@ -9,6 +9,18 @@ META = dict(
     provides=["CDC PLACES: county/tract estimates of obesity, diabetes, depression, smoking, insurance...",
               "Overdose deaths, COVID, vaccination, BRFSS, NCHS mortality", "SQL-like filtering ($where, $select, $group)"],
     ideas="Social determinants of health, small-area health disparities, joining with Census ACS.",
+    endpoint="GET https://data.cdc.gov/resource/{dataset-id}.json",
+    params=[
+        ("dataset-id", "4x4 ID from the dataset page (API button)", "swc5-untb (PLACES, county)"),
+        ("column=value", "Simple equality filter on any column", "measureid=DEPRESSION"),
+        ("$select", "Columns or aggregates", "stateabbr,avg(data_value)"),
+        ("$where", "SQL-like filter", "stateabbr in ('DC','MD','VA')"),
+        ("$group", "Group-by for aggregates", "stateabbr"),
+        ("$order", "Sort", "data_value DESC"),
+        ("$limit / $offset", "Paging (default limit 1,000)", "5"),
+        ("$q", "Full-text search across columns", "depression"),
+        ("X-App-Token (header)", "Optional app token", "<SOCRATA_APP_TOKEN>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

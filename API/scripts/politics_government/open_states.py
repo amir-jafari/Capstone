@@ -12,6 +12,18 @@ META = dict(
   {"identifier": "HB 1234", "title": "Relating to artificial intelligence systems used in employment decisions",
    "jurisdiction": "Virginia", "latest_action": "Referred to Committee on Labor and Commerce", "date": "2026-01-14"}
 ]""",
+    endpoint="GET https://v3.openstates.org/bills",
+    params=[
+        ("jurisdiction", "State name or OCD jurisdiction ID", "Virginia"),
+        ("session", "Legislative session identifier", "2026"),
+        ("q", "Full-text search", "artificial intelligence"),
+        ("subject / classification", "Subject tag / bill | resolution | ...", "Education"),
+        ("updated_since / created_since / action_since", "Date filters YYYY-MM-DD", "2026-01-01"),
+        ("sort", "updated_desc | first_action_desc | latest_action_desc | ...", "updated_desc"),
+        ("include", "Extra data: sponsorships, actions, votes, abstracts, versions (repeatable)", "votes"),
+        ("per_page / page", "Max 20 per page", "5"),
+        ("/people?jurisdiction=&name=", "Sibling endpoint: legislators", "jurisdiction=Virginia"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

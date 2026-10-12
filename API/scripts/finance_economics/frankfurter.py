@@ -7,6 +7,14 @@ META = dict(
     provides=["Daily reference FX rates published by the European Central Bank (~30 currencies)",
               "Historical rates back to 1999 and time-series ranges"],
     ideas="Exchange-rate forecasting, currency-crisis analysis, converting multi-country price data.",
+    endpoint="GET https://api.frankfurter.dev/v1/{latest | YYYY-MM-DD | start..end}",
+    params=[
+        ("path", "latest, a single date, or a range start..end (end optional)", "2026-09-01..2026-09-05"),
+        ("base", "Base currency (default EUR)", "USD"),
+        ("symbols", "Comma-separated target currencies", "EUR,GBP,JPY"),
+        ("amount", "Convert this amount", "100"),
+        ("/v1/currencies", "Sibling endpoint: supported currency codes", "—"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

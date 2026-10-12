@@ -24,6 +24,17 @@ META = dict(
     "url": "https://www.theverge.com/..."
   }
 ]""",
+    endpoint="GET https://newsapi.org/v2/top-headlines  ·  GET https://newsapi.org/v2/everything",
+    params=[
+        ("country", "2-letter country code (top-headlines only)", "us"),
+        ("category", "business | entertainment | general | health | science | sports | technology (top-headlines)", "business"),
+        ("sources", "Comma-separated source IDs; can't be combined with country/category", "bbc-news,reuters"),
+        ("q", "Keywords or phrase; /everything supports AND / OR / NOT", "\"climate change\" AND policy"),
+        ("from / to", "ISO-8601 date range (/everything only)", "2026-10-01"),
+        ("language", "2-letter language code (/everything)", "en"),
+        ("sortBy", "relevancy | popularity | publishedAt (/everything)", "publishedAt"),
+        ("pageSize / page", "Results per page (max 100) and page number", "5"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

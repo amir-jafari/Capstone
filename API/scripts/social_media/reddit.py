@@ -28,6 +28,16 @@ META = dict(
     "created_utc": 1759800000.0
   }
 ]""",
+    endpoint="GET https://oauth.reddit.com/r/{subreddit}/{sort}  (token: POST https://www.reddit.com/api/v1/access_token)",
+    params=[
+        ("subreddit", "Subreddit name (path)", "datascience"),
+        ("sort", "hot | new | top | rising | controversial (path)", "top"),
+        ("t", "Time window for top/controversial: hour | day | week | month | year | all", "week"),
+        ("limit", "Items per request (max 100)", "5"),
+        ("after / before", "Fullname cursor for paging (from the previous response)", "t3_1abc23"),
+        ("grant_type", "Token request body; client_credentials = read-only app access", "client_credentials"),
+        ("/r/{sub}/comments/{id}", "Sibling endpoint: a post with its full comment tree", "/r/datascience/comments/1abc23"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import requests

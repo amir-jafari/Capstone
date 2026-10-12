@@ -16,6 +16,16 @@ META = dict(
   {"NAME": "Maryland", "population": "6161707", "median_household_income": "98461"},
   {"NAME": "Virginia", "population": "8624511", "median_household_income": "87249"}
 ]""",
+    endpoint="GET https://api.census.gov/data/{year}/{dataset}",
+    params=[
+        ("year / dataset", "Vintage + dataset path: acs/acs5, acs/acs1, dec/pl, pep/population, cbp, ...", "2023/acs/acs5"),
+        ("get", "Comma-separated variables (max 50) or group(TABLE)", "NAME,B01003_001E,B19013_001E"),
+        ("for", "Target geography with FIPS code or *", "state:11, county:*, tract:*"),
+        ("in", "Parent geography (required for counties/tracts within a state)", "state:11 county:001"),
+        ("ucgid", "Alternative geography selector by GEOID", "0400000US11"),
+        ("key", "Your API key", "<CENSUS_API_KEY>"),
+        ("/data/{year}/{dataset}/variables.json", "Sibling endpoint: every variable code and label", "2023/acs/acs5/variables.json"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

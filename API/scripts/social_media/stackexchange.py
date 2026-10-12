@@ -8,6 +8,17 @@ META = dict(
     provides=["Questions, answers, comments across 170+ sites (Stack Overflow, Cross Validated, ...)",
               "Score, views, tags, accepted answer, timestamps", "Tag popularity, user reputation"],
     ideas="Technology adoption trends, answer-quality prediction, developer-community analysis.",
+    endpoint="GET https://api.stackexchange.com/2.3/questions",
+    params=[
+        ("site", "Which site: stackoverflow, stats (Cross Validated), datascience, ...", "stackoverflow"),
+        ("tagged", "Semicolon-separated tags (AND)", "pandas"),
+        ("sort", "activity | votes | creation | hot | week | month", "votes"),
+        ("order", "desc | asc", "desc"),
+        ("fromdate / todate", "Unix epoch seconds", "1704067200"),
+        ("pagesize / page", "Results per page (max 100) and page number", "5"),
+        ("filter", "Named filter controlling returned fields; withbody adds question body", "withbody"),
+        ("key", "Optional app key (raises quota to 10,000/day)", "<key>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

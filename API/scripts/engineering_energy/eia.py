@@ -13,6 +13,17 @@ META = dict(
   {"period": "2026-10-10T23", "respondent": "PJM", "type-name": "Demand", "value": 92841, "value-units": "megawatthours"},
   {"period": "2026-10-10T22", "respondent": "PJM", "type-name": "Demand", "value": 95310, "value-units": "megawatthours"}
 ]""",
+    endpoint="GET https://api.eia.gov/v2/{route}/data/",
+    params=[
+        ("route", "Dataset route; GET /v2/{route} (no /data) to browse facets and children", "electricity/rto/region-data"),
+        ("frequency", "hourly | local-hourly | daily | monthly | quarterly | annual (depends on route)", "hourly"),
+        ("data[0]", "Data column(s) to return", "value"),
+        ("facets[{name}][]", "Facet filters, e.g. respondent (balancing authority), type (D = demand, NG = net generation, DF = forecast)", "facets[respondent][]=PJM"),
+        ("start / end", "Period range in the route's format", "2026-10-01T00"),
+        ("sort[0][column] / sort[0][direction]", "Sort", "period / desc"),
+        ("length / offset", "Max 5,000 rows per request", "5"),
+        ("api_key", "Your key", "<EIA_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

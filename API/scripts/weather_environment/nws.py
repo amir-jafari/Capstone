@@ -7,6 +7,16 @@ META = dict(
     provides=["Official NWS forecasts (12-hour periods & hourly) for US locations",
               "Active weather alerts (watches/warnings) by state or point", "Station observations"],
     ideas="Severe-weather alert analysis, linking alerts to outages/traffic/311 calls.",
+    endpoint="GET https://api.weather.gov/points/{lat},{lon}  ·  GET https://api.weather.gov/alerts/active",
+    params=[
+        ("points/{lat},{lon}", "Resolves a location to its forecast office/grid; returns forecast URLs", "38.8977,-77.0365"),
+        ("forecast / forecastHourly", "URLs returned in points → properties (12-hour periods / hourly)", "properties.forecast"),
+        ("alerts/active?area=", "State/marine area code", "VA"),
+        ("alerts/active?severity=", "Extreme | Severe | Moderate | Minor", "Severe"),
+        ("alerts/active?event=", "Alert event name", "Flood Warning"),
+        ("stations/{id}/observations/latest", "Latest observation at a station", "KDCA"),
+        ("User-Agent (header)", "Required: app name + contact", "(myapp, me@gwu.edu)"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

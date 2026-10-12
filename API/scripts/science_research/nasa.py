@@ -9,6 +9,14 @@ META = dict(
               "Astronomy Picture of the Day, Mars rover photos, space weather (DONKI)",
               "Natural events: wildfires, storms, volcanoes (EONET, keyless)"],
     ideas="Asteroid hazard classification, wildfire event tracking, image datasets.",
+    endpoint="GET https://api.nasa.gov/neo/rest/v1/feed",
+    params=[
+        ("start_date / end_date", "NeoWs date range, max 7 days", "2026-10-01"),
+        ("api_key", "api.data.gov key", "DEMO_KEY"),
+        ("/planetary/apod?date=&count=", "Sibling endpoint: Astronomy Picture of the Day", "date=2026-10-01"),
+        ("/DONKI/FLR?startDate=&endDate=", "Sibling endpoint: solar flares (also CME, GST, ...)", "startDate=2026-09-01"),
+        ("eonet.gsfc.nasa.gov/api/v3/events?category=&status=", "EONET natural events (no key)", "category=wildfires&status=open"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import os

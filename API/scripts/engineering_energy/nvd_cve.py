@@ -7,6 +7,17 @@ META = dict(
     signup="Keyless: 5 req / 30 s. Request a key at https://nvd.nist.gov/developers/request-an-api-key -> 50 req / 30 s.",
     provides=["Every CVE: description, CVSS scores/severity, CWE weakness type, affected products (CPE), references"],
     ideas="Vulnerability-severity prediction from text, exploit-likelihood modeling, cyber-risk dashboards.",
+    endpoint="GET https://services.nvd.nist.gov/rest/json/cves/2.0",
+    params=[
+        ("keywordSearch / keywordExactMatch", "Words in the description; flag for exact phrase", "pytorch"),
+        ("cveId", "A single CVE", "CVE-2021-44228"),
+        ("cvssV3Severity", "LOW | MEDIUM | HIGH | CRITICAL", "CRITICAL"),
+        ("cweId", "Weakness type", "CWE-79"),
+        ("pubStartDate / pubEndDate", "Published range, ISO-8601 (max 120 days)", "2026-01-01T00:00:00.000"),
+        ("cpeName", "Affected product (CPE 2.3 name)", "cpe:2.3:a:pytorch:pytorch:*:*:*:*:*:*:*:*"),
+        ("resultsPerPage / startIndex", "Max 2,000 per page", "5"),
+        ("apiKey (header)", "Optional key", "<NVD_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

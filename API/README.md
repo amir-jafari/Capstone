@@ -2,8 +2,8 @@
 
 > A curated, runnable list of free APIs across news, social media, weather, finance, census,
 > political science, health, science, engineering, transportation, and culture.
-> Every entry has: how to register / get a token, what data you can get, a short Python
-> example, and a **sample output**.
+> Every entry has: how to register / get a token, what data you can get, the endpoint and its
+> **parameters**, a short Python example, and a **sample output**.
 
 ## Quick Start
 
@@ -112,6 +112,18 @@ python build_readme.py          # re-run everything & regenerate this README
 
 **Capstone ideas:** Media framing & sentiment around elections, conflicts, policy events; event detection.
 
+**Endpoint:** `GET https://api.gdeltproject.org/api/v2/doc/doc`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Search terms plus operators: sourcecountry:, sourcelang:, domain:, theme:, tone<, "exact phrase" | `"artificial intelligence" sourcecountry:US` |
+| `mode` | artlist \| timelinevol \| timelinetone \| timelinesourcecountry \| tonechart | `artlist` |
+| `format` | json \| csv \| html \| rss | `json` |
+| `maxrecords` | Articles returned in artlist mode (max 250) | `5` |
+| `timespan` | Relative window ending now (min, h, d, w, m) | `1w` |
+| `startdatetime / enddatetime` | Absolute window, YYYYMMDDHHMMSS (last ~3 months) | `20260901000000` |
+| `sort` | datedesc \| dateasc \| tonedesc \| toneasc \| hybridrel | `datedesc` |
+
 ```python
 from _common import get, show
 
@@ -188,6 +200,19 @@ def main():
 
 **Capstone ideas:** Long-run framing of immigration/climate in the press, NLP corpora with full text.
 
+**Endpoint:** `GET https://content.guardianapis.com/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Query with AND / OR / NOT and "phrases" | `election` |
+| `section` | Section ID (list via /sections) | `politics` |
+| `tag` | Tag ID(s), comma = AND, \| = OR (list via /tags) | `politics/politics` |
+| `from-date / to-date` | Publication date range, YYYY-MM-DD | `2020-01-01` |
+| `order-by` | newest \| oldest \| relevance | `newest` |
+| `show-fields` | Extra fields: bodyText, body, headline, byline, wordcount, thumbnail | `wordcount,bodyText` |
+| `page-size / page` | Results per page (max 200) and page number | `5` |
+| `api-key` | Your key (required) | `<GUARDIAN_API_KEY>` |
+
 ```python
 from _common import get, key, show
 
@@ -240,6 +265,17 @@ def main():
 - User profiles (karma, submissions)
 
 **Capstone ideas:** Tech-trend detection, comment toxicity / sentiment, predicting story popularity.
+
+**Endpoint:** `GET https://hacker-news.firebaseio.com/v0/{resource}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `topstories / newstories / beststories` | Up to 500 current story IDs | `topstories` |
+| `askstories / showstories / jobstories` | Up to 200 IDs of each story type | `askstories` |
+| `item/{id}` | A story, comment, poll or job (`kids` = child comment IDs) | `item/8863` |
+| `user/{id}` | User profile: karma, created, submitted item IDs | `user/pg` |
+| `maxitem` | Largest item ID so far (walk backwards to crawl everything) | `maxitem` |
+| `updates` | Recently changed items and profiles | `updates` |
 
 ```python
 from _common import get, show
@@ -316,6 +352,19 @@ def main():
 
 **Capstone ideas:** News topic modeling, headline sentiment vs. stock moves, source bias comparison.
 
+**Endpoint:** `GET https://newsapi.org/v2/top-headlines  ·  GET https://newsapi.org/v2/everything`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `country` | 2-letter country code (top-headlines only) | `us` |
+| `category` | business \| entertainment \| general \| health \| science \| sports \| technology (top-headlines) | `business` |
+| `sources` | Comma-separated source IDs; can't be combined with country/category | `bbc-news,reuters` |
+| `q` | Keywords or phrase; /everything supports AND / OR / NOT | `"climate change" AND policy` |
+| `from / to` | ISO-8601 date range (/everything only) | `2026-10-01` |
+| `language` | 2-letter language code (/everything) | `en` |
+| `sortBy` | relevancy \| popularity \| publishedAt (/everything) | `publishedAt` |
+| `pageSize / page` | Results per page (max 100) and page number | `5` |
+
 ```python
 from _common import get, key, show
 
@@ -368,6 +417,17 @@ def main():
 
 **Capstone ideas:** 150+ years of headline data for historical discourse analysis; best-seller trends.
 
+**Endpoint:** `GET https://api.nytimes.com/svc/search/v2/articlesearch.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Full-text query | `supreme court` |
+| `fq` | Filter query on fields such as section, type of material, byline (field names per the docs) | `—` |
+| `begin_date / end_date` | Date range, YYYYMMDD | `20260101` |
+| `sort` | newest \| oldest \| relevance | `newest` |
+| `page` | Page number, 10 results each (max page 100) | `0` |
+| `api-key` | Your key (required) | `<NYT_API_KEY>` |
+
 ```python
 from _common import get, key, show
 
@@ -411,6 +471,18 @@ def main():
 - Article summaries, revisions, edit counts
 
 **Capstone ideas:** Public attention as a proxy signal: predicting elections, disease outbreaks, stock volatility.
+
+**Endpoint:** `GET https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/{project}/{access}/{agent}/{article}/{granularity}/{start}/{end}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `project` | Wiki project | `en.wikipedia` |
+| `access` | all-access \| desktop \| mobile-app \| mobile-web | `all-access` |
+| `agent` | all-agents \| user \| spider \| automated | `user` |
+| `article` | Article title with underscores (URL-encoded) | `Artificial_intelligence` |
+| `granularity` | daily \| monthly | `daily` |
+| `start / end` | YYYYMMDD (or YYYYMMDDHH) | `20260901 / 20260907` |
+| `top/{project}/{access}/{year}/{month}/{day}` | Sibling endpoint: 1,000 most-viewed articles that day | `top/en.wikipedia/all-access/2026/09/01` |
 
 ```python
 from _common import get, show
@@ -479,6 +551,17 @@ def main():
 - Real-time firehose of every public post
 
 **Capstone ideas:** The most open large social network for research now that X/Twitter API is paid; network & discourse analysis.
+
+**Endpoint:** `GET https://public.api.bsky.app/xrpc/{method}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `app.bsky.actor.getProfile?actor=` | Handle or DID | `bsky.app` |
+| `app.bsky.feed.getAuthorFeed?actor=&limit=&cursor=` | A user's posts; limit 1-100, cursor for paging | `limit=3` |
+| `filter (getAuthorFeed)` | posts_with_replies \| posts_no_replies \| posts_with_media \| posts_and_author_threads | `posts_no_replies` |
+| `app.bsky.graph.getFollowers?actor=&limit=&cursor=` | Follower list (also getFollows) | `actor=bsky.app` |
+| `app.bsky.feed.getPostThread?uri=` | A post and its reply tree (at:// URI) | `at://did:plc:…/app.bsky.feed.post/…` |
+| `app.bsky.feed.searchPosts?q=&sort=` | Post search, sort top \| latest (requires an authenticated session) | `q=climate` |
 
 ```python
 from _common import get, show
@@ -550,6 +633,17 @@ def main():
 
 **Capstone ideas:** Decentralized-social-network studies, hashtag diffusion across instances.
 
+**Endpoint:** `GET https://{instance}/api/v1/trends/tags`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `instance` | Any Mastodon server (host part of the URL) | `mastodon.social` |
+| `limit` | Number of tags (max 20) | `5` |
+| `offset` | Skip N results for paging | `0` |
+| `/api/v1/trends/statuses` | Sibling endpoint: trending posts | `limit=20` |
+| `/api/v1/timelines/public?local=&limit=` | Public timeline; local=true for this server only, limit max 40 | `local=true&limit=40` |
+| `/api/v1/timelines/tag/{hashtag}` | Posts with a hashtag | `/api/v1/timelines/tag/climate` |
+
 ```python
 from _common import get, show
 
@@ -614,6 +708,18 @@ def main():
 
 **Capstone ideas:** Opinion mining, community detection, mental-health discourse, meme-stock sentiment (r/wallstreetbets).
 
+**Endpoint:** `GET https://oauth.reddit.com/r/{subreddit}/{sort}  (token: POST https://www.reddit.com/api/v1/access_token)`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `subreddit` | Subreddit name (path) | `datascience` |
+| `sort` | hot \| new \| top \| rising \| controversial (path) | `top` |
+| `t` | Time window for top/controversial: hour \| day \| week \| month \| year \| all | `week` |
+| `limit` | Items per request (max 100) | `5` |
+| `after / before` | Fullname cursor for paging (from the previous response) | `t3_1abc23` |
+| `grant_type` | Token request body; client_credentials = read-only app access | `client_credentials` |
+| `/r/{sub}/comments/{id}` | Sibling endpoint: a post with its full comment tree | `/r/datascience/comments/1abc23` |
+
 ```python
 import requests
 
@@ -672,6 +778,19 @@ def main():
 - Tag popularity, user reputation
 
 **Capstone ideas:** Technology adoption trends, answer-quality prediction, developer-community analysis.
+
+**Endpoint:** `GET https://api.stackexchange.com/2.3/questions`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `site` | Which site: stackoverflow, stats (Cross Validated), datascience, ... | `stackoverflow` |
+| `tagged` | Semicolon-separated tags (AND) | `pandas` |
+| `sort` | activity \| votes \| creation \| hot \| week \| month | `votes` |
+| `order` | desc \| asc | `desc` |
+| `fromdate / todate` | Unix epoch seconds | `1704067200` |
+| `pagesize / page` | Results per page (max 100) and page number | `5` |
+| `filter` | Named filter controlling returned fields; withbody adds question body | `withbody` |
+| `key` | Optional app key (raises quota to 10,000/day) | `<key>` |
 
 ```python
 from _common import get, show
@@ -771,6 +890,20 @@ def main():
 
 **Capstone ideas:** Comment sentiment, misinformation spread, creator-economy analytics.
 
+**Endpoint:** `GET https://www.googleapis.com/youtube/v3/search  ·  GET https://www.googleapis.com/youtube/v3/videos`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `part` | Resource parts: snippet (search); snippet,statistics,contentDetails (videos) | `snippet,statistics` |
+| `q` | Search query (search) | `neural network` |
+| `type` | video \| channel \| playlist (search) | `video` |
+| `maxResults` | 0-50 | `3` |
+| `order` | relevance \| date \| viewCount \| rating (search) | `viewCount` |
+| `publishedAfter / publishedBefore` | RFC 3339 timestamps (search) | `2026-01-01T00:00:00Z` |
+| `regionCode / relevanceLanguage` | Country / language bias (search) | `US / en` |
+| `id` | Comma-separated video IDs (videos) | `aircAruvnKk` |
+| `key` | Your API key | `<YOUTUBE_API_KEY>` |
+
 ```python
 from _common import get, key, show
 
@@ -822,6 +955,19 @@ def main():
 
 **Capstone ideas:** Long-term local climate trends, heat-wave studies, weather/health linkage.
 
+**Endpoint:** `GET https://www.ncei.noaa.gov/cdo-web/api/v2/data`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `datasetid` | GHCND (daily), GSOM (monthly), GSOY (yearly), ... | `GHCND` |
+| `stationid` | Station ID (find via /stations) | `GHCND:USW00013743` |
+| `locationid` | Alternative to stationid: FIPS state, ZIP, city | `FIPS:11` |
+| `datatypeid` | TMAX, TMIN, PRCP, SNOW, AWND, ... | `TMAX,TMIN` |
+| `startdate / enddate` | YYYY-MM-DD (max 1-year span for daily data) | `2025-07-01 / 2025-07-07` |
+| `units` | standard \| metric | `metric` |
+| `limit / offset` | Rows per page (max 1000) and offset | `1000` |
+| `token (header)` | Your CDO token | `<NOAA_TOKEN>` |
+
 ```python
 from _common import get, key, show
 
@@ -863,6 +1009,18 @@ def main():
 - Station observations
 
 **Capstone ideas:** Severe-weather alert analysis, linking alerts to outages/traffic/311 calls.
+
+**Endpoint:** `GET https://api.weather.gov/points/{lat},{lon}  ·  GET https://api.weather.gov/alerts/active`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `points/{lat},{lon}` | Resolves a location to its forecast office/grid; returns forecast URLs | `38.8977,-77.0365` |
+| `forecast / forecastHourly` | URLs returned in points → properties (12-hour periods / hourly) | `properties.forecast` |
+| `alerts/active?area=` | State/marine area code | `VA` |
+| `alerts/active?severity=` | Extreme \| Severe \| Moderate \| Minor | `Severe` |
+| `alerts/active?event=` | Alert event name | `Flood Warning` |
+| `stations/{id}/observations/latest` | Latest observation at a station | `KDCA` |
+| `User-Agent (header)` | Required: app name + contact | `(myapp, me@gwu.edu)` |
 
 ```python
 from _common import get, show
@@ -931,6 +1089,19 @@ def main():
 - Air quality, marine, flood, climate-change (CMIP6) projections, geocoding
 
 **Capstone ideas:** Weather as a covariate for sales/energy/mobility models; climate trend analysis.
+
+**Endpoint:** `GET https://api.open-meteo.com/v1/forecast  ·  GET https://archive-api.open-meteo.com/v1/archive`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `latitude / longitude` | Location (comma lists allowed for multiple points) | `38.90 / -77.04` |
+| `current` | Current-condition variables | `temperature_2m,wind_speed_10m` |
+| `hourly` | Hourly variables | `temperature_2m,precipitation` |
+| `daily` | Daily aggregates (requires timezone) | `temperature_2m_max,precipitation_sum` |
+| `timezone` | IANA zone or auto | `America/New_York` |
+| `forecast_days / past_days` | Forecast length 1-16 days / include recent past days | `3 / 7` |
+| `temperature_unit / wind_speed_unit / precipitation_unit` | celsius\|fahrenheit, kmh\|ms\|mph\|kn, mm\|inch | `fahrenheit` |
+| `start_date / end_date` | Archive endpoint: historical range back to 1940 | `1990-01-01 / 1990-12-31` |
 
 ```python
 from _common import get, show
@@ -1003,6 +1174,19 @@ def main():
 
 **Capstone ideas:** Environmental justice studies, pollution vs. health outcomes, wildfire smoke impact.
 
+**Endpoint:** `GET https://api.openaq.org/v3/locations`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `coordinates` | lat,lon centre point | `38.9,-77.04` |
+| `radius` | Metres around coordinates (max 25,000) | `20000` |
+| `bbox` | minLon,minLat,maxLon,maxLat (alternative to coordinates) | `-77.2,38.8,-76.9,39.0` |
+| `iso` | Country ISO code | `US` |
+| `parameters_id` | Pollutant ID (e.g. 2 = PM2.5); list via /v3/parameters | `2` |
+| `limit / page` | Paging | `5` |
+| `/v3/sensors/{id}/measurements?datetime_from=&datetime_to=` | Sibling endpoint: time series for one sensor | `datetime_from=2026-10-01` |
+| `X-API-Key (header)` | Your key | `<OPENAQ_API_KEY>` |
+
 ```python
 from _common import get, key, show
 
@@ -1046,6 +1230,19 @@ def main():
 
 **Capstone ideas:** Quick weather features for any global city; air-quality dashboards.
 
+**Endpoint:** `GET https://api.openweathermap.org/data/2.5/weather`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | City name, state code, country code | `Washington,DC,US` |
+| `lat / lon` | Coordinates (alternative to q) | `38.9 / -77.04` |
+| `zip` | ZIP code, country code | `20052,US` |
+| `units` | standard (Kelvin) \| metric \| imperial | `metric` |
+| `lang` | Description language | `en` |
+| `appid` | Your API key | `<OPENWEATHER_API_KEY>` |
+| `/data/2.5/forecast` | Sibling endpoint: 5-day/3-hour forecast (same params, cnt= to limit) | `cnt=8` |
+| `/data/2.5/air_pollution?lat=&lon=` | Sibling endpoint: AQI and pollutant concentrations | `lat=38.9&lon=-77.04` |
+
 ```python
 from _common import get, key, show
 
@@ -1087,6 +1284,18 @@ def main():
 - GeoJSON output; real-time feeds and full historical catalog
 
 **Capstone ideas:** Spatio-temporal clustering, aftershock forecasting, geo-visualization.
+
+**Endpoint:** `GET https://earthquake.usgs.gov/fdsnws/event/1/query`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `format` | geojson \| csv \| xml \| text \| kml | `geojson` |
+| `starttime / endtime` | ISO-8601 dates (default: last 30 days) | `2026-01-01` |
+| `minmagnitude / maxmagnitude` | Magnitude range | `5` |
+| `latitude / longitude / maxradiuskm` | Circle search | `38.9 / -77.0 / 500` |
+| `minlatitude / maxlatitude / minlongitude / maxlongitude` | Bounding-box search | `24 / 50 / -125 / -66` |
+| `orderby` | time \| time-asc \| magnitude \| magnitude-asc | `time` |
+| `limit / offset` | Max 20,000 events per request | `5` |
 
 ```python
 from _common import get, show
@@ -1166,6 +1375,18 @@ def main():
 - Economic indicators (CPI, GDP)
 
 **Capstone ideas:** Stock forecasting, news-sentiment trading signals, portfolio analysis.
+
+**Endpoint:** `GET https://www.alphavantage.co/query`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `function` | TIME_SERIES_DAILY, TIME_SERIES_INTRADAY, GLOBAL_QUOTE, OVERVIEW, INCOME_STATEMENT, NEWS_SENTIMENT, SMA, RSI, CPI, ... | `TIME_SERIES_DAILY` |
+| `symbol` | Ticker | `IBM` |
+| `interval` | Intraday: 1min \| 5min \| 15min \| 30min \| 60min | `5min` |
+| `outputsize` | compact (latest 100 points) \| full | `compact` |
+| `datatype` | json \| csv | `json` |
+| `tickers / topics` | NEWS_SENTIMENT filters | `AAPL / technology` |
+| `apikey` | Your key (demo works for documented IBM examples) | `demo` |
 
 ```python
 from _common import get, show
@@ -1251,6 +1472,17 @@ def main():
 
 **Capstone ideas:** Labor-market analysis, inflation forecasting, regional employment shocks.
 
+**Endpoint:** `GET https://api.bls.gov/publicAPI/v1/timeseries/data/{seriesId}  ·  POST https://api.bls.gov/publicAPI/v2/timeseries/data/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `seriesId / seriesid` | Series ID in the path (GET) or a JSON list (POST, up to 50 with v2) | `CUUR0000SA0, LNS14000000` |
+| `startyear / endyear` | Year range (POST body; v2 up to 20 years) | `2015 / 2025` |
+| `registrationkey` | v2 key (POST body) | `<BLS_API_KEY>` |
+| `calculations` | true → net and percent changes (v2) | `true` |
+| `annualaverage` | true → include annual averages (v2) | `true` |
+| `catalog` | true → series titles and metadata (v2) | `true` |
+
 ```python
 from _common import get, show
 
@@ -1312,6 +1544,19 @@ def main():
 - Exchanges, trending coins, categories
 
 **Capstone ideas:** Crypto volatility modeling, cross-asset correlation, social-hype vs price.
+
+**Endpoint:** `GET https://api.coingecko.com/api/v3/coins/markets`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `vs_currency` | Quote currency | `usd` |
+| `ids` | Comma-separated coin IDs (list via /coins/list) | `bitcoin,ethereum` |
+| `order` | market_cap_desc \| volume_desc \| id_asc ... | `market_cap_desc` |
+| `per_page / page` | Max 250 per page | `5` |
+| `price_change_percentage` | Extra change windows: 1h,24h,7d,14d,30d,200d,1y | `1h,7d` |
+| `/simple/price?ids=&vs_currencies=` | Sibling endpoint: quick spot prices | `ids=bitcoin&vs_currencies=usd` |
+| `/coins/{id}/market_chart?vs_currency=&days=` | Sibling endpoint: historical price/market cap/volume | `bitcoin, days=365` |
+| `x-cg-demo-api-key (header)` | Optional free Demo key | `<key>` |
 
 ```python
 from _common import get, show
@@ -1379,6 +1624,16 @@ def main():
 
 **Capstone ideas:** Exchange-rate forecasting, currency-crisis analysis, converting multi-country price data.
 
+**Endpoint:** `GET https://api.frankfurter.dev/v1/{latest \| YYYY-MM-DD \| start..end}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `path` | latest, a single date, or a range start..end (end optional) | `2026-09-01..2026-09-05` |
+| `base` | Base currency (default EUR) | `USD` |
+| `symbols` | Comma-separated target currencies | `EUR,GBP,JPY` |
+| `amount` | Convert this amount | `100` |
+| `/v1/currencies` | Sibling endpoint: supported currency codes | `—` |
+
 ```python
 from _common import get, show
 
@@ -1442,6 +1697,19 @@ def main():
 
 **Capstone ideas:** Macro forecasting, recession prediction, nowcasting, economic regime detection.
 
+**Endpoint:** `GET https://api.stlouisfed.org/fred/series/observations`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `series_id` | Series code (UNRATE, GDP, CPIAUCSL, FEDFUNDS, DGS10, ...) | `UNRATE` |
+| `api_key / file_type` | Your key; file_type json \| xml | `<FRED_API_KEY> / json` |
+| `observation_start / observation_end` | Date range YYYY-MM-DD | `2000-01-01` |
+| `frequency` | Aggregate to d \| w \| m \| q \| sa \| a | `q` |
+| `aggregation_method` | avg \| sum \| eop (end of period) | `avg` |
+| `units` | lin \| chg \| ch1 \| pch \| pc1 \| pca \| log (levels, changes, % changes) | `pc1` |
+| `sort_order / limit / offset` | asc \| desc; max 100,000 rows | `desc / 5` |
+| `/fred/series/search?search_text=` | Sibling endpoint: find series IDs by keyword | `search_text=housing starts` |
+
 ```python
 from _common import get, key, show
 
@@ -1488,6 +1756,17 @@ def main():
 - Full-text search (efts.sec.gov) across filings since 2001
 
 **Capstone ideas:** NLP on 10-K risk factors, fraud detection, fundamentals-based models, ESG text mining.
+
+**Endpoint:** `GET https://data.sec.gov/…`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `submissions/CIK{10-digit CIK}.json` | Company profile + recent filings list | `CIK0000320193` |
+| `api/xbrl/companyconcept/CIK{cik}/{taxonomy}/{tag}.json` | One financial concept over time | `CIK0000320193/us-gaap/NetIncomeLoss` |
+| `api/xbrl/companyfacts/CIK{cik}.json` | Every XBRL fact a company has reported | `CIK0000320193` |
+| `api/xbrl/frames/{taxonomy}/{tag}/{unit}/{period}.json` | One concept across all companies for a period | `us-gaap/Revenues/USD/CY2024` |
+| `https://www.sec.gov/files/company_tickers.json` | Ticker → CIK lookup table | `AAPL → 320193` |
+| `User-Agent (header)` | Required: name + email | `GWU Capstone you@gwu.edu` |
 
 ```python
 from _common import get, show
@@ -1577,6 +1856,17 @@ def main():
 
 **Capstone ideas:** Fiscal-policy analysis, debt dynamics, government spending composition.
 
+**Endpoint:** `GET https://api.fiscaldata.treasury.gov/services/api/fiscal_service/{endpoint}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `endpoint` | Dataset path (see the dataset catalog on the docs page) | `v2/accounting/od/debt_to_penny` |
+| `fields` | Comma-separated columns | `record_date,tot_pub_debt_out_amt` |
+| `filter` | field:op:value, ops eq gt gte lt lte in; comma = AND | `record_date:gte:2026-01-01` |
+| `sort` | Column, prefix - for descending | `-record_date` |
+| `page[size] / page[number]` | Paging (default 100) | `5` |
+| `format` | json \| csv \| xml | `json` |
+
 ```python
 from _common import get, show
 
@@ -1644,6 +1934,18 @@ def main():
 
 **Capstone ideas:** Cross-country development economics, panel regressions, global inequality studies.
 
+**Endpoint:** `GET https://api.worldbank.org/v2/country/{codes}/indicator/{indicator}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `country codes` | ISO3 codes separated by ;, or all | `USA;CHN;IND` |
+| `indicator` | Indicator code (NY.GDP.PCAP.CD, SP.POP.TOTL, SE.XPD.TOTL.GD.ZS, EN.GHG.CO2.PC.CE.AR5, ...) | `NY.GDP.PCAP.CD` |
+| `format` | json \| xml | `json` |
+| `date` | Year or range | `2000:2023` |
+| `mrv` | Most recent N values (instead of date) | `5` |
+| `per_page / page` | Paging (default 50) | `50` |
+| `/v2/indicator?source=2` | Sibling endpoint: browse indicator codes (source 2 = WDI) | `per_page=100` |
+
 ```python
 from _common import get, show
 
@@ -1709,6 +2011,18 @@ def main():
 
 **Capstone ideas:** Intergenerational mobility, historical migration, labor economics with individual records.
 
+**Endpoint:** `GET https://api.ipums.org/metadata/samples  ·  POST https://api.ipums.org/extracts`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `collection` | usa \| cps \| ipumsi \| atus \| nhgis \| ... | `usa` |
+| `version` | API version | `2` |
+| `pageSize / pageNumber` | Paging | `5` |
+| `extract body: samples` | Sample IDs to include | `{"us2022a": {}}` |
+| `extract body: variables` | Variables to include | `{"AGE": {}, "SEX": {}, "INCTOT": {}}` |
+| `extract body: dataFormat` | csv \| fixed_width \| stata \| spss | `csv` |
+| `Authorization (header)` | Your API key | `<IPUMS_API_KEY>` |
+
 ```python
 from _common import get, key, show
 
@@ -1748,6 +2062,16 @@ def main():
 - Fertility, mortality, life expectancy, migration, dependency ratios
 
 **Capstone ideas:** Aging & dependency forecasting, demographic dividend studies.
+
+**Endpoint:** `GET https://population.un.org/dataportalapi/api/v1/data/indicators/{ids}/locations/{ids}/start/{year}/end/{year}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `indicators` | Indicator ID(s); list via /api/v1/indicators | `49 (total population)` |
+| `locations` | UN M49 country codes; list via /api/v1/locations | `566 (Nigeria), 840 (USA)` |
+| `start / end` | Year range (estimates 1950-2023, projections to 2100) | `2025 / 2050` |
+| `pageNumber / pageSize` | Paging | `1 / 100` |
+| `Authorization (header)` | Bearer token | `Bearer <UN_POP_TOKEN>` |
 
 ```python
 from _common import get, key, show
@@ -1792,6 +2116,18 @@ def main():
 
 **Capstone ideas:** Demographic covariates for any US spatial study, gentrification, segregation indices, equity analysis.
 
+**Endpoint:** `GET https://api.census.gov/data/{year}/{dataset}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `year / dataset` | Vintage + dataset path: acs/acs5, acs/acs1, dec/pl, pep/population, cbp, ... | `2023/acs/acs5` |
+| `get` | Comma-separated variables (max 50) or group(TABLE) | `NAME,B01003_001E,B19013_001E` |
+| `for` | Target geography with FIPS code or * | `state:11, county:*, tract:*` |
+| `in` | Parent geography (required for counties/tracts within a state) | `state:11 county:001` |
+| `ucgid` | Alternative geography selector by GEOID | `0400000US11` |
+| `key` | Your API key | `<CENSUS_API_KEY>` |
+| `/data/{year}/{dataset}/variables.json` | Sibling endpoint: every variable code and label | `2023/acs/acs5/variables.json` |
+
 ```python
 from _common import get, key, show
 
@@ -1835,6 +2171,18 @@ def main():
 - Date, actors, location (lat/lon, admin areas), fatalities, notes text
 
 **Capstone ideas:** Conflict forecasting, protest diffusion, election violence, spatial econometrics.
+
+**Endpoint:** `GET https://acleddata.com/api/acled/read  (token: POST https://acleddata.com/oauth/token)`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `country / iso` | Country name or ISO numeric code | `Kenya / 404` |
+| `event_date + event_date_where` | Date filter; BETWEEN takes start\|end | `2026-01-01\|2026-09-30, BETWEEN` |
+| `event_type` | Battles \| Protests \| Riots \| Violence against civilians \| Explosions/Remote violence \| Strategic developments | `Protests` |
+| `fields` | Pipe-separated columns to return | `event_date\|event_type\|fatalities` |
+| `limit / page` | Rows per page (default 5,000) | `5` |
+| `_format` | json \| csv | `json` |
+| `Authorization (header)` | Bearer token from /oauth/token (valid 24 h) | `Bearer <token>` |
 
 ```python
 import requests
@@ -1882,6 +2230,19 @@ def main():
 - Roll-call votes (House), committees, hearings, nominations, treaties
 
 **Capstone ideas:** Legislative effectiveness, bipartisanship networks from cosponsorship, policy-agenda topic modeling.
+
+**Endpoint:** `GET https://api.congress.gov/v3/bill/{congress}/{type}/{number}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `congress` | Congress number (119 = 2025-2026) | `119` |
+| `type` | hr \| s \| hjres \| sjres \| hconres \| sconres \| hres \| sres | `hr` |
+| `number` | Bill number; add /actions, /cosponsors, /subjects, /text, /summaries | `1/cosponsors` |
+| `fromDateTime / toDateTime` | Filter by update time, YYYY-MM-DDTHH:MM:SSZ | `2026-01-01T00:00:00Z` |
+| `sort` | updateDate+asc \| updateDate+desc | `updateDate+desc` |
+| `limit / offset` | Max 250 per page | `5` |
+| `format / api_key` | json \| xml; your api.data.gov key | `json / DEMO_KEY` |
+| `/v3/member?currentMember=true` | Sibling endpoint: members of Congress (also /committee, /nomination, /treaty) | `currentMember=true` |
 
 ```python
 import os
@@ -1952,6 +2313,19 @@ def main():
 - Agency, type, abstract, publication date, full-text/PDF links, comment deadlines
 
 **Capstone ideas:** Regulatory-activity indices by administration, executive-order text analysis.
+
+**Endpoint:** `GET https://www.federalregister.gov/api/v1/documents.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `conditions[term]` | Full-text search | `artificial intelligence` |
+| `conditions[type][]` | RULE \| PRORULE \| NOTICE \| PRESDOCU | `PRORULE` |
+| `conditions[agencies][]` | Agency slug | `environmental-protection-agency` |
+| `conditions[presidential_document_type]` | executive_order \| memorandum \| proclamation \| ... | `executive_order` |
+| `conditions[publication_date][gte] / [lte]` | Date range YYYY-MM-DD | `2025-01-20` |
+| `fields[]` | Fields to return (repeatable) | `title, abstract, document_number` |
+| `order` | newest \| oldest \| relevance \| executive_order_number | `newest` |
+| `per_page / page` | Max 1,000 per page | `5` |
 
 ```python
 from _common import get, show
@@ -2025,6 +2399,20 @@ def main():
 
 **Capstone ideas:** Policy diffusion across states (e.g., model legislation), state-level polarization.
 
+**Endpoint:** `GET https://v3.openstates.org/bills`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `jurisdiction` | State name or OCD jurisdiction ID | `Virginia` |
+| `session` | Legislative session identifier | `2026` |
+| `q` | Full-text search | `artificial intelligence` |
+| `subject / classification` | Subject tag / bill \| resolution \| ... | `Education` |
+| `updated_since / created_since / action_since` | Date filters YYYY-MM-DD | `2026-01-01` |
+| `sort` | updated_desc \| first_action_desc \| latest_action_desc \| ... | `updated_desc` |
+| `include` | Extra data: sponsorships, actions, votes, abstracts, versions (repeatable) | `votes` |
+| `per_page / page` | Max 20 per page | `5` |
+| `/people?jurisdiction=&name=` | Sibling endpoint: legislators | `jurisdiction=Virginia` |
+
 ```python
 from _common import get, key, show
 
@@ -2065,6 +2453,19 @@ def main():
 - Independent expenditures, PAC spending, filings
 
 **Capstone ideas:** Campaign-finance networks, donor geography, money vs. electoral outcomes.
+
+**Endpoint:** `GET https://api.open.fec.gov/v1/candidates/totals/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `election_year / cycle` | Election year / two-year period | `2024` |
+| `office` | P (president) \| S (senate) \| H (house) | `P` |
+| `party / state` | Party code / state | `DEM / VA` |
+| `is_active_candidate` | true \| false | `true` |
+| `sort` | Field, prefix - for descending | `-receipts` |
+| `per_page / page` | Max 100 per page | `5` |
+| `/v1/schedules/schedule_a/` | Sibling endpoint: itemized contributions (committee_id, contributor_state, two_year_transaction_period, min_amount; keyset paging with last_index) | `contributor_state=VA` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
 
 ```python
 import os
@@ -2137,6 +2538,20 @@ def main():
 - Agency, docket ID, comment period dates
 
 **Capstone ideas:** Public-comment analysis, detecting mass/astroturf comment campaigns, interest-group influence.
+
+**Endpoint:** `GET https://api.regulations.gov/v4/documents  ·  /v4/comments  ·  /v4/dockets`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `filter[searchTerm]` | Keyword search | `artificial intelligence` |
+| `filter[documentType]` | Notice \| Rule \| Proposed Rule \| Supporting & Related Material \| Other | `Proposed Rule` |
+| `filter[agencyId]` | Agency acronym | `EPA` |
+| `filter[postedDate][ge] / [le]` | Date range YYYY-MM-DD | `2026-01-01` |
+| `filter[docketId]` | Restrict to one docket | `EPA-HQ-OAR-2021-0317` |
+| `sort` | postedDate \| -postedDate \| title \| ... | `-postedDate` |
+| `page[size] / page[number]` | 5-250 per page; max 20 pages (narrow by date to go further) | `5` |
+| `/v4/comments?filter[commentOnId]=` | Sibling endpoint: comments on a document (objectId from /documents) | `filter[commentOnId]=0900006…` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
 
 ```python
 import os
@@ -2214,6 +2629,17 @@ def main():
 
 **Capstone ideas:** Comparative legislative behavior, party-cohesion / rebellion analysis.
 
+**Endpoint:** `GET https://commonsvotes-api.parliament.uk/data/divisions.json/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `queryParameters.searchTerm` | Text in the division title | `Budget` |
+| `queryParameters.startDate / endDate` | Date range YYYY-MM-DD | `2026-01-01` |
+| `queryParameters.memberId` | Only divisions this MP voted in | `172` |
+| `queryParameters.take / skip` | Paging (max 25) | `5` |
+| `/data/division/{id}.json` | Sibling endpoint: every MP's vote in one division | `/data/division/1234.json` |
+| `members-api.parliament.uk/api/Members/Search?Name=` | Members API: find MPs/Lords, party, constituency | `Name=Starmer` |
+
 ```python
 from _common import get, show
 
@@ -2279,6 +2705,18 @@ def main():
 
 **Capstone ideas:** Pork-barrel politics, federal spending vs. district partisanship, contractor concentration.
 
+**Endpoint:** `POST https://api.usaspending.gov/api/v2/search/spending_by_category/{category}/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `category (path)` | awarding_agency \| awarding_subagency \| recipient \| naics \| psc \| cfda \| state_territory \| county \| district \| ... | `awarding_agency` |
+| `filters.time_period` | List of {start_date, end_date} (fiscal year starts Oct 1) | `[{"start_date": "2024-10-01", "end_date": "2025-09-30"}]` |
+| `filters.award_type_codes` | A-D = contracts, 02-05 = grants, 07/08 = loans | `["A", "B", "C", "D"]` |
+| `filters.agencies` | List of {type, tier, name} | `[{"type": "awarding", "tier": "toptier", "name": "Department of Energy"}]` |
+| `filters.recipient_locations` | List of {country, state, county, district} | `[{"country": "USA", "state": "VA"}]` |
+| `limit / page` | Paging | `5` |
+| `/api/v2/search/spending_by_award/` | Sibling endpoint: individual awards (same filters + fields list) | `fields: ["Award ID", "Recipient Name", "Award Amount"]` |
+
 ```python
 import requests
 
@@ -2342,6 +2780,20 @@ def main():
 - SQL-like filtering ($where, $select, $group)
 
 **Capstone ideas:** Social determinants of health, small-area health disparities, joining with Census ACS.
+
+**Endpoint:** `GET https://data.cdc.gov/resource/{dataset-id}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `dataset-id` | 4x4 ID from the dataset page (API button) | `swc5-untb (PLACES, county)` |
+| `column=value` | Simple equality filter on any column | `measureid=DEPRESSION` |
+| `$select` | Columns or aggregates | `stateabbr,avg(data_value)` |
+| `$where` | SQL-like filter | `stateabbr in ('DC','MD','VA')` |
+| `$group` | Group-by for aggregates | `stateabbr` |
+| `$order` | Sort | `data_value DESC` |
+| `$limit / $offset` | Paging (default limit 1,000) | `5` |
+| `$q` | Full-text search across columns | `depression` |
+| `X-App-Token (header)` | Optional app token | `<SOCRATA_APP_TOKEN>` |
 
 ```python
 from _common import get, show
@@ -2416,6 +2868,20 @@ def main():
 - Results & adverse events for completed trials
 
 **Capstone ideas:** Trial-success prediction, geographic access to trials, sponsor landscape analysis.
+
+**Endpoint:** `GET https://clinicaltrials.gov/api/v2/studies`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query.cond / query.intr / query.term` | Condition / intervention / general search | `Alzheimer Disease` |
+| `query.locn / query.spons` | Location / sponsor search | `Washington, DC` |
+| `filter.overallStatus` | RECRUITING \| COMPLETED \| ACTIVE_NOT_RECRUITING \| ... (comma list) | `RECRUITING` |
+| `filter.geo` | distance(lat,lon,radius) | `distance(38.9,-77.04,50mi)` |
+| `fields` | Fields to return (piece names) | `NCTId,BriefTitle,Phase` |
+| `pageSize / pageToken` | Max 1,000 per page; nextPageToken for paging | `5` |
+| `countTotal` | true → include totalCount | `true` |
+| `format` | json \| csv | `json` |
+| `/api/v2/studies/{nctId}` | Sibling endpoint: one full study record | `NCT05123456` |
 
 ```python
 from _common import get, show
@@ -2502,6 +2968,17 @@ def main():
 
 **Capstone ideas:** Pharmacovigilance / adverse-event signal detection, recall analysis.
 
+**Endpoint:** `GET https://api.fda.gov/{category}/{endpoint}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `category/endpoint` | drug/event, drug/label, drug/enforcement, device/event, food/enforcement, ... | `drug/event` |
+| `search` | field:term with AND/OR (+), ranges [A TO B] | `patient.drug.openfda.generic_name:"semaglutide"` |
+| `count` | Aggregate counts by a field (.exact for whole phrases) | `patient.reaction.reactionmeddrapt.exact` |
+| `limit / skip` | Max 1,000 per request; skip up to 25,000 | `6` |
+| `sort` | field:asc\|desc | `receivedate:desc` |
+| `api_key` | Optional key | `<OPENFDA_API_KEY>` |
+
 ```python
 from _common import get, show
 
@@ -2565,6 +3042,16 @@ def main():
 - Clean country-year CSVs with sources documented
 
 **Capstone ideas:** Fast panel data for social science (e.g., democracy vs. growth, happiness vs. income).
+
+**Endpoint:** `GET https://ourworldindata.org/grapher/{chart-slug}.csv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `chart-slug` | The slug from any OWID chart URL | `happiness-cantril-ladder` |
+| `useColumnShortNames` | true → snake_case column names | `true` |
+| `csvType` | full (all countries/years) \| filtered (as currently shown in the chart) | `full` |
+| `{chart-slug}.metadata.json` | Sibling endpoint: sources, units, descriptions | `happiness-cantril-ladder.metadata.json` |
+| `{chart-slug}.zip` | CSV + metadata + README in one download | `happiness-cantril-ladder.zip` |
 
 ```python
 import csv
@@ -2637,6 +3124,17 @@ def main():
 
 **Capstone ideas:** Global health inequality, health-system efficiency, cross-country panel models.
 
+**Endpoint:** `GET https://ghoapi.azureedge.net/api/{IndicatorCode}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `IndicatorCode` | Indicator; browse via /api/Indicator | `WHOSIS_000001 (life expectancy)` |
+| `$filter` | OData filter on SpatialDim (country), TimeDim (year), Dim1 (sex/other) | `SpatialDim eq 'USA' and TimeDim eq 2021` |
+| `$select` | Columns to return | `SpatialDim,TimeDim,NumericValue` |
+| `$top` | Limit rows | `10` |
+| `/api/Indicator?$filter=contains(IndicatorName,'…')` | Sibling endpoint: search indicator codes | `contains(IndicatorName,'obesity')` |
+| `/api/DIMENSION/COUNTRY/DimensionValues` | Sibling endpoint: country codes and names | `—` |
+
 ```python
 from _common import get, show
 
@@ -2699,6 +3197,16 @@ def main():
 - Preprints in CS, stats, physics, math, econ, q-bio: title, abstract, authors, categories, dates, PDF link
 
 **Capstone ideas:** Abstract topic modeling, paper recommendation, tracking ML research trends.
+
+**Endpoint:** `GET http://export.arxiv.org/api/query`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search_query` | Field prefixes ti: au: abs: cat: all: combined with AND / OR / ANDNOT | `cat:cs.CL AND abs:retrieval` |
+| `id_list` | Comma-separated arXiv IDs | `1706.03762` |
+| `start / max_results` | Offset and page size (≤ 2,000 per call) | `0 / 3` |
+| `sortBy` | relevance \| lastUpdatedDate \| submittedDate | `submittedDate` |
+| `sortOrder` | ascending \| descending | `descending` |
 
 ```python
 import xml.etree.ElementTree as ET
@@ -2774,6 +3282,19 @@ def main():
 
 **Capstone ideas:** Bibliometrics, funder-impact analysis, DOI metadata enrichment.
 
+**Endpoint:** `GET https://api.crossref.org/works`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query.bibliographic / query.author / query` | Citation-style, author, or general search | `data science education` |
+| `filter` | Comma list: from-pub-date, until-pub-date, type, has-funder, issn, ... | `from-pub-date:2020-01-01,type:journal-article` |
+| `sort / order` | is-referenced-by-count \| published \| relevance; asc \| desc | `is-referenced-by-count / desc` |
+| `rows / offset` | Max 1,000 per page | `3` |
+| `cursor` | Deep paging (start with *) | `*` |
+| `select` | Fields to return | `DOI,title,author` |
+| `mailto` | Your email → polite pool | `you@gwu.edu` |
+| `/works/{doi}` | Sibling endpoint: one DOI's metadata | `/works/10.1038/nature14539` |
+
 ```python
 from _common import get, show
 
@@ -2834,6 +3355,16 @@ def main():
 - Natural events: wildfires, storms, volcanoes (EONET, keyless)
 
 **Capstone ideas:** Asteroid hazard classification, wildfire event tracking, image datasets.
+
+**Endpoint:** `GET https://api.nasa.gov/neo/rest/v1/feed`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `start_date / end_date` | NeoWs date range, max 7 days | `2026-10-01` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
+| `/planetary/apod?date=&count=` | Sibling endpoint: Astronomy Picture of the Day | `date=2026-10-01` |
+| `/DONKI/FLR?startDate=&endDate=` | Sibling endpoint: solar flares (also CME, GST, ...) | `startDate=2026-09-01` |
+| `eonet.gsfc.nasa.gov/api/v3/events?category=&status=` | EONET natural events (no key) | `category=wildfires&status=open` |
 
 ```python
 import os
@@ -2919,6 +3450,20 @@ def main():
 
 **Capstone ideas:** Science-of-science, citation networks, research-trend forecasting, institution rankings.
 
+**Endpoint:** `GET https://api.openalex.org/works`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search` | Full-text search over title, abstract, fulltext | `large language models` |
+| `filter` | Comma-separated (AND) attribute filters | `from_publication_date:2024-01-01,is_oa:true` |
+| `sort` | cited_by_count \| publication_date \| relevance_score, with :desc | `cited_by_count:desc` |
+| `per-page / page` | Max 200 per page | `5` |
+| `cursor` | Deep paging beyond 10,000 results (start with *) | `*` |
+| `select` | Return only these fields | `id,title,cited_by_count` |
+| `group_by` | Counts by a field | `publication_year` |
+| `mailto` | Your email → faster polite pool | `you@gwu.edu` |
+| `/authors · /institutions · /sources · /topics · /funders` | Other entity endpoints with the same params | `/institutions?search=george washington` |
+
 ```python
 from _common import get, show
 
@@ -2992,6 +3537,17 @@ def main():
 
 **Capstone ideas:** Molecular property prediction (cheminformatics + ML), drug-likeness models.
 
+**Endpoint:** `GET https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/{namespace}/{identifiers}/{operation}/{output}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `namespace` | cid \| name \| smiles \| inchikey \| formula | `cid` |
+| `identifiers` | Comma list of CIDs, or one name/SMILES | `2519,2244,3672` |
+| `operation` | property/<list> \| synonyms \| cids \| description \| record | `property/MolecularWeight,XLogP` |
+| `output` | JSON \| CSV \| XML \| TXT \| PNG | `JSON` |
+| `name → CID` | Look up a compound ID by name | `/compound/name/caffeine/cids/JSON` |
+| `fastsimilarity_2d` | Similar structures; Threshold= 0-100 | `/compound/fastsimilarity_2d/cid/2244/cids/JSON?Threshold=95` |
+
 ```python
 from _common import get, show
 
@@ -3056,6 +3612,19 @@ def main():
 
 **Capstone ideas:** Citation-intent analysis, embedding-based paper clustering, literature-review automation.
 
+**Endpoint:** `GET https://api.semanticscholar.org/graph/v1/paper/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Plain-text search | `attention is all you need` |
+| `fields` | title, abstract, year, authors, citationCount, tldr, embedding, openAccessPdf, ... | `title,year,citationCount,tldr` |
+| `limit / offset` | Max 100 per page | `3` |
+| `year` | Year or range | `2020-2024` |
+| `fieldsOfStudy` | Comma list | `Computer Science` |
+| `/graph/v1/paper/{id}` | Sibling endpoint: one paper; id can be DOI:, ARXIV:, CorpusId: | `ARXIV:1706.03762` |
+| `/graph/v1/paper/{id}/citations` | Sibling endpoint: citing papers (also /references) | `fields=title,year` |
+| `x-api-key (header)` | Optional key | `<S2_API_KEY>` |
+
 ```python
 import os
 
@@ -3102,6 +3671,19 @@ def main():
 
 **Capstone ideas:** Load forecasting, renewable-share analysis, grid-carbon-intensity modeling.
 
+**Endpoint:** `GET https://api.eia.gov/v2/{route}/data/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `route` | Dataset route; GET /v2/{route} (no /data) to browse facets and children | `electricity/rto/region-data` |
+| `frequency` | hourly \| local-hourly \| daily \| monthly \| quarterly \| annual (depends on route) | `hourly` |
+| `data[0]` | Data column(s) to return | `value` |
+| `facets[{name}][]` | Facet filters, e.g. respondent (balancing authority), type (D = demand, NG = net generation, DF = forecast) | `facets[respondent][]=PJM` |
+| `start / end` | Period range in the route's format | `2026-10-01T00` |
+| `sort[0][column] / sort[0][direction]` | Sort | `period / desc` |
+| `length / offset` | Max 5,000 rows per request | `5` |
+| `api_key` | Your key | `<EIA_API_KEY>` |
+
 ```python
 from _common import get, key, show
 
@@ -3143,6 +3725,17 @@ def main():
 - User / org profiles
 
 **Capstone ideas:** Open-source ecosystem health, developer-collaboration networks, technology adoption.
+
+**Endpoint:** `GET https://api.github.com/search/repositories`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Keywords + qualifiers: language:, topic:, stars:>N, created:>DATE, user:, org: | `topic:machine-learning language:python` |
+| `sort` | stars \| forks \| updated \| help-wanted-issues | `stars` |
+| `order` | desc \| asc | `desc` |
+| `per_page / page` | Max 100 per page; search capped at 1,000 results | `5` |
+| `/repos/{owner}/{repo}` | Sibling endpoint: repo detail (+ /commits, /issues?state=all, /contributors, /releases) | `/repos/pandas-dev/pandas` |
+| `Authorization (header)` | Optional token (5,000 req/hour) | `Bearer <GITHUB_TOKEN>` |
 
 ```python
 import os
@@ -3225,6 +3818,20 @@ def main():
 
 **Capstone ideas:** ML-ecosystem analytics, finding pretrained models & datasets for your capstone.
 
+**Endpoint:** `GET https://huggingface.co/api/models`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search` | Substring of the model ID | `bert` |
+| `author` | Organization or user | `google` |
+| `pipeline_tag` | Task: text-classification, text-generation, image-classification, ... | `text-classification` |
+| `filter` | Tag filter (library, license, language, dataset) | `pytorch` |
+| `sort / direction` | downloads \| likes \| lastModified \| trendingScore; -1 = descending | `downloads / -1` |
+| `limit` | Max results | `5` |
+| `full` | true → more metadata (files, card data) | `true` |
+| `/api/datasets?search=` | Sibling endpoint: dataset search (same params) | `search=imdb` |
+| `datasets-server.huggingface.co/rows?dataset=&config=&split=&offset=&length=` | Read rows of any public dataset (length ≤ 100) | `dataset=stanfordnlp/imdb&config=plain_text&split=train` |
+
 ```python
 from _common import get, show
 
@@ -3293,6 +3900,20 @@ def main():
 - Utility rates
 
 **Capstone ideas:** EV-charger access equity, rooftop-solar potential mapping, techno-economic analysis.
+
+**Endpoint:** `GET https://developer.nlr.gov/api/alt-fuel-stations/v1/nearest.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `latitude / longitude or location` | Coordinates or a free-text address | `38.9 / -77.04` |
+| `radius` | Miles (default 5; or infinite) | `5` |
+| `fuel_type` | ELEC \| E85 \| CNG \| LPG \| HY \| BD \| LNG \| RD (comma list) | `ELEC` |
+| `ev_network` | Charging network | `Tesla` |
+| `ev_charging_level` | 1 \| 2 \| dc_fast | `dc_fast` |
+| `status` | E (open) \| P (planned) \| T (temporarily unavailable) | `E` |
+| `limit` | Max results | `5` |
+| `/api/pvwatts/v8.json` | Sibling endpoint: solar PV output (lat, lon, system_capacity, azimuth, tilt, array_type, module_type, losses) | `system_capacity=4&tilt=20` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
 
 ```python
 import os
@@ -3372,6 +3993,19 @@ def main():
 - Every CVE: description, CVSS scores/severity, CWE weakness type, affected products (CPE), references
 
 **Capstone ideas:** Vulnerability-severity prediction from text, exploit-likelihood modeling, cyber-risk dashboards.
+
+**Endpoint:** `GET https://services.nvd.nist.gov/rest/json/cves/2.0`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `keywordSearch / keywordExactMatch` | Words in the description; flag for exact phrase | `pytorch` |
+| `cveId` | A single CVE | `CVE-2021-44228` |
+| `cvssV3Severity` | LOW \| MEDIUM \| HIGH \| CRITICAL | `CRITICAL` |
+| `cweId` | Weakness type | `CWE-79` |
+| `pubStartDate / pubEndDate` | Published range, ISO-8601 (max 120 days) | `2026-01-01T00:00:00.000` |
+| `cpeName` | Affected product (CPE 2.3 name) | `cpe:2.3:a:pytorch:pytorch:*:*:*:*:*:*:*:*` |
+| `resultsPerPage / startIndex` | Max 2,000 per page | `5` |
+| `apiKey (header)` | Optional key | `<NVD_API_KEY>` |
 
 ```python
 from _common import get, show
@@ -3453,6 +4087,18 @@ def main():
 
 **Capstone ideas:** Flood forecasting, hydrologic time-series ML, drought monitoring.
 
+**Endpoint:** `GET https://waterservices.usgs.gov/nwis/iv/  (instantaneous)  ·  /nwis/dv/  (daily)`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `sites` | Comma list of site numbers | `01646500 (Potomac at Little Falls)` |
+| `stateCd / bBox / huc` | Alternative major filters (one required) | `va` |
+| `parameterCd` | 00060 discharge (cfs), 00065 gage height (ft), 00010 water temp (°C) | `00060,00065` |
+| `period` | ISO-8601 duration back from now | `PT2H, P7D` |
+| `startDT / endDT` | Absolute range (instead of period) | `2026-10-01` |
+| `siteStatus` | active \| inactive \| all | `active` |
+| `format` | json \| rdb (tab-delimited) | `json` |
+
 ```python
 from _common import get, show
 
@@ -3514,6 +4160,18 @@ def main():
 
 **Capstone ideas:** Geocoding addresses in any dataset before spatial joins with Census tracts.
 
+**Endpoint:** `GET https://nominatim.openstreetmap.org/search  ·  /reverse`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Free-text address or place | `George Washington University, Washington DC` |
+| `street / city / state / country / postalcode` | Structured alternative to q | `city=Washington` |
+| `format` | json \| jsonv2 \| geojson \| geocodejson \| xml | `jsonv2` |
+| `limit` | Max results (max 40) | `2` |
+| `countrycodes` | Restrict to ISO 3166-1 alpha-2 codes | `us` |
+| `addressdetails` | 1 → split the address into parts | `1` |
+| `/reverse?lat=&lon=&zoom=` | Coordinates → address (zoom 3 = country … 18 = building) | `lat=38.8997&lon=-77.0486` |
+
 ```python
 from _common import get, show
 
@@ -3556,6 +4214,17 @@ def main():
 - Arrivals/departures by airport, flight tracks (authenticated)
 
 **Capstone ideas:** Air-traffic pattern mining, emissions estimation, delay propagation.
+
+**Endpoint:** `GET https://opensky-network.org/api/states/all`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `lamin / lomin / lamax / lomax` | Bounding box | `38.6 / -77.6 / 39.2 / -76.6` |
+| `icao24` | One or more aircraft transponder addresses | `a0b1c2` |
+| `time` | Unix seconds (past states need an account) | `1760200000` |
+| `extended` | 1 → include aircraft category | `1` |
+| `/flights/arrival?airport=&begin=&end=` | Sibling endpoint (account): arrivals at an airport (also /flights/departure) | `airport=KIAD` |
+| `/flights/aircraft?icao24=&begin=&end=` | Sibling endpoint (account): flights by aircraft | `icao24=a0b1c2` |
 
 ```python
 from _common import get, show
@@ -3640,6 +4309,19 @@ def main():
 
 **Capstone ideas:** Food deserts, walkability scores, amenity access, urban-form features for ML.
 
+**Endpoint:** `POST https://overpass-api.de/api/interpreter  (body: data=<Overpass QL query>)`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `[out:json]` | Output format (json \| xml \| csv(...)) | `[out:json]` |
+| `[timeout:N]` | Server timeout in seconds | `[timeout:25]` |
+| `node / way / relation / nwr` | Element type to query | `nwr` |
+| `["key"="value"]` | Tag filter (also ["key"], ["key"~"regex"]) | `["amenity"="cafe"]` |
+| `(around:radius,lat,lon)` | Within radius (metres) of a point | `(around:600,38.8997,-77.0486)` |
+| `(south,west,north,east)` | Bounding box | `(38.88,-77.06,38.91,-77.02)` |
+| `area[...]->.a; node(area.a)` | Within a named area | `area["name"="District of Columbia"]` |
+| `out [N] [geom\|center]` | Return results (limit, geometry) | `out 5` |
+
 ```python
 from _common import USER_AGENT, show
 import requests
@@ -3715,6 +4397,17 @@ def main():
 
 **Capstone ideas:** Transit reliability analysis, ridership/delay prediction, accessibility (elevator outage) studies.
 
+**Endpoint:** `GET https://api.wmata.com/StationPrediction.svc/json/GetPrediction/{StationCodes}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `StationCodes` | Comma list of station codes, or All | `A01 (Metro Center)` |
+| `/Rail.svc/json/jStations?LineCode=` | Sibling endpoint: stations (RD, BL, OR, SV, GR, YL) | `LineCode=RD` |
+| `/Incidents.svc/json/Incidents · /ElevatorIncidents` | Sibling endpoints: rail disruptions, elevator/escalator outages | `—` |
+| `/NextBusService.svc/json/jPredictions?StopID=` | Sibling endpoint: bus arrival predictions | `StopID=1001195` |
+| `/Bus.svc/json/jBusPositions?RouteID=&Lat=&Lon=&Radius=` | Sibling endpoint: live bus locations | `RouteID=30N` |
+| `api_key (header)` | Your primary key | `<WMATA_API_KEY>` |
+
 ```python
 from _common import get, key, show
 
@@ -3754,6 +4447,14 @@ def main():
 - 470k+ artworks: title, artist, date, culture, medium, department, dimensions, public-domain image URLs
 
 **Capstone ideas:** Computer-vision on art images, cultural-history analytics.
+
+**Endpoint:** `GET https://collectionapi.metmuseum.org/public/collection/v1/objects/{objectID}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `objectID` | Object to fetch | `436524` |
+| `/objects` | All object IDs; filter with departmentIds= and metadataDate= (changed since) | `departmentIds=11` |
+| `/departments` | Department IDs and names | `—` |
 
 ```python
 from _common import get, show
@@ -3816,6 +4517,18 @@ def main():
 - Author & cover data
 
 **Capstone ideas:** Cultural analytics, book-recommendation systems, publishing trends.
+
+**Endpoint:** `GET https://openlibrary.org/search.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q / title / author / subject` | General or field-specific search | `data science` |
+| `fields` | Fields to return | `title,author_name,first_publish_year` |
+| `sort` | new \| old \| rating \| editions \| random | `new` |
+| `limit / page` | Paging | `5` |
+| `lang` | Preferred language (ISO 639-1) | `en` |
+| `/works/{id}.json · /isbn/{isbn}.json · /authors/{id}.json` | Sibling endpoints: work, edition by ISBN, author | `/isbn/9781492041139.json` |
+| `covers.openlibrary.org/b/isbn/{isbn}-{S\|M\|L}.jpg` | Cover images | `9781492041139-M.jpg` |
 
 ```python
 from _common import get, show
@@ -3900,6 +4613,17 @@ def main():
 - Cast & crew credits, keywords, reviews, streaming providers by country
 
 **Capstone ideas:** Box-office prediction, recommender systems, gender representation in film crews.
+
+**Endpoint:** `GET https://api.themoviedb.org/3/trending/movie/{time_window}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `time_window` | day \| week | `week` |
+| `/3/search/movie?query=&year=` | Sibling endpoint: search by title | `query=Inception` |
+| `/3/discover/movie` | Filter: with_genres, primary_release_year, vote_count.gte, sort_by (popularity.desc, revenue.desc, ...) | `sort_by=revenue.desc&primary_release_year=2025` |
+| `/3/movie/{id}?append_to_response=` | Details + credits, keywords, reviews in one call | `append_to_response=credits,keywords` |
+| `language / page` | Locale and paging | `en-US / 1` |
+| `Authorization (header)` | Read-access token | `Bearer <TMDB_TOKEN>` |
 
 ```python
 from _common import get, key, show

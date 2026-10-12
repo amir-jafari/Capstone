@@ -22,6 +22,17 @@ META = dict(
     }
   ]
 }""",
+    endpoint="GET https://content.guardianapis.com/search",
+    params=[
+        ("q", "Query with AND / OR / NOT and \"phrases\"", "election"),
+        ("section", "Section ID (list via /sections)", "politics"),
+        ("tag", "Tag ID(s), comma = AND, | = OR (list via /tags)", "politics/politics"),
+        ("from-date / to-date", "Publication date range, YYYY-MM-DD", "2020-01-01"),
+        ("order-by", "newest | oldest | relevance", "newest"),
+        ("show-fields", "Extra fields: bodyText, body, headline, byline, wordcount, thumbnail", "wordcount,bodyText"),
+        ("page-size / page", "Results per page (max 200) and page number", "5"),
+        ("api-key", "Your key (required)", "<GUARDIAN_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

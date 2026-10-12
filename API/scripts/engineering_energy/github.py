@@ -9,6 +9,15 @@ META = dict(
     provides=["Repository search & stats: stars, forks, language, topics, license, issues",
               "Commits, contributors, pull requests, issues, releases", "User / org profiles"],
     ideas="Open-source ecosystem health, developer-collaboration networks, technology adoption.",
+    endpoint="GET https://api.github.com/search/repositories",
+    params=[
+        ("q", "Keywords + qualifiers: language:, topic:, stars:>N, created:>DATE, user:, org:", "topic:machine-learning language:python"),
+        ("sort", "stars | forks | updated | help-wanted-issues", "stars"),
+        ("order", "desc | asc", "desc"),
+        ("per_page / page", "Max 100 per page; search capped at 1,000 results", "5"),
+        ("/repos/{owner}/{repo}", "Sibling endpoint: repo detail (+ /commits, /issues?state=all, /contributors, /releases)", "/repos/pandas-dev/pandas"),
+        ("Authorization (header)", "Optional token (5,000 req/hour)", "Bearer <GITHUB_TOKEN>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import os

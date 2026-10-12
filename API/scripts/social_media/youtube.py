@@ -19,6 +19,18 @@ META = dict(
     "comments": "14232"
   }
 ]""",
+    endpoint="GET https://www.googleapis.com/youtube/v3/search  ·  GET https://www.googleapis.com/youtube/v3/videos",
+    params=[
+        ("part", "Resource parts: snippet (search); snippet,statistics,contentDetails (videos)", "snippet,statistics"),
+        ("q", "Search query (search)", "neural network"),
+        ("type", "video | channel | playlist (search)", "video"),
+        ("maxResults", "0-50", "3"),
+        ("order", "relevance | date | viewCount | rating (search)", "viewCount"),
+        ("publishedAfter / publishedBefore", "RFC 3339 timestamps (search)", "2026-01-01T00:00:00Z"),
+        ("regionCode / relevanceLanguage", "Country / language bias (search)", "US / en"),
+        ("id", "Comma-separated video IDs (videos)", "aircAruvnKk"),
+        ("key", "Your API key", "<YOUTUBE_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

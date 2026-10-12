@@ -14,6 +14,17 @@ META = dict(
   {"date": "2025-07-01T00:00:00", "datatype": "TMIN", "station": "GHCND:USW00013743", "value": 24.4},
   {"date": "2025-07-02T00:00:00", "datatype": "TMAX", "station": "GHCND:USW00013743", "value": 35.0}
 ]""",
+    endpoint="GET https://www.ncei.noaa.gov/cdo-web/api/v2/data",
+    params=[
+        ("datasetid", "GHCND (daily), GSOM (monthly), GSOY (yearly), ...", "GHCND"),
+        ("stationid", "Station ID (find via /stations)", "GHCND:USW00013743"),
+        ("locationid", "Alternative to stationid: FIPS state, ZIP, city", "FIPS:11"),
+        ("datatypeid", "TMAX, TMIN, PRCP, SNOW, AWND, ...", "TMAX,TMIN"),
+        ("startdate / enddate", "YYYY-MM-DD (max 1-year span for daily data)", "2025-07-01 / 2025-07-07"),
+        ("units", "standard | metric", "metric"),
+        ("limit / offset", "Rows per page (max 1000) and offset", "1000"),
+        ("token (header)", "Your CDO token", "<NOAA_TOKEN>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

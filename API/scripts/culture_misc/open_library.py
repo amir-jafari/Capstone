@@ -6,6 +6,16 @@ META = dict(
     signup="No registration.",
     provides=["Book search: title, authors, first publish year, subjects, editions, ISBNs", "Author & cover data"],
     ideas="Cultural analytics, book-recommendation systems, publishing trends.",
+    endpoint="GET https://openlibrary.org/search.json",
+    params=[
+        ("q / title / author / subject", "General or field-specific search", "data science"),
+        ("fields", "Fields to return", "title,author_name,first_publish_year"),
+        ("sort", "new | old | rating | editions | random", "new"),
+        ("limit / page", "Paging", "5"),
+        ("lang", "Preferred language (ISO 639-1)", "en"),
+        ("/works/{id}.json · /isbn/{isbn}.json · /authors/{id}.json", "Sibling endpoints: work, edition by ISBN, author", "/isbn/9781492041139.json"),
+        ("covers.openlibrary.org/b/isbn/{isbn}-{S|M|L}.jpg", "Cover images", "9781492041139-M.jpg"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

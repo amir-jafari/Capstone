@@ -117,6 +117,11 @@ def main():
             lines += [f"- {p}" for p in m["provides"]]
             if m.get("ideas"):
                 lines += ["", f"**Capstone ideas:** {m['ideas']}"]
+            if m.get("params"):
+                cell = lambda t: t.replace("|", "\\|")  # escape pipes so they don't split table cells
+                lines += ["", f"**Endpoint:** `{cell(m['endpoint'])}`", "",
+                          "| Parameter | Description | Example |", "|:--|:--|:--|"]
+                lines += [f"| `{cell(a)}` | {cell(b)} | `{cell(c)}` |" for a, b, c in m["params"]]
             lines += ["", "```python", code, "```", ""]
 
             if sample_file.exists():
@@ -139,8 +144,8 @@ HEADER = """# Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather, finance, census,
 > political science, health, science, engineering, transportation, and culture.
-> Every entry has: how to register / get a token, what data you can get, a short Python
-> example, and a **sample output**.
+> Every entry has: how to register / get a token, what data you can get, the endpoint and its
+> **parameters**, a short Python example, and a **sample output**.
 
 ## Quick Start
 

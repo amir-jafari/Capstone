@@ -19,6 +19,17 @@ META = dict(
     {"date": "2026-08-01", "value": "4.3"}
   ]
 }""",
+    endpoint="GET https://api.stlouisfed.org/fred/series/observations",
+    params=[
+        ("series_id", "Series code (UNRATE, GDP, CPIAUCSL, FEDFUNDS, DGS10, ...)", "UNRATE"),
+        ("api_key / file_type", "Your key; file_type json | xml", "<FRED_API_KEY> / json"),
+        ("observation_start / observation_end", "Date range YYYY-MM-DD", "2000-01-01"),
+        ("frequency", "Aggregate to d | w | m | q | sa | a", "q"),
+        ("aggregation_method", "avg | sum | eop (end of period)", "avg"),
+        ("units", "lin | chg | ch1 | pch | pc1 | pca | log (levels, changes, % changes)", "pc1"),
+        ("sort_order / limit / offset", "asc | desc; max 100,000 rows", "desc / 5"),
+        ("/fred/series/search?search_text=", "Sibling endpoint: find series IDs by keyword", "search_text=housing starts"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

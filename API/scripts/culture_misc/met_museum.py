@@ -6,6 +6,12 @@ META = dict(
     signup="No registration. Max 80 req/sec. Get every object ID via `/public/collection/v1/objects`.",
     provides=["470k+ artworks: title, artist, date, culture, medium, department, dimensions, public-domain image URLs"],
     ideas="Computer-vision on art images, cultural-history analytics.",
+    endpoint="GET https://collectionapi.metmuseum.org/public/collection/v1/objects/{objectID}",
+    params=[
+        ("objectID", "Object to fetch", "436524"),
+        ("/objects", "All object IDs; filter with departmentIds= and metadataDate= (changed since)", "departmentIds=11"),
+        ("/departments", "Department IDs and names", "—"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

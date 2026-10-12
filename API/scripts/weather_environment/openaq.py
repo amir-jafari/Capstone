@@ -13,6 +13,17 @@ META = dict(
   {"location": "Washington DC - River Terrace", "country": "US", "sensors": ["pm25 µg/m³", "o3 ppm", "no2 ppm"]},
   {"location": "McMillan Reservoir", "country": "US", "sensors": ["pm25 µg/m³", "pm10 µg/m³"]}
 ]""",
+    endpoint="GET https://api.openaq.org/v3/locations",
+    params=[
+        ("coordinates", "lat,lon centre point", "38.9,-77.04"),
+        ("radius", "Metres around coordinates (max 25,000)", "20000"),
+        ("bbox", "minLon,minLat,maxLon,maxLat (alternative to coordinates)", "-77.2,38.8,-76.9,39.0"),
+        ("iso", "Country ISO code", "US"),
+        ("parameters_id", "Pollutant ID (e.g. 2 = PM2.5); list via /v3/parameters", "2"),
+        ("limit / page", "Paging", "5"),
+        ("/v3/sensors/{id}/measurements?datetime_from=&datetime_to=", "Sibling endpoint: time series for one sensor", "datetime_from=2026-10-01"),
+        ("X-API-Key (header)", "Your key", "<OPENAQ_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

@@ -9,6 +9,15 @@ META = dict(
     provides=["Profiles: followers, following, post counts, bio", "Author feeds: post text, likes, reposts, replies",
               "Follower graphs", "Real-time firehose of every public post"],
     ideas="The most open large social network for research now that X/Twitter API is paid; network & discourse analysis.",
+    endpoint="GET https://public.api.bsky.app/xrpc/{method}",
+    params=[
+        ("app.bsky.actor.getProfile?actor=", "Handle or DID", "bsky.app"),
+        ("app.bsky.feed.getAuthorFeed?actor=&limit=&cursor=", "A user's posts; limit 1-100, cursor for paging", "limit=3"),
+        ("filter (getAuthorFeed)", "posts_with_replies | posts_no_replies | posts_with_media | posts_and_author_threads", "posts_no_replies"),
+        ("app.bsky.graph.getFollowers?actor=&limit=&cursor=", "Follower list (also getFollows)", "actor=bsky.app"),
+        ("app.bsky.feed.getPostThread?uri=", "A post and its reply tree (at:// URI)", "at://did:plc:…/app.bsky.feed.post/…"),
+        ("app.bsky.feed.searchPosts?q=&sort=", "Post search, sort top | latest (requires an authenticated session)", "q=climate"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

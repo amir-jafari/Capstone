@@ -6,6 +6,14 @@ META = dict(
     signup="No registration. Wait ~3 seconds between calls. Returns Atom XML.",
     provides=["Preprints in CS, stats, physics, math, econ, q-bio: title, abstract, authors, categories, dates, PDF link"],
     ideas="Abstract topic modeling, paper recommendation, tracking ML research trends.",
+    endpoint="GET http://export.arxiv.org/api/query",
+    params=[
+        ("search_query", "Field prefixes ti: au: abs: cat: all: combined with AND / OR / ANDNOT", "cat:cs.CL AND abs:retrieval"),
+        ("id_list", "Comma-separated arXiv IDs", "1706.03762"),
+        ("start / max_results", "Offset and page size (≤ 2,000 per call)", "0 / 3"),
+        ("sortBy", "relevance | lastUpdatedDate | submittedDate", "submittedDate"),
+        ("sortOrder", "ascending | descending", "descending"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import xml.etree.ElementTree as ET

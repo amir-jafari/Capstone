@@ -7,6 +7,18 @@ META = dict(
     provides=["500k+ registered studies: conditions, interventions, phase, status, sponsors, enrollment, locations",
               "Results & adverse events for completed trials"],
     ideas="Trial-success prediction, geographic access to trials, sponsor landscape analysis.",
+    endpoint="GET https://clinicaltrials.gov/api/v2/studies",
+    params=[
+        ("query.cond / query.intr / query.term", "Condition / intervention / general search", "Alzheimer Disease"),
+        ("query.locn / query.spons", "Location / sponsor search", "Washington, DC"),
+        ("filter.overallStatus", "RECRUITING | COMPLETED | ACTIVE_NOT_RECRUITING | ... (comma list)", "RECRUITING"),
+        ("filter.geo", "distance(lat,lon,radius)", "distance(38.9,-77.04,50mi)"),
+        ("fields", "Fields to return (piece names)", "NCTId,BriefTitle,Phase"),
+        ("pageSize / pageToken", "Max 1,000 per page; nextPageToken for paging", "5"),
+        ("countTotal", "true → include totalCount", "true"),
+        ("format", "json | csv", "json"),
+        ("/api/v2/studies/{nctId}", "Sibling endpoint: one full study record", "NCT05123456"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, show

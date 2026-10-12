@@ -13,6 +13,17 @@ META = dict(
   {"title": "Attention is All you Need", "year": 2017, "citationCount": 160000,
    "tldr": "A new simple network architecture, the Transformer, based solely on attention mechanisms..."}
 ]""",
+    endpoint="GET https://api.semanticscholar.org/graph/v1/paper/search",
+    params=[
+        ("query", "Plain-text search", "attention is all you need"),
+        ("fields", "title, abstract, year, authors, citationCount, tldr, embedding, openAccessPdf, ...", "title,year,citationCount,tldr"),
+        ("limit / offset", "Max 100 per page", "3"),
+        ("year", "Year or range", "2020-2024"),
+        ("fieldsOfStudy", "Comma list", "Computer Science"),
+        ("/graph/v1/paper/{id}", "Sibling endpoint: one paper; id can be DOI:, ARXIV:, CorpusId:", "ARXIV:1706.03762"),
+        ("/graph/v1/paper/{id}/citations", "Sibling endpoint: citing papers (also /references)", "fields=title,year"),
+        ("x-api-key (header)", "Optional key", "<S2_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import os

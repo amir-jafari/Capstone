@@ -9,6 +9,17 @@ META = dict(
               "Itemized individual contributions (Schedule A): donor name, employer, occupation, ZIP, amount",
               "Independent expenditures, PAC spending, filings"],
     ideas="Campaign-finance networks, donor geography, money vs. electoral outcomes.",
+    endpoint="GET https://api.open.fec.gov/v1/candidates/totals/",
+    params=[
+        ("election_year / cycle", "Election year / two-year period", "2024"),
+        ("office", "P (president) | S (senate) | H (house)", "P"),
+        ("party / state", "Party code / state", "DEM / VA"),
+        ("is_active_candidate", "true | false", "true"),
+        ("sort", "Field, prefix - for descending", "-receipts"),
+        ("per_page / page", "Max 100 per page", "5"),
+        ("/v1/schedules/schedule_a/", "Sibling endpoint: itemized contributions (committee_id, contributor_state, two_year_transaction_period, min_amount; keyset paging with last_index)", "contributor_state=VA"),
+        ("api_key", "api.data.gov key", "DEMO_KEY"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import os

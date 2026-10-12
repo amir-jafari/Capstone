@@ -18,6 +18,15 @@ META = dict(
     "keywords": ["Supreme Court (US)", "Law and Legislation", "Regulation and Deregulation of Industry"]
   }
 ]""",
+    endpoint="GET https://api.nytimes.com/svc/search/v2/articlesearch.json",
+    params=[
+        ("q", "Full-text query", "supreme court"),
+        ("fq", "Filter query on fields such as section, type of material, byline (field names per the docs)", "—"),
+        ("begin_date / end_date", "Date range, YYYYMMDD", "20260101"),
+        ("sort", "newest | oldest | relevance", "newest"),
+        ("page", "Page number, 10 results each (max page 100)", "0"),
+        ("api-key", "Your key (required)", "<NYT_API_KEY>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

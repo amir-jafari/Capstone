@@ -13,6 +13,14 @@ META = dict(
   {"location": "Nigeria", "indicator": "Total population by sex (thousands)", "year": 2025, "value": 237527.8},
   {"location": "Nigeria", "indicator": "Total population by sex (thousands)", "year": 2050, "value": 359427.6}
 ]""",
+    endpoint="GET https://population.un.org/dataportalapi/api/v1/data/indicators/{ids}/locations/{ids}/start/{year}/end/{year}",
+    params=[
+        ("indicators", "Indicator ID(s); list via /api/v1/indicators", "49 (total population)"),
+        ("locations", "UN M49 country codes; list via /api/v1/locations", "566 (Nigeria), 840 (USA)"),
+        ("start / end", "Year range (estimates 1950-2023, projections to 2100)", "2025 / 2050"),
+        ("pageNumber / pageSize", "Paging", "1 / 100"),
+        ("Authorization (header)", "Bearer token", "Bearer <UN_POP_TOKEN>"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 from _common import get, key, show

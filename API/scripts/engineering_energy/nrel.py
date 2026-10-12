@@ -15,6 +15,18 @@ META = dict(
      "ev_level2_evse_num": 12, "ev_dc_fast_num": null, "distance_mi": 0.6}
   ]
 }""",
+    endpoint="GET https://developer.nlr.gov/api/alt-fuel-stations/v1/nearest.json",
+    params=[
+        ("latitude / longitude or location", "Coordinates or a free-text address", "38.9 / -77.04"),
+        ("radius", "Miles (default 5; or infinite)", "5"),
+        ("fuel_type", "ELEC | E85 | CNG | LPG | HY | BD | LNG | RD (comma list)", "ELEC"),
+        ("ev_network", "Charging network", "Tesla"),
+        ("ev_charging_level", "1 | 2 | dc_fast", "dc_fast"),
+        ("status", "E (open) | P (planned) | T (temporarily unavailable)", "E"),
+        ("limit", "Max results", "5"),
+        ("/api/pvwatts/v8.json", "Sibling endpoint: solar PV output (lat, lon, system_capacity, azimuth, tilt, array_type, module_type, losses)", "system_capacity=4&tilt=20"),
+        ("api_key", "api.data.gov key", "DEMO_KEY"),
+    ],
 )
 import sys, pathlib; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))  # find _common.py
 import os
