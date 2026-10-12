@@ -1,0 +1,57 @@
+# live 2026-10-12 10:10
+{
+  "date": "2026-10-10",
+  "streaming_episodes_released": 166,
+  "distinct_shows": 52,
+  "by_service": [
+    [
+      "Tencent QQ",
+      10
+    ],
+    [
+      "YouTube",
+      8
+    ],
+    [
+      "iQIYI",
+      7
+    ],
+    [
+      "GagaOOLala",
+      4
+    ],
+    [
+      "Youku",
+      3
+    ]
+  ],
+  "examples": [
+    {
+      "show": "Трое из Простоквашино",
+      "service": "Okko",
+      "genres": [
+        "Children",
+        "Family"
+      ],
+      "rating": 7.5
+    },
+    {
+      "show": "КСТАТИ",
+      "service": "VK Видео Originals",
+      "genres": [
+        "Comedy",
+        "Music"
+      ],
+      "rating": null
+    },
+    {
+      "show": "Чудо",
+      "service": "КиноПоиск",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "rating": null
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+# live 2026-10-12 10:09
+{
+  "results": 5,
+  "podcasts": [
+    {
+      "name": "The Data Science Education Podcast",
+      "publisher": "Berkeley Data Science",
+      "episodes": 87,
+      "genres": [
+        "Science",
+        "Podcasts"
+      ],
+      "last_release": "2026-10-02",
+      "feed": "https://api.substack.com/feed/podcast/29031.rss"
+    },
+    {
+      "name": "Super Data Science: ML & AI Podcast with Jon Krohn",
+      "publisher": "Jon Krohn",
+      "episodes": 1035,
+      "genres": [
+        "Technology",
+        "Podcasts"
+      ],
+      "last_release": "2026-10-06",
+      "feed": "https://feeds.megaphone.fm/SUPERDATASCIENCEPTYLTD9836501887"
+    },
+    {
+      "name": "Harvard Data Science Review Podcast",
+      "publisher": "Harvard Data Science Review",
+      "episodes": 69,
+      "genres": [
+        "Tech News",
+        "Podcasts"
+      ],
+      "last_release": "2026-08-31",
+      "feed": "https://feed.podbean.com/HDSR/feed.xml"
+    },
+    {
+      "name": "The Data Science Blueprint",
+      "publisher": "The Data Science Blueprint",
+      "episodes": 6,
+      "genres": [
+        "Technology",
+        "Podcasts"
+      ],
+      "last_release": "2024-10-15",
+      "feed": "https://anchor.fm/s/fb9e7338/podcast/rss"
+    },
+    {
+      "name": "Data Science Leaders",
+      "publisher": "Domino Data Lab",
+      "episodes": 101,
+      "genres": [
+        "Management",
+        "Podcasts"
+      ],
+      "last_release": "2026-10-06",
+      "feed": "https://feeds.captivate.fm/data-science-leaders/"
+    }
+  ]
+}

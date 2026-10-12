@@ -1,0 +1,45 @@
+# live 2026-10-12 10:10
+{
+  "top_by_peak_concurrent_players_2_weeks": [
+    {
+      "name": "Counter-Strike: Global Offensive",
+      "developer": "Valve",
+      "owners": "100,000,000 .. 200,000,000",
+      "peak_ccu": 1013936,
+      "positive_review_pct": 87,
+      "price_usd": 0.0
+    },
+    {
+      "name": "PUBG: BATTLEGROUNDS",
+      "developer": "PUBG Corporation",
+      "owners": "100,000,000 .. 200,000,000",
+      "peak_ccu": 314682,
+      "positive_review_pct": 59,
+      "price_usd": 0.0
+    },
+    {
+      "name": "Rust",
+      "developer": "Facepunch Studios",
+      "owners": "20,000,000 .. 50,000,000",
+      "peak_ccu": 143870,
+      "positive_review_pct": 87,
+      "price_usd": 39.99
+    },
+    {
+      "name": "Apex Legends",
+      "developer": "Respawn",
+      "owners": "100,000,000 .. 200,000,000",
+      "peak_ccu": 124262,
+      "positive_review_pct": 67,
+      "price_usd": 0.0
+    },
+    {
+      "name": "Wallpaper Engine",
+      "developer": "Wallpaper Engine Team",
+      "owners": "20,000,000 .. 50,000,000",
+      "peak_ccu": 91184,
+      "positive_review_pct": 98,
+      "price_usd": 4.99
+    }
+  ]
+}

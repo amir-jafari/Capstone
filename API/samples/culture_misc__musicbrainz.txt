@@ -1,0 +1,25 @@
+# live 2026-10-12 10:09
+{
+  "artist": "Radiohead",
+  "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
+  "country": "GB",
+  "tags": [
+    "alternative rock",
+    "art rock",
+    "rock",
+    "electronic",
+    "british"
+  ],
+  "albums": [
+    "1993 Pablo Honey",
+    "1994 The Bends",
+    "1997 Radiotick Tracks 2",
+    "1997 OK Computer",
+    "2000 Kid A",
+    "2001 Amnesiac",
+    "2003 Hail to the Thief",
+    "2007 In Rainbows",
+    "2011 The King of Limbs",
+    "2016 A Moon Shaped Pool"
+  ]
+}

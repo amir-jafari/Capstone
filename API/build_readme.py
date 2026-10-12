@@ -35,7 +35,7 @@ DOMAINS = [
     ("engineering_energy", "⚙️", "Engineering, Energy & Tech"),
     ("transportation_geo", "🗺️", "Transportation & Geospatial"),
     ("sports", "🏅", "Sports"),
-    ("culture_misc", "🎬", "Culture, Books & Entertainment"),
+    ("culture_misc", "🎬", "Culture, Media & Entertainment"),
 ]
 
 
@@ -151,7 +151,7 @@ HEADER = """# Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
 > census, housing, political science, law, health, agriculture & food, education, jobs & labor, science, AI & machine learning,
-> engineering & energy, transportation, sports, and culture.
+> engineering & energy, transportation, sports, and culture, media & entertainment.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 

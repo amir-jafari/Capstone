@@ -2,7 +2,7 @@
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
 > census, housing, political science, law, health, agriculture & food, education, jobs & labor, science, AI & machine learning,
-> engineering & energy, transportation, sports, and culture.
+> engineering & energy, transportation, sports, and culture, media & entertainment.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 
@@ -201,9 +201,23 @@ python build_readme.py          # re-run everything & regenerate this README
 | 170 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
 | 171 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
 | 172 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 173 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 174 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 175 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 173 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
+| 174 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
+| 175 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
+| 176 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
+| 177 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
+| 178 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
+| 179 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
+| 180 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
+| 181 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 182 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
+| 183 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 184 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
+| 185 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
+| 186 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
+| 187 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 188 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
+| 189 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -14024,7 +14038,650 @@ def main():
 
 ---
 
-## 🎬 Culture, Books & Entertainment
+## 🎬 Culture, Media & Entertainment
+
+### Art Institute of Chicago API
+
+| | |
+|:--|:--|
+| **Docs** | https://api.artic.edu/docs/ |
+| **Auth** | None |
+| **Register / token** | No registration. 60 requests/minute; use the fields= parameter to keep responses small. CC0 for public-domain works; high-resolution images via IIIF. |
+| **Script** | [`scripts/culture_misc/art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
+
+**What you can get:**
+
+- 120k+ artworks: title, artist, date, medium, dimensions, place of origin, department, style, subject terms
+- Public-domain flag and IIIF image URLs, color data, exhibition history
+- Artists, exhibitions, tours, publications
+
+**Capstone ideas:** Computer vision on museum images, color and style evolution over time, provenance and acquisition patterns.
+
+**Endpoint:** `GET https://api.artic.edu/api/v1/{artworks \| artworks/search \| artists \| exhibitions}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Full-text search | `monet` |
+| `query (search)` | Elasticsearch query DSL as JSON for precise filters | `{"term": {"is_public_domain": true}}` |
+| `fields` | Fields to return | `id,title,artist_title,date_display,image_id,is_public_domain` |
+| `limit / page` | Max 100 | `5` |
+| `IIIF image URL` | {config.iiif_url}/{image_id}/full/843,/0/default.jpg | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api.artic.edu/api/v1/artworks/search", params={
+        "q": "monet", "limit": 5,
+        "fields": "id,title,artist_title,date_display,medium_display,is_public_domain,image_id"})
+    iiif = d["config"]["iiif_url"]
+    show({"matches": d["pagination"]["total"], "artworks": [
+        {"title": a["title"], "artist": a["artist_title"], "date": a["date_display"], "public_domain": a["is_public_domain"],
+         "image": f'{iiif}/{a["image_id"]}/full/843,/0/default.jpg' if a.get("image_id") else None} for a in d["data"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
+
+```json
+{
+  "matches": 133165,
+  "artworks": [
+    {
+      "title": "Water Lilies",
+      "artist": "Claude Monet",
+      "date": "1906",
+      "public_domain": true,
+      "image": "https://www.artic.edu/iiif/2/3c27b499-af56-f0d5-93b5-a7f2f1ad5813/full/843,/0/default.jpg"
+    },
+    {
+      "title": "Arrival of the Normandy Train, Gare Saint-Lazare",
+      "artist": "Claude Monet",
+      "date": "1877",
+      "public_domain": true,
+      "image": "https://www.artic.edu/iiif/2/0f1cc0e0-e42e-be16-3f71-2022da38cb93/full/843,/0/default.jpg"
+    },
+    {
+      "title": "Stacks of Wheat (End of Summer)",
+      "artist": "Claude Monet",
+      "date": "1890–91",
+      "public_domain": true,
+      "image": "https://www.artic.edu/iiif/2/a38e2828-ec6f-ece1-a30f-70243449197b/full/843,/0/default.jpg"
+    },
+    {
+      "title": "Cliff Walk at Pourville",
+      "artist": "Claude Monet",
+      "date": "1882",
+      "public_domain": true,
+      "image": "https://www.artic.edu/iiif/2/b0effb1c-ff23-bbaa-f809-9fd94e31c1a0/full/843,/0/default.jpg"
+    },
+    {
+      "title": "Water Lily Pond",
+      "artist": "Claude Monet",
+      "date": "1900",
+      "public_domain": true,
+      "image": "https://www.artic.edu/iiif/2/8534685d-1102-e1e3-e194-94f6e925e8b0/full/843,/0/default.jpg"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Deezer API (music charts & catalog)
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.deezer.com/api |
+| **Auth** | None for public data |
+| **Register / token** | No registration for catalog and chart endpoints (50 requests / 5 seconds). OAuth only for user data. The docs page now asks you to log in with a (free) Deezer account. |
+| **Script** | [`scripts/culture_misc/deezer.py`](scripts/culture_misc/deezer.py) |
+
+**What you can get:**
+
+- Global and per-genre charts: top tracks, albums, artists, playlists, podcasts
+- Track details: duration, BPM, rank (popularity), explicit flag, 30-second preview MP3
+- Artists (fan counts, top tracks, related artists), albums, search
+
+**Capstone ideas:** Chart dynamics, audio analysis on preview clips, related-artist networks, explicit-content trends.
+
+**Endpoint:** `GET https://api.deezer.com/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `chart/{genre_id}/{tracks \| albums \| artists \| playlists}` | Charts; genre 0 = all (list via /genre) | `chart/0/tracks` |
+| `search?q=` | Search with advanced syntax: artist:"" track:"" album:"" bpm_min: dur_max: | `q=artist:"daft punk"` |
+| `track/{id} · album/{id} · artist/{id}` | Details (track includes bpm, rank) | `track/3135556` |
+| `artist/{id}/top · artist/{id}/related` | An artist's top tracks / similar artists | `—` |
+| `limit / index` | Paging | `10 / 0` |
+
+```python
+from _common import get, show
+
+
+def main():
+    tracks = get("https://api.deezer.com/chart/0/tracks", params={"limit": 5})["data"]
+    artists = get("https://api.deezer.com/chart/0/artists", params={"limit": 3})["data"]
+    show({"top_tracks": [{"position": t["position"], "title": t["title"], "artist": t["artist"]["name"],
+                          "duration_s": t["duration"], "explicit": t["explicit_lyrics"]} for t in tracks],
+          "top_artists": [a["name"] for a in artists]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
+
+```json
+{
+  "top_tracks": [
+    {
+      "position": 1,
+      "title": "Dracula (with JENNIE)",
+      "artist": "Tame Impala",
+      "duration_s": 209,
+      "explicit": true
+    },
+    {
+      "position": 2,
+      "title": "Boston",
+      "artist": "STELLA LEFTY",
+      "duration_s": 170,
+      "explicit": false
+    },
+    {
+      "position": 3,
+      "title": "Choosin' Texas",
+      "artist": "Ella Langley",
+      "duration_s": 232,
+      "explicit": false
+    },
+    {
+      "position": 4,
+      "title": "Be Her",
+      "artist": "Ella Langley",
+      "duration_s": 217,
+      "explicit": false
+    },
+    {
+      "position": 5,
+      "title": "Been By Now",
+      "artist": "Morgan Wallen",
+      "duration_s": 213,
+      "explicit": false
+    }
+  ],
+  "top_artists": [
+    "Taylor Swift",
+    "Drake",
+    "Bad Bunny"
+  ]
+}
+```
+</details>
+
+---
+
+### Discogs API (music releases & marketplace)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.discogs.com/developers |
+| **Auth** | None for public data (token raises limits and unlocks images) |
+| **Register / token** | Public data works without auth at 25 requests/minute; a personal token from https://www.discogs.com/settings/developers gives 60/minute. A descriptive User-Agent is required. |
+| **Env var** | `DISCOGS_TOKEN (optional)` |
+| **Script** | [`scripts/culture_misc/discogs.py`](scripts/culture_misc/discogs.py) |
+
+**What you can get:**
+
+- 16M+ releases (vinyl, CD, cassette...) with labels, formats, countries, credits, tracklists
+- Artists and their discographies; master releases grouping editions
+- Community data: how many users have/want a release; marketplace price statistics
+
+**Capstone ideas:** Vinyl revival analysis, collectibility (want/have ratios) vs. price, label and credit networks.
+
+**Endpoint:** `GET https://api.discogs.com/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `database/search?q=&type=` | Search; type release \| master \| artist \| label; filters genre, style, year, format, country | `q=nirvana&type=master` |
+| `artists/{id}/releases` | An artist's discography (sort=year, sort_order) | `artists/125246/releases?sort=year` |
+| `releases/{id} · masters/{id}` | Release details incl. community have/want | `releases/249504` |
+| `marketplace/stats/{release_id}` | Lowest price and number for sale | `—` |
+| `per_page / page` | Max 100 | `5` |
+| `Authorization (header)` | Discogs token=<token> (optional) | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api.discogs.com/artists/125246/releases", params={"sort": "year", "sort_order": "asc",
+                                                                      "per_page": 100})  # Nirvana
+    masters = [r for r in d["releases"] if r["type"] == "master" and r.get("role") == "Main"]
+    rel = get("https://api.discogs.com/masters/13814")  # Nevermind
+    show({"artist": "Nirvana", "discography_entries": d["pagination"]["items"],
+          "main_masters": [f'{r.get("year")} {r["title"]}' for r in masters][:6],
+          "nevermind": {"year": rel["year"], "genres": rel["genres"], "styles": rel["styles"],
+                        "tracks": len(rel["tracklist"])}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
+
+```json
+{
+  "artist": "Nirvana",
+  "discography_entries": 2248,
+  "main_masters": [
+    "1988 Love Buzz b/w Big Cheese",
+    "1988 Nirvana",
+    "1989 Bleach",
+    "1989 Blew",
+    "1990 Lithium",
+    "... (1 more)"
+  ],
+  "nevermind": {
+    "year": 1991,
+    "genres": [
+      "Rock"
+    ],
+    "styles": [
+      "Grunge",
+      "Alternative Rock"
+    ],
+    "tracks": 12
+  }
+}
+```
+</details>
+
+---
+
+### Google Books API
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.google.com/books/docs/v1/using |
+| **Auth** | API key (query `key`) - effectively required |
+| **Register / token** | In https://console.cloud.google.com create a project, enable 'Books API', and create an API key. Keyless calls share a global quota that is often exhausted (HTTP 429). 1,000 requests/day per key by default. |
+| **Env var** | `GOOGLE_BOOKS_API_KEY` |
+| **Script** | [`scripts/culture_misc/google_books.py`](scripts/culture_misc/google_books.py) |
+
+**What you can get:**
+
+- Tens of millions of books: title, authors, publisher, published date, ISBNs, page count, categories
+- Descriptions, average rating, language, cover thumbnails, preview/ebook availability and price
+
+**Capstone ideas:** Publishing trends by subject, metadata enrichment of book datasets via ISBN, description-based recommendation.
+
+**Endpoint:** `GET https://www.googleapis.com/books/v1/volumes`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Search with keywords: intitle:, inauthor:, subject:, isbn:, inpublisher: | `subject:statistics` |
+| `orderBy` | relevance \| newest | `newest` |
+| `printType / filter` | all \| books \| magazines; partial \| full \| free-ebooks \| paid-ebooks \| ebooks | `books` |
+| `langRestrict` | Two-letter language code | `en` |
+| `maxResults / startIndex` | Max 40 per page | `5 / 0` |
+| `key` | Your API key | `<GOOGLE_BOOKS_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://www.googleapis.com/books/v1/volumes", params={
+        "q": "subject:statistics", "orderBy": "newest", "printType": "books", "maxResults": 5,
+        "key": key("GOOGLE_BOOKS_API_KEY")})
+    show([{k: b["volumeInfo"].get(k) for k in ("title", "authors", "publishedDate", "pageCount", "categories")}
+          for b in d.get("items", [])])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"title": "An Introduction to Statistical Learning", "authors": ["Gareth James", "Daniela Witten", "Trevor Hastie", "Robert Tibshirani"],
+   "publishedDate": "2023-07-01", "pageCount": 607, "categories": ["Mathematics"]}
+]
+```
+</details>
+
+---
+
+### Gutendex (Project Gutenberg books)
+
+| | |
+|:--|:--|
+| **Docs** | https://gutendex.com/ |
+| **Auth** | None |
+| **Register / token** | No registration (uncached queries can take 1-2 minutes, so use long timeouts). JSON index of Project Gutenberg's 75,000+ free public-domain e-books; full texts download as plain text, EPUB or HTML from the formats links. |
+| **Script** | [`scripts/culture_misc/gutendex.py`](scripts/culture_misc/gutendex.py) |
+
+**What you can get:**
+
+- Books: title, authors (with birth/death years), subjects, bookshelves, languages, download counts
+- Direct links to full text in multiple formats
+- Search, topic and language filters, popularity sort
+
+**Capstone ideas:** Classic-literature NLP corpora, stylometry and authorship attribution, sentiment arcs of novels.
+
+**Endpoint:** `GET https://gutendex.com/books/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search` | Words in title or author name | `austen` |
+| `topic` | Words in subjects or bookshelves | `detective` |
+| `languages` | Comma-separated codes | `en,fr` |
+| `author_year_start / author_year_end` | Authors alive in a year range | `1800 / 1899` |
+| `sort` | popular (default) \| ascending \| descending (by ID) | `popular` |
+| `ids` | Specific Gutenberg IDs | `1342,84` |
+| `page` | 32 results per page | `1` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://gutendex.com/books/", params={"topic": "detective", "languages": "en"},
+            timeout=120)  # uncached queries can take 1-2 minutes on this free server
+    show({"matching_books": d["count"], "most_downloaded": [
+        {"id": b["id"], "title": b["title"], "author": (b["authors"] or [{}])[0].get("name"),
+         "downloads": b["download_count"], "plain_text": b["formats"].get("text/plain; charset=us-ascii")
+                                                         or b["formats"].get("text/plain; charset=utf-8")}
+        for b in d["results"][:5]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
+
+```json
+{
+  "matching_books": 1387,
+  "most_downloaded": [
+    {
+      "id": 1661,
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Doyle, Arthur Conan",
+      "downloads": 96353,
+      "plain_text": "https://www.gutenberg.org/files/1661/1661-0.txt"
+    },
+    {
+      "id": 2554,
+      "title": "Crime and Punishment",
+      "author": "Dostoyevsky, Fyodor",
+      "downloads": 76289,
+      "plain_text": "https://www.gutenberg.org/ebooks/2554.txt.utf-8"
+    },
+    {
+      "id": 65238,
+      "title": "The Secret of Chimneys",
+      "author": "Christie, Agatha",
+      "downloads": 50307,
+      "plain_text": "https://www.gutenberg.org/files/65238/65238-0.txt"
+    },
+    {
+      "id": 28780,
+      "title": "Peter the Brazen: A Mystery Story of Modern China",
+      "author": "Worts, George F. (George Frank)",
+      "downloads": 40745,
+      "plain_text": "https://www.gutenberg.org/files/28780/28780-8.txt"
+    },
+    {
+      "id": 38983,
+      "title": "The Camp Fire Girls Solve a Mystery; Or, The Christmas Adventure at Carver House",
+      "author": "Frey, Hildegard G.",
+      "downloads": 37424,
+      "plain_text": "https://www.gutenberg.org/files/38983/38983-0.txt"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Internet Archive (search & metadata)
+
+| | |
+|:--|:--|
+| **Docs** | https://archive.org/developers/ |
+| **Auth** | None for reading |
+| **Register / token** | No registration for search, metadata and downloads. Python package: `pip install internetarchive`. |
+| **Script** | [`scripts/culture_misc/internet_archive.py`](scripts/culture_misc/internet_archive.py) |
+
+**What you can get:**
+
+- 40M+ items: books, films, TV news, audio (Grateful Dead, 78rpm records), software, web collections
+- Item metadata: title, creator, date, collection, subjects, licence, download and view counts
+- File lists and direct downloads for every item; the Wayback Machine has its own APIs
+
+**Capstone ideas:** Public-domain film and audio datasets, TV-news transcript analysis, digital-preservation studies.
+
+**Endpoint:** `GET https://archive.org/advancedsearch.php  ·  GET https://archive.org/metadata/{identifier}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Lucene query over fields: collection:, mediatype:, subject:, year:, creator: | `collection:feature_films AND year:[1920 TO 1959]` |
+| `fl[]` | Fields to return (repeatable) | `identifier, title, year, downloads` |
+| `sort[]` | Sort field and direction | `downloads desc` |
+| `rows / page` | Results per page | `5` |
+| `output` | json \| csv \| xml | `json` |
+| `/metadata/{identifier}` | Full metadata and file list for one item | `/metadata/night_of_the_living_dead` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://archive.org/advancedsearch.php", params=[
+        ("q", 'collection:feature_films AND subject:"film noir"'), ("fl[]", "identifier"), ("fl[]", "title"),
+        ("fl[]", "year"), ("fl[]", "downloads"), ("sort[]", "downloads desc"), ("rows", 5), ("output", "json")])["response"]
+    show({"film_noir_feature_films": d["numFound"], "most_downloaded": [
+        {k: x.get(k) for k in ("title", "year", "downloads")} | {"url": f'https://archive.org/details/{x["identifier"]}'}
+        for x in d["docs"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
+
+```json
+{
+  "film_noir_feature_films": 1195,
+  "most_downloaded": [
+    {
+      "title": "The Stranger",
+      "year": 1946,
+      "downloads": 662151,
+      "url": "https://archive.org/details/TheStranger_0"
+    },
+    {
+      "title": "Scarlet Street",
+      "year": 1945,
+      "downloads": 523755,
+      "url": "https://archive.org/details/ScarletStreet"
+    },
+    {
+      "title": "Detour",
+      "year": 1945,
+      "downloads": 372940,
+      "url": "https://archive.org/details/Detour"
+    },
+    {
+      "title": "He Walked By Night",
+      "year": 1948,
+      "downloads": 258155,
+      "url": "https://archive.org/details/He_Walked_By_Night.avi"
+    },
+    {
+      "title": "The Red House",
+      "year": 1947,
+      "downloads": 256884,
+      "url": "https://archive.org/details/TheRedHouse"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### iTunes Search API (Apple music, podcasts, apps, books)
+
+| | |
+|:--|:--|
+| **Docs** | https://performance-partners.apple.com/search-api |
+| **Auth** | None |
+| **Register / token** | No registration. About 20 calls/minute. Covers the Apple Music, Podcasts, App Store, Books and TV catalogs. |
+| **Script** | [`scripts/culture_misc/itunes_search.py`](scripts/culture_misc/itunes_search.py) |
+
+**What you can get:**
+
+- Search songs, albums, artists, podcasts, apps, audiobooks, movies, TV episodes by keyword
+- Price, release date, genre, track count, artwork URLs, preview clips; podcast feed URLs
+- Lookup by iTunes ID, UPC, ISBN or AMG ID; country-specific storefronts
+
+**Capstone ideas:** Podcast landscape analysis (via feed URLs), app-store category studies, music release timing.
+
+**Endpoint:** `GET https://itunes.apple.com/{search \| lookup}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `term` | Search text (+ for spaces) | `true crime` |
+| `media / entity` | music \| podcast \| software \| ebook \| movie \| tvShow ...; entity narrows (album, musicArtist, podcast) | `media=podcast` |
+| `country` | Two-letter storefront | `us` |
+| `attribute` | Field to search: artistTerm, albumTerm, genreIndex, ... | `artistTerm` |
+| `limit` | Max 200 | `5` |
+| `lookup?id= / ?upc= / ?isbn=` | Look up by ID; add entity=album to list an artist's albums | `lookup?id=909253&entity=album` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://itunes.apple.com/search", params={"term": "data science", "media": "podcast", "country": "us",
+                                                        "limit": 5})
+    show({"results": d["resultCount"], "podcasts": [
+        {"name": p["collectionName"], "publisher": p["artistName"], "episodes": p.get("trackCount"),
+         "genres": p.get("genres", [])[:2], "last_release": (p.get("releaseDate") or "")[:10], "feed": p.get("feedUrl")}
+        for p in d["results"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
+
+```json
+{
+  "results": 5,
+  "podcasts": [
+    {
+      "name": "The Data Science Education Podcast",
+      "publisher": "Berkeley Data Science",
+      "episodes": 87,
+      "genres": [
+        "Science",
+        "Podcasts"
+      ],
+      "last_release": "2026-10-02",
+      "feed": "https://api.substack.com/feed/podcast/29031.rss"
+    },
+    {
+      "name": "Super Data Science: ML & AI Podcast with Jon Krohn",
+      "publisher": "Jon Krohn",
+      "episodes": 1035,
+      "genres": [
+        "Technology",
+        "Podcasts"
+      ],
+      "last_release": "2026-10-06",
+      "feed": "https://feeds.megaphone.fm/SUPERDATASCIENCEPTYLTD9836501887"
+    },
+    {
+      "name": "Harvard Data Science Review Podcast",
+      "publisher": "Harvard Data Science Review",
+      "episodes": 69,
+      "genres": [
+        "Tech News",
+        "Podcasts"
+      ],
+      "last_release": "2026-08-31",
+      "feed": "https://feed.podbean.com/HDSR/feed.xml"
+    },
+    {
+      "name": "The Data Science Blueprint",
+      "publisher": "The Data Science Blueprint",
+      "episodes": 6,
+      "genres": [
+        "Technology",
+        "Podcasts"
+      ],
+      "last_release": "2024-10-15",
+      "feed": "https://anchor.fm/s/fb9e7338/podcast/rss"
+    },
+    {
+      "name": "Data Science Leaders",
+      "publisher": "Domino Data Lab",
+      "episodes": 101,
+      "genres": [
+        "Management",
+        "Podcasts"
+      ],
+      "last_release": "2026-10-06",
+      "feed": "https://feeds.captivate.fm/data-science-leaders/"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Last.fm API (listening data & tags)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.last.fm/api |
+| **Auth** | API key (query `api_key`) |
+| **Register / token** | Create an API account at https://www.last.fm/api/account/create (instant). Non-commercial use; keep to about 5 requests/second. |
+| **Env var** | `LASTFM_API_KEY` |
+| **Script** | [`scripts/culture_misc/lastfm.py`](scripts/culture_misc/lastfm.py) |
+
+**What you can get:**
+
+- Global and country charts (top artists/tracks) with play and listener counts
+- Crowd-sourced tags (genres, moods), similar artists/tracks, artist bios
+- Users' public listening histories (scrobbles)
+
+**Capstone ideas:** Music recommendation (similarity graphs), mood/genre tagging, listening-behavior analysis.
+
+**Endpoint:** `GET https://ws.audioscrobbler.com/2.0/?method={method}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `method` | chart.getTopArtists \| geo.getTopTracks \| artist.getSimilar \| track.getTopTags \| tag.getTopTracks \| user.getRecentTracks | `geo.getTopTracks` |
+| `artist / track / tag / country / user` | Method-specific arguments | `country=united states` |
+| `limit / page` | Paging | `5` |
+| `format` | json \| xml | `json` |
+| `api_key` | Your key | `<LASTFM_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://ws.audioscrobbler.com/2.0/", params={
+        "method": "chart.gettopartists", "api_key": key("LASTFM_API_KEY"), "format": "json", "limit": 5})
+    show({"top_artists": [{k: a[k] for k in ("name", "listeners", "playcount")} for a in d["artists"]["artist"]]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "top_artists": [
+    {"name": "Taylor Swift", "listeners": "6418811", "playcount": "1823456712"},
+    {"name": "The Weeknd", "listeners": "7012345", "playcount": "1213456789"}
+  ]
+}
+```
+</details>
+
+---
 
 ### The Met Museum Collection API
 
@@ -14061,7 +14718,7 @@ def main():
           for o in objs])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:12</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
 
 ```json
 [
@@ -14090,6 +14747,85 @@ def main():
     "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP251139.jpg"
   }
 ]
+```
+</details>
+
+---
+
+### MusicBrainz (open music encyclopedia)
+
+| | |
+|:--|:--|
+| **Docs** | https://musicbrainz.org/doc/MusicBrainz_API |
+| **Auth** | None (descriptive User-Agent required) |
+| **Register / token** | No registration. Max 1 request/second; send a User-Agent like 'AppName/1.0 (contact@example.com)'. Full database dumps are available for bulk analysis. CC0 core data. |
+| **Script** | [`scripts/culture_misc/musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
+
+**What you can get:**
+
+- Artists, release groups (albums), releases, recordings, works, labels with stable MBIDs
+- Relationships (members, producers, covers, samples), tags/genres, release dates and countries
+- Links to Wikidata, Discogs, Spotify and cover art (Cover Art Archive)
+
+**Capstone ideas:** Music-history networks (collaborations), genre evolution, joining streaming data via MBIDs.
+
+**Endpoint:** `GET https://musicbrainz.org/ws/2/{entity}/[{mbid}]`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `entity` | artist \| release-group \| release \| recording \| work \| label \| area \| event | `artist` |
+| `query (search)` | Lucene syntax with fields: artist:, country:, tag:, type:, date: | `artist:radiohead` |
+| `artist= / release= (browse)` | List entities linked to an MBID | `release-group?artist={mbid}&type=album` |
+| `inc (lookup)` | Include related data: aliases, tags, genres, recordings, url-rels, artist-rels | `inc=genres+url-rels` |
+| `fmt` | json \| xml | `json` |
+| `limit / offset` | Max 100 | `5` |
+
+```python
+import time
+
+from _common import get, show
+
+BASE = "https://musicbrainz.org/ws/2"
+
+
+def main():
+    artist = get(f"{BASE}/artist/", params={"query": "artist:radiohead", "fmt": "json", "limit": 1})["artists"][0]
+    time.sleep(1.1)  # MusicBrainz allows 1 request/second
+    albums = get(f"{BASE}/release-group", params={"artist": artist["id"], "type": "album", "fmt": "json", "limit": 100})
+    albums_only = sorted((rg for rg in albums["release-groups"] if not rg["secondary-types"]),  # no live/compilation
+                    key=lambda rg: rg.get("first-release-date") or "")
+    show({"artist": artist["name"], "mbid": artist["id"], "country": artist.get("country"),
+          "tags": [t["name"] for t in sorted(artist.get("tags", []), key=lambda t: -t["count"])][:5],
+          "albums": [f'{rg.get("first-release-date", "")[:4]} {rg["title"]}' for rg in albums_only]}, max_items=10)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:09</summary>
+
+```json
+{
+  "artist": "Radiohead",
+  "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
+  "country": "GB",
+  "tags": [
+    "alternative rock",
+    "art rock",
+    "rock",
+    "electronic",
+    "british"
+  ],
+  "albums": [
+    "1993 Pablo Honey",
+    "1994 The Bends",
+    "1997 Radiotick Tracks 2",
+    "1997 OK Computer",
+    "2000 Kid A",
+    "2001 Amnesiac",
+    "2003 Hail to the Thief",
+    "2007 In Rainbows",
+    "2011 The King of Limbs",
+    "2016 A Moon Shaped Pool"
+  ]
+}
 ```
 </details>
 
@@ -14133,7 +14869,7 @@ def main():
     show({"numFound": d["numFound"], "docs": d["docs"]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:10</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:10</summary>
 
 ```json
 {
@@ -14190,6 +14926,206 @@ def main():
 
 ---
 
+### RAWG Video Games Database API
+
+| | |
+|:--|:--|
+| **Docs** | https://api.rawg.io/docs/ |
+| **Auth** | API key (query `key`) |
+| **Register / token** | Get a free key at https://rawg.io/apidocs (20,000 requests/month on the free tier). Attribution to RAWG with a link is required. |
+| **Env var** | `RAWG_API_KEY` |
+| **Script** | [`scripts/culture_misc/rawg.py`](scripts/culture_misc/rawg.py) |
+
+**What you can get:**
+
+- 500k+ games across all platforms: release date, genres, platforms, ESRB rating, Metacritic score, playtime
+- User ratings distribution, tags, developers, publishers, stores, screenshots, achievements
+
+**Capstone ideas:** What predicts high ratings, platform exclusivity trends, release-calendar analysis.
+
+**Endpoint:** `GET https://api.rawg.io/api/{games \| games/{id} \| genres \| platforms \| developers}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search` | Text search | `zelda` |
+| `dates` | Release-date range | `2025-01-01,2025-12-31` |
+| `genres / platforms / tags` | IDs or slugs (comma list) | `genres=indie` |
+| `ordering` | name \| released \| added \| created \| rating \| metacritic (prefix - to reverse) | `-metacritic` |
+| `metacritic` | Score range | `80,100` |
+| `page_size / page` | Max 40 | `5` |
+| `key` | Your key | `<RAWG_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://api.rawg.io/api/games", params={"key": key("RAWG_API_KEY"), "dates": "2025-01-01,2025-12-31",
+                                                      "ordering": "-metacritic", "page_size": 5})
+    show([{"name": g["name"], "released": g["released"], "metacritic": g["metacritic"], "rating": g["rating"],
+           "genres": [x["name"] for x in g["genres"]]} for g in d["results"]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"name": "Example Game", "released": "2025-05-12", "metacritic": 94, "rating": 4.6, "genres": ["Action", "Adventure"]}
+]
+```
+</details>
+
+---
+
+### Spotify Web API
+
+| | |
+|:--|:--|
+| **Docs** | https://developer.spotify.com/documentation/web-api |
+| **Auth** | OAuth2 client credentials (client ID + secret) |
+| **Register / token** | Create an app at https://developer.spotify.com/dashboard to get a client ID and secret. Apps start in development mode with limits. Since Nov 2024 new apps can no longer call audio-features, audio-analysis or recommendations - plan around search, artists, albums, tracks and playlists. |
+| **Env var** | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` |
+| **Script** | [`scripts/culture_misc/spotify.py`](scripts/culture_misc/spotify.py) |
+
+**What you can get:**
+
+- Search artists, albums, tracks, playlists, shows, episodes, audiobooks
+- Artist popularity (0-100), followers, genres; album tracks and release dates; track popularity
+- Public playlists and podcast (show) metadata
+
+**Capstone ideas:** Popularity vs. release timing, genre landscapes, podcast catalog analysis (audio-features no longer available).
+
+**Endpoint:** `GET https://api.spotify.com/v1/{resource}  (token: POST https://accounts.spotify.com/api/token)`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search?q=&type=` | type: artist, album, track, playlist, show, episode (comma list); field filters year:, genre:, tag:new | `q=genre:jazz year:2025&type=album` |
+| `artists/{id} · artists/{id}/albums · artists/{id}/top-tracks?market=` | Artist details, discography, top tracks | `market=US` |
+| `albums/{id}/tracks · tracks/{id}` | Album tracks; track details incl. popularity | `—` |
+| `limit / offset / market` | Max 50 per page; country market | `10 / 0 / US` |
+| `grant_type=client_credentials` | Token request (Basic auth with client ID:secret); token lasts 1 hour | `—` |
+
+```python
+import requests
+
+from _common import get, key, show
+
+
+def main():
+    tok = requests.post("https://accounts.spotify.com/api/token", data={"grant_type": "client_credentials"},
+                        auth=(key("SPOTIFY_CLIENT_ID"), key("SPOTIFY_CLIENT_SECRET")), timeout=30).json()["access_token"]
+    d = get("https://api.spotify.com/v1/search", headers={"Authorization": f"Bearer {tok}"},
+            params={"q": "genre:jazz year:2025", "type": "album", "limit": 5, "market": "US"})["albums"]["items"]
+    show({"query": "genre:jazz year:2025", "albums": [
+        {"name": a["name"], "artist": a["artists"][0]["name"], "release_date": a["release_date"],
+         "total_tracks": a["total_tracks"]} for a in d]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "query": "genre:jazz year:2025",
+  "albums": [
+    {"name": "Example Jazz Album", "artist": "Example Trio", "release_date": "2025-03-14", "total_tracks": 9}
+  ]
+}
+```
+</details>
+
+---
+
+### SteamSpy (Steam game statistics)
+
+| | |
+|:--|:--|
+| **Docs** | https://steamspy.com/api.php |
+| **Auth** | None |
+| **Register / token** | No registration. 1 request/second (the 'all' request: 1 per minute). Unofficial: ownership figures are estimated ranges, not exact counts. For official store data see the Steam Web API (key). |
+| **Script** | [`scripts/culture_misc/steamspy.py`](scripts/culture_misc/steamspy.py) |
+
+**What you can get:**
+
+- Per-game: estimated owners range, positive/negative reviews, average and median playtime, price, discounts, CCU
+- Top 100 by recent players or all time; games by genre or tag; developer and publisher
+- User-applied tags with vote counts and supported languages (appdetails)
+
+**Capstone ideas:** Game-success prediction from tags/price/reviews, playtime distributions, pricing and discount strategies.
+
+**Endpoint:** `GET https://steamspy.com/api.php?request={request}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `request` | appdetails \| top100in2weeks \| top100forever \| top100owned \| genre \| tag \| all | `top100in2weeks` |
+| `appid` | For appdetails | `570 (Dota 2)` |
+| `genre / tag` | For genre / tag requests | `genre=Indie` |
+| `page` | For 'all' (1,000 games per page) | `0` |
+
+```python
+from _common import get, show
+
+
+def main():
+    top = get("https://steamspy.com/api.php", params={"request": "top100in2weeks"})
+    games = sorted(top.values(), key=lambda g: -g["ccu"])[:5]
+    show({"top_by_peak_concurrent_players_2_weeks": [
+        {"name": g["name"], "developer": g["developer"], "owners": g["owners"], "peak_ccu": g["ccu"],
+         "positive_review_pct": round(100 * g["positive"] / max(g["positive"] + g["negative"], 1)),
+         "price_usd": int(g["price"] or 0) / 100} for g in games]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:10</summary>
+
+```json
+{
+  "top_by_peak_concurrent_players_2_weeks": [
+    {
+      "name": "Counter-Strike: Global Offensive",
+      "developer": "Valve",
+      "owners": "100,000,000 .. 200,000,000",
+      "peak_ccu": 1013936,
+      "positive_review_pct": 87,
+      "price_usd": 0.0
+    },
+    {
+      "name": "PUBG: BATTLEGROUNDS",
+      "developer": "PUBG Corporation",
+      "owners": "100,000,000 .. 200,000,000",
+      "peak_ccu": 314682,
+      "positive_review_pct": 59,
+      "price_usd": 0.0
+    },
+    {
+      "name": "Rust",
+      "developer": "Facepunch Studios",
+      "owners": "20,000,000 .. 50,000,000",
+      "peak_ccu": 143870,
+      "positive_review_pct": 87,
+      "price_usd": 39.99
+    },
+    {
+      "name": "Apex Legends",
+      "developer": "Respawn",
+      "owners": "100,000,000 .. 200,000,000",
+      "peak_ccu": 124262,
+      "positive_review_pct": 67,
+      "price_usd": 0.0
+    },
+    {
+      "name": "Wallpaper Engine",
+      "developer": "Wallpaper Engine Team",
+      "owners": "20,000,000 .. 50,000,000",
+      "peak_ccu": 91184,
+      "positive_review_pct": 98,
+      "price_usd": 4.99
+    }
+  ]
+}
+```
+</details>
+
+---
+
 ### TMDB (The Movie Database)
 
 | | |
@@ -14235,6 +15171,213 @@ def main():
 [
   {"title": "Example Blockbuster", "release_date": "2026-10-03", "vote_average": 7.6, "vote_count": 812, "popularity": 1543.2}
 ]
+```
+</details>
+
+---
+
+### TVmaze API (TV shows & schedules)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.tvmaze.com/api |
+| **Auth** | None |
+| **Register / token** | No registration. At least 20 calls / 10 seconds. CC BY-SA licence (attribute TVmaze). |
+| **Script** | [`scripts/culture_misc/tvmaze.py`](scripts/culture_misc/tvmaze.py) |
+
+**What you can get:**
+
+- TV shows: genres, network/streaming service, premiere/end dates, runtime, rating, status, summary
+- Episodes with air dates, cast and crew, full daily schedules by country (incl. streaming 'web' schedule)
+- Lookup by IMDb/TheTVDB IDs; changes feed for keeping a local copy up to date
+
+**Capstone ideas:** Streaming vs. broadcast release strategies, show cancellation prediction, ratings by genre.
+
+**Endpoint:** `GET https://api.tvmaze.com/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search/shows?q=` | Fuzzy show search with relevance score | `q=office` |
+| `shows/{id}?embed[]=` | Show details; embed episodes, cast, seasons | `shows/526?embed[]=cast` |
+| `schedule?country=&date=` | Everything airing on broadcast TV that day | `country=US&date=2026-10-12` |
+| `schedule/web?date=` | Streaming releases (Netflix, Prime, ...) | `date=2026-10-12` |
+| `lookup/shows?imdb=` | Find a show by IMDb ID (answers with a 301 redirect to the show record) | `imdb=tt0386676` |
+| `shows?page=` | Full index, 250 shows per page | `0` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    web = get("https://api.tvmaze.com/schedule/web", params={"date": "2026-10-10"})
+    shows = {e["_embedded"]["show"]["id"]: e["_embedded"]["show"] for e in web if e.get("_embedded")}
+    services = Counter((s.get("webChannel") or {}).get("name") for s in shows.values())
+    show({"date": "2026-10-10", "streaming_episodes_released": len(web), "distinct_shows": len(shows),
+          "by_service": services.most_common(5),
+          "examples": [{"show": s["name"], "service": (s.get("webChannel") or {}).get("name"), "genres": s["genres"],
+                        "rating": s["rating"]["average"]} for s in list(shows.values())[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:10</summary>
+
+```json
+{
+  "date": "2026-10-10",
+  "streaming_episodes_released": 166,
+  "distinct_shows": 52,
+  "by_service": [
+    [
+      "Tencent QQ",
+      10
+    ],
+    [
+      "YouTube",
+      8
+    ],
+    [
+      "iQIYI",
+      7
+    ],
+    [
+      "GagaOOLala",
+      4
+    ],
+    [
+      "Youku",
+      3
+    ]
+  ],
+  "examples": [
+    {
+      "show": "Трое из Простоквашино",
+      "service": "Okko",
+      "genres": [
+        "Children",
+        "Family"
+      ],
+      "rating": 7.5
+    },
+    {
+      "show": "КСТАТИ",
+      "service": "VK Видео Originals",
+      "genres": [
+        "Comedy",
+        "Music"
+      ],
+      "rating": null
+    },
+    {
+      "show": "Чудо",
+      "service": "КиноПоиск",
+      "genres": [
+        "Drama",
+        "Mystery"
+      ],
+      "rating": null
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Wikidata Query Service (SPARQL)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service |
+| **Auth** | None (descriptive User-Agent required) |
+| **Register / token** | No registration. 60-second query timeout, one query at a time. Build and test queries interactively at https://query.wikidata.org first. CC0 data. |
+| **Script** | [`scripts/culture_misc/wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
+
+**What you can get:**
+
+- Structured facts on 110M+ items: films, awards, books, people, places, companies, artworks
+- Arbitrary joins: e.g. award winners with release dates, directors, box office, birthplaces
+- IDs that link to IMDb, MusicBrainz, Discogs, VIAF, OpenAlex and more
+
+**Capstone ideas:** Linking entertainment datasets via shared IDs, award-winner analyses, gender/diversity studies in film and music.
+
+**Endpoint:** `GET https://query.wikidata.org/sparql`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | SPARQL query (wd: items, wdt: direct properties, p:/ps:/pq: for qualifiers) | `SELECT ?film WHERE { ?film wdt:P31 wd:Q11424 } LIMIT 5` |
+| `format` | json \| xml \| csv (or Accept header) | `json` |
+| `common IDs` | Q11424 film, P166 award received, P585 point in time, P57 director, P345 IMDb ID | `—` |
+| `SERVICE wikibase:label` | Adds human-readable ?xLabel variables | `bd:serviceParam wikibase:language "en"` |
+
+```python
+from _common import get, show
+
+QUERY = """
+SELECT ?filmLabel ?year ?directorLabel WHERE {
+  ?film wdt:P31 wd:Q11424 ;                      # instance of: film
+        p:P166 ?award .
+  ?award ps:P166 wd:Q102427 ; pq:P585 ?date .    # Academy Award for Best Picture, with date
+  OPTIONAL { ?film wdt:P57 ?director . }
+  BIND(YEAR(?date) AS ?year)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+} ORDER BY DESC(?year) LIMIT 8
+"""
+
+
+def main():
+    rows = get("https://query.wikidata.org/sparql", params={"query": QUERY, "format": "json"})["results"]["bindings"]
+    show({"best_picture_winners": [{"year": r["year"]["value"], "film": r["filmLabel"]["value"],
+                                    "director": r.get("directorLabel", {}).get("value")} for r in rows]}, max_items=8)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:10</summary>
+
+```json
+{
+  "best_picture_winners": [
+    {
+      "year": "2026",
+      "film": "One Battle After Another",
+      "director": "Paul Thomas Anderson"
+    },
+    {
+      "year": "2025",
+      "film": "Anora",
+      "director": "Sean Baker"
+    },
+    {
+      "year": "2024",
+      "film": "Oppenheimer",
+      "director": "Christopher Nolan"
+    },
+    {
+      "year": "2023",
+      "film": "Everything Everywhere All at Once",
+      "director": "Dan Kwan"
+    },
+    {
+      "year": "2023",
+      "film": "Everything Everywhere All at Once",
+      "director": "Daniel Scheinert"
+    },
+    {
+      "year": "2022",
+      "film": "CODA",
+      "director": "Siân Héder"
+    },
+    {
+      "year": "2021",
+      "film": "Nomadland",
+      "director": "Chloé Zhao"
+    },
+    {
+      "year": "2020",
+      "film": "Parasite",
+      "director": "Bong Joon-ho"
+    }
+  ]
+}
 ```
 </details>
 
