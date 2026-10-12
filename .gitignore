@@ -3,3 +3,5 @@
 __pycache__/
 *.pyc
 .env
+Report_Gen/HANDOFF.md
+Report_Gen/diagram_template.py
