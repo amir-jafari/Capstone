@@ -25,9 +25,11 @@ DOMAINS = [
     ("census_demographics", "👥", "Census & Demographics"),
     ("politics_government", "🏛️", "Political Science & Government"),
     ("health", "🩺", "Health & Social Science"),
+    ("education", "🎓", "Education"),
     ("science_research", "🔬", "Science & Research"),
     ("engineering_energy", "⚙️", "Engineering, Energy & Tech"),
     ("transportation_geo", "🗺️", "Transportation & Geospatial"),
+    ("sports", "🏅", "Sports"),
     ("culture_misc", "🎬", "Culture, Books & Entertainment"),
 ]
 
@@ -143,7 +145,7 @@ def main():
 HEADER = """# Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather, finance, census,
-> political science, health, science, engineering, transportation, and culture.
+> political science, health, education, science, engineering, transportation, sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 
@@ -162,7 +164,7 @@ python build_readme.py          # re-run everything & regenerate this README
 - Sample outputs marked **live run** were produced by actually running the script (saved in [`samples/`](samples/)).
   Outputs marked **⚠️ illustrative** could not be run live (key required or rate-limited); they show the response shape from the official docs.
 - **One key, many APIs:** a free [api.data.gov key](https://api.data.gov/signup/) works for Congress.gov,
-  OpenFEC, Regulations.gov, NASA, and NLR (formerly NREL). Set it as `DATA_GOV_API_KEY`.
+  OpenFEC, Regulations.gov, College Scorecard, NASA, and NLR (formerly NREL). Set it as `DATA_GOV_API_KEY`.
 - Always check each API's terms of use (non-commercial clauses, attribution, rate limits) before
   publishing a dataset built from it, and **never commit `.env`** (it is git-ignored).
 """

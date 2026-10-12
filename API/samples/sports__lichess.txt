@@ -1,0 +1,33 @@
+# live 2026-10-11 20:46
+[
+  {
+    "username": "athena-pallada",
+    "title": "GM",
+    "blitz_rating": 2991,
+    "progress": -10
+  },
+  {
+    "username": "cutemouse83",
+    "title": "GM",
+    "blitz_rating": 2985,
+    "progress": -8
+  },
+  {
+    "username": "Real_G13M37",
+    "title": null,
+    "blitz_rating": 2955,
+    "progress": 9
+  },
+  {
+    "username": "tarzansmurf",
+    "title": null,
+    "blitz_rating": 2955,
+    "progress": 47
+  },
+  {
+    "username": "Lintchevski_Daniil",
+    "title": "GM",
+    "blitz_rating": 2944,
+    "progress": 4
+  }
+]

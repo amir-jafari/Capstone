@@ -1,0 +1,43 @@
+# live 2026-10-11 20:46
+[
+  {
+    "year": 2019,
+    "jurisdiction": "District of Columbia",
+    "grade8_math_avg_score": 269.2
+  },
+  {
+    "year": 2019,
+    "jurisdiction": "Maryland",
+    "grade8_math_avg_score": 280.1
+  },
+  {
+    "year": 2019,
+    "jurisdiction": "National public",
+    "grade8_math_avg_score": 281.0
+  },
+  {
+    "year": 2019,
+    "jurisdiction": "Virginia",
+    "grade8_math_avg_score": 287.1
+  },
+  {
+    "year": 2024,
+    "jurisdiction": "District of Columbia",
+    "grade8_math_avg_score": 261.5
+  },
+  {
+    "year": 2024,
+    "jurisdiction": "Maryland",
+    "grade8_math_avg_score": 268.2
+  },
+  {
+    "year": 2024,
+    "jurisdiction": "National public",
+    "grade8_math_avg_score": 272.2
+  },
+  {
+    "year": 2024,
+    "jurisdiction": "Virginia",
+    "grade8_math_avg_score": 275.0
+  }
+]

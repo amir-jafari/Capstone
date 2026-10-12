@@ -1,0 +1,17 @@
+# live 2026-10-11 20:46
+{
+  "team": {
+    "strTeam": "Arsenal",
+    "strLeague": "English Premier League",
+    "intFormedYear": "1892",
+    "strStadium": "Emirates Stadium"
+  },
+  "last_results": [
+    {
+      "dateEvent": "2026-10-10",
+      "strEvent": "Arsenal vs Leeds United",
+      "intHomeScore": "2",
+      "intAwayScore": "1"
+    }
+  ]
+}

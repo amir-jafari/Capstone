@@ -1,0 +1,23 @@
+# live 2026-10-11 20:46
+[
+  {
+    "country": "BRA",
+    "year": 2024,
+    "primary_completion_rate_pct": 97.6
+  },
+  {
+    "country": "IND",
+    "year": 2019,
+    "primary_completion_rate_pct": 94.2
+  },
+  {
+    "country": "NGA",
+    "year": 2024,
+    "primary_completion_rate_pct": 77.4
+  },
+  {
+    "country": "USA",
+    "year": 2024,
+    "primary_completion_rate_pct": 99.6
+  }
+]

@@ -1,0 +1,43 @@
+# live 2026-10-11 20:46
+{
+  "season": "2025",
+  "after_round": "24",
+  "standings": [
+    {
+      "pos": "1",
+      "driver": "Lando Norris",
+      "team": "McLaren",
+      "points": "423",
+      "wins": "7"
+    },
+    {
+      "pos": "2",
+      "driver": "Max Verstappen",
+      "team": "Red Bull",
+      "points": "421",
+      "wins": "8"
+    },
+    {
+      "pos": "3",
+      "driver": "Oscar Piastri",
+      "team": "McLaren",
+      "points": "410",
+      "wins": "7"
+    },
+    {
+      "pos": "4",
+      "driver": "George Russell",
+      "team": "Mercedes",
+      "points": "319",
+      "wins": "2"
+    },
+    {
+      "pos": "5",
+      "driver": "Charles Leclerc",
+      "team": "Ferrari",
+      "points": "242",
+      "wins": "0"
+    },
+    "... (16 more)"
+  ]
+}

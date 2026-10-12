@@ -1,0 +1,46 @@
+# live 2026-10-11 20:46
+[
+  {
+    "team": "Brewers",
+    "W": 103,
+    "L": 59,
+    "pct": ".636",
+    "run_diff": 214
+  },
+  {
+    "team": "Dodgers",
+    "W": 100,
+    "L": 62,
+    "pct": ".617",
+    "run_diff": 201
+  },
+  {
+    "team": "Rays",
+    "W": 98,
+    "L": 64,
+    "pct": ".605",
+    "run_diff": 86
+  },
+  {
+    "team": "Braves",
+    "W": 94,
+    "L": 68,
+    "pct": ".580",
+    "run_diff": 116
+  },
+  {
+    "team": "Yankees",
+    "W": 93,
+    "L": 68,
+    "pct": ".578",
+    "run_diff": 138
+  },
+  {
+    "team": "Padres",
+    "W": 91,
+    "L": 71,
+    "pct": ".562",
+    "run_diff": 41
+  },
+  "... (24 more)"
+]

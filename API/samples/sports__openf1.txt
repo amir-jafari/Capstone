@@ -1,0 +1,41 @@
+# live 2026-10-11 20:46
+{
+  "session": {
+    "session_key": 9693,
+    "location": "Melbourne",
+    "date_start": "2025-03-16T04:00:00+00:00"
+  },
+  "laps_driver_1": [
+    {
+      "lap_number": 2,
+      "lap_duration": 169.322,
+      "duration_sector_1": 58.141,
+      "st_speed": 210
+    },
+    {
+      "lap_number": 3,
+      "lap_duration": 162.145,
+      "duration_sector_1": 56.23,
+      "st_speed": 180
+    },
+    {
+      "lap_number": 4,
+      "lap_duration": 155.775,
+      "duration_sector_1": 54.351,
+      "st_speed": 187
+    },
+    {
+      "lap_number": 5,
+      "lap_duration": 143.609,
+      "duration_sector_1": 53.513,
+      "st_speed": 194
+    },
+    {
+      "lap_number": 6,
+      "lap_duration": 139.654,
+      "duration_sector_1": 47.887,
+      "st_speed": 127
+    },
+    "... (51 more)"
+  ]
+}

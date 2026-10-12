@@ -1,0 +1,33 @@
+# live 2026-10-11 20:46
+{
+  "season": 2026,
+  "week": 5,
+  "games": [
+    {
+      "name": "BAL @ ATL",
+      "status": "In Progress",
+      "score": "ATL 7 - BAL 3"
+    },
+    {
+      "name": "PHI VS JAX",
+      "status": "Final",
+      "score": "JAX 19 - PHI 17"
+    },
+    {
+      "name": "CHI @ GB",
+      "status": "Final",
+      "score": "GB 31 - CHI 7"
+    },
+    {
+      "name": "HOU @ TEN",
+      "status": "Final",
+      "score": "TEN 3 - HOU 26"
+    },
+    {
+      "name": "CIN @ MIA",
+      "status": "Final",
+      "score": "MIA 24 - CIN 31"
+    },
+    "... (10 more)"
+  ]
+}

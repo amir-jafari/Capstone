@@ -1,0 +1,52 @@
+# live 2026-10-11 20:46
+{
+  "as_of": "2026-10-12T00:46:30Z",
+  "top_teams": [
+    {
+      "team": "Vegas Golden Knights",
+      "GP": 6,
+      "W": 5,
+      "L": 1,
+      "PTS": 10,
+      "GF": 23,
+      "GA": 14
+    },
+    {
+      "team": "New York Rangers",
+      "GP": 7,
+      "W": 5,
+      "L": 2,
+      "PTS": 10,
+      "GF": 23,
+      "GA": 13
+    },
+    {
+      "team": "Edmonton Oilers",
+      "GP": 5,
+      "W": 4,
+      "L": 0,
+      "PTS": 9,
+      "GF": 25,
+      "GA": 17
+    },
+    {
+      "team": "Carolina Hurricanes",
+      "GP": 6,
+      "W": 4,
+      "L": 1,
+      "PTS": 9,
+      "GF": 23,
+      "GA": 16
+    },
+    {
+      "team": "Tampa Bay Lightning",
+      "GP": 5,
+      "W": 4,
+      "L": 1,
+      "PTS": 8,
+      "GF": 16,
+      "GA": 12
+    },
+    "... (27 more)"
+  ]
+}

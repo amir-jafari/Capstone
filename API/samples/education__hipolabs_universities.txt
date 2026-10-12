@@ -1,0 +1,38 @@
+# live 2026-10-11 20:46
+[
+  {
+    "name": "Washington University, Saint Louis",
+    "domains": [
+      "wustl.edu"
+    ],
+    "web": "http://www.wustl.edu/"
+  },
+  {
+    "name": "Washington & Jefferson College",
+    "domains": [
+      "washjeff.edu"
+    ],
+    "web": "http://www.washjeff.edu/"
+  },
+  {
+    "name": "Washington & Lee University",
+    "domains": [
+      "wlu.edu"
+    ],
+    "web": "http://www.wlu.edu/"
+  },
+  {
+    "name": "Washington State University",
+    "domains": [
+      "wsu.edu"
+    ],
+    "web": "http://www.wsu.edu/"
+  },
+  {
+    "name": "Washington State University at Vancouver",
+    "domains": [
+      "vancouver.wsu.edu"
+    ],
+    "web": "http://www.vancouver.wsu.edu/"
+  }
+]
