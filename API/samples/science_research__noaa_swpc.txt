@@ -1,0 +1,46 @@
+# live 2026-10-12 10:34
+{
+  "kp_last_week": {
+    "max": 7.0,
+    "at": "2026-10-10T15:00:00",
+    "storm": true
+  },
+  "latest_kp": [
+    {
+      "time_tag": "2026-10-12T03:00:00",
+      "Kp": 2.33,
+      "a_running": 9,
+      "station_count": 8
+    },
+    {
+      "time_tag": "2026-10-12T06:00:00",
+      "Kp": 3.33,
+      "a_running": 18,
+      "station_count": 8
+    },
+    {
+      "time_tag": "2026-10-12T09:00:00",
+      "Kp": 1.33,
+      "a_running": 5,
+      "station_count": 8
+    }
+  ],
+  "monthly_sunspot_number": [
+    {
+      "month": "2026-06",
+      "ssn": 94.4
+    },
+    {
+      "month": "2026-07",
+      "ssn": 78.1
+    },
+    {
+      "month": "2026-08",
+      "ssn": 76.0
+    },
+    {
+      "month": "2026-09",
+      "ssn": 60.3
+    }
+  ]
+}

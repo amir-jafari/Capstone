@@ -1,0 +1,36 @@
+# live 2026-10-12 10:34
+{
+  "gwu_awards_since_2025 (first page of 25)": 25,
+  "awardee": "GEORGE WASHINGTON UNIVERSITY (THE)",
+  "total_obligated_usd (first page)": 10642251,
+  "largest": [
+    {
+      "title": "VINES: Track 2: CERTAIN: Connectivity Effectiveness and Reliability Through AI-native Networking",
+      "pi": "Tian Lan",
+      "amount_usd": "1699107",
+      "program": "TIP-CHIPS KTA-6 Communications",
+      "start": "06/15/2026"
+    },
+    {
+      "title": "NSF/BIO-UKRI/BBSRC: Tipping the balance of amphibian microbiome-immune interactions towards greater antifungal defences",
+      "pi": "Leon Grayfer",
+      "amount_usd": "1199311",
+      "program": "Cross-BIO Activities",
+      "start": "08/01/2026"
+    },
+    {
+      "title": "Investigating Nucleon Structure with Electromagnetic Probes",
+      "pi": "Evangeline Downie",
+      "amount_usd": "750000",
+      "program": "Nuclear Physics - Experiment",
+      "start": "07/01/2026"
+    },
+    {
+      "title": "CICI: UCSS: Trustworthy Cyberinfrastructure-Enabled Data-Driven Electronic Design Automation for Collaborative Design of Analog/Mixed-Signal Integrated Circuits",
+      "pi": "Weidong Cao",
+      "amount_usd": "600000",
+      "program": "Cybersecurity Innovation",
+      "start": "09/01/2026"
+    }
+  ]
+}

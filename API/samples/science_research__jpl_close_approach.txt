@@ -1,0 +1,39 @@
+# live 2026-10-12 10:34
+{
+  "approaches_within_1_lunar_distance_next_60_days": 4,
+  "closest": [
+    {
+      "object": "2026 TP6",
+      "date": "2026-Oct-15 00:01",
+      "distance_lunar": 0.57,
+      "velocity_km_s": 10.3,
+      "H": "27.288"
+    },
+    {
+      "object": "2026 TG9",
+      "date": "2026-Oct-14 04:58",
+      "distance_lunar": 0.59,
+      "velocity_km_s": 11.6,
+      "H": "26.99"
+    },
+    {
+      "object": "2025 UK9",
+      "date": "2026-Oct-31 02:35",
+      "distance_lunar": 0.82,
+      "velocity_km_s": 7.8,
+      "H": "29.83"
+    },
+    {
+      "object": "2026 TF59",
+      "date": "2026-Oct-12 17:36",
+      "distance_lunar": 0.96,
+      "velocity_km_s": 7.0,
+      "H": "28.589"
+    }
+  ],
+  "apophis": {
+    "name": "99942 Apophis (2004 MN4)",
+    "diameter_km": "0.34",
+    "albedo": "0.35"
+  }
+}

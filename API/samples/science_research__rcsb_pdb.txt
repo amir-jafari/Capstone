@@ -1,0 +1,42 @@
+# live 2026-10-12 10:34
+{
+  "matching_entries": 3384,
+  "latest": [
+    {
+      "pdb_id": "26DA",
+      "title": "Cryo-EM structure of spike protein within graphene reservoir sandwich",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        2.88
+      ],
+      "released": "2026-10-07"
+    },
+    {
+      "pdb_id": "9TGC",
+      "title": "Structure of B10 anti-stem antibody in complex with ZEBOV spike complex",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        2.5
+      ],
+      "released": "2026-10-07"
+    },
+    {
+      "pdb_id": "9X23",
+      "title": "Ra22QT77 RBD in complex with Bat ACE2",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        2.51
+      ],
+      "released": "2026-10-07"
+    },
+    {
+      "pdb_id": "38PM",
+      "title": "Australian bat lyssavirus glycoprotein PH domain in complex with broadly neutralizing human antibodies A6 and RVC20",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        3.6
+      ],
+      "released": "2026-09-30"
+    }
+  ]
+}

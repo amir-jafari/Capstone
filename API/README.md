@@ -1,7 +1,7 @@
 # Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
-> census, housing, political science, law, health, agriculture & food, education, jobs & labor, science, AI & machine learning,
+> census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning,
 > engineering & energy, transportation, sports, and culture, media & entertainment.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
@@ -151,73 +151,90 @@ python build_readme.py          # re-run everything & regenerate this README
 | 120 | 💼 Jobs & Labor | [O*NET Web Services (occupations & skills)](#onet-web-services-occupations--skills) | 🔑 key | `ONET_API_KEY` | [`onet.py`](scripts/jobs/onet.py) |
 | 121 | 💼 Jobs & Labor | [Remotive (remote jobs)](#remotive-remote-jobs) | 🟢 no key | — | [`remotive.py`](scripts/jobs/remotive.py) |
 | 122 | 💼 Jobs & Labor | [The Muse Public API (jobs)](#the-muse-public-api-jobs) | 🟢 no key | `THEMUSE_API_KEY (optional)` | [`the_muse.py`](scripts/jobs/the_muse.py) |
-| 123 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 124 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 125 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 126 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 127 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 128 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 129 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 130 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 131 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 132 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 133 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 134 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 135 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 136 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 137 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 138 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 139 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 140 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 141 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
-| 142 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 143 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 144 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
-| 145 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 146 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 147 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
-| 148 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
-| 149 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
-| 150 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 151 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 152 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 153 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 154 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 155 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 156 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 157 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 158 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 159 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 160 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 161 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 162 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 163 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 164 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 165 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 166 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 167 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 168 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 169 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 170 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 171 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 172 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 173 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
-| 174 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
-| 175 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
-| 176 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
-| 177 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
-| 178 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
-| 179 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
-| 180 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
-| 181 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 182 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
-| 183 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 184 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
-| 185 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
-| 186 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
-| 187 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
-| 188 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
-| 189 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
+| 123 | 🔬 Science, Space & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 124 | 🔬 Science, Space & Research | [CelesTrak (satellite orbital elements)](#celestrak-satellite-orbital-elements) | 🟢 no key | — | [`celestrak.py`](scripts/science_research/celestrak.py) |
+| 125 | 🔬 Science, Space & Research | [CERN Open Data Portal](#cern-open-data-portal) | 🟢 no key | — | [`cern_open_data.py`](scripts/science_research/cern_open_data.py) |
+| 126 | 🔬 Science, Space & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 127 | 🔬 Science, Space & Research | [JPL Small-Body Close Approach & SBDB APIs](#jpl-small-body-close-approach--sbdb-apis) | 🟢 no key | — | [`jpl_close_approach.py`](scripts/science_research/jpl_close_approach.py) |
+| 128 | 🔬 Science, Space & Research | [JPL Fireball (bolide) API](#jpl-fireball-bolide-api) | 🟢 no key | — | [`jpl_fireball.py`](scripts/science_research/jpl_fireball.py) |
+| 129 | 🔬 Science, Space & Research | [JPL Horizons (ephemerides)](#jpl-horizons-ephemerides) | 🟢 no key | — | [`jpl_horizons.py`](scripts/science_research/jpl_horizons.py) |
+| 130 | 🔬 Science, Space & Research | [Launch Library 2 (The Space Devs)](#launch-library-2-the-space-devs) | 🟢 no key | — | [`launch_library.py`](scripts/science_research/launch_library.py) |
+| 131 | 🔬 Science, Space & Research | [Materials Project API](#materials-project-api) | 🔑 key | `MP_API_KEY` | [`materials_project.py`](scripts/science_research/materials_project.py) |
+| 132 | 🔬 Science, Space & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 133 | 🔬 Science, Space & Research | [NASA Exoplanet Archive (TAP)](#nasa-exoplanet-archive-tap) | 🟢 no key | — | [`nasa_exoplanet_archive.py`](scripts/science_research/nasa_exoplanet_archive.py) |
+| 134 | 🔬 Science, Space & Research | [NASA Image and Video Library](#nasa-image-and-video-library) | 🟢 no key | — | [`nasa_image_library.py`](scripts/science_research/nasa_image_library.py) |
+| 135 | 🔬 Science, Space & Research | [NIH RePORTER API](#nih-reporter-api) | 🟢 no key | — | [`nih_reporter.py`](scripts/science_research/nih_reporter.py) |
+| 136 | 🔬 Science, Space & Research | [NOAA Space Weather Prediction Center (SWPC) data](#noaa-space-weather-prediction-center-swpc-data) | 🟢 no key | — | [`noaa_swpc.py`](scripts/science_research/noaa_swpc.py) |
+| 137 | 🔬 Science, Space & Research | [NSF Award Search API](#nsf-award-search-api) | 🟢 no key | — | [`nsf_awards.py`](scripts/science_research/nsf_awards.py) |
+| 138 | 🔬 Science, Space & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 139 | 🔬 Science, Space & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 140 | 🔬 Science, Space & Research | [RCSB Protein Data Bank (search + data APIs)](#rcsb-protein-data-bank-search--data-apis) | 🟢 no key | — | [`rcsb_pdb.py`](scripts/science_research/rcsb_pdb.py) |
+| 141 | 🔬 Science, Space & Research | [ROR (Research Organization Registry)](#ror-research-organization-registry) | 🟢 no key | — | [`ror.py`](scripts/science_research/ror.py) |
+| 142 | 🔬 Science, Space & Research | [SDSS SkyServer (Sloan Digital Sky Survey)](#sdss-skyserver-sloan-digital-sky-survey) | 🟢 no key | — | [`sdss_skyserver.py`](scripts/science_research/sdss_skyserver.py) |
+| 143 | 🔬 Science, Space & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 144 | 🔬 Science, Space & Research | [Spaceflight News API (SNAPI)](#spaceflight-news-api-snapi) | 🟢 no key | — | [`spaceflight_news.py`](scripts/science_research/spaceflight_news.py) |
+| 145 | 🔬 Science, Space & Research | [Zenodo (research data & software repository)](#zenodo-research-data--software-repository) | 🟢 no key | — | [`zenodo.py`](scripts/science_research/zenodo.py) |
+| 146 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 147 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 148 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 149 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 150 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 151 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 152 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 153 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 154 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 155 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 156 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 157 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 158 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
+| 159 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 160 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 161 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
+| 162 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 163 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 164 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
+| 165 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
+| 166 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
+| 167 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 168 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 169 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 170 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 171 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 172 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 173 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 174 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 175 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 176 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 177 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 178 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 179 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 180 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 181 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 182 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 183 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 184 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 185 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 186 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 187 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 188 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 189 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 190 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
+| 191 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
+| 192 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
+| 193 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
+| 194 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
+| 195 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
+| 196 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
+| 197 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
+| 198 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 199 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
+| 200 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 201 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
+| 202 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
+| 203 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
+| 204 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 205 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
+| 206 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -10058,7 +10075,7 @@ def main():
 
 ---
 
-## 🔬 Science & Research
+## 🔬 Science, Space & Research
 
 ### arXiv API
 
@@ -10104,41 +10121,216 @@ def main():
           for e in root.findall("a:entry", NS)], max_str=200)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
 
 ```json
 [
   {
-    "title": "ViSkill: Reinforcing VLM Agents with Evolving Visual-Native Skills",
-    "published": "2026-10-08T17:44:19Z",
+    "title": "Tracing and Taming Hallucinated Terms via Subsequence-Association Filtering and Breadth-Aware Selection for LLM Query Expansion",
+    "published": "2026-10-09T16:22:16Z",
     "authors": [
-      "Hongxing Li",
-      "Dingming Li",
-      "Yixin Li"
+      "Amit Kumar Jaiswal",
+      "Sagar Uprety",
+      "Prayag Tiwari"
     ],
-    "abstract": "Skill-augmented agents improve sample efficiency by distilling successful trajectories into reusable strategies. Yet most existing approaches remain text-centric, linearizing spatial layouts and actio..."
+    "abstract": "Large language models (LLMs) are now a standard source of query expansion terms but they hallucinate. They inject non existent entities and off-topic terms that add ranking noise and can hurt strong r..."
   },
   {
-    "title": "Which Skill to Distill? SGUID: Selecting a Compact Skill Bank for Model-Skill Co-Evolution",
-    "published": "2026-10-08T17:27:53Z",
+    "title": "Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy",
+    "published": "2026-10-09T15:02:35Z",
     "authors": [
-      "Yuhan Liu",
-      "Xiyao Ma",
-      "Zhongkai Sun"
+      "Naji Alazhar",
+      "Wassel Alazhar"
     ],
-    "abstract": "Skills, reusable procedural guidance added at inference, can substantially improve LLM downstream performance (Li et al., 2026). Prior work retrieves skills from a bank by semantic relevance, then use..."
+    "abstract": "Long-context serving runs out of KV memory before the hardware reaches its useful throughput. HiSparse stores history in host memory and fetches only the selected entries, but it uses one cache budget..."
   },
   {
-    "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
-    "published": "2026-10-08T17:25:06Z",
+    "title": "Verifiable Retrieval for Legal Reasoning through Structure-driven Knowledge Graph",
+    "published": "2026-10-09T14:56:31Z",
     "authors": [
-      "Kaiser Sun",
-      "Bernal Jimenez Gutierrez",
-      "Hongjun Liu"
+      "Ibrahim Siddig",
+      "Sviatoslav Tugeev",
+      "Munir Georges"
     ],
-    "abstract": "When retrieved evidence contradicts an agent's prior beliefs, does it revise its answer, acknowledge uncertainty, or persist with an incorrect conclusion? Existing evaluations of agentic systems focus..."
+    "abstract": "Any automation within reliability-critical contexts such as medicine or law has to be transparent and verifiable. Despite their advantages, current LLM-based systems do not meet these requirements due..."
   }
 ]
+```
+</details>
+
+---
+
+### CelesTrak (satellite orbital elements)
+
+| | |
+|:--|:--|
+| **Docs** | https://celestrak.org/NORAD/documentation/gp-data-formats.php |
+| **Auth** | None |
+| **Register / token** | No registration. Download each group at most once every 2 hours - a repeat request returns HTTP 403 until the data updates. Elements use the OMM format; propagate positions with the sgp4 Python package. |
+| **Script** | [`scripts/science_research/celestrak.py`](scripts/science_research/celestrak.py) |
+
+**What you can get:**
+
+- Current orbital elements (General Perturbations) for ~30,000 tracked objects: stations, Starlink, GPS, weather sats, debris
+- Epoch, inclination, eccentricity, mean motion, NORAD ID, international designator
+- SATCAT catalog: owner country, launch date, decay date, object type
+
+**Capstone ideas:** Satellite-constellation growth (Starlink), orbital-debris analysis, pass prediction with sgp4.
+
+**Endpoint:** `GET https://celestrak.org/NORAD/elements/gp.php`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `GROUP` | Named set: stations \| starlink \| gps-ops \| weather \| active \| last-30-days \| ... | `starlink` |
+| `CATNR / INTDES / NAME` | Single object by NORAD number, international designator, or name | `CATNR=25544 (ISS)` |
+| `FORMAT` | json \| csv \| xml \| tle \| 3le | `json` |
+| `satcat/records.php?GROUP=` | Sibling endpoint: catalog records (owner, launch, decay) | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    starlink = get("https://celestrak.org/NORAD/elements/gp.php", params={"GROUP": "starlink", "FORMAT": "json"})
+    iss = get("https://celestrak.org/NORAD/elements/gp.php", params={"CATNR": 25544, "FORMAT": "json"})[0]
+    shells = {}
+    for s in starlink:
+        shells[round(s["INCLINATION"])] = shells.get(round(s["INCLINATION"]), 0) + 1
+    show({"starlink_satellites_tracked": len(starlink),
+          "starlink_by_inclination_deg": dict(sorted(shells.items(), key=lambda kv: -kv[1])[:5]),
+          "iss": {k: iss[k] for k in ("OBJECT_NAME", "EPOCH", "INCLINATION", "MEAN_MOTION", "ECCENTRICITY")} |
+                 {"orbital_period_min": round(1440 / iss["MEAN_MOTION"], 1)}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12</summary>
+
+```json
+{
+  "starlink_satellites_tracked": 11102,
+  "starlink_by_inclination_deg": {
+    "53": 5095,
+    "43": 3614,
+    "97": 1513,
+    "70": 870,
+    "98": 10
+  },
+  "iss": {
+    "OBJECT_NAME": "ISS (ZARYA)",
+    "EPOCH": "2026-10-12T03:27:40.741056",
+    "INCLINATION": 51.6314,
+    "MEAN_MOTION": 15.48833724,
+    "ECCENTRICITY": 0.00067311,
+    "orbital_period_min": 93.0
+  }
+}
+```
+</details>
+
+---
+
+### CERN Open Data Portal
+
+| | |
+|:--|:--|
+| **Docs** | https://opendata.cern.ch/docs/about |
+| **Auth** | None |
+| **Register / token** | No registration. Real LHC collision data (CMS, ATLAS, LHCb, ALICE) plus simulations, software and educational datasets small enough for a laptop. Bulk files via HTTP or the cernopendata-client. |
+| **Script** | [`scripts/science_research/cern_open_data.py`](scripts/science_research/cern_open_data.py) |
+
+**What you can get:**
+
+- Record search over datasets, simulated data, software, documentation; experiment, year, type, size
+- Derived/educational datasets (e.g. dimuon events for Higgs/Z-boson exercises) as CSV
+- File lists with sizes and download URIs
+
+**Capstone ideas:** Particle-classification ML on real collision events, reproducing the Higgs/Z peak from the dimuon spectrum.
+
+**Endpoint:** `GET https://opendata.cern.ch/api/records/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Search text | `higgs` |
+| `type` | Dataset \| Software \| Documentation; add a subtype as type=Dataset::Derived (Collision \| Simulated \| Derived) | `Dataset::Derived` |
+| `experiment` | CMS \| ATLAS \| LHCb \| ALICE \| ... | `CMS` |
+| `size / page / sort` | Paging and sort (mostrecent, bestmatch) | `5` |
+| `/api/records/{recid}` | One record with files | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    # Subtypes are given as type=Dataset::Derived (a separate subtype= parameter is ignored)
+    d = get("https://opendata.cern.ch/api/records/", params={"q": "dimuon", "type": "Dataset::Derived", "size": 5})
+    show({"matching_educational_datasets": d["hits"]["total"], "examples": [
+        {"recid": h["metadata"].get("recid"), "title": h["metadata"]["title"],
+         "experiment": h["metadata"].get("experiment"), "year": h["metadata"].get("date_created"),
+         "files": len(h["metadata"].get("files", []))} for h in d["hits"]["hits"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "matching_educational_datasets": 5,
+  "examples": [
+    {
+      "recid": "700",
+      "title": "Dimuon event information derived from the Run2010B public Mu dataset",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 11
+    },
+    {
+      "recid": "301",
+      "title": "J/psi to two muons from 2010",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 22
+    },
+    {
+      "recid": "310",
+      "title": "Event files for CMS masterclass exercise 2014",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 77
+    },
+    {
+      "recid": "545",
+      "title": "Datasets derived from the Run2011A SingleElectron, SingleMu, DoubleElectron, and DoubleMu primary datasets",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2011"
+      ],
+      "files": 8
+    },
+    {
+      "recid": "303",
+      "title": "Events with two muons from 2010",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 12
+    }
+  ]
+}
 ```
 </details>
 
@@ -10184,7 +10376,7 @@ def main():
            "year": w["issued"]["date-parts"][0][0], "cited_by": w["is-referenced-by-count"]} for w in d["items"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
 
 ```json
 [
@@ -10193,22 +10385,431 @@ def main():
     "title": "Analysis of Relative Gene Expression Data Using Real-Time Quantitative PCR and the 2−ΔΔCT Method",
     "journal": "Methods",
     "year": 2001,
-    "cited_by": 166791
+    "cited_by": 166794
   },
   {
     "DOI": "10.1186/s13059-014-0550-8",
     "title": "Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2",
     "journal": "Genome Biology",
     "year": 2014,
-    "cited_by": 92838
+    "cited_by": 92840
   },
   {
     "DOI": "10.1016/0927-0256(96)00008-0",
     "title": "Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave basis set",
     "journal": "Computational Materials Science",
     "year": 1996,
-    "cited_by": 74879
+    "cited_by": 74881
   }
+]
+```
+</details>
+
+---
+
+### JPL Small-Body Close Approach & SBDB APIs
+
+| | |
+|:--|:--|
+| **Docs** | https://ssd-api.jpl.nasa.gov/doc/cad.html |
+| **Auth** | None |
+| **Register / token** | No registration. Part of JPL's Solar System Dynamics APIs (also sbdb.api for orbits/physical data, sentry.api for impact risk, scout.api for new objects). |
+| **Script** | [`scripts/science_research/jpl_close_approach.py`](scripts/science_research/jpl_close_approach.py) |
+
+**What you can get:**
+
+- Close approaches of asteroids and comets to Earth (or other bodies): date, distance, velocity, size proxy (H)
+- Small-Body Database: orbit elements, diameter, albedo, rotation, discovery
+- Sentry impact-risk list
+
+**Capstone ideas:** Near-Earth object population statistics, size-frequency distributions, close-approach trend analysis.
+
+**Endpoint:** `GET https://ssd-api.jpl.nasa.gov/{cad \| sbdb \| sentry}.api`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `date-min / date-max` | Window (YYYY-MM-DD, or now / +60 days) | `now / +60` |
+| `dist-max` | Max distance in au (or LD for lunar distances, e.g. 1LD) | `1LD` |
+| `h-max` | Max absolute magnitude (smaller H = larger object) | `22` |
+| `body` | Earth (default) \| Moon \| Mars \| ALL ... | `Earth` |
+| `sort` | date \| dist \| v-rel \| h (prefix - for descending) | `dist` |
+| `sbdb.api?sstr=` | Small-Body Database record for one object (phys-par=1 adds size/albedo) | `sstr=Apophis&phys-par=1` |
+| `sentry.api` | Objects with non-zero impact probability | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://ssd-api.jpl.nasa.gov/cad.api", params={"date-min": "now", "date-max": "+60", "dist-max": "1LD",
+                                                             "sort": "dist"})
+    rows = [dict(zip(d["fields"], r)) for r in d["data"]]
+    apophis = get("https://ssd-api.jpl.nasa.gov/sbdb.api", params={"sstr": "Apophis", "phys-par": 1})
+    phys = {p["name"]: p["value"] for p in apophis.get("phys_par", [])}
+    show({"approaches_within_1_lunar_distance_next_60_days": d["count"], "closest": [
+        {"object": r["des"], "date": r["cd"], "distance_lunar": round(float(r["dist"]) / 0.00257, 2),
+         "velocity_km_s": round(float(r["v_rel"]), 1), "H": r["h"]} for r in rows[:5]],
+          "apophis": {"name": apophis["object"]["fullname"], "diameter_km": phys.get("diameter"), "albedo": phys.get("albedo")}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "approaches_within_1_lunar_distance_next_60_days": 4,
+  "closest": [
+    {
+      "object": "2026 TP6",
+      "date": "2026-Oct-15 00:01",
+      "distance_lunar": 0.57,
+      "velocity_km_s": 10.3,
+      "H": "27.288"
+    },
+    {
+      "object": "2026 TG9",
+      "date": "2026-Oct-14 04:58",
+      "distance_lunar": 0.59,
+      "velocity_km_s": 11.6,
+      "H": "26.99"
+    },
+    {
+      "object": "2025 UK9",
+      "date": "2026-Oct-31 02:35",
+      "distance_lunar": 0.82,
+      "velocity_km_s": 7.8,
+      "H": "29.83"
+    },
+    {
+      "object": "2026 TF59",
+      "date": "2026-Oct-12 17:36",
+      "distance_lunar": 0.96,
+      "velocity_km_s": 7.0,
+      "H": "28.589"
+    }
+  ],
+  "apophis": {
+    "name": "99942 Apophis (2004 MN4)",
+    "diameter_km": "0.34",
+    "albedo": "0.35"
+  }
+}
+```
+</details>
+
+---
+
+### JPL Fireball (bolide) API
+
+| | |
+|:--|:--|
+| **Docs** | https://ssd-api.jpl.nasa.gov/doc/fireball.html |
+| **Auth** | None |
+| **Register / token** | No registration. Bright meteors detected by U.S. government sensors, reported by CNEOS since 1988. |
+| **Script** | [`scripts/science_research/jpl_fireball.py`](scripts/science_research/jpl_fireball.py) |
+
+**What you can get:**
+
+- Each fireball: date/time, latitude/longitude, altitude, velocity, radiated energy, estimated impact energy (kt TNT)
+
+**Capstone ideas:** Spatial/temporal distribution of atmospheric impacts, energy-frequency power laws.
+
+**Endpoint:** `GET https://ssd-api.jpl.nasa.gov/fireball.api`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `date-min / date-max` | Date range | `2025-01-01` |
+| `energy-min / impact-e-min` | Minimum radiated energy (J x10^10) / impact energy (kt) | `impact-e-min=1` |
+| `req-loc / req-alt / req-vel` | true -> only events with location / altitude / velocity | `req-loc=true` |
+| `sort` | date \| energy \| impact-e \| alt \| vel (prefix - for descending) | `-impact-e` |
+| `limit` | Max rows | `5` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://ssd-api.jpl.nasa.gov/fireball.api", params={"date-min": "2015-01-01", "req-loc": "true",
+                                                                  "sort": "-impact-e", "limit": 5})
+    show({"largest_since_2015": [dict(zip(d["fields"], r)) for r in d["data"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "largest_since_2015": [
+    {
+      "date": "2018-12-18 23:48:18",
+      "energy": "3130",
+      "impact-e": "49",
+      "lat": "56.9",
+      "lat-dir": "N",
+      "lon": "172.4",
+      "lon-dir": "E",
+      "alt": "26.0",
+      "vel": "13.6"
+    },
+    {
+      "date": "2016-02-06 13:55:09",
+      "energy": "685",
+      "impact-e": "13",
+      "lat": "30.4",
+      "lat-dir": "S",
+      "lon": "25.5",
+      "lon-dir": "W",
+      "alt": "31.0",
+      "vel": "15.6"
+    },
+    {
+      "date": "2020-12-22 23:23:28",
+      "energy": "667",
+      "impact-e": "12",
+      "lat": "31.9",
+      "lat-dir": "N",
+      "lon": "96.2",
+      "lon-dir": "E",
+      "alt": "35.5",
+      "vel": "13.6"
+    },
+    {
+      "date": "2017-12-15 13:14:37",
+      "energy": "400",
+      "impact-e": "7.9",
+      "lat": "60.2",
+      "lat-dir": "N",
+      "lon": "170.0",
+      "lon-dir": "E",
+      "alt": "20.0",
+      "vel": "31.4"
+    },
+    {
+      "date": "2023-05-20 11:22:22",
+      "energy": "351",
+      "impact-e": "7.1",
+      "lat": "17.8",
+      "lat-dir": "S",
+      "lon": "141.9",
+      "lon-dir": "E",
+      "alt": "29.0",
+      "vel": "27.9"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### JPL Horizons (ephemerides)
+
+| | |
+|:--|:--|
+| **Docs** | https://ssd-api.jpl.nasa.gov/doc/horizons.html |
+| **Auth** | None |
+| **Register / token** | No registration. The authoritative source for positions of planets, moons, asteroids, comets and spacecraft. The response is a text report inside JSON; parse the block between $$SOE and $$EOE. |
+| **Script** | [`scripts/science_research/jpl_horizons.py`](scripts/science_research/jpl_horizons.py) |
+
+**What you can get:**
+
+- Where any solar-system body (or spacecraft) is at any time: RA/Dec, distance, magnitude, phase, rise/set
+- State vectors (x, y, z, vx, vy, vz) for orbital mechanics
+- Physical data for planets and moons
+
+**Capstone ideas:** Orbit visualization, observation planning, validating orbital-mechanics simulations against real ephemerides.
+
+**Endpoint:** `GET https://ssd.jpl.nasa.gov/api/horizons.api`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `COMMAND` | Target in quotes: 499 Mars, 301 Moon, -125544 ISS, 'Ceres;' (URL-encode the ; when using curl - requests does it) | `'499'` |
+| `EPHEM_TYPE` | OBSERVER \| VECTORS \| ELEMENTS | `OBSERVER` |
+| `CENTER` | Observer location: 500@399 Earth geocenter, coord@399 with SITE_COORD, 500@10 Sun | `'500@399'` |
+| `START_TIME / STOP_TIME / STEP_SIZE` | Time span and step | `'2026-10-12' / '2026-10-15' / '1d'` |
+| `QUANTITIES (observer)` | 1 RA/Dec, 9 magnitude, 20 range, 4 alt/az, ... | `'1,9,20'` |
+| `format` | json \| text | `json` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://ssd.jpl.nasa.gov/api/horizons.api", params={
+        "format": "json", "COMMAND": "'499'", "EPHEM_TYPE": "OBSERVER", "CENTER": "'500@399'",
+        "START_TIME": "'2026-10-12'", "STOP_TIME": "'2026-10-15'", "STEP_SIZE": "'1d'", "QUANTITIES": "'1,9,20'"})
+    text = d["result"]
+    table = text.split("$$SOE")[1].split("$$EOE")[0].strip().splitlines()
+    header = [l for l in text.splitlines() if "Date__(UT)__HR:MN" in l][0]
+    show({"target": "Mars as seen from Earth's center", "columns": " ".join(header.split()),
+          "rows": [" ".join(r.split()) for r in table]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "target": "Mars as seen from Earth's center",
+  "columns": "Date__(UT)__HR:MN R.A._____(ICRF)_____DEC APmag S-brt delta deldot",
+  "rows": [
+    "2026-Oct-12 00:00 08 41 20.08 +19 32 16.7 1.063 4.541 1.58734717893662 -12.7203694",
+    "2026-Oct-13 00:00 08 43 38.33 +19 24 40.8 1.045 4.532 1.57997954238183 -12.7942703",
+    "2026-Oct-14 00:00 08 45 55.79 +19 17 01.4 1.032 4.528 1.57256953339623 -12.8671127",
+    "2026-Oct-15 00:00 08 48 12.43 +19 09 18.9 1.036 4.542 1.56511775628645 -12.9389225"
+  ]
+}
+```
+</details>
+
+---
+
+### Launch Library 2 (The Space Devs)
+
+| | |
+|:--|:--|
+| **Docs** | https://ll.thespacedevs.com/docs/ |
+| **Auth** | None (15 requests/hour) / paid tiers |
+| **Register / token** | Works anonymously at 15 requests/hour. Use lldev.thespacedevs.com for development (stale data, no limit). Higher limits via Patreon-supported keys. |
+| **Script** | [`scripts/science_research/launch_library.py`](scripts/science_research/launch_library.py) |
+
+**What you can get:**
+
+- Every orbital launch since 1957 and upcoming launches: rocket, provider, pad, mission, orbit, status, time window
+- Agencies, rockets (configurations), astronauts, spacecraft, space stations, docking events, landings (booster reuse)
+
+**Capstone ideas:** Launch cadence by provider, success-rate modeling, reusability economics, launch-delay prediction.
+
+**Endpoint:** `GET https://ll.thespacedevs.com/2.3.0/{resource}/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `resource` | launches/upcoming \| launches/previous \| astronauts \| agencies \| spacecraft \| ... | `launches/previous` |
+| `mode` | list \| normal \| detailed (amount of nested detail) | `list` |
+| `net__gte / net__lte` | Launch time filters (ISO 8601) | `2026-01-01T00:00:00Z` |
+| `lsp__name / location__ids / status__ids` | Provider, location, status filters | `lsp__name=SpaceX` |
+| `search` | Text search | `Starlink` |
+| `limit / offset` | Paging (max 100) | `10` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    d = get("https://ll.thespacedevs.com/2.3.0/launches/previous/", params={
+        "mode": "list", "net__gte": "2026-01-01T00:00:00Z", "limit": 100})
+    launches = d["results"]
+    providers = Counter(l["name"].split(" | ")[0] for l in launches)
+    show({"launches_2026_so_far": d["count"], "rockets_in_latest_100": providers.most_common(5),
+          "status_in_latest_100": Counter(l["status"]["abbrev"] for l in launches).most_common(),
+          "latest": [{"name": l["name"], "net": l["net"], "status": l["status"]["abbrev"]} for l in launches[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "launches_2026_so_far": 245,
+  "rockets_in_latest_100": [
+    [
+      "Falcon 9 Block 5",
+      42
+    ],
+    [
+      "Electron",
+      8
+    ],
+    [
+      "Long March 12",
+      4
+    ],
+    [
+      "Long March 6A",
+      3
+    ],
+    [
+      "Long March 8A",
+      3
+    ]
+  ],
+  "status_in_latest_100": [
+    [
+      "Success",
+      99
+    ],
+    [
+      "Failure",
+      1
+    ]
+  ],
+  "latest": [
+    {
+      "name": "Falcon 9 Block 5 | SDA Tranche 1 Transport Layer A",
+      "net": "2026-10-10T07:39:44Z",
+      "status": "Success"
+    },
+    {
+      "name": "Long March 12 | SatNet LEO Group 27",
+      "net": "2026-10-09T19:27:00Z",
+      "status": "Success"
+    },
+    {
+      "name": "Nuri | NeonSat-2 to 6",
+      "net": "2026-10-07T03:25:00Z",
+      "status": "Success"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Materials Project API
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.materialsproject.org/downloading-data/using-the-api |
+| **Auth** | API key (header `X-API-KEY`) |
+| **Register / token** | Create a free account at https://next-gen.materialsproject.org and copy the key from your dashboard. Python client: `pip install mp-api` (MPRester). |
+| **Env var** | `MP_API_KEY` |
+| **Script** | [`scripts/science_research/materials_project.py`](scripts/science_research/materials_project.py) |
+
+**What you can get:**
+
+- 150k+ inorganic compounds computed with DFT: formation energy, stability (energy above hull), band gap, density
+- Crystal structures, elastic and magnetic properties, battery electrodes, phonons, X-ray diffraction
+- Search by formula, elements, chemical system, or property ranges
+
+**Capstone ideas:** Materials-property prediction (band gap, stability) with ML, battery-material screening.
+
+**Endpoint:** `GET https://api.materialsproject.org/materials/summary/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `formula / elements / chemsys` | Composition filters | `chemsys=Li-Fe-O` |
+| `band_gap_min / band_gap_max` | Property ranges (also energy_above_hull_max, density_min, ...) | `1 / 3` |
+| `is_stable` | true -> on the convex hull | `true` |
+| `_fields` | Fields to return | `material_id,formula_pretty,band_gap,energy_above_hull,density` |
+| `_limit / _skip` | Paging | `5` |
+| `X-API-KEY (header)` | Your key | `<MP_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://api.materialsproject.org/materials/summary/", headers={"X-API-KEY": key("MP_API_KEY")}, params={
+        "chemsys": "Li-Fe-O,Li-Fe-P-O", "is_stable": "true", "_limit": 5,
+        "_fields": "material_id,formula_pretty,band_gap,energy_above_hull,density"})
+    show(d["data"])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"material_id": "mp-19017", "formula_pretty": "LiFePO4", "band_gap": 3.70, "energy_above_hull": 0.0, "density": 3.52},
+  {"material_id": "mp-18900", "formula_pretty": "LiFeO2", "band_gap": 1.84, "energy_above_hull": 0.0, "density": 4.31}
 ]
 ```
 </details>
@@ -10261,7 +10862,7 @@ def main():
         for n in neos]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
 
 ```json
 {
@@ -10303,6 +10904,486 @@ def main():
       "velocity_kph": 30362
     },
     "... (1 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### NASA Exoplanet Archive (TAP)
+
+| | |
+|:--|:--|
+| **Docs** | https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html |
+| **Auth** | None |
+| **Register / token** | No registration. Query with ADQL (SQL for astronomy) through the TAP service. Table 'pscomppars' has one row per planet with the best parameters; 'ps' has every published solution. |
+| **Script** | [`scripts/science_research/nasa_exoplanet_archive.py`](scripts/science_research/nasa_exoplanet_archive.py) |
+
+**What you can get:**
+
+- 6,000+ confirmed exoplanets: discovery year/method/facility, orbital period, radius, mass, equilibrium temperature
+- Host-star properties (temperature, mass, distance), transit and radial-velocity data
+- TESS and Kepler candidate tables
+
+**Capstone ideas:** Habitable-zone classification, discovery-method bias analysis, planet-radius distributions (the 'radius valley').
+
+**Endpoint:** `GET https://exoplanetarchive.ipac.caltech.edu/TAP/sync`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | ADQL query | `select pl_name, disc_year, pl_rade from pscomppars where pl_rade < 1.5` |
+| `format` | json \| csv \| tsv \| votable | `json` |
+| `tables` | pscomppars (one row per planet) \| ps (all solutions) \| toi (TESS candidates) \| ... | `pscomppars` |
+| `key columns` | pl_name, hostname, disc_year, discoverymethod, pl_orbper, pl_rade, pl_bmasse, pl_eqt, sy_dist | `—` |
+
+```python
+from _common import get, show
+
+URL = "https://exoplanetarchive.ipac.caltech.edu/TAP/sync"
+
+
+def main():
+    by_method = get(URL, params={"format": "json", "query":
+        "select discoverymethod, count(*) as n from pscomppars group by discoverymethod order by n desc"})
+    earthlike = get(URL, params={"format": "json", "query":
+        "select top 5 pl_name, disc_year, pl_rade, pl_eqt, sy_dist from pscomppars "
+        "where pl_rade between 0.8 and 1.25 and pl_eqt between 200 and 300 order by sy_dist"})
+    show({"confirmed_planets": sum(r["n"] for r in by_method), "by_discovery_method": by_method[:5],
+          "nearest_earth_size_temperate": earthlike})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "confirmed_planets": 6445,
+  "by_discovery_method": [
+    {
+      "discoverymethod": "Transit",
+      "n": 4781
+    },
+    {
+      "discoverymethod": "Radial Velocity",
+      "n": 1203
+    },
+    {
+      "discoverymethod": "Microlensing",
+      "n": 292
+    },
+    {
+      "discoverymethod": "Imaging",
+      "n": 97
+    },
+    {
+      "discoverymethod": "Transit Timing Variations",
+      "n": 29
+    }
+  ],
+  "nearest_earth_size_temperate": [
+    {
+      "pl_name": "GJ 1061 d",
+      "disc_year": 2020,
+      "pl_rade": 1.16,
+      "pl_eqt": 242.03,
+      "sy_dist": 3.67278
+    },
+    {
+      "pl_name": "Teegarden's Star c",
+      "disc_year": 2019,
+      "pl_rade": 1.02,
+      "pl_eqt": 209.0,
+      "sy_dist": 3.83078
+    },
+    {
+      "pl_name": "GJ 1002 b",
+      "disc_year": 2022,
+      "pl_rade": 1.03,
+      "pl_eqt": 230.9,
+      "sy_dist": 4.84867
+    },
+    {
+      "pl_name": "TRAPPIST-1 f",
+      "disc_year": 2017,
+      "pl_rade": 1.045,
+      "pl_eqt": 217.7,
+      "sy_dist": 12.42988881
+    },
+    {
+      "pl_name": "TRAPPIST-1 e",
+      "disc_year": 2017,
+      "pl_rade": 0.92,
+      "pl_eqt": 249.7,
+      "sy_dist": 12.42988881
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### NASA Image and Video Library
+
+| | |
+|:--|:--|
+| **Docs** | https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf |
+| **Auth** | None |
+| **Register / token** | No registration (separate from api.nasa.gov - no DEMO_KEY limits). Most NASA media are not copyrighted, but check the usage guidelines for logos and identifiable people. |
+| **Script** | [`scripts/science_research/nasa_image_library.py`](scripts/science_research/nasa_image_library.py) |
+
+**What you can get:**
+
+- 140k+ NASA images, videos and audio: title, description, keywords, center, photographer, date
+- Asset manifests with original-resolution files and captions
+- Search by text, center, year range, media type
+
+**Capstone ideas:** Space-image datasets for computer vision, captioning models, mission-history timelines.
+
+**Endpoint:** `GET https://images-api.nasa.gov/{search \| asset/{nasa_id} \| metadata/{nasa_id}}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Free-text search | `james webb` |
+| `media_type` | image \| video \| audio (comma list) | `image` |
+| `center / keywords / photographer` | Field filters | `center=GSFC` |
+| `year_start / year_end` | Date range | `2022 / 2026` |
+| `page / page_size` | Paging (page_size max 100) | `1 / 5` |
+| `/asset/{nasa_id}` | All file URLs (orig, large, medium, thumb) for one item | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://images-api.nasa.gov/search", params={"q": "james webb deep field", "media_type": "image",
+                                                          "year_start": 2022, "page_size": 5})["collection"]
+    show({"hits": d["metadata"]["total_hits"], "images": [
+        {"title": i["data"][0]["title"], "date": i["data"][0]["date_created"][:10], "center": i["data"][0].get("center"),
+         "nasa_id": i["data"][0]["nasa_id"], "thumbnail": i["links"][0]["href"]} for i in d["items"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "hits": 8,
+  "images": [
+    {
+      "title": "Beyond the Deep Field: Hubble’s Legacy and the Future of Cosmi",
+      "date": "2026-06-05",
+      "center": "HQ",
+      "nasa_id": "NHQ202606050016",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202606050016/NHQ202606050016~large.jpg"
+    },
+    {
+      "title": "JWST’s First Full-Color Images",
+      "date": "2022-07-12",
+      "center": "HQ",
+      "nasa_id": "NHQ202207120017",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202207120017/NHQ202207120017~medium.jpg"
+    },
+    {
+      "title": "JWST’s First Full-Color Images",
+      "date": "2022-07-12",
+      "center": "HQ",
+      "nasa_id": "NHQ202207120016",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202207120016/NHQ202207120016~medium.jpg"
+    },
+    {
+      "title": "Beyond the Deep Field: Hubble’s Legacy and the Future of Cosmi",
+      "date": "2026-06-05",
+      "center": "HQ",
+      "nasa_id": "NHQ202606050014",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202606050014/NHQ202606050014~large.jpg"
+    },
+    {
+      "title": "Beyond the Deep Field: Hubble’s Legacy and the Future of Cosmi",
+      "date": "2026-06-05",
+      "center": "HQ",
+      "nasa_id": "NHQ202606050013",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202606050013/NHQ202606050013~large.jpg"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### NIH RePORTER API
+
+| | |
+|:--|:--|
+| **Docs** | https://api.reporter.nih.gov/ |
+| **Auth** | None |
+| **Register / token** | No registration. POST JSON criteria. Max 1 request/second; max 500 records per request and 15,000 per query (narrow by fiscal year for more). |
+| **Script** | [`scripts/science_research/nih_reporter.py`](scripts/science_research/nih_reporter.py) |
+
+**What you can get:**
+
+- Every NIH-funded project: title, abstract, PI, organization, award amount, institute (NCI, NIMH, ...), terms
+- Fiscal year, activity code (R01, K99, ...), study section, spending categories
+- Linked publications (publications/search endpoint)
+
+**Capstone ideas:** Biomedical funding by disease area, success predictors for grants, linking grants to papers (PubMed).
+
+**Endpoint:** `POST https://api.reporter.nih.gov/v2/projects/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `criteria.fiscal_years` | List of fiscal years | `[2025]` |
+| `criteria.org_names / org_states` | Organization names (upper case) / states | `["GEORGE WASHINGTON UNIVERSITY"]` |
+| `criteria.advanced_text_search` | {operator, search_field, search_text} | `{"search_field": "projecttitle,terms", "search_text": "machine learning"}` |
+| `criteria.agencies / activity_codes` | Institute codes / grant types | `["NIMH"] / ["R01"]` |
+| `include_fields` | Fields to return | `["ProjectTitle", "AwardAmount", "Organization"]` |
+| `offset / limit / sort_field / sort_order` | Paging and sorting (limit max 500) | `0 / 5 / award_amount / desc` |
+| `/v2/publications/search` | Sibling endpoint: publications linked to projects | `—` |
+
+```python
+import requests
+
+from _common import USER_AGENT, show
+
+
+def main():
+    body = {"criteria": {"fiscal_years": [2025], "org_names": ["GEORGE WASHINGTON UNIVERSITY"]},
+            "include_fields": ["ProjectTitle", "AwardAmount", "AgencyIcAdmin", "ActivityCode", "PrincipalInvestigators"],
+            "offset": 0, "limit": 5, "sort_field": "award_amount", "sort_order": "desc"}
+    r = requests.post("https://api.reporter.nih.gov/v2/projects/search", json=body, timeout=60,
+                      headers={"User-Agent": USER_AGENT})
+    r.raise_for_status()
+    d = r.json()
+    show({"gwu_nih_projects_fy2025": d["meta"]["total"], "largest": [
+        {"title": p["project_title"], "amount_usd": p["award_amount"], "institute": (p.get("agency_ic_admin") or {}).get("abbreviation"),
+         "activity": p["activity_code"], "pi": (p.get("principal_investigators") or [{}])[0].get("full_name")}
+        for p in d["results"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "gwu_nih_projects_fy2025": 134,
+  "largest": [
+    {
+      "title": "The DC Cohort: A Longitudinal Population-Based Cohort Study of People Living with HIV in Washington, DC",
+      "amount_usd": 6502401,
+      "institute": "NIAID",
+      "activity": "R24",
+      "pi": "Amanda Derryck Castel"
+    },
+    {
+      "title": "NICHD Maternal-Fetal Medicine Units (MFMU) Network: Data CoordinatingCenter",
+      "amount_usd": 3979209,
+      "institute": "NICHD",
+      "activity": "U24",
+      "pi": "Rebecca Gersnoviez Clifton"
+    },
+    {
+      "title": "AIDS and Cancer Specimen Resource (ACSR)",
+      "amount_usd": 3963281,
+      "institute": "NCI",
+      "activity": "UM1",
+      "pi": "Jeffrey Michael Bethony"
+    },
+    {
+      "title": "The Impact of the 11th Street Bridge Park on the Built Environment and Community Health: Washington, D.C.",
+      "amount_usd": 3399035,
+      "institute": "NINR",
+      "activity": "R01",
+      "pi": "LORETTA  DIPIETRO"
+    },
+    {
+      "title": "Adjunctive Azithromycin Prophylaxis for Scheduled/Prelabor Cesarean Delivery",
+      "amount_usd": 3341494,
+      "institute": "NICHD",
+      "activity": "U01",
+      "pi": "Kim A Boggess"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### NOAA Space Weather Prediction Center (SWPC) data
+
+| | |
+|:--|:--|
+| **Docs** | https://services.swpc.noaa.gov/ |
+| **Auth** | None |
+| **Register / token** | No registration. Browsable JSON/text files under /json and /products, updated every minute to every few hours. |
+| **Script** | [`scripts/science_research/noaa_swpc.py`](scripts/science_research/noaa_swpc.py) |
+
+**What you can get:**
+
+- Planetary K-index (geomagnetic storms), NOAA space-weather scales (G, S, R), alerts and watches
+- Real-time solar wind (speed, density, magnetic field), X-ray flux and solar flares
+- Aurora forecasts (OVATION), 27-day outlook, sunspot/solar-cycle progression
+
+**Capstone ideas:** Geomagnetic-storm forecasting, solar-cycle analysis, space-weather impacts on GPS or the power grid.
+
+**Endpoint:** `GET https://services.swpc.noaa.gov/{json \| products}/{file}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `products/noaa-planetary-k-index.json` | 3-hourly Kp for the past week | `—` |
+| `products/noaa-scales.json` | Current and forecast G/S/R scale levels | `—` |
+| `products/alerts.json` | Recent alerts, watches and warnings (text) | `—` |
+| `json/solar-cycle/observed-solar-cycle-indices.json` | Monthly sunspot numbers since 1749 | `—` |
+| `json/rtsw/rtsw_wind_1m.json` | Real-time solar wind, 1-minute: proton speed, density, temperature (the old products/solar-wind files are gone) | `—` |
+| `json/goes/primary/xrays-1-day.json` | GOES X-ray flux (flare detection) | `—` |
+
+```python
+from _common import get, show
+
+BASE = "https://services.swpc.noaa.gov"
+
+
+def main():
+    kp = get(f"{BASE}/products/noaa-planetary-k-index.json")
+    cycle = get(f"{BASE}/json/solar-cycle/observed-solar-cycle-indices.json")
+    peak = max(kp, key=lambda r: r["Kp"])
+    show({"kp_last_week": {"max": peak["Kp"], "at": peak["time_tag"], "storm": peak["Kp"] >= 5},
+          "latest_kp": kp[-3:],
+          "monthly_sunspot_number": [{"month": r["time-tag"], "ssn": r["ssn"]} for r in cycle[-4:]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "kp_last_week": {
+    "max": 7.0,
+    "at": "2026-10-10T15:00:00",
+    "storm": true
+  },
+  "latest_kp": [
+    {
+      "time_tag": "2026-10-12T03:00:00",
+      "Kp": 2.33,
+      "a_running": 9,
+      "station_count": 8
+    },
+    {
+      "time_tag": "2026-10-12T06:00:00",
+      "Kp": 3.33,
+      "a_running": 18,
+      "station_count": 8
+    },
+    {
+      "time_tag": "2026-10-12T09:00:00",
+      "Kp": 1.33,
+      "a_running": 5,
+      "station_count": 8
+    }
+  ],
+  "monthly_sunspot_number": [
+    {
+      "month": "2026-06",
+      "ssn": 94.4
+    },
+    {
+      "month": "2026-07",
+      "ssn": 78.1
+    },
+    {
+      "month": "2026-08",
+      "ssn": 76.0
+    },
+    {
+      "month": "2026-09",
+      "ssn": 60.3
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### NSF Award Search API
+
+| | |
+|:--|:--|
+| **Docs** | https://resources.research.gov/common/webapi/awardapisearch-v1.htm |
+| **Auth** | None |
+| **Register / token** | No registration. Every National Science Foundation award since ~1960 with abstracts. |
+| **Script** | [`scripts/science_research/nsf_awards.py`](scripts/science_research/nsf_awards.py) |
+
+**What you can get:**
+
+- Awards: title, abstract, amount obligated, start/end dates, program, directorate, PI and institution
+- Search by keyword, institution, state, PI name, program, date range
+
+**Capstone ideas:** Science-funding landscape (which topics/institutions get funded), abstract topic modeling, funding vs. output (OpenAlex).
+
+**Endpoint:** `GET https://api.nsf.gov/services/v1/awards.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `keyword` | Full-text search in title/abstract (supports quotes) | `"machine learning"` |
+| `awardeeName` | Institution - wrap in double quotes, otherwise the filter is silently ignored | `"George Washington University"` |
+| `awardeeStateCode / awardeeCity` | Institution location | `DC` |
+| `dateStart / dateEnd` | Award date range, MM/DD/YYYY | `01/01/2025` |
+| `fundProgramName` | NSF program | `—` |
+| `printFields` | Documented field selector, but currently ignored (full records are returned) | `—` |
+| `rpp / offset` | Results per page (max 25) and 1-based offset | `25 / 1` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api.nsf.gov/services/v1/awards.json", params={
+        "awardeeName": '"George Washington University"',  # the quotes are required for this filter to apply
+        "dateStart": "01/01/2025", "rpp": 25})
+    awards = sorted(d["response"]["award"], key=lambda a: -float(a.get("fundsObligatedAmt") or 0))
+    show({"gwu_awards_since_2025 (first page of 25)": len(awards), "awardee": awards[0]["awardee"] if awards else None,
+          "total_obligated_usd (first page)": round(sum(float(a.get("fundsObligatedAmt") or 0) for a in awards)),
+          "largest": [{"title": a["title"], "pi": f'{a.get("piFirstName", "")} {a.get("piLastName", "")}',
+                       "amount_usd": a.get("fundsObligatedAmt"), "program": a.get("fundProgramName"),
+                       "start": a.get("startDate")} for a in awards[:4]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "gwu_awards_since_2025 (first page of 25)": 25,
+  "awardee": "GEORGE WASHINGTON UNIVERSITY (THE)",
+  "total_obligated_usd (first page)": 10642251,
+  "largest": [
+    {
+      "title": "VINES: Track 2: CERTAIN: Connectivity Effectiveness and Reliability Through AI-native Networking",
+      "pi": "Tian Lan",
+      "amount_usd": "1699107",
+      "program": "TIP-CHIPS KTA-6 Communications",
+      "start": "06/15/2026"
+    },
+    {
+      "title": "NSF/BIO-UKRI/BBSRC: Tipping the balance of amphibian microbiome-immune interactions towards greater antifungal defences",
+      "pi": "Leon Grayfer",
+      "amount_usd": "1199311",
+      "program": "Cross-BIO Activities",
+      "start": "08/01/2026"
+    },
+    {
+      "title": "Investigating Nucleon Structure with Electromagnetic Probes",
+      "pi": "Evangeline Downie",
+      "amount_usd": "750000",
+      "program": "Nuclear Physics - Experiment",
+      "start": "07/01/2026"
+    },
+    {
+      "title": "CICI: UCSS: Trustworthy Cyberinfrastructure-Enabled Data-Driven Electronic Design Automation for Collaborative Design of Analog/Mixed-Signal Integrated Circuits",
+      "pi": "Weidong Cao",
+      "amount_usd": "600000",
+      "program": "Cybersecurity Innovation",
+      "start": "09/01/2026"
+    }
   ]
 }
 ```
@@ -10355,40 +11436,40 @@ def main():
         for w in d["results"]]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
 
 ```json
 {
-  "total": 1610170,
+  "total": 1590500,
   "top_cited": [
-    {
-      "title": "Detecting Functionality-Specific Vulnerabilities via Retrieving Individual Functionality-Equivalent APIs in Open-Source Repositories",
-      "year": 2025,
-      "cited_by": 15857,
-      "venue": "Leibniz international proceedings in informatics"
-    },
     {
       "title": "Accurate structure prediction of biomolecular interactions with AlphaFold 3",
       "year": 2024,
-      "cited_by": 15554,
+      "cited_by": 15333,
       "venue": "Nature"
+    },
+    {
+      "title": "Detecting Functionality-Specific Vulnerabilities via Retrieving Individual Functionality-Equivalent APIs in Open-Source Repositories",
+      "year": 2025,
+      "cited_by": 15249,
+      "venue": "Leibniz international proceedings in informatics"
     },
     {
       "title": "The Difference between Emergency Remote Teaching and Online Learning",
       "year": 2024,
-      "cited_by": 6265,
+      "cited_by": 6250,
       "venue": "BRILL eBooks"
     },
     {
       "title": "Global incidence, prevalence, years lived with disability (YLDs), disability-adjusted life-years (DALYs), and healthy life expectancy (HALE) for 371 diseases an...",
       "year": 2024,
-      "cited_by": 5035,
+      "cited_by": 5011,
       "venue": "The Lancet"
     },
     {
       "title": "Kaldi Speech Recognition Toolkit",
       "year": 2024,
-      "cited_by": 4823,
+      "cited_by": 4609,
       "venue": "Infoscience (Ecole Polytechnique Fédérale de Lausanne)"
     }
   ]
@@ -10436,7 +11517,7 @@ def main():
     show(d["PropertyTable"]["Properties"])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:12</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
 
 ```json
 [
@@ -10465,6 +11546,246 @@ def main():
     "HBondDonorCount": 1
   }
 ]
+```
+</details>
+
+---
+
+### RCSB Protein Data Bank (search + data APIs)
+
+| | |
+|:--|:--|
+| **Docs** | https://search.rcsb.org/ · https://data.rcsb.org/ |
+| **Auth** | None |
+| **Register / token** | No registration. Two APIs: Search (POST a JSON query, get IDs) and Data (GET details by ID, or GraphQL). |
+| **Script** | [`scripts/science_research/rcsb_pdb.py`](scripts/science_research/rcsb_pdb.py) |
+
+**What you can get:**
+
+- 230k+ experimentally determined 3D structures of proteins, DNA, RNA and complexes
+- Method (X-ray, cryo-EM, NMR), resolution, release date, organism, ligands, citations
+- Full-text, sequence, structure-similarity and chemical searches
+
+**Capstone ideas:** Structural-biology datasets for ML (with AlphaFold), cryo-EM adoption trends, drug-target structure lookup.
+
+**Endpoint:** `POST https://search.rcsb.org/rcsbsearch/v2/query  ·  GET https://data.rcsb.org/rest/v1/core/entry/{id}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query (search body)` | {type: terminal, service: full_text \| text \| sequence \| structure, parameters} | `{"service": "full_text", "parameters": {"value": "spike glycoprotein"}}` |
+| `return_type` | entry \| polymer_entity \| assembly \| non_polymer_entity | `entry` |
+| `request_options.paginate` | {start, rows} | `{"start": 0, "rows": 5}` |
+| `request_options.sort` | [{sort_by, direction}], e.g. rcsb_accession_info.initial_release_date | `desc` |
+| `/rest/v1/core/entry/{id}` | Entry details: method, resolution, title, dates | `4HHB` |
+| `https://data.rcsb.org/graphql` | GraphQL alternative for batch details | `—` |
+
+```python
+import requests
+
+from _common import USER_AGENT, get, show
+
+
+def main():
+    q = {"query": {"type": "terminal", "service": "full_text", "parameters": {"value": "spike glycoprotein"}},
+         "return_type": "entry",
+         "request_options": {"paginate": {"start": 0, "rows": 4},
+                             "sort": [{"sort_by": "rcsb_accession_info.initial_release_date", "direction": "desc"}]}}
+    r = requests.post("https://search.rcsb.org/rcsbsearch/v2/query", json=q, headers={"User-Agent": USER_AGENT}, timeout=60)
+    r.raise_for_status()
+    hits = r.json()
+    out = []
+    for h in hits["result_set"]:
+        e = get(f'https://data.rcsb.org/rest/v1/core/entry/{h["identifier"]}')
+        out.append({"pdb_id": h["identifier"], "title": e["struct"]["title"],
+                    "method": e["exptl"][0]["method"], "resolution_A": (e.get("rcsb_entry_info") or {}).get("resolution_combined"),
+                    "released": e["rcsb_accession_info"]["initial_release_date"][:10]})
+    show({"matching_entries": hits["total_count"], "latest": out})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "matching_entries": 3384,
+  "latest": [
+    {
+      "pdb_id": "26DA",
+      "title": "Cryo-EM structure of spike protein within graphene reservoir sandwich",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        2.88
+      ],
+      "released": "2026-10-07"
+    },
+    {
+      "pdb_id": "9TGC",
+      "title": "Structure of B10 anti-stem antibody in complex with ZEBOV spike complex",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        2.5
+      ],
+      "released": "2026-10-07"
+    },
+    {
+      "pdb_id": "9X23",
+      "title": "Ra22QT77 RBD in complex with Bat ACE2",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        2.51
+      ],
+      "released": "2026-10-07"
+    },
+    {
+      "pdb_id": "38PM",
+      "title": "Australian bat lyssavirus glycoprotein PH domain in complex with broadly neutralizing human antibodies A6 and RVC20",
+      "method": "ELECTRON MICROSCOPY",
+      "resolution_A": [
+        3.6
+      ],
+      "released": "2026-09-30"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### ROR (Research Organization Registry)
+
+| | |
+|:--|:--|
+| **Docs** | https://ror.readme.io/docs/rest-api |
+| **Auth** | None |
+| **Register / token** | No registration. Persistent IDs for 110k+ universities, labs, hospitals and funders; CC0. From 2026 heavy users are asked to send a client ID header (free). |
+| **Script** | [`scripts/science_research/ror.py`](scripts/science_research/ror.py) |
+
+**What you can get:**
+
+- Organization names (incl. aliases and other languages), type, country, website, established year
+- Parent/child relationships, external IDs (GRID, ISNI, Wikidata, Crossref Funder ID)
+- Affiliation matching: map messy affiliation strings to an organization
+
+**Capstone ideas:** Disambiguating institutions in publication/grant data (OpenAlex, NSF, NIH), building collaboration networks.
+
+**Endpoint:** `GET https://api.ror.org/v2/organizations`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Name search | `george washington university` |
+| `affiliation` | Match a full affiliation string (returns chosen match + score); spell names out - abbreviations like GWU can mismatch | `Department of Statistics, George Washington University` |
+| `filter` | types:education, country.country_code:US, status:active | `types:education` |
+| `page` | 20 results per page | `1` |
+| `/v2/organizations/{ror_id}` | One organization | `00y4zzh67` |
+
+```python
+from _common import get, show
+
+
+def main():
+    aff = "Department of Statistics, George Washington University, Washington DC"
+    m = get("https://api.ror.org/v2/organizations", params={"affiliation": aff})
+    best = next(i for i in m["items"] if i.get("chosen")) if any(i.get("chosen") for i in m["items"]) else m["items"][0]
+    org = best["organization"]
+    show({"affiliation_input": aff, "matched": best.get("chosen"),
+          "score": best.get("score"), "ror_id": org["id"],
+          "name": next(n["value"] for n in org["names"] if "ror_display" in n["types"]),
+          "types": org["types"], "established": org.get("established"),
+          "external_ids": {e["type"]: e.get("preferred") or e["all"][0] for e in org["external_ids"]}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "affiliation_input": "Department of Statistics, George Washington University, Washington DC",
+  "matched": true,
+  "score": 1.0,
+  "ror_id": "https://ror.org/00y4zzh67",
+  "name": "George Washington University",
+  "types": [
+    "education",
+    "funder"
+  ],
+  "established": 1821,
+  "external_ids": {
+    "fundref": "100007108",
+    "grid": "grid.253615.6",
+    "isni": "0000 0004 1936 9510",
+    "wikidata": "Q432637"
+  }
+}
+```
+</details>
+
+---
+
+### SDSS SkyServer (Sloan Digital Sky Survey)
+
+| | |
+|:--|:--|
+| **Docs** | https://skyserver.sdss.org/dr18/en/help/docs/api.aspx |
+| **Auth** | None |
+| **Register / token** | No registration. Run SQL against the SDSS catalog (hundreds of millions of objects). Queries time out after ~10 minutes and return at most 500,000 rows; use CasJobs (free account) for larger jobs. |
+| **Script** | [`scripts/science_research/sdss_skyserver.py`](scripts/science_research/sdss_skyserver.py) |
+
+**What you can get:**
+
+- Photometric objects (PhotoObj): positions, magnitudes in u,g,r,i,z bands, object type (star/galaxy)
+- Spectra (SpecObj): redshift, spectral class (GALAXY, QSO, STAR), velocity dispersion
+- Image cutouts by coordinates (ImgCutout service)
+
+**Capstone ideas:** Galaxy/star/quasar classification from colors (classic ML task), photometric redshift regression.
+
+**Endpoint:** `GET https://skyserver.sdss.org/dr18/SkyServerWS/SearchTools/SqlSearch`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `cmd` | SQL (SQL Server dialect; use TOP n) | `select top 10 z, class from SpecObj where zWarning = 0` |
+| `format` | json \| csv \| xml \| html | `json` |
+| `tables` | PhotoObj, SpecObj, Galaxy, Star, PhotoObjAll, SpecPhoto (joined view) | `SpecObj` |
+| `ImgCutout/getjpeg?ra=&dec=&scale=&width=&height=` | Sibling endpoint: JPEG cutout of the sky | `ra=180&dec=0&scale=0.4` |
+
+```python
+from _common import get, show
+
+SQL = """select class, count(*) as n, avg(z) as mean_redshift, max(z) as max_redshift
+from SpecObj where zWarning = 0 group by class"""  # TOP n without ORDER BY returns a biased (nearby-galaxy) slice
+
+
+def main():
+    d = get("https://skyserver.sdss.org/dr18/SkyServerWS/SearchTools/SqlSearch", params={"cmd": SQL, "format": "json"})
+    show({"sample": "all SDSS spectra with good redshifts (zWarning = 0)", "by_class": [
+        {"class": r["class"], "count": r["n"], "mean_z": round(r["mean_redshift"], 3), "max_z": round(r["max_redshift"], 2)}
+        for r in d[0]["Rows"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "sample": "all SDSS spectra with good redshifts (zWarning = 0)",
+  "by_class": [
+    {
+      "class": "GALAXY",
+      "count": 2639535,
+      "mean_z": 0.405,
+      "max_z": 2.0
+    },
+    {
+      "class": "QSO",
+      "count": 753228,
+      "mean_z": 1.709,
+      "max_z": 7.04
+    },
+    {
+      "class": "STAR",
+      "count": 890744,
+      "mean_z": -0.0,
+      "max_z": 0.0
+    }
+  ]
+}
 ```
 </details>
 
@@ -10523,6 +11844,187 @@ def main():
   {"title": "Attention is All you Need", "year": 2017, "citationCount": 160000,
    "tldr": "A new simple network architecture, the Transformer, based solely on attention mechanisms..."}
 ]
+```
+</details>
+
+---
+
+### Spaceflight News API (SNAPI)
+
+| | |
+|:--|:--|
+| **Docs** | https://api.spaceflightnewsapi.net/v4/docs/ |
+| **Auth** | None |
+| **Register / token** | No registration. Aggregates space news from ~40 outlets (NASA, ESA, SpaceNews, Spaceflight Now, ...). |
+| **Script** | [`scripts/science_research/spaceflight_news.py`](scripts/science_research/spaceflight_news.py) |
+
+**What you can get:**
+
+- Articles, blogs and reports: title, summary, source site, publish date, image
+- Links to related launches and events (Launch Library 2 IDs)
+
+**Capstone ideas:** Space-industry topic and sentiment tracking, linking news coverage to launch outcomes.
+
+**Endpoint:** `GET https://api.spaceflightnewsapi.net/v4/{articles \| blogs \| reports}/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search / title_contains` | Text search | `artemis` |
+| `news_site` | Filter by outlet(s), comma list | `NASA,SpaceNews` |
+| `published_at_gte / published_at_lte` | Date range | `2026-01-01` |
+| `has_launch` | true -> only articles linked to a launch | `true` |
+| `ordering` | -published_at \| published_at | `-published_at` |
+| `limit / offset` | Paging | `5` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    d = get("https://api.spaceflightnewsapi.net/v4/articles/", params={
+        "search": "artemis", "published_at_gte": "2026-01-01", "ordering": "-published_at", "limit": 100})
+    show({"artemis_articles_2026": d["count"],
+          "top_sources": Counter(a["news_site"] for a in d["results"]).most_common(4),
+          "latest": [{"title": a["title"], "site": a["news_site"], "published": a["published_at"][:10]}
+                     for a in d["results"][:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "artemis_articles_2026": 451,
+  "top_sources": [
+    [
+      "NASA",
+      60
+    ],
+    [
+      "SpaceNews",
+      9
+    ],
+    [
+      "ESA",
+      8
+    ],
+    [
+      "SpacePolicyOnline.com",
+      6
+    ]
+  ],
+  "latest": [
+    {
+      "title": "Artemis II Crew Moon Photo Annotations",
+      "site": "NASA",
+      "published": "2026-10-07"
+    },
+    {
+      "title": "NASA progress with SLS vehicles for upcoming Artemis missions",
+      "site": "NASASpaceflight",
+      "published": "2026-10-06"
+    },
+    {
+      "title": "NASA Astronaut Christina Koch at Eagles vs. Rams",
+      "site": "NASA",
+      "published": "2026-10-05"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Zenodo (research data & software repository)
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.zenodo.org/ |
+| **Auth** | None for search/download (token to deposit) |
+| **Register / token** | No registration to search and download public records. CERN-run; every record has a DOI. Also great for publishing your own capstone dataset or code (GitHub integration). |
+| **Script** | [`scripts/science_research/zenodo.py`](scripts/science_research/zenodo.py) |
+
+**What you can get:**
+
+- 3M+ records: datasets, software, papers, posters, presentations, each with DOI, licence, versions
+- File lists with direct download links and checksums
+- Download/view statistics, communities, related identifiers
+
+**Capstone ideas:** Finding reusable datasets, studying research-data reuse, citing/archiving your own capstone outputs.
+
+**Endpoint:** `GET https://zenodo.org/api/records`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Elasticsearch query string; fields like resource_type.type:dataset, creators.name: | `climate AND resource_type.type:dataset` |
+| `type` | dataset \| software \| publication \| poster \| ... | `dataset` |
+| `sort` | bestmatch \| mostrecent \| -mostrecent | `mostrecent` |
+| `communities` | Restrict to a community | `—` |
+| `size / page` | Page size (max 25 anonymous) | `5` |
+| `/api/records/{id}` | One record with files and stats | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://zenodo.org/api/records", params={"q": "\"air quality\"", "type": "dataset", "sort": "mostrecent", "size": 5})
+    show({"matching_datasets": d["hits"]["total"], "latest": [
+        {"title": r["metadata"]["title"], "doi": r.get("doi"), "published": r["metadata"].get("publication_date"),
+         "files": len(r.get("files", [])), "license": (r["metadata"].get("license") or {}).get("id"),
+         "downloads": r.get("stats", {}).get("downloads")} for r in d["hits"]["hits"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:34</summary>
+
+```json
+{
+  "matching_datasets": 1635,
+  "latest": [
+    {
+      "title": "HYGIENIC ASSESSMENT OF THE IMPACT OF HOUSEHOLD AIR POLLUTION ON WOMEN'S HEALTH IN MOUNTAIN RURAL HOUSEHOLDS (A CASE STUDY OF THE SOKH DISTRICT)",
+      "doi": "10.5281/zenodo.23275943",
+      "published": "2026-10-10",
+      "files": 1,
+      "license": "cc-by-4.0",
+      "downloads": 0
+    },
+    {
+      "title": "ATMOSFERA IFLOSLANISHINING TARQALISH JARAYONINI DIFFERENSIAL TENGLAMALAR ASOSIDA MATEMATIK MODELLASHTIRISH",
+      "doi": "10.5281/zenodo.23274049",
+      "published": "2026-10-10",
+      "files": 1,
+      "license": "cc-by-4.0",
+      "downloads": 2
+    },
+    {
+      "title": "Data and code for: How well does MERRA-2 HAQAST CNN PM2.5 capture county annual levels and year-to-year anomalies in the contiguous United States?",
+      "doi": "10.5281/zenodo.23271818",
+      "published": "2026-10-10",
+      "files": 1,
+      "license": "cc-by-4.0",
+      "downloads": 1
+    },
+    {
+      "title": "Health Indices Dataset from Clinical Study A - TOLIFE Project",
+      "doi": "10.5281/zenodo.23263785",
+      "published": "2026-10-09",
+      "files": 2,
+      "license": "cc-by-4.0",
+      "downloads": 199
+    },
+    {
+      "title": "Code, trained PINN models and derived results for: Air Purifier Performance in an Occupied Office: Field CADR and Effectiveness from a Reconstructed Device-Off ...",
+      "doi": "10.5281/zenodo.23240775",
+      "published": "2026-10-08",
+      "files": 10,
+      "license": "cc-by-4.0",
+      "downloads": 27
+    }
+  ]
+}
 ```
 </details>
 

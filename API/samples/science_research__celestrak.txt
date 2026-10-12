@@ -1,0 +1,19 @@
+# live 2026-10-12
+{
+  "starlink_satellites_tracked": 11102,
+  "starlink_by_inclination_deg": {
+    "53": 5095,
+    "43": 3614,
+    "97": 1513,
+    "70": 870,
+    "98": 10
+  },
+  "iss": {
+    "OBJECT_NAME": "ISS (ZARYA)",
+    "EPOCH": "2026-10-12T03:27:40.741056",
+    "INCLINATION": 51.6314,
+    "MEAN_MOTION": 15.48833724,
+    "ECCENTRICITY": 0.00067311,
+    "orbital_period_min": 93.0
+  }
+}

@@ -1,33 +1,32 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 10:34
 [
   {
-    "title": "ViSkill: Reinforcing VLM Agents with Evolving Visual-Native Skills",
-    "published": "2026-10-08T17:44:19Z",
+    "title": "Tracing and Taming Hallucinated Terms via Subsequence-Association Filtering and Breadth-Aware Selection for LLM Query Expansion",
+    "published": "2026-10-09T16:22:16Z",
     "authors": [
-      "Hongxing Li",
-      "Dingming Li",
-      "Yixin Li"
+      "Amit Kumar Jaiswal",
+      "Sagar Uprety",
+      "Prayag Tiwari"
     ],
-    "abstract": "Skill-augmented agents improve sample efficiency by distilling successful trajectories into reusable strategies. Yet most existing approaches remain text-centric, linearizing spatial layouts and actio..."
+    "abstract": "Large language models (LLMs) are now a standard source of query expansion terms but they hallucinate. They inject non existent entities and off-topic terms that add ranking noise and can hurt strong r..."
   },
   {
-    "title": "Which Skill to Distill? SGUID: Selecting a Compact Skill Bank for Model-Skill Co-Evolution",
-    "published": "2026-10-08T17:27:53Z",
+    "title": "Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy",
+    "published": "2026-10-09T15:02:35Z",
     "authors": [
-      "Yuhan Liu",
-      "Xiyao Ma",
-      "Zhongkai Sun"
+      "Naji Alazhar",
+      "Wassel Alazhar"
     ],
-    "abstract": "Skills, reusable procedural guidance added at inference, can substantially improve LLM downstream performance (Li et al., 2026). Prior work retrieves skills from a bank by semantic relevance, then use..."
+    "abstract": "Long-context serving runs out of KV memory before the hardware reaches its useful throughput. HiSparse stores history in host memory and fetches only the selected entries, but it uses one cache budget..."
   },
   {
-    "title": "Accurate but Not Humble: Evaluating Epistemic Humility in LLM Agents under Knowledge Conflict",
-    "published": "2026-10-08T17:25:06Z",
+    "title": "Verifiable Retrieval for Legal Reasoning through Structure-driven Knowledge Graph",
+    "published": "2026-10-09T14:56:31Z",
     "authors": [
-      "Kaiser Sun",
-      "Bernal Jimenez Gutierrez",
-      "Hongjun Liu"
+      "Ibrahim Siddig",
+      "Sviatoslav Tugeev",
+      "Munir Georges"
     ],
-    "abstract": "When retrieved evidence contradicts an agent's prior beliefs, does it revise its answer, acknowledge uncertainty, or persist with an incorrect conclusion? Existing evaluations of agentic systems focus..."
+    "abstract": "Any automation within reliability-critical contexts such as medicine or law has to be transparent and verifiable. Despite their advantages, current LLM-based systems do not meet these requirements due..."
   }
 ]

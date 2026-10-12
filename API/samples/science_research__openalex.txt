@@ -1,35 +1,35 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 10:34
 {
-  "total": 1610170,
+  "total": 1590500,
   "top_cited": [
-    {
-      "title": "Detecting Functionality-Specific Vulnerabilities via Retrieving Individual Functionality-Equivalent APIs in Open-Source Repositories",
-      "year": 2025,
-      "cited_by": 15857,
-      "venue": "Leibniz international proceedings in informatics"
-    },
     {
       "title": "Accurate structure prediction of biomolecular interactions with AlphaFold 3",
       "year": 2024,
-      "cited_by": 15554,
+      "cited_by": 15333,
       "venue": "Nature"
+    },
+    {
+      "title": "Detecting Functionality-Specific Vulnerabilities via Retrieving Individual Functionality-Equivalent APIs in Open-Source Repositories",
+      "year": 2025,
+      "cited_by": 15249,
+      "venue": "Leibniz international proceedings in informatics"
     },
     {
       "title": "The Difference between Emergency Remote Teaching and Online Learning",
       "year": 2024,
-      "cited_by": 6265,
+      "cited_by": 6250,
       "venue": "BRILL eBooks"
     },
     {
       "title": "Global incidence, prevalence, years lived with disability (YLDs), disability-adjusted life-years (DALYs), and healthy life expectancy (HALE) for 371 diseases an...",
       "year": 2024,
-      "cited_by": 5035,
+      "cited_by": 5011,
       "venue": "The Lancet"
     },
     {
       "title": "Kaldi Speech Recognition Toolkit",
       "year": 2024,
-      "cited_by": 4823,
+      "cited_by": 4609,
       "venue": "Infoscience (Ecole Polytechnique Fédérale de Lausanne)"
     }
   ]

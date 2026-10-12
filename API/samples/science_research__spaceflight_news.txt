@@ -1,0 +1,39 @@
+# live 2026-10-12 10:34
+{
+  "artemis_articles_2026": 451,
+  "top_sources": [
+    [
+      "NASA",
+      60
+    ],
+    [
+      "SpaceNews",
+      9
+    ],
+    [
+      "ESA",
+      8
+    ],
+    [
+      "SpacePolicyOnline.com",
+      6
+    ]
+  ],
+  "latest": [
+    {
+      "title": "Artemis II Crew Moon Photo Annotations",
+      "site": "NASA",
+      "published": "2026-10-07"
+    },
+    {
+      "title": "NASA progress with SLS vehicles for upcoming Artemis missions",
+      "site": "NASASpaceflight",
+      "published": "2026-10-06"
+    },
+    {
+      "title": "NASA Astronaut Christina Koch at Eagles vs. Rams",
+      "site": "NASA",
+      "published": "2026-10-05"
+    }
+  ]
+}

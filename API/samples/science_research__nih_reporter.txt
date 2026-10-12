@@ -1,0 +1,41 @@
+# live 2026-10-12 10:34
+{
+  "gwu_nih_projects_fy2025": 134,
+  "largest": [
+    {
+      "title": "The DC Cohort: A Longitudinal Population-Based Cohort Study of People Living with HIV in Washington, DC",
+      "amount_usd": 6502401,
+      "institute": "NIAID",
+      "activity": "R24",
+      "pi": "Amanda Derryck Castel"
+    },
+    {
+      "title": "NICHD Maternal-Fetal Medicine Units (MFMU) Network: Data CoordinatingCenter",
+      "amount_usd": 3979209,
+      "institute": "NICHD",
+      "activity": "U24",
+      "pi": "Rebecca Gersnoviez Clifton"
+    },
+    {
+      "title": "AIDS and Cancer Specimen Resource (ACSR)",
+      "amount_usd": 3963281,
+      "institute": "NCI",
+      "activity": "UM1",
+      "pi": "Jeffrey Michael Bethony"
+    },
+    {
+      "title": "The Impact of the 11th Street Bridge Park on the Built Environment and Community Health: Washington, D.C.",
+      "amount_usd": 3399035,
+      "institute": "NINR",
+      "activity": "R01",
+      "pi": "LORETTA  DIPIETRO"
+    },
+    {
+      "title": "Adjunctive Azithromycin Prophylaxis for Scheduled/Prelabor Cesarean Delivery",
+      "amount_usd": 3341494,
+      "institute": "NICHD",
+      "activity": "U01",
+      "pi": "Kim A Boggess"
+    }
+  ]
+}

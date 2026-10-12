@@ -1,0 +1,41 @@
+# live 2026-10-12 10:34
+{
+  "hits": 8,
+  "images": [
+    {
+      "title": "Beyond the Deep Field: Hubble’s Legacy and the Future of Cosmi",
+      "date": "2026-06-05",
+      "center": "HQ",
+      "nasa_id": "NHQ202606050016",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202606050016/NHQ202606050016~large.jpg"
+    },
+    {
+      "title": "JWST’s First Full-Color Images",
+      "date": "2022-07-12",
+      "center": "HQ",
+      "nasa_id": "NHQ202207120017",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202207120017/NHQ202207120017~medium.jpg"
+    },
+    {
+      "title": "JWST’s First Full-Color Images",
+      "date": "2022-07-12",
+      "center": "HQ",
+      "nasa_id": "NHQ202207120016",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202207120016/NHQ202207120016~medium.jpg"
+    },
+    {
+      "title": "Beyond the Deep Field: Hubble’s Legacy and the Future of Cosmi",
+      "date": "2026-06-05",
+      "center": "HQ",
+      "nasa_id": "NHQ202606050014",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202606050014/NHQ202606050014~large.jpg"
+    },
+    {
+      "title": "Beyond the Deep Field: Hubble’s Legacy and the Future of Cosmi",
+      "date": "2026-06-05",
+      "center": "HQ",
+      "nasa_id": "NHQ202606050013",
+      "thumbnail": "https://images-assets.nasa.gov/image/NHQ202606050013/NHQ202606050013~large.jpg"
+    }
+  ]
+}

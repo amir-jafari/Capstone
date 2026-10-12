@@ -30,7 +30,7 @@ DOMAINS = [
     ("agriculture", "🌾", "Agriculture & Food"),
     ("education", "🎓", "Education"),
     ("jobs", "💼", "Jobs & Labor"),
-    ("science_research", "🔬", "Science & Research"),
+    ("science_research", "🔬", "Science, Space & Research"),
     ("ai_ml", "🤖", "AI & Machine Learning"),
     ("engineering_energy", "⚙️", "Engineering, Energy & Tech"),
     ("transportation_geo", "🗺️", "Transportation & Geospatial"),
@@ -150,7 +150,7 @@ def main():
 HEADER = """# Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
-> census, housing, political science, law, health, agriculture & food, education, jobs & labor, science, AI & machine learning,
+> census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning,
 > engineering & energy, transportation, sports, and culture, media & entertainment.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.

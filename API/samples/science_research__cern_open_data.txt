@@ -1,0 +1,61 @@
+# live 2026-10-12 10:34
+{
+  "matching_educational_datasets": 5,
+  "examples": [
+    {
+      "recid": "700",
+      "title": "Dimuon event information derived from the Run2010B public Mu dataset",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 11
+    },
+    {
+      "recid": "301",
+      "title": "J/psi to two muons from 2010",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 22
+    },
+    {
+      "recid": "310",
+      "title": "Event files for CMS masterclass exercise 2014",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 77
+    },
+    {
+      "recid": "545",
+      "title": "Datasets derived from the Run2011A SingleElectron, SingleMu, DoubleElectron, and DoubleMu primary datasets",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2011"
+      ],
+      "files": 8
+    },
+    {
+      "recid": "303",
+      "title": "Events with two muons from 2010",
+      "experiment": [
+        "CMS"
+      ],
+      "year": [
+        "2010"
+      ],
+      "files": 12
+    }
+  ]
+}
