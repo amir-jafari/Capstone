@@ -1,0 +1,43 @@
+# live 2026-10-11 20:51
+[
+  {
+    "arxiv_id": "2610.11216",
+    "title": "The Lattice of Transition Laws",
+    "upvotes": 5,
+    "comments": 2,
+    "published": "2026-10-08",
+    "summary": "Diffusion and autoregression (AR) have long been seen as different categories of generative models, with diffusion specialising in continuous fields and AR specialising in discrete tokens. Recent work..."
+  },
+  {
+    "arxiv_id": "2609.38527",
+    "title": "Behavioral Persistence and Incomplete Functional Transfer of Co-evolved Communication in Evolutionary Robotics",
+    "upvotes": 4,
+    "comments": 2,
+    "published": "2026-09-29",
+    "summary": "This work evaluates the direct transfer of a co-evolved communication protocol from a 2D simulation to a 3D physical environment, without retraining the network weights. Two e-puck-type robots, contro..."
+  },
+  {
+    "arxiv_id": "2610.09280",
+    "title": "Evaluating the Transfer of Co-Evolved Communication from 2D to 3D Simulation",
+    "upvotes": 4,
+    "comments": 2,
+    "published": "2026-10-07",
+    "summary": "This work examines the transfer of a co-evolved communication mechanism between two robotic agents from a discrete two-dimensional (2D) simulator to a three-dimensional simulator with real physics (3D..."
+  },
+  {
+    "arxiv_id": "2609.33987",
+    "title": "Opera: A Verbal Critic Framework for Long-horizon Coding Agents",
+    "upvotes": 14,
+    "comments": 2,
+    "published": "2026-10-08",
+    "summary": "Long-horizon coding agents need timely corrections, yet feedback can be ineffective or even harmful when it misjudges ongoing work or fails to address the underlying problem. Existing critics focus on..."
+  },
+  {
+    "arxiv_id": "2610.11169",
+    "title": "Skill Constellations: Tracing the Supply Chain of Agent Skills on GitHub",
+    "upvotes": 5,
+    "comments": 3,
+    "published": "2026-10-08",
+    "summary": "Agent skills are SKILL.md instructions and scripts that AI coding agents such as Claude Code and Codex run with the permissions of their user. Developers share skills by copying them between repositor..."
+  }
+]

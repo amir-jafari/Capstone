@@ -1,0 +1,41 @@
+# live 2026-10-11 20:51
+{
+  "notable_models": 1078,
+  "largest_training_compute": [
+    {
+      "model": "GPT-6 Astra",
+      "org": "OpenAI",
+      "date": "2026-09-03",
+      "training_FLOP": "1.0e+27",
+      "parameters": null
+    },
+    {
+      "model": "Grok 4",
+      "org": "xAI",
+      "date": "2025-07-09",
+      "training_FLOP": "5.0e+26",
+      "parameters": "3000000000000.0"
+    },
+    {
+      "model": "GPT-4.5",
+      "org": "OpenAI",
+      "date": "2025-02-27",
+      "training_FLOP": "3.8e+26",
+      "parameters": null
+    },
+    {
+      "model": "Grok 3",
+      "org": "xAI",
+      "date": "2025-02-17",
+      "training_FLOP": "3.5e+26",
+      "parameters": "3000000000000.0"
+    },
+    {
+      "model": "GPT-5",
+      "org": "OpenAI",
+      "date": "2025-08-07",
+      "training_FLOP": "6.6e+25",
+      "parameters": null
+    }
+  ]
+}

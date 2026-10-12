@@ -1,0 +1,46 @@
+# live 2026-10-11 20:51
+[
+  {
+    "uci_id": 2,
+    "name": "Adult",
+    "area": "Social Science",
+    "tasks": [
+      "Classification"
+    ],
+    "num_instances": 48842,
+    "num_features": 14,
+    "target_col": [
+      "income"
+    ],
+    "data_url": "https://archive.ics.uci.edu/static/public/2/data.csv"
+  },
+  {
+    "uci_id": 186,
+    "name": "Wine Quality",
+    "area": "Business",
+    "tasks": [
+      "Classification",
+      "Regression"
+    ],
+    "num_instances": 4898,
+    "num_features": 11,
+    "target_col": [
+      "quality"
+    ],
+    "data_url": "https://archive.ics.uci.edu/static/public/186/data.csv"
+  },
+  {
+    "uci_id": 53,
+    "name": "Iris",
+    "area": "Biology",
+    "tasks": [
+      "Classification"
+    ],
+    "num_instances": 150,
+    "num_features": 4,
+    "target_col": [
+      "class"
+    ],
+    "data_url": "https://archive.ics.uci.edu/static/public/53/data.csv"
+  }
+]

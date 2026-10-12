@@ -1,0 +1,48 @@
+# live 2026-10-11 20:51
+[
+  {
+    "ref": "jsphyg/weather-dataset-rattle-package",
+    "title": "Rain in Australia",
+    "size_bytes": 4020790,
+    "license": "Other (specified in description)",
+    "usability": 1.0,
+    "downloads": 184449,
+    "votes": 1894
+  },
+  {
+    "ref": "nelgiriyewithana/countries-of-the-world-2023",
+    "title": "Global Country Information Dataset 2023",
+    "size_bytes": 24063,
+    "license": "Attribution 4.0 International (CC BY 4.0)",
+    "usability": 1.0,
+    "downloads": 48059,
+    "votes": 877
+  },
+  {
+    "ref": "atharvaingle/crop-recommendation-dataset",
+    "title": "Crop Recommendation Dataset",
+    "size_bytes": 65234,
+    "license": "Apache 2.0",
+    "usability": 0.71,
+    "downloads": 110597,
+    "votes": 670
+  },
+  {
+    "ref": "rohanrao/air-quality-data-in-india",
+    "title": "Air Quality Data in India (2015 - 2020)",
+    "size_bytes": 76469579,
+    "license": "CC0: Public Domain",
+    "usability": 1.0,
+    "downloads": 98616,
+    "votes": 667
+  },
+  {
+    "ref": "nehaprabhavalkar/indian-food-101",
+    "title": "Indian Food 101",
+    "size_bytes": 6951,
+    "license": "Data files © Original Authors",
+    "usability": 1.0,
+    "downloads": 40478,
+    "votes": 628
+  }
+]

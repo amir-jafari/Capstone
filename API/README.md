@@ -1,7 +1,8 @@
 # Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather, finance, census,
-> political science, health, education, science, engineering, transportation, sports, and culture.
+> political science, health, education, science, AI & machine learning, engineering, transportation,
+> sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 
@@ -81,28 +82,39 @@ python build_readme.py          # re-run everything & regenerate this README
 | 51 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
 | 52 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
 | 53 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 54 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 55 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 56 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 57 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 58 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 59 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 60 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 61 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 62 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 63 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 64 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 65 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 66 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 67 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 68 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 69 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 70 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 71 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 72 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 73 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 74 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 75 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 54 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 55 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 56 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 57 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 58 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 59 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 60 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 61 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 62 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 63 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 64 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 65 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 66 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 67 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 68 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 69 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 70 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 71 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 72 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 73 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 74 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 75 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 76 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 77 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 78 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 79 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 80 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 81 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 82 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 83 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 84 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 85 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 86 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -4196,6 +4208,942 @@ def main():
 [
   {"title": "Attention is All you Need", "year": 2017, "citationCount": 160000,
    "tldr": "A new simple network architecture, the Transformer, based solely on attention mechanisms..."}
+]
+```
+</details>
+
+---
+
+## 🤖 AI & Machine Learning
+
+### Anthropic Claude API
+
+| | |
+|:--|:--|
+| **Docs** | https://platform.claude.com/docs/en/api/overview · models & pricing: https://platform.claude.com/docs/en/about-claude/pricing |
+| **Auth** | API key (header `x-api-key`; the Python SDK reads `ANTHROPIC_API_KEY`) |
+| **Register / token** | Create an account at https://platform.claude.com -> Settings -> API Keys -> Create Key, then add credits under Billing (pay-as-you-go). Example prices per million tokens: Claude Opus 5.5 $4 in / $20 out, Claude Haiku 5.5 $0.10 / $0.50. Install the SDK with `pip install anthropic`. |
+| **Env var** | `ANTHROPIC_API_KEY` |
+| **Script** | [`scripts/ai_ml/anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+
+**What you can get:**
+
+- Text generation, summarization, classification, extraction, and Q&A over long documents (1M-token context)
+- Vision (images, PDFs), tool use / function calling, structured JSON outputs
+- Batch API (50% cheaper, asynchronous), prompt caching, token counting, Models API
+
+**Capstone ideas:** LLM-assisted labeling of text data, summarizing documents pulled from the other APIs here, LLM-as-judge evaluation.
+
+**Endpoint:** `POST https://api.anthropic.com/v1/messages  (Python SDK: client.messages.create / client.beta.messages.create)`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `x-api-key / anthropic-version (headers)` | Your key; API version header for raw HTTP (the SDK sets both) | `anthropic-version: 2023-06-01` |
+| `model` | claude-opus-5-5 (default, most capable Opus), claude-sonnet-5-5, claude-haiku-5-5 (fastest, cheapest) | `claude-opus-5-5` |
+| `max_tokens` | Required cap on output tokens; ~16,000 for non-streaming calls (stream for larger) | `16000` |
+| `messages` | List of {role: user \| assistant, content}; the first must be user | `[{"role": "user", "content": "..."}]` |
+| `system` | System prompt | `You are a concise research assistant.` |
+| `output_config.effort` | low \| medium \| high \| xhigh \| max - how much the model thinks (default medium on Opus 5.5) | `low` |
+| `output_config.format` | Structured outputs: force JSON that matches a schema | `{"type": "json_schema", "schema": {...}}` |
+| `stream` | true -> server-sent events (SDK: client.messages.stream) | `true` |
+| `tools` | Tool / function definitions the model can call | `[{"name": ..., "input_schema": {...}}]` |
+| `fallbacks + anthropic-beta header` | "default" retries a safety-classifier refusal on a recommended fallback model | `server-side-fallback-2026-07-01` |
+| `temperature / top_p / top_k` | Not accepted on current models (returns 400) - steer with the prompt and effort instead | `—` |
+
+```python
+from _common import key, show
+
+
+def main():
+    key("ANTHROPIC_API_KEY")  # the SDK reads the key from the environment (.env is loaded by _common)
+    import anthropic  # only this example needs the SDK: pip install anthropic
+
+    client = anthropic.Anthropic()
+    response = client.beta.messages.create(
+        model="claude-opus-5-5",
+        max_tokens=16000,
+        betas=["server-side-fallback-2026-07-01"],
+        fallbacks="default",  # if a safety classifier declines, retry on Anthropic's recommended fallback model
+        output_config={"effort": "low"},  # a short, simple task; raise effort for harder reasoning
+        system="You are a concise research assistant for data-science students.",
+        messages=[{"role": "user", "content": "Suggest three capstone project ideas that combine public APIs "
+                                              "with an LLM. One line each."}],
+    )
+    if response.stop_reason == "refusal":  # check before reading content
+        show({"stop_reason": "refusal", "category": response.stop_details and response.stop_details.category})
+        return
+    show({"model": response.model, "stop_reason": response.stop_reason,
+          "text": "".join(b.text for b in response.content if b.type == "text"),
+          "usage": {"input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens}},
+         max_str=1000)
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "model": "claude-opus-5-5",
+  "stop_reason": "end_turn",
+  "text": "1. Policy-text classifier: label Federal Register rules by topic with an LLM, then train a cheap model on the labels.\n2. News-to-markets: summarize GDELT coverage per company and test whether sentiment predicts SEC-filing events.\n3. Education Q&A: answer questions over College Scorecard data with tool calls that query the API live.",
+  "usage": {"input_tokens": 41, "output_tokens": 96}
+}
+```
+</details>
+
+---
+
+### Epoch AI — Data on AI Models
+
+| | |
+|:--|:--|
+| **Docs** | https://epoch.ai/data/ai-models |
+| **Auth** | None |
+| **Register / token** | No registration. CSV downloads updated continuously; licensed CC-BY (cite Epoch AI). |
+| **Script** | [`scripts/ai_ml/epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+
+**What you can get:**
+
+- 3,000+ AI models: organization, release date, domain, task, parameters, training compute (FLOP)
+- Training dataset size, hardware, cost estimates, open-weights status, country
+- Separate 'notable' and 'frontier' subsets
+
+**Capstone ideas:** Scaling-trend analysis (compute over time), forecasting training costs, open vs closed model studies.
+
+**Endpoint:** `GET https://epoch.ai/data/{file}.csv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `all_ai_models.csv` | Every tracked model | `all_ai_models.csv` |
+| `notable_ai_models.csv` | Models meeting notability criteria (state of the art, highly cited, ...) | `notable_ai_models.csv` |
+| `frontier_ai_models.csv` | Models at the frontier of training compute when released | `frontier_ai_models.csv` |
+| `Columns` | Model, Organization, Publication date, Domain, Parameters, Training compute (FLOP), Open model weights?, ... | `—` |
+
+```python
+import csv
+import io
+
+from _common import get, show
+
+
+def main():
+    rows = list(csv.DictReader(io.StringIO(get("https://epoch.ai/data/notable_ai_models.csv", as_json=False))))
+    with_compute = [r for r in rows if r["Training compute (FLOP)"]]
+    largest = sorted(with_compute, key=lambda r: -float(r["Training compute (FLOP)"]))[:5]
+    show({"notable_models": len(rows), "largest_training_compute": [
+        {"model": r["Model"], "org": r["Organization"], "date": r["Publication date"],
+         "training_FLOP": f'{float(r["Training compute (FLOP)"]):.1e}', "parameters": r["Parameters"] or None}
+        for r in largest]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 20:51</summary>
+
+```json
+{
+  "notable_models": 1078,
+  "largest_training_compute": [
+    {
+      "model": "GPT-6 Astra",
+      "org": "OpenAI",
+      "date": "2026-09-03",
+      "training_FLOP": "1.0e+27",
+      "parameters": null
+    },
+    {
+      "model": "Grok 4",
+      "org": "xAI",
+      "date": "2025-07-09",
+      "training_FLOP": "5.0e+26",
+      "parameters": "3000000000000.0"
+    },
+    {
+      "model": "GPT-4.5",
+      "org": "OpenAI",
+      "date": "2025-02-27",
+      "training_FLOP": "3.8e+26",
+      "parameters": null
+    },
+    {
+      "model": "Grok 3",
+      "org": "xAI",
+      "date": "2025-02-17",
+      "training_FLOP": "3.5e+26",
+      "parameters": "3000000000000.0"
+    },
+    {
+      "model": "GPT-5",
+      "org": "OpenAI",
+      "date": "2025-08-07",
+      "training_FLOP": "6.6e+25",
+      "parameters": null
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Google Gemini API
+
+| | |
+|:--|:--|
+| **Docs** | https://ai.google.dev/gemini-api/docs |
+| **Auth** | API key (header `x-goog-api-key`) |
+| **Register / token** | Get a key at https://aistudio.google.com/apikey (Google account). A free tier with lower rate limits is available for some models; see https://ai.google.dev/gemini-api/docs/rate-limits. |
+| **Env var** | `GEMINI_API_KEY` |
+| **Script** | [`scripts/ai_ml/google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+
+**What you can get:**
+
+- Text and multimodal generation (gemini-3.8-flash; gemini-3.5-flash-lite for high volume)
+- Image, audio and video understanding; image generation and text-to-speech models
+- Embeddings, Live API (real-time audio)
+
+**Capstone ideas:** Multimodal capstones (video/audio analysis), low-cost bulk labeling with Flash-Lite.
+
+**Endpoint:** `POST https://generativelanguage.googleapis.com/v1beta/interactions`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `model` | gemini-3.8-flash \| gemini-3.5-flash-lite \| ... (GET /v1beta/models lists them) | `gemini-3.8-flash` |
+| `input` | A string, or a list of content objects ({type: text \| image, ...}) | `Suggest three capstone ideas.` |
+| `system_instruction` | System prompt | `You are a concise research assistant.` |
+| `generation_config.temperature` | Sampling temperature | `1.0` |
+| `generation_config.thinking_level` | How much the model thinks | `low` |
+| `store / previous_interaction_id` | store=false for stateless calls; chain turns server-side by ID | `false` |
+| `x-goog-api-key (header)` | Your key | `<GEMINI_API_KEY>` |
+
+```python
+import os
+
+import requests
+
+from _common import USER_AGENT, key, show
+
+
+def main():
+    model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+    r = requests.post("https://generativelanguage.googleapis.com/v1beta/interactions", timeout=120, headers={
+        "x-goog-api-key": key("GEMINI_API_KEY"), "User-Agent": USER_AGENT}, json={
+        "model": model, "store": False,
+        "system_instruction": "You are a concise research assistant for data-science students.",
+        "input": "Suggest three capstone project ideas that combine public APIs with an LLM. One line each.",
+        "generation_config": {"thinking_level": "low"},
+    })
+    r.raise_for_status()
+    show({"model": model, "text": r.json()["steps"][-1]["content"][0]["text"]}, max_str=1000)
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "model": "gemini-3.8-flash",
+  "text": "1. Predict wildfire smoke exposure by joining NASA EONET events with OpenAQ readings...\n2. ...\n3. ..."
+}
+```
+</details>
+
+---
+
+### Hugging Face Daily Papers
+
+| | |
+|:--|:--|
+| **Docs** | https://huggingface.co/docs/hub/en/api |
+| **Auth** | None |
+| **Register / token** | No registration. |
+| **Script** | [`scripts/ai_ml/hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+
+**What you can get:**
+
+- Curated daily list of new AI papers (arXiv) with upvotes, comment counts, AI-generated summary, keywords
+- Linked models, datasets and Spaces for each paper
+- Paper search by keyword
+
+**Capstone ideas:** Tracking what the AI community pays attention to, predicting paper popularity from abstracts.
+
+**Endpoint:** `GET https://huggingface.co/api/daily_papers`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `limit` | Number of papers | `5` |
+| `date` | A specific day, YYYY-MM-DD | `2026-10-09` |
+| `sort` | publishedAt \| trending | `trending` |
+| `/api/papers/search?q=` | Sibling endpoint: search papers | `q=diffusion` |
+| `/api/papers/{arxiv_id}` | Sibling endpoint: one paper's metadata | `/api/papers/1706.03762` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://huggingface.co/api/daily_papers", params={"limit": 5})
+    show([{"arxiv_id": p["paper"]["id"], "title": p["paper"]["title"], "upvotes": p["paper"].get("upvotes"),
+           "comments": p.get("numComments"), "published": p["paper"]["publishedAt"][:10],
+           "summary": p["paper"].get("summary")} for p in d], max_str=200)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 20:51</summary>
+
+```json
+[
+  {
+    "arxiv_id": "2610.11216",
+    "title": "The Lattice of Transition Laws",
+    "upvotes": 5,
+    "comments": 2,
+    "published": "2026-10-08",
+    "summary": "Diffusion and autoregression (AR) have long been seen as different categories of generative models, with diffusion specialising in continuous fields and AR specialising in discrete tokens. Recent work..."
+  },
+  {
+    "arxiv_id": "2609.38527",
+    "title": "Behavioral Persistence and Incomplete Functional Transfer of Co-evolved Communication in Evolutionary Robotics",
+    "upvotes": 4,
+    "comments": 2,
+    "published": "2026-09-29",
+    "summary": "This work evaluates the direct transfer of a co-evolved communication protocol from a 2D simulation to a 3D physical environment, without retraining the network weights. Two e-puck-type robots, contro..."
+  },
+  {
+    "arxiv_id": "2610.09280",
+    "title": "Evaluating the Transfer of Co-Evolved Communication from 2D to 3D Simulation",
+    "upvotes": 4,
+    "comments": 2,
+    "published": "2026-10-07",
+    "summary": "This work examines the transfer of a co-evolved communication mechanism between two robotic agents from a discrete two-dimensional (2D) simulator to a three-dimensional simulator with real physics (3D..."
+  },
+  {
+    "arxiv_id": "2609.33987",
+    "title": "Opera: A Verbal Critic Framework for Long-horizon Coding Agents",
+    "upvotes": 14,
+    "comments": 2,
+    "published": "2026-10-08",
+    "summary": "Long-horizon coding agents need timely corrections, yet feedback can be ineffective or even harmful when it misjudges ongoing work or fails to address the underlying problem. Existing critics focus on..."
+  },
+  {
+    "arxiv_id": "2610.11169",
+    "title": "Skill Constellations: Tracing the Supply Chain of Agent Skills on GitHub",
+    "upvotes": 5,
+    "comments": 3,
+    "published": "2026-10-08",
+    "summary": "Agent skills are SKILL.md instructions and scripts that AI coding agents such as Claude Code and Codex run with the permissions of their user. Developers share skills by copying them between repositor..."
+  }
+]
+```
+</details>
+
+---
+
+### Hugging Face Inference Providers
+
+| | |
+|:--|:--|
+| **Docs** | https://huggingface.co/docs/inference-providers |
+| **Auth** | None to list models; Hugging Face token (Bearer) to run them |
+| **Register / token** | Create a token at https://huggingface.co/settings/tokens (enable 'Make calls to Inference Providers'). Free accounts get a small monthly credit; PRO accounts more. One token reaches many providers. |
+| **Env var** | `HF_TOKEN (needed for chat completions)` |
+| **Script** | [`scripts/ai_ml/hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+
+**What you can get:**
+
+- One OpenAI-compatible endpoint for open-weight models (Qwen, Llama, DeepSeek, Mistral, ...) served by many providers
+- Live model list with per-provider price, context length, latency, throughput, tool-use support
+- Also text-to-image, speech, embeddings via provider-specific routes
+
+**Capstone ideas:** Compare open-weight models on your task, cost/latency benchmarking across providers.
+
+**Endpoint:** `GET https://router.huggingface.co/v1/models  ·  POST https://router.huggingface.co/v1/chat/completions`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `model` | Hub model ID; append :provider or :fastest / :cheapest to pick a provider | `Qwen/Qwen3.8-27B:cheapest` |
+| `messages` | OpenAI-style list of {role, content} | `[{"role": "user", "content": "..."}]` |
+| `max_tokens` | Cap on generated tokens | `300` |
+| `temperature / top_p` | Sampling controls | `0.7` |
+| `stream` | true -> server-sent events | `true` |
+| `tools / response_format` | Function calling / JSON output (where the provider supports it) | `{"type": "json_object"}` |
+| `Authorization (header)` | Bearer token | `Bearer <HF_TOKEN>` |
+
+```python
+import os
+
+import requests
+
+from _common import USER_AGENT, get, show
+
+
+def main():
+    models = get("https://router.huggingface.co/v1/models")["data"]
+    out = {"models_available": len(models), "sample_models": [
+        {"id": m["id"], "providers": len(m["providers"]),
+         "cheapest_input_usd_per_M": min((p["pricing"]["input"] for p in m["providers"] if p.get("pricing")), default=None)}
+        for m in models[:5]]}
+    if os.getenv("HF_TOKEN"):  # running a model needs a token; listing them does not
+        r = requests.post("https://router.huggingface.co/v1/chat/completions", timeout=120, headers={
+            "Authorization": f"Bearer {os.environ['HF_TOKEN']}", "User-Agent": USER_AGENT}, json={
+            "model": f'{models[0]["id"]}:cheapest', "max_tokens": 300,
+            "messages": [{"role": "user", "content": "Name one public dataset for studying air quality."}]})
+        r.raise_for_status()
+        out["chat_reply"] = r.json()["choices"][0]["message"]["content"]
+    show(out)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 20:51</summary>
+
+```json
+{
+  "models_available": 127,
+  "sample_models": [
+    {
+      "id": "Qwen/Qwen3.8-27B",
+      "providers": 5,
+      "cheapest_input_usd_per_M": 0.2
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "providers": 5,
+      "cheapest_input_usd_per_M": 0.2
+    },
+    {
+      "id": "zai-org/GLM-5.3-Flash",
+      "providers": 7,
+      "cheapest_input_usd_per_M": 0.15
+    },
+    {
+      "id": "zai-org/GLM-5.3",
+      "providers": 7,
+      "cheapest_input_usd_per_M": 0.9
+    },
+    {
+      "id": "meta-llama/Llama-3.1-8B-Instruct",
+      "providers": 4,
+      "cheapest_input_usd_per_M": 0.02
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Kaggle API
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/Kaggle/kaggle-cli/blob/main/docs/README.md |
+| **Auth** | Basic auth with username + API key (dataset search currently answers without auth) |
+| **Register / token** | Kaggle account -> Settings -> API -> 'Create New Token' downloads kaggle.json (username + key). CLI: `pip install kaggle`, then `kaggle datasets download -d owner/dataset`. Accept each competition's rules on the website first. |
+| **Env var** | `KAGGLE_USERNAME, KAGGLE_KEY` |
+| **Script** | [`scripts/ai_ml/kaggle.py`](scripts/ai_ml/kaggle.py) |
+
+**What you can get:**
+
+- Search 400k+ public datasets: title, owner, size, licence, usability rating, downloads, votes
+- Download datasets and competition files
+- Competitions, leaderboards, notebooks (kernels), models
+
+**Capstone ideas:** Finding training data fast; studying which dataset properties predict popularity.
+
+**Endpoint:** `GET https://www.kaggle.com/api/v1/datasets/list`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search` | Search term | `titanic` |
+| `sortBy` | hottest \| votes \| updated \| active \| published | `votes` |
+| `filetype` | all \| csv \| sqlite \| json \| bigQuery \| parquet | `csv` |
+| `license / tagids / user` | Filters: licence group, tag IDs, owner | `license=cc` |
+| `page` | Page number (20 per page) | `1` |
+| `/api/v1/datasets/download/{owner}/{dataset}` | Download a dataset as a zip (auth required) | `/datasets/download/heptapod/titanic` |
+| `/api/v1/competitions/list?search=` | Sibling endpoint: competitions (auth required) | `search=forecasting` |
+
+```python
+import os
+
+import requests
+
+from _common import USER_AGENT, show
+
+
+def main():
+    auth = (os.environ["KAGGLE_USERNAME"], os.environ["KAGGLE_KEY"]) if os.getenv("KAGGLE_KEY") else None
+    r = requests.get("https://www.kaggle.com/api/v1/datasets/list", auth=auth, timeout=30, headers={"User-Agent": USER_AGENT},
+                     params={"search": "climate", "sortBy": "votes", "filetype": "csv"})
+    r.raise_for_status()
+    # Most field names in this response carry a "Nullable" suffix (ref does not)
+    show([{"ref": d.get("ref"), "title": d.get("titleNullable"),
+           "size_bytes": d.get("totalBytesNullable"), "license": d.get("licenseNameNullable"),
+           "usability": round(d.get("usabilityRatingNullable") or 0, 2), "downloads": d.get("downloadCount"),
+           "votes": d.get("voteCount")} for d in r.json()[:5]])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 20:51</summary>
+
+```json
+[
+  {
+    "ref": "jsphyg/weather-dataset-rattle-package",
+    "title": "Rain in Australia",
+    "size_bytes": 4020790,
+    "license": "Other (specified in description)",
+    "usability": 1.0,
+    "downloads": 184449,
+    "votes": 1894
+  },
+  {
+    "ref": "nelgiriyewithana/countries-of-the-world-2023",
+    "title": "Global Country Information Dataset 2023",
+    "size_bytes": 24063,
+    "license": "Attribution 4.0 International (CC BY 4.0)",
+    "usability": 1.0,
+    "downloads": 48059,
+    "votes": 877
+  },
+  {
+    "ref": "atharvaingle/crop-recommendation-dataset",
+    "title": "Crop Recommendation Dataset",
+    "size_bytes": 65234,
+    "license": "Apache 2.0",
+    "usability": 0.71,
+    "downloads": 110597,
+    "votes": 670
+  },
+  {
+    "ref": "rohanrao/air-quality-data-in-india",
+    "title": "Air Quality Data in India (2015 - 2020)",
+    "size_bytes": 76469579,
+    "license": "CC0: Public Domain",
+    "usability": 1.0,
+    "downloads": 98616,
+    "votes": 667
+  },
+  {
+    "ref": "nehaprabhavalkar/indian-food-101",
+    "title": "Indian Food 101",
+    "size_bytes": 6951,
+    "license": "Data files © Original Authors",
+    "usability": 1.0,
+    "downloads": 40478,
+    "votes": 628
+  }
+]
+```
+</details>
+
+---
+
+### Ollama (local LLMs)
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.ollama.com/api/introduction |
+| **Auth** | None (runs on your own machine) |
+| **Register / token** | Install from https://ollama.com/download, then `ollama pull llama3.2` (or any model from https://ollama.com/library). Free; speed depends on your hardware. Data never leaves your machine. |
+| **Env var** | `OLLAMA_MODEL (optional, default llama3.2)` |
+| **Script** | [`scripts/ai_ml/ollama.py`](scripts/ai_ml/ollama.py) |
+
+**What you can get:**
+
+- Chat / generation with open-weight models running locally (Llama, Qwen, Gemma, Mistral, DeepSeek...)
+- Embeddings (/api/embed), JSON-schema structured output, tool calling
+- OpenAI-compatible endpoint at /v1/chat/completions
+
+**Capstone ideas:** Private-data projects (no data sent to a vendor), reproducible experiments with pinned local models.
+
+**Endpoint:** `POST http://localhost:11434/api/chat`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `model` | Any pulled model (GET /api/tags lists them) | `llama3.2` |
+| `messages` | List of {role, content} | `[{"role": "user", "content": "..."}]` |
+| `stream` | false -> one JSON response (default streams JSON lines) | `false` |
+| `format` | "json" or a JSON schema for structured output | `json` |
+| `options` | Sampling/runtime options: temperature, num_ctx, seed, ... | `{"temperature": 0, "seed": 42}` |
+| `/api/embed` | Sibling endpoint: embeddings (model, input) | `model=nomic-embed-text` |
+
+```python
+import os
+import sys
+
+import requests
+
+from _common import show
+
+
+def main():
+    model = os.getenv("OLLAMA_MODEL", "llama3.2")
+    try:
+        r = requests.post("http://localhost:11434/api/chat", timeout=300, json={
+            "model": model, "stream": False, "options": {"temperature": 0},
+            "messages": [{"role": "user", "content": "Name one public dataset for studying air quality."}]})
+    except requests.ConnectionError:
+        print("[skip] Ollama is not running on localhost:11434 (install it and run `ollama pull llama3.2`).")
+        sys.exit(2)
+    r.raise_for_status()
+    d = r.json()
+    show({"model": d["model"], "reply": d["message"]["content"], "eval_count": d.get("eval_count")})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "model": "llama3.2",
+  "reply": "The EPA Air Quality System (AQS) and OpenAQ are two widely used public air-quality datasets.",
+  "eval_count": 24
+}
+```
+</details>
+
+---
+
+### OpenAI API
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.openai.com/api/docs |
+| **Auth** | API key (header `Authorization: Bearer`) |
+| **Register / token** | Create an account at https://platform.openai.com -> API keys -> Create new secret key, and add billing credits (pay-as-you-go). Small model example: gpt-6-luna at $0.10 in / $0.50 out per million tokens. |
+| **Env var** | `OPENAI_API_KEY` |
+| **Script** | [`scripts/ai_ml/openai.py`](scripts/ai_ml/openai.py) |
+
+**What you can get:**
+
+- Text generation via the Responses API (gpt-6-astra flagship, gpt-6.1-sol balanced, gpt-6-luna small)
+- Embeddings, image generation, speech-to-text and text-to-speech, moderation
+- Batch API, fine-tuning, file search
+
+**Capstone ideas:** Embedding-based clustering of text datasets, zero-shot classification baselines, transcription of audio data.
+
+**Endpoint:** `POST https://api.openai.com/v1/responses`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `model` | gpt-6-astra \| gpt-6.1-sol \| gpt-6-luna (GET /v1/models lists what your key can use) | `gpt-6-luna` |
+| `input` | A string, or a list of {role, content} messages | `Suggest three capstone ideas.` |
+| `instructions` | System-style instructions | `You are a concise research assistant.` |
+| `max_output_tokens` | Cap on generated tokens | `500` |
+| `stream` | true -> server-sent events | `true` |
+| `/v1/embeddings` | Sibling endpoint: vector embeddings (model, input) | `—` |
+| `Authorization (header)` | Bearer token | `Bearer <OPENAI_API_KEY>` |
+
+```python
+import os
+
+import requests
+
+from _common import USER_AGENT, key, show
+
+
+def main():
+    r = requests.post("https://api.openai.com/v1/responses", timeout=120, headers={
+        "Authorization": f"Bearer {key('OPENAI_API_KEY')}", "User-Agent": USER_AGENT}, json={
+        "model": os.getenv("OPENAI_MODEL", "gpt-6-luna"),
+        "instructions": "You are a concise research assistant for data-science students.",
+        "input": "Suggest three capstone project ideas that combine public APIs with an LLM. One line each.",
+        "max_output_tokens": 500,
+    })
+    r.raise_for_status()
+    d = r.json()
+    # Text lives in output items of type "message" -> content items of type "output_text"
+    text = "".join(c["text"] for item in d["output"] if item["type"] == "message"
+                   for c in item["content"] if c["type"] == "output_text")
+    show({"model": d["model"], "text": text, "usage": {k: d["usage"][k] for k in ("input_tokens", "output_tokens")}},
+         max_str=1000)
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "model": "gpt-6-luna",
+  "text": "1. Track how news sentiment (GDELT) leads stock volatility...\n2. ...\n3. ...",
+  "usage": {"input_tokens": 32, "output_tokens": 88}
+}
+```
+</details>
+
+---
+
+### OpenML
+
+| | |
+|:--|:--|
+| **Docs** | https://www.openml.org/apis |
+| **Auth** | None for reading (free key to upload runs) |
+| **Register / token** | No registration to read. Create an account at https://www.openml.org for a key to upload results. Python package: `pip install openml`. |
+| **Env var** | `OPENML_API_KEY (optional)` |
+| **Script** | [`scripts/ai_ml/openml.py`](scripts/ai_ml/openml.py) |
+
+**What you can get:**
+
+- 20,000+ ML datasets with meta-features (instances, features, classes, missing values)
+- Tasks (dataset + target + evaluation split), benchmark suites (e.g. OpenML-CC18)
+- Millions of runs: model + hyperparameters + evaluation scores
+
+**Capstone ideas:** Meta-learning (predict which model wins from dataset features), AutoML benchmarking, reproducible baselines.
+
+**Endpoint:** `GET https://www.openml.org/api/v1/json/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `data/list/{filters}` | Dataset list; path filters limit/N, offset/N, status/active, tag/X, number_instances/A..B | `data/list/limit/5/number_instances/1000..5000` |
+| `data/{id}` | One dataset's description, licence, default target, file URL | `data/61 (iris)` |
+| `data/qualities/{id}` | Meta-features for a dataset | `data/qualities/61` |
+| `task/list/{filters}` | Tasks; filters type/1 (classification), tag/, data_id/ | `task/list/type/1/limit/5` |
+| `evaluation/list/function/{metric}/task/{id}` | Best runs on a task by a metric | `function/predictive_accuracy/task/59` |
+| `study/{id}` | Benchmark suite contents | `study/99 (OpenML-CC18)` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://www.openml.org/api/v1/json/data/list/limit/200/status/active/number_instances/1000..5000")
+    rows = []
+    for ds in d["data"]["dataset"][:5]:
+        q = {x["name"]: int(float(x["value"])) for x in ds.get("quality", [])}  # values arrive as "3196.0"
+        rows.append({"id": ds["did"], "name": ds["name"], "instances": q.get("NumberOfInstances"),
+                     "features": q.get("NumberOfFeatures"), "classes": q.get("NumberOfClasses"),
+                     "missing_values": q.get("NumberOfMissingValues")})
+    show(rows)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 20:51</summary>
+
+```json
+[
+  {
+    "id": 3,
+    "name": "kr-vs-kp",
+    "instances": 3196,
+    "features": 37,
+    "classes": 2,
+    "missing_values": 0
+  },
+  {
+    "id": 12,
+    "name": "mfeat-factors",
+    "instances": 2000,
+    "features": 217,
+    "classes": 10,
+    "missing_values": 0
+  },
+  {
+    "id": 14,
+    "name": "mfeat-fourier",
+    "instances": 2000,
+    "features": 77,
+    "classes": 10,
+    "missing_values": 0
+  },
+  {
+    "id": 16,
+    "name": "mfeat-karhunen",
+    "instances": 2000,
+    "features": 65,
+    "classes": 10,
+    "missing_values": 0
+  },
+  {
+    "id": 18,
+    "name": "mfeat-morphological",
+    "instances": 2000,
+    "features": 7,
+    "classes": 10,
+    "missing_values": 0
+  }
+]
+```
+</details>
+
+---
+
+### OpenRouter
+
+| | |
+|:--|:--|
+| **Docs** | https://openrouter.ai/docs/api_reference/overview |
+| **Auth** | None to list models; API key (Bearer) to run them |
+| **Register / token** | Sign in at https://openrouter.ai -> Keys -> Create Key. Pay-as-you-go credits; some models are free (IDs ending in ':free', with low rate limits). |
+| **Env var** | `OPENROUTER_API_KEY (needed for chat completions)` |
+| **Script** | [`scripts/ai_ml/openrouter.py`](scripts/ai_ml/openrouter.py) |
+
+**What you can get:**
+
+- One OpenAI-compatible API for hundreds of models from many labs (OpenAI, Anthropic, Google, Meta, Qwen, ...)
+- Public model catalog: context length, modalities, per-token prices, max output
+- Automatic provider fallback and routing by price or latency
+
+**Capstone ideas:** Model-comparison studies at fixed cost, tracking LLM price trends over time from the public catalog.
+
+**Endpoint:** `GET https://openrouter.ai/api/v1/models  ·  POST https://openrouter.ai/api/v1/chat/completions`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `model` | Model ID from /models (add :free for free variants where offered) | `qwen/qwen3.8-27b` |
+| `messages` | OpenAI-style list of {role, content} | `[{"role": "user", "content": "..."}]` |
+| `max_tokens / temperature` | Output cap and sampling | `300 / 0.7` |
+| `models` | Fallback list tried in order if the first model fails | `["model-a", "model-b"]` |
+| `provider.sort` | Route by price \| throughput \| latency | `price` |
+| `stream` | true -> server-sent events | `true` |
+| `Authorization (header)` | Bearer key | `Bearer <OPENROUTER_API_KEY>` |
+
+```python
+import os
+
+import requests
+
+from _common import USER_AGENT, get, show
+
+
+def main():
+    models = get("https://openrouter.ai/api/v1/models")["data"]
+    free = [m["id"] for m in models if m["pricing"].get("prompt") == "0" and m["pricing"].get("completion") == "0"]
+    out = {"models_available": len(models), "free_models": len(free), "newest": [
+        {"id": m["id"], "context_length": m["context_length"],
+         "usd_per_M_input": round(float(m["pricing"]["prompt"]) * 1e6, 2),
+         "usd_per_M_output": round(float(m["pricing"]["completion"]) * 1e6, 2)}
+        for m in sorted(models, key=lambda m: -m["created"])[:5]]}
+    if os.getenv("OPENROUTER_API_KEY") and free:  # running a model needs a key; listing them does not
+        r = requests.post("https://openrouter.ai/api/v1/chat/completions", timeout=120, headers={
+            "Authorization": f"Bearer {os.environ['OPENROUTER_API_KEY']}", "User-Agent": USER_AGENT}, json={
+            "model": free[0], "max_tokens": 300,
+            "messages": [{"role": "user", "content": "Name one public dataset for studying air quality."}]})
+        r.raise_for_status()
+        out["chat_reply"] = r.json()["choices"][0]["message"]["content"]
+    show(out)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 20:51</summary>
+
+```json
+{
+  "models_available": 458,
+  "free_models": 19,
+  "newest": [
+    {
+      "id": "stepfun/step-5-preview",
+      "context_length": 1000000,
+      "usd_per_M_input": 1.0,
+      "usd_per_M_output": 2.7
+    },
+    {
+      "id": "anthropic/claude-haiku-5.5",
+      "context_length": 1000000,
+      "usd_per_M_input": 0.1,
+      "usd_per_M_output": 0.5
+    },
+    {
+      "id": "anthropic/claude-haiku-5.5:batch",
+      "context_length": 1000000,
+      "usd_per_M_input": 0.05,
+      "usd_per_M_output": 0.25
+    },
+    {
+      "id": "google/gemini-nano-banana-2.1",
+      "context_length": 65536,
+      "usd_per_M_input": 1.5,
+      "usd_per_M_output": 7.5
+    },
+    {
+      "id": "mistralai/mistral-large-4-0",
+      "context_length": 1048576,
+      "usd_per_M_input": 0.68,
+      "usd_per_M_output": 2.09
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### UCI Machine Learning Repository
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/uci-ml-repo/ucimlrepo |
+| **Auth** | None |
+| **Register / token** | No registration. Python package: `pip install ucimlrepo` (`fetch_ucirepo(id=53)` returns pandas DataFrames). |
+| **Script** | [`scripts/ai_ml/uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+
+**What you can get:**
+
+- 600+ classic ML datasets: abstract, task type, number of instances/features, target column, DOI, citation
+- Direct CSV download URL for each dataset
+- Variable-level metadata (type, role, units, missing values)
+
+**Capstone ideas:** Classic benchmarks for teaching and baselines; fairness studies on Adult/German Credit.
+
+**Endpoint:** `GET https://archive.ics.uci.edu/api/dataset`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `id` | Dataset ID (from the dataset URL) | `53 (Iris)` |
+| `name` | Dataset name instead of id | `Iris` |
+| `data.data_url` | Field in the response: direct CSV download | `https://archive.ics.uci.edu/static/public/53/data.csv` |
+| `data.variables` | Field in the response: name, role (Feature/Target), type, units | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    out = []
+    for i in (2, 186, 53):  # Adult, Wine Quality, Iris
+        d = get("https://archive.ics.uci.edu/api/dataset", params={"id": i})["data"]
+        out.append({k: d.get(k) for k in ("uci_id", "name", "area", "tasks", "num_instances", "num_features",
+                                          "target_col", "data_url")})
+    show(out)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-11 20:51</summary>
+
+```json
+[
+  {
+    "uci_id": 2,
+    "name": "Adult",
+    "area": "Social Science",
+    "tasks": [
+      "Classification"
+    ],
+    "num_instances": 48842,
+    "num_features": 14,
+    "target_col": [
+      "income"
+    ],
+    "data_url": "https://archive.ics.uci.edu/static/public/2/data.csv"
+  },
+  {
+    "uci_id": 186,
+    "name": "Wine Quality",
+    "area": "Business",
+    "tasks": [
+      "Classification",
+      "Regression"
+    ],
+    "num_instances": 4898,
+    "num_features": 11,
+    "target_col": [
+      "quality"
+    ],
+    "data_url": "https://archive.ics.uci.edu/static/public/186/data.csv"
+  },
+  {
+    "uci_id": 53,
+    "name": "Iris",
+    "area": "Biology",
+    "tasks": [
+      "Classification"
+    ],
+    "num_instances": 150,
+    "num_features": 4,
+    "target_col": [
+      "class"
+    ],
+    "data_url": "https://archive.ics.uci.edu/static/public/53/data.csv"
+  }
 ]
 ```
 </details>
