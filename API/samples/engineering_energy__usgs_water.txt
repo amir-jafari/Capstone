@@ -1,25 +1,25 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 07:41
 [
   {
     "site": "POTOMAC RIVER NEAR WASH, DC LITTLE FALLS PUMP STA",
     "variable": "Streamflow, ft&#179;/s",
     "latest": {
-      "value": "5780",
+      "value": "8160",
       "qualifiers": [
         "P"
       ],
-      "dateTime": "2026-10-11T18:50:00.000-04:00"
+      "dateTime": "2026-10-12T06:50:00.000-04:00"
     }
   },
   {
     "site": "POTOMAC RIVER NEAR WASH, DC LITTLE FALLS PUMP STA",
     "variable": "Gage height, ft",
     "latest": {
-      "value": "3.47",
+      "value": "3.77",
       "qualifiers": [
         "P"
       ],
-      "dateTime": "2026-10-11T18:50:00.000-04:00"
+      "dateTime": "2026-10-12T06:50:00.000-04:00"
     }
   }
 ]

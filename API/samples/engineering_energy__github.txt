@@ -1,41 +1,41 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 07:40
 {
-  "total": 88218,
+  "total": 88318,
   "repos": [
     {
       "repo": "huggingface/transformers",
-      "stars": 167522,
-      "forks": 34839,
-      "open_issues": 2335,
+      "stars": 167561,
+      "forks": 34846,
+      "open_issues": 2339,
       "license": "Apache-2.0"
     },
     {
       "repo": "pytorch/pytorch",
-      "stars": 104458,
-      "forks": 32100,
-      "open_issues": 17703,
+      "stars": 104713,
+      "forks": 32187,
+      "open_issues": 17710,
       "license": "NOASSERTION"
     },
     {
       "repo": "d2l-ai/d2l-zh",
-      "stars": 81567,
+      "stars": 81598,
       "forks": 12421,
       "open_issues": 127,
       "license": "Apache-2.0"
     },
     {
       "repo": "openbq-org/OpenBB",
-      "stars": 74118,
-      "forks": 7659,
-      "open_issues": 102,
+      "stars": 74143,
+      "forks": 7663,
+      "open_issues": 101,
       "license": "NOASSERTION"
     },
     {
-      "repo": "scikit-learn/scikit-learn",
-      "stars": 67553,
-      "forks": 27504,
-      "open_issues": 2166,
-      "license": "BSD-3-Clause"
+      "repo": "rohitg00/ai-engineering-from-scratch",
+      "stars": 67797,
+      "forks": 11880,
+      "open_issues": 70,
+      "license": "MIT"
     }
   ]
 }

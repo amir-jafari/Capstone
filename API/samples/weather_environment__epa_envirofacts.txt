@@ -1,0 +1,36 @@
+# live 2026-10-12 07:40
+{
+  "VA_TRI_facilities": 1247,
+  "examples": [
+    {
+      "facility_name": "HANSON PIPE & PRODUCTS INC MANASSAS PLANT",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20109"
+    },
+    {
+      "facility_name": "QUARLES PETROLEUM INC. MANASSAS BULK PLANT",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20109"
+    },
+    {
+      "facility_name": "MANASSAS BROAD RUN READY MIX CONCRETE",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20109"
+    },
+    {
+      "facility_name": "BENCHMARK ELECTRONICS MANASSAS DIV",
+      "city_name": "MANASSAS",
+      "county_name": "MANASSAS (CITY)",
+      "zip_code": "201103410"
+    },
+    {
+      "facility_name": "BAE SYSTEMS INFORMATION  & ELECTRONIC SYSTEMS INTEGRATION I",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20110"
+    }
+  ]
+}

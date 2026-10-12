@@ -1,8 +1,8 @@
 # Public API Catalog for Data Science Capstones
 
-> A curated, runnable list of free APIs across news, social media, weather, finance, census, housing,
-> political science, law, health, education, science, AI & machine learning, engineering, transportation,
-> sports, and culture.
+> A curated, runnable list of free APIs across news, social media, weather & environment, finance,
+> census, housing, political science, law, health, education, science, AI & machine learning,
+> engineering & energy, transportation, sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 
@@ -40,110 +40,127 @@ python build_readme.py          # re-run everything & regenerate this README
 | 9 | 💬 Social Media | [Reddit Data API](#reddit-data-api) | 🔑 key | `REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET` | [`reddit.py`](scripts/social_media/reddit.py) |
 | 10 | 💬 Social Media | [Stack Exchange API](#stack-exchange-api) | 🟢 no key | — | [`stackexchange.py`](scripts/social_media/stackexchange.py) |
 | 11 | 💬 Social Media | [YouTube Data API v3](#youtube-data-api-v3) | 🔑 key | `YOUTUBE_API_KEY` | [`youtube.py`](scripts/social_media/youtube.py) |
-| 12 | 🌦️ Weather, Climate & Environment | [NOAA Climate Data Online (CDO)](#noaa-climate-data-online-cdo) | 🔑 key | `NOAA_TOKEN` | [`noaa_cdo.py`](scripts/weather_environment/noaa_cdo.py) |
-| 13 | 🌦️ Weather, Climate & Environment | [US National Weather Service (api.weather.gov)](#us-national-weather-service-apiweathergov) | 🟢 no key | — | [`nws.py`](scripts/weather_environment/nws.py) |
-| 14 | 🌦️ Weather, Climate & Environment | [Open-Meteo](#open-meteo) | 🟢 no key | — | [`open_meteo.py`](scripts/weather_environment/open_meteo.py) |
-| 15 | 🌦️ Weather, Climate & Environment | [OpenAQ v3 (Air Quality)](#openaq-v3-air-quality) | 🔑 key | `OPENAQ_API_KEY` | [`openaq.py`](scripts/weather_environment/openaq.py) |
-| 16 | 🌦️ Weather, Climate & Environment | [OpenWeatherMap](#openweathermap) | 🔑 key | `OPENWEATHER_API_KEY` | [`openweathermap.py`](scripts/weather_environment/openweathermap.py) |
-| 17 | 🌦️ Weather, Climate & Environment | [USGS Earthquake Catalog](#usgs-earthquake-catalog) | 🟢 no key | — | [`usgs_earthquakes.py`](scripts/weather_environment/usgs_earthquakes.py) |
-| 18 | 💵 Finance & Economics | [Alpha Vantage](#alpha-vantage) | 🟢 no key | `ALPHAVANTAGE_API_KEY` | [`alpha_vantage.py`](scripts/finance_economics/alpha_vantage.py) |
-| 19 | 💵 Finance & Economics | [US Bureau of Labor Statistics (BLS)](#us-bureau-of-labor-statistics-bls) | 🟢 no key | `BLS_API_KEY (optional)` | [`bls.py`](scripts/finance_economics/bls.py) |
-| 20 | 💵 Finance & Economics | [CoinGecko](#coingecko) | 🟢 no key | — | [`coingecko.py`](scripts/finance_economics/coingecko.py) |
-| 21 | 💵 Finance & Economics | [Frankfurter (ECB exchange rates)](#frankfurter-ecb-exchange-rates) | 🟢 no key | — | [`frankfurter.py`](scripts/finance_economics/frankfurter.py) |
-| 22 | 💵 Finance & Economics | [FRED (Federal Reserve Economic Data)](#fred-federal-reserve-economic-data) | 🔑 key | `FRED_API_KEY` | [`fred.py`](scripts/finance_economics/fred.py) |
-| 23 | 💵 Finance & Economics | [SEC EDGAR (data.sec.gov)](#sec-edgar-datasecgov) | 🟢 no key | — | [`sec_edgar.py`](scripts/finance_economics/sec_edgar.py) |
-| 24 | 💵 Finance & Economics | [US Treasury Fiscal Data](#us-treasury-fiscal-data) | 🟢 no key | — | [`treasury_fiscal.py`](scripts/finance_economics/treasury_fiscal.py) |
-| 25 | 💵 Finance & Economics | [World Bank Indicators API](#world-bank-indicators-api) | 🟢 no key | — | [`world_bank.py`](scripts/finance_economics/world_bank.py) |
-| 26 | 👥 Census & Demographics | [IPUMS API (microdata)](#ipums-api-microdata) | 🔑 key | `IPUMS_API_KEY` | [`ipums.py`](scripts/census_demographics/ipums.py) |
-| 27 | 👥 Census & Demographics | [UN Data Portal — World Population Prospects](#un-data-portal--world-population-prospects) | 🔑 key | `UN_POP_TOKEN` | [`un_population.py`](scripts/census_demographics/un_population.py) |
-| 28 | 👥 Census & Demographics | [US Census Bureau Data API](#us-census-bureau-data-api) | 🔑 key | `CENSUS_API_KEY` | [`us_census.py`](scripts/census_demographics/us_census.py) |
-| 29 | 🏠 Housing & Real Estate | [CFPB Consumer Complaint Database](#cfpb-consumer-complaint-database) | 🟢 no key | — | [`cfpb_complaints.py`](scripts/housing/cfpb_complaints.py) |
-| 30 | 🏠 Housing & Real Estate | [FHFA House Price Index](#fhfa-house-price-index) | 🟢 no key | — | [`fhfa_hpi.py`](scripts/housing/fhfa_hpi.py) |
-| 31 | 🏠 Housing & Real Estate | [HMDA Data Browser (mortgage applications)](#hmda-data-browser-mortgage-applications) | 🟢 no key | — | [`hmda.py`](scripts/housing/hmda.py) |
-| 32 | 🏠 Housing & Real Estate | [HUD User API (Fair Market Rents, Income Limits, ZIP crosswalk)](#hud-user-api-fair-market-rents-income-limits-zip-crosswalk) | 🔑 key | `HUD_API_TOKEN` | [`hud_user.py`](scripts/housing/hud_user.py) |
-| 33 | 🏠 Housing & Real Estate | [OpenFEMA — Flood Insurance Claims & Disaster Declarations](#openfema--flood-insurance-claims--disaster-declarations) | 🟢 no key | — | [`openfema_nfip.py`](scripts/housing/openfema_nfip.py) |
-| 34 | 🏠 Housing & Real Estate | [Redfin Data Center (housing market tracker)](#redfin-data-center-housing-market-tracker) | 🟢 no key | — | [`redfin_data_center.py`](scripts/housing/redfin_data_center.py) |
-| 35 | 🏠 Housing & Real Estate | [RentCast (property records, rent & value estimates)](#rentcast-property-records-rent--value-estimates) | 🔑 key | `RENTCAST_API_KEY` | [`rentcast.py`](scripts/housing/rentcast.py) |
-| 36 | 🏠 Housing & Real Estate | [Zillow Research Data (ZHVI home values, ZORI rents)](#zillow-research-data-zhvi-home-values-zori-rents) | 🟢 no key | — | [`zillow_research.py`](scripts/housing/zillow_research.py) |
-| 37 | 🏛️ Political Science & Government | [ACLED (Armed Conflict Location & Event Data)](#acled-armed-conflict-location--event-data) | 🔑 key | `ACLED_EMAIL, ACLED_PASSWORD` | [`acled.py`](scripts/politics_government/acled.py) |
-| 38 | 🏛️ Political Science & Government | [Congress.gov API](#congressgov-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`congress_gov.py`](scripts/politics_government/congress_gov.py) |
-| 39 | 🏛️ Political Science & Government | [European Parliament Open Data API](#european-parliament-open-data-api) | 🟢 no key | — | [`european_parliament.py`](scripts/politics_government/european_parliament.py) |
-| 40 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
-| 41 | 🏛️ Political Science & Government | [GovInfo API (U.S. Government Publishing Office)](#govinfo-api-us-government-publishing-office) | 🟢 no key | `DATA_GOV_API_KEY` | [`govinfo.py`](scripts/politics_government/govinfo.py) |
-| 42 | 🏛️ Political Science & Government | [Grants.gov Search API](#grantsgov-search-api) | 🟢 no key | — | [`grants_gov.py`](scripts/politics_government/grants_gov.py) |
-| 43 | 🏛️ Political Science & Government | [Harvard Dataverse (MIT Election Lab & replication data)](#harvard-dataverse-mit-election-lab--replication-data) | 🟢 no key | `DATAVERSE_API_TOKEN (optional)` | [`harvard_dataverse.py`](scripts/politics_government/harvard_dataverse.py) |
-| 44 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
-| 45 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
-| 46 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
-| 47 | 🏛️ Political Science & Government | [Lobbying Disclosure Act (LDA) API](#lobbying-disclosure-act-lda-api) | 🟢 no key | `LDA_API_KEY (optional)` | [`senate_lda.py`](scripts/politics_government/senate_lda.py) |
-| 48 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
-| 49 | 🏛️ Political Science & Government | [USAJOBS Search API (federal jobs)](#usajobs-search-api-federal-jobs) | 🔑 key | `USAJOBS_API_KEY, USAJOBS_EMAIL` | [`usajobs.py`](scripts/politics_government/usajobs.py) |
-| 50 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
-| 51 | ⚖️ Law & Justice | [CourtListener (Free Law Project)](#courtlistener-free-law-project) | 🟢 no key | `COURTLISTENER_TOKEN (optional)` | [`courtlistener.py`](scripts/law/courtlistener.py) |
-| 52 | ⚖️ Law & Justice | [U.S. Department of Justice News API](#us-department-of-justice-news-api) | 🟢 no key | — | [`doj_press_releases.py`](scripts/law/doj_press_releases.py) |
-| 53 | ⚖️ Law & Justice | [eCFR API (Code of Federal Regulations)](#ecfr-api-code-of-federal-regulations) | 🟢 no key | — | [`ecfr.py`](scripts/law/ecfr.py) |
-| 54 | ⚖️ Law & Justice | [FBI Crime Data Explorer API](#fbi-crime-data-explorer-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`fbi_crime_data.py`](scripts/law/fbi_crime_data.py) |
-| 55 | ⚖️ Law & Justice | [Oyez (U.S. Supreme Court cases)](#oyez-us-supreme-court-cases) | 🟢 no key | — | [`oyez.py`](scripts/law/oyez.py) |
-| 56 | ⚖️ Law & Justice | [Supreme Court Database (SCDB)](#supreme-court-database-scdb) | 🟢 no key | — | [`supreme_court_database.py`](scripts/law/supreme_court_database.py) |
-| 57 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
-| 58 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
-| 59 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
-| 60 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
-| 61 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
-| 62 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
-| 63 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
-| 64 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
-| 65 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
-| 66 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
-| 67 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
-| 68 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 69 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 70 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 71 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 72 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 73 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 74 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 75 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 76 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 77 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 78 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 79 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 80 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 81 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 82 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 83 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 84 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 85 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 86 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 87 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 88 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 89 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 90 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 91 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 92 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 93 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 94 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 95 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 96 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 97 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 98 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 99 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 100 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 101 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 102 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 103 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 104 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 105 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 106 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 107 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 108 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 109 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 110 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 111 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 112 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 113 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 114 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 115 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 12 | 🌦️ Weather, Climate & Environment | [EPA AirNow API (real-time air quality)](#epa-airnow-api-real-time-air-quality) | 🔑 key | `AIRNOW_API_KEY` | [`airnow.py`](scripts/weather_environment/airnow.py) |
+| 13 | 🌦️ Weather, Climate & Environment | [Climate TRACE (global emissions inventory)](#climate-trace-global-emissions-inventory) | 🟢 no key | — | [`climate_trace.py`](scripts/weather_environment/climate_trace.py) |
+| 14 | 🌦️ Weather, Climate & Environment | [U.S. Drought Monitor](#us-drought-monitor) | 🟢 no key | — | [`drought_monitor.py`](scripts/weather_environment/drought_monitor.py) |
+| 15 | 🌦️ Weather, Climate & Environment | [EPA Air Quality System (AQS) API](#epa-air-quality-system-aqs-api) | 🔑 key | `AQS_EMAIL, AQS_KEY` | [`epa_aqs.py`](scripts/weather_environment/epa_aqs.py) |
+| 16 | 🌦️ Weather, Climate & Environment | [EPA ECHO (Enforcement & Compliance History)](#epa-echo-enforcement--compliance-history) | 🟢 no key | — | [`epa_echo.py`](scripts/weather_environment/epa_echo.py) |
+| 17 | 🌦️ Weather, Climate & Environment | [EPA Envirofacts (Toxics Release Inventory and more)](#epa-envirofacts-toxics-release-inventory-and-more) | 🟢 no key | — | [`epa_envirofacts.py`](scripts/weather_environment/epa_envirofacts.py) |
+| 18 | 🌦️ Weather, Climate & Environment | [GBIF (Global Biodiversity Information Facility)](#gbif-global-biodiversity-information-facility) | 🟢 no key | — | [`gbif.py`](scripts/weather_environment/gbif.py) |
+| 19 | 🌦️ Weather, Climate & Environment | [iNaturalist API](#inaturalist-api) | 🟢 no key | — | [`inaturalist.py`](scripts/weather_environment/inaturalist.py) |
+| 20 | 🌦️ Weather, Climate & Environment | [NASA FIRMS (active fire detections)](#nasa-firms-active-fire-detections) | 🔑 key | `FIRMS_MAP_KEY` | [`nasa_firms.py`](scripts/weather_environment/nasa_firms.py) |
+| 21 | 🌦️ Weather, Climate & Environment | [NOAA Climate Data Online (CDO)](#noaa-climate-data-online-cdo) | 🔑 key | `NOAA_TOKEN` | [`noaa_cdo.py`](scripts/weather_environment/noaa_cdo.py) |
+| 22 | 🌦️ Weather, Climate & Environment | [NOAA Climate at a Glance](#noaa-climate-at-a-glance) | 🟢 no key | — | [`noaa_climate_at_a_glance.py`](scripts/weather_environment/noaa_climate_at_a_glance.py) |
+| 23 | 🌦️ Weather, Climate & Environment | [NOAA Global Monitoring Lab — Mauna Loa CO2](#noaa-global-monitoring-lab--mauna-loa-co2) | 🟢 no key | — | [`noaa_co2.py`](scripts/weather_environment/noaa_co2.py) |
+| 24 | 🌦️ Weather, Climate & Environment | [NOAA Tides & Currents (CO-OPS)](#noaa-tides--currents-co-ops) | 🟢 no key | — | [`noaa_tides.py`](scripts/weather_environment/noaa_tides.py) |
+| 25 | 🌦️ Weather, Climate & Environment | [US National Weather Service (api.weather.gov)](#us-national-weather-service-apiweathergov) | 🟢 no key | — | [`nws.py`](scripts/weather_environment/nws.py) |
+| 26 | 🌦️ Weather, Climate & Environment | [Open-Meteo](#open-meteo) | 🟢 no key | — | [`open_meteo.py`](scripts/weather_environment/open_meteo.py) |
+| 27 | 🌦️ Weather, Climate & Environment | [OpenAQ v3 (Air Quality)](#openaq-v3-air-quality) | 🔑 key | `OPENAQ_API_KEY` | [`openaq.py`](scripts/weather_environment/openaq.py) |
+| 28 | 🌦️ Weather, Climate & Environment | [OpenWeatherMap](#openweathermap) | 🔑 key | `OPENWEATHER_API_KEY` | [`openweathermap.py`](scripts/weather_environment/openweathermap.py) |
+| 29 | 🌦️ Weather, Climate & Environment | [USGS Earthquake Catalog](#usgs-earthquake-catalog) | 🟢 no key | — | [`usgs_earthquakes.py`](scripts/weather_environment/usgs_earthquakes.py) |
+| 30 | 💵 Finance & Economics | [Alpha Vantage](#alpha-vantage) | 🟢 no key | `ALPHAVANTAGE_API_KEY` | [`alpha_vantage.py`](scripts/finance_economics/alpha_vantage.py) |
+| 31 | 💵 Finance & Economics | [US Bureau of Labor Statistics (BLS)](#us-bureau-of-labor-statistics-bls) | 🟢 no key | `BLS_API_KEY (optional)` | [`bls.py`](scripts/finance_economics/bls.py) |
+| 32 | 💵 Finance & Economics | [CoinGecko](#coingecko) | 🟢 no key | — | [`coingecko.py`](scripts/finance_economics/coingecko.py) |
+| 33 | 💵 Finance & Economics | [Frankfurter (ECB exchange rates)](#frankfurter-ecb-exchange-rates) | 🟢 no key | — | [`frankfurter.py`](scripts/finance_economics/frankfurter.py) |
+| 34 | 💵 Finance & Economics | [FRED (Federal Reserve Economic Data)](#fred-federal-reserve-economic-data) | 🔑 key | `FRED_API_KEY` | [`fred.py`](scripts/finance_economics/fred.py) |
+| 35 | 💵 Finance & Economics | [SEC EDGAR (data.sec.gov)](#sec-edgar-datasecgov) | 🟢 no key | — | [`sec_edgar.py`](scripts/finance_economics/sec_edgar.py) |
+| 36 | 💵 Finance & Economics | [US Treasury Fiscal Data](#us-treasury-fiscal-data) | 🟢 no key | — | [`treasury_fiscal.py`](scripts/finance_economics/treasury_fiscal.py) |
+| 37 | 💵 Finance & Economics | [World Bank Indicators API](#world-bank-indicators-api) | 🟢 no key | — | [`world_bank.py`](scripts/finance_economics/world_bank.py) |
+| 38 | 👥 Census & Demographics | [IPUMS API (microdata)](#ipums-api-microdata) | 🔑 key | `IPUMS_API_KEY` | [`ipums.py`](scripts/census_demographics/ipums.py) |
+| 39 | 👥 Census & Demographics | [UN Data Portal — World Population Prospects](#un-data-portal--world-population-prospects) | 🔑 key | `UN_POP_TOKEN` | [`un_population.py`](scripts/census_demographics/un_population.py) |
+| 40 | 👥 Census & Demographics | [US Census Bureau Data API](#us-census-bureau-data-api) | 🔑 key | `CENSUS_API_KEY` | [`us_census.py`](scripts/census_demographics/us_census.py) |
+| 41 | 🏠 Housing & Real Estate | [CFPB Consumer Complaint Database](#cfpb-consumer-complaint-database) | 🟢 no key | — | [`cfpb_complaints.py`](scripts/housing/cfpb_complaints.py) |
+| 42 | 🏠 Housing & Real Estate | [FHFA House Price Index](#fhfa-house-price-index) | 🟢 no key | — | [`fhfa_hpi.py`](scripts/housing/fhfa_hpi.py) |
+| 43 | 🏠 Housing & Real Estate | [HMDA Data Browser (mortgage applications)](#hmda-data-browser-mortgage-applications) | 🟢 no key | — | [`hmda.py`](scripts/housing/hmda.py) |
+| 44 | 🏠 Housing & Real Estate | [HUD User API (Fair Market Rents, Income Limits, ZIP crosswalk)](#hud-user-api-fair-market-rents-income-limits-zip-crosswalk) | 🔑 key | `HUD_API_TOKEN` | [`hud_user.py`](scripts/housing/hud_user.py) |
+| 45 | 🏠 Housing & Real Estate | [OpenFEMA — Flood Insurance Claims & Disaster Declarations](#openfema--flood-insurance-claims--disaster-declarations) | 🟢 no key | — | [`openfema_nfip.py`](scripts/housing/openfema_nfip.py) |
+| 46 | 🏠 Housing & Real Estate | [Redfin Data Center (housing market tracker)](#redfin-data-center-housing-market-tracker) | 🟢 no key | — | [`redfin_data_center.py`](scripts/housing/redfin_data_center.py) |
+| 47 | 🏠 Housing & Real Estate | [RentCast (property records, rent & value estimates)](#rentcast-property-records-rent--value-estimates) | 🔑 key | `RENTCAST_API_KEY` | [`rentcast.py`](scripts/housing/rentcast.py) |
+| 48 | 🏠 Housing & Real Estate | [Zillow Research Data (ZHVI home values, ZORI rents)](#zillow-research-data-zhvi-home-values-zori-rents) | 🟢 no key | — | [`zillow_research.py`](scripts/housing/zillow_research.py) |
+| 49 | 🏛️ Political Science & Government | [ACLED (Armed Conflict Location & Event Data)](#acled-armed-conflict-location--event-data) | 🔑 key | `ACLED_EMAIL, ACLED_PASSWORD` | [`acled.py`](scripts/politics_government/acled.py) |
+| 50 | 🏛️ Political Science & Government | [Congress.gov API](#congressgov-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`congress_gov.py`](scripts/politics_government/congress_gov.py) |
+| 51 | 🏛️ Political Science & Government | [European Parliament Open Data API](#european-parliament-open-data-api) | 🟢 no key | — | [`european_parliament.py`](scripts/politics_government/european_parliament.py) |
+| 52 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
+| 53 | 🏛️ Political Science & Government | [GovInfo API (U.S. Government Publishing Office)](#govinfo-api-us-government-publishing-office) | 🟢 no key | `DATA_GOV_API_KEY` | [`govinfo.py`](scripts/politics_government/govinfo.py) |
+| 54 | 🏛️ Political Science & Government | [Grants.gov Search API](#grantsgov-search-api) | 🟢 no key | — | [`grants_gov.py`](scripts/politics_government/grants_gov.py) |
+| 55 | 🏛️ Political Science & Government | [Harvard Dataverse (MIT Election Lab & replication data)](#harvard-dataverse-mit-election-lab--replication-data) | 🟢 no key | `DATAVERSE_API_TOKEN (optional)` | [`harvard_dataverse.py`](scripts/politics_government/harvard_dataverse.py) |
+| 56 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
+| 57 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
+| 58 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
+| 59 | 🏛️ Political Science & Government | [Lobbying Disclosure Act (LDA) API](#lobbying-disclosure-act-lda-api) | 🟢 no key | `LDA_API_KEY (optional)` | [`senate_lda.py`](scripts/politics_government/senate_lda.py) |
+| 60 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
+| 61 | 🏛️ Political Science & Government | [USAJOBS Search API (federal jobs)](#usajobs-search-api-federal-jobs) | 🔑 key | `USAJOBS_API_KEY, USAJOBS_EMAIL` | [`usajobs.py`](scripts/politics_government/usajobs.py) |
+| 62 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
+| 63 | ⚖️ Law & Justice | [CourtListener (Free Law Project)](#courtlistener-free-law-project) | 🟢 no key | `COURTLISTENER_TOKEN (optional)` | [`courtlistener.py`](scripts/law/courtlistener.py) |
+| 64 | ⚖️ Law & Justice | [U.S. Department of Justice News API](#us-department-of-justice-news-api) | 🟢 no key | — | [`doj_press_releases.py`](scripts/law/doj_press_releases.py) |
+| 65 | ⚖️ Law & Justice | [eCFR API (Code of Federal Regulations)](#ecfr-api-code-of-federal-regulations) | 🟢 no key | — | [`ecfr.py`](scripts/law/ecfr.py) |
+| 66 | ⚖️ Law & Justice | [FBI Crime Data Explorer API](#fbi-crime-data-explorer-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`fbi_crime_data.py`](scripts/law/fbi_crime_data.py) |
+| 67 | ⚖️ Law & Justice | [Oyez (U.S. Supreme Court cases)](#oyez-us-supreme-court-cases) | 🟢 no key | — | [`oyez.py`](scripts/law/oyez.py) |
+| 68 | ⚖️ Law & Justice | [Supreme Court Database (SCDB)](#supreme-court-database-scdb) | 🟢 no key | — | [`supreme_court_database.py`](scripts/law/supreme_court_database.py) |
+| 69 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
+| 70 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
+| 71 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
+| 72 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
+| 73 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
+| 74 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
+| 75 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
+| 76 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
+| 77 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
+| 78 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
+| 79 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
+| 80 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 81 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 82 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 83 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 84 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 85 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 86 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 87 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 88 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 89 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 90 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 91 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 92 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 93 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 94 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 95 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 96 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 97 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 98 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
+| 99 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 100 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 101 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
+| 102 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 103 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 104 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
+| 105 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
+| 106 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
+| 107 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 108 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 109 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 110 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 111 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 112 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 113 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 114 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 115 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 116 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 117 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 118 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 119 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 120 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 121 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 122 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 123 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 124 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 125 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 126 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 127 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 128 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 129 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 130 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 131 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 132 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -994,6 +1011,685 @@ def main():
 
 ## 🌦️ Weather, Climate & Environment
 
+### EPA AirNow API (real-time air quality)
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.airnowapi.org/webservices |
+| **Auth** | API key (query `API_KEY`) |
+| **Register / token** | Request an account at https://docs.airnowapi.org/account/request/, then copy the key from the Web Services page. Real-time data are preliminary (use EPA AQS for verified history). |
+| **Env var** | `AIRNOW_API_KEY` |
+| **Script** | [`scripts/weather_environment/airnow.py`](scripts/weather_environment/airnow.py) |
+
+**What you can get:**
+
+- Current AQI by ZIP code or lat/lon for ozone, PM2.5 and PM10, with category (Good ... Hazardous)
+- Daily AQI forecasts by reporting area
+- Historical observations by date; monitoring-site data in a bounding box
+
+**Capstone ideas:** Wildfire-smoke exposure, AQI alerts vs. outdoor activity or hospital visits, forecast accuracy.
+
+**Endpoint:** `GET https://www.airnowapi.org/aq/{observation \| forecast}/{zipCode \| latLong}/{current \| historical}/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `zipCode / latitude & longitude` | Location | `20052` |
+| `distance` | Search radius in miles if no monitor at the location | `25` |
+| `date (forecast, historical)` | YYYY-MM-DD (historical: YYYY-MM-DDT00-0000) | `2026-10-12` |
+| `format` | application/json \| text/csv \| application/xml | `application/json` |
+| `API_KEY` | Your key | `<AIRNOW_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://www.airnowapi.org/aq/observation/zipCode/current/", params={
+        "format": "application/json", "zipCode": "20052", "distance": 25, "API_KEY": key("AIRNOW_API_KEY")})
+    show([{k: o[k] for k in ("DateObserved", "HourObserved", "ReportingArea", "ParameterName", "AQI")} |
+          {"Category": o["Category"]["Name"]} for o in d])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"DateObserved": "2026-10-12", "HourObserved": 9, "ReportingArea": "Metropolitan Washington", "ParameterName": "O3", "AQI": 31, "Category": "Good"},
+  {"DateObserved": "2026-10-12", "HourObserved": 9, "ReportingArea": "Metropolitan Washington", "ParameterName": "PM2.5", "AQI": 46, "Category": "Good"}
+]
+```
+</details>
+
+---
+
+### Climate TRACE (global emissions inventory)
+
+| | |
+|:--|:--|
+| **Docs** | https://api.climatetrace.org/v7/docs/index.html |
+| **Auth** | None |
+| **Register / token** | No registration. Independent, satellite- and AI-based estimates of greenhouse-gas emissions for every country and hundreds of thousands of individual sources (power plants, oil fields, steel mills, ...). |
+| **Script** | [`scripts/weather_environment/climate_trace.py`](scripts/weather_environment/climate_trace.py) |
+
+**What you can get:**
+
+- Country rankings and totals by gas (CO2, CH4, N2O, CO2e) and sector, with per-capita figures and % change
+- Individual emitting assets: location, sector, subsector, asset type, yearly emissions
+- Sector/subsector definitions
+
+**Capstone ideas:** Verifying national climate pledges, top emitters by sector, mapping emissions sources against communities.
+
+**Endpoint:** `GET https://api.climatetrace.org/v7/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `rankings/countries?gas=&start=&end=` | Country ranking for a period; add sectors= to restrict | `gas=co2e_100yr&start=2024&end=2024` |
+| `sources?gadmId=&sectors=&subsectors=&year=` | Individual sources; filter country with gadmId (country/countries are ignored) | `gadmId=USA&sectors=power` |
+| `limit / offset` | Paging | `5` |
+| `gas` | co2 \| ch4 \| n2o \| co2e_100yr \| co2e_20yr | `co2e_100yr` |
+| `definitions/sectors` | Sector and subsector names | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    r = get("https://api.climatetrace.org/v7/rankings/countries",
+            params={"gas": "co2e_100yr", "start": 2024, "end": 2024, "limit": 5})
+    plants = get("https://api.climatetrace.org/v7/sources",
+                 params={"gadmId": "USA", "sectors": "power", "year": 2024, "limit": 3})
+    show({"global_total_Gt_CO2e_2024": round(r["totals"]["emissionsQuantity"] / 1e9, 1), "top_countries": [
+        {"country": c["name"], "Gt_CO2e": round(c["emissionsQuantity"] / 1e9, 2), "share_pct": round(c["percentage"], 1),
+         "t_per_capita": round(c["emissionsPerCapita"], 1)} for c in r["rankings"]],
+          "largest_US_power_sources": [{"name": s["name"], "type": s["assetType"],
+                                        "Mt_CO2e": round(s["emissionsQuantity"] / 1e6, 1)} for s in plants]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "global_total_Gt_CO2e_2024": 59.9,
+  "top_countries": [
+    {
+      "country": "China",
+      "Gt_CO2e": 16.55,
+      "share_pct": 27.6,
+      "t_per_capita": 11.7
+    },
+    {
+      "country": "United States of America",
+      "Gt_CO2e": 5.99,
+      "share_pct": 10.0,
+      "t_per_capita": 18.1
+    },
+    {
+      "country": "India",
+      "Gt_CO2e": 4.61,
+      "share_pct": 7.7,
+      "t_per_capita": 3.3
+    },
+    {
+      "country": "Russian Federation",
+      "Gt_CO2e": 2.83,
+      "share_pct": 4.7,
+      "t_per_capita": 19.6
+    },
+    {
+      "country": "Indonesia",
+      "Gt_CO2e": 1.64,
+      "share_pct": 2.7,
+      "t_per_capita": 6.0
+    },
+    "... (247 more)"
+  ],
+  "largest_US_power_sources": [
+    {
+      "name": "James H Miller Jr",
+      "type": "coal",
+      "Mt_CO2e": 18.5
+    },
+    {
+      "name": "Labadie",
+      "type": "coal",
+      "Mt_CO2e": 14.4
+    },
+    {
+      "name": "Monroe (MI)",
+      "type": "coal, oil",
+      "Mt_CO2e": 12.8
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### U.S. Drought Monitor
+
+| | |
+|:--|:--|
+| **Docs** | https://droughtmonitor.unl.edu/DmData/DataDownload/WebServiceInfo.aspx |
+| **Auth** | None |
+| **Register / token** | No registration. Weekly maps since 2000 from the National Drought Mitigation Center (UNL), USDA and NOAA. Send Accept: application/json (otherwise CSV/XML). |
+| **Script** | [`scripts/weather_environment/drought_monitor.py`](scripts/weather_environment/drought_monitor.py) |
+
+**What you can get:**
+
+- Weekly % of area (or population) in each drought category: D0 abnormally dry ... D4 exceptional
+- National, state, county, HUC watershed, climate-region levels
+- Shapefiles/GeoJSON of the weekly maps
+
+**Capstone ideas:** Drought impacts on agriculture, wildfire, migration or electricity (hydropower); county panel studies.
+
+**Endpoint:** `GET https://usdmdataservices.unl.edu/api/{level}/{statistic}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `level` | USStatistics \| StateStatistics \| CountyStatistics \| HUCStatistics \| ... | `StateStatistics` |
+| `statistic` | GetDroughtSeverityStatisticsByAreaPercent \| ...ByArea \| ...ByPopulationPercent \| GetDSCI | `GetDroughtSeverityStatisticsByAreaPercent` |
+| `aoi` | Area: state FIPS (two digits, not the abbreviation), county FIPS (five digits), or US | `51 (Virginia)` |
+| `startdate / enddate` | M/D/YYYY | `9/1/2026 / 10/1/2026` |
+| `statisticsType` | 1 = cumulative (D0-D4 includes worse), 2 = categorical | `1` |
+| `Accept (header)` | application/json for JSON | `application/json` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://usdmdataservices.unl.edu/api/StateStatistics/GetDroughtSeverityStatisticsByAreaPercent",
+            headers={"Accept": "application/json"},
+            params={"aoi": "51", "startdate": "8/1/2026", "enddate": "10/12/2026", "statisticsType": 1})
+    show([{"week": w["mapDate"][:10], **{c: w[c] for c in ("none", "d0", "d1", "d2", "d3", "d4")}}
+          for w in sorted(d, key=lambda w: w["mapDate"])[-5:]])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+[
+  {
+    "week": "2026-09-08",
+    "none": 24.41,
+    "d0": 75.59,
+    "d1": 35.14,
+    "d2": 14.41,
+    "d3": 3.79,
+    "d4": 0.0
+  },
+  {
+    "week": "2026-09-15",
+    "none": 27.65,
+    "d0": 72.35,
+    "d1": 34.5,
+    "d2": 15.25,
+    "d3": 3.79,
+    "d4": 0.0
+  },
+  {
+    "week": "2026-09-22",
+    "none": 28.88,
+    "d0": 71.12,
+    "d1": 37.17,
+    "d2": 15.25,
+    "d3": 3.79,
+    "d4": 0.0
+  },
+  {
+    "week": "2026-09-29",
+    "none": 38.91,
+    "d0": 61.09,
+    "d1": 32.15,
+    "d2": 14.71,
+    "d3": 3.79,
+    "d4": 0.0
+  },
+  {
+    "week": "2026-10-06",
+    "none": 42.41,
+    "d0": 57.59,
+    "d1": 34.48,
+    "d2": 14.71,
+    "d3": 3.79,
+    "d4": 0.0
+  }
+]
+```
+</details>
+
+---
+
+### EPA Air Quality System (AQS) API
+
+| | |
+|:--|:--|
+| **Docs** | https://aqs.epa.gov/aqsweb/documents/data_api.html |
+| **Auth** | Email + key (query `email`, `key`) |
+| **Register / token** | Sign up by calling https://aqs.epa.gov/data/api/signup?email=you@gwu.edu - the key is emailed to you. Limits: 10 requests/minute and 1 year of data per request; pause 5 seconds between calls. |
+| **Env var** | `AQS_EMAIL, AQS_KEY` |
+| **Script** | [`scripts/weather_environment/epa_aqs.py`](scripts/weather_environment/epa_aqs.py) |
+
+**What you can get:**
+
+- Verified historical monitor data (the regulatory record) for criteria pollutants and many air toxics
+- Sample, daily and annual summaries by site, county, state, CBSA or bounding box
+- Monitor metadata and quality-assurance data
+
+**Capstone ideas:** Long-run pollution trends, health-outcome studies needing verified data, Clean Air Act policy evaluation.
+
+**Endpoint:** `GET https://aqs.epa.gov/data/api/{service}/{geography}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `service` | sampleData \| dailyData \| annualData \| monitors \| list | `dailyData` |
+| `geography` | bySite \| byCounty \| byState \| byBox \| byCBSA | `byState` |
+| `param` | Parameter code(s): 88101 PM2.5, 44201 ozone, 42602 NO2 (up to 5) | `88101` |
+| `bdate / edate` | YYYYMMDD, within the same year | `20250101 / 20251231` |
+| `state / county / site` | FIPS codes | `state=11` |
+| `email / key` | Your credentials | `—` |
+| `list/states, list/parametersByClass` | Lookup lists for codes | `list/parametersByClass?pc=CRITERIA` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://aqs.epa.gov/data/api/dailyData/byState", params={
+        "email": key("AQS_EMAIL"), "key": key("AQS_KEY"), "param": "88101",
+        "bdate": "20250704", "edate": "20250705", "state": "11"})
+    show([{k: r.get(k) for k in ("date_local", "site_number", "local_site_name", "parameter", "arithmetic_mean", "aqi")}
+          for r in d["Data"]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"date_local": "2025-07-04", "site_number": "0043", "local_site_name": "McMillan Reservoir", "parameter": "PM2.5 - Local Conditions", "arithmetic_mean": 18.4, "aqi": 64},
+  {"date_local": "2025-07-05", "site_number": "0043", "local_site_name": "McMillan Reservoir", "parameter": "PM2.5 - Local Conditions", "arithmetic_mean": 9.1, "aqi": 50}
+]
+```
+</details>
+
+---
+
+### EPA ECHO (Enforcement & Compliance History)
+
+| | |
+|:--|:--|
+| **Docs** | https://echo.epa.gov/tools/web-services |
+| **Auth** | None |
+| **Register / token** | No registration. Two-step pattern: get_facilities returns a QueryID, then get_qid pages through the facilities. |
+| **Script** | [`scripts/weather_environment/epa_echo.py`](scripts/weather_environment/epa_echo.py) |
+
+**What you can get:**
+
+- 800k+ regulated facilities: Clean Air Act, Clean Water Act, hazardous waste (RCRA), drinking water
+- Compliance status, quarters in non-compliance, inspections, formal enforcement actions, penalties
+- Facility location, NAICS industry, permits
+
+**Capstone ideas:** Which facilities violate repeatedly, enforcement intensity by neighborhood demographics, penalty deterrence.
+
+**Endpoint:** `GET https://echodata.epa.gov/echo/echo_rest_services.get_facilities  ->  get_qid`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `p_st / p_zip / p_ct` | State, ZIP or city filter | `p_st=DC` |
+| `p_act` | Y -> active facilities only | `Y` |
+| `p_med` | Program: A air (CAA), W water (CWA), R hazardous waste (RCRA), S drinking water | `W` |
+| `output` | JSON \| XML | `JSON` |
+| `get_qid?qid=&pagesize=&pageno=` | Second call: facility rows for the QueryID | `qid=687&pagesize=5` |
+| `Results summary fields` | QueryRows, INSPRows, FEARows (formal actions), TotalPenalties | `—` |
+
+```python
+from _common import get, show
+
+BASE = "https://echodata.epa.gov/echo/echo_rest_services"
+
+
+def main():
+    summary = get(f"{BASE}.get_facilities", params={"output": "JSON", "p_st": "DC", "p_act": "Y"})["Results"]
+    page = get(f"{BASE}.get_qid", params={"output": "JSON", "qid": summary["QueryID"], "pagesize": 5})["Results"]
+    show({"active_DC_facilities": summary["QueryRows"], "inspections": summary["INSPRows"],
+          "formal_enforcement_actions": summary["FEARows"], "total_penalties": summary["TotalPenalties"],
+          "examples": [{k: f.get(k) for k in ("FacName", "FacZip", "FacComplianceStatus", "FacQtrsWithNC")}
+                       for f in page["Facilities"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "active_DC_facilities": "1891",
+  "inspections": "654",
+  "formal_enforcement_actions": "84",
+  "total_penalties": "$1,068,199",
+  "examples": [
+    {
+      "FacName": "25TH PLACE",
+      "FacZip": "20018",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    {
+      "FacName": "(NPR HEADQUARTERS) NATIONAL PUBLIC RADIO HEADQUARTERS",
+      "FacZip": "20002",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "6"
+    },
+    {
+      "FacName": "1 K STREET SW",
+      "FacZip": "20024",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    {
+      "FacName": "10 G ST NE",
+      "FacZip": "20002",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    {
+      "FacName": "100 POTOMAC AVE SW",
+      "FacZip": "20024",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    "... (1886 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### EPA Envirofacts (Toxics Release Inventory and more)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.epa.gov/enviro/envirofacts-data-service-api |
+| **Auth** | None |
+| **Register / token** | No registration. One URL grammar over dozens of EPA databases: TRI (toxic releases), GHGRP (facility greenhouse-gas emissions), SDWIS (drinking water), RCRA (hazardous waste), and more. |
+| **Script** | [`scripts/weather_environment/epa_envirofacts.py`](scripts/weather_environment/epa_envirofacts.py) |
+
+**What you can get:**
+
+- TRI: facilities reporting toxic chemical releases (name, address, county FIPS, industry, coordinates)
+- GHGRP: annual greenhouse-gas emissions of large facilities
+- SDWIS: drinking-water systems and violations
+
+**Capstone ideas:** Environmental justice (toxic releases vs. neighborhood demographics), polluter mapping, compliance studies.
+
+**Endpoint:** `GET https://data.epa.gov/efservice/{table}/{column}/{value}/rows/{first}:{last}/JSON`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `table` | Table name, e.g. tri_facility, tri_reporting_form, pub_dim_facility (GHGRP), sdw_contaminant ... | `tri_facility` |
+| `{column}/{value}` | Filter pairs (repeatable; also /{column}/<, >, BEGINNING, CONTAINING) | `state_abbr/DC` |
+| `rows/{first}:{last}` | Row range (0-based) | `rows/0:9` |
+| `format` | JSON \| CSV \| XML \| EXCEL (last path segment) | `JSON` |
+| `count` | Append /COUNT to get the number of matching rows | `/tri_facility/state_abbr/VA/COUNT` |
+
+```python
+from _common import get, show
+
+
+def main():
+    count = get("https://data.epa.gov/efservice/tri_facility/state_abbr/VA/COUNT/JSON")[0]["TOTALQUERYRESULTS"]
+    rows = get("https://data.epa.gov/efservice/tri_facility/state_abbr/VA/fac_closed_ind/0/rows/0:4/JSON")
+    show({"VA_TRI_facilities": count, "examples": [
+        {k: r.get(k) for k in ("facility_name", "city_name", "county_name", "zip_code")} for r in rows]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "VA_TRI_facilities": 1247,
+  "examples": [
+    {
+      "facility_name": "HANSON PIPE & PRODUCTS INC MANASSAS PLANT",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20109"
+    },
+    {
+      "facility_name": "QUARLES PETROLEUM INC. MANASSAS BULK PLANT",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20109"
+    },
+    {
+      "facility_name": "MANASSAS BROAD RUN READY MIX CONCRETE",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20109"
+    },
+    {
+      "facility_name": "BENCHMARK ELECTRONICS MANASSAS DIV",
+      "city_name": "MANASSAS",
+      "county_name": "MANASSAS (CITY)",
+      "zip_code": "201103410"
+    },
+    {
+      "facility_name": "BAE SYSTEMS INFORMATION  & ELECTRONIC SYSTEMS INTEGRATION I",
+      "city_name": "MANASSAS",
+      "county_name": "PRINCE WILLIAM",
+      "zip_code": "20110"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### GBIF (Global Biodiversity Information Facility)
+
+| | |
+|:--|:--|
+| **Docs** | https://techdocs.gbif.org/en/openapi/ |
+| **Auth** | None for search (account for bulk downloads) |
+| **Register / token** | No registration to search (max 100,000 records via paging). For large extracts, create an account and use the asynchronous download API, which mints a citable DOI. |
+| **Script** | [`scripts/weather_environment/gbif.py`](scripts/weather_environment/gbif.py) |
+
+**What you can get:**
+
+- 2.5B+ species occurrence records: species, coordinates, date, country, basis of record, dataset
+- Species taxonomy and name matching
+- Faceted counts (by year, country, species) without downloading records
+
+**Capstone ideas:** Species distribution modelling, climate-driven range shifts, biodiversity trends by region.
+
+**Endpoint:** `GET https://api.gbif.org/v1/occurrence/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `taxonKey / scientificName` | Species or higher taxon (find keys via /v1/species/match?name=) | `scientificName=Haliaeetus leucocephalus` |
+| `country / stateProvince / geometry` | ISO country, province name, or WKT polygon | `US` |
+| `year / eventDate` | Year or range | `2015,2025` |
+| `hasCoordinate / basisOfRecord` | true; HUMAN_OBSERVATION \| PRESERVED_SPECIMEN \| ... | `true` |
+| `facet + facetLimit` | Counts by a field (set limit=0 for counts only) | `facet=year` |
+| `limit / offset` | Max 300 per page | `0` |
+| `/v1/species/match?name=` | Sibling endpoint: resolve a name to a taxonKey | `name=bald eagle` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api.gbif.org/v1/occurrence/search", params={
+        "scientificName": "Haliaeetus leucocephalus", "country": "US", "year": "2016,2025",
+        "hasCoordinate": "true", "limit": 0, "facet": "year", "facetLimit": 10})
+    # The latest year looks small until large datasets (e.g. eBird) publish their annual updates
+    years = sorted(d["facets"][0]["counts"], key=lambda c: c["name"])
+    show({"species": "Bald eagle (Haliaeetus leucocephalus), US", "occurrences_2016_2025": d["count"],
+          "by_year": {c["name"]: c["count"] for c in years}}, max_items=10)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "species": "Bald eagle (Haliaeetus leucocephalus), US",
+  "occurrences_2016_2025": 5155400,
+  "by_year": {
+    "2016": 284183,
+    "2017": 343333,
+    "2018": 411571,
+    "2019": 476494,
+    "2020": 582109,
+    "2021": 695303,
+    "2022": 724066,
+    "2023": 780582,
+    "2024": 833749,
+    "2025": 24010
+  }
+}
+```
+</details>
+
+---
+
+### iNaturalist API
+
+| | |
+|:--|:--|
+| **Docs** | https://api.inaturalist.org/v1/docs/ |
+| **Auth** | None for reading (OAuth to post) |
+| **Register / token** | No registration to read. Keep to ~1 request/second and ~10,000 requests/day. Research-grade observations also flow into GBIF. |
+| **Script** | [`scripts/weather_environment/inaturalist.py`](scripts/weather_environment/inaturalist.py) |
+
+**What you can get:**
+
+- Citizen-science observations with photos: species, location, date, observer, quality grade
+- Species counts for any place, taxon search, identification agreements
+- Place and project lookups
+
+**Capstone ideas:** Urban biodiversity, phenology (first-bloom dates over time), invasive-species spread, image datasets.
+
+**Endpoint:** `GET https://api.inaturalist.org/v1/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `observations / observations/species_counts` | Observations, or species ranked by observation count | `observations/species_counts` |
+| `place_id / lat & lng & radius` | Place (find IDs via /v1/places/autocomplete?q=) or circle in km | `lat=38.9&lng=-77.04&radius=10` |
+| `taxon_id / taxon_name / iconic_taxa` | Taxon filters (iconic_taxa: Aves, Plantae, Insecta, ...) | `iconic_taxa=Aves` |
+| `quality_grade` | research \| needs_id \| casual | `research` |
+| `d1 / d2` | Observed-on date range YYYY-MM-DD | `2026-01-01` |
+| `per_page / page / order_by` | Max 200 per page; order_by observed_on \| created_at \| votes | `5` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api.inaturalist.org/v1/observations/species_counts", params={
+        "lat": 38.9, "lng": -77.04, "radius": 10, "quality_grade": "research", "iconic_taxa": "Aves",
+        "d1": "2026-01-01", "per_page": 5})
+    show({"bird_species_observed_near_DC_2026": d["total_results"], "most_observed": [
+        {"species": r["taxon"]["name"], "common_name": r["taxon"].get("preferred_common_name"), "observations": r["count"]}
+        for r in d["results"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "bird_species_observed_near_DC_2026": 195,
+  "most_observed": [
+    {
+      "species": "Anas platyrhynchos",
+      "common_name": "Mallard",
+      "observations": 685
+    },
+    {
+      "species": "Turdus migratorius",
+      "common_name": "American Robin",
+      "observations": 659
+    },
+    {
+      "species": "Passer domesticus",
+      "common_name": "House Sparrow",
+      "observations": 614
+    },
+    {
+      "species": "Sturnus vulgaris",
+      "common_name": "European Starling",
+      "observations": 562
+    },
+    {
+      "species": "Mimus polyglottos",
+      "common_name": "Northern Mockingbird",
+      "observations": 423
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### NASA FIRMS (active fire detections)
+
+| | |
+|:--|:--|
+| **Docs** | https://firms.modaps.eosdis.nasa.gov/api/ |
+| **Auth** | MAP_KEY in the URL path |
+| **Register / token** | Get a free MAP_KEY at https://firms.modaps.eosdis.nasa.gov/api/map_key/ (email). Limit: 5,000 transactions per 10 minutes. |
+| **Env var** | `FIRMS_MAP_KEY` |
+| **Script** | [`scripts/weather_environment/nasa_firms.py`](scripts/weather_environment/nasa_firms.py) |
+
+**What you can get:**
+
+- Satellite fire/thermal-anomaly detections (VIIRS 375 m, MODIS 1 km) within ~3 hours of overpass
+- Latitude/longitude, brightness, fire radiative power (FRP), confidence, day/night, acquisition time
+- Archive back to 2000 (MODIS) / 2012 (VIIRS)
+
+**Capstone ideas:** Wildfire spread analysis, smoke-exposure modelling (with AirNow/OpenAQ), agricultural burning detection.
+
+**Endpoint:** `GET https://firms.modaps.eosdis.nasa.gov/api/area/csv/{MAP_KEY}/{source}/{area}/{day_range}[/{date}]`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `source` | VIIRS_SNPP_NRT \| VIIRS_NOAA20_NRT \| VIIRS_NOAA21_NRT \| MODIS_NRT (and _SP for standard/archive) | `VIIRS_SNPP_NRT` |
+| `area` | world, or a bounding box west,south,east,north | `-125,24,-66,50` |
+| `day_range` | 1-10 days | `1` |
+| `date` | Optional start date YYYY-MM-DD (default: most recent) | `2026-08-15` |
+| `/api/country/csv/{MAP_KEY}/{source}/{ISO3}/{days}` | Sibling endpoint: detections in one country | `/USA/1` |
+
+```python
+import csv
+import io
+
+from _common import get, key, show
+
+
+def main():
+    text = get(f'https://firms.modaps.eosdis.nasa.gov/api/area/csv/{key("FIRMS_MAP_KEY")}/VIIRS_SNPP_NRT/-125,24,-66,50/1',
+               as_json=False)
+    rows = list(csv.DictReader(io.StringIO(text)))
+    top = sorted(rows, key=lambda r: -float(r["frp"]))[:5]
+    show({"detections_last_24h_contiguous_US": len(rows), "highest_FRP": [
+        {k: r[k] for k in ("latitude", "longitude", "acq_date", "acq_time", "frp", "confidence", "daynight")} for r in top]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "detections_last_24h_contiguous_US": 1843,
+  "highest_FRP": [
+    {"latitude": 41.21, "longitude": -122.53, "acq_date": "2026-10-11", "acq_time": "2042", "frp": 412.7, "confidence": "h", "daynight": "D"}
+  ]
+}
+```
+</details>
+
+---
+
 ### NOAA Climate Data Online (CDO)
 
 | | |
@@ -1049,6 +1745,234 @@ def main():
 
 ---
 
+### NOAA Climate at a Glance
+
+| | |
+|:--|:--|
+| **Docs** | https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/ |
+| **Auth** | None |
+| **Register / token** | No registration. Build a query on the website, then swap the page URL's ending for /data.json or /data.csv. |
+| **Script** | [`scripts/weather_environment/noaa_climate_at_a_glance.py`](scripts/weather_environment/noaa_climate_at_a_glance.py) |
+
+**What you can get:**
+
+- Temperature, precipitation, drought indices (PDSI) and degree days since 1895
+- National (contiguous US), regional, state, climate-division, county and city series; global anomalies
+- Any time scale: 1-month to 60-month periods
+
+**Capstone ideas:** Local warming trends for any US county, linking climate anomalies to crop yields, energy demand or health.
+
+**Endpoint:** `GET https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/{scope}/time-series/{location}/{parameter}/{timescale}/{month}/{start}-{end}/data.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `scope / location` | national/110 (contiguous US), statewide/{state code}, county/{state-county}, global/globe/land_ocean | `national/110` |
+| `parameter` | tavg \| tmax \| tmin \| pcp (precipitation) \| pdsi \| cdd \| hdd | `tavg` |
+| `timescale` | Months per period: 1, 3, 12, ... | `12` |
+| `month` | Ending month (0 = all months) | `0` |
+| `start-end` | Year range | `1895-2025` |
+| `data.json / data.csv` | Output format | `data.json` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/national/time-series/110/tavg/12/12/1895-2025/data.json")
+    years = {k[:4]: v["value"] for k, v in d["data"].items()}  # 12-month periods ending in December = calendar years
+    warmest = sorted(years.items(), key=lambda kv: -kv[1])[:5]
+    show({"series": d["description"]["title"] + f' ({d["description"]["units"]})',
+          "warmest_years": [{"year": y, "avg_temp_F": t} for y, t in warmest],
+          "first_decade_avg": round(sum(list(years.values())[:10]) / 10, 2),
+          "last_decade_avg": round(sum(list(years.values())[-10:]) / 10, 2)})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "series": "Contiguous U.S. January-December Average Temperature (Degrees Fahrenheit)",
+  "warmest_years": [
+    {
+      "year": "2024",
+      "avg_temp_F": 55.48
+    },
+    {
+      "year": "2012",
+      "avg_temp_F": 55.27
+    },
+    {
+      "year": "2016",
+      "avg_temp_F": 54.9
+    },
+    {
+      "year": "2025",
+      "avg_temp_F": 54.62
+    },
+    {
+      "year": "2017",
+      "avg_temp_F": 54.54
+    }
+  ],
+  "first_decade_avg": 51.42,
+  "last_decade_avg": 54.23
+}
+```
+</details>
+
+---
+
+### NOAA Global Monitoring Lab — Mauna Loa CO2
+
+| | |
+|:--|:--|
+| **Docs** | https://gml.noaa.gov/ccgg/trends/data.html |
+| **Auth** | None (CSV/text files) |
+| **Register / token** | No registration; no REST API - stable file URLs updated monthly. Also global-average CO2, methane (CH4), N2O and SF6 files on the same page. |
+| **Script** | [`scripts/weather_environment/noaa_co2.py`](scripts/weather_environment/noaa_co2.py) |
+
+**What you can get:**
+
+- Monthly mean atmospheric CO2 at Mauna Loa since March 1958 (the Keeling Curve), plus deseasonalized trend
+- Daily, weekly and annual files; global marine-surface averages; annual growth rates
+
+**Capstone ideas:** Time-series decomposition and forecasting, teaching seasonality and trend.
+
+**Endpoint:** `GET https://gml.noaa.gov/webdata/ccgg/trends/{gas}/{file}.csv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `co2/co2_mm_mlo.csv` | Monthly Mauna Loa: year, month, decimal date, average, deseasonalized, ... | `co2_mm_mlo.csv` |
+| `co2/co2_annmean_mlo.csv` | Annual means | `co2_annmean_mlo.csv` |
+| `co2/co2_mm_gl.csv` | Global monthly mean | `co2_mm_gl.csv` |
+| `ch4/ch4_mm_gl.csv / n2o/n2o_mm_gl.csv` | Global methane / nitrous oxide | `ch4_mm_gl.csv` |
+| `comment lines` | Header lines start with # - skip them | `—` |
+
+```python
+import csv
+import io
+
+from _common import get, show
+
+
+def main():
+    text = get("https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.csv", as_json=False)
+    rows = list(csv.DictReader(io.StringIO("\n".join(l for l in text.splitlines() if not l.startswith("#")))))
+    latest, ten_years = rows[-1], rows[-121]
+    show({"latest": [{"month": f'{r["year"]}-{int(r["month"]):02d}', "co2_ppm": float(r["average"]),
+                      "deseasonalized_ppm": float(r["deseasonalized"])} for r in rows[-3:]],
+          "first_record": f'{rows[0]["year"]}-{int(rows[0]["month"]):02d}: {rows[0]["average"]} ppm',
+          "change_over_10_years_ppm": round(float(latest["deseasonalized"]) - float(ten_years["deseasonalized"]), 1)})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "latest": [
+    {
+      "month": "2026-07",
+      "co2_ppm": 429.13,
+      "deseasonalized_ppm": 428.74
+    },
+    {
+      "month": "2026-08",
+      "co2_ppm": 427.55,
+      "deseasonalized_ppm": 429.48
+    },
+    {
+      "month": "2026-09",
+      "co2_ppm": 426.07,
+      "deseasonalized_ppm": 429.55
+    }
+  ],
+  "first_record": "1958-03: 315.71 ppm",
+  "change_over_10_years_ppm": 24.7
+}
+```
+</details>
+
+---
+
+### NOAA Tides & Currents (CO-OPS)
+
+| | |
+|:--|:--|
+| **Docs** | https://api.tidesandcurrents.noaa.gov/api/prod/ |
+| **Auth** | None |
+| **Register / token** | No registration. Station IDs: https://tidesandcurrents.noaa.gov/map/ (8594900 = Washington, DC). |
+| **Script** | [`scripts/weather_environment/noaa_tides.py`](scripts/weather_environment/noaa_tides.py) |
+
+**What you can get:**
+
+- Observed water levels (6-minute), tide predictions, high/low tides at ~200 coastal stations
+- Meteorological data at stations (air/water temperature, wind, pressure)
+- Long-term sea level data (monthly means)
+
+**Capstone ideas:** Sea-level-rise trends, nuisance (high-tide) flooding frequency, storm surge vs. property values.
+
+**Endpoint:** `GET https://api.tidesandcurrents.noaa.gov/api/prod/datagetter`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `station` | Station ID | `8594900` |
+| `product` | water_level \| predictions \| hourly_height \| high_low \| monthly_mean \| water_temperature \| wind \| ... | `monthly_mean` |
+| `date / begin_date & end_date` | latest \| today \| recent, or a YYYYMMDD range (limits vary by product) | `begin_date=20160101&end_date=20251231` |
+| `datum` | Vertical reference: MLLW \| MSL \| NAVD \| STND ... | `MSL` |
+| `units / time_zone` | metric \| english; gmt \| lst \| lst_ldt | `metric / gmt` |
+| `interval (predictions)` | h hourly, hilo highs/lows, or minutes | `hilo` |
+| `format` | json \| csv \| xml | `json` |
+
+```python
+from _common import get, show
+
+URL = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
+
+
+def main():
+    common = {"station": "8594900", "units": "metric", "time_zone": "gmt", "format": "json"}
+    latest = get(URL, params={**common, "product": "water_level", "datum": "MLLW", "date": "latest"})
+    monthly = get(URL, params={**common, "product": "monthly_mean", "datum": "MSL",
+                               "begin_date": "20150101", "end_date": "20251231"})["data"]
+    by_year = {}
+    for m in monthly:
+        if m["MSL"]:
+            by_year.setdefault(m["year"], []).append(float(m["MSL"]))
+    show({"station": latest["metadata"]["name"], "latest_water_level_m_MLLW": latest["data"][0],
+          "annual_mean_sea_level_m": {y: round(sum(v) / len(v), 3) for y, v in by_year.items() if len(v) == 12}},
+         max_items=12)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
+
+```json
+{
+  "station": "Washington",
+  "latest_water_level_m_MLLW": {
+    "t": "2026-10-12 11:30",
+    "v": "0.956",
+    "s": "0.003",
+    "f": "0,0,0,0",
+    "q": "p"
+  },
+  "annual_mean_sea_level_m": {
+    "2015": 0.052,
+    "2017": 0.097,
+    "2018": 0.191,
+    "2019": 0.188,
+    "2020": 0.157,
+    "2021": 0.13,
+    "2022": 0.118,
+    "2023": 0.176,
+    "2024": 0.22,
+    "2025": 0.126
+  }
+}
+```
+</details>
+
+---
+
 ### US National Weather Service (api.weather.gov)
 
 | | |
@@ -1093,36 +2017,32 @@ def main():
     })
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
 
 ```json
 {
   "office": "LWX",
   "forecast": [
     {
-      "name": "Tonight",
-      "temperature": 62,
-      "temperatureUnit": "F",
-      "shortForecast": "Showers And Thunderstorms"
-    },
-    {
       "name": "Columbus Day",
-      "temperature": 73,
+      "temperature": 74,
       "temperatureUnit": "F",
       "shortForecast": "Rain Showers Likely then Mostly Cloudy"
     },
     {
-      "name": "Monday Night",
-      "temperature": 58,
+      "name": "Tonight",
+      "temperature": 57,
       "temperatureUnit": "F",
-      "shortForecast": "Partly Cloudy"
+      "shortForecast": "Mostly Clear"
+    },
+    {
+      "name": "Tuesday",
+      "temperature": 81,
+      "temperatureUnit": "F",
+      "shortForecast": "Sunny"
     }
   ],
-  "active_alerts_VA": [
-    "Coastal Flood Advisory issued October 11 at 6:58PM EDT until October 11 at 11:00PM EDT by NWS Baltimore MD/Washington DC",
-    "Flood Watch issued October 11 at 3:01PM EDT until October 12 at 2:00AM EDT by NWS Baltimore MD/Washington DC",
-    "Beach Hazards Statement issued October 11 at 1:38PM EDT until October 11 at 8:00PM EDT by NWS Wakefield VA"
-  ]
+  "active_alerts_VA": []
 }
 ```
 </details>
@@ -1173,35 +2093,35 @@ def main():
     show({"current": d["current"], "daily": d["daily"]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
 
 ```json
 {
   "current": {
-    "time": "2026-10-11T19:00",
+    "time": "2026-10-12T07:30",
     "interval": 900,
-    "temperature_2m": 17.8,
-    "relative_humidity_2m": 97,
-    "wind_speed_10m": 6.8
+    "temperature_2m": 14.0,
+    "relative_humidity_2m": 90,
+    "wind_speed_10m": 10.5
   },
   "daily": {
     "time": [
-      "2026-10-11",
       "2026-10-12",
-      "2026-10-13"
+      "2026-10-13",
+      "2026-10-14"
     ],
     "temperature_2m_max": [
-      18.4,
-      20.8,
-      27.7
+      22.1,
+      24.7,
+      31.2
     ],
     "temperature_2m_min": [
-      16.1,
-      15.1,
-      12.6
+      14.2,
+      12.8,
+      19.0
     ],
     "precipitation_sum": [
-      53.8,
+      1.8,
       0.0,
       0.0
     ]
@@ -1365,10 +2285,17 @@ def main():
            "tsunami": f["properties"]["tsunami"]} for f in d["features"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
 
 ```json
 [
+  {
+    "mag": 5.5,
+    "place": "122 km W of Neiafu, Tonga",
+    "time_ms": 1791779892859,
+    "depth_km": 195.212,
+    "tsunami": 0
+  },
   {
     "mag": 5.3,
     "place": "150 km W of Gorontalo, Indonesia",
@@ -1395,13 +2322,6 @@ def main():
     "place": "18 km SSE of Camaná, Peru",
     "time_ms": 1791726179788,
     "depth_km": 44.92,
-    "tsunami": 0
-  },
-  {
-    "mag": 5.2,
-    "place": "180 km S of Pelabuhanratu, Indonesia",
-    "time_ms": 1791689417430,
-    "depth_km": 10,
     "tsunami": 0
   }
 ]
@@ -6973,6 +7893,64 @@ def main():
 
 ---
 
+### Electricity Maps API
+
+| | |
+|:--|:--|
+| **Docs** | https://app.electricitymaps.com/docs |
+| **Auth** | API token (header `auth-token`) |
+| **Register / token** | Create a free account at https://portal.electricitymaps.com - the free tier covers live and recent data for a single zone for non-commercial use; historical/multi-zone access is paid (academic discounts exist). |
+| **Env var** | `ELECTRICITYMAPS_TOKEN` |
+| **Script** | [`scripts/engineering_energy/electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
+
+**What you can get:**
+
+- Live and historical carbon intensity (gCO2eq/kWh) for 200+ grid zones worldwide
+- Power breakdown by source incl. imports/exports, renewable and fossil-free percentages
+- Forecasts (paid tiers)
+
+**Capstone ideas:** Carbon-aware computing, comparing grid decarbonization across regions, marginal vs. average emissions.
+
+**Endpoint:** `GET https://api.electricitymap.org/v3/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `carbon-intensity/latest?zone=` | Latest intensity for a zone | `zone=US-MIDA-PJM` |
+| `power-breakdown/latest?zone=` | Latest generation and import mix | `zone=DE` |
+| `carbon-intensity/history?zone=` | Past 24 hours | `zone=GB` |
+| `lat / lon` | Alternative to zone: resolve the zone from coordinates | `38.9 / -77.04` |
+| `/v3/zones` | List of zone codes | `—` |
+| `auth-token (header)` | Your token | `<ELECTRICITYMAPS_TOKEN>` |
+
+```python
+from _common import get, key, show
+
+BASE = "https://api.electricitymap.org/v3"
+
+
+def main():
+    hdr = {"auth-token": key("ELECTRICITYMAPS_TOKEN")}
+    ci = get(f"{BASE}/carbon-intensity/latest", headers=hdr, params={"zone": "US-MIDA-PJM"})
+    pb = get(f"{BASE}/power-breakdown/latest", headers=hdr, params={"zone": "US-MIDA-PJM"})
+    show({"zone": ci["zone"], "carbonIntensity": ci["carbonIntensity"], "datetime": ci["datetime"],
+          "renewablePercentage": pb.get("renewablePercentage"), "fossilFreePercentage": pb.get("fossilFreePercentage")})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "zone": "US-MIDA-PJM",
+  "carbonIntensity": 372,
+  "datetime": "2026-10-12T12:00:00.000Z",
+  "renewablePercentage": 11,
+  "fossilFreePercentage": 47
+}
+```
+</details>
+
+---
+
 ### GitHub REST API
 
 | | |
@@ -7017,46 +7995,46 @@ def main():
          "open_issues": r["open_issues_count"], "license": (r.get("license") or {}).get("spdx_id")} for r in d["items"]]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
 
 ```json
 {
-  "total": 88218,
+  "total": 88318,
   "repos": [
     {
       "repo": "huggingface/transformers",
-      "stars": 167522,
-      "forks": 34839,
-      "open_issues": 2335,
+      "stars": 167561,
+      "forks": 34846,
+      "open_issues": 2339,
       "license": "Apache-2.0"
     },
     {
       "repo": "pytorch/pytorch",
-      "stars": 104458,
-      "forks": 32100,
-      "open_issues": 17703,
+      "stars": 104713,
+      "forks": 32187,
+      "open_issues": 17710,
       "license": "NOASSERTION"
     },
     {
       "repo": "d2l-ai/d2l-zh",
-      "stars": 81567,
+      "stars": 81598,
       "forks": 12421,
       "open_issues": 127,
       "license": "Apache-2.0"
     },
     {
       "repo": "openbq-org/OpenBB",
-      "stars": 74118,
-      "forks": 7659,
-      "open_issues": 102,
+      "stars": 74143,
+      "forks": 7663,
+      "open_issues": 101,
       "license": "NOASSERTION"
     },
     {
-      "repo": "scikit-learn/scikit-learn",
-      "stars": 67553,
-      "forks": 27504,
-      "open_issues": 2166,
-      "license": "BSD-3-Clause"
+      "repo": "rohitg00/ai-engineering-from-scratch",
+      "stars": 67797,
+      "forks": 11880,
+      "open_issues": 70,
+      "license": "MIT"
     }
   ]
 }
@@ -7107,41 +8085,121 @@ def main():
     show([{k: m.get(k) for k in ("id", "downloads", "likes", "library_name")} for m in d])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:40</summary>
 
 ```json
 [
   {
     "id": "BAAI/bge-reranker-v2-m3",
-    "downloads": 16162257,
-    "likes": 1229,
+    "downloads": 16000331,
+    "likes": 1232,
     "library_name": "sentence-transformers"
   },
   {
     "id": "ProsusAI/finbert",
-    "downloads": 4377369,
-    "likes": 1264,
+    "downloads": 4346199,
+    "likes": 1266,
+    "library_name": "transformers"
+  },
+  {
+    "id": "SamLowe/roberta-base-go_emotions",
+    "downloads": 3880580,
+    "likes": 698,
     "library_name": "transformers"
   },
   {
     "id": "BAAI/bge-reranker-base",
-    "downloads": 3877205,
-    "likes": 248,
+    "downloads": 3864287,
+    "likes": 250,
     "library_name": "sentence-transformers"
   },
   {
-    "id": "SamLowe/roberta-base-go_emotions",
-    "downloads": 3745871,
-    "likes": 696,
-    "library_name": "transformers"
-  },
-  {
     "id": "meta-llama/Prompt-Guard-86M",
-    "downloads": 2805342,
+    "downloads": 2737390,
     "likes": 422,
     "library_name": "transformers"
   }
 ]
+```
+</details>
+
+---
+
+### NASA POWER (solar & meteorological data)
+
+| | |
+|:--|:--|
+| **Docs** | https://power.larc.nasa.gov/docs/services/api/ |
+| **Auth** | None |
+| **Register / token** | No registration. Global coverage from satellite and reanalysis data, 1981-present (solar from 1984). |
+| **Script** | [`scripts/engineering_energy/nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
+
+**What you can get:**
+
+- Daily/hourly/monthly solar irradiance (GHI, DNI, diffuse), temperature, humidity, wind at 2/10/50 m, precipitation
+- Any lat/lon on Earth, or regional grids
+- Communities tuned for renewable energy (RE), agriculture (AG), buildings (SB)
+
+**Capstone ideas:** Solar and wind resource assessment, crop-yield models with weather covariates, building energy simulation.
+
+**Endpoint:** `GET https://power.larc.nasa.gov/api/temporal/{daily \| hourly \| monthly \| climatology}/point`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `parameters` | Comma list: ALLSKY_SFC_SW_DWN (solar, kWh/m²/day), T2M, RH2M, WS10M, WS50M, PRECTOTCORR, ... | `ALLSKY_SFC_SW_DWN,T2M` |
+| `community` | RE (renewable energy) \| AG (agroclimatology) \| SB (sustainable buildings) | `RE` |
+| `latitude / longitude` | Point location | `38.9 / -77.04` |
+| `start / end` | YYYYMMDD (daily/hourly) or YYYY (monthly) | `20260101 / 20260930` |
+| `format` | JSON \| CSV \| ASCII \| NETCDF | `JSON` |
+| `/api/temporal/daily/regional` | Sibling endpoint: a lat/lon box (latitude-min, latitude-max, ...) | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://power.larc.nasa.gov/api/temporal/monthly/point", params={
+        "parameters": "ALLSKY_SFC_SW_DWN,T2M,WS10M", "community": "RE", "latitude": 38.9, "longitude": -77.04,
+        "start": 2025, "end": 2025, "format": "JSON"})["properties"]["parameter"]
+    months = [k for k in d["ALLSKY_SFC_SW_DWN"] if not k.endswith("13")]  # month 13 = annual value
+    show({"location": "Washington, DC (2025)", "annual_solar_kWh_m2_day": d["ALLSKY_SFC_SW_DWN"]["202513"],
+          "monthly": [{"month": m[4:], "solar_kWh_m2_day": d["ALLSKY_SFC_SW_DWN"][m], "temp_C": d["T2M"][m],
+                       "wind_10m_m_s": d["WS10M"][m]} for m in months[::3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:41</summary>
+
+```json
+{
+  "location": "Washington, DC (2025)",
+  "annual_solar_kWh_m2_day": 4.1573,
+  "monthly": [
+    {
+      "month": "01",
+      "solar_kWh_m2_day": 2.4898,
+      "temp_C": -1.95,
+      "wind_10m_m_s": 4.96
+    },
+    {
+      "month": "04",
+      "solar_kWh_m2_day": 4.9042,
+      "temp_C": 13.58,
+      "wind_10m_m_s": 4.89
+    },
+    {
+      "month": "07",
+      "solar_kWh_m2_day": 6.1805,
+      "temp_C": 27.36,
+      "wind_10m_m_s": 2.54
+    },
+    {
+      "month": "10",
+      "solar_kWh_m2_day": 3.7102,
+      "temp_C": 14.88,
+      "wind_10m_m_s": 4.44
+    }
+  ]
+}
 ```
 </details>
 
@@ -7195,11 +8253,11 @@ def main():
         {"distance_mi": round(s["distance"], 2)} for s in d["fuel_stations"]]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:12</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:41</summary>
 
 ```json
 {
-  "station_counts_near_DC": 630,
+  "station_counts_near_DC": 629,
   "stations": [
     {
       "station_name": "1750 H St. NW. Garage",
@@ -7288,7 +8346,7 @@ def main():
     show({"total": d["totalResults"], "cves": out}, max_str=140)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:41</summary>
 
 ```json
 {
@@ -7336,6 +8394,246 @@ def main():
 
 ---
 
+### Our World in Data — Energy dataset
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/owid/energy-data |
+| **Auth** | None (CSV on GitHub) |
+| **Register / token** | No registration. One tidy country-year CSV (~10 MB) combining the Energy Institute Statistical Review, Ember and EIA data; codebook in the repo. CC-BY. |
+| **Script** | [`scripts/engineering_energy/owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
+
+**What you can get:**
+
+- Primary energy and electricity by source (coal, gas, oil, nuclear, hydro, wind, solar, biofuels) for every country
+- Shares of renewables/low-carbon, per-capita consumption, carbon intensity of electricity, energy per GDP
+- Years 1900-present (coverage varies by variable)
+
+**Capstone ideas:** Energy-transition tracking, renewable adoption drivers, decoupling of energy use from growth.
+
+**Endpoint:** `GET https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `key columns` | country, year, iso_code, population, gdp | `—` |
+| `{source}_share_elec` | Share of electricity from a source (%) | `solar_share_elec, wind_share_elec` |
+| `{source}_consumption / {source}_electricity` | Primary energy (TWh) / electricity generation (TWh) | `coal_electricity` |
+| `carbon_intensity_elec` | gCO2 per kWh of electricity | `—` |
+| `owid-energy-codebook.csv` | Variable definitions and sources (same repo) | `—` |
+
+```python
+import csv
+import io
+
+from _common import get, show
+
+
+def main():
+    rows = csv.DictReader(io.StringIO(get("https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv",
+                                          as_json=False)))
+    keep = {"United States", "China", "Germany", "India", "World"}
+    latest = {}
+    for r in rows:  # latest year with a value for each country
+        if r["country"] in keep and r["renewables_share_elec"]:
+            latest[r["country"]] = r
+    show([{"country": c, "year": r["year"], "renewables_share_elec_pct": round(float(r["renewables_share_elec"]), 1),
+           "solar_pct": round(float(r["solar_share_elec"] or 0), 1), "wind_pct": round(float(r["wind_share_elec"] or 0), 1),
+           "coal_pct": round(float(r["coal_share_elec"] or 0), 1),
+           "carbon_intensity_g_per_kWh": r["carbon_intensity_elec"] and round(float(r["carbon_intensity_elec"]))}
+          for c, r in sorted(latest.items())])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:41</summary>
+
+```json
+[
+  {
+    "country": "China",
+    "year": "2025",
+    "renewables_share_elec_pct": 37.0,
+    "solar_pct": 11.1,
+    "wind_pct": 10.7,
+    "coal_pct": 54.3,
+    "carbon_intensity_g_per_kWh": 525
+  },
+  {
+    "country": "Germany",
+    "year": "2025",
+    "renewables_share_elec_pct": 59.1,
+    "solar_pct": 17.9,
+    "wind_pct": 27.2,
+    "coal_pct": 20.6,
+    "carbon_intensity_g_per_kWh": 330
+  },
+  {
+    "country": "India",
+    "year": "2025",
+    "renewables_share_elec_pct": 24.1,
+    "solar_pct": 9.4,
+    "wind_pct": 5.0,
+    "coal_pct": 70.8,
+    "carbon_intensity_g_per_kWh": 670
+  },
+  {
+    "country": "United States",
+    "year": "2025",
+    "renewables_share_elec_pct": 25.6,
+    "solar_pct": 8.6,
+    "wind_pct": 10.3,
+    "coal_pct": 16.3,
+    "carbon_intensity_g_per_kWh": 384
+  },
+  {
+    "country": "World",
+    "year": "2025",
+    "renewables_share_elec_pct": 33.8,
+    "solar_pct": 8.7,
+    "wind_pct": 8.5,
+    "coal_pct": 33.0,
+    "carbon_intensity_g_per_kWh": 458
+  }
+]
+```
+</details>
+
+---
+
+### PVGIS (EU JRC photovoltaic estimates)
+
+| | |
+|:--|:--|
+| **Docs** | https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/getting-started-pvgis/api-non-interactive-service_en |
+| **Auth** | None |
+| **Register / token** | No registration. Max ~30 requests/second. Covers Europe, Africa, most of Asia and the Americas. |
+| **Script** | [`scripts/engineering_energy/pvgis.py`](scripts/engineering_energy/pvgis.py) |
+
+**What you can get:**
+
+- Expected PV output for a system anywhere: monthly and yearly energy (kWh), irradiation, losses
+- Optimal tilt/azimuth, hourly time series, typical meteorological year (TMY), off-grid sizing
+
+**Capstone ideas:** Rooftop-solar economics by location, comparing PVGIS vs. NLR PVWatts estimates.
+
+**Endpoint:** `GET https://re.jrc.ec.europa.eu/api/v5_3/{tool}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `tool` | PVcalc (grid-connected) \| seriescalc (hourly) \| tmy \| SHScalc (off-grid) \| MRcalc (monthly radiation) | `PVcalc` |
+| `lat / lon` | Location | `38.9 / -77.04` |
+| `peakpower / loss` | System size in kWp; system losses in % | `4 / 14` |
+| `angle / aspect` | Tilt in degrees; azimuth (0 = south, -90 = east, 90 = west) | `30 / 0` |
+| `optimalangles` | 1 -> compute optimal tilt and azimuth | `1` |
+| `outputformat` | json \| csv \| basic | `json` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://re.jrc.ec.europa.eu/api/v5_3/PVcalc", params={
+        "lat": 38.9, "lon": -77.04, "peakpower": 4, "loss": 14, "optimalangles": 1, "outputformat": "json"})
+    out, mount = d["outputs"], d["inputs"]["mounting_system"]["fixed"]
+    show({"system": "4 kWp, 14% losses, Washington DC", "optimal_tilt_deg": mount["slope"]["value"],
+          "optimal_azimuth_deg": mount["azimuth"]["value"], "yearly_kWh": out["totals"]["fixed"]["E_y"],
+          "monthly_kWh": {m["month"]: m["E_m"] for m in out["monthly"]["fixed"]}}, max_items=12)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:41</summary>
+
+```json
+{
+  "system": "4 kWp, 14% losses, Washington DC",
+  "optimal_tilt_deg": 37,
+  "optimal_azimuth_deg": -7,
+  "yearly_kWh": 5668.39,
+  "monthly_kWh": {
+    "1": 424.62,
+    "2": 441.33,
+    "3": 534.35,
+    "4": 530.55,
+    "5": 515.87,
+    "6": 502.62,
+    "7": 518.23,
+    "8": 501.87,
+    "9": 459.97,
+    "10": 444.21,
+    "11": 423.4,
+    "12": 371.36
+  }
+}
+```
+</details>
+
+---
+
+### UK Carbon Intensity API (National Grid ESO)
+
+| | |
+|:--|:--|
+| **Docs** | https://carbon-intensity.github.io/api-definitions/ |
+| **Auth** | None |
+| **Register / token** | No registration. Half-hourly data for Great Britain since 2017, with 96-hour forecasts. |
+| **Script** | [`scripts/engineering_energy/uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
+
+**What you can get:**
+
+- Carbon intensity of electricity (gCO2/kWh): actual and forecast, with index (very low ... very high)
+- Generation mix by fuel (gas, wind, solar, nuclear, imports, ...)
+- Regional intensity for 14 DNO regions and by postcode
+
+**Capstone ideas:** Load-shifting / carbon-aware scheduling, forecasting grid intensity, wind share vs. intensity analysis.
+
+**Endpoint:** `GET https://api.carbonintensity.org.uk/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `intensity` | Current half-hour (also /intensity/date/{YYYY-MM-DD}, /intensity/{from}/{to}) | `intensity` |
+| `intensity/{from}/fw48h` | 48-hour forecast from a time | `intensity/2026-10-12T12:00Z/fw48h` |
+| `generation` | Current generation mix in % (also /generation/{from}/{to}) | `generation` |
+| `regional / regional/postcode/{outcode}` | All regions, or one area by outward postcode (full district, e.g. SW1A not SW1) | `regional/postcode/RG10` |
+| `intensity/stats/{from}/{to}` | Max/min/average over a period | `—` |
+
+```python
+from _common import get, show
+
+BASE = "https://api.carbonintensity.org.uk"
+
+
+def main():
+    now = get(f"{BASE}/intensity")["data"][0]
+    mix = get(f"{BASE}/generation")["data"]
+    show({"period": f'{now["from"]} - {now["to"]}', "intensity_gCO2_per_kWh": now["intensity"],
+          "generation_mix_pct": {f["fuel"]: f["perc"] for f in sorted(mix["generationmix"], key=lambda f: -f["perc"])}},
+         max_items=10)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:41</summary>
+
+```json
+{
+  "period": "2026-10-12T11:00Z - 2026-10-12T11:30Z",
+  "intensity_gCO2_per_kWh": {
+    "forecast": 91,
+    "actual": 93,
+    "index": "moderate"
+  },
+  "generation_mix_pct": {
+    "wind": 43,
+    "gas": 16.3,
+    "imports": 14.9,
+    "nuclear": 11.2,
+    "biomass": 7.8,
+    "solar": 6.6,
+    "coal": 0,
+    "other": 0,
+    "hydro": 0
+  }
+}
+```
+</details>
+
+---
+
 ### USGS Water Services (streamflow)
 
 | | |
@@ -7375,7 +8673,7 @@ def main():
            "latest": ts["values"][0]["value"][-1]} for ts in d["value"]["timeSeries"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:41</summary>
 
 ```json
 [
@@ -7383,22 +8681,22 @@ def main():
     "site": "POTOMAC RIVER NEAR WASH, DC LITTLE FALLS PUMP STA",
     "variable": "Streamflow, ft&#179;/s",
     "latest": {
-      "value": "5780",
+      "value": "8160",
       "qualifiers": [
         "P"
       ],
-      "dateTime": "2026-10-11T18:50:00.000-04:00"
+      "dateTime": "2026-10-12T06:50:00.000-04:00"
     }
   },
   {
     "site": "POTOMAC RIVER NEAR WASH, DC LITTLE FALLS PUMP STA",
     "variable": "Gage height, ft",
     "latest": {
-      "value": "3.47",
+      "value": "3.77",
       "qualifiers": [
         "P"
       ],
-      "dateTime": "2026-10-11T18:50:00.000-04:00"
+      "dateTime": "2026-10-12T06:50:00.000-04:00"
     }
   }
 ]

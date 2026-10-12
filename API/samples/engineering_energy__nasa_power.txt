@@ -1,0 +1,31 @@
+# live 2026-10-12 07:41
+{
+  "location": "Washington, DC (2025)",
+  "annual_solar_kWh_m2_day": 4.1573,
+  "monthly": [
+    {
+      "month": "01",
+      "solar_kWh_m2_day": 2.4898,
+      "temp_C": -1.95,
+      "wind_10m_m_s": 4.96
+    },
+    {
+      "month": "04",
+      "solar_kWh_m2_day": 4.9042,
+      "temp_C": 13.58,
+      "wind_10m_m_s": 4.89
+    },
+    {
+      "month": "07",
+      "solar_kWh_m2_day": 6.1805,
+      "temp_C": 27.36,
+      "wind_10m_m_s": 2.54
+    },
+    {
+      "month": "10",
+      "solar_kWh_m2_day": 3.7102,
+      "temp_C": 14.88,
+      "wind_10m_m_s": 4.44
+    }
+  ]
+}

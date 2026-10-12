@@ -147,9 +147,9 @@ def main():
 
 HEADER = """# Public API Catalog for Data Science Capstones
 
-> A curated, runnable list of free APIs across news, social media, weather, finance, census, housing,
-> political science, law, health, education, science, AI & machine learning, engineering, transportation,
-> sports, and culture.
+> A curated, runnable list of free APIs across news, social media, weather & environment, finance,
+> census, housing, political science, law, health, education, science, AI & machine learning,
+> engineering & energy, transportation, sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 

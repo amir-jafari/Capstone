@@ -1,0 +1,54 @@
+# live 2026-10-12 07:40
+{
+  "global_total_Gt_CO2e_2024": 59.9,
+  "top_countries": [
+    {
+      "country": "China",
+      "Gt_CO2e": 16.55,
+      "share_pct": 27.6,
+      "t_per_capita": 11.7
+    },
+    {
+      "country": "United States of America",
+      "Gt_CO2e": 5.99,
+      "share_pct": 10.0,
+      "t_per_capita": 18.1
+    },
+    {
+      "country": "India",
+      "Gt_CO2e": 4.61,
+      "share_pct": 7.7,
+      "t_per_capita": 3.3
+    },
+    {
+      "country": "Russian Federation",
+      "Gt_CO2e": 2.83,
+      "share_pct": 4.7,
+      "t_per_capita": 19.6
+    },
+    {
+      "country": "Indonesia",
+      "Gt_CO2e": 1.64,
+      "share_pct": 2.7,
+      "t_per_capita": 6.0
+    },
+    "... (247 more)"
+  ],
+  "largest_US_power_sources": [
+    {
+      "name": "James H Miller Jr",
+      "type": "coal",
+      "Mt_CO2e": 18.5
+    },
+    {
+      "name": "Labadie",
+      "type": "coal",
+      "Mt_CO2e": 14.4
+    },
+    {
+      "name": "Monroe (MI)",
+      "type": "coal, oil",
+      "Mt_CO2e": 12.8
+    }
+  ]
+}

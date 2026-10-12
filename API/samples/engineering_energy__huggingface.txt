@@ -1,32 +1,32 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 07:40
 [
   {
     "id": "BAAI/bge-reranker-v2-m3",
-    "downloads": 16162257,
-    "likes": 1229,
+    "downloads": 16000331,
+    "likes": 1232,
     "library_name": "sentence-transformers"
   },
   {
     "id": "ProsusAI/finbert",
-    "downloads": 4377369,
-    "likes": 1264,
+    "downloads": 4346199,
+    "likes": 1266,
+    "library_name": "transformers"
+  },
+  {
+    "id": "SamLowe/roberta-base-go_emotions",
+    "downloads": 3880580,
+    "likes": 698,
     "library_name": "transformers"
   },
   {
     "id": "BAAI/bge-reranker-base",
-    "downloads": 3877205,
-    "likes": 248,
+    "downloads": 3864287,
+    "likes": 250,
     "library_name": "sentence-transformers"
   },
   {
-    "id": "SamLowe/roberta-base-go_emotions",
-    "downloads": 3745871,
-    "likes": 696,
-    "library_name": "transformers"
-  },
-  {
     "id": "meta-llama/Prompt-Guard-86M",
-    "downloads": 2805342,
+    "downloads": 2737390,
     "likes": 422,
     "library_name": "transformers"
   }

@@ -1,0 +1,40 @@
+# live 2026-10-12 07:40
+{
+  "active_DC_facilities": "1891",
+  "inspections": "654",
+  "formal_enforcement_actions": "84",
+  "total_penalties": "$1,068,199",
+  "examples": [
+    {
+      "FacName": "25TH PLACE",
+      "FacZip": "20018",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    {
+      "FacName": "(NPR HEADQUARTERS) NATIONAL PUBLIC RADIO HEADQUARTERS",
+      "FacZip": "20002",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "6"
+    },
+    {
+      "FacName": "1 K STREET SW",
+      "FacZip": "20024",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    {
+      "FacName": "10 G ST NE",
+      "FacZip": "20002",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    {
+      "FacName": "100 POTOMAC AVE SW",
+      "FacZip": "20024",
+      "FacComplianceStatus": "No Violation Identified",
+      "FacQtrsWithNC": "0"
+    },
+    "... (1886 more)"
+  ]
+}

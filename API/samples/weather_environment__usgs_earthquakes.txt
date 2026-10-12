@@ -1,5 +1,12 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 07:40
 [
+  {
+    "mag": 5.5,
+    "place": "122 km W of Neiafu, Tonga",
+    "time_ms": 1791779892859,
+    "depth_km": 195.212,
+    "tsunami": 0
+  },
   {
     "mag": 5.3,
     "place": "150 km W of Gorontalo, Indonesia",
@@ -26,13 +33,6 @@
     "place": "18 km SSE of Camaná, Peru",
     "time_ms": 1791726179788,
     "depth_km": 44.92,
-    "tsunami": 0
-  },
-  {
-    "mag": 5.2,
-    "place": "180 km S of Pelabuhanratu, Indonesia",
-    "time_ms": 1791689417430,
-    "depth_km": 10,
     "tsunami": 0
   }
 ]

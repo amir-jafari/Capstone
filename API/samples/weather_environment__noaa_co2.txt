@@ -1,0 +1,22 @@
+# live 2026-10-12 07:40
+{
+  "latest": [
+    {
+      "month": "2026-07",
+      "co2_ppm": 429.13,
+      "deseasonalized_ppm": 428.74
+    },
+    {
+      "month": "2026-08",
+      "co2_ppm": 427.55,
+      "deseasonalized_ppm": 429.48
+    },
+    {
+      "month": "2026-09",
+      "co2_ppm": 426.07,
+      "deseasonalized_ppm": 429.55
+    }
+  ],
+  "first_record": "1958-03: 315.71 ppm",
+  "change_over_10_years_ppm": 24.7
+}

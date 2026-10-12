@@ -1,0 +1,31 @@
+# live 2026-10-12 07:40
+{
+  "bird_species_observed_near_DC_2026": 195,
+  "most_observed": [
+    {
+      "species": "Anas platyrhynchos",
+      "common_name": "Mallard",
+      "observations": 685
+    },
+    {
+      "species": "Turdus migratorius",
+      "common_name": "American Robin",
+      "observations": 659
+    },
+    {
+      "species": "Passer domesticus",
+      "common_name": "House Sparrow",
+      "observations": 614
+    },
+    {
+      "species": "Sturnus vulgaris",
+      "common_name": "European Starling",
+      "observations": 562
+    },
+    {
+      "species": "Mimus polyglottos",
+      "common_name": "Northern Mockingbird",
+      "observations": 423
+    }
+  ]
+}
