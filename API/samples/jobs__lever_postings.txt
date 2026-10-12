@@ -1,0 +1,65 @@
+# live 2026-10-12 09:53
+{
+  "company": "Palantir",
+  "open_postings": 309,
+  "by_team": [
+    [
+      "Dev",
+      85
+    ],
+    [
+      "Delta",
+      65
+    ],
+    [
+      "Echo",
+      32
+    ],
+    [
+      "Information Security",
+      19
+    ],
+    [
+      "Legal",
+      15
+    ]
+  ],
+  "by_commitment": [
+    [
+      "Full-time",
+      261
+    ],
+    [
+      "Internship",
+      44
+    ],
+    [
+      "Fixed-Term",
+      4
+    ]
+  ],
+  "by_workplace": [
+    [
+      "hybrid",
+      199
+    ],
+    [
+      "onsite",
+      110
+    ]
+  ],
+  "examples": [
+    {
+      "title": "Administrative Business Partner",
+      "location": "Singapore, Singapore"
+    },
+    {
+      "title": "Administrative Business Partner",
+      "location": "London, United Kingdom"
+    },
+    {
+      "title": "Administrative Business Partner - ShipOS",
+      "location": "Washington, D.C."
+    }
+  ]
+}

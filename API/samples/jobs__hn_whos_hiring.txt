@@ -1,0 +1,29 @@
+# live 2026-10-12 09:53
+{
+  "recent_threads": [
+    {
+      "title": "Ask HN: Who is hiring? (October 2026)",
+      "comments": 375
+    },
+    {
+      "title": "Ask HN: Who is hiring? (September 2026)",
+      "comments": 393
+    },
+    {
+      "title": "Ask HN: Who is hiring? (August 2026)",
+      "comments": 376
+    },
+    {
+      "title": "Ask HN: Who is hiring? (July 2026)",
+      "comments": 419
+    },
+    {
+      "title": "Ask HN: Who is hiring? (June 2026)",
+      "comments": 492
+    },
+    "... (1 more)"
+  ],
+  "latest_thread_job_posts": 254,
+  "share_mentioning_REMOTE": 0.56,
+  "posted": "2026-10-01"
+}

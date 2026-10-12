@@ -1,7 +1,7 @@
 # Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
-> census, housing, political science, law, health, agriculture & food, education, science, AI & machine learning,
+> census, housing, political science, law, health, agriculture & food, education, jobs & labor, science, AI & machine learning,
 > engineering & energy, transportation, sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
@@ -129,64 +129,81 @@ python build_readme.py          # re-run everything & regenerate this README
 | 98 | 🌾 Agriculture & Food | [ISRIC SoilGrids (global soil properties)](#isric-soilgrids-global-soil-properties) | 🟢 no key | — | [`soilgrids.py`](scripts/agriculture/soilgrids.py) |
 | 99 | 🌾 Agriculture & Food | [TheMealDB (recipes)](#themealdb-recipes) | 🔑 key | `THEMEALDB_KEY (optional)` | [`themealdb.py`](scripts/agriculture/themealdb.py) |
 | 100 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
-| 101 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
-| 102 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
-| 103 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
-| 104 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
-| 105 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
-| 106 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 107 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 108 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 109 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 110 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 111 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 112 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 113 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 114 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 115 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 116 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 117 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 118 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 119 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 120 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 121 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 122 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 123 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 124 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
-| 125 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 126 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 127 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
-| 128 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 129 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 130 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
-| 131 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
-| 132 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
-| 133 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 134 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 135 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 136 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 137 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 138 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 139 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 140 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 141 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 142 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 143 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 144 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 145 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 146 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 147 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 148 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 149 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 150 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 151 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 152 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 153 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 154 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 155 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 156 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 157 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 158 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 101 | 🎓 Education | [Coursera Catalog API](#coursera-catalog-api) | 🟢 no key | — | [`coursera_catalog.py`](scripts/education/coursera_catalog.py) |
+| 102 | 🎓 Education | [Datamuse (word-finding API)](#datamuse-word-finding-api) | 🟢 no key | — | [`datamuse.py`](scripts/education/datamuse.py) |
+| 103 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
+| 104 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
+| 105 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
+| 106 | 🎓 Education | [OECD Data API — Education at a Glance](#oecd-data-api--education-at-a-glance) | 🟢 no key | — | [`oecd_education.py`](scripts/education/oecd_education.py) |
+| 107 | 🎓 Education | [Open Trivia Database](#open-trivia-database) | 🟢 no key | — | [`open_trivia_db.py`](scripts/education/open_trivia_db.py) |
+| 108 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
+| 109 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
+| 110 | 🎓 Education | [World Bank EdStats (education statistics)](#world-bank-edstats-education-statistics) | 🟢 no key | — | [`world_bank_edstats.py`](scripts/education/world_bank_edstats.py) |
+| 111 | 💼 Jobs & Labor | [Adzuna Jobs API](#adzuna-jobs-api) | 🔑 key | `ADZUNA_APP_ID, ADZUNA_APP_KEY` | [`adzuna.py`](scripts/jobs/adzuna.py) |
+| 112 | 💼 Jobs & Labor | [Ashby Job Postings API (startup career pages)](#ashby-job-postings-api-startup-career-pages) | 🟢 no key | — | [`ashby_job_board.py`](scripts/jobs/ashby_job_board.py) |
+| 113 | 💼 Jobs & Labor | [CareerOneStop Web API (U.S. Department of Labor)](#careeronestop-web-api-us-department-of-labor) | 🔑 key | `CAREERONESTOP_USER_ID, CAREERONESTOP_TOKEN` | [`careeronestop.py`](scripts/jobs/careeronestop.py) |
+| 114 | 💼 Jobs & Labor | [ESCO API (European skills & occupations taxonomy)](#esco-api-european-skills--occupations-taxonomy) | 🟢 no key | — | [`esco.py`](scripts/jobs/esco.py) |
+| 115 | 💼 Jobs & Labor | [Greenhouse Job Board API (company career pages)](#greenhouse-job-board-api-company-career-pages) | 🟢 no key | — | [`greenhouse_job_boards.py`](scripts/jobs/greenhouse_job_boards.py) |
+| 116 | 💼 Jobs & Labor | [Hacker News 'Who is hiring?' (via Algolia HN Search)](#hacker-news-who-is-hiring-via-algolia-hn-search) | 🟢 no key | — | [`hn_whos_hiring.py`](scripts/jobs/hn_whos_hiring.py) |
+| 117 | 💼 Jobs & Labor | [ILOSTAT (International Labour Organization)](#ilostat-international-labour-organization) | 🟢 no key | — | [`ilostat.py`](scripts/jobs/ilostat.py) |
+| 118 | 💼 Jobs & Labor | [Census LEHD LODES (jobs by census block)](#census-lehd-lodes-jobs-by-census-block) | 🟢 no key | — | [`lehd_lodes.py`](scripts/jobs/lehd_lodes.py) |
+| 119 | 💼 Jobs & Labor | [Lever Postings API (company career pages)](#lever-postings-api-company-career-pages) | 🟢 no key | — | [`lever_postings.py`](scripts/jobs/lever_postings.py) |
+| 120 | 💼 Jobs & Labor | [O*NET Web Services (occupations & skills)](#onet-web-services-occupations--skills) | 🔑 key | `ONET_API_KEY` | [`onet.py`](scripts/jobs/onet.py) |
+| 121 | 💼 Jobs & Labor | [Remotive (remote jobs)](#remotive-remote-jobs) | 🟢 no key | — | [`remotive.py`](scripts/jobs/remotive.py) |
+| 122 | 💼 Jobs & Labor | [The Muse Public API (jobs)](#the-muse-public-api-jobs) | 🟢 no key | `THEMUSE_API_KEY (optional)` | [`the_muse.py`](scripts/jobs/the_muse.py) |
+| 123 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 124 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 125 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 126 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 127 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 128 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 129 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 130 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 131 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 132 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 133 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 134 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 135 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 136 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 137 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 138 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 139 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 140 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 141 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
+| 142 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 143 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 144 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
+| 145 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 146 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 147 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
+| 148 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
+| 149 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
+| 150 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 151 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 152 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 153 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 154 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 155 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 156 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 157 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 158 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 159 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 160 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 161 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 162 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 163 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 164 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 165 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 166 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 167 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 168 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 169 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 170 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 171 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 172 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 173 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 174 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 175 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -8132,6 +8149,171 @@ def main():
 
 ---
 
+### Coursera Catalog API
+
+| | |
+|:--|:--|
+| **Docs** | https://api.coursera.org/api/courses.v1 (the old docs site build.coursera.org no longer resolves) |
+| **Auth** | None |
+| **Register / token** | No registration for the public catalog. Keyword search (q=search) is no longer accepted (HTTP 405), so page through the catalog and filter locally. |
+| **Script** | [`scripts/education/coursera_catalog.py`](scripts/education/coursera_catalog.py) |
+
+**What you can get:**
+
+- Every Coursera course: name, slug, description, workload, languages, domain/subdomain tags
+- Partner (university/company) and instructor IDs, specializations
+
+**Capstone ideas:** Mapping the online-course supply by skill domain, comparing course topics with job-posting skills (see Jobs).
+
+**Endpoint:** `GET https://api.coursera.org/api/courses.v1`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `fields` | Extra fields: description, workload, primaryLanguages, domainTypes, partnerIds, instructorIds | `name,domainTypes,workload` |
+| `start / limit` | Offset and page size (paging.next gives the next start) | `0 / 100` |
+| `ids` | Look up specific course IDs | `—` |
+| `/api/partners.v1 · /api/instructors.v1` | Sibling endpoints: partner institutions and instructors | `fields=name,location` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    d = get("https://api.coursera.org/api/courses.v1", params={"fields": "name,domainTypes,workload", "limit": 100})
+    domains = Counter(t["domainId"] for c in d["elements"] for t in c.get("domainTypes", []))
+    show({"total_courses": d["paging"].get("total"), "domains_in_first_100": domains.most_common(6),
+          "examples": [{"name": c["name"], "workload": c.get("workload"),
+                        "subdomains": [t["subdomainId"] for t in c.get("domainTypes", [])]} for c in d["elements"][:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "total_courses": 24842,
+  "domains_in_first_100": [
+    [
+      "business",
+      45
+    ],
+    [
+      "information-technology",
+      38
+    ],
+    [
+      "computer-science",
+      37
+    ],
+    [
+      "data-science",
+      21
+    ],
+    [
+      "physical-science-and-engineering",
+      11
+    ],
+    "... (1 more)"
+  ],
+  "examples": [
+    {
+      "name": "Getting started with the Vertex AI Gemini 1.5 Pro Model",
+      "workload": "1 hour 30 minutes",
+      "subdomains": [
+        "cloud-computing",
+        "machine-learning"
+      ]
+    },
+    {
+      "name": "SPSS: Apply & Interpret Logistic Regression Models",
+      "workload": "",
+      "subdomains": [
+        "data-analysis"
+      ]
+    },
+    {
+      "name": "Securing Compute Engine Applications and Resources using Chrome Enterprise Premium",
+      "workload": "1 hour 30 minutes",
+      "subdomains": [
+        "cloud-computing",
+        "computer-security-and-networks"
+      ]
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Datamuse (word-finding API)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.datamuse.com/api/ |
+| **Auth** | None |
+| **Register / token** | No registration. Up to 100,000 requests/day. |
+| **Script** | [`scripts/education/datamuse.py`](scripts/education/datamuse.py) |
+
+**What you can get:**
+
+- Words by meaning (reverse dictionary), sound, spelling pattern, rhyme, or topic
+- Word associations, frequency, syllable counts, parts of speech
+- Autocomplete suggestions (/sug)
+
+**Capstone ideas:** Vocabulary and reading-level tools, query expansion for search, word-game or language-learning apps.
+
+**Endpoint:** `GET https://api.datamuse.com/words`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `ml` | Means like (reverse dictionary) | `a person who studies data` |
+| `sl / sp` | Sounds like / spelled like (wildcards * and ?) | `sp=stat*` |
+| `rel_trg / rel_syn / rel_rhy` | Triggers (associated words) / synonyms / rhymes | `rel_trg=regression` |
+| `topics` | Bias results toward a topic | `statistics` |
+| `md` | Metadata flags: d definitions, p parts of speech, s syllables, f frequency | `dpf` |
+| `max` | Max results (up to 1,000) | `5` |
+| `/sug?s=` | Sibling endpoint: autocomplete | `s=statis` |
+
+```python
+from _common import get, show
+
+
+def main():
+    reverse = get("https://api.datamuse.com/words", params={"ml": "a person who studies data", "md": "p", "max": 5})
+    assoc = get("https://api.datamuse.com/words", params={"rel_trg": "regression", "max": 8})
+    show({"means_like_'a person who studies data'": [w["word"] for w in reverse],
+          "words_associated_with_'regression'": [w["word"] for w in assoc]}, max_items=8)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "means_like_'a person who studies data'": [
+    "analyst",
+    "statistician",
+    "economist",
+    "history",
+    "epistemologist"
+  ],
+  "words_associated_with_'regression'": [
+    "probit",
+    "logit",
+    "quantile",
+    "anova",
+    "regularization",
+    "predictor",
+    "logistic",
+    "multivariate"
+  ]
+}
+```
+</details>
+
+---
+
 ### ERIC (Education Resources Information Center)
 
 | | |
@@ -8403,6 +8585,227 @@ def main():
 
 ---
 
+### OECD Data API — Education at a Glance
+
+| | |
+|:--|:--|
+| **Docs** | https://gitlab.algobank.oecd.org/public-documentation/dotstat-migration/-/raw/main/OECD_Data_API_documentation.pdf |
+| **Auth** | None |
+| **Register / token** | No registration. SDMX REST API over all OECD datasets (~1,500 dataflows). Find dataflow IDs and dimension codes in the OECD Data Explorer (https://data-explorer.oecd.org) -> Developer API. Limit: 60 data queries/hour. |
+| **Script** | [`scripts/education/oecd_education.py`](scripts/education/oecd_education.py) |
+
+**What you can get:**
+
+- Education at a Glance: attainment, enrollment, spending per student, teachers' salaries, class sizes
+- Labour-market outcomes by education: earnings premiums, employment rates, NEET rates, by field of study
+- The same API serves every OECD topic (economy, health, environment, PISA-related indicators)
+
+**Capstone ideas:** Returns to education across countries, education spending vs. outcomes, gender gaps in earnings by degree.
+
+**Endpoint:** `GET https://sdmx.oecd.org/public/rest/data/{agency},{dataflow},{version}/{key}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `agency,dataflow,version` | Dataflow identifier from the Data Explorer | `OECD.EDU.IMEP,DSD_EAG_LSO_EA@DF_LSO_EARN_REL_UPPER,1.0` |
+| `key` | One slot per dimension, separated by dots; + for several values, empty = all. Every slot must be present (a short key returns 403) | `USA+FIN._T.Y25T64.ISCED11A_6...........` |
+| `startPeriod / endPeriod` | Year range | `2021` |
+| `format` | csvfilewithlabels \| csvfile \| jsondata \| genericdata | `csvfilewithlabels` |
+| `dimensionAtObservation` | AllDimensions for flat JSON observations | `AllDimensions` |
+| `/public/rest/dataflow/all` | Catalog of all dataflows (send Accept: application/vnd.sdmx.structure+json) | `—` |
+
+```python
+import csv
+import io
+
+from _common import get, show
+
+DIMS = ["REF_AREA", "SEX", "AGE", "ATTAINMENT_LEV", "EDUCATION_FIELD", "MEASURE", "INCOME", "BIRTH_PLACE", "MIGRATION_AGE",
+        "EDU_STATUS", "LABOUR_FORCE_STATUS", "DURATION_UNEMP", "UNIT_MEASURE", "STATISTICAL_OPERATION",
+        "WORK_TIME_ARNGMNT", "QUESTIONNAIRE", "FREQ"]
+
+
+def main():
+    want = {"REF_AREA": "USA+DEU+FIN+KOR+GBR+CAN", "SEX": "_T", "AGE": "Y25T64",
+            "ATTAINMENT_LEV": "ISCED11A_6+ISCED11A_7_8", "WORK_TIME_ARNGMNT": "FT"}
+    key = ".".join(want.get(d, "") for d in DIMS)  # every dimension needs a slot, even if empty
+    text = get(f"https://sdmx.oecd.org/public/rest/data/OECD.EDU.IMEP,DSD_EAG_LSO_EA@DF_LSO_EARN_REL_UPPER,1.0/{key}",
+               params={"startPeriod": 2021, "format": "csvfilewithlabels"}, as_json=False)
+    latest = {}
+    for r in csv.DictReader(io.StringIO(text.lstrip("﻿"))):
+        k = (r["Reference area"], r["Educational attainment level"])
+        if k not in latest or r["TIME_PERIOD"] > latest[k]["TIME_PERIOD"]:
+            latest[k] = r
+    show({"measure": "Earnings of full-time workers aged 25-64, % of upper-secondary graduates' earnings", "data": [
+        {"country": c, "level": lvl, "year": r["TIME_PERIOD"], "relative_earnings_pct": round(float(r["OBS_VALUE"]))}
+        for (c, lvl), r in sorted(latest.items())]}, max_items=12)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "measure": "Earnings of full-time workers aged 25-64, % of upper-secondary graduates' earnings",
+  "data": [
+    {
+      "country": "Canada",
+      "level": "Bachelor's or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 148
+    },
+    {
+      "country": "Canada",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 172
+    },
+    {
+      "country": "Finland",
+      "level": "Bachelor's or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 122
+    },
+    {
+      "country": "Finland",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 161
+    },
+    {
+      "country": "Germany",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 148
+    },
+    {
+      "country": "Germany",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 175
+    },
+    {
+      "country": "Korea",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 132
+    },
+    {
+      "country": "Korea",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 173
+    },
+    {
+      "country": "United Kingdom",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 133
+    },
+    {
+      "country": "United Kingdom",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 149
+    },
+    {
+      "country": "United States",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 165
+    },
+    {
+      "country": "United States",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 214
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Open Trivia Database
+
+| | |
+|:--|:--|
+| **Docs** | https://opentdb.com/api_config.php |
+| **Auth** | None |
+| **Register / token** | No registration. One request per 5 seconds per IP. CC BY-SA 4.0. Use a session token to avoid repeat questions. |
+| **Script** | [`scripts/education/open_trivia_db.py`](scripts/education/open_trivia_db.py) |
+
+**What you can get:**
+
+- 4,000+ verified multiple-choice and true/false questions in 24 categories with difficulty levels
+- Category list and per-category question counts
+
+**Capstone ideas:** Quiz/edtech app prototypes, evaluating LLMs on trivia by difficulty, question-difficulty prediction.
+
+**Endpoint:** `GET https://opentdb.com/api.php`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `amount` | Number of questions (max 50) | `5` |
+| `category` | Category ID (list via /api_category.php), e.g. 17 Science & Nature, 18 Computers, 19 Mathematics | `18` |
+| `difficulty` | easy \| medium \| hard | `medium` |
+| `type` | multiple \| boolean | `multiple` |
+| `encode` | url3986 \| base64 (default is HTML entities) | `url3986` |
+| `token` | Session token from /api_token.php?command=request | `—` |
+
+```python
+import html
+
+from _common import get, show
+
+
+def main():
+    cats = get("https://opentdb.com/api_category.php")["trivia_categories"]
+    d = get("https://opentdb.com/api.php", params={"amount": 3, "category": 18, "difficulty": "medium", "type": "multiple"})
+    show({"categories": len(cats), "computer_science_questions": [
+        {"question": html.unescape(q["question"]), "answer": html.unescape(q["correct_answer"]),
+         "distractors": [html.unescape(a) for a in q["incorrect_answers"]]} for q in d["results"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "categories": 24,
+  "computer_science_questions": [
+    {
+      "question": "What does the 'S' in the RSA encryption algorithm stand for?",
+      "answer": "Shamir",
+      "distractors": [
+        "Secure",
+        "Schottky",
+        "Stable"
+      ]
+    },
+    {
+      "question": "Generally, which component of a computer draws the most power?",
+      "answer": "Video Card",
+      "distractors": [
+        "Hard Drive",
+        "Processor",
+        "Power Supply"
+      ]
+    },
+    {
+      "question": "In the programming language \"Python\", which of these statements would display the string \"Hello World\" correctly?",
+      "answer": "print(\"Hello World\")",
+      "distractors": [
+        "console.log(\"Hello World\")",
+        "echo \"Hello World\"",
+        "printf(\"Hello World\")"
+      ]
+    }
+  ]
+}
+```
+</details>
+
+---
+
 ### UNESCO Institute for Statistics (UIS) Data API
 
 | | |
@@ -8552,6 +8955,1088 @@ def main():
       "teachers_total_fte": 0
     },
     "... (66 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### World Bank EdStats (education statistics)
+
+| | |
+|:--|:--|
+| **Docs** | https://datatopics.worldbank.org/education/ |
+| **Auth** | None |
+| **Register / token** | No registration. Same API as the World Bank Indicators entry, but source=12 selects the Education Statistics database (~4,000 indicators, including learning outcomes and projections). Last refreshed June 2024. |
+| **Script** | [`scripts/education/world_bank_edstats.py`](scripts/education/world_bank_edstats.py) |
+
+**What you can get:**
+
+- Enrollment, completion, out-of-school rates, pupil-teacher ratios, education spending for every country
+- Learning outcomes from international assessments (PISA, TIMSS, PIRLS) and learning poverty
+- Attainment projections to 2050
+
+**Capstone ideas:** Cross-country education panels, learning poverty vs. income, school spending efficiency.
+
+**Endpoint:** `GET https://api.worldbank.org/v2/country/{codes}/indicator/{indicator}?source=12`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `source` | 12 = Education Statistics (EdStats) | `12` |
+| `indicator` | EdStats indicator code (browse via /v2/sources/12/indicators) | `SE.TER.ENRR (tertiary gross enrollment)` |
+| `country codes` | ISO3 codes separated by ;, or all | `USA;FIN;KOR;BRA;IND` |
+| `date / mrv` | Year range, or most recent N values (EdStats is sparse - a range plus local filtering works best) | `2010:2023` |
+| `format / per_page` | json \| xml; page size | `json / 100` |
+
+```python
+from _common import get, show
+
+INDICATORS = {"SE.TER.ENRR": "tertiary_gross_enrollment_pct", "SE.SEC.ENRR": "secondary_gross_enrollment_pct",
+              "SE.XPD.TOTL.GD.ZS": "education_spending_pct_GDP"}
+
+
+def main():
+    out = {}
+    for code, label in INDICATORS.items():
+        _, rows = get(f"https://api.worldbank.org/v2/country/USA;FIN;KOR;BRA;IND/indicator/{code}",
+                      params={"source": 12, "format": "json", "date": "2010:2023", "per_page": 500})
+        # EdStats is sparse: walk oldest -> newest and keep each country's latest non-empty value
+        for r in sorted(rows or [], key=lambda r: r["date"]):
+            if r["value"] is not None:
+                out.setdefault(r["country"]["value"], {})[label] = f'{round(r["value"], 1)} ({r["date"]})'
+    show(out)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "Finland": {
+    "tertiary_gross_enrollment_pct": "90.3 (2018)",
+    "secondary_gross_enrollment_pct": "154.8 (2018)",
+    "education_spending_pct_GDP": "6.4 (2017)"
+  },
+  "India": {
+    "tertiary_gross_enrollment_pct": "28.6 (2019)",
+    "secondary_gross_enrollment_pct": "73.8 (2019)",
+    "education_spending_pct_GDP": "3.8 (2013)"
+  },
+  "Korea, Rep.": {
+    "tertiary_gross_enrollment_pct": "95.9 (2018)",
+    "secondary_gross_enrollment_pct": "98.5 (2018)",
+    "education_spending_pct_GDP": "4.3 (2016)"
+  },
+  "United States": {
+    "tertiary_gross_enrollment_pct": "88.3 (2018)",
+    "secondary_gross_enrollment_pct": "99.3 (2018)",
+    "education_spending_pct_GDP": "5.0 (2014)"
+  },
+  "Brazil": {
+    "tertiary_gross_enrollment_pct": "43.5 (2011)",
+    "secondary_gross_enrollment_pct": "95.3 (2011)",
+    "education_spending_pct_GDP": "6.3 (2017)"
+  }
+}
+```
+</details>
+
+---
+
+## 💼 Jobs & Labor
+
+### Adzuna Jobs API
+
+| | |
+|:--|:--|
+| **Docs** | https://developer.adzuna.com/docs/search |
+| **Auth** | app_id + app_key (query parameters) |
+| **Register / token** | Register at https://developer.adzuna.com/signup for an app ID and key. Free tier ~250 requests/day; attribution to Adzuna required. |
+| **Env var** | `ADZUNA_APP_ID, ADZUNA_APP_KEY` |
+| **Script** | [`scripts/jobs/adzuna.py`](scripts/jobs/adzuna.py) |
+
+**What you can get:**
+
+- Millions of live job ads in 19 countries aggregated from many boards: title, company, location, salary, contract type
+- Salary histograms and averages by keyword/location, top companies, regional job counts, salary history
+
+**Capstone ideas:** Real-time labor-demand indices, salary prediction from job text, remote-work share by occupation.
+
+**Endpoint:** `GET https://api.adzuna.com/v1/api/jobs/{country}/{search/{page} \| histogram \| top_companies \| history \| geodata}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `country` | us \| gb \| ca \| de \| fr \| au \| in \| ... | `us` |
+| `what / what_exclude / title_only` | Keywords | `data scientist` |
+| `where / distance` | Location text, radius in km | `Washington DC / 25` |
+| `salary_min / full_time / permanent` | Filters | `100000` |
+| `sort_by` | relevance \| date \| salary | `date` |
+| `results_per_page` | Max 50 | `5` |
+| `app_id / app_key` | Your credentials | `—` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://api.adzuna.com/v1/api/jobs/us/search/1", params={
+        "app_id": key("ADZUNA_APP_ID"), "app_key": key("ADZUNA_APP_KEY"), "what": "data scientist",
+        "where": "Washington DC", "results_per_page": 5, "sort_by": "date"})
+    show({"count": d["count"], "mean_salary": d.get("mean"), "jobs": [
+        {"title": j["title"], "company": j["company"]["display_name"], "location": j["location"]["display_name"],
+         "salary_min": j.get("salary_min"), "salary_max": j.get("salary_max"), "created": j["created"]} for j in d["results"]]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "count": 2147,
+  "mean_salary": 141250.3,
+  "jobs": [
+    {"title": "Senior Data Scientist", "company": "Booz Allen Hamilton", "location": "Washington, DC",
+     "salary_min": 120000, "salary_max": 170000, "created": "2026-10-10T14:22:31Z"}
+  ]
+}
+```
+</details>
+
+---
+
+### Ashby Job Postings API (startup career pages)
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.ashbyhq.com/docs/public-job-posting-api |
+| **Auth** | None |
+| **Register / token** | No registration. Many startups (Ramp, Notion, Linear, ...) host careers pages on Ashby at jobs.ashbyhq.com/{org}. Compensation data is unusually complete because many postings include salary ranges. |
+| **Script** | [`scripts/jobs/ashby_job_board.py`](scripts/jobs/ashby_job_board.py) |
+
+**What you can get:**
+
+- Open jobs with department, team, location(s), employment type, remote flag, publish date
+- Compensation summaries (salary ranges, equity) when includeCompensation=true
+- Full HTML/plain descriptions
+
+**Capstone ideas:** Startup salary benchmarking, remote vs. on-site pay gaps, equity compensation patterns.
+
+**Endpoint:** `GET https://api.ashbyhq.com/posting-api/job-board/{organization}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `organization` | Job-board name from jobs.ashbyhq.com/{organization} | `ramp` |
+| `includeCompensation` | true -> add compensation tiers and summary | `true` |
+| `response fields` | title, department, team, location, isRemote, employmentType, publishedAt, compensation | `—` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    jobs = get("https://api.ashbyhq.com/posting-api/job-board/ramp", params={"includeCompensation": "true"})["jobs"]
+    show({"company": "Ramp", "open_jobs": len(jobs),
+          "by_department": Counter(j.get("department") for j in jobs).most_common(5),
+          "remote_share": round(sum(bool(j.get("isRemote")) for j in jobs) / len(jobs), 2),
+          "with_salary": [{"title": j["title"].strip(), "location": j.get("location"),
+                           "compensation": (j.get("compensation") or {}).get("compensationTierSummary")}
+                          for j in jobs if (j.get("compensation") or {}).get("compensationTierSummary")][:4]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "company": "Ramp",
+  "open_jobs": 166,
+  "by_department": [
+    [
+      "Sales",
+      67
+    ],
+    [
+      "Engineering",
+      38
+    ],
+    [
+      "People & Talent",
+      14
+    ],
+    [
+      "Product",
+      9
+    ],
+    [
+      "Marketing",
+      7
+    ]
+  ],
+  "remote_share": 0.9,
+  "with_salary": [
+    {
+      "title": "Security Engineer, Cloud",
+      "location": "New York, NY (HQ)",
+      "compensation": "$211.4K – $290.6K • Offers Equity"
+    },
+    {
+      "title": "Mobile Engineer, Android",
+      "location": "New York, NY (HQ)",
+      "compensation": "$189K – $330K • Offers Equity"
+    },
+    {
+      "title": "Software Engineer, Frontend",
+      "location": "New York, NY (HQ)",
+      "compensation": "$143.2K – $284K • Offers Equity"
+    },
+    {
+      "title": "Credit Risk Associate",
+      "location": "New York, NY (HQ)",
+      "compensation": "$108K – $200K • Offers Equity"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### CareerOneStop Web API (U.S. Department of Labor)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.careeronestop.org/Developers/WebAPI/web-api.aspx |
+| **Auth** | User ID in the path + Bearer token |
+| **Register / token** | Register at https://www.careeronestop.org/Developers/WebAPI/registration.aspx; you receive a user ID and a token by email. Free. |
+| **Env var** | `CAREERONESTOP_USER_ID, CAREERONESTOP_TOKEN` |
+| **Script** | [`scripts/jobs/careeronestop.py`](scripts/jobs/careeronestop.py) |
+
+**What you can get:**
+
+- Occupation profiles with local wages (percentiles by state/metro), employment outlook, education required
+- Training programs, certifications and licenses by occupation and location
+- American Job Center locations, apprenticeship sponsors, skills-matcher
+
+**Capstone ideas:** Local wage comparisons, training ROI by occupation, workforce-development program mapping.
+
+**Endpoint:** `GET https://api.careeronestop.org/v1/{service}/{userId}/...`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `occupation/{userId}/{keyword}/{dataLevelOnly}/{start}/{limit}` | Search occupations by keyword (dataLevelOnly N/Y) | `data scientist/N/0/5` |
+| `occupation/{userId}/{onetCode}/{location}?wages=true&projectedEmployment=true` | Occupation details for a location | `15-2051.00/DC` |
+| `training/{userId}/{keyword}/{location}/{radius}/...` | Training programs near a location | `—` |
+| `Authorization (header)` | Bearer token | `Bearer <CAREERONESTOP_TOKEN>` |
+
+```python
+from urllib.parse import quote
+
+from _common import get, key, show
+
+
+def main():
+    user, token = key("CAREERONESTOP_USER_ID"), key("CAREERONESTOP_TOKEN")
+    d = get(f"https://api.careeronestop.org/v1/occupation/{user}/{quote('data scientist')}/N/0/5",
+            headers={"Authorization": f"Bearer {token}"})
+    show([{k: o.get(k) for k in ("OnetCode", "OnetTitle", "BrightOutlook")} for o in d["OccupationList"]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"OnetCode": "15-2051.00", "OnetTitle": "Data Scientists", "BrightOutlook": "Bright"},
+  {"OnetCode": "15-2041.00", "OnetTitle": "Statisticians", "BrightOutlook": "Bright"}
+]
+```
+</details>
+
+---
+
+### ESCO API (European skills & occupations taxonomy)
+
+| | |
+|:--|:--|
+| **Docs** | https://esco.ec.europa.eu/en/use-esco/use-esco-services-api |
+| **Auth** | None |
+| **Register / token** | No registration. The EU's multilingual classification (28 languages) of ~3,000 occupations and ~14,000 skills, mapped to ISCO-08. Complements O*NET for international work. |
+| **Script** | [`scripts/jobs/esco.py`](scripts/jobs/esco.py) |
+
+**What you can get:**
+
+- Occupations with descriptions, ISCO codes, alternative labels in 28 languages
+- Essential and optional skills/knowledge for each occupation, skill hierarchies and relations
+- Search across occupations and skills
+
+**Capstone ideas:** Skill extraction from job ads (map phrases to ESCO skills), cross-country occupation matching, skill-gap analysis.
+
+**Endpoint:** `GET https://ec.europa.eu/esco/api/{search \| resource/occupation \| resource/skill}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `text` | Search text | `data scientist` |
+| `type` | occupation \| skill \| concept | `occupation` |
+| `language` | Label language (en, de, fr, es, ...) | `en` |
+| `limit / offset` | Paging | `5` |
+| `resource/occupation?uri=` | Full record incl. hasEssentialSkill / hasOptionalSkill links | `uri=http://data.europa.eu/esco/occupation/...` |
+
+```python
+from _common import get, show
+
+BASE = "https://ec.europa.eu/esco/api"
+
+
+def main():
+    hits = get(f"{BASE}/search", params={"text": "data scientist", "type": "occupation", "language": "en", "limit": 3})
+    top = hits["_embedded"]["results"][0]
+    occ = get(f"{BASE}/resource/occupation", params={"uri": top["uri"], "language": "en"})
+    skills = occ["_links"].get("hasEssentialSkill", [])
+    show({"matches": hits["total"], "top_match": occ["preferredLabel"]["en"], "isco_code": occ.get("code"),
+          "essential_skills": len(skills), "examples": [s["title"] for s in skills[:8]]}, max_items=8)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "matches": 188,
+  "top_match": "data scientist",
+  "isco_code": "2511.3",
+  "essential_skills": 23,
+  "examples": [
+    "perform data cleansing",
+    "collect ICT data",
+    "handle data samples",
+    "data mining",
+    "information extraction",
+    "data models",
+    "resource description framework query language",
+    "visual presentation techniques"
+  ]
+}
+```
+</details>
+
+---
+
+### Greenhouse Job Board API (company career pages)
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.greenhouse.io/job-board.html |
+| **Auth** | None |
+| **Register / token** | No registration. Thousands of companies (Airbnb, Stripe, Pinterest, ...) host their careers page on Greenhouse; the board token is the company slug in their careers URL (boards.greenhouse.io/{token}). |
+| **Script** | [`scripts/jobs/greenhouse_job_boards.py`](scripts/jobs/greenhouse_job_boards.py) |
+
+**What you can get:**
+
+- Every open job at a company: title, location, department, office, last updated, full description (content=true)
+- Departments and offices with their jobs
+- Custom metadata fields some companies publish (e.g. remote eligibility)
+
+**Capstone ideas:** Tracking hiring by company/department over time, skill extraction from descriptions, hiring freezes as a signal.
+
+**Endpoint:** `GET https://boards-api.greenhouse.io/v1/boards/{board_token}/{jobs \| departments \| offices}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `board_token` | Company slug | `airbnb, stripe, pinterest` |
+| `jobs?content=true` | Include the HTML job description | `content=true` |
+| `jobs/{id}?questions=true` | One job, with application questions | `—` |
+| `departments / offices` | Jobs grouped by department or office | `departments` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    jobs = get("https://boards-api.greenhouse.io/v1/boards/airbnb/jobs")["jobs"]
+    depts = get("https://boards-api.greenhouse.io/v1/boards/airbnb/departments")["departments"]
+    show({"company": "Airbnb", "open_jobs": len(jobs),
+          "jobs_by_department": sorted(((d["name"], len(d["jobs"])) for d in depts if d["jobs"]), key=lambda x: -x[1])[:5],
+          "top_locations": Counter(j["location"]["name"] for j in jobs).most_common(4),
+          "latest": [{"title": j["title"], "location": j["location"]["name"], "updated": j["updated_at"][:10]}
+                     for j in sorted(jobs, key=lambda j: j["updated_at"], reverse=True)[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "company": "Airbnb",
+  "open_jobs": 159,
+  "jobs_by_department": [
+    [
+      "Software Engineering",
+      41
+    ],
+    [
+      "Community Support",
+      18
+    ],
+    [
+      "Business Development",
+      14
+    ],
+    [
+      "Product Management",
+      14
+    ],
+    [
+      "Business Operations/Analysis",
+      8
+    ]
+  ],
+  "top_locations": [
+    [
+      "United States",
+      36
+    ],
+    [
+      "United States ",
+      22
+    ],
+    [
+      "Canada",
+      12
+    ],
+    [
+      "Remote - USA",
+      8
+    ]
+  ],
+  "latest": [
+    {
+      "title": "Market Manager, UK",
+      "location": "London, United Kingdom",
+      "updated": "2026-10-12"
+    },
+    {
+      "title": "Support Specialist, R1",
+      "location": "Gurugram, India",
+      "updated": "2026-10-11"
+    },
+    {
+      "title": "Staff Software Engineer, Streaming Infrastructure",
+      "location": "United States",
+      "updated": "2026-10-09"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Hacker News 'Who is hiring?' (via Algolia HN Search)
+
+| | |
+|:--|:--|
+| **Docs** | https://hn.algolia.com/api |
+| **Auth** | None |
+| **Register / token** | No registration. A monthly thread since 2011 where tech companies post jobs as comments - a long-running, free dataset of tech hiring. |
+| **Script** | [`scripts/jobs/hn_whos_hiring.py`](scripts/jobs/hn_whos_hiring.py) |
+
+**What you can get:**
+
+- Every 'Ask HN: Who is hiring?' thread (posted by user whoishiring) with its date
+- All comments (job posts) per thread: company, role, location, REMOTE/ONSITE, salary text, tech stack
+- Full-text search across HN stories and comments with date filters
+
+**Capstone ideas:** Tech-hiring cycle index (posts per month), remote share over time, programming-language demand trends.
+
+**Endpoint:** `GET https://hn.algolia.com/api/v1/{search \| search_by_date \| items/{id}}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Search text | `"Who is hiring"` |
+| `tags` | story \| comment \| author_{user} \| story_{id} (comma = AND) | `story,author_whoishiring` |
+| `numericFilters` | created_at_i>..., points>... | `created_at_i>1735689600` |
+| `hitsPerPage / page` | Max 1,000 per page | `12` |
+| `tags=comment,story_{id}` | All top-level job posts in one thread | `comment,story_45000000` |
+| `/items/{id}` | A thread with its full comment tree | `—` |
+
+```python
+import datetime as dt
+
+from _common import get, show
+
+BASE = "https://hn.algolia.com/api/v1"
+
+
+def main():
+    threads = get(f"{BASE}/search_by_date", params={"query": '"Who is hiring"', "tags": "story,author_whoishiring",
+                                                     "hitsPerPage": 12})["hits"]
+    threads = [t for t in threads if t["title"].startswith("Ask HN: Who is hiring?")][:6]
+    latest = threads[0]
+    posts = get(f"{BASE}/search", params={"tags": f"comment,story_{latest['objectID']}", "hitsPerPage": 1000})["hits"]
+    top = [p for p in posts if p.get("parent_id") == int(latest["objectID"])]  # top-level comments = job posts
+    show({"recent_threads": [{"title": t["title"], "comments": t["num_comments"]} for t in threads],
+          "latest_thread_job_posts": len(top),
+          "share_mentioning_REMOTE": round(sum("remote" in (p.get("comment_text") or "").lower() for p in top) / max(len(top), 1), 2),
+          "posted": dt.datetime.fromtimestamp(latest["created_at_i"]).date().isoformat()})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "recent_threads": [
+    {
+      "title": "Ask HN: Who is hiring? (October 2026)",
+      "comments": 375
+    },
+    {
+      "title": "Ask HN: Who is hiring? (September 2026)",
+      "comments": 393
+    },
+    {
+      "title": "Ask HN: Who is hiring? (August 2026)",
+      "comments": 376
+    },
+    {
+      "title": "Ask HN: Who is hiring? (July 2026)",
+      "comments": 419
+    },
+    {
+      "title": "Ask HN: Who is hiring? (June 2026)",
+      "comments": 492
+    },
+    "... (1 more)"
+  ],
+  "latest_thread_job_posts": 254,
+  "share_mentioning_REMOTE": 0.56,
+  "posted": "2026-10-01"
+}
+```
+</details>
+
+---
+
+### ILOSTAT (International Labour Organization)
+
+| | |
+|:--|:--|
+| **Docs** | https://ilostat.ilo.org/data/api/ |
+| **Auth** | None |
+| **Register / token** | No registration. The ILO's global labor statistics: harmonized estimates for ~190 countries. Two APIs: an SDMX endpoint (sdmx.ilo.org) and a simpler R/plumber JSON endpoint (used here). |
+| **Script** | [`scripts/jobs/ilostat.py`](scripts/jobs/ilostat.py) |
+
+**What you can get:**
+
+- Unemployment, employment, labor-force participation by sex, age, education
+- Wages, working hours, informality, child labour, occupational injuries, labor income share
+- Modelled estimates that fill gaps across countries and years
+
+**Capstone ideas:** Cross-country labor-market comparisons, youth unemployment drivers, informality vs. development.
+
+**Endpoint:** `GET https://rplumber.ilo.org/data/indicator/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `id` | Indicator + frequency, e.g. UNE_DEAP_SEX_AGE_RT_A (unemployment rate, annual) | `UNE_DEAP_SEX_AGE_RT_A` |
+| `ref_area` | ISO3 country code(s), + separated | `USA+DEU+ZAF+IND` |
+| `sex / classif1` | SEX_T \| SEX_M \| SEX_F; age/education breakdowns e.g. AGE_YTHADULT_Y15-24 | `SEX_T` |
+| `timefrom / timeto` | Year range | `2015 / 2025` |
+| `format` | .json \| .csv | `.json` |
+| `sdmx.ilo.org/rest/data/ILO,{dataflow}/{key}` | SDMX alternative | `ILO,DF_UNE_DEAP_SEX_AGE_RT/USA.A..SEX_T.AGE_YTHADULT_YGE15` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://rplumber.ilo.org/data/indicator/", params={
+        "id": "UNE_DEAP_SEX_AGE_RT_A", "ref_area": "USA+DEU+ZAF+IND+BRA", "sex": "SEX_T", "timefrom": 2024,
+        "format": ".json"})
+    rows = [r for r in d if r["classif1"] in ("AGE_YTHADULT_YGE15", "AGE_YTHADULT_Y15-24")]
+    out = {}
+    for r in sorted(rows, key=lambda r: r["time"]):
+        label = "youth_15_24" if r["classif1"].endswith("Y15-24") else "all_15plus"
+        out.setdefault(r["ref_area"], {})[label] = f'{round(r["obs_value"], 1)}% ({r["time"]})'
+    show({"indicator": "Unemployment rate", "by_country": out})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "indicator": "Unemployment rate",
+  "by_country": {
+    "BRA": {
+      "all_15plus": "5.8% (2025)",
+      "youth_15_24": "13.6% (2025)"
+    },
+    "DEU": {
+      "all_15plus": "3.8% (2025)",
+      "youth_15_24": "7.1% (2025)"
+    },
+    "IND": {
+      "all_15plus": "4.5% (2025)",
+      "youth_15_24": "17.7% (2025)"
+    },
+    "USA": {
+      "all_15plus": "4.3% (2025)",
+      "youth_15_24": "10.0% (2025)"
+    },
+    "ZAF": {
+      "all_15plus": "29.6% (2025)",
+      "youth_15_24": "53.2% (2025)"
+    }
+  }
+}
+```
+</details>
+
+---
+
+### Census LEHD LODES (jobs by census block)
+
+| | |
+|:--|:--|
+| **Docs** | https://lehd.ces.census.gov/data/lodes/LODES8/LODESTechDoc8.3.pdf |
+| **Auth** | None (CSV downloads) |
+| **Register / token** | No registration; no REST API - gzipped CSVs per state, year and file type. Block GEOIDs join directly to Census tracts (first 11 digits) and the Census Geocoder output. |
+| **Script** | [`scripts/jobs/lehd_lodes.py`](scripts/jobs/lehd_lodes.py) |
+
+**What you can get:**
+
+- WAC: jobs by workplace census block, split by age, earnings band, industry (NAICS sector), race, education
+- RAC: the same counts by where workers live
+- OD: origin-destination commuting flows between home and work blocks
+
+**Capstone ideas:** Job accessibility (with OSRM travel times), commuting networks, spatial mismatch between homes and jobs.
+
+**Endpoint:** `GET https://lehd.ces.census.gov/data/lodes/LODES8/{state}/{wac \| rac \| od}/{file}.csv.gz`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `state` | Two-letter state code, lower case | `dc` |
+| `file name` | {state}_{wac\|rac}_{segment}_{jobtype}_{year}.csv.gz | `dc_wac_S000_JT00_2022.csv.gz` |
+| `segment` | S000 all workers, SA01-03 age bands, SE01-03 earnings bands, SI01-03 industry groups | `S000` |
+| `job type` | JT00 all jobs, JT01 primary jobs, JT02 private, ... | `JT00` |
+| `columns` | w_geocode, C000 total jobs, CNS01-CNS20 jobs by NAICS sector, CE01-03 earnings bands, ... | `—` |
+| `OD files` | {state}_od_{main\|aux}_{jobtype}_{year}.csv.gz: w_geocode, h_geocode, S000 | `dc_od_main_JT00_2022.csv.gz` |
+
+```python
+import csv
+import gzip
+import io
+
+import requests
+
+from _common import USER_AGENT, show
+
+URL = "https://lehd.ces.census.gov/data/lodes/LODES8/dc/wac/dc_wac_S000_JT00_2022.csv.gz"
+SECTORS = {"CNS12": "Professional/scientific/technical", "CNS20": "Public administration", "CNS16": "Health care",
+           "CNS15": "Educational services", "CNS18": "Accommodation & food"}
+
+
+def main():
+    raw = requests.get(URL, headers={"User-Agent": USER_AGENT}, timeout=120).content
+    rows = list(csv.DictReader(io.StringIO(gzip.decompress(raw).decode())))
+    total = sum(int(r["C000"]) for r in rows)
+    tracts = {}
+    for r in rows:  # block GEOID -> tract GEOID = first 11 digits
+        tracts[r["w_geocode"][:11]] = tracts.get(r["w_geocode"][:11], 0) + int(r["C000"])
+    show({"DC_jobs_2022": total, "blocks_with_jobs": len(rows),
+          "jobs_by_sector": {name: sum(int(r[c]) for r in rows) for c, name in SECTORS.items()},
+          "top_tracts_by_jobs": sorted(tracts.items(), key=lambda kv: -kv[1])[:3]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "DC_jobs_2022": 656985,
+  "blocks_with_jobs": 3991,
+  "jobs_by_sector": {
+    "Professional/scientific/technical": 123488,
+    "Public administration": 119176,
+    "Health care": 71852,
+    "Educational services": 51368,
+    "Accommodation & food": 55310
+  },
+  "top_tracts_by_jobs": [
+    [
+      "11001010700",
+      81880
+    ],
+    [
+      "11001980000",
+      58911
+    ],
+    [
+      "11001005802",
+      58565
+    ]
+  ]
+}
+```
+</details>
+
+---
+
+### Lever Postings API (company career pages)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/lever/postings-api |
+| **Auth** | None |
+| **Register / token** | No registration. Companies using Lever (Palantir, Netflix, ...) publish postings at jobs.lever.co/{company}; the same slug works in the API. |
+| **Script** | [`scripts/jobs/lever_postings.py`](scripts/jobs/lever_postings.py) |
+
+**What you can get:**
+
+- Open postings: title, team, department, location, commitment (full-time/intern), workplace type
+- Plain-text and HTML descriptions, requirement lists, salary ranges where published
+- Apply and hosted URLs
+
+**Capstone ideas:** Comparing job requirements across companies, salary-transparency analysis, internship pipelines.
+
+**Endpoint:** `GET https://api.lever.co/v0/postings/{company}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `mode` | json (default html) | `json` |
+| `team / department / location / commitment` | Filters (exact match) | `commitment=Internship` |
+| `group` | Group results by team \| department \| location \| commitment | `team` |
+| `skip / limit` | Paging | `0 / 50` |
+| `/v0/postings/{company}/{postingId}` | One posting | `—` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    posts = get("https://api.lever.co/v0/postings/palantir", params={"mode": "json"})
+    show({"company": "Palantir", "open_postings": len(posts),
+          "by_team": Counter(p["categories"].get("team") for p in posts).most_common(5),
+          "by_commitment": Counter(p["categories"].get("commitment") for p in posts).most_common(),
+          "by_workplace": Counter(p.get("workplaceType") for p in posts).most_common(),
+          "examples": [{"title": p["text"], "location": p["categories"].get("location")} for p in posts[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "company": "Palantir",
+  "open_postings": 309,
+  "by_team": [
+    [
+      "Dev",
+      85
+    ],
+    [
+      "Delta",
+      65
+    ],
+    [
+      "Echo",
+      32
+    ],
+    [
+      "Information Security",
+      19
+    ],
+    [
+      "Legal",
+      15
+    ]
+  ],
+  "by_commitment": [
+    [
+      "Full-time",
+      261
+    ],
+    [
+      "Internship",
+      44
+    ],
+    [
+      "Fixed-Term",
+      4
+    ]
+  ],
+  "by_workplace": [
+    [
+      "hybrid",
+      199
+    ],
+    [
+      "onsite",
+      110
+    ]
+  ],
+  "examples": [
+    {
+      "title": "Administrative Business Partner",
+      "location": "Singapore, Singapore"
+    },
+    {
+      "title": "Administrative Business Partner",
+      "location": "London, United Kingdom"
+    },
+    {
+      "title": "Administrative Business Partner - ShipOS",
+      "location": "Washington, D.C."
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### O*NET Web Services (occupations & skills)
+
+| | |
+|:--|:--|
+| **Docs** | https://services.onetcenter.org/reference/ |
+| **Auth** | API key (header `X-API-Key`) |
+| **Register / token** | Register at https://services.onetcenter.org/developer/signup (free; attribution required). The current API takes an X-API-Key header on GET requests; the older v1.9 Basic-auth API is listed under previous versions. |
+| **Env var** | `ONET_API_KEY` |
+| **Script** | [`scripts/jobs/onet.py`](scripts/jobs/onet.py) |
+
+**What you can get:**
+
+- ~1,000 US occupations (O*NET-SOC codes): tasks, skills, knowledge, abilities, work activities, technology used
+- Keyword search from job titles to occupations; related occupations; education and training requirements
+- Bright Outlook flags, wages and employment outlook links (My Next Move / CareerOneStop)
+
+**Capstone ideas:** Skill-based job similarity, automation-exposure scores, matching job ads (Jobs section) to standard occupations.
+
+**Endpoint:** `GET https://api-v2.onetcenter.org/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `online/search?keyword=` | Find occupations from a title or code | `keyword=data scientist` |
+| `online/occupations/{code}/summary/skills` | Skills for an occupation (also knowledge, abilities, technology_skills, tasks) | `15-2051.00/summary/skills` |
+| `online/occupations/{code}/details/...` | Full ratings (importance/level) instead of summaries | `—` |
+| `start / end` | Result range for paged lists | `1 / 20` |
+| `X-API-Key (header)` | Your key (query-string keys are rejected) | `<ONET_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://api-v2.onetcenter.org/online/search", headers={"X-API-Key": key("ONET_API_KEY")},
+            params={"keyword": "data scientist"})
+    show({"keyword": "data scientist", "matches": [{"code": o["code"], "title": o["title"]} for o in d["occupation"][:5]]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "keyword": "data scientist",
+  "matches": [
+    {"code": "15-2051.00", "title": "Data Scientists"},
+    {"code": "15-2041.00", "title": "Statisticians"},
+    {"code": "15-1221.00", "title": "Computer and Information Research Scientists"}
+  ]
+}
+```
+</details>
+
+---
+
+### Remotive (remote jobs)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/remotive-com/remote-jobs-api |
+| **Auth** | None |
+| **Register / token** | No registration. Max ~4 requests/day recommended (jobs update daily). Terms: link back to Remotive and do not republish jobs on other job boards. |
+| **Script** | [`scripts/jobs/remotive.py`](scripts/jobs/remotive.py) |
+
+**What you can get:**
+
+- Remote job listings: title, company, category, job type, candidate location restrictions, salary text, tags
+- Full HTML descriptions, publication date
+
+**Capstone ideas:** Remote-work demand by category, location restrictions in 'remote' jobs, salary disclosure rates.
+
+**Endpoint:** `GET https://remotive.com/api/remote-jobs`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `category` | Category slug (list via /api/remote-jobs/categories): software-dev, data, design, marketing, ... | `data` |
+| `search` | Keyword in title/description | `python` |
+| `company_name` | Filter by company | `—` |
+| `limit` | Max jobs returned | `50` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    d = get("https://remotive.com/api/remote-jobs", params={"category": "data", "limit": 100})
+    jobs = d["jobs"]
+    show({"remote_data_jobs": d.get("job-count", len(jobs)),
+          "candidate_location": Counter(j["candidate_required_location"] for j in jobs).most_common(4),
+          "with_salary_pct": round(100 * sum(bool(j["salary"]) for j in jobs) / max(len(jobs), 1)),
+          "examples": [{k: j[k] for k in ("title", "company_name", "job_type", "salary", "publication_date")} for j in jobs[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "remote_data_jobs": 15,
+  "candidate_location": [
+    [
+      "Worldwide",
+      5
+    ],
+    [
+      "Northern America, LATAM, Europe, APAC",
+      3
+    ],
+    [
+      "Americas, Europe, Israel",
+      2
+    ],
+    [
+      "USA, UK, India, Australia, Ireland, New Zealand, Philippines, Pakistan, Singapore, Mexico",
+      1
+    ]
+  ],
+  "with_salary_pct": 53,
+  "examples": [
+    {
+      "title": "Inside Sales Contractor",
+      "company_name": "Credit Wellness, LLC",
+      "job_type": "full_time",
+      "salary": "OTE $25k - $35k",
+      "publication_date": "2026-10-08T21:47:32"
+    },
+    {
+      "title": "Tier III Service Desk Engineer",
+      "company_name": "Unio Digital",
+      "job_type": "full_time",
+      "salary": "",
+      "publication_date": "2026-10-07T01:11:09"
+    },
+    {
+      "title": "Software Engineer / AI Code Trainer (Python, Web, Full Stack)",
+      "company_name": "CodeForAI",
+      "job_type": "contract",
+      "salary": "$45-$120/Hour",
+      "publication_date": "2026-10-05T05:15:43"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### The Muse Public API (jobs)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.themuse.com/developers/api/v2 |
+| **Auth** | None (optional key raises the limit) |
+| **Register / token** | Works without a key (500 requests/hour). Register at https://www.themuse.com/developers/api/v2/apps for a key (3,600/hour). |
+| **Env var** | `THEMUSE_API_KEY (optional)` |
+| **Script** | [`scripts/jobs/the_muse.py`](scripts/jobs/the_muse.py) |
+
+**What you can get:**
+
+- Job postings with category, experience level (entry/mid/senior/internship), locations, company, publication date
+- Company profiles with size, industries, locations
+- Full HTML descriptions
+
+**Capstone ideas:** Entry-level vs. senior demand by field, internship availability, company-culture text analysis.
+
+**Endpoint:** `GET https://www.themuse.com/api/public/{jobs \| companies}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `page` | Page number (required, 20 results per page) | `1` |
+| `category` | Job category (repeatable): Data and Analytics, Software Engineering, ... | `Data and Analytics` |
+| `level` | Entry Level \| Mid Level \| Senior Level \| Management \| Internship (repeatable) | `Entry Level` |
+| `location` | City, State (repeatable) | `Washington, DC` |
+| `company` | Company name (repeatable) | `—` |
+| `descending` | true -> newest first | `true` |
+| `api_key` | Optional key | `<THEMUSE_API_KEY>` |
+
+```python
+import os
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    params = [("page", 1), ("category", "Data and Analytics"), ("level", "Entry Level"), ("descending", "true")]
+    if os.getenv("THEMUSE_API_KEY"):
+        params.append(("api_key", os.environ["THEMUSE_API_KEY"]))
+    d = get("https://www.themuse.com/api/public/jobs", params=params)
+    show({"entry_level_data_jobs": d["total"],
+          "top_locations_on_page": Counter(l["name"] for j in d["results"] for l in j["locations"]).most_common(4),
+          "examples": [{"title": j["name"], "company": j["company"]["name"],
+                        "locations": [l["name"] for l in j["locations"]][:2], "published": j["publication_date"][:10]}
+                       for j in d["results"][:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:53</summary>
+
+```json
+{
+  "entry_level_data_jobs": 103,
+  "top_locations_on_page": [
+    [
+      "Albuquerque, NM",
+      10
+    ],
+    [
+      "Los Lunas, NM",
+      2
+    ],
+    [
+      "Rio Rancho, NM",
+      2
+    ],
+    [
+      "Shelton, CT",
+      1
+    ]
+  ],
+  "examples": [
+    {
+      "title": "Cake Decorator",
+      "company": "Walmart",
+      "locations": [
+        "Albuquerque, NM"
+      ],
+      "published": "2025-08-25"
+    },
+    {
+      "title": "Meat Cutter and Wrapper",
+      "company": "Walmart",
+      "locations": [
+        "Albuquerque, NM"
+      ],
+      "published": "2025-08-13"
+    },
+    {
+      "title": "Cake Decorator",
+      "company": "Walmart",
+      "locations": [
+        "Albuquerque, NM"
+      ],
+      "published": "2025-08-25"
+    }
   ]
 }
 ```

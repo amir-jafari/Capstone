@@ -1,0 +1,78 @@
+# live 2026-10-12 09:53
+{
+  "measure": "Earnings of full-time workers aged 25-64, % of upper-secondary graduates' earnings",
+  "data": [
+    {
+      "country": "Canada",
+      "level": "Bachelor's or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 148
+    },
+    {
+      "country": "Canada",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 172
+    },
+    {
+      "country": "Finland",
+      "level": "Bachelor's or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 122
+    },
+    {
+      "country": "Finland",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2023",
+      "relative_earnings_pct": 161
+    },
+    {
+      "country": "Germany",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 148
+    },
+    {
+      "country": "Germany",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 175
+    },
+    {
+      "country": "Korea",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 132
+    },
+    {
+      "country": "Korea",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 173
+    },
+    {
+      "country": "United Kingdom",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 133
+    },
+    {
+      "country": "United Kingdom",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 149
+    },
+    {
+      "country": "United States",
+      "level": "Bachelor's or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 165
+    },
+    {
+      "country": "United States",
+      "level": "Master's, doctoral or equivalent level",
+      "year": "2024",
+      "relative_earnings_pct": 214
+    }
+  ]
+}

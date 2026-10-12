@@ -1,0 +1,52 @@
+# live 2026-10-12 09:53
+{
+  "total_courses": 24842,
+  "domains_in_first_100": [
+    [
+      "business",
+      45
+    ],
+    [
+      "information-technology",
+      38
+    ],
+    [
+      "computer-science",
+      37
+    ],
+    [
+      "data-science",
+      21
+    ],
+    [
+      "physical-science-and-engineering",
+      11
+    ],
+    "... (1 more)"
+  ],
+  "examples": [
+    {
+      "name": "Getting started with the Vertex AI Gemini 1.5 Pro Model",
+      "workload": "1 hour 30 minutes",
+      "subdomains": [
+        "cloud-computing",
+        "machine-learning"
+      ]
+    },
+    {
+      "name": "SPSS: Apply & Interpret Logistic Regression Models",
+      "workload": "",
+      "subdomains": [
+        "data-analysis"
+      ]
+    },
+    {
+      "name": "Securing Compute Engine Applications and Resources using Chrome Enterprise Premium",
+      "workload": "1 hour 30 minutes",
+      "subdomains": [
+        "cloud-computing",
+        "computer-security-and-networks"
+      ]
+    }
+  ]
+}

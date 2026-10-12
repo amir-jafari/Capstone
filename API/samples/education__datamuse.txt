@@ -1,0 +1,20 @@
+# live 2026-10-12 09:53
+{
+  "means_like_'a person who studies data'": [
+    "analyst",
+    "statistician",
+    "economist",
+    "history",
+    "epistemologist"
+  ],
+  "words_associated_with_'regression'": [
+    "probit",
+    "logit",
+    "quantile",
+    "anova",
+    "regularization",
+    "predictor",
+    "logistic",
+    "multivariate"
+  ]
+}
