@@ -1,2 +1,3 @@
 requests>=2.31
 anthropic>=1.13   # only for scripts/ai_ml/anthropic_claude.py
+mediacloud        # only for scripts/news_media/media_cloud.py

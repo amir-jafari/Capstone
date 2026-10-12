@@ -30,253 +30,267 @@ python build_readme.py          # re-run everything & regenerate this README
 | # | Domain | API | Auth | Key / env var | Script |
 |--:|:--|:--|:--|:--|:--|
 | 1 | 📰 News & Media | [GDELT DOC 2.0](#gdelt-doc-20) | 🟢 no key | — | [`gdelt.py`](scripts/news_media/gdelt.py) |
-| 2 | 📰 News & Media | [The Guardian Open Platform](#the-guardian-open-platform) | 🔑 key | `GUARDIAN_API_KEY` | [`guardian.py`](scripts/news_media/guardian.py) |
-| 3 | 📰 News & Media | [Hacker News (Firebase API)](#hacker-news-firebase-api) | 🟢 no key | — | [`hacker_news.py`](scripts/news_media/hacker_news.py) |
-| 4 | 📰 News & Media | [NewsAPI.org](#newsapiorg) | 🔑 key | `NEWSAPI_KEY` | [`newsapi.py`](scripts/news_media/newsapi.py) |
-| 5 | 📰 News & Media | [New York Times APIs](#new-york-times-apis) | 🔑 key | `NYT_API_KEY` | [`nyt.py`](scripts/news_media/nyt.py) |
-| 6 | 📰 News & Media | [Wikimedia REST API (Pageviews)](#wikimedia-rest-api-pageviews) | 🟢 no key | — | [`wikipedia_pageviews.py`](scripts/news_media/wikipedia_pageviews.py) |
-| 7 | 💬 Social Media | [Bluesky (AT Protocol) Public AppView](#bluesky-at-protocol-public-appview) | 🟢 no key | — | [`bluesky.py`](scripts/social_media/bluesky.py) |
-| 8 | 💬 Social Media | [Mastodon](#mastodon) | 🟢 no key | — | [`mastodon.py`](scripts/social_media/mastodon.py) |
-| 9 | 💬 Social Media | [Reddit Data API](#reddit-data-api) | 🔑 key | `REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET` | [`reddit.py`](scripts/social_media/reddit.py) |
-| 10 | 💬 Social Media | [Stack Exchange API](#stack-exchange-api) | 🟢 no key | — | [`stackexchange.py`](scripts/social_media/stackexchange.py) |
-| 11 | 💬 Social Media | [YouTube Data API v3](#youtube-data-api-v3) | 🔑 key | `YOUTUBE_API_KEY` | [`youtube.py`](scripts/social_media/youtube.py) |
-| 12 | 🌦️ Weather, Climate & Environment | [EPA AirNow API (real-time air quality)](#epa-airnow-api-real-time-air-quality) | 🔑 key | `AIRNOW_API_KEY` | [`airnow.py`](scripts/weather_environment/airnow.py) |
-| 13 | 🌦️ Weather, Climate & Environment | [Climate TRACE (global emissions inventory)](#climate-trace-global-emissions-inventory) | 🟢 no key | — | [`climate_trace.py`](scripts/weather_environment/climate_trace.py) |
-| 14 | 🌦️ Weather, Climate & Environment | [U.S. Drought Monitor](#us-drought-monitor) | 🟢 no key | — | [`drought_monitor.py`](scripts/weather_environment/drought_monitor.py) |
-| 15 | 🌦️ Weather, Climate & Environment | [EPA Air Quality System (AQS) API](#epa-air-quality-system-aqs-api) | 🔑 key | `AQS_EMAIL, AQS_KEY` | [`epa_aqs.py`](scripts/weather_environment/epa_aqs.py) |
-| 16 | 🌦️ Weather, Climate & Environment | [EPA ECHO (Enforcement & Compliance History)](#epa-echo-enforcement--compliance-history) | 🟢 no key | — | [`epa_echo.py`](scripts/weather_environment/epa_echo.py) |
-| 17 | 🌦️ Weather, Climate & Environment | [EPA Envirofacts (Toxics Release Inventory and more)](#epa-envirofacts-toxics-release-inventory-and-more) | 🟢 no key | — | [`epa_envirofacts.py`](scripts/weather_environment/epa_envirofacts.py) |
-| 18 | 🌦️ Weather, Climate & Environment | [GBIF (Global Biodiversity Information Facility)](#gbif-global-biodiversity-information-facility) | 🟢 no key | — | [`gbif.py`](scripts/weather_environment/gbif.py) |
-| 19 | 🌦️ Weather, Climate & Environment | [iNaturalist API](#inaturalist-api) | 🟢 no key | — | [`inaturalist.py`](scripts/weather_environment/inaturalist.py) |
-| 20 | 🌦️ Weather, Climate & Environment | [NASA FIRMS (active fire detections)](#nasa-firms-active-fire-detections) | 🔑 key | `FIRMS_MAP_KEY` | [`nasa_firms.py`](scripts/weather_environment/nasa_firms.py) |
-| 21 | 🌦️ Weather, Climate & Environment | [NOAA Climate Data Online (CDO)](#noaa-climate-data-online-cdo) | 🔑 key | `NOAA_TOKEN` | [`noaa_cdo.py`](scripts/weather_environment/noaa_cdo.py) |
-| 22 | 🌦️ Weather, Climate & Environment | [NOAA Climate at a Glance](#noaa-climate-at-a-glance) | 🟢 no key | — | [`noaa_climate_at_a_glance.py`](scripts/weather_environment/noaa_climate_at_a_glance.py) |
-| 23 | 🌦️ Weather, Climate & Environment | [NOAA Global Monitoring Lab — Mauna Loa CO2](#noaa-global-monitoring-lab--mauna-loa-co2) | 🟢 no key | — | [`noaa_co2.py`](scripts/weather_environment/noaa_co2.py) |
-| 24 | 🌦️ Weather, Climate & Environment | [NOAA Tides & Currents (CO-OPS)](#noaa-tides--currents-co-ops) | 🟢 no key | — | [`noaa_tides.py`](scripts/weather_environment/noaa_tides.py) |
-| 25 | 🌦️ Weather, Climate & Environment | [US National Weather Service (api.weather.gov)](#us-national-weather-service-apiweathergov) | 🟢 no key | — | [`nws.py`](scripts/weather_environment/nws.py) |
-| 26 | 🌦️ Weather, Climate & Environment | [Open-Meteo](#open-meteo) | 🟢 no key | — | [`open_meteo.py`](scripts/weather_environment/open_meteo.py) |
-| 27 | 🌦️ Weather, Climate & Environment | [OpenAQ v3 (Air Quality)](#openaq-v3-air-quality) | 🔑 key | `OPENAQ_API_KEY` | [`openaq.py`](scripts/weather_environment/openaq.py) |
-| 28 | 🌦️ Weather, Climate & Environment | [OpenWeatherMap](#openweathermap) | 🔑 key | `OPENWEATHER_API_KEY` | [`openweathermap.py`](scripts/weather_environment/openweathermap.py) |
-| 29 | 🌦️ Weather, Climate & Environment | [USGS Earthquake Catalog](#usgs-earthquake-catalog) | 🟢 no key | — | [`usgs_earthquakes.py`](scripts/weather_environment/usgs_earthquakes.py) |
-| 30 | 💵 Finance & Economics | [Alpha Vantage](#alpha-vantage) | 🟢 no key | `ALPHAVANTAGE_API_KEY` | [`alpha_vantage.py`](scripts/finance_economics/alpha_vantage.py) |
-| 31 | 💵 Finance & Economics | [U.S. Bureau of Economic Analysis (BEA) API](#us-bureau-of-economic-analysis-bea-api) | 🔑 key | `BEA_API_KEY` | [`bea.py`](scripts/finance_economics/bea.py) |
-| 32 | 💵 Finance & Economics | [Bank for International Settlements (BIS) Data Portal API](#bank-for-international-settlements-bis-data-portal-api) | 🟢 no key | — | [`bis_data_portal.py`](scripts/finance_economics/bis_data_portal.py) |
-| 33 | 💵 Finance & Economics | [US Bureau of Labor Statistics (BLS)](#us-bureau-of-labor-statistics-bls) | 🟢 no key | `BLS_API_KEY (optional)` | [`bls.py`](scripts/finance_economics/bls.py) |
-| 34 | 💵 Finance & Economics | [CFTC Commitments of Traders (Public Reporting Environment)](#cftc-commitments-of-traders-public-reporting-environment) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cftc_cot.py`](scripts/finance_economics/cftc_cot.py) |
-| 35 | 💵 Finance & Economics | [Coinbase Exchange public market data](#coinbase-exchange-public-market-data) | 🟢 no key | — | [`coinbase_exchange.py`](scripts/finance_economics/coinbase_exchange.py) |
-| 36 | 💵 Finance & Economics | [CoinGecko](#coingecko) | 🟢 no key | — | [`coingecko.py`](scripts/finance_economics/coingecko.py) |
-| 37 | 💵 Finance & Economics | [European Central Bank Data Portal API](#european-central-bank-data-portal-api) | 🟢 no key | — | [`ecb_data_portal.py`](scripts/finance_economics/ecb_data_portal.py) |
-| 38 | 💵 Finance & Economics | [Eurostat API](#eurostat-api) | 🟢 no key | — | [`eurostat.py`](scripts/finance_economics/eurostat.py) |
-| 39 | 💵 Finance & Economics | [FDIC BankFind Suite API](#fdic-bankfind-suite-api) | 🟢 no key | — | [`fdic_bankfind.py`](scripts/finance_economics/fdic_bankfind.py) |
-| 40 | 💵 Finance & Economics | [Frankfurter (ECB exchange rates)](#frankfurter-ecb-exchange-rates) | 🟢 no key | — | [`frankfurter.py`](scripts/finance_economics/frankfurter.py) |
-| 41 | 💵 Finance & Economics | [FRED (Federal Reserve Economic Data)](#fred-federal-reserve-economic-data) | 🔑 key | `FRED_API_KEY` | [`fred.py`](scripts/finance_economics/fred.py) |
-| 42 | 💵 Finance & Economics | [Kenneth French Data Library (Fama-French factors)](#kenneth-french-data-library-fama-french-factors) | 🟢 no key | — | [`french_data_library.py`](scripts/finance_economics/french_data_library.py) |
-| 43 | 💵 Finance & Economics | [GLEIF Legal Entity Identifier (LEI) API](#gleif-legal-entity-identifier-lei-api) | 🟢 no key | — | [`gleif.py`](scripts/finance_economics/gleif.py) |
-| 44 | 💵 Finance & Economics | [IMF DataMapper API (World Economic Outlook)](#imf-datamapper-api-world-economic-outlook) | 🟢 no key | — | [`imf_datamapper.py`](scripts/finance_economics/imf_datamapper.py) |
-| 45 | 💵 Finance & Economics | [Massive (formerly Polygon.io) stock market API](#massive-formerly-polygonio-stock-market-api) | 🔑 key | `MASSIVE_API_KEY` | [`massive_stocks.py`](scripts/finance_economics/massive_stocks.py) |
-| 46 | 💵 Finance & Economics | [New York Fed Markets Data API](#new-york-fed-markets-data-api) | 🟢 no key | — | [`nyfed_markets.py`](scripts/finance_economics/nyfed_markets.py) |
-| 47 | 💵 Finance & Economics | [SEC EDGAR (data.sec.gov)](#sec-edgar-datasecgov) | 🟢 no key | — | [`sec_edgar.py`](scripts/finance_economics/sec_edgar.py) |
-| 48 | 💵 Finance & Economics | [US Treasury Fiscal Data](#us-treasury-fiscal-data) | 🟢 no key | — | [`treasury_fiscal.py`](scripts/finance_economics/treasury_fiscal.py) |
-| 49 | 💵 Finance & Economics | [U.S. Treasury daily yield curve rates](#us-treasury-daily-yield-curve-rates) | 🟢 no key | — | [`treasury_yield_curve.py`](scripts/finance_economics/treasury_yield_curve.py) |
-| 50 | 💵 Finance & Economics | [UN Comtrade (international trade)](#un-comtrade-international-trade) | 🟢 no key | `COMTRADE_API_KEY (optional)` | [`un_comtrade.py`](scripts/finance_economics/un_comtrade.py) |
-| 51 | 💵 Finance & Economics | [World Bank Indicators API](#world-bank-indicators-api) | 🟢 no key | — | [`world_bank.py`](scripts/finance_economics/world_bank.py) |
-| 52 | 👥 Census & Demographics | [IPUMS API (microdata)](#ipums-api-microdata) | 🔑 key | `IPUMS_API_KEY` | [`ipums.py`](scripts/census_demographics/ipums.py) |
-| 53 | 👥 Census & Demographics | [UN Data Portal — World Population Prospects](#un-data-portal--world-population-prospects) | 🔑 key | `UN_POP_TOKEN` | [`un_population.py`](scripts/census_demographics/un_population.py) |
-| 54 | 👥 Census & Demographics | [US Census Bureau Data API](#us-census-bureau-data-api) | 🔑 key | `CENSUS_API_KEY` | [`us_census.py`](scripts/census_demographics/us_census.py) |
-| 55 | 🏠 Housing & Real Estate | [CFPB Consumer Complaint Database](#cfpb-consumer-complaint-database) | 🟢 no key | — | [`cfpb_complaints.py`](scripts/housing/cfpb_complaints.py) |
-| 56 | 🏠 Housing & Real Estate | [FHFA House Price Index](#fhfa-house-price-index) | 🟢 no key | — | [`fhfa_hpi.py`](scripts/housing/fhfa_hpi.py) |
-| 57 | 🏠 Housing & Real Estate | [HMDA Data Browser (mortgage applications)](#hmda-data-browser-mortgage-applications) | 🟢 no key | — | [`hmda.py`](scripts/housing/hmda.py) |
-| 58 | 🏠 Housing & Real Estate | [HUD User API (Fair Market Rents, Income Limits, ZIP crosswalk)](#hud-user-api-fair-market-rents-income-limits-zip-crosswalk) | 🔑 key | `HUD_API_TOKEN` | [`hud_user.py`](scripts/housing/hud_user.py) |
-| 59 | 🏠 Housing & Real Estate | [OpenFEMA — Flood Insurance Claims & Disaster Declarations](#openfema--flood-insurance-claims--disaster-declarations) | 🟢 no key | — | [`openfema_nfip.py`](scripts/housing/openfema_nfip.py) |
-| 60 | 🏠 Housing & Real Estate | [Redfin Data Center (housing market tracker)](#redfin-data-center-housing-market-tracker) | 🟢 no key | — | [`redfin_data_center.py`](scripts/housing/redfin_data_center.py) |
-| 61 | 🏠 Housing & Real Estate | [RentCast (property records, rent & value estimates)](#rentcast-property-records-rent--value-estimates) | 🔑 key | `RENTCAST_API_KEY` | [`rentcast.py`](scripts/housing/rentcast.py) |
-| 62 | 🏠 Housing & Real Estate | [Zillow Research Data (ZHVI home values, ZORI rents)](#zillow-research-data-zhvi-home-values-zori-rents) | 🟢 no key | — | [`zillow_research.py`](scripts/housing/zillow_research.py) |
-| 63 | 🏛️ Political Science & Government | [ACLED (Armed Conflict Location & Event Data)](#acled-armed-conflict-location--event-data) | 🔑 key | `ACLED_EMAIL, ACLED_PASSWORD` | [`acled.py`](scripts/politics_government/acled.py) |
-| 64 | 🏛️ Political Science & Government | [Congress.gov API](#congressgov-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`congress_gov.py`](scripts/politics_government/congress_gov.py) |
-| 65 | 🏛️ Political Science & Government | [European Parliament Open Data API](#european-parliament-open-data-api) | 🟢 no key | — | [`european_parliament.py`](scripts/politics_government/european_parliament.py) |
-| 66 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
-| 67 | 🏛️ Political Science & Government | [GovInfo API (U.S. Government Publishing Office)](#govinfo-api-us-government-publishing-office) | 🟢 no key | `DATA_GOV_API_KEY` | [`govinfo.py`](scripts/politics_government/govinfo.py) |
-| 68 | 🏛️ Political Science & Government | [Grants.gov Search API](#grantsgov-search-api) | 🟢 no key | — | [`grants_gov.py`](scripts/politics_government/grants_gov.py) |
-| 69 | 🏛️ Political Science & Government | [Harvard Dataverse (MIT Election Lab & replication data)](#harvard-dataverse-mit-election-lab--replication-data) | 🟢 no key | `DATAVERSE_API_TOKEN (optional)` | [`harvard_dataverse.py`](scripts/politics_government/harvard_dataverse.py) |
-| 70 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
-| 71 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
-| 72 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
-| 73 | 🏛️ Political Science & Government | [Lobbying Disclosure Act (LDA) API](#lobbying-disclosure-act-lda-api) | 🟢 no key | `LDA_API_KEY (optional)` | [`senate_lda.py`](scripts/politics_government/senate_lda.py) |
-| 74 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
-| 75 | 🏛️ Political Science & Government | [USAJOBS Search API (federal jobs)](#usajobs-search-api-federal-jobs) | 🔑 key | `USAJOBS_API_KEY, USAJOBS_EMAIL` | [`usajobs.py`](scripts/politics_government/usajobs.py) |
-| 76 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
-| 77 | ⚖️ Law & Justice | [CourtListener (Free Law Project)](#courtlistener-free-law-project) | 🟢 no key | `COURTLISTENER_TOKEN (optional)` | [`courtlistener.py`](scripts/law/courtlistener.py) |
-| 78 | ⚖️ Law & Justice | [U.S. Department of Justice News API](#us-department-of-justice-news-api) | 🟢 no key | — | [`doj_press_releases.py`](scripts/law/doj_press_releases.py) |
-| 79 | ⚖️ Law & Justice | [eCFR API (Code of Federal Regulations)](#ecfr-api-code-of-federal-regulations) | 🟢 no key | — | [`ecfr.py`](scripts/law/ecfr.py) |
-| 80 | ⚖️ Law & Justice | [FBI Crime Data Explorer API](#fbi-crime-data-explorer-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`fbi_crime_data.py`](scripts/law/fbi_crime_data.py) |
-| 81 | ⚖️ Law & Justice | [Oyez (U.S. Supreme Court cases)](#oyez-us-supreme-court-cases) | 🟢 no key | — | [`oyez.py`](scripts/law/oyez.py) |
-| 82 | ⚖️ Law & Justice | [Supreme Court Database (SCDB)](#supreme-court-database-scdb) | 🟢 no key | — | [`supreme_court_database.py`](scripts/law/supreme_court_database.py) |
-| 83 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
-| 84 | 🩺 Health & Social Science | [ChEMBL (drug discovery bioactivity)](#chembl-drug-discovery-bioactivity) | 🟢 no key | — | [`chembl.py`](scripts/health/chembl.py) |
-| 85 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
-| 86 | 🩺 Health & Social Science | [CMS Medicare Part D Prescribers (data.cms.gov)](#cms-medicare-part-d-prescribers-datacmsgov) | 🟢 no key | — | [`cms_part_d.py`](scripts/health/cms_part_d.py) |
-| 87 | 🩺 Health & Social Science | [CMS Provider Data Catalog (Care Compare)](#cms-provider-data-catalog-care-compare) | 🟢 no key | — | [`cms_provider_data.py`](scripts/health/cms_provider_data.py) |
-| 88 | 🩺 Health & Social Science | [DailyMed (NLM drug labels)](#dailymed-nlm-drug-labels) | 🟢 no key | — | [`dailymed.py`](scripts/health/dailymed.py) |
-| 89 | 🩺 Health & Social Science | [Delphi Epidata (CMU disease surveillance)](#delphi-epidata-cmu-disease-surveillance) | 🟢 no key | `DELPHI_API_KEY (optional)` | [`delphi_epidata.py`](scripts/health/delphi_epidata.py) |
-| 90 | 🩺 Health & Social Science | [Ensembl REST API (genomics)](#ensembl-rest-api-genomics) | 🟢 no key | — | [`ensembl.py`](scripts/health/ensembl.py) |
-| 91 | 🩺 Health & Social Science | [Europe PMC](#europe-pmc) | 🟢 no key | — | [`europe_pmc.py`](scripts/health/europe_pmc.py) |
-| 92 | 🩺 Health & Social Science | [HAPI FHIR public test server (synthetic EHR data)](#hapi-fhir-public-test-server-synthetic-ehr-data) | 🟢 no key | — | [`hapi_fhir.py`](scripts/health/hapi_fhir.py) |
-| 93 | 🩺 Health & Social Science | [MedlinePlus Connect (patient education)](#medlineplus-connect-patient-education) | 🟢 no key | — | [`medlineplus_connect.py`](scripts/health/medlineplus_connect.py) |
-| 94 | 🩺 Health & Social Science | [NLM Clinical Table Search Service (ICD-10-CM, LOINC, conditions)](#nlm-clinical-table-search-service-icd-10-cm-loinc-conditions) | 🟢 no key | — | [`nlm_clinical_tables.py`](scripts/health/nlm_clinical_tables.py) |
-| 95 | 🩺 Health & Social Science | [NPPES NPI Registry (healthcare providers)](#nppes-npi-registry-healthcare-providers) | 🟢 no key | — | [`nppes_npi.py`](scripts/health/nppes_npi.py) |
-| 96 | 🩺 Health & Social Science | [Open Targets Platform (GraphQL)](#open-targets-platform-graphql) | 🟢 no key | — | [`open_targets.py`](scripts/health/open_targets.py) |
-| 97 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
-| 98 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
-| 99 | 🩺 Health & Social Science | [PubMed (NCBI E-utilities)](#pubmed-ncbi-e-utilities) | 🟢 no key | `NCBI_API_KEY (optional)` | [`pubmed.py`](scripts/health/pubmed.py) |
-| 100 | 🩺 Health & Social Science | [RxNorm / RxNav (NLM drug terminology)](#rxnorm--rxnav-nlm-drug-terminology) | 🟢 no key | — | [`rxnorm.py`](scripts/health/rxnorm.py) |
-| 101 | 🩺 Health & Social Science | [UniProt (proteins)](#uniprot-proteins) | 🟢 no key | — | [`uniprot.py`](scripts/health/uniprot.py) |
-| 102 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
-| 103 | 🩺 Health & Social Science | [WHO ICD-11 API](#who-icd-11-api) | 🔑 key | `ICD_CLIENT_ID, ICD_CLIENT_SECRET` | [`who_icd11.py`](scripts/health/who_icd11.py) |
-| 104 | 🌾 Agriculture & Food | [USDA AMS Market News (MyMarketNews API)](#usda-ams-market-news-mymarketnews-api) | 🔑 key | `AMS_API_KEY` | [`ams_market_news.py`](scripts/agriculture/ams_market_news.py) |
-| 105 | 🌾 Agriculture & Food | [USDA NASS CropScape (Cropland Data Layer)](#usda-nass-cropscape-cropland-data-layer) | 🟢 no key | — | [`cropscape.py`](scripts/agriculture/cropscape.py) |
-| 106 | 🌾 Agriculture & Food | [USDA ERS — ARMS Farm Financial Data](#usda-ers--arms-farm-financial-data) | 🟢 no key | `DATA_GOV_API_KEY` | [`ers_arms.py`](scripts/agriculture/ers_arms.py) |
-| 107 | 🌾 Agriculture & Food | [USDA FAS — Production, Supply & Distribution (PSD) and trade](#usda-fas--production-supply--distribution-psd-and-trade) | 🟢 no key | `DATA_GOV_API_KEY` | [`fas_psd.py`](scripts/agriculture/fas_psd.py) |
-| 108 | 🌾 Agriculture & Food | [USDA FoodData Central](#usda-fooddata-central) | 🟢 no key | `DATA_GOV_API_KEY` | [`fooddata_central.py`](scripts/agriculture/fooddata_central.py) |
-| 109 | 🌾 Agriculture & Food | [USDA NASS Quick Stats](#usda-nass-quick-stats) | 🔑 key | `NASS_API_KEY` | [`nass_quickstats.py`](scripts/agriculture/nass_quickstats.py) |
-| 110 | 🌾 Agriculture & Food | [Open Food Facts](#open-food-facts) | 🟢 no key | — | [`open_food_facts.py`](scripts/agriculture/open_food_facts.py) |
-| 111 | 🌾 Agriculture & Food | [USDA NRCS Soil Data Access (SSURGO)](#usda-nrcs-soil-data-access-ssurgo) | 🟢 no key | — | [`soil_data_access.py`](scripts/agriculture/soil_data_access.py) |
-| 112 | 🌾 Agriculture & Food | [ISRIC SoilGrids (global soil properties)](#isric-soilgrids-global-soil-properties) | 🟢 no key | — | [`soilgrids.py`](scripts/agriculture/soilgrids.py) |
-| 113 | 🌾 Agriculture & Food | [TheMealDB (recipes)](#themealdb-recipes) | 🔑 key | `THEMEALDB_KEY (optional)` | [`themealdb.py`](scripts/agriculture/themealdb.py) |
-| 114 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
-| 115 | 🎓 Education | [Coursera Catalog API](#coursera-catalog-api) | 🟢 no key | — | [`coursera_catalog.py`](scripts/education/coursera_catalog.py) |
-| 116 | 🎓 Education | [Datamuse (word-finding API)](#datamuse-word-finding-api) | 🟢 no key | — | [`datamuse.py`](scripts/education/datamuse.py) |
-| 117 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
-| 118 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
-| 119 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
-| 120 | 🎓 Education | [OECD Data API — Education at a Glance](#oecd-data-api--education-at-a-glance) | 🟢 no key | — | [`oecd_education.py`](scripts/education/oecd_education.py) |
-| 121 | 🎓 Education | [Open Trivia Database](#open-trivia-database) | 🟢 no key | — | [`open_trivia_db.py`](scripts/education/open_trivia_db.py) |
-| 122 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
-| 123 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
-| 124 | 🎓 Education | [World Bank EdStats (education statistics)](#world-bank-edstats-education-statistics) | 🟢 no key | — | [`world_bank_edstats.py`](scripts/education/world_bank_edstats.py) |
-| 125 | 💼 Jobs & Labor | [Adzuna Jobs API](#adzuna-jobs-api) | 🔑 key | `ADZUNA_APP_ID, ADZUNA_APP_KEY` | [`adzuna.py`](scripts/jobs/adzuna.py) |
-| 126 | 💼 Jobs & Labor | [Ashby Job Postings API (startup career pages)](#ashby-job-postings-api-startup-career-pages) | 🟢 no key | — | [`ashby_job_board.py`](scripts/jobs/ashby_job_board.py) |
-| 127 | 💼 Jobs & Labor | [CareerOneStop Web API (U.S. Department of Labor)](#careeronestop-web-api-us-department-of-labor) | 🔑 key | `CAREERONESTOP_USER_ID, CAREERONESTOP_TOKEN` | [`careeronestop.py`](scripts/jobs/careeronestop.py) |
-| 128 | 💼 Jobs & Labor | [ESCO API (European skills & occupations taxonomy)](#esco-api-european-skills--occupations-taxonomy) | 🟢 no key | — | [`esco.py`](scripts/jobs/esco.py) |
-| 129 | 💼 Jobs & Labor | [Greenhouse Job Board API (company career pages)](#greenhouse-job-board-api-company-career-pages) | 🟢 no key | — | [`greenhouse_job_boards.py`](scripts/jobs/greenhouse_job_boards.py) |
-| 130 | 💼 Jobs & Labor | [Hacker News 'Who is hiring?' (via Algolia HN Search)](#hacker-news-who-is-hiring-via-algolia-hn-search) | 🟢 no key | — | [`hn_whos_hiring.py`](scripts/jobs/hn_whos_hiring.py) |
-| 131 | 💼 Jobs & Labor | [ILOSTAT (International Labour Organization)](#ilostat-international-labour-organization) | 🟢 no key | — | [`ilostat.py`](scripts/jobs/ilostat.py) |
-| 132 | 💼 Jobs & Labor | [Census LEHD LODES (jobs by census block)](#census-lehd-lodes-jobs-by-census-block) | 🟢 no key | — | [`lehd_lodes.py`](scripts/jobs/lehd_lodes.py) |
-| 133 | 💼 Jobs & Labor | [Lever Postings API (company career pages)](#lever-postings-api-company-career-pages) | 🟢 no key | — | [`lever_postings.py`](scripts/jobs/lever_postings.py) |
-| 134 | 💼 Jobs & Labor | [O*NET Web Services (occupations & skills)](#onet-web-services-occupations--skills) | 🔑 key | `ONET_API_KEY` | [`onet.py`](scripts/jobs/onet.py) |
-| 135 | 💼 Jobs & Labor | [Remotive (remote jobs)](#remotive-remote-jobs) | 🟢 no key | — | [`remotive.py`](scripts/jobs/remotive.py) |
-| 136 | 💼 Jobs & Labor | [The Muse Public API (jobs)](#the-muse-public-api-jobs) | 🟢 no key | `THEMUSE_API_KEY (optional)` | [`the_muse.py`](scripts/jobs/the_muse.py) |
-| 137 | 🔬 Science, Space & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 138 | 🔬 Science, Space & Research | [CelesTrak (satellite orbital elements)](#celestrak-satellite-orbital-elements) | 🟢 no key | — | [`celestrak.py`](scripts/science_research/celestrak.py) |
-| 139 | 🔬 Science, Space & Research | [CERN Open Data Portal](#cern-open-data-portal) | 🟢 no key | — | [`cern_open_data.py`](scripts/science_research/cern_open_data.py) |
-| 140 | 🔬 Science, Space & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 141 | 🔬 Science, Space & Research | [JPL Small-Body Close Approach & SBDB APIs](#jpl-small-body-close-approach--sbdb-apis) | 🟢 no key | — | [`jpl_close_approach.py`](scripts/science_research/jpl_close_approach.py) |
-| 142 | 🔬 Science, Space & Research | [JPL Fireball (bolide) API](#jpl-fireball-bolide-api) | 🟢 no key | — | [`jpl_fireball.py`](scripts/science_research/jpl_fireball.py) |
-| 143 | 🔬 Science, Space & Research | [JPL Horizons (ephemerides)](#jpl-horizons-ephemerides) | 🟢 no key | — | [`jpl_horizons.py`](scripts/science_research/jpl_horizons.py) |
-| 144 | 🔬 Science, Space & Research | [Launch Library 2 (The Space Devs)](#launch-library-2-the-space-devs) | 🟢 no key | — | [`launch_library.py`](scripts/science_research/launch_library.py) |
-| 145 | 🔬 Science, Space & Research | [Materials Project API](#materials-project-api) | 🔑 key | `MP_API_KEY` | [`materials_project.py`](scripts/science_research/materials_project.py) |
-| 146 | 🔬 Science, Space & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 147 | 🔬 Science, Space & Research | [NASA Exoplanet Archive (TAP)](#nasa-exoplanet-archive-tap) | 🟢 no key | — | [`nasa_exoplanet_archive.py`](scripts/science_research/nasa_exoplanet_archive.py) |
-| 148 | 🔬 Science, Space & Research | [NASA Image and Video Library](#nasa-image-and-video-library) | 🟢 no key | — | [`nasa_image_library.py`](scripts/science_research/nasa_image_library.py) |
-| 149 | 🔬 Science, Space & Research | [NIH RePORTER API](#nih-reporter-api) | 🟢 no key | — | [`nih_reporter.py`](scripts/science_research/nih_reporter.py) |
-| 150 | 🔬 Science, Space & Research | [NOAA Space Weather Prediction Center (SWPC) data](#noaa-space-weather-prediction-center-swpc-data) | 🟢 no key | — | [`noaa_swpc.py`](scripts/science_research/noaa_swpc.py) |
-| 151 | 🔬 Science, Space & Research | [NSF Award Search API](#nsf-award-search-api) | 🟢 no key | — | [`nsf_awards.py`](scripts/science_research/nsf_awards.py) |
-| 152 | 🔬 Science, Space & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 153 | 🔬 Science, Space & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 154 | 🔬 Science, Space & Research | [RCSB Protein Data Bank (search + data APIs)](#rcsb-protein-data-bank-search--data-apis) | 🟢 no key | — | [`rcsb_pdb.py`](scripts/science_research/rcsb_pdb.py) |
-| 155 | 🔬 Science, Space & Research | [ROR (Research Organization Registry)](#ror-research-organization-registry) | 🟢 no key | — | [`ror.py`](scripts/science_research/ror.py) |
-| 156 | 🔬 Science, Space & Research | [SDSS SkyServer (Sloan Digital Sky Survey)](#sdss-skyserver-sloan-digital-sky-survey) | 🟢 no key | — | [`sdss_skyserver.py`](scripts/science_research/sdss_skyserver.py) |
-| 157 | 🔬 Science, Space & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 158 | 🔬 Science, Space & Research | [Spaceflight News API (SNAPI)](#spaceflight-news-api-snapi) | 🟢 no key | — | [`spaceflight_news.py`](scripts/science_research/spaceflight_news.py) |
-| 159 | 🔬 Science, Space & Research | [Zenodo (research data & software repository)](#zenodo-research-data--software-repository) | 🟢 no key | — | [`zenodo.py`](scripts/science_research/zenodo.py) |
-| 160 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 161 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 162 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 163 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 164 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 165 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 166 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 167 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 168 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 169 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 170 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 171 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 172 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
-| 173 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 174 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 175 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
-| 176 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 177 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 178 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
-| 179 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
-| 180 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
-| 181 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 182 | 🗺️ Transportation, Travel & Geospatial | [Amtraker (live Amtrak train tracking, unofficial)](#amtraker-live-amtrak-train-tracking-unofficial) | 🟢 no key | — | [`amtraker.py`](scripts/transportation_geo/amtraker.py) |
-| 183 | 🗺️ Transportation, Travel & Geospatial | [AviationWeather.gov Data API (METAR/TAF)](#aviationweathergov-data-api-metartaf) | 🟢 no key | — | [`aviation_weather.py`](scripts/transportation_geo/aviation_weather.py) |
-| 184 | 🗺️ Transportation, Travel & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 185 | 🗺️ Transportation, Travel & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 186 | 🗺️ Transportation, Travel & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 187 | 🗺️ Transportation, Travel & Geospatial | [Entur (Norway national journey planner, GraphQL)](#entur-norway-national-journey-planner-graphql) | 🟢 no key | — | [`entur.py`](scripts/transportation_geo/entur.py) |
-| 188 | 🗺️ Transportation, Travel & Geospatial | [FAA NAS Airport Status (delays & ground stops)](#faa-nas-airport-status-delays--ground-stops) | 🟢 no key | — | [`faa_airport_status.py`](scripts/transportation_geo/faa_airport_status.py) |
-| 189 | 🗺️ Transportation, Travel & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 190 | 🗺️ Transportation, Travel & Geospatial | [GeoNames (place names gazetteer)](#geonames-place-names-gazetteer) | 🔑 key | `GEONAMES_USERNAME` | [`geonames.py`](scripts/transportation_geo/geonames.py) |
-| 191 | 🗺️ Transportation, Travel & Geospatial | [Inside Airbnb (short-term rental data)](#inside-airbnb-short-term-rental-data) | 🟢 no key | — | [`inside_airbnb.py`](scripts/transportation_geo/inside_airbnb.py) |
-| 192 | 🗺️ Transportation, Travel & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 193 | 🗺️ Transportation, Travel & Geospatial | [MTA Subway Hourly Ridership (NY Open Data)](#mta-subway-hourly-ridership-ny-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`mta_ridership.py`](scripts/transportation_geo/mta_ridership.py) |
-| 194 | 🗺️ Transportation, Travel & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 195 | 🗺️ Transportation, Travel & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 196 | 🗺️ Transportation, Travel & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 197 | 🗺️ Transportation, Travel & Geospatial | [NYC Taxi & Limousine Commission trip records](#nyc-taxi--limousine-commission-trip-records) | 🟢 no key | — | [`nyc_tlc_trips.py`](scripts/transportation_geo/nyc_tlc_trips.py) |
-| 198 | 🗺️ Transportation, Travel & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 199 | 🗺️ Transportation, Travel & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 200 | 🗺️ Transportation, Travel & Geospatial | [OurAirports (global airports dataset)](#ourairports-global-airports-dataset) | 🟢 no key | — | [`ourairports.py`](scripts/transportation_geo/ourairports.py) |
-| 201 | 🗺️ Transportation, Travel & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 202 | 🗺️ Transportation, Travel & Geospatial | [U.S. State Department Travel Advisories](#us-state-department-travel-advisories) | 🟢 no key | — | [`state_travel_advisories.py`](scripts/transportation_geo/state_travel_advisories.py) |
-| 203 | 🗺️ Transportation, Travel & Geospatial | [Swiss public transport API (transport.opendata.ch)](#swiss-public-transport-api-transportopendatach) | 🟢 no key | — | [`swiss_transport.py`](scripts/transportation_geo/swiss_transport.py) |
-| 204 | 🗺️ Transportation, Travel & Geospatial | [Transport for London Unified API](#transport-for-london-unified-api) | 🟢 no key | `TFL_APP_KEY (optional)` | [`tfl_unified.py`](scripts/transportation_geo/tfl_unified.py) |
-| 205 | 🗺️ Transportation, Travel & Geospatial | [TomTom Traffic API](#tomtom-traffic-api) | 🔑 key | `TOMTOM_API_KEY` | [`tomtom_traffic.py`](scripts/transportation_geo/tomtom_traffic.py) |
-| 206 | 🗺️ Transportation, Travel & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 207 | 🗺️ Transportation, Travel & Geospatial | [Wikivoyage (MediaWiki API)](#wikivoyage-mediawiki-api) | 🟢 no key | — | [`wikivoyage.py`](scripts/transportation_geo/wikivoyage.py) |
-| 208 | 🗺️ Transportation, Travel & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 209 | 🏅 Sports & Gaming | [API-Football (API-Sports)](#api-football-api-sports) | 🔑 key | `APISPORTS_KEY` | [`api_football.py`](scripts/sports/api_football.py) |
-| 210 | 🏅 Sports & Gaming | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 211 | 🏅 Sports & Gaming | [Baseball Savant (MLB Statcast)](#baseball-savant-mlb-statcast) | 🟢 no key | — | [`baseball_savant.py`](scripts/sports/baseball_savant.py) |
-| 212 | 🏅 Sports & Gaming | [CheapShark (PC game deals)](#cheapshark-pc-game-deals) | 🟢 no key | — | [`cheapshark.py`](scripts/sports/cheapshark.py) |
-| 213 | 🏅 Sports & Gaming | [Chess.com Published-Data API](#chesscom-published-data-api) | 🟢 no key | — | [`chess_com.py`](scripts/sports/chess_com.py) |
-| 214 | 🏅 Sports & Gaming | [CollegeFootballData.com API](#collegefootballdatacom-api) | 🔑 key | `CFBD_API_KEY` | [`college_football_data.py`](scripts/sports/college_football_data.py) |
-| 215 | 🏅 Sports & Gaming | [Cricsheet (ball-by-ball cricket data)](#cricsheet-ball-by-ball-cricket-data) | 🟢 no key | — | [`cricsheet.py`](scripts/sports/cricsheet.py) |
-| 216 | 🏅 Sports & Gaming | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 217 | 🏅 Sports & Gaming | [Fantasy Premier League API](#fantasy-premier-league-api) | 🟢 no key | — | [`fantasy_premier_league.py`](scripts/sports/fantasy_premier_league.py) |
-| 218 | 🏅 Sports & Gaming | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 219 | 🏅 Sports & Gaming | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 220 | 🏅 Sports & Gaming | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 221 | 🏅 Sports & Gaming | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 222 | 🏅 Sports & Gaming | [nflverse data (NFL play-by-play & stats)](#nflverse-data-nfl-play-by-play--stats) | 🟢 no key | — | [`nflverse.py`](scripts/sports/nflverse.py) |
-| 223 | 🏅 Sports & Gaming | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 224 | 🏅 Sports & Gaming | [OpenDota API (Dota 2 esports & matches)](#opendota-api-dota-2-esports--matches) | 🟢 no key | `OPENDOTA_API_KEY (optional)` | [`opendota.py`](scripts/sports/opendota.py) |
-| 225 | 🏅 Sports & Gaming | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 226 | 🏅 Sports & Gaming | [PokéAPI](#pokapi) | 🟢 no key | — | [`pokeapi.py`](scripts/sports/pokeapi.py) |
-| 227 | 🏅 Sports & Gaming | [Riot Games API (League of Legends, Valorant, TFT)](#riot-games-api-league-of-legends-valorant-tft) | 🔑 key | `RIOT_API_KEY` | [`riot_games.py`](scripts/sports/riot_games.py) |
-| 228 | 🏅 Sports & Gaming | [Sleeper API (fantasy football)](#sleeper-api-fantasy-football) | 🟢 no key | — | [`sleeper.py`](scripts/sports/sleeper.py) |
-| 229 | 🏅 Sports & Gaming | [Speedrun.com API](#speedruncom-api) | 🟢 no key | — | [`speedrun_com.py`](scripts/sports/speedrun_com.py) |
-| 230 | 🏅 Sports & Gaming | [StatsBomb Open Data (soccer event data)](#statsbomb-open-data-soccer-event-data) | 🟢 no key | — | [`statsbomb_open_data.py`](scripts/sports/statsbomb_open_data.py) |
-| 231 | 🏅 Sports & Gaming | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 232 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
-| 233 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
-| 234 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
-| 235 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
-| 236 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
-| 237 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
-| 238 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
-| 239 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
-| 240 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 241 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
-| 242 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 243 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
-| 244 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
-| 245 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
-| 246 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
-| 247 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
-| 248 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
+| 2 | 📰 News & Media | [GDELT Television 2.0 API (TV news captions)](#gdelt-television-20-api-tv-news-captions) | 🟢 no key | — | [`gdelt_tv.py`](scripts/news_media/gdelt_tv.py) |
+| 3 | 📰 News & Media | [GNews API](#gnews-api) | 🔑 key | `GNEWS_API_KEY` | [`gnews.py`](scripts/news_media/gnews.py) |
+| 4 | 📰 News & Media | [Google Fact Check Tools API](#google-fact-check-tools-api) | 🔑 key | `GOOGLE_FACTCHECK_API_KEY` | [`google_fact_check.py`](scripts/news_media/google_fact_check.py) |
+| 5 | 📰 News & Media | [The Guardian Open Platform](#the-guardian-open-platform) | 🔑 key | `GUARDIAN_API_KEY` | [`guardian.py`](scripts/news_media/guardian.py) |
+| 6 | 📰 News & Media | [Hacker News (Firebase API)](#hacker-news-firebase-api) | 🟢 no key | — | [`hacker_news.py`](scripts/news_media/hacker_news.py) |
+| 7 | 📰 News & Media | [Media Cloud (news research platform)](#media-cloud-news-research-platform) | 🔑 key | `MEDIACLOUD_API_KEY` | [`media_cloud.py`](scripts/news_media/media_cloud.py) |
+| 8 | 📰 News & Media | [Publisher RSS feeds (BBC, NPR, and others)](#publisher-rss-feeds-bbc-npr-and-others) | 🟢 no key | — | [`news_rss_feeds.py`](scripts/news_media/news_rss_feeds.py) |
+| 9 | 📰 News & Media | [NewsAPI.org](#newsapiorg) | 🔑 key | `NEWSAPI_KEY` | [`newsapi.py`](scripts/news_media/newsapi.py) |
+| 10 | 📰 News & Media | [New York Times APIs](#new-york-times-apis) | 🔑 key | `NYT_API_KEY` | [`nyt.py`](scripts/news_media/nyt.py) |
+| 11 | 📰 News & Media | [Wikimedia EventStreams (real-time edits)](#wikimedia-eventstreams-real-time-edits) | 🟢 no key | — | [`wikimedia_eventstreams.py`](scripts/news_media/wikimedia_eventstreams.py) |
+| 12 | 📰 News & Media | [Wikimedia Feed API (most read, in the news, on this day)](#wikimedia-feed-api-most-read-in-the-news-on-this-day) | 🟢 no key | — | [`wikimedia_featured_feed.py`](scripts/news_media/wikimedia_featured_feed.py) |
+| 13 | 📰 News & Media | [Wikimedia REST API (Pageviews)](#wikimedia-rest-api-pageviews) | 🟢 no key | — | [`wikipedia_pageviews.py`](scripts/news_media/wikipedia_pageviews.py) |
+| 14 | 💬 Social Media | [Apple App Store customer reviews (RSS JSON)](#apple-app-store-customer-reviews-rss-json) | 🟢 no key | — | [`app_store_reviews.py`](scripts/social_media/app_store_reviews.py) |
+| 15 | 💬 Social Media | [Bluesky (AT Protocol) Public AppView](#bluesky-at-protocol-public-appview) | 🟢 no key | — | [`bluesky.py`](scripts/social_media/bluesky.py) |
+| 16 | 💬 Social Media | [Lemmy (federated Reddit-like communities)](#lemmy-federated-reddit-like-communities) | 🟢 no key | — | [`lemmy.py`](scripts/social_media/lemmy.py) |
+| 17 | 💬 Social Media | [Lobsters (tech link aggregator)](#lobsters-tech-link-aggregator) | 🟢 no key | — | [`lobsters.py`](scripts/social_media/lobsters.py) |
+| 18 | 💬 Social Media | [Mastodon](#mastodon) | 🟢 no key | — | [`mastodon.py`](scripts/social_media/mastodon.py) |
+| 19 | 💬 Social Media | [Reddit Data API](#reddit-data-api) | 🔑 key | `REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET` | [`reddit.py`](scripts/social_media/reddit.py) |
+| 20 | 💬 Social Media | [Stack Exchange API](#stack-exchange-api) | 🟢 no key | — | [`stackexchange.py`](scripts/social_media/stackexchange.py) |
+| 21 | 💬 Social Media | [Steam user reviews API](#steam-user-reviews-api) | 🟢 no key | — | [`steam_reviews.py`](scripts/social_media/steam_reviews.py) |
+| 22 | 💬 Social Media | [TikTok Research API](#tiktok-research-api) | 🔑 key | `TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET` | [`tiktok_research.py`](scripts/social_media/tiktok_research.py) |
+| 23 | 💬 Social Media | [Twitch Helix API](#twitch-helix-api) | 🔑 key | `TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET` | [`twitch.py`](scripts/social_media/twitch.py) |
+| 24 | 💬 Social Media | [X (Twitter) API v2](#x-twitter-api-v2) | 🔑 key | `X_BEARER_TOKEN` | [`x_api.py`](scripts/social_media/x_api.py) |
+| 25 | 💬 Social Media | [YouTube Data API v3](#youtube-data-api-v3) | 🔑 key | `YOUTUBE_API_KEY` | [`youtube.py`](scripts/social_media/youtube.py) |
+| 26 | 🌦️ Weather, Climate & Environment | [EPA AirNow API (real-time air quality)](#epa-airnow-api-real-time-air-quality) | 🔑 key | `AIRNOW_API_KEY` | [`airnow.py`](scripts/weather_environment/airnow.py) |
+| 27 | 🌦️ Weather, Climate & Environment | [Climate TRACE (global emissions inventory)](#climate-trace-global-emissions-inventory) | 🟢 no key | — | [`climate_trace.py`](scripts/weather_environment/climate_trace.py) |
+| 28 | 🌦️ Weather, Climate & Environment | [U.S. Drought Monitor](#us-drought-monitor) | 🟢 no key | — | [`drought_monitor.py`](scripts/weather_environment/drought_monitor.py) |
+| 29 | 🌦️ Weather, Climate & Environment | [EPA Air Quality System (AQS) API](#epa-air-quality-system-aqs-api) | 🔑 key | `AQS_EMAIL, AQS_KEY` | [`epa_aqs.py`](scripts/weather_environment/epa_aqs.py) |
+| 30 | 🌦️ Weather, Climate & Environment | [EPA ECHO (Enforcement & Compliance History)](#epa-echo-enforcement--compliance-history) | 🟢 no key | — | [`epa_echo.py`](scripts/weather_environment/epa_echo.py) |
+| 31 | 🌦️ Weather, Climate & Environment | [EPA Envirofacts (Toxics Release Inventory and more)](#epa-envirofacts-toxics-release-inventory-and-more) | 🟢 no key | — | [`epa_envirofacts.py`](scripts/weather_environment/epa_envirofacts.py) |
+| 32 | 🌦️ Weather, Climate & Environment | [GBIF (Global Biodiversity Information Facility)](#gbif-global-biodiversity-information-facility) | 🟢 no key | — | [`gbif.py`](scripts/weather_environment/gbif.py) |
+| 33 | 🌦️ Weather, Climate & Environment | [iNaturalist API](#inaturalist-api) | 🟢 no key | — | [`inaturalist.py`](scripts/weather_environment/inaturalist.py) |
+| 34 | 🌦️ Weather, Climate & Environment | [NASA FIRMS (active fire detections)](#nasa-firms-active-fire-detections) | 🔑 key | `FIRMS_MAP_KEY` | [`nasa_firms.py`](scripts/weather_environment/nasa_firms.py) |
+| 35 | 🌦️ Weather, Climate & Environment | [NOAA Climate Data Online (CDO)](#noaa-climate-data-online-cdo) | 🔑 key | `NOAA_TOKEN` | [`noaa_cdo.py`](scripts/weather_environment/noaa_cdo.py) |
+| 36 | 🌦️ Weather, Climate & Environment | [NOAA Climate at a Glance](#noaa-climate-at-a-glance) | 🟢 no key | — | [`noaa_climate_at_a_glance.py`](scripts/weather_environment/noaa_climate_at_a_glance.py) |
+| 37 | 🌦️ Weather, Climate & Environment | [NOAA Global Monitoring Lab — Mauna Loa CO2](#noaa-global-monitoring-lab--mauna-loa-co2) | 🟢 no key | — | [`noaa_co2.py`](scripts/weather_environment/noaa_co2.py) |
+| 38 | 🌦️ Weather, Climate & Environment | [NOAA Tides & Currents (CO-OPS)](#noaa-tides--currents-co-ops) | 🟢 no key | — | [`noaa_tides.py`](scripts/weather_environment/noaa_tides.py) |
+| 39 | 🌦️ Weather, Climate & Environment | [US National Weather Service (api.weather.gov)](#us-national-weather-service-apiweathergov) | 🟢 no key | — | [`nws.py`](scripts/weather_environment/nws.py) |
+| 40 | 🌦️ Weather, Climate & Environment | [Open-Meteo](#open-meteo) | 🟢 no key | — | [`open_meteo.py`](scripts/weather_environment/open_meteo.py) |
+| 41 | 🌦️ Weather, Climate & Environment | [OpenAQ v3 (Air Quality)](#openaq-v3-air-quality) | 🔑 key | `OPENAQ_API_KEY` | [`openaq.py`](scripts/weather_environment/openaq.py) |
+| 42 | 🌦️ Weather, Climate & Environment | [OpenWeatherMap](#openweathermap) | 🔑 key | `OPENWEATHER_API_KEY` | [`openweathermap.py`](scripts/weather_environment/openweathermap.py) |
+| 43 | 🌦️ Weather, Climate & Environment | [USGS Earthquake Catalog](#usgs-earthquake-catalog) | 🟢 no key | — | [`usgs_earthquakes.py`](scripts/weather_environment/usgs_earthquakes.py) |
+| 44 | 💵 Finance & Economics | [Alpha Vantage](#alpha-vantage) | 🟢 no key | `ALPHAVANTAGE_API_KEY` | [`alpha_vantage.py`](scripts/finance_economics/alpha_vantage.py) |
+| 45 | 💵 Finance & Economics | [U.S. Bureau of Economic Analysis (BEA) API](#us-bureau-of-economic-analysis-bea-api) | 🔑 key | `BEA_API_KEY` | [`bea.py`](scripts/finance_economics/bea.py) |
+| 46 | 💵 Finance & Economics | [Bank for International Settlements (BIS) Data Portal API](#bank-for-international-settlements-bis-data-portal-api) | 🟢 no key | — | [`bis_data_portal.py`](scripts/finance_economics/bis_data_portal.py) |
+| 47 | 💵 Finance & Economics | [US Bureau of Labor Statistics (BLS)](#us-bureau-of-labor-statistics-bls) | 🟢 no key | `BLS_API_KEY (optional)` | [`bls.py`](scripts/finance_economics/bls.py) |
+| 48 | 💵 Finance & Economics | [CFTC Commitments of Traders (Public Reporting Environment)](#cftc-commitments-of-traders-public-reporting-environment) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cftc_cot.py`](scripts/finance_economics/cftc_cot.py) |
+| 49 | 💵 Finance & Economics | [Coinbase Exchange public market data](#coinbase-exchange-public-market-data) | 🟢 no key | — | [`coinbase_exchange.py`](scripts/finance_economics/coinbase_exchange.py) |
+| 50 | 💵 Finance & Economics | [CoinGecko](#coingecko) | 🟢 no key | — | [`coingecko.py`](scripts/finance_economics/coingecko.py) |
+| 51 | 💵 Finance & Economics | [European Central Bank Data Portal API](#european-central-bank-data-portal-api) | 🟢 no key | — | [`ecb_data_portal.py`](scripts/finance_economics/ecb_data_portal.py) |
+| 52 | 💵 Finance & Economics | [Eurostat API](#eurostat-api) | 🟢 no key | — | [`eurostat.py`](scripts/finance_economics/eurostat.py) |
+| 53 | 💵 Finance & Economics | [FDIC BankFind Suite API](#fdic-bankfind-suite-api) | 🟢 no key | — | [`fdic_bankfind.py`](scripts/finance_economics/fdic_bankfind.py) |
+| 54 | 💵 Finance & Economics | [Frankfurter (ECB exchange rates)](#frankfurter-ecb-exchange-rates) | 🟢 no key | — | [`frankfurter.py`](scripts/finance_economics/frankfurter.py) |
+| 55 | 💵 Finance & Economics | [FRED (Federal Reserve Economic Data)](#fred-federal-reserve-economic-data) | 🔑 key | `FRED_API_KEY` | [`fred.py`](scripts/finance_economics/fred.py) |
+| 56 | 💵 Finance & Economics | [Kenneth French Data Library (Fama-French factors)](#kenneth-french-data-library-fama-french-factors) | 🟢 no key | — | [`french_data_library.py`](scripts/finance_economics/french_data_library.py) |
+| 57 | 💵 Finance & Economics | [GLEIF Legal Entity Identifier (LEI) API](#gleif-legal-entity-identifier-lei-api) | 🟢 no key | — | [`gleif.py`](scripts/finance_economics/gleif.py) |
+| 58 | 💵 Finance & Economics | [IMF DataMapper API (World Economic Outlook)](#imf-datamapper-api-world-economic-outlook) | 🟢 no key | — | [`imf_datamapper.py`](scripts/finance_economics/imf_datamapper.py) |
+| 59 | 💵 Finance & Economics | [Massive (formerly Polygon.io) stock market API](#massive-formerly-polygonio-stock-market-api) | 🔑 key | `MASSIVE_API_KEY` | [`massive_stocks.py`](scripts/finance_economics/massive_stocks.py) |
+| 60 | 💵 Finance & Economics | [New York Fed Markets Data API](#new-york-fed-markets-data-api) | 🟢 no key | — | [`nyfed_markets.py`](scripts/finance_economics/nyfed_markets.py) |
+| 61 | 💵 Finance & Economics | [SEC EDGAR (data.sec.gov)](#sec-edgar-datasecgov) | 🟢 no key | — | [`sec_edgar.py`](scripts/finance_economics/sec_edgar.py) |
+| 62 | 💵 Finance & Economics | [US Treasury Fiscal Data](#us-treasury-fiscal-data) | 🟢 no key | — | [`treasury_fiscal.py`](scripts/finance_economics/treasury_fiscal.py) |
+| 63 | 💵 Finance & Economics | [U.S. Treasury daily yield curve rates](#us-treasury-daily-yield-curve-rates) | 🟢 no key | — | [`treasury_yield_curve.py`](scripts/finance_economics/treasury_yield_curve.py) |
+| 64 | 💵 Finance & Economics | [UN Comtrade (international trade)](#un-comtrade-international-trade) | 🟢 no key | `COMTRADE_API_KEY (optional)` | [`un_comtrade.py`](scripts/finance_economics/un_comtrade.py) |
+| 65 | 💵 Finance & Economics | [World Bank Indicators API](#world-bank-indicators-api) | 🟢 no key | — | [`world_bank.py`](scripts/finance_economics/world_bank.py) |
+| 66 | 👥 Census & Demographics | [IPUMS API (microdata)](#ipums-api-microdata) | 🔑 key | `IPUMS_API_KEY` | [`ipums.py`](scripts/census_demographics/ipums.py) |
+| 67 | 👥 Census & Demographics | [UN Data Portal — World Population Prospects](#un-data-portal--world-population-prospects) | 🔑 key | `UN_POP_TOKEN` | [`un_population.py`](scripts/census_demographics/un_population.py) |
+| 68 | 👥 Census & Demographics | [US Census Bureau Data API](#us-census-bureau-data-api) | 🔑 key | `CENSUS_API_KEY` | [`us_census.py`](scripts/census_demographics/us_census.py) |
+| 69 | 🏠 Housing & Real Estate | [CFPB Consumer Complaint Database](#cfpb-consumer-complaint-database) | 🟢 no key | — | [`cfpb_complaints.py`](scripts/housing/cfpb_complaints.py) |
+| 70 | 🏠 Housing & Real Estate | [FHFA House Price Index](#fhfa-house-price-index) | 🟢 no key | — | [`fhfa_hpi.py`](scripts/housing/fhfa_hpi.py) |
+| 71 | 🏠 Housing & Real Estate | [HMDA Data Browser (mortgage applications)](#hmda-data-browser-mortgage-applications) | 🟢 no key | — | [`hmda.py`](scripts/housing/hmda.py) |
+| 72 | 🏠 Housing & Real Estate | [HUD User API (Fair Market Rents, Income Limits, ZIP crosswalk)](#hud-user-api-fair-market-rents-income-limits-zip-crosswalk) | 🔑 key | `HUD_API_TOKEN` | [`hud_user.py`](scripts/housing/hud_user.py) |
+| 73 | 🏠 Housing & Real Estate | [OpenFEMA — Flood Insurance Claims & Disaster Declarations](#openfema--flood-insurance-claims--disaster-declarations) | 🟢 no key | — | [`openfema_nfip.py`](scripts/housing/openfema_nfip.py) |
+| 74 | 🏠 Housing & Real Estate | [Redfin Data Center (housing market tracker)](#redfin-data-center-housing-market-tracker) | 🟢 no key | — | [`redfin_data_center.py`](scripts/housing/redfin_data_center.py) |
+| 75 | 🏠 Housing & Real Estate | [RentCast (property records, rent & value estimates)](#rentcast-property-records-rent--value-estimates) | 🔑 key | `RENTCAST_API_KEY` | [`rentcast.py`](scripts/housing/rentcast.py) |
+| 76 | 🏠 Housing & Real Estate | [Zillow Research Data (ZHVI home values, ZORI rents)](#zillow-research-data-zhvi-home-values-zori-rents) | 🟢 no key | — | [`zillow_research.py`](scripts/housing/zillow_research.py) |
+| 77 | 🏛️ Political Science & Government | [ACLED (Armed Conflict Location & Event Data)](#acled-armed-conflict-location--event-data) | 🔑 key | `ACLED_EMAIL, ACLED_PASSWORD` | [`acled.py`](scripts/politics_government/acled.py) |
+| 78 | 🏛️ Political Science & Government | [Congress.gov API](#congressgov-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`congress_gov.py`](scripts/politics_government/congress_gov.py) |
+| 79 | 🏛️ Political Science & Government | [European Parliament Open Data API](#european-parliament-open-data-api) | 🟢 no key | — | [`european_parliament.py`](scripts/politics_government/european_parliament.py) |
+| 80 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
+| 81 | 🏛️ Political Science & Government | [GovInfo API (U.S. Government Publishing Office)](#govinfo-api-us-government-publishing-office) | 🟢 no key | `DATA_GOV_API_KEY` | [`govinfo.py`](scripts/politics_government/govinfo.py) |
+| 82 | 🏛️ Political Science & Government | [Grants.gov Search API](#grantsgov-search-api) | 🟢 no key | — | [`grants_gov.py`](scripts/politics_government/grants_gov.py) |
+| 83 | 🏛️ Political Science & Government | [Harvard Dataverse (MIT Election Lab & replication data)](#harvard-dataverse-mit-election-lab--replication-data) | 🟢 no key | `DATAVERSE_API_TOKEN (optional)` | [`harvard_dataverse.py`](scripts/politics_government/harvard_dataverse.py) |
+| 84 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
+| 85 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
+| 86 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
+| 87 | 🏛️ Political Science & Government | [Lobbying Disclosure Act (LDA) API](#lobbying-disclosure-act-lda-api) | 🟢 no key | `LDA_API_KEY (optional)` | [`senate_lda.py`](scripts/politics_government/senate_lda.py) |
+| 88 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
+| 89 | 🏛️ Political Science & Government | [USAJOBS Search API (federal jobs)](#usajobs-search-api-federal-jobs) | 🔑 key | `USAJOBS_API_KEY, USAJOBS_EMAIL` | [`usajobs.py`](scripts/politics_government/usajobs.py) |
+| 90 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
+| 91 | ⚖️ Law & Justice | [CourtListener (Free Law Project)](#courtlistener-free-law-project) | 🟢 no key | `COURTLISTENER_TOKEN (optional)` | [`courtlistener.py`](scripts/law/courtlistener.py) |
+| 92 | ⚖️ Law & Justice | [U.S. Department of Justice News API](#us-department-of-justice-news-api) | 🟢 no key | — | [`doj_press_releases.py`](scripts/law/doj_press_releases.py) |
+| 93 | ⚖️ Law & Justice | [eCFR API (Code of Federal Regulations)](#ecfr-api-code-of-federal-regulations) | 🟢 no key | — | [`ecfr.py`](scripts/law/ecfr.py) |
+| 94 | ⚖️ Law & Justice | [FBI Crime Data Explorer API](#fbi-crime-data-explorer-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`fbi_crime_data.py`](scripts/law/fbi_crime_data.py) |
+| 95 | ⚖️ Law & Justice | [Oyez (U.S. Supreme Court cases)](#oyez-us-supreme-court-cases) | 🟢 no key | — | [`oyez.py`](scripts/law/oyez.py) |
+| 96 | ⚖️ Law & Justice | [Supreme Court Database (SCDB)](#supreme-court-database-scdb) | 🟢 no key | — | [`supreme_court_database.py`](scripts/law/supreme_court_database.py) |
+| 97 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
+| 98 | 🩺 Health & Social Science | [ChEMBL (drug discovery bioactivity)](#chembl-drug-discovery-bioactivity) | 🟢 no key | — | [`chembl.py`](scripts/health/chembl.py) |
+| 99 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
+| 100 | 🩺 Health & Social Science | [CMS Medicare Part D Prescribers (data.cms.gov)](#cms-medicare-part-d-prescribers-datacmsgov) | 🟢 no key | — | [`cms_part_d.py`](scripts/health/cms_part_d.py) |
+| 101 | 🩺 Health & Social Science | [CMS Provider Data Catalog (Care Compare)](#cms-provider-data-catalog-care-compare) | 🟢 no key | — | [`cms_provider_data.py`](scripts/health/cms_provider_data.py) |
+| 102 | 🩺 Health & Social Science | [DailyMed (NLM drug labels)](#dailymed-nlm-drug-labels) | 🟢 no key | — | [`dailymed.py`](scripts/health/dailymed.py) |
+| 103 | 🩺 Health & Social Science | [Delphi Epidata (CMU disease surveillance)](#delphi-epidata-cmu-disease-surveillance) | 🟢 no key | `DELPHI_API_KEY (optional)` | [`delphi_epidata.py`](scripts/health/delphi_epidata.py) |
+| 104 | 🩺 Health & Social Science | [Ensembl REST API (genomics)](#ensembl-rest-api-genomics) | 🟢 no key | — | [`ensembl.py`](scripts/health/ensembl.py) |
+| 105 | 🩺 Health & Social Science | [Europe PMC](#europe-pmc) | 🟢 no key | — | [`europe_pmc.py`](scripts/health/europe_pmc.py) |
+| 106 | 🩺 Health & Social Science | [HAPI FHIR public test server (synthetic EHR data)](#hapi-fhir-public-test-server-synthetic-ehr-data) | 🟢 no key | — | [`hapi_fhir.py`](scripts/health/hapi_fhir.py) |
+| 107 | 🩺 Health & Social Science | [MedlinePlus Connect (patient education)](#medlineplus-connect-patient-education) | 🟢 no key | — | [`medlineplus_connect.py`](scripts/health/medlineplus_connect.py) |
+| 108 | 🩺 Health & Social Science | [NLM Clinical Table Search Service (ICD-10-CM, LOINC, conditions)](#nlm-clinical-table-search-service-icd-10-cm-loinc-conditions) | 🟢 no key | — | [`nlm_clinical_tables.py`](scripts/health/nlm_clinical_tables.py) |
+| 109 | 🩺 Health & Social Science | [NPPES NPI Registry (healthcare providers)](#nppes-npi-registry-healthcare-providers) | 🟢 no key | — | [`nppes_npi.py`](scripts/health/nppes_npi.py) |
+| 110 | 🩺 Health & Social Science | [Open Targets Platform (GraphQL)](#open-targets-platform-graphql) | 🟢 no key | — | [`open_targets.py`](scripts/health/open_targets.py) |
+| 111 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
+| 112 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
+| 113 | 🩺 Health & Social Science | [PubMed (NCBI E-utilities)](#pubmed-ncbi-e-utilities) | 🟢 no key | `NCBI_API_KEY (optional)` | [`pubmed.py`](scripts/health/pubmed.py) |
+| 114 | 🩺 Health & Social Science | [RxNorm / RxNav (NLM drug terminology)](#rxnorm--rxnav-nlm-drug-terminology) | 🟢 no key | — | [`rxnorm.py`](scripts/health/rxnorm.py) |
+| 115 | 🩺 Health & Social Science | [UniProt (proteins)](#uniprot-proteins) | 🟢 no key | — | [`uniprot.py`](scripts/health/uniprot.py) |
+| 116 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
+| 117 | 🩺 Health & Social Science | [WHO ICD-11 API](#who-icd-11-api) | 🔑 key | `ICD_CLIENT_ID, ICD_CLIENT_SECRET` | [`who_icd11.py`](scripts/health/who_icd11.py) |
+| 118 | 🌾 Agriculture & Food | [USDA AMS Market News (MyMarketNews API)](#usda-ams-market-news-mymarketnews-api) | 🔑 key | `AMS_API_KEY` | [`ams_market_news.py`](scripts/agriculture/ams_market_news.py) |
+| 119 | 🌾 Agriculture & Food | [USDA NASS CropScape (Cropland Data Layer)](#usda-nass-cropscape-cropland-data-layer) | 🟢 no key | — | [`cropscape.py`](scripts/agriculture/cropscape.py) |
+| 120 | 🌾 Agriculture & Food | [USDA ERS — ARMS Farm Financial Data](#usda-ers--arms-farm-financial-data) | 🟢 no key | `DATA_GOV_API_KEY` | [`ers_arms.py`](scripts/agriculture/ers_arms.py) |
+| 121 | 🌾 Agriculture & Food | [USDA FAS — Production, Supply & Distribution (PSD) and trade](#usda-fas--production-supply--distribution-psd-and-trade) | 🟢 no key | `DATA_GOV_API_KEY` | [`fas_psd.py`](scripts/agriculture/fas_psd.py) |
+| 122 | 🌾 Agriculture & Food | [USDA FoodData Central](#usda-fooddata-central) | 🟢 no key | `DATA_GOV_API_KEY` | [`fooddata_central.py`](scripts/agriculture/fooddata_central.py) |
+| 123 | 🌾 Agriculture & Food | [USDA NASS Quick Stats](#usda-nass-quick-stats) | 🔑 key | `NASS_API_KEY` | [`nass_quickstats.py`](scripts/agriculture/nass_quickstats.py) |
+| 124 | 🌾 Agriculture & Food | [Open Food Facts](#open-food-facts) | 🟢 no key | — | [`open_food_facts.py`](scripts/agriculture/open_food_facts.py) |
+| 125 | 🌾 Agriculture & Food | [USDA NRCS Soil Data Access (SSURGO)](#usda-nrcs-soil-data-access-ssurgo) | 🟢 no key | — | [`soil_data_access.py`](scripts/agriculture/soil_data_access.py) |
+| 126 | 🌾 Agriculture & Food | [ISRIC SoilGrids (global soil properties)](#isric-soilgrids-global-soil-properties) | 🟢 no key | — | [`soilgrids.py`](scripts/agriculture/soilgrids.py) |
+| 127 | 🌾 Agriculture & Food | [TheMealDB (recipes)](#themealdb-recipes) | 🔑 key | `THEMEALDB_KEY (optional)` | [`themealdb.py`](scripts/agriculture/themealdb.py) |
+| 128 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
+| 129 | 🎓 Education | [Coursera Catalog API](#coursera-catalog-api) | 🟢 no key | — | [`coursera_catalog.py`](scripts/education/coursera_catalog.py) |
+| 130 | 🎓 Education | [Datamuse (word-finding API)](#datamuse-word-finding-api) | 🟢 no key | — | [`datamuse.py`](scripts/education/datamuse.py) |
+| 131 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
+| 132 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
+| 133 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
+| 134 | 🎓 Education | [OECD Data API — Education at a Glance](#oecd-data-api--education-at-a-glance) | 🟢 no key | — | [`oecd_education.py`](scripts/education/oecd_education.py) |
+| 135 | 🎓 Education | [Open Trivia Database](#open-trivia-database) | 🟢 no key | — | [`open_trivia_db.py`](scripts/education/open_trivia_db.py) |
+| 136 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
+| 137 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
+| 138 | 🎓 Education | [World Bank EdStats (education statistics)](#world-bank-edstats-education-statistics) | 🟢 no key | — | [`world_bank_edstats.py`](scripts/education/world_bank_edstats.py) |
+| 139 | 💼 Jobs & Labor | [Adzuna Jobs API](#adzuna-jobs-api) | 🔑 key | `ADZUNA_APP_ID, ADZUNA_APP_KEY` | [`adzuna.py`](scripts/jobs/adzuna.py) |
+| 140 | 💼 Jobs & Labor | [Ashby Job Postings API (startup career pages)](#ashby-job-postings-api-startup-career-pages) | 🟢 no key | — | [`ashby_job_board.py`](scripts/jobs/ashby_job_board.py) |
+| 141 | 💼 Jobs & Labor | [CareerOneStop Web API (U.S. Department of Labor)](#careeronestop-web-api-us-department-of-labor) | 🔑 key | `CAREERONESTOP_USER_ID, CAREERONESTOP_TOKEN` | [`careeronestop.py`](scripts/jobs/careeronestop.py) |
+| 142 | 💼 Jobs & Labor | [ESCO API (European skills & occupations taxonomy)](#esco-api-european-skills--occupations-taxonomy) | 🟢 no key | — | [`esco.py`](scripts/jobs/esco.py) |
+| 143 | 💼 Jobs & Labor | [Greenhouse Job Board API (company career pages)](#greenhouse-job-board-api-company-career-pages) | 🟢 no key | — | [`greenhouse_job_boards.py`](scripts/jobs/greenhouse_job_boards.py) |
+| 144 | 💼 Jobs & Labor | [Hacker News 'Who is hiring?' (via Algolia HN Search)](#hacker-news-who-is-hiring-via-algolia-hn-search) | 🟢 no key | — | [`hn_whos_hiring.py`](scripts/jobs/hn_whos_hiring.py) |
+| 145 | 💼 Jobs & Labor | [ILOSTAT (International Labour Organization)](#ilostat-international-labour-organization) | 🟢 no key | — | [`ilostat.py`](scripts/jobs/ilostat.py) |
+| 146 | 💼 Jobs & Labor | [Census LEHD LODES (jobs by census block)](#census-lehd-lodes-jobs-by-census-block) | 🟢 no key | — | [`lehd_lodes.py`](scripts/jobs/lehd_lodes.py) |
+| 147 | 💼 Jobs & Labor | [Lever Postings API (company career pages)](#lever-postings-api-company-career-pages) | 🟢 no key | — | [`lever_postings.py`](scripts/jobs/lever_postings.py) |
+| 148 | 💼 Jobs & Labor | [O*NET Web Services (occupations & skills)](#onet-web-services-occupations--skills) | 🔑 key | `ONET_API_KEY` | [`onet.py`](scripts/jobs/onet.py) |
+| 149 | 💼 Jobs & Labor | [Remotive (remote jobs)](#remotive-remote-jobs) | 🟢 no key | — | [`remotive.py`](scripts/jobs/remotive.py) |
+| 150 | 💼 Jobs & Labor | [The Muse Public API (jobs)](#the-muse-public-api-jobs) | 🟢 no key | `THEMUSE_API_KEY (optional)` | [`the_muse.py`](scripts/jobs/the_muse.py) |
+| 151 | 🔬 Science, Space & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 152 | 🔬 Science, Space & Research | [CelesTrak (satellite orbital elements)](#celestrak-satellite-orbital-elements) | 🟢 no key | — | [`celestrak.py`](scripts/science_research/celestrak.py) |
+| 153 | 🔬 Science, Space & Research | [CERN Open Data Portal](#cern-open-data-portal) | 🟢 no key | — | [`cern_open_data.py`](scripts/science_research/cern_open_data.py) |
+| 154 | 🔬 Science, Space & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 155 | 🔬 Science, Space & Research | [JPL Small-Body Close Approach & SBDB APIs](#jpl-small-body-close-approach--sbdb-apis) | 🟢 no key | — | [`jpl_close_approach.py`](scripts/science_research/jpl_close_approach.py) |
+| 156 | 🔬 Science, Space & Research | [JPL Fireball (bolide) API](#jpl-fireball-bolide-api) | 🟢 no key | — | [`jpl_fireball.py`](scripts/science_research/jpl_fireball.py) |
+| 157 | 🔬 Science, Space & Research | [JPL Horizons (ephemerides)](#jpl-horizons-ephemerides) | 🟢 no key | — | [`jpl_horizons.py`](scripts/science_research/jpl_horizons.py) |
+| 158 | 🔬 Science, Space & Research | [Launch Library 2 (The Space Devs)](#launch-library-2-the-space-devs) | 🟢 no key | — | [`launch_library.py`](scripts/science_research/launch_library.py) |
+| 159 | 🔬 Science, Space & Research | [Materials Project API](#materials-project-api) | 🔑 key | `MP_API_KEY` | [`materials_project.py`](scripts/science_research/materials_project.py) |
+| 160 | 🔬 Science, Space & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 161 | 🔬 Science, Space & Research | [NASA Exoplanet Archive (TAP)](#nasa-exoplanet-archive-tap) | 🟢 no key | — | [`nasa_exoplanet_archive.py`](scripts/science_research/nasa_exoplanet_archive.py) |
+| 162 | 🔬 Science, Space & Research | [NASA Image and Video Library](#nasa-image-and-video-library) | 🟢 no key | — | [`nasa_image_library.py`](scripts/science_research/nasa_image_library.py) |
+| 163 | 🔬 Science, Space & Research | [NIH RePORTER API](#nih-reporter-api) | 🟢 no key | — | [`nih_reporter.py`](scripts/science_research/nih_reporter.py) |
+| 164 | 🔬 Science, Space & Research | [NOAA Space Weather Prediction Center (SWPC) data](#noaa-space-weather-prediction-center-swpc-data) | 🟢 no key | — | [`noaa_swpc.py`](scripts/science_research/noaa_swpc.py) |
+| 165 | 🔬 Science, Space & Research | [NSF Award Search API](#nsf-award-search-api) | 🟢 no key | — | [`nsf_awards.py`](scripts/science_research/nsf_awards.py) |
+| 166 | 🔬 Science, Space & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 167 | 🔬 Science, Space & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 168 | 🔬 Science, Space & Research | [RCSB Protein Data Bank (search + data APIs)](#rcsb-protein-data-bank-search--data-apis) | 🟢 no key | — | [`rcsb_pdb.py`](scripts/science_research/rcsb_pdb.py) |
+| 169 | 🔬 Science, Space & Research | [ROR (Research Organization Registry)](#ror-research-organization-registry) | 🟢 no key | — | [`ror.py`](scripts/science_research/ror.py) |
+| 170 | 🔬 Science, Space & Research | [SDSS SkyServer (Sloan Digital Sky Survey)](#sdss-skyserver-sloan-digital-sky-survey) | 🟢 no key | — | [`sdss_skyserver.py`](scripts/science_research/sdss_skyserver.py) |
+| 171 | 🔬 Science, Space & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 172 | 🔬 Science, Space & Research | [Spaceflight News API (SNAPI)](#spaceflight-news-api-snapi) | 🟢 no key | — | [`spaceflight_news.py`](scripts/science_research/spaceflight_news.py) |
+| 173 | 🔬 Science, Space & Research | [Zenodo (research data & software repository)](#zenodo-research-data--software-repository) | 🟢 no key | — | [`zenodo.py`](scripts/science_research/zenodo.py) |
+| 174 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 175 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 176 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 177 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 178 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 179 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 180 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 181 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 182 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 183 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 184 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 185 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 186 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
+| 187 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 188 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 189 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
+| 190 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 191 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 192 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
+| 193 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
+| 194 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
+| 195 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 196 | 🗺️ Transportation, Travel & Geospatial | [Amtraker (live Amtrak train tracking, unofficial)](#amtraker-live-amtrak-train-tracking-unofficial) | 🟢 no key | — | [`amtraker.py`](scripts/transportation_geo/amtraker.py) |
+| 197 | 🗺️ Transportation, Travel & Geospatial | [AviationWeather.gov Data API (METAR/TAF)](#aviationweathergov-data-api-metartaf) | 🟢 no key | — | [`aviation_weather.py`](scripts/transportation_geo/aviation_weather.py) |
+| 198 | 🗺️ Transportation, Travel & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 199 | 🗺️ Transportation, Travel & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 200 | 🗺️ Transportation, Travel & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 201 | 🗺️ Transportation, Travel & Geospatial | [Entur (Norway national journey planner, GraphQL)](#entur-norway-national-journey-planner-graphql) | 🟢 no key | — | [`entur.py`](scripts/transportation_geo/entur.py) |
+| 202 | 🗺️ Transportation, Travel & Geospatial | [FAA NAS Airport Status (delays & ground stops)](#faa-nas-airport-status-delays--ground-stops) | 🟢 no key | — | [`faa_airport_status.py`](scripts/transportation_geo/faa_airport_status.py) |
+| 203 | 🗺️ Transportation, Travel & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 204 | 🗺️ Transportation, Travel & Geospatial | [GeoNames (place names gazetteer)](#geonames-place-names-gazetteer) | 🔑 key | `GEONAMES_USERNAME` | [`geonames.py`](scripts/transportation_geo/geonames.py) |
+| 205 | 🗺️ Transportation, Travel & Geospatial | [Inside Airbnb (short-term rental data)](#inside-airbnb-short-term-rental-data) | 🟢 no key | — | [`inside_airbnb.py`](scripts/transportation_geo/inside_airbnb.py) |
+| 206 | 🗺️ Transportation, Travel & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 207 | 🗺️ Transportation, Travel & Geospatial | [MTA Subway Hourly Ridership (NY Open Data)](#mta-subway-hourly-ridership-ny-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`mta_ridership.py`](scripts/transportation_geo/mta_ridership.py) |
+| 208 | 🗺️ Transportation, Travel & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 209 | 🗺️ Transportation, Travel & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 210 | 🗺️ Transportation, Travel & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 211 | 🗺️ Transportation, Travel & Geospatial | [NYC Taxi & Limousine Commission trip records](#nyc-taxi--limousine-commission-trip-records) | 🟢 no key | — | [`nyc_tlc_trips.py`](scripts/transportation_geo/nyc_tlc_trips.py) |
+| 212 | 🗺️ Transportation, Travel & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 213 | 🗺️ Transportation, Travel & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 214 | 🗺️ Transportation, Travel & Geospatial | [OurAirports (global airports dataset)](#ourairports-global-airports-dataset) | 🟢 no key | — | [`ourairports.py`](scripts/transportation_geo/ourairports.py) |
+| 215 | 🗺️ Transportation, Travel & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 216 | 🗺️ Transportation, Travel & Geospatial | [U.S. State Department Travel Advisories](#us-state-department-travel-advisories) | 🟢 no key | — | [`state_travel_advisories.py`](scripts/transportation_geo/state_travel_advisories.py) |
+| 217 | 🗺️ Transportation, Travel & Geospatial | [Swiss public transport API (transport.opendata.ch)](#swiss-public-transport-api-transportopendatach) | 🟢 no key | — | [`swiss_transport.py`](scripts/transportation_geo/swiss_transport.py) |
+| 218 | 🗺️ Transportation, Travel & Geospatial | [Transport for London Unified API](#transport-for-london-unified-api) | 🟢 no key | `TFL_APP_KEY (optional)` | [`tfl_unified.py`](scripts/transportation_geo/tfl_unified.py) |
+| 219 | 🗺️ Transportation, Travel & Geospatial | [TomTom Traffic API](#tomtom-traffic-api) | 🔑 key | `TOMTOM_API_KEY` | [`tomtom_traffic.py`](scripts/transportation_geo/tomtom_traffic.py) |
+| 220 | 🗺️ Transportation, Travel & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 221 | 🗺️ Transportation, Travel & Geospatial | [Wikivoyage (MediaWiki API)](#wikivoyage-mediawiki-api) | 🟢 no key | — | [`wikivoyage.py`](scripts/transportation_geo/wikivoyage.py) |
+| 222 | 🗺️ Transportation, Travel & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 223 | 🏅 Sports & Gaming | [API-Football (API-Sports)](#api-football-api-sports) | 🔑 key | `APISPORTS_KEY` | [`api_football.py`](scripts/sports/api_football.py) |
+| 224 | 🏅 Sports & Gaming | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 225 | 🏅 Sports & Gaming | [Baseball Savant (MLB Statcast)](#baseball-savant-mlb-statcast) | 🟢 no key | — | [`baseball_savant.py`](scripts/sports/baseball_savant.py) |
+| 226 | 🏅 Sports & Gaming | [CheapShark (PC game deals)](#cheapshark-pc-game-deals) | 🟢 no key | — | [`cheapshark.py`](scripts/sports/cheapshark.py) |
+| 227 | 🏅 Sports & Gaming | [Chess.com Published-Data API](#chesscom-published-data-api) | 🟢 no key | — | [`chess_com.py`](scripts/sports/chess_com.py) |
+| 228 | 🏅 Sports & Gaming | [CollegeFootballData.com API](#collegefootballdatacom-api) | 🔑 key | `CFBD_API_KEY` | [`college_football_data.py`](scripts/sports/college_football_data.py) |
+| 229 | 🏅 Sports & Gaming | [Cricsheet (ball-by-ball cricket data)](#cricsheet-ball-by-ball-cricket-data) | 🟢 no key | — | [`cricsheet.py`](scripts/sports/cricsheet.py) |
+| 230 | 🏅 Sports & Gaming | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 231 | 🏅 Sports & Gaming | [Fantasy Premier League API](#fantasy-premier-league-api) | 🟢 no key | — | [`fantasy_premier_league.py`](scripts/sports/fantasy_premier_league.py) |
+| 232 | 🏅 Sports & Gaming | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 233 | 🏅 Sports & Gaming | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 234 | 🏅 Sports & Gaming | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 235 | 🏅 Sports & Gaming | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 236 | 🏅 Sports & Gaming | [nflverse data (NFL play-by-play & stats)](#nflverse-data-nfl-play-by-play--stats) | 🟢 no key | — | [`nflverse.py`](scripts/sports/nflverse.py) |
+| 237 | 🏅 Sports & Gaming | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 238 | 🏅 Sports & Gaming | [OpenDota API (Dota 2 esports & matches)](#opendota-api-dota-2-esports--matches) | 🟢 no key | `OPENDOTA_API_KEY (optional)` | [`opendota.py`](scripts/sports/opendota.py) |
+| 239 | 🏅 Sports & Gaming | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 240 | 🏅 Sports & Gaming | [PokéAPI](#pokapi) | 🟢 no key | — | [`pokeapi.py`](scripts/sports/pokeapi.py) |
+| 241 | 🏅 Sports & Gaming | [Riot Games API (League of Legends, Valorant, TFT)](#riot-games-api-league-of-legends-valorant-tft) | 🔑 key | `RIOT_API_KEY` | [`riot_games.py`](scripts/sports/riot_games.py) |
+| 242 | 🏅 Sports & Gaming | [Sleeper API (fantasy football)](#sleeper-api-fantasy-football) | 🟢 no key | — | [`sleeper.py`](scripts/sports/sleeper.py) |
+| 243 | 🏅 Sports & Gaming | [Speedrun.com API](#speedruncom-api) | 🟢 no key | — | [`speedrun_com.py`](scripts/sports/speedrun_com.py) |
+| 244 | 🏅 Sports & Gaming | [StatsBomb Open Data (soccer event data)](#statsbomb-open-data-soccer-event-data) | 🟢 no key | — | [`statsbomb_open_data.py`](scripts/sports/statsbomb_open_data.py) |
+| 245 | 🏅 Sports & Gaming | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 246 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
+| 247 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
+| 248 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
+| 249 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
+| 250 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
+| 251 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
+| 252 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
+| 253 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
+| 254 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 255 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
+| 256 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 257 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
+| 258 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
+| 259 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
+| 260 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 261 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
+| 262 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -365,6 +379,170 @@ def main():
     "language": "English",
     "sourcecountry": "United States"
   }
+]
+```
+</details>
+
+---
+
+### GDELT Television 2.0 API (TV news captions)
+
+| | |
+|:--|:--|
+| **Docs** | https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/ |
+| **Auth** | None |
+| **Register / token** | No registration. Searches closed captions of U.S. and international TV news (Internet Archive TV News Archive, 2009 onward). Note: queries for periods after mid-2024 currently return no data (the archive stopped updating after the Internet Archive's 2024 outage), so treat it as a historical source. |
+| **Script** | [`scripts/news_media/gdelt_tv.py`](scripts/news_media/gdelt_tv.py) |
+
+**What you can get:**
+
+- Share of airtime mentioning a phrase, per station and day (CNN, Fox News, MSNBC, BBC, network evening news...)
+- Station comparisons, top clips with links, word clouds of co-occurring words
+- 15-second resolution caption matches
+
+**Capstone ideas:** Media attention and partisan agenda-setting (CNN vs. Fox vs. MSNBC), coverage of elections, climate or wars.
+
+**Endpoint:** `GET https://api.gdeltproject.org/api/v2/tv/tv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Keywords plus at least one station:NAME (OR several in parentheses) | `climate (station:CNN OR station:FOXNEWS OR station:MSNBC)` |
+| `mode` | timelinevol \| stationchart \| clipgallery \| wordcloud \| timelinevolnorm | `stationchart` |
+| `startdatetime / enddatetime` | YYYYMMDDHHMMSS (use dates before mid-2024) | `20240101000000 / 20240701000000` |
+| `format` | json \| csv \| html | `json` |
+| `maxrecords` | For clipgallery (max 3,000) | `10` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api.gdeltproject.org/api/v2/tv/tv", params={
+        "query": '"climate change" (station:CNN OR station:FOXNEWS OR station:MSNBC)', "mode": "stationchart",
+        "format": "json", "startdatetime": "20240101000000", "enddatetime": "20240701000000"})
+    show({"query": '"climate change" on cable news, Jan-Jun 2024',
+          "pct_of_15s_airtime_blocks": {s["station"]: s["count"] for s in d["stationchart"]}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "query": "\"climate change\" on cable news, Jan-Jun 2024",
+  "pct_of_15s_airtime_blocks": {
+    "CNN": 0.1189,
+    "FOX News": 0.1024,
+    "MSNBC": 0.066
+  }
+}
+```
+</details>
+
+---
+
+### GNews API
+
+| | |
+|:--|:--|
+| **Docs** | https://gnews.io/docs/v4 |
+| **Auth** | API key (query `apikey`) |
+| **Register / token** | Sign up at https://gnews.io for a free key: 100 requests/day, up to 10 articles per request, development use. An alternative to NewsAPI.org with search by language and country. |
+| **Env var** | `GNEWS_API_KEY` |
+| **Script** | [`scripts/news_media/gnews.py`](scripts/news_media/gnews.py) |
+
+**What you can get:**
+
+- Search articles from 80,000+ sources: title, description, content snippet, URL, image, published time, source
+- Top headlines by category (world, nation, business, technology, science, health, sports, entertainment)
+- Filters for language, country, date range, and which fields to search
+
+**Capstone ideas:** Multilingual news monitoring, headline classification, comparing coverage across countries.
+
+**Endpoint:** `GET https://gnews.io/api/v4/{search \| top-headlines}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Query with AND/OR/NOT and quotes | `"artificial intelligence" AND regulation` |
+| `lang / country` | Two-letter codes | `en / us` |
+| `from / to` | ISO 8601 dates | `2026-10-01T00:00:00Z` |
+| `in` | Fields to search: title, description, content | `title` |
+| `category (top-headlines)` | general \| world \| nation \| business \| technology \| science \| health \| sports \| entertainment | `technology` |
+| `max / page` | Up to 10 per request on the free plan | `10` |
+| `apikey` | Your key | `<GNEWS_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://gnews.io/api/v4/search", params={"q": '"artificial intelligence" AND regulation', "lang": "en",
+                                                      "max": 5, "apikey": key("GNEWS_API_KEY")})
+    show({"totalArticles": d["totalArticles"], "articles": [
+        {"title": a["title"], "source": a["source"]["name"], "publishedAt": a["publishedAt"]} for a in d["articles"]]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "totalArticles": 1523,
+  "articles": [
+    {"title": "EU begins enforcing AI Act rules for general-purpose models", "source": "Reuters", "publishedAt": "2026-10-11T14:05:00Z"}
+  ]
+}
+```
+</details>
+
+---
+
+### Google Fact Check Tools API
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.google.com/fact-check/tools/api |
+| **Auth** | API key (query `key`) |
+| **Register / token** | In https://console.cloud.google.com create a project, enable 'Fact Check Tools API', and create an API key. Free. |
+| **Env var** | `GOOGLE_FACTCHECK_API_KEY` |
+| **Script** | [`scripts/news_media/google_fact_check.py`](scripts/news_media/google_fact_check.py) |
+
+**What you can get:**
+
+- Fact-checks published with ClaimReview markup by outlets like PolitiFact, Snopes, AFP, Reuters, FactCheck.org
+- Claim text, who made it, date, and each reviewer's rating ('False', 'Misleading'...) with a link
+- Search by text, filter by publisher site, language and age
+
+**Capstone ideas:** Misinformation datasets, comparing ratings across fact-checkers, claim-matching and verdict classification models.
+
+**Endpoint:** `GET https://factchecktools.googleapis.com/v1alpha1/claims:search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Text to search claims for | `vaccine` |
+| `languageCode` | BCP-47 language | `en-US` |
+| `reviewPublisherSiteFilter` | Only one fact-checker's site | `politifact.com` |
+| `maxAgeDays` | Only recent fact-checks | `90` |
+| `pageSize / pageToken` | Paging | `10` |
+| `key` | Your API key | `<GOOGLE_FACTCHECK_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://factchecktools.googleapis.com/v1alpha1/claims:search", params={
+        "query": "vaccine", "languageCode": "en-US", "maxAgeDays": 90, "pageSize": 5,
+        "key": key("GOOGLE_FACTCHECK_API_KEY")})
+    show([{"claim": c["text"], "claimant": c.get("claimant"), "date": (c.get("claimDate") or "")[:10],
+           "publisher": c["claimReview"][0]["publisher"].get("name"), "rating": c["claimReview"][0].get("textualRating"),
+           "url": c["claimReview"][0]["url"]} for c in d.get("claims", [])])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"claim": "Example viral claim about vaccines...", "claimant": "Social media posts", "date": "2026-09-28",
+   "publisher": "PolitiFact", "rating": "False", "url": "https://www.politifact.com/factchecks/2026/..."}
 ]
 ```
 </details>
@@ -478,46 +656,197 @@ def main():
     show([{k: s.get(k) for k in ("title", "url", "score", "by", "descendants")} for s in stories])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
 
 ```json
 [
   {
-    "title": "Total Annihilation, rebuilt for modern computers",
-    "url": "https://nanolathe.gg",
-    "score": 291,
-    "by": "jttnr",
-    "descendants": 122
+    "title": "Incident with Actions, Pull Requests and Issues",
+    "url": "https://www.githubstatus.com/incidents/93njd414rpbx",
+    "score": 94,
+    "by": "dkpk",
+    "descendants": 66
   },
   {
-    "title": "Cartographers of North Korea",
-    "url": "https://cartographers-nk.wonyoung.so/",
-    "score": 130,
-    "by": "edent",
-    "descendants": 20
+    "title": "The Making Of Super Mario 64 – full Giles Goddard interview (2001)",
+    "url": "https://pixelatron.com/blog/the-making-of-super-mario-64-full-giles-goddard-interview-ngc/",
+    "score": 98,
+    "by": "gregsadetsky",
+    "descendants": 31
   },
   {
-    "title": "The gap in shared understanding of LLM capability is widening",
-    "url": "https://twitter.com/karpathy/status/2109361546505966046",
-    "score": 131,
-    "by": "albertzeyer",
-    "descendants": 173
+    "title": "Fingerprints are the new cookies",
+    "url": "https://royfish.dev/fingerprints-are-the-new-cookies",
+    "score": 566,
+    "by": "royfish",
+    "descendants": 271
   },
   {
-    "title": "So, You’d Like To Sell Your Print Issues Of The Onion?",
-    "url": "https://theonion.com/archivehunt/",
-    "score": 213,
-    "by": "mooreds",
-    "descendants": 25
+    "title": "Secret of Orange Cats Revealed After 60-Year Search",
+    "url": "https://www.sciencealert.com/secret-of-orange-cats-finally-revealed-after-60-year-search",
+    "score": 109,
+    "by": "bookofjoe",
+    "descendants": 87
   },
   {
-    "title": "Google Data Centers around the world",
-    "url": "https://datacenters.google/locations/",
-    "score": 4,
-    "by": "andsoitis",
-    "descendants": 0
+    "title": "QGIS bans AI assisted contributions",
+    "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+    "score": 275,
+    "by": "bwnkl",
+    "descendants": 278
   }
 ]
+```
+</details>
+
+---
+
+### Media Cloud (news research platform)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/mediacloud/api-tutorial-notebooks |
+| **Auth** | API token |
+| **Register / token** | Create a free account at https://search.mediacloud.org and copy the API key from your profile. Python client: `pip install mediacloud`. Built for academic research on online news (MIT/UMass/Northeastern). |
+| **Env var** | `MEDIACLOUD_API_KEY` |
+| **Script** | [`scripts/news_media/media_cloud.py`](scripts/news_media/media_cloud.py) |
+
+**What you can get:**
+
+- Search millions of online news stories per day from curated source collections (US national, state/local, global by country)
+- Story counts over time (attention), story lists with URLs, titles, publish dates, media source
+- Source and collection metadata
+
+**Capstone ideas:** Attention to issues across national vs. local news, framing studies, media ecosystem mapping.
+
+**Endpoint:** `Python: mediacloud.api.SearchApi(token).{story_count \| story_count_over_time \| story_list}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Boolean query (Lucene syntax) | `"climate change" AND policy` |
+| `start_date / end_date` | datetime.date objects | `2026-09-01 / 2026-09-30` |
+| `collection_ids` | Source collections, e.g. 34412234 US national news | `[34412234]` |
+| `source_ids` | Specific outlets | `—` |
+| `story_list pagination_token` | Page through stories | `—` |
+
+```python
+import datetime as dt
+
+from _common import key, show
+
+
+def main():
+    token = key("MEDIACLOUD_API_KEY")
+    import mediacloud.api  # pip install mediacloud (only needed for this example)
+    api = mediacloud.api.SearchApi(token)
+    start, end, us_national = dt.date(2026, 9, 1), dt.date(2026, 9, 30), [34412234]
+    counts = api.story_count('"climate change"', start, end, collection_ids=us_national)
+    daily = api.story_count_over_time('"climate change"', start, end, collection_ids=us_national)
+    show({"query": '"climate change"', "collection": "US national news", "stories_matching": counts["relevant"],
+          "share_of_all_stories_pct": round(100 * counts["relevant"] / counts["total"], 2),
+          "daily_counts_first_3_days": [{"date": str(r["date"]), "count": r["count"]} for r in daily[:3]]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "query": "\"climate change\"",
+  "collection": "US national news",
+  "stories_matching": 4128,
+  "share_of_all_stories_pct": 0.92,
+  "daily_counts_first_3_days": [{"date": "2026-09-01", "count": 118}, {"date": "2026-09-02", "count": 149}, {"date": "2026-09-03", "count": 152}]
+}
+```
+</details>
+
+---
+
+### Publisher RSS feeds (BBC, NPR, and others)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.bbc.co.uk/news/10628494 (BBC feed list); NPR feeds follow feeds.npr.org/{id}/rss.xml |
+| **Auth** | None |
+| **Register / token** | No registration. Most outlets publish RSS/Atom feeds by section. Terms vary by publisher (often personal, non-commercial use with attribution) - check each one before redistributing. Google News RSS is excluded here because its feed terms limit use to personal feed readers. |
+| **Script** | [`scripts/news_media/news_rss_feeds.py`](scripts/news_media/news_rss_feeds.py) |
+
+**What you can get:**
+
+- Latest headlines with links, short summaries, publication times, sometimes images and categories
+- Section-level feeds (world, politics, business, technology, health...)
+- Easy to poll on a schedule to build your own news archive
+
+**Capstone ideas:** Building a dated headline corpus for framing/sentiment studies, comparing story selection across outlets.
+
+**Endpoint:** `GET {feed URL}  (RSS 2.0 XML)`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `BBC` | feeds.bbci.co.uk/news/{section}/rss.xml: world, politics, business, technology, health, science_and_environment | `world` |
+| `NPR` | feeds.npr.org/{id}/rss.xml: 1001 news, 1014 politics, 1006 business, 1019 technology, 1128 health | `1001` |
+| `item fields` | title, link, description, pubDate (plus category / media tags on some feeds) | `—` |
+| `polling` | Feeds hold only recent items - poll regularly and store results to build history | `every 30-60 min` |
+
+```python
+import email.utils
+import xml.etree.ElementTree as ET
+
+from _common import get, show
+
+FEEDS = {"BBC World": "https://feeds.bbci.co.uk/news/world/rss.xml", "NPR News": "https://feeds.npr.org/1001/rss.xml"}
+
+
+def main():
+    out = {}
+    for name, url in FEEDS.items():
+        items = ET.fromstring(get(url, as_json=False).encode()).findall("./channel/item")
+        out[name] = {"items": len(items), "latest": [
+            {"title": (i.findtext("title") or "").strip(),
+             "published": email.utils.parsedate_to_datetime(i.findtext("pubDate")).isoformat() if i.findtext("pubDate") else None}
+            for i in items[:3]]}
+    show(out)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "BBC World": {
+    "items": 26,
+    "latest": [
+      {
+        "title": "Documents falsified to evade tax on Abramovich's wealth, BBC finds",
+        "published": "2026-10-12T05:00:52+00:00"
+      },
+      {
+        "title": "Saudi minister vows 'serious response' to Houthi attacks on airports",
+        "published": "2026-10-12T14:00:03+00:00"
+      },
+      {
+        "title": "South Africa's deputy police chief resigns after being charged with sexual offences",
+        "published": "2026-10-12T14:40:15+00:00"
+      }
+    ]
+  },
+  "NPR News": {
+    "items": 10,
+    "latest": [
+      {
+        "title": "DOJ launches antitrust probe of TV networks. And, Trump says Ukraine needs new leader",
+        "published": "2026-10-12T07:29:56-04:00"
+      },
+      {
+        "title": "Here's what to know if you're unsure about your measles immunity status",
+        "published": "2026-10-12T05:00:00-04:00"
+      },
+      {
+        "title": "U.S. restrictions on Chinese drones are hurting cash-strapped police departments",
+        "published": "2026-10-12T05:00:00-04:00"
+      }
+    ]
+  }
+}
 ```
 </details>
 
@@ -644,6 +973,187 @@ def main():
 
 ---
 
+### Wikimedia EventStreams (real-time edits)
+
+| | |
+|:--|:--|
+| **Docs** | https://wikitech.wikimedia.org/wiki/Event_Platform/EventStreams_HTTP_Service |
+| **Auth** | None |
+| **Register / token** | No registration. A never-ending Server-Sent Events stream - read with stream=True, process events as they arrive, and stop after N events or seconds. Use since=<timestamp> to resume. |
+| **Script** | [`scripts/news_media/wikimedia_eventstreams.py`](scripts/news_media/wikimedia_eventstreams.py) |
+
+**What you can get:**
+
+- Every edit, page creation, log action and categorization across all Wikimedia wikis, live (~30+ events/second)
+- Wiki, page title, user (or IP), bot flag, size change, comment, timestamp
+
+**Capstone ideas:** Breaking-news detection from editing bursts, bot vs. human activity, edit-war monitoring, streaming-data exercises.
+
+**Endpoint:** `GET https://stream.wikimedia.org/v2/stream/{stream}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `stream` | recentchange \| page-create \| revision-create \| mediawiki.page-delete ... (comma list allowed) | `recentchange` |
+| `since` | Start from a timestamp (ISO 8601) or offset to resume | `2026-10-12T00:00:00Z` |
+| `event fields (recentchange)` | wiki, type (edit, new, log, categorize), title, user, bot, length {old,new}, timestamp | `—` |
+| `format` | SSE lines: 'data: {json}' | `—` |
+
+```python
+import json
+from collections import Counter
+
+import requests
+
+from _common import USER_AGENT, show
+
+
+def main():
+    events = []
+    with requests.get("https://stream.wikimedia.org/v2/stream/recentchange", stream=True, timeout=60,
+                      headers={"User-Agent": USER_AGENT}) as r:
+        for line in r.iter_lines():
+            if line.startswith(b"data: "):
+                events.append(json.loads(line[6:]))
+                if len(events) >= 300:  # the stream never ends - stop after a sample
+                    break
+    span = (max(e["timestamp"] for e in events) - min(e["timestamp"] for e in events)) or 1
+    show({"events_sampled": len(events), "approx_events_per_second": round(len(events) / span, 1),
+          "by_wiki": Counter(e["wiki"] for e in events).most_common(5),
+          "by_type": Counter(e["type"] for e in events).most_common(),
+          "bot_share": round(sum(bool(e.get("bot")) for e in events) / len(events), 2)})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "events_sampled": 300,
+  "approx_events_per_second": 6.5,
+  "by_wiki": [
+    [
+      "commonswiki",
+      109
+    ],
+    [
+      "enwiki",
+      67
+    ],
+    [
+      "wikidatawiki",
+      36
+    ],
+    [
+      "zhwiki",
+      10
+    ],
+    [
+      "cswiktionary",
+      10
+    ]
+  ],
+  "by_type": [
+    [
+      "edit",
+      156
+    ],
+    [
+      "categorize",
+      107
+    ],
+    [
+      "log",
+      23
+    ],
+    [
+      "new",
+      14
+    ]
+  ],
+  "bot_share": 0.29
+}
+```
+</details>
+
+---
+
+### Wikimedia Feed API (most read, in the news, on this day)
+
+| | |
+|:--|:--|
+| **Docs** | https://api.wikimedia.org/wiki/Feed_API |
+| **Auth** | None (anonymous: 500 requests/hour; free token for more) |
+| **Register / token** | No registration for low volume. Create a free API token at https://api.wikimedia.org for 5,000 requests/hour. |
+| **Script** | [`scripts/news_media/wikimedia_featured_feed.py`](scripts/news_media/wikimedia_featured_feed.py) |
+
+**What you can get:**
+
+- Daily most-read Wikipedia articles with view counts (a real-time public-attention signal)
+- 'In the news' items with linked articles, today's featured article, picture of the day
+- 'On this day' historical events, births and deaths; available for many languages
+
+**Capstone ideas:** Daily attention dynamics around news events, comparing attention across languages, event detection.
+
+**Endpoint:** `GET https://api.wikimedia.org/feed/v1/wikipedia/{lang}/{featured \| onthisday}/...`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `featured/{YYYY}/{MM}/{DD}` | Featured content for a day: tfa, mostread, news, image, onthisday | `featured/2026/10/11` |
+| `onthisday/{type}/{MM}/{DD}` | type = all \| selected \| births \| deaths \| events \| holidays | `onthisday/events/10/12` |
+| `lang` | Wikipedia language code | `en, de, es, zh` |
+| `Authorization (header)` | Optional Bearer token | `—` |
+
+```python
+import datetime as dt
+
+from _common import get, show
+
+
+def main():
+    day = dt.date.today() - dt.timedelta(days=1)
+    d = get(f"https://api.wikimedia.org/feed/v1/wikipedia/en/featured/{day:%Y/%m/%d}")
+    skip = ("Main_Page", "Special:")
+    show({"date": day.isoformat(), "featured_article": d["tfa"]["titles"]["normalized"],
+          "most_read": [{"title": a["titles"]["normalized"], "views": a["views"]}
+                        for a in d["mostread"]["articles"] if not a["title"].startswith(skip)][:6],
+          "in_the_news": [n["links"][0]["titles"]["normalized"] for n in d.get("news", [])][:4]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "date": "2026-10-11",
+  "featured_article": "Userkare",
+  "most_read": [
+    {
+      "title": "Mathematics",
+      "views": 420278
+    },
+    {
+      "title": "List of equations",
+      "views": 417307
+    },
+    {
+      "title": "Nidal Hasan",
+      "views": 382214
+    },
+    {
+      "title": "Mike Ditka",
+      "views": 361505
+    },
+    {
+      "title": "Christa Pike",
+      "views": 204814
+    },
+    "... (1 more)"
+  ],
+  "in_the_news": []
+}
+```
+</details>
+
+---
+
 ### Wikimedia REST API (Pageviews)
 
 | | |
@@ -683,7 +1193,7 @@ def main():
     show([{"date": i["timestamp"][:8], "views": i["views"]} for i in get(url)["items"]], max_items=7)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
 
 ```json
 [
@@ -722,6 +1232,91 @@ def main():
 ---
 
 ## 💬 Social Media
+
+### Apple App Store customer reviews (RSS JSON)
+
+| | |
+|:--|:--|
+| **Docs** | https://rss.marketingtools.apple.com/ |
+| **Auth** | None |
+| **Register / token** | No registration. Legacy RSS feed that still returns the 500 most recent reviews per app and country (10 pages x 50). Find the app ID in its App Store URL (.../id6448311069). |
+| **Script** | [`scripts/social_media/app_store_reviews.py`](scripts/social_media/app_store_reviews.py) |
+
+**What you can get:**
+
+- Review title, text, star rating (1-5), app version, author, date, vote counts
+- Per-country storefronts (us, gb, de, in, ...)
+- Most-recent or most-helpful ordering
+
+**Capstone ideas:** App sentiment over versions (did an update anger users?), feature-request mining, rating prediction from text.
+
+**Endpoint:** `GET https://itunes.apple.com/{country}/rss/customerreviews/page={n}/id={appId}/sortby={order}/json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `country` | Storefront code | `us` |
+| `page` | 1-10 (50 reviews each) | `1` |
+| `appId` | Numeric app ID | `6448311069 (ChatGPT)` |
+| `sortby` | mostrecent \| mosthelpful | `mostrecent` |
+| `entry fields` | im:rating, title, content, im:version, author.name, updated | `—` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    entries = []
+    for page in (1, 2):
+        d = get(f"https://itunes.apple.com/us/rss/customerreviews/page={page}/id=6448311069/sortby=mostrecent/json")
+        entries += [e for e in d["feed"].get("entry", []) if "im:rating" in e]
+    stars = Counter(int(e["im:rating"]["label"]) for e in entries)
+    show({"app": "ChatGPT (US App Store)", "reviews_read": len(entries), "star_distribution": dict(sorted(stars.items())),
+          "average_stars": round(sum(k * v for k, v in stars.items()) / len(entries), 2),
+          "latest": [{"stars": int(e["im:rating"]["label"]), "version": e["im:version"]["label"], "title": e["title"]["label"],
+                      "date": e["updated"]["label"][:10]} for e in entries[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "app": "ChatGPT (US App Store)",
+  "reviews_read": 100,
+  "star_distribution": {
+    "1": 12,
+    "2": 1,
+    "3": 5,
+    "4": 9,
+    "5": 73
+  },
+  "average_stars": 4.3,
+  "latest": [
+    {
+      "stars": 5,
+      "version": "1.2026.272",
+      "title": "Al is knowledgeable and comforting",
+      "date": "2026-10-11"
+    },
+    {
+      "stars": 5,
+      "version": "1.2026.272",
+      "title": "ChatGPT",
+      "date": "2026-10-11"
+    },
+    {
+      "stars": 4,
+      "version": "1.2026.272",
+      "title": "User",
+      "date": "2026-10-11"
+    }
+  ]
+}
+```
+</details>
+
+---
 
 ### Bluesky (AT Protocol) Public AppView
 
@@ -769,34 +1364,249 @@ def main():
     })
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
 
 ```json
 {
   "profile": {
     "handle": "bsky.app",
     "displayName": "Bluesky",
-    "followersCount": 35225915,
+    "followersCount": 35233898,
     "postsCount": 867
   },
   "recent_posts": [
     {
       "text": "Students made their first minicomics in my intro making course - mostly standard format but this student, a first time maker(!), did something so off the charts...",
-      "likes": 3957,
-      "reposts": 867,
+      "likes": 4865,
+      "reposts": 1006,
       "createdAt": "2026-10-10T19:19:54.753Z"
     },
     {
       "text": " Australopithecus 3 million years ago:",
-      "likes": 7773,
-      "reposts": 1504,
+      "likes": 8729,
+      "reposts": 1681,
       "createdAt": "2026-10-11T06:28:42.288Z"
     },
     {
       "text": "i got so many people calling this tweet fakeposting back when i made it but since this is bluesky and things have less reach on here im just going to post the p...",
-      "likes": 19785,
-      "reposts": 5040,
+      "likes": 20437,
+      "reposts": 5145,
       "createdAt": "2026-10-10T19:49:31.289Z"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Lemmy (federated Reddit-like communities)
+
+| | |
+|:--|:--|
+| **Docs** | https://join-lemmy.org/api/main |
+| **Auth** | None for public data (per instance) |
+| **Register / token** | No registration to read. Lemmy is open-source and federated: query any instance (lemmy.world, lemmy.ml, ...). Listings include communities from other federated servers. |
+| **Script** | [`scripts/social_media/lemmy.py`](scripts/social_media/lemmy.py) |
+
+**What you can get:**
+
+- Posts with score, upvotes/downvotes, comment counts, community, timestamps, links
+- Comment trees, communities with subscriber counts, user profiles
+- Sorting by Hot, TopDay, TopWeek, New, ...
+
+**Capstone ideas:** Decentralized-community studies, post-Reddit-API migration, comparing discussion with Reddit on the same topics.
+
+**Endpoint:** `GET https://{instance}/api/v3/{post/list \| comment/list \| community/list \| search}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `instance` | Any Lemmy server | `lemmy.world` |
+| `sort` | Hot \| Active \| New \| TopDay \| TopWeek \| TopMonth \| TopAll \| MostComments | `TopDay` |
+| `community_name` | Restrict to a community (name@instance for remote ones) | `technology` |
+| `type_` | All \| Local \| Subscribed | `All` |
+| `limit / page` | Max 50 per page | `10` |
+| `comment/list?post_id=` | Comments for a post | `—` |
+| `search?q=&type_=` | Search posts, comments, communities | `q=climate&type_=Posts` |
+
+```python
+from _common import get, show
+
+
+def main():
+    posts = get("https://lemmy.world/api/v3/post/list", params={"sort": "TopWeek", "community_name": "technology",
+                                                               "limit": 10})["posts"]
+    comms = get("https://lemmy.world/api/v3/community/list", params={"sort": "TopAll", "type_": "Local", "limit": 5})["communities"]
+    show({"top_technology_posts_this_week": [{"title": p["post"]["name"], "community": p["community"]["name"],
+                               "score": p["counts"]["score"], "comments": p["counts"]["comments"]} for p in posts[:5]],
+          "largest_local_communities": [{"name": c["community"]["name"], "subscribers": c["counts"]["subscribers"]}
+                                        for c in comms]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "top_technology_posts_this_week": [
+    {
+      "title": "Retailers are pulling back from self-checkout after years of theft, errors, and questionable time savings",
+      "community": "technology",
+      "score": 991,
+      "comments": 497
+    },
+    {
+      "title": "AI Bubble Teetering on the Brink as OpenAI Admits to Massive Financial Failure: A $20 billion setback.",
+      "community": "technology",
+      "score": 945,
+      "comments": 369
+    },
+    {
+      "title": "Meta Is Refusing to Remove AI-Generated Facebook Videos of Graphic Child Abuse, Including a Baby Roasting in an Oven. Meta is making it clear: it doesn't care a...",
+      "community": "technology",
+      "score": 894,
+      "comments": 174
+    },
+    {
+      "title": "Court Finds That Using Copyrighted Material as AI Training Data Is Not Fair Use: Could this be the moment copyright holders have been waiting for?",
+      "community": "technology",
+      "score": 819,
+      "comments": 90
+    },
+    {
+      "title": "“Has No Friends”: Amazon Is Keeping Amazingly Detailed Records on Its Customers and They Are Downright Insulting: Here's how to check yours.",
+      "community": "technology",
+      "score": 756,
+      "comments": 265
+    }
+  ],
+  "largest_local_communities": [
+    {
+      "name": "technology",
+      "subscribers": 88741
+    },
+    {
+      "name": "selfhosted",
+      "subscribers": 62900
+    },
+    {
+      "name": "world",
+      "subscribers": 58444
+    },
+    {
+      "name": "games",
+      "subscribers": 51186
+    },
+    {
+      "name": "nostupidquestions",
+      "subscribers": 50165
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Lobsters (tech link aggregator)
+
+| | |
+|:--|:--|
+| **Docs** | https://lobste.rs/about |
+| **Auth** | None |
+| **Register / token** | No registration. Append .json to most pages. A small, invitation-only, moderated community - a useful contrast to Hacker News. |
+| **Script** | [`scripts/social_media/lobsters.py`](scripts/social_media/lobsters.py) |
+
+**What you can get:**
+
+- Hottest and newest stories with score, comment count, tags, submitter, timestamps
+- Stories by tag, full comment threads (/s/{id}.json), user pages
+
+**Capstone ideas:** Comparing tech-community attention with Hacker News, tag-based topic trends, comment-tree analysis.
+
+**Endpoint:** `GET https://lobste.rs/{hottest \| newest \| t/{tag} \| s/{short_id}}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `hottest.json · newest.json` | Front page / newest stories (page/{n}.json for more) | `—` |
+| `t/{tag}.json` | Stories with a tag | `t/ai.json` |
+| `s/{short_id}.json` | One story with all comments | `—` |
+| `story fields` | title, url, score, comment_count, tags, created_at, submitter_user | `—` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    hot = get("https://lobste.rs/hottest.json")
+    show({"front_page_stories": len(hot), "tag_counts": Counter(t for s in hot for t in s["tags"]).most_common(6),
+          "top": [{"title": s["title"], "score": s["score"], "comments": s["comment_count"], "tags": s["tags"]}
+                  for s in hot[:4]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "front_page_stories": 25,
+  "tag_counts": [
+    [
+      "vibecoding",
+      5
+    ],
+    [
+      "linux",
+      2
+    ],
+    [
+      "mobile",
+      2
+    ],
+    [
+      "c",
+      2
+    ],
+    [
+      "vcs",
+      2
+    ],
+    "... (1 more)"
+  ],
+  "top": [
+    {
+      "title": "'AI' is Not a Tool",
+      "score": 62,
+      "comments": 23,
+      "tags": [
+        "vibecoding"
+      ]
+    },
+    {
+      "title": "Linus Torvalds Working On A Hefty Linux Kernel Improvement With Claude Code",
+      "score": 20,
+      "comments": 19,
+      "tags": [
+        "linux",
+        "vibecoding"
+      ]
+    },
+    {
+      "title": "Living in the Weimar era of Ruby",
+      "score": 10,
+      "comments": 1,
+      "tags": [
+        "ruby",
+        "vibecoding"
+      ]
+    },
+    {
+      "title": "Writing a Demoscene Intro for the ZX Spectrum",
+      "score": 16,
+      "comments": 0,
+      "tags": [
+        "retrocomputing"
+      ]
     }
   ]
 }
@@ -843,34 +1653,34 @@ def main():
           for t in tags])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
 
 ```json
 [
   {
+    "tag": "バーガータワー",
+    "uses_today": "240",
+    "accounts_today": "126"
+  },
+  {
+    "tag": "bas",
+    "uses_today": "85",
+    "accounts_today": "63"
+  },
+  {
     "tag": "SilentSunday",
-    "uses_today": "894",
-    "accounts_today": "776"
+    "uses_today": "64",
+    "accounts_today": "45"
   },
   {
-    "tag": "FragrantPlaces",
-    "uses_today": "272",
-    "accounts_today": "86"
+    "tag": "DontAskASong",
+    "uses_today": "232",
+    "accounts_today": "65"
   },
   {
-    "tag": "nationalcomingoutday",
-    "uses_today": "36",
-    "accounts_today": "24"
-  },
-  {
-    "tag": "豊臣兄弟",
-    "uses_today": "241",
-    "accounts_today": "23"
-  },
-  {
-    "tag": "glucksmann",
-    "uses_today": "34",
-    "accounts_today": "23"
+    "tag": "BärbelBas",
+    "uses_today": "39",
+    "accounts_today": "31"
   }
 ]
 ```
@@ -992,14 +1802,14 @@ def main():
     show([{"title": q["title"], "score": q["score"], "views": q["view_count"], "tags": q["tags"]} for q in items])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
 
 ```json
 [
   {
     "title": "How can I iterate over rows in a Pandas DataFrame?",
     "score": 4253,
-    "views": 8112609,
+    "views": 8112729,
     "tags": [
       "python",
       "pandas",
@@ -1010,7 +1820,7 @@ def main():
   {
     "title": "How do I select rows from a DataFrame based on column values?",
     "score": 3635,
-    "views": 6898626,
+    "views": 6898693,
     "tags": [
       "python",
       "pandas",
@@ -1022,7 +1832,7 @@ def main():
   {
     "title": "How do I change the size of figures drawn with Matplotlib?",
     "score": 3266,
-    "views": 6435668,
+    "views": 6435739,
     "tags": [
       "python",
       "pandas",
@@ -1034,7 +1844,7 @@ def main():
   {
     "title": "Renaming column names in Pandas",
     "score": 3074,
-    "views": 7042039,
+    "views": 7042128,
     "tags": [
       "python",
       "pandas",
@@ -1046,7 +1856,7 @@ def main():
   {
     "title": "Delete a column from a Pandas DataFrame",
     "score": 2342,
-    "views": 4677217,
+    "views": 4677313,
     "tags": [
       "python",
       "pandas",
@@ -1054,6 +1864,254 @@ def main():
       "del"
     ]
   }
+]
+```
+</details>
+
+---
+
+### Steam user reviews API
+
+| | |
+|:--|:--|
+| **Docs** | https://partner.steamgames.com/doc/store/getreviews |
+| **Auth** | None |
+| **Register / token** | No registration. Public endpoint behind the Steam store; page through all reviews with the cursor. Millions of labeled (recommended / not recommended) texts - a ready-made sentiment dataset. |
+| **Script** | [`scripts/social_media/steam_reviews.py`](scripts/social_media/steam_reviews.py) |
+
+**What you can get:**
+
+- Review text, recommended (yes/no), playtime at review, helpful/funny votes, language, timestamps
+- Review summary: total positive/negative, review score description
+- Filters by language, recency, purchase type (Steam vs. key), day range
+
+**Capstone ideas:** Sentiment classification with free labels, review bombing detection, playtime vs. satisfaction.
+
+**Endpoint:** `GET https://store.steampowered.com/appreviews/{appid}?json=1`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `appid` | Steam app ID (from the store URL) | `730 (Counter-Strike 2)` |
+| `filter` | recent \| updated \| all (all = by helpfulness) | `recent` |
+| `language` | english \| all \| german \| ... | `english` |
+| `review_type / purchase_type` | all \| positive \| negative; all \| steam \| non_steam_purchase | `negative` |
+| `num_per_page / cursor` | Max 100; start with * and pass back the returned cursor (URL-encoded) | `100 / *` |
+| `day_range` | With filter=all: reviews from the last N days | `30` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://store.steampowered.com/appreviews/1145360", params={  # Hades
+        "json": 1, "filter": "recent", "language": "english", "num_per_page": 100, "purchase_type": "all"})
+    s, revs = d["query_summary"], d["reviews"]
+    show({"game": "Hades (appid 1145360)", "score": s["review_score_desc"], "total_positive": s["total_positive"],
+          "total_negative": s["total_negative"],
+          "recent_100_recommended_pct": round(100 * sum(r["voted_up"] for r in revs) / len(revs)),
+          "examples": [{"recommended": r["voted_up"], "hours_at_review": round(r["author"]["playtime_at_review"] / 60, 1),
+                        "text": r["review"].replace("\n", " ")} for r in revs[:3]]}, max_str=140)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:32</summary>
+
+```json
+{
+  "game": "Hades (appid 1145360)",
+  "score": "Overwhelmingly Positive",
+  "total_positive": 151955,
+  "total_negative": 2492,
+  "recent_100_recommended_pct": 96,
+  "examples": [
+    {
+      "recommended": true,
+      "hours_at_review": 38.6,
+      "text": "a story about how a son wanted to go out and walk, but it was weekend and of course dad planned to renovate the entire house on weekend, and..."
+    },
+    {
+      "recommended": true,
+      "hours_at_review": 78.5,
+      "text": "Hades makes dying and starting over feel like part of the adventure. Every escape attempt gives you another chance to experiment with weapon..."
+    },
+    {
+      "recommended": true,
+      "hours_at_review": 12.2,
+      "text": "fun\r very fun"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### TikTok Research API
+
+| | |
+|:--|:--|
+| **Docs** | https://developers.tiktok.com/doc/research-api-get-started |
+| **Auth** | OAuth2 client credentials (approved researchers only) |
+| **Register / token** | Requires an approved application: non-profit academic researchers (and some others) in eligible regions apply at https://developers.tiktok.com/products/research-api with a research proposal; approval takes weeks. Plan for this early in a capstone, or choose another platform. |
+| **Env var** | `TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET` |
+| **Script** | [`scripts/social_media/tiktok_research.py`](scripts/social_media/tiktok_research.py) |
+
+**What you can get:**
+
+- Public videos by keyword, hashtag, region, date: description, views, likes, comments, shares, music, creator
+- Comments on videos, public user info, followers/following, liked and pinned videos
+- Date windows of up to 30 days per query; daily quota
+
+**Capstone ideas:** Short-video discourse on health or politics, hashtag diffusion, engagement modeling.
+
+**Endpoint:** `POST https://open.tiktokapis.com/v2/research/video/query/?fields=...`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `fields (query string)` | id, video_description, create_time, region_code, view_count, like_count, comment_count, share_count, hashtag_names | `id,video_description,view_count` |
+| `query (body)` | {and/or/not: [{operation: EQ \| IN, field_name, field_values}]} | `{"and": [{"operation": "IN", "field_name": "region_code", "field_values": ["US"]}]}` |
+| `start_date / end_date (body)` | YYYYMMDD, at most 30 days apart | `20260901 / 20260930` |
+| `max_count / cursor / search_id (body)` | Up to 100 per page; continue with cursor and search_id | `100` |
+| `token` | POST https://open.tiktokapis.com/v2/oauth/token/ with client_key, client_secret, grant_type=client_credentials | `—` |
+
+```python
+import requests
+
+from _common import USER_AGENT, key, show
+
+
+def main():
+    tok = requests.post("https://open.tiktokapis.com/v2/oauth/token/", timeout=30, data={
+        "client_key": key("TIKTOK_CLIENT_KEY"), "client_secret": key("TIKTOK_CLIENT_SECRET"),
+        "grant_type": "client_credentials"}).json()["access_token"]
+    body = {"query": {"and": [{"operation": "IN", "field_name": "region_code", "field_values": ["US"]},
+                              {"operation": "EQ", "field_name": "hashtag_name", "field_values": ["datascience"]}]},
+            "start_date": "20260901", "end_date": "20260930", "max_count": 10}
+    r = requests.post("https://open.tiktokapis.com/v2/research/video/query/", timeout=60, json=body,
+                      params={"fields": "id,video_description,view_count,like_count,region_code,create_time"},
+                      headers={"Authorization": f"Bearer {tok}", "User-Agent": USER_AGENT})
+    r.raise_for_status()
+    show(r.json()["data"]["videos"])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"id": 7551234567890123456, "video_description": "3 data science projects that got me hired #datascience #python",
+   "view_count": 182344, "like_count": 15210, "region_code": "US", "create_time": 1758912000}
+]
+```
+</details>
+
+---
+
+### Twitch Helix API
+
+| | |
+|:--|:--|
+| **Docs** | https://dev.twitch.tv/docs/api/reference |
+| **Auth** | OAuth2 app access token (client ID + secret) |
+| **Register / token** | Register an application at https://dev.twitch.tv/console/apps (requires 2FA on your Twitch account). Get an app token from https://id.twitch.tv/oauth2/token with grant_type=client_credentials; send both Client-Id and Authorization: Bearer headers. 800 points/minute. |
+| **Env var** | `TWITCH_CLIENT_ID, TWITCH_CLIENT_SECRET` |
+| **Script** | [`scripts/social_media/twitch.py`](scripts/social_media/twitch.py) |
+
+**What you can get:**
+
+- Live streams with viewer counts, game/category, language, start time, tags
+- Top games/categories by viewers, channel info, clips, videos (VODs), schedules
+- Chat is separate (IRC/EventSub)
+
+**Capstone ideas:** Live-streaming attention economy, game popularity vs. sales (SteamSpy), streamer growth dynamics.
+
+**Endpoint:** `GET https://api.twitch.tv/helix/{streams \| games/top \| games \| clips \| videos \| channels}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `streams?first=&game_id=&language=` | Live streams sorted by viewers (first max 100) | `first=20&language=en` |
+| `games/top?first=` | Top categories by current viewers | `first=10` |
+| `games?name=` | Look up a game/category ID | `name=Chess` |
+| `clips?game_id=&started_at=` | Top clips | `—` |
+| `after` | Pagination cursor | `—` |
+| `headers` | Client-Id: <id>, Authorization: Bearer <app token> | `—` |
+
+```python
+import requests
+
+from _common import get, key, show
+
+
+def main():
+    cid, secret = key("TWITCH_CLIENT_ID"), key("TWITCH_CLIENT_SECRET")
+    tok = requests.post("https://id.twitch.tv/oauth2/token", timeout=30, params={
+        "client_id": cid, "client_secret": secret, "grant_type": "client_credentials"}).json()["access_token"]
+    hdr = {"Client-Id": cid, "Authorization": f"Bearer {tok}"}
+    games = get("https://api.twitch.tv/helix/games/top", headers=hdr, params={"first": 5})["data"]
+    streams = get("https://api.twitch.tv/helix/streams", headers=hdr, params={"first": 5})["data"]
+    show({"top_categories": [g["name"] for g in games], "top_live_streams": [
+        {"user": s["user_name"], "game": s["game_name"], "viewers": s["viewer_count"], "language": s["language"]} for s in streams]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "top_categories": ["Just Chatting", "Grand Theft Auto V", "League of Legends", "Counter-Strike", "Valorant"],
+  "top_live_streams": [
+    {"user": "example_streamer", "game": "Just Chatting", "viewers": 84211, "language": "en"}
+  ]
+}
+```
+</details>
+
+---
+
+### X (Twitter) API v2
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.x.com/x-api/introduction |
+| **Auth** | Bearer token (paid access for reading) |
+| **Register / token** | Not free for research: the free tier is essentially write-only, and searching or reading posts needs a paid plan - check https://developer.x.com for current pricing before planning a project around it. The academic research track was discontinued in 2023. Consider Bluesky or Mastodon (free) instead. |
+| **Env var** | `X_BEARER_TOKEN` |
+| **Script** | [`scripts/social_media/x_api.py`](scripts/social_media/x_api.py) |
+
+**What you can get:**
+
+- Recent search (last 7 days) and full-archive search (higher tiers) with the X query language
+- Post text, author, created_at, public metrics (likes, reposts, replies, quotes, views), language, entities
+- Users, followers/following, lists, spaces
+
+**Capstone ideas:** Only if you have access: discourse analysis, information diffusion, public-metrics modeling.
+
+**Endpoint:** `GET https://api.x.com/2/{tweets/search/recent \| tweets/search/all \| users/by/username/{u}}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Search operators: keywords, from:, lang:, -is:retweet, has:links ... | `"data science" lang:en -is:retweet` |
+| `max_results` | 10-100 per page | `10` |
+| `tweet.fields` | created_at, public_metrics, lang, author_id, entities ... | `created_at,public_metrics` |
+| `start_time / end_time / next_token` | Time window and paging | `—` |
+| `Authorization (header)` | Bearer <token> | `Bearer <X_BEARER_TOKEN>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://api.x.com/2/tweets/search/recent", headers={"Authorization": f"Bearer {key('X_BEARER_TOKEN')}"},
+            params={"query": '"data science" lang:en -is:retweet', "max_results": 10,
+                    "tweet.fields": "created_at,public_metrics"})
+    show([{"created_at": t["created_at"], "text": t["text"], "likes": t["public_metrics"]["like_count"],
+           "reposts": t["public_metrics"]["retweet_count"], "replies": t["public_metrics"]["reply_count"]}
+          for t in d.get("data", [])])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"created_at": "2026-10-11T18:22:05Z", "text": "New blog post: what I learned from a year of data science interviews...",
+   "likes": 214, "reposts": 37, "replies": 12}
 ]
 ```
 </details>

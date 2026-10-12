@@ -1,28 +1,28 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 11:32
 [
   {
+    "tag": "バーガータワー",
+    "uses_today": "240",
+    "accounts_today": "126"
+  },
+  {
+    "tag": "bas",
+    "uses_today": "85",
+    "accounts_today": "63"
+  },
+  {
     "tag": "SilentSunday",
-    "uses_today": "894",
-    "accounts_today": "776"
+    "uses_today": "64",
+    "accounts_today": "45"
   },
   {
-    "tag": "FragrantPlaces",
-    "uses_today": "272",
-    "accounts_today": "86"
+    "tag": "DontAskASong",
+    "uses_today": "232",
+    "accounts_today": "65"
   },
   {
-    "tag": "nationalcomingoutday",
-    "uses_today": "36",
-    "accounts_today": "24"
-  },
-  {
-    "tag": "豊臣兄弟",
-    "uses_today": "241",
-    "accounts_today": "23"
-  },
-  {
-    "tag": "glucksmann",
-    "uses_today": "34",
-    "accounts_today": "23"
+    "tag": "BärbelBas",
+    "uses_today": "39",
+    "accounts_today": "31"
   }
 ]

@@ -1,0 +1,57 @@
+# live 2026-10-12 11:32
+{
+  "top_technology_posts_this_week": [
+    {
+      "title": "Retailers are pulling back from self-checkout after years of theft, errors, and questionable time savings",
+      "community": "technology",
+      "score": 991,
+      "comments": 497
+    },
+    {
+      "title": "AI Bubble Teetering on the Brink as OpenAI Admits to Massive Financial Failure: A $20 billion setback.",
+      "community": "technology",
+      "score": 945,
+      "comments": 369
+    },
+    {
+      "title": "Meta Is Refusing to Remove AI-Generated Facebook Videos of Graphic Child Abuse, Including a Baby Roasting in an Oven. Meta is making it clear: it doesn't care a...",
+      "community": "technology",
+      "score": 894,
+      "comments": 174
+    },
+    {
+      "title": "Court Finds That Using Copyrighted Material as AI Training Data Is Not Fair Use: Could this be the moment copyright holders have been waiting for?",
+      "community": "technology",
+      "score": 819,
+      "comments": 90
+    },
+    {
+      "title": "“Has No Friends”: Amazon Is Keeping Amazingly Detailed Records on Its Customers and They Are Downright Insulting: Here's how to check yours.",
+      "community": "technology",
+      "score": 756,
+      "comments": 265
+    }
+  ],
+  "largest_local_communities": [
+    {
+      "name": "technology",
+      "subscribers": 88741
+    },
+    {
+      "name": "selfhosted",
+      "subscribers": 62900
+    },
+    {
+      "name": "world",
+      "subscribers": 58444
+    },
+    {
+      "name": "games",
+      "subscribers": 51186
+    },
+    {
+      "name": "nostupidquestions",
+      "subscribers": 50165
+    }
+  ]
+}

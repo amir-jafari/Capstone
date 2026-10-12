@@ -1,0 +1,29 @@
+# live 2026-10-12 11:32
+{
+  "date": "2026-10-11",
+  "featured_article": "Userkare",
+  "most_read": [
+    {
+      "title": "Mathematics",
+      "views": 420278
+    },
+    {
+      "title": "List of equations",
+      "views": 417307
+    },
+    {
+      "title": "Nidal Hasan",
+      "views": 382214
+    },
+    {
+      "title": "Mike Ditka",
+      "views": 361505
+    },
+    {
+      "title": "Christa Pike",
+      "views": 204814
+    },
+    "... (1 more)"
+  ],
+  "in_the_news": []
+}

@@ -1,0 +1,9 @@
+# live 2026-10-12 11:32
+{
+  "query": "\"climate change\" on cable news, Jan-Jun 2024",
+  "pct_of_15s_airtime_blocks": {
+    "CNN": 0.1189,
+    "FOX News": 0.1024,
+    "MSNBC": 0.066
+  }
+}

@@ -1,0 +1,25 @@
+# live 2026-10-12 11:32
+{
+  "game": "Hades (appid 1145360)",
+  "score": "Overwhelmingly Positive",
+  "total_positive": 151955,
+  "total_negative": 2492,
+  "recent_100_recommended_pct": 96,
+  "examples": [
+    {
+      "recommended": true,
+      "hours_at_review": 38.6,
+      "text": "a story about how a son wanted to go out and walk, but it was weekend and of course dad planned to renovate the entire house on weekend, and..."
+    },
+    {
+      "recommended": true,
+      "hours_at_review": 78.5,
+      "text": "Hades makes dying and starting over feel like part of the adventure. Every escape attempt gives you another chance to experiment with weapon..."
+    },
+    {
+      "recommended": true,
+      "hours_at_review": 12.2,
+      "text": "fun\r very fun"
+    }
+  ]
+}

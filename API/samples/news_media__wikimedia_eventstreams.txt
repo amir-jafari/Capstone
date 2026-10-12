@@ -1,0 +1,46 @@
+# live 2026-10-12 11:32
+{
+  "events_sampled": 300,
+  "approx_events_per_second": 6.5,
+  "by_wiki": [
+    [
+      "commonswiki",
+      109
+    ],
+    [
+      "enwiki",
+      67
+    ],
+    [
+      "wikidatawiki",
+      36
+    ],
+    [
+      "zhwiki",
+      10
+    ],
+    [
+      "cswiktionary",
+      10
+    ]
+  ],
+  "by_type": [
+    [
+      "edit",
+      156
+    ],
+    [
+      "categorize",
+      107
+    ],
+    [
+      "log",
+      23
+    ],
+    [
+      "new",
+      14
+    ]
+  ],
+  "bot_share": 0.29
+}

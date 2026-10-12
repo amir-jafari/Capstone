@@ -1,9 +1,9 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 11:32
 [
   {
     "title": "How can I iterate over rows in a Pandas DataFrame?",
     "score": 4253,
-    "views": 8112609,
+    "views": 8112729,
     "tags": [
       "python",
       "pandas",
@@ -14,7 +14,7 @@
   {
     "title": "How do I select rows from a DataFrame based on column values?",
     "score": 3635,
-    "views": 6898626,
+    "views": 6898693,
     "tags": [
       "python",
       "pandas",
@@ -26,7 +26,7 @@
   {
     "title": "How do I change the size of figures drawn with Matplotlib?",
     "score": 3266,
-    "views": 6435668,
+    "views": 6435739,
     "tags": [
       "python",
       "pandas",
@@ -38,7 +38,7 @@
   {
     "title": "Renaming column names in Pandas",
     "score": 3074,
-    "views": 7042039,
+    "views": 7042128,
     "tags": [
       "python",
       "pandas",
@@ -50,7 +50,7 @@
   {
     "title": "Delete a column from a Pandas DataFrame",
     "score": 2342,
-    "views": 4677217,
+    "views": 4677313,
     "tags": [
       "python",
       "pandas",

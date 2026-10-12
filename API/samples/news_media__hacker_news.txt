@@ -1,38 +1,38 @@
-# live 2026-10-11 19:09
+# live 2026-10-12 11:32
 [
   {
-    "title": "Total Annihilation, rebuilt for modern computers",
-    "url": "https://nanolathe.gg",
-    "score": 291,
-    "by": "jttnr",
-    "descendants": 122
+    "title": "Incident with Actions, Pull Requests and Issues",
+    "url": "https://www.githubstatus.com/incidents/93njd414rpbx",
+    "score": 94,
+    "by": "dkpk",
+    "descendants": 66
   },
   {
-    "title": "Cartographers of North Korea",
-    "url": "https://cartographers-nk.wonyoung.so/",
-    "score": 130,
-    "by": "edent",
-    "descendants": 20
+    "title": "The Making Of Super Mario 64 – full Giles Goddard interview (2001)",
+    "url": "https://pixelatron.com/blog/the-making-of-super-mario-64-full-giles-goddard-interview-ngc/",
+    "score": 98,
+    "by": "gregsadetsky",
+    "descendants": 31
   },
   {
-    "title": "The gap in shared understanding of LLM capability is widening",
-    "url": "https://twitter.com/karpathy/status/2109361546505966046",
-    "score": 131,
-    "by": "albertzeyer",
-    "descendants": 173
+    "title": "Fingerprints are the new cookies",
+    "url": "https://royfish.dev/fingerprints-are-the-new-cookies",
+    "score": 566,
+    "by": "royfish",
+    "descendants": 271
   },
   {
-    "title": "So, You’d Like To Sell Your Print Issues Of The Onion?",
-    "url": "https://theonion.com/archivehunt/",
-    "score": 213,
-    "by": "mooreds",
-    "descendants": 25
+    "title": "Secret of Orange Cats Revealed After 60-Year Search",
+    "url": "https://www.sciencealert.com/secret-of-orange-cats-finally-revealed-after-60-year-search",
+    "score": 109,
+    "by": "bookofjoe",
+    "descendants": 87
   },
   {
-    "title": "Google Data Centers around the world",
-    "url": "https://datacenters.google/locations/",
-    "score": 4,
-    "by": "andsoitis",
-    "descendants": 0
+    "title": "QGIS bans AI assisted contributions",
+    "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+    "score": 275,
+    "by": "bwnkl",
+    "descendants": 278
   }
 ]
