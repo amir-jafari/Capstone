@@ -1,0 +1,36 @@
+# live 2026-10-12 10:47
+{
+  "advisories": 223,
+  "by_level": {
+    "Level 1": 85,
+    "Level 2": 86,
+    "Level 3": 27,
+    "Level 4": 25
+  },
+  "level_4_do_not_travel": [
+    "Afghanistan",
+    "Belarus",
+    "Burkina Faso",
+    "Burma",
+    "Central African Republic",
+    "Chad",
+    "Democratic Republic of the Congo",
+    "Gaza",
+    "Haiti",
+    "Iran",
+    "Iraq",
+    "Lebanon",
+    "Libya",
+    "Mali",
+    "Niger",
+    "North Korea",
+    "Russia",
+    "Somalia",
+    "South Sudan",
+    "Sudan",
+    "Syria",
+    "Uganda",
+    "Ukraine",
+    "Yemen"
+  ]
+}

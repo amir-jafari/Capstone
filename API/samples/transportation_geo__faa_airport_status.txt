@@ -1,0 +1,68 @@
+# live 2026-10-12 10:46
+{
+  "updated": "Mon Oct 12 14:45:48 2026 GMT",
+  "programs": {
+    "Ground Stop Programs": [
+      {
+        "ARPT": "RDU",
+        "Reason": "equipment outage",
+        "End_Time": "11:30 am EDT"
+      },
+      {
+        "ARPT": "DEN",
+        "Reason": "runway construction",
+        "End_Time": "9:30 am MDT"
+      }
+    ],
+    "Ground Delay Programs": [
+      {
+        "ARPT": "LGA",
+        "Reason": "wind",
+        "Avg": "32 minutes",
+        "Max": "1 hour and 44 minutes"
+      },
+      {
+        "ARPT": "SAN",
+        "Reason": "airport volume",
+        "Avg": "58 minutes",
+        "Max": "1 hour and 50 minutes"
+      },
+      {
+        "ARPT": "BOS",
+        "Reason": "low ceilings",
+        "Avg": "1 hour and 15 minutes",
+        "Max": "6 hours and 27 minutes"
+      }
+    ],
+    "General Arrival/Departure Delay Info": [
+      {
+        "ARPT": "LGA",
+        "Reason": "WX:Low Ceilings"
+      },
+      {
+        "ARPT": "MIA",
+        "Reason": "RWY:Construction"
+      }
+    ],
+    "Airport Closures": [
+      {
+        "ARPT": "LAX",
+        "Reason": "!LAX 05/277 LAX AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC 24HR PPR CTC ATLANTIC AVIATION 310-258-9884 OR SIGNATURE AVIATION 310-410-9605 2605271826-270528160...",
+        "Start": "May 27 at 18:26 UTC.",
+        "Reopen": "May 28 at 16:00 UTC."
+      },
+      {
+        "ARPT": "SAN",
+        "Reason": "!SAN 10/004 SAN AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC PPR 619-298-7704 2610011633-2701010800",
+        "Start": "Oct 01 at 16:33 UTC.",
+        "Reopen": "Jan 01 at 08:00 UTC."
+      },
+      {
+        "ARPT": "PHL",
+        "Reason": "!PHL 09/263 PHL AD AP CLSD TO NON SKED ACFT WINGSPAN MORE THAN 214FT AND TAIL HGT MORE THAN 66FT. 2609301806-2610311200",
+        "Start": "Sep 30 at 18:06 UTC.",
+        "Reopen": "Oct 31 at 12:00 UTC."
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+# live 2026-10-12 10:46
+{
+  "month": "2026-07 (green taxis)",
+  "trips": 41252,
+  "median_distance_mi": 2.13,
+  "median_fare_usd": 13.5,
+  "card_tip_pct_of_fare": 20.5,
+  "top_pickup_zones": {
+    "East Harlem North": 10934,
+    "East Harlem South": 5275,
+    "Forest Hills": 2031,
+    "Central Park": 1633
+  }
+}

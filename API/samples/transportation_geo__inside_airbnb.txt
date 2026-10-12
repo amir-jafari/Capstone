@@ -1,0 +1,42 @@
+# live 2026-10-12 10:46
+{
+  "snapshot": "2026-09-19",
+  "listings": 6906,
+  "median_nightly_price_usd": 214.0,
+  "by_room_type": [
+    [
+      "Entire home/apt",
+      5260
+    ],
+    [
+      "Private room",
+      1389
+    ],
+    [
+      "Hotel room",
+      218
+    ],
+    [
+      "Shared room",
+      39
+    ]
+  ],
+  "top_neighbourhoods": [
+    [
+      "Union Station, Stanton Park, Kingman Park",
+      659
+    ],
+    [
+      "Capitol Hill, Lincoln Park",
+      612
+    ],
+    [
+      "Dupont Circle, Connecticut Avenue/K Street",
+      595
+    ],
+    [
+      "Edgewood, Bloomingdale, Truxton Circle, Eckington",
+      518
+    ]
+  ]
+}

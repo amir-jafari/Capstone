@@ -1,0 +1,69 @@
+# live 2026-10-12 10:47
+{
+  "zurich_to_geneva": [
+    {
+      "departure": "2026-10-12T17:04:00+0200",
+      "arrival": "2026-10-12T19:55:00+0200",
+      "duration": "00d02:51:00",
+      "transfers": 1,
+      "products": [
+        "IC 5",
+        "IR 90"
+      ],
+      "platform": "32"
+    },
+    {
+      "departure": "2026-10-12T17:31:00+0200",
+      "arrival": "2026-10-12T20:25:00+0200",
+      "duration": "00d02:54:00",
+      "transfers": 0,
+      "products": [
+        "IC 1"
+      ],
+      "platform": "32"
+    },
+    {
+      "departure": "2026-10-12T18:04:00+0200",
+      "arrival": "2026-10-12T20:55:00+0200",
+      "duration": "00d02:51:00",
+      "transfers": 1,
+      "products": [
+        "IC 5",
+        "IR 90"
+      ],
+      "platform": "32"
+    }
+  ],
+  "bern_departures": [
+    {
+      "train": "S 1",
+      "to": "Thun",
+      "time": "2026-10-12T16:47:00+0200",
+      "delay_min": 0
+    },
+    {
+      "train": "S 31",
+      "to": "Wabern bei Bern",
+      "time": "2026-10-12T16:47:00+0200",
+      "delay_min": null
+    },
+    {
+      "train": "RE 5",
+      "to": "Solothurn",
+      "time": "2026-10-12T16:50:00+0200",
+      "delay_min": 0
+    },
+    {
+      "train": "S 2",
+      "to": "Laupen BE",
+      "time": "2026-10-12T16:50:00+0200",
+      "delay_min": 0
+    },
+    {
+      "train": "S 44",
+      "to": "Sumiswald-Grünen",
+      "time": "2026-10-12T16:50:00+0200",
+      "delay_min": 0
+    }
+  ]
+}

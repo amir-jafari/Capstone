@@ -1,0 +1,69 @@
+# live 2026-10-12 10:47
+{
+  "airports_total": 86236,
+  "by_type": [
+    [
+      "small_airport",
+      42808
+    ],
+    [
+      "heliport",
+      23238
+    ],
+    [
+      "closed",
+      13574
+    ],
+    [
+      "medium_airport",
+      4105
+    ],
+    [
+      "seaplane_base",
+      1273
+    ],
+    "... (2 more)"
+  ],
+  "large_airports_by_country": [
+    [
+      "US",
+      95
+    ],
+    [
+      "CN",
+      69
+    ],
+    [
+      "RU",
+      44
+    ],
+    [
+      "IN",
+      43
+    ],
+    [
+      "MX",
+      29
+    ]
+  ],
+  "dc_area": [
+    {
+      "ident": "KBWI",
+      "iata_code": "BWI",
+      "name": "Baltimore/Washington International Thurgood Marshall Airport",
+      "type": "large_airport"
+    },
+    {
+      "ident": "KDCA",
+      "iata_code": "DCA",
+      "name": "Ronald Reagan Washington National Airport",
+      "type": "large_airport"
+    },
+    {
+      "ident": "KIAD",
+      "iata_code": "IAD",
+      "name": "Washington Dulles International Airport",
+      "type": "large_airport"
+    }
+  ]
+}

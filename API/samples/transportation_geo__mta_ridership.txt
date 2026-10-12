@@ -1,0 +1,35 @@
+# live 2026-10-12 10:46
+{
+  "week": "2026-09-01 to 2026-09-07",
+  "busiest_stations": [
+    {
+      "station": "Times Sq-42 St/Port Authority Bus Terminal (1,2,3,7,A,C,E,N,Q,R,W,S)",
+      "borough": "Manhattan",
+      "riders": 877052
+    },
+    {
+      "station": "Grand Central-42 St (4,5,6,7,S)",
+      "borough": "Manhattan",
+      "riders": 633068
+    },
+    {
+      "station": "34 St-Herald Sq (B,D,F,M,N,Q,R,W)",
+      "borough": "Manhattan",
+      "riders": 468188
+    },
+    {
+      "station": "14 St-Union Sq (4,5,6,L,N,Q,R,W)",
+      "borough": "Manhattan",
+      "riders": 421390
+    },
+    {
+      "station": "34 St-Penn Station (A,C,E)",
+      "borough": "Manhattan",
+      "riders": 398843
+    }
+  ],
+  "by_payment_method": {
+    "metrocard": 111085,
+    "omny": 22903365
+  }
+}

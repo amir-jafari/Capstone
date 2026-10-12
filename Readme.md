@@ -8,7 +8,7 @@
 
 ## Resources
 
-- 🔌 **[Public API Catalog](API/README.md)** — 206 free APIs across news, social media, weather & environment, finance, census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning, engineering & energy, transportation, sports, and culture, media & entertainment, each with sign-up steps, a runnable Python example, and sample output.
+- 🔌 **[Public API Catalog](API/README.md)** — 220 free APIs across news, social media, weather & environment, finance, census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning, engineering & energy, transportation & travel, sports, and culture, media & entertainment, each with sign-up steps, a runnable Python example, and sample output.
 
 ---
 

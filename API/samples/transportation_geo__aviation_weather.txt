@@ -1,0 +1,30 @@
+# live 2026-10-12 10:46
+[
+  {
+    "airport": "Baltimore-Washington Intl, MD, US",
+    "time": "2026-10-12T14:00:00.000Z",
+    "temp_C": 17.8,
+    "wind_kt": 10,
+    "visibility": "10+",
+    "flight_category": "MVFR",
+    "raw": "METAR KBWI 121354Z 32010KT 10SM BKN020 BKN060 BKN250 18/14 A2987 RMK AO2 SLP116 T01780139 $"
+  },
+  {
+    "airport": "Washington/Reagan-National Arpt, VA, US",
+    "time": "2026-10-12T14:21:00.000Z",
+    "temp_C": 18.9,
+    "wind_kt": 11,
+    "visibility": "10+",
+    "flight_category": "MVFR",
+    "raw": "SPECI KDCA 121421Z 32011KT 10SM FEW020 BKN029 19/15 A2990 RMK AO2 T01890150"
+  },
+  {
+    "airport": "Washington/Dulles Intl, VA, US",
+    "time": "2026-10-12T14:41:00.000Z",
+    "temp_C": 19.4,
+    "wind_kt": 14,
+    "visibility": "10+",
+    "flight_category": "MVFR",
+    "raw": "SPECI KIAD 121441Z 34014G21KT 10SM BKN027 BKN032 19/14 A2992 RMK AO2 PK WND 32027/1422 T01940144 $"
+  }
+]

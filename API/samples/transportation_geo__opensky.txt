@@ -1,47 +1,47 @@
-# live 2026-10-11 21:04
+# live 2026-10-12 10:47
 {
-  "aircraft_in_box": 51,
+  "aircraft_in_box": 44,
   "sample": [
     {
-      "callsign": "AAL3238",
+      "callsign": "ENY4091",
       "origin_country": "United States",
-      "lat": 38.7546,
-      "lon": -77.4392,
-      "baro_alt_m": 952.5,
-      "velocity_mps": 110.62
-    },
-    {
-      "callsign": "SWA1469",
-      "origin_country": "United States",
-      "lat": 39.159,
-      "lon": -76.6585,
-      "baro_alt_m": 304.8,
-      "velocity_mps": 86.18
-    },
-    {
-      "callsign": "SWA1044",
-      "origin_country": "United States",
-      "lat": 39.1083,
-      "lon": -76.6769,
-      "baro_alt_m": 830.58,
-      "velocity_mps": 125.16
-    },
-    {
-      "callsign": "N416KC",
-      "origin_country": "United States",
-      "lat": 38.962,
-      "lon": -77.4725,
+      "lat": 38.855,
+      "lon": -77.043,
       "baro_alt_m": null,
-      "velocity_mps": 9.77
+      "velocity_mps": 1.29
     },
     {
-      "callsign": "SCX3053",
+      "callsign": "ENY4060",
       "origin_country": "United States",
-      "lat": 39.1867,
-      "lon": -76.6832,
-      "baro_alt_m": 106.68,
-      "velocity_mps": 77.39
+      "lat": 38.849,
+      "lon": -77.0366,
+      "baro_alt_m": null,
+      "velocity_mps": 8.75
     },
-    "... (46 more)"
+    {
+      "callsign": "N750JT",
+      "origin_country": "United States",
+      "lat": 38.9469,
+      "lon": -77.4561,
+      "baro_alt_m": null,
+      "velocity_mps": 10.8
+    },
+    {
+      "callsign": "SGX396",
+      "origin_country": "United States",
+      "lat": 38.95,
+      "lon": -77.456,
+      "baro_alt_m": null,
+      "velocity_mps": 4.89
+    },
+    {
+      "callsign": "N233CX",
+      "origin_country": "United States",
+      "lat": 38.615,
+      "lon": -77.4353,
+      "baro_alt_m": 830.58,
+      "velocity_mps": 101.61
+    },
+    "... (39 more)"
   ]
 }

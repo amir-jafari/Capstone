@@ -1,37 +1,37 @@
-# live 2026-10-11 21:03
+# live 2026-10-12 10:46
 {
   "stations": 865,
-  "bikes_available_total": 5937,
+  "bikes_available_total": 5923,
   "fullest_stations": [
     {
-      "name": "13th & H St NE",
-      "bikes": 31,
-      "ebikes": 8,
-      "docks_free": 0
+      "name": "Columbus Circle / Union Station",
+      "bikes": 48,
+      "ebikes": 13,
+      "docks_free": 6
     },
     {
-      "name": "13th & D St NE",
-      "bikes": 29,
-      "ebikes": 9,
-      "docks_free": 5
+      "name": "Wisconsin Ave & K St NW",
+      "bikes": 34,
+      "ebikes": 13,
+      "docks_free": 0
     },
     {
       "name": "10th St & Constitution Ave NW",
       "bikes": 28,
       "ebikes": 2,
-      "docks_free": 19
+      "docks_free": 18
     },
     {
       "name": "31st & K St NW",
       "bikes": 28,
-      "ebikes": 2,
+      "ebikes": 1,
       "docks_free": 0
     },
     {
-      "name": "Wisconsin Ave & K St NW",
+      "name": "20th & O St NW / Dupont South",
       "bikes": 27,
-      "ebikes": 15,
-      "docks_free": 7
+      "ebikes": 10,
+      "docks_free": 5
     }
   ]
 }

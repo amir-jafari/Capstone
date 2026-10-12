@@ -2,7 +2,7 @@
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
 > census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning,
-> engineering & energy, transportation, sports, and culture, media & entertainment.
+> engineering & energy, transportation & travel, sports, and culture, media & entertainment.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 
@@ -196,45 +196,59 @@ python build_readme.py          # re-run everything & regenerate this README
 | 165 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
 | 166 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
 | 167 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 168 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 169 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 170 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 171 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 172 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 173 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 174 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 175 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 176 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 177 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 178 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 179 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 180 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 181 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 182 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 183 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 184 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 185 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 186 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 187 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 188 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 189 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 190 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
-| 191 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
-| 192 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
-| 193 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
-| 194 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
-| 195 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
-| 196 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
-| 197 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
-| 198 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 199 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
-| 200 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 201 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
-| 202 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
-| 203 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
-| 204 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
-| 205 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
-| 206 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
+| 168 | 🗺️ Transportation, Travel & Geospatial | [Amtraker (live Amtrak train tracking, unofficial)](#amtraker-live-amtrak-train-tracking-unofficial) | 🟢 no key | — | [`amtraker.py`](scripts/transportation_geo/amtraker.py) |
+| 169 | 🗺️ Transportation, Travel & Geospatial | [AviationWeather.gov Data API (METAR/TAF)](#aviationweathergov-data-api-metartaf) | 🟢 no key | — | [`aviation_weather.py`](scripts/transportation_geo/aviation_weather.py) |
+| 170 | 🗺️ Transportation, Travel & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 171 | 🗺️ Transportation, Travel & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 172 | 🗺️ Transportation, Travel & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 173 | 🗺️ Transportation, Travel & Geospatial | [Entur (Norway national journey planner, GraphQL)](#entur-norway-national-journey-planner-graphql) | 🟢 no key | — | [`entur.py`](scripts/transportation_geo/entur.py) |
+| 174 | 🗺️ Transportation, Travel & Geospatial | [FAA NAS Airport Status (delays & ground stops)](#faa-nas-airport-status-delays--ground-stops) | 🟢 no key | — | [`faa_airport_status.py`](scripts/transportation_geo/faa_airport_status.py) |
+| 175 | 🗺️ Transportation, Travel & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 176 | 🗺️ Transportation, Travel & Geospatial | [GeoNames (place names gazetteer)](#geonames-place-names-gazetteer) | 🔑 key | `GEONAMES_USERNAME` | [`geonames.py`](scripts/transportation_geo/geonames.py) |
+| 177 | 🗺️ Transportation, Travel & Geospatial | [Inside Airbnb (short-term rental data)](#inside-airbnb-short-term-rental-data) | 🟢 no key | — | [`inside_airbnb.py`](scripts/transportation_geo/inside_airbnb.py) |
+| 178 | 🗺️ Transportation, Travel & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 179 | 🗺️ Transportation, Travel & Geospatial | [MTA Subway Hourly Ridership (NY Open Data)](#mta-subway-hourly-ridership-ny-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`mta_ridership.py`](scripts/transportation_geo/mta_ridership.py) |
+| 180 | 🗺️ Transportation, Travel & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 181 | 🗺️ Transportation, Travel & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 182 | 🗺️ Transportation, Travel & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 183 | 🗺️ Transportation, Travel & Geospatial | [NYC Taxi & Limousine Commission trip records](#nyc-taxi--limousine-commission-trip-records) | 🟢 no key | — | [`nyc_tlc_trips.py`](scripts/transportation_geo/nyc_tlc_trips.py) |
+| 184 | 🗺️ Transportation, Travel & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 185 | 🗺️ Transportation, Travel & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 186 | 🗺️ Transportation, Travel & Geospatial | [OurAirports (global airports dataset)](#ourairports-global-airports-dataset) | 🟢 no key | — | [`ourairports.py`](scripts/transportation_geo/ourairports.py) |
+| 187 | 🗺️ Transportation, Travel & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 188 | 🗺️ Transportation, Travel & Geospatial | [U.S. State Department Travel Advisories](#us-state-department-travel-advisories) | 🟢 no key | — | [`state_travel_advisories.py`](scripts/transportation_geo/state_travel_advisories.py) |
+| 189 | 🗺️ Transportation, Travel & Geospatial | [Swiss public transport API (transport.opendata.ch)](#swiss-public-transport-api-transportopendatach) | 🟢 no key | — | [`swiss_transport.py`](scripts/transportation_geo/swiss_transport.py) |
+| 190 | 🗺️ Transportation, Travel & Geospatial | [Transport for London Unified API](#transport-for-london-unified-api) | 🟢 no key | `TFL_APP_KEY (optional)` | [`tfl_unified.py`](scripts/transportation_geo/tfl_unified.py) |
+| 191 | 🗺️ Transportation, Travel & Geospatial | [TomTom Traffic API](#tomtom-traffic-api) | 🔑 key | `TOMTOM_API_KEY` | [`tomtom_traffic.py`](scripts/transportation_geo/tomtom_traffic.py) |
+| 192 | 🗺️ Transportation, Travel & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 193 | 🗺️ Transportation, Travel & Geospatial | [Wikivoyage (MediaWiki API)](#wikivoyage-mediawiki-api) | 🟢 no key | — | [`wikivoyage.py`](scripts/transportation_geo/wikivoyage.py) |
+| 194 | 🗺️ Transportation, Travel & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 195 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 196 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 197 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 198 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 199 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 200 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 201 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 202 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 203 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 204 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
+| 205 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
+| 206 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
+| 207 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
+| 208 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
+| 209 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
+| 210 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
+| 211 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
+| 212 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 213 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
+| 214 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 215 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
+| 216 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
+| 217 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
+| 218 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 219 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
+| 220 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -13835,7 +13849,188 @@ def main():
 
 ---
 
-## 🗺️ Transportation & Geospatial
+## 🗺️ Transportation, Travel & Geospatial
+
+### Amtraker (live Amtrak train tracking, unofficial)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/piemadd/amtrak |
+| **Auth** | None |
+| **Register / token** | No registration. Community-run API that decodes Amtrak's own train-tracking feed; unofficial, so endpoints can change. Please cache rather than poll aggressively. |
+| **Script** | [`scripts/transportation_geo/amtraker.py`](scripts/transportation_geo/amtraker.py) |
+
+**What you can get:**
+
+- Every active Amtrak (and VIA Rail / Brightline) train: route, train number, position, speed, heading
+- Station-by-station schedule with scheduled vs. actual/estimated arrival and departure times
+- Station list with coordinates and time zones
+
+**Capstone ideas:** On-time performance by route, delay propagation along a line, intercity rail vs. air travel times.
+
+**Endpoint:** `GET https://api-v3.amtraker.com/v3/{trains \| trains/{trainNum} \| stations \| stations/{code}}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `trains` | All active trains keyed by train number | `—` |
+| `trains/{trainNum}` | One train (may return several runs on different dates) | `trains/171` |
+| `stations / stations/{code}` | Station list or one station with upcoming trains | `stations/WAS` |
+| `train fields` | routeName, trainNum, trainState, lat, lon, velocity, heading, stations[] with schArr/arr | `—` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    trains = [t for runs in get("https://api-v3.amtraker.com/v3/trains").values() for t in runs]
+    active = [t for t in trains if t.get("trainState") == "Active"]
+    nec = [t for t in active if t["routeName"] in ("Northeast Regional", "Acela")]
+    show({"trains_in_feed": len(trains), "active": len(active),
+          "busiest_routes": Counter(t["routeName"] for t in active).most_common(5),
+          "northeast_corridor_now": [{"route": t["routeName"], "train": t["trainNum"], "speed_mph": round(t.get("velocity") or 0),
+                                      "heading": t.get("heading"), "event": t.get("eventName")} for t in nec[:4]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
+
+```json
+{
+  "trains_in_feed": 186,
+  "active": 164,
+  "busiest_routes": [
+    [
+      "Northeast Regional",
+      22
+    ],
+    [
+      "Corridor",
+      22
+    ],
+    [
+      "Brightline",
+      10
+    ],
+    [
+      "Pacific Surfliner",
+      8
+    ],
+    [
+      "Acela",
+      7
+    ]
+  ],
+  "northeast_corridor_now": [
+    {
+      "route": "Northeast Regional",
+      "train": "67",
+      "speed_mph": 79,
+      "heading": "E",
+      "event": "Williamsburg"
+    },
+    {
+      "route": "Northeast Regional",
+      "train": "94",
+      "speed_mph": 68,
+      "heading": "NW",
+      "event": "Richmond Staples Mill Road"
+    },
+    {
+      "route": "Northeast Regional",
+      "train": "471",
+      "speed_mph": 82,
+      "heading": "S",
+      "event": "New Haven State Street"
+    },
+    {
+      "route": "Northeast Regional",
+      "train": "1082",
+      "speed_mph": 84,
+      "heading": "NE",
+      "event": "Baltimore Airport"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### AviationWeather.gov Data API (METAR/TAF)
+
+| | |
+|:--|:--|
+| **Docs** | https://aviationweather.gov/data/api/ |
+| **Auth** | None |
+| **Register / token** | No registration. Max 100 requests/minute; for bulk use the cache files (aviationweather.gov/data/cache). |
+| **Script** | [`scripts/transportation_geo/aviation_weather.py`](scripts/transportation_geo/aviation_weather.py) |
+
+**What you can get:**
+
+- METARs (hourly airport weather observations): temperature, wind, visibility, ceiling, flight category
+- TAFs (airport forecasts), PIREPs (pilot reports), SIGMETs and AIRMETs (hazards)
+- Station info for ~10,000 airports worldwide
+
+**Capstone ideas:** Weather-caused flight delay models (with BTS on-time data), fog/visibility forecasting, aviation-hazard maps.
+
+**Endpoint:** `GET https://aviationweather.gov/api/data/{metar \| taf \| pirep \| airsigmet \| stationinfo}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `ids` | ICAO airport codes, comma list (or @state, e.g. @VA) | `KDCA,KIAD,KBWI` |
+| `format` | json \| geojson \| xml \| raw | `json` |
+| `hours` | Hours back for METARs | `3` |
+| `bbox` | lat0,lon0,lat1,lon1 instead of ids | `38,-78,40,-76` |
+| `taf` | true -> include the TAF with METARs | `true` |
+| `fltcat (response)` | VFR \| MVFR \| IFR \| LIFR flight category | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://aviationweather.gov/api/data/metar", params={"ids": "KDCA,KIAD,KBWI", "format": "json"})
+    show([{"airport": m["name"], "time": m["reportTime"], "temp_C": m.get("temp"), "wind_kt": m.get("wspd"),
+           "visibility": m.get("visib"), "flight_category": m.get("fltCat"), "raw": m["rawOb"]} for m in d])
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
+
+```json
+[
+  {
+    "airport": "Baltimore-Washington Intl, MD, US",
+    "time": "2026-10-12T14:00:00.000Z",
+    "temp_C": 17.8,
+    "wind_kt": 10,
+    "visibility": "10+",
+    "flight_category": "MVFR",
+    "raw": "METAR KBWI 121354Z 32010KT 10SM BKN020 BKN060 BKN250 18/14 A2987 RMK AO2 SLP116 T01780139 $"
+  },
+  {
+    "airport": "Washington/Reagan-National Arpt, VA, US",
+    "time": "2026-10-12T14:21:00.000Z",
+    "temp_C": 18.9,
+    "wind_kt": 11,
+    "visibility": "10+",
+    "flight_category": "MVFR",
+    "raw": "SPECI KDCA 121421Z 32011KT 10SM FEW020 BKN029 19/15 A2990 RMK AO2 T01890150"
+  },
+  {
+    "airport": "Washington/Dulles Intl, VA, US",
+    "time": "2026-10-12T14:41:00.000Z",
+    "temp_C": 19.4,
+    "wind_kt": 14,
+    "visibility": "10+",
+    "flight_category": "MVFR",
+    "raw": "SPECI KIAD 121441Z 34014G21KT 10SM BKN027 BKN032 19/14 A2992 RMK AO2 PK WND 32027/1422 T01940144 $"
+  }
+]
+```
+</details>
+
+---
 
 ### Bureau of Transportation Statistics (BTS) Open Data
 
@@ -13877,7 +14072,7 @@ def main():
     show({"busiest_US_Mexico_truck_crossings_2025": d})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 {
@@ -13960,7 +14155,7 @@ def main():
           "congressional_district": district["NAME"]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 {
@@ -14017,7 +14212,7 @@ def main():
     show([{k: (round(float(v), 2) if k.startswith("avg") else v) for k, v in r.items()} for r in d])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 [
@@ -14057,6 +14252,226 @@ def main():
     "avg_miles": 7.31
   }
 ]
+```
+</details>
+
+---
+
+### Entur (Norway national journey planner, GraphQL)
+
+| | |
+|:--|:--|
+| **Docs** | https://developer.entur.org/ |
+| **Auth** | None (ET-Client-Name header required) |
+| **Register / token** | No registration, but every request must send an ET-Client-Name header like 'company-application'. All Norwegian public transport (trains, buses, ferries, flights) in one GraphQL API, plus a geocoder. |
+| **Script** | [`scripts/transportation_geo/entur.py`](scripts/transportation_geo/entur.py) |
+
+**What you can get:**
+
+- Trip planning with legs, modes, lines, real-time departures and delays
+- Stop places, quays, departures boards; national stop registry (NSR) IDs
+- Geocoder for stops and addresses
+
+**Capstone ideas:** Rural accessibility by public transport, multimodal trip analysis, real-time reliability studies.
+
+**Endpoint:** `POST https://api.entur.io/journey-planner/v3/graphql  ·  GET https://api.entur.io/geocoder/v1/autocomplete`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `geocoder: text / layers / size` | Find stop IDs (layers=venue for stops) | `text=Oslo S&layers=venue` |
+| `trip(from:{place:}, to:{place:})` | Trip patterns between NSR stop IDs | `NSR:StopPlace:59872 -> NSR:StopPlace:59983` |
+| `numTripPatterns / dateTime` | Number of alternatives; departure time (ISO) | `3` |
+| `stopPlace(id:) { estimatedCalls }` | Live departures from a stop | `—` |
+| `ET-Client-Name (header)` | Required identification | `gwu-capstone-catalog` |
+
+```python
+import requests
+
+from _common import USER_AGENT, get, show
+
+HDR = {"ET-Client-Name": "gwu-capstone-catalog", "User-Agent": USER_AGENT}
+
+
+def stop_id(name):
+    f = get("https://api.entur.io/geocoder/v1/autocomplete", headers=HDR,
+            params={"text": name, "layers": "venue", "size": 1})["features"][0]["properties"]
+    return f["id"]
+
+
+def main():
+    a, b = stop_id("Oslo S"), stop_id("Bergen stasjon")
+    q = f'{{ trip(from: {{place: "{a}"}}, to: {{place: "{b}"}}, numTripPatterns: 3) '
+    q += '{ tripPatterns { expectedStartTime duration legs { mode line { publicCode name } } } } }'
+    r = requests.post("https://api.entur.io/journey-planner/v3/graphql", json={"query": q}, headers=HDR, timeout=60)
+    r.raise_for_status()
+    trips = r.json()["data"]["trip"]["tripPatterns"]
+    show({"from": a, "to": b, "trips": [
+        {"departs": t["expectedStartTime"], "duration_h": round(t["duration"] / 3600, 1),
+         "legs": [f'{l["mode"]} {(l.get("line") or {}).get("publicCode") or ""}'.strip() for l in t["legs"]]} for t in trips]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
+
+```json
+{
+  "from": "NSR:StopPlace:59872",
+  "to": "NSR:StopPlace:59983",
+  "trips": [
+    {
+      "departs": "2026-10-12T17:54:00+02:00",
+      "duration_h": 3.2,
+      "legs": [
+        "rail R12",
+        "foot",
+        "air",
+        "foot",
+        "tram 1",
+        "... (1 more)"
+      ]
+    },
+    {
+      "departs": "2026-10-12T17:50:00+02:00",
+      "duration_h": 3.4,
+      "legs": [
+        "rail FLY2",
+        "foot",
+        "air",
+        "foot",
+        "bus FB50",
+        "... (1 more)"
+      ]
+    },
+    {
+      "departs": "2026-10-12T17:24:00+02:00",
+      "duration_h": 3.8,
+      "legs": [
+        "rail RE11",
+        "foot",
+        "air",
+        "foot",
+        "bus FB50",
+        "... (1 more)"
+      ]
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### FAA NAS Airport Status (delays & ground stops)
+
+| | |
+|:--|:--|
+| **Docs** | https://nasstatus.faa.gov/ |
+| **Auth** | None |
+| **Register / token** | No registration. One XML document with every current FAA traffic-management program, refreshed every minute; poll it and store snapshots to build a history. |
+| **Script** | [`scripts/transportation_geo/faa_airport_status.py`](scripts/transportation_geo/faa_airport_status.py) |
+
+**What you can get:**
+
+- Ground stops and ground-delay programs with reasons (weather, volume, equipment) and average delay
+- Arrival/departure delays, airport closures, airspace flow programs
+
+**Capstone ideas:** Building a delay-event dataset, linking delays to weather (METARs), airport-level disruption risk.
+
+**Endpoint:** `GET https://nasstatus.faa.gov/api/airport-status-information`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `(no parameters)` | Returns all current programs as XML | `—` |
+| `Delay_type/Name` | Ground Stop Programs \| Ground Delay Programs \| General Arrival/Departure Delay Info \| Airport Closures | `—` |
+| `Program fields` | ARPT (airport), Reason, End_Time / Avg delay, Max delay | `—` |
+
+```python
+import xml.etree.ElementTree as ET
+
+from _common import get, show
+
+
+def main():
+    root = ET.fromstring(get("https://nasstatus.faa.gov/api/airport-status-information", as_json=False))
+    out = {"updated": root.findtext("Update_Time"), "programs": {}}
+    for dt in root.findall("Delay_type"):
+        rows = []
+        for el in dt.iter():
+            if el.find("ARPT") is not None:
+                rows.append({c.tag: (c.text or "").strip() for c in el if len(c) == 0 and (c.text or "").strip()})
+        out["programs"][dt.findtext("Name")] = rows
+    show(out)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
+
+```json
+{
+  "updated": "Mon Oct 12 14:45:48 2026 GMT",
+  "programs": {
+    "Ground Stop Programs": [
+      {
+        "ARPT": "RDU",
+        "Reason": "equipment outage",
+        "End_Time": "11:30 am EDT"
+      },
+      {
+        "ARPT": "DEN",
+        "Reason": "runway construction",
+        "End_Time": "9:30 am MDT"
+      }
+    ],
+    "Ground Delay Programs": [
+      {
+        "ARPT": "LGA",
+        "Reason": "wind",
+        "Avg": "32 minutes",
+        "Max": "1 hour and 44 minutes"
+      },
+      {
+        "ARPT": "SAN",
+        "Reason": "airport volume",
+        "Avg": "58 minutes",
+        "Max": "1 hour and 50 minutes"
+      },
+      {
+        "ARPT": "BOS",
+        "Reason": "low ceilings",
+        "Avg": "1 hour and 15 minutes",
+        "Max": "6 hours and 27 minutes"
+      }
+    ],
+    "General Arrival/Departure Delay Info": [
+      {
+        "ARPT": "LGA",
+        "Reason": "WX:Low Ceilings"
+      },
+      {
+        "ARPT": "MIA",
+        "Reason": "RWY:Construction"
+      }
+    ],
+    "Airport Closures": [
+      {
+        "ARPT": "LAX",
+        "Reason": "!LAX 05/277 LAX AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC 24HR PPR CTC ATLANTIC AVIATION 310-258-9884 OR SIGNATURE AVIATION 310-410-9605 2605271826-270528160...",
+        "Start": "May 27 at 18:26 UTC.",
+        "Reopen": "May 28 at 16:00 UTC."
+      },
+      {
+        "ARPT": "SAN",
+        "Reason": "!SAN 10/004 SAN AD AP CLSD TO NON SKED TRANSIENT GA ACFT EXC PPR 619-298-7704 2610011633-2701010800",
+        "Start": "Oct 01 at 16:33 UTC.",
+        "Reopen": "Jan 01 at 08:00 UTC."
+      },
+      {
+        "ARPT": "PHL",
+        "Reason": "!PHL 09/263 PHL AD AP CLSD TO NON SKED ACFT WINGSPAN MORE THAN 214FT AND TAIL HGT MORE THAN 66FT. 2609301806-2610311200",
+        "Start": "Sep 30 at 18:06 UTC.",
+        "Reopen": "Oct 31 at 12:00 UTC."
+      }
+    ]
+  }
+}
 ```
 </details>
 
@@ -14106,43 +14521,193 @@ def main():
                                for s in top if s["station_id"] in info]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 {
   "stations": 865,
-  "bikes_available_total": 5937,
+  "bikes_available_total": 5923,
   "fullest_stations": [
     {
-      "name": "13th & H St NE",
-      "bikes": 31,
-      "ebikes": 8,
-      "docks_free": 0
+      "name": "Columbus Circle / Union Station",
+      "bikes": 48,
+      "ebikes": 13,
+      "docks_free": 6
     },
     {
-      "name": "13th & D St NE",
-      "bikes": 29,
-      "ebikes": 9,
-      "docks_free": 5
+      "name": "Wisconsin Ave & K St NW",
+      "bikes": 34,
+      "ebikes": 13,
+      "docks_free": 0
     },
     {
       "name": "10th St & Constitution Ave NW",
       "bikes": 28,
       "ebikes": 2,
-      "docks_free": 19
+      "docks_free": 18
     },
     {
       "name": "31st & K St NW",
       "bikes": 28,
-      "ebikes": 2,
+      "ebikes": 1,
       "docks_free": 0
     },
     {
-      "name": "Wisconsin Ave & K St NW",
+      "name": "20th & O St NW / Dupont South",
       "bikes": 27,
-      "ebikes": 15,
-      "docks_free": 7
+      "ebikes": 10,
+      "docks_free": 5
     }
+  ]
+}
+```
+</details>
+
+---
+
+### GeoNames (place names gazetteer)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.geonames.org/export/web-services.html |
+| **Auth** | Free username (query `username`) |
+| **Register / token** | Create an account at https://www.geonames.org/login, then enable free web services on your account page. Limits: 10,000 credits/day, 1,000/hour. The full database is also a free download (CC BY 4.0). |
+| **Env var** | `GEONAMES_USERNAME` |
+| **Script** | [`scripts/transportation_geo/geonames.py`](scripts/transportation_geo/geonames.py) |
+
+**What you can get:**
+
+- 12M+ place names: cities, landmarks, mountains, airports, with population, coordinates, admin regions, feature codes
+- Reverse geocoding (nearby places), time zones, elevation, postal codes, country info
+- Alternate names in many languages
+
+**Capstone ideas:** City-level datasets with population, building place hierarchies, time-zone and elevation enrichment.
+
+**Endpoint:** `GET http://api.geonames.org/{searchJSON \| findNearbyPlaceNameJSON \| timezoneJSON \| countryInfoJSON}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q / name_equals` | Search text | `springfield` |
+| `country / featureClass / featureCode` | Filters: P populated places, H water, T mountains; PPLA capital of first-order division | `country=US&featureClass=P` |
+| `orderby` | population \| elevation \| relevance | `population` |
+| `lat / lng` | For nearby / timezone / elevation services | `38.9 / -77.04` |
+| `maxRows / startRow` | Paging (max 1,000) | `5` |
+| `username` | Your account (the shared 'demo' account is for testing only) | `<GEONAMES_USERNAME>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("http://api.geonames.org/searchJSON", params={
+        "name_equals": "Springfield", "country": "US", "featureClass": "P", "orderby": "population", "maxRows": 5,
+        "username": key("GEONAMES_USERNAME")})
+    show([{k: g.get(k) for k in ("name", "adminName1", "population", "lat", "lng")} for g in d["geonames"]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"name": "Springfield", "adminName1": "Illinois", "population": 114394, "lat": "39.80172", "lng": "-89.64371"},
+  {"name": "Springfield", "adminName1": "Missouri", "population": 169176, "lat": "37.21533", "lng": "-93.29824"}
+]
+```
+</details>
+
+---
+
+### Inside Airbnb (short-term rental data)
+
+| | |
+|:--|:--|
+| **Docs** | https://insideairbnb.com/get-the-data/ |
+| **Auth** | None (CSV downloads) |
+| **Register / token** | No registration; no REST API. Quarterly scraped snapshots for 100+ cities. File URLs contain the scrape date, so read the current links from the get-the-data page. CC BY 4.0; check the site's data policies. |
+| **Script** | [`scripts/transportation_geo/inside_airbnb.py`](scripts/transportation_geo/inside_airbnb.py) |
+
+**What you can get:**
+
+- Listings: price, room type, neighbourhood, coordinates, host, minimum nights, availability, reviews per month
+- Detailed listings (70+ columns incl. amenities, review scores), daily calendar prices, review texts
+- Neighbourhood boundaries (GeoJSON)
+
+**Capstone ideas:** Short-term rentals vs. housing affordability (with Zillow/ACS), price prediction, review-text NLP, tourism geography.
+
+**Endpoint:** `GET https://data.insideairbnb.com/{country}/{region}/{city}/{date}/{visualisations \| data}/{file}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `visualisations/listings.csv` | Summary listings (18 columns) | `united-states/dc/washington-dc/2026-09-19` |
+| `data/listings.csv.gz` | Detailed listings (70+ columns) | `—` |
+| `data/calendar.csv.gz` | Daily price and availability for the next year | `—` |
+| `data/reviews.csv.gz` | Review texts with dates | `—` |
+| `visualisations/neighbourhoods.geojson` | Neighbourhood polygons | `—` |
+
+```python
+import csv
+import io
+import re
+from collections import Counter
+from statistics import median
+
+from _common import get, show
+
+
+def main():
+    page = get("https://insideairbnb.com/get-the-data/", as_json=False)
+    url = re.search(r"https://data\.insideairbnb\.com/united-states/dc/washington-dc/[\d-]+/visualisations/listings\.csv",
+                    page).group(0)  # the newest snapshot link for DC
+    rows = list(csv.DictReader(io.StringIO(get(url, as_json=False))))
+    prices = [float(r["price"]) for r in rows if r["price"]]
+    hoods = Counter(r["neighbourhood"] for r in rows)
+    show({"snapshot": url.split("/")[-3], "listings": len(rows), "median_nightly_price_usd": median(prices),
+          "by_room_type": Counter(r["room_type"] for r in rows).most_common(),
+          "top_neighbourhoods": hoods.most_common(4)})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
+
+```json
+{
+  "snapshot": "2026-09-19",
+  "listings": 6906,
+  "median_nightly_price_usd": 214.0,
+  "by_room_type": [
+    [
+      "Entire home/apt",
+      5260
+    ],
+    [
+      "Private room",
+      1389
+    ],
+    [
+      "Hotel room",
+      218
+    ],
+    [
+      "Shared room",
+      39
+    ]
+  ],
+  "top_neighbourhoods": [
+    [
+      "Union Station, Stanton Park, Kingman Park",
+      659
+    ],
+    [
+      "Capitol Hill, Lincoln Park",
+      612
+    ],
+    [
+      "Dupont Circle, Connecticut Avenue/K Street",
+      595
+    ],
+    [
+      "Edgewood, Bloomingdale, Truxton Circle, Eckington",
+      518
+    ]
   ]
 }
 ```
@@ -14195,48 +14760,137 @@ def main():
          max_items=6)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 [
   {
-    "route": "Green-C",
-    "headsign": "Cleveland Circle",
-    "arrival_time": "2026-10-11T21:03:05-04:00",
-    "departure_time": "2026-10-11T21:04:22-04:00"
-  },
-  {
-    "route": "Green-D",
-    "headsign": "Union Square",
-    "arrival_time": "2026-10-11T21:03:39-04:00",
-    "departure_time": "2026-10-11T21:04:47-04:00"
-  },
-  {
-    "route": "Green-C",
-    "headsign": "Government Center",
-    "arrival_time": "2026-10-11T21:04:24-04:00",
-    "departure_time": "2026-10-11T21:05:32-04:00"
+    "route": "Green-E",
+    "headsign": "Medford/Tufts",
+    "arrival_time": "2026-10-12T10:40:48-04:00",
+    "departure_time": "2026-10-12T10:41:44-04:00"
   },
   {
     "route": "Red",
-    "headsign": "Ashmont",
-    "arrival_time": "2026-10-11T21:06:25-04:00",
-    "departure_time": "2026-10-11T21:07:47-04:00"
+    "headsign": "Alewife",
+    "arrival_time": "2026-10-12T10:45:30-04:00",
+    "departure_time": "2026-10-12T10:46:33-04:00"
   },
   {
-    "route": "Green-B",
-    "headsign": "Government Center",
-    "arrival_time": "2026-10-11T21:06:26-04:00",
-    "departure_time": "2026-10-11T21:07:34-04:00"
+    "route": "Red",
+    "headsign": "Braintree",
+    "arrival_time": "2026-10-12T10:46:34-04:00",
+    "departure_time": "2026-10-12T10:48:01-04:00"
   },
   {
     "route": "Green-D",
     "headsign": "Riverside",
-    "arrival_time": "2026-10-11T21:07:40-04:00",
-    "departure_time": "2026-10-11T21:08:58-04:00"
+    "arrival_time": "2026-10-12T10:47:18-04:00",
+    "departure_time": "2026-10-12T10:48:50-04:00"
   },
-  "... (5 more)"
+  {
+    "route": "Green-D",
+    "headsign": "Union Square",
+    "arrival_time": "2026-10-12T10:48:32-04:00",
+    "departure_time": "2026-10-12T10:49:33-04:00"
+  },
+  {
+    "route": "Green-E",
+    "headsign": "Heath Street",
+    "arrival_time": "2026-10-12T10:49:14-04:00",
+    "departure_time": "2026-10-12T10:50:35-04:00"
+  },
+  "... (4 more)"
 ]
+```
+</details>
+
+---
+
+### MTA Subway Hourly Ridership (NY Open Data)
+
+| | |
+|:--|:--|
+| **Docs** | https://data.ny.gov/Transportation/MTA-Subway-Hourly-Ridership-Beginning-2025/5wq4-mkjj |
+| **Auth** | None (optional Socrata app token) |
+| **Register / token** | No registration. Socrata SODA API (same query language as the CDC and Chicago entries). Earlier years are separate datasets (wujg-7c2s for 2020-2024, t69i-h2me for 2017-2019). |
+| **Env var** | `SOCRATA_APP_TOKEN (optional)` |
+| **Script** | [`scripts/transportation_geo/mta_ridership.py`](scripts/transportation_geo/mta_ridership.py) |
+
+**What you can get:**
+
+- Hourly entries by station complex, payment method (OMNY/MetroCard), fare class, with coordinates
+- Borough and station IDs for joining GTFS and Census data
+- Hundreds of millions of rows - aggregate server-side
+
+**Capstone ideas:** Ridership recovery and seasonality, OMNY adoption by neighborhood, congestion-pricing effects.
+
+**Endpoint:** `GET https://data.ny.gov/resource/5wq4-mkjj.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `$select + $group` | Aggregate on the server | `station_complex, sum(ridership) as riders` |
+| `$where` | Always bound transit_timestamp | `transit_timestamp between '2026-09-01T00:00:00' and '2026-09-08T00:00:00'` |
+| `columns` | transit_timestamp, station_complex, borough, payment_method, fare_class_category, ridership, transfers, latitude, longitude | `—` |
+| `$order / $limit` | Sort and limit | `riders DESC / 5` |
+| `X-App-Token (header)` | Optional app token | `<SOCRATA_APP_TOKEN>` |
+
+```python
+from _common import get, show
+
+URL = "https://data.ny.gov/resource/5wq4-mkjj.json"
+WEEK = "transit_timestamp between '2026-09-01T00:00:00' and '2026-09-08T00:00:00'"
+
+
+def main():
+    top = get(URL, timeout=120, params={"$select": "station_complex, borough, sum(ridership) as riders",
+                                       "$where": WEEK, "$group": "station_complex, borough",
+                                       "$order": "riders DESC", "$limit": 5})
+    pay = get(URL, timeout=120, params={"$select": "payment_method, sum(ridership) as riders", "$where": WEEK,
+                                       "$group": "payment_method"})
+    show({"week": "2026-09-01 to 2026-09-07",
+          "busiest_stations": [{"station": r["station_complex"], "borough": r["borough"],
+                                "riders": round(float(r["riders"]))} for r in top],
+          "by_payment_method": {r["payment_method"]: round(float(r["riders"])) for r in pay}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
+
+```json
+{
+  "week": "2026-09-01 to 2026-09-07",
+  "busiest_stations": [
+    {
+      "station": "Times Sq-42 St/Port Authority Bus Terminal (1,2,3,7,A,C,E,N,Q,R,W,S)",
+      "borough": "Manhattan",
+      "riders": 877052
+    },
+    {
+      "station": "Grand Central-42 St (4,5,6,7,S)",
+      "borough": "Manhattan",
+      "riders": 633068
+    },
+    {
+      "station": "34 St-Herald Sq (B,D,F,M,N,Q,R,W)",
+      "borough": "Manhattan",
+      "riders": 468188
+    },
+    {
+      "station": "14 St-Union Sq (4,5,6,L,N,Q,R,W)",
+      "borough": "Manhattan",
+      "riders": 421390
+    },
+    {
+      "station": "34 St-Penn Station (A,C,E)",
+      "borough": "Manhattan",
+      "riders": 398843
+    }
+  ],
+  "by_payment_method": {
+    "metrocard": 111085,
+    "omny": 22903365
+  }
+}
 ```
 </details>
 
@@ -14289,7 +14943,7 @@ def main():
                                               "OverallSideCrashRating", "RolloverRating")}})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:03</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 {
@@ -14391,7 +15045,7 @@ def main():
          max_items=8)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 {
@@ -14460,7 +15114,7 @@ def main():
     show([{k: r[k] for k in ("display_name", "lat", "lon", "category", "type")} for r in d])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
 
 ```json
 [
@@ -14472,6 +15126,77 @@ def main():
     "type": "neighbourhood"
   }
 ]
+```
+</details>
+
+---
+
+### NYC Taxi & Limousine Commission trip records
+
+| | |
+|:--|:--|
+| **Docs** | https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page |
+| **Auth** | None (Parquet downloads) |
+| **Register / token** | No registration; no REST API - monthly Parquet files (read with pandas + pyarrow). Sizes per month: green taxi ~1 MB, yellow taxi ~60 MB, high-volume for-hire (Uber/Lyft) ~490 MB. Data dictionaries on the docs page. |
+| **Script** | [`scripts/transportation_geo/nyc_tlc_trips.py`](scripts/transportation_geo/nyc_tlc_trips.py) |
+
+**What you can get:**
+
+- Every yellow/green taxi trip since 2009: pickup/dropoff time and taxi zone, distance, fare, tip, tolls, payment
+- High-volume for-hire trips (Uber, Lyft, Via) since 2019 incl. driver pay and wait times
+- Taxi-zone lookup table and shapefile
+
+**Capstone ideas:** Fare and tip prediction, demand forecasting by zone, taxi vs. rideshare competition, congestion-pricing effects.
+
+**Endpoint:** `GET https://d37ci6vzurychx.cloudfront.net/trip-data/{type}_tripdata_{YYYY-MM}.parquet`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `type` | yellow \| green \| fhv \| fhvhv | `green` |
+| `YYYY-MM` | Month (published with a ~2-month lag) | `2026-07` |
+| `misc/taxi_zone_lookup.csv` | LocationID -> borough, zone, service_zone | `—` |
+| `key columns (yellow/green)` | lpep/tpep_pickup_datetime, PULocationID, DOLocationID, trip_distance, fare_amount, tip_amount, payment_type | `—` |
+
+```python
+import io
+
+import pandas as pd
+import requests
+
+from _common import USER_AGENT, show
+
+BASE = "https://d37ci6vzurychx.cloudfront.net"
+
+
+def main():
+    raw = requests.get(f"{BASE}/trip-data/green_tripdata_2026-07.parquet", headers={"User-Agent": USER_AGENT}, timeout=120)
+    trips = pd.read_parquet(io.BytesIO(raw.content))
+    zones = pd.read_csv(f"{BASE}/misc/taxi_zone_lookup.csv")
+    card = trips[trips["payment_type"] == 1]  # 1 = credit card (cash tips are not recorded)
+    top = (trips.merge(zones, left_on="PULocationID", right_on="LocationID")["Zone"].value_counts().head(4))
+    show({"month": "2026-07 (green taxis)", "trips": len(trips),
+          "median_distance_mi": round(trips["trip_distance"].median(), 2),
+          "median_fare_usd": round(trips["fare_amount"].median(), 2),
+          "card_tip_pct_of_fare": round(100 * card["tip_amount"].sum() / card["fare_amount"].sum(), 1),
+          "top_pickup_zones": top.to_dict()})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:46</summary>
+
+```json
+{
+  "month": "2026-07 (green taxis)",
+  "trips": 41252,
+  "median_distance_mi": 2.13,
+  "median_fare_usd": 13.5,
+  "card_tip_pct_of_fare": 20.5,
+  "top_pickup_zones": {
+    "East Harlem North": 10934,
+    "East Harlem South": 5275,
+    "Forest Hills": 2031,
+    "Central Park": 1633
+  }
+}
 ```
 </details>
 
@@ -14517,53 +15242,53 @@ def main():
          "velocity_mps": s[9]} for s in states]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
 
 ```json
 {
-  "aircraft_in_box": 51,
+  "aircraft_in_box": 44,
   "sample": [
     {
-      "callsign": "AAL3238",
+      "callsign": "ENY4091",
       "origin_country": "United States",
-      "lat": 38.7546,
-      "lon": -77.4392,
-      "baro_alt_m": 952.5,
-      "velocity_mps": 110.62
-    },
-    {
-      "callsign": "SWA1469",
-      "origin_country": "United States",
-      "lat": 39.159,
-      "lon": -76.6585,
-      "baro_alt_m": 304.8,
-      "velocity_mps": 86.18
-    },
-    {
-      "callsign": "SWA1044",
-      "origin_country": "United States",
-      "lat": 39.1083,
-      "lon": -76.6769,
-      "baro_alt_m": 830.58,
-      "velocity_mps": 125.16
-    },
-    {
-      "callsign": "N416KC",
-      "origin_country": "United States",
-      "lat": 38.962,
-      "lon": -77.4725,
+      "lat": 38.855,
+      "lon": -77.043,
       "baro_alt_m": null,
-      "velocity_mps": 9.77
+      "velocity_mps": 1.29
     },
     {
-      "callsign": "SCX3053",
+      "callsign": "ENY4060",
       "origin_country": "United States",
-      "lat": 39.1867,
-      "lon": -76.6832,
-      "baro_alt_m": 106.68,
-      "velocity_mps": 77.39
+      "lat": 38.849,
+      "lon": -77.0366,
+      "baro_alt_m": null,
+      "velocity_mps": 8.75
     },
-    "... (46 more)"
+    {
+      "callsign": "N750JT",
+      "origin_country": "United States",
+      "lat": 38.9469,
+      "lon": -77.4561,
+      "baro_alt_m": null,
+      "velocity_mps": 10.8
+    },
+    {
+      "callsign": "SGX396",
+      "origin_country": "United States",
+      "lat": 38.95,
+      "lon": -77.456,
+      "baro_alt_m": null,
+      "velocity_mps": 4.89
+    },
+    {
+      "callsign": "N233CX",
+      "origin_country": "United States",
+      "lat": 38.615,
+      "lon": -77.4353,
+      "baro_alt_m": 830.58,
+      "velocity_mps": 101.61
+    },
+    "... (39 more)"
   ]
 }
 ```
@@ -14616,7 +15341,7 @@ def main():
            "km": round(d["distances"][0][i] / 1000, 1)} for i in range(1, len(names))])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
 
 ```json
 [
@@ -14639,6 +15364,126 @@ def main():
     "km": 45.0
   }
 ]
+```
+</details>
+
+---
+
+### OurAirports (global airports dataset)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/davidmegginson/ourairports-data (data dictionary: ourairports.com/help/data-dictionary.html) |
+| **Auth** | None (CSV downloads) |
+| **Register / token** | No registration; public-domain CSVs updated nightly (mirrored on GitHub Pages). Companion files: runways, frequencies, navaids, countries, regions. |
+| **Script** | [`scripts/transportation_geo/ourairports.py`](scripts/transportation_geo/ourairports.py) |
+
+**What you can get:**
+
+- ~80,000 airports, heliports and seaplane bases: ICAO/IATA codes, type (large/medium/small), coordinates, elevation
+- Municipality, country, region, scheduled-service flag, Wikipedia links
+- Runway lengths and surfaces
+
+**Capstone ideas:** Airport accessibility analysis, joining codes across flight datasets, mapping air-service deserts.
+
+**Endpoint:** `GET https://davidmegginson.github.io/ourairports-data/{file}.csv`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `airports.csv` | Columns: ident, type, name, latitude_deg, longitude_deg, iso_country, municipality, scheduled_service, iata_code ... | `—` |
+| `runways.csv` | airport_ident, length_ft, surface, lighted, ... | `—` |
+| `countries.csv / regions.csv` | Code lookups | `—` |
+| `type values` | large_airport \| medium_airport \| small_airport \| heliport \| seaplane_base \| closed | `large_airport` |
+
+```python
+import csv
+import io
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    rows = list(csv.DictReader(io.StringIO(get("https://davidmegginson.github.io/ourairports-data/airports.csv",
+                                               as_json=False))))
+    large = [r for r in rows if r["type"] == "large_airport"]
+    show({"airports_total": len(rows), "by_type": Counter(r["type"] for r in rows).most_common(),
+          "large_airports_by_country": Counter(r["iso_country"] for r in large).most_common(5),
+          "dc_area": [{k: r[k] for k in ("ident", "iata_code", "name", "type")} for r in rows
+                      if r["iata_code"] in ("DCA", "IAD", "BWI")]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
+
+```json
+{
+  "airports_total": 86236,
+  "by_type": [
+    [
+      "small_airport",
+      42808
+    ],
+    [
+      "heliport",
+      23238
+    ],
+    [
+      "closed",
+      13574
+    ],
+    [
+      "medium_airport",
+      4105
+    ],
+    [
+      "seaplane_base",
+      1273
+    ],
+    "... (2 more)"
+  ],
+  "large_airports_by_country": [
+    [
+      "US",
+      95
+    ],
+    [
+      "CN",
+      69
+    ],
+    [
+      "RU",
+      44
+    ],
+    [
+      "IN",
+      43
+    ],
+    [
+      "MX",
+      29
+    ]
+  ],
+  "dc_area": [
+    {
+      "ident": "KBWI",
+      "iata_code": "BWI",
+      "name": "Baltimore/Washington International Thurgood Marshall Airport",
+      "type": "large_airport"
+    },
+    {
+      "ident": "KDCA",
+      "iata_code": "DCA",
+      "name": "Ronald Reagan Washington National Airport",
+      "type": "large_airport"
+    },
+    {
+      "ident": "KIAD",
+      "iata_code": "IAD",
+      "name": "Washington Dulles International Airport",
+      "type": "large_airport"
+    }
+  ]
+}
 ```
 </details>
 
@@ -14689,7 +15534,7 @@ def main():
            "opening_hours": e["tags"].get("opening_hours")} for e in r.json()["elements"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 21:04</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
 
 ```json
 [
@@ -14724,6 +15569,345 @@ def main():
     "opening_hours": null
   }
 ]
+```
+</details>
+
+---
+
+### U.S. State Department Travel Advisories
+
+| | |
+|:--|:--|
+| **Docs** | https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html |
+| **Auth** | None |
+| **Register / token** | No registration. JSON feed behind the official advisories page; Category holds the country code(s). Keep a dated copy to study how levels change over time. |
+| **Script** | [`scripts/transportation_geo/state_travel_advisories.py`](scripts/transportation_geo/state_travel_advisories.py) |
+
+**What you can get:**
+
+- Advisory level 1-4 for every country (Exercise Normal Precautions ... Do Not Travel)
+- Risk indicators in the summary text (crime, terrorism, unrest, health, kidnapping...), last-updated dates, links
+
+**Capstone ideas:** Travel-risk vs. tourism flows, how advisories respond to events (ACLED, GDELT), text classification of risks.
+
+**Endpoint:** `GET https://cadataapi.state.gov/api/TravelAdvisories`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `(no parameters)` | Returns all advisories | `—` |
+| `Title` | Country + level, e.g. 'Yemen - Level 4: Do Not Travel' | `—` |
+| `Category` | Two-letter country code(s) | `YM` |
+| `Summary / Published / Updated` | HTML summary text and dates | `—` |
+
+```python
+import re
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    adv = get("https://cadataapi.state.gov/api/TravelAdvisories")
+    level = lambda a: int(m.group(1)) if (m := re.search(r"Level (\d)", a["Title"])) else None
+    levels = Counter(level(a) for a in adv)
+    show({"advisories": len(adv), "by_level": {f"Level {k}": v for k, v in sorted(levels.items(), key=lambda kv: kv[0] or 0)},
+          "level_4_do_not_travel": sorted({a["Title"].split(" - ")[0] for a in adv if level(a) == 4})},  # feed has duplicates
+         max_items=25)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
+
+```json
+{
+  "advisories": 223,
+  "by_level": {
+    "Level 1": 85,
+    "Level 2": 86,
+    "Level 3": 27,
+    "Level 4": 25
+  },
+  "level_4_do_not_travel": [
+    "Afghanistan",
+    "Belarus",
+    "Burkina Faso",
+    "Burma",
+    "Central African Republic",
+    "Chad",
+    "Democratic Republic of the Congo",
+    "Gaza",
+    "Haiti",
+    "Iran",
+    "Iraq",
+    "Lebanon",
+    "Libya",
+    "Mali",
+    "Niger",
+    "North Korea",
+    "Russia",
+    "Somalia",
+    "South Sudan",
+    "Sudan",
+    "Syria",
+    "Uganda",
+    "Ukraine",
+    "Yemen"
+  ]
+}
+```
+</details>
+
+---
+
+### Swiss public transport API (transport.opendata.ch)
+
+| | |
+|:--|:--|
+| **Docs** | https://transport.opendata.ch/docs.html |
+| **Auth** | None |
+| **Register / token** | No registration. Max ~1,000 connection requests/day per IP. Covers all Swiss trains, trams, buses, boats. |
+| **Script** | [`scripts/transportation_geo/swiss_transport.py`](scripts/transportation_geo/swiss_transport.py) |
+
+**What you can get:**
+
+- Door-to-door connections: departure/arrival times, duration, transfers, platforms, delays, sections
+- Live departure boards per station
+- Station search by name or coordinates
+
+**Capstone ideas:** Comparing timetable connectivity across cities, delay analysis, multimodal travel-time accessibility.
+
+**Endpoint:** `GET https://transport.opendata.ch/v1/{connections \| stationboard \| locations}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `from / to / via` | Stations or addresses | `Zürich HB / Genève` |
+| `date / time / isArrivalTime` | When to travel | `2026-10-20 / 08:00` |
+| `limit` | Number of connections (max 16) | `3` |
+| `transportations[]` | train \| tram \| bus \| ship \| cableway | `train` |
+| `stationboard?station=&limit=` | Departures from a station | `station=Bern&limit=10` |
+| `locations?query= / ?x=&y=` | Station search by name or coordinates | `query=Lausanne` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://transport.opendata.ch/v1/connections", params={"from": "Zürich HB", "to": "Genève", "limit": 3})
+    board = get("https://transport.opendata.ch/v1/stationboard", params={"station": "Bern", "limit": 5})
+    show({"zurich_to_geneva": [{"departure": c["from"]["departure"], "arrival": c["to"]["arrival"],
+                                "duration": c["duration"], "transfers": c["transfers"],
+                                "products": c["products"], "platform": c["from"].get("platform")} for c in d["connections"]],
+          "bern_departures": [{"train": f'{s["category"]} {s["number"]}', "to": s["to"],
+                               "time": s["stop"]["departure"], "delay_min": s["stop"].get("delay")} for s in board["stationboard"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
+
+```json
+{
+  "zurich_to_geneva": [
+    {
+      "departure": "2026-10-12T17:04:00+0200",
+      "arrival": "2026-10-12T19:55:00+0200",
+      "duration": "00d02:51:00",
+      "transfers": 1,
+      "products": [
+        "IC 5",
+        "IR 90"
+      ],
+      "platform": "32"
+    },
+    {
+      "departure": "2026-10-12T17:31:00+0200",
+      "arrival": "2026-10-12T20:25:00+0200",
+      "duration": "00d02:54:00",
+      "transfers": 0,
+      "products": [
+        "IC 1"
+      ],
+      "platform": "32"
+    },
+    {
+      "departure": "2026-10-12T18:04:00+0200",
+      "arrival": "2026-10-12T20:55:00+0200",
+      "duration": "00d02:51:00",
+      "transfers": 1,
+      "products": [
+        "IC 5",
+        "IR 90"
+      ],
+      "platform": "32"
+    }
+  ],
+  "bern_departures": [
+    {
+      "train": "S 1",
+      "to": "Thun",
+      "time": "2026-10-12T16:47:00+0200",
+      "delay_min": 0
+    },
+    {
+      "train": "S 31",
+      "to": "Wabern bei Bern",
+      "time": "2026-10-12T16:47:00+0200",
+      "delay_min": null
+    },
+    {
+      "train": "RE 5",
+      "to": "Solothurn",
+      "time": "2026-10-12T16:50:00+0200",
+      "delay_min": 0
+    },
+    {
+      "train": "S 2",
+      "to": "Laupen BE",
+      "time": "2026-10-12T16:50:00+0200",
+      "delay_min": 0
+    },
+    {
+      "train": "S 44",
+      "to": "Sumiswald-Grünen",
+      "time": "2026-10-12T16:50:00+0200",
+      "delay_min": 0
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Transport for London Unified API
+
+| | |
+|:--|:--|
+| **Docs** | https://api-portal.tfl.gov.uk/ |
+| **Auth** | None (free app key raises limits) |
+| **Register / token** | Works without a key at low volume. Register at https://api-portal.tfl.gov.uk for a key (500 requests/minute). One of the richest city transit APIs in the world. |
+| **Env var** | `TFL_APP_KEY (optional)` |
+| **Script** | [`scripts/transportation_geo/tfl_unified.py`](scripts/transportation_geo/tfl_unified.py) |
+
+**What you can get:**
+
+- Live line status and disruptions for Tube, Overground, Elizabeth line, DLR, buses, trams
+- Arrival predictions per stop, journey planner, Santander Cycles docks, road disruptions
+- Air-quality forecasts, road disruptions, car parks
+
+**Capstone ideas:** Disruption pattern analysis, reliability by line, bike-share availability vs. weather and events.
+
+**Endpoint:** `GET https://api.tfl.gov.uk/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `Line/Mode/{modes}/Status` | Status of every line in the modes (tube, dlr, overground, elizabeth-line, bus) | `tube,elizabeth-line` |
+| `StopPoint/{id}/Arrivals` | Live arrivals at a stop | `940GZZLUOXC (Oxford Circus)` |
+| `Journey/JourneyResults/{from}/to/{to}` | Journey planner (postcodes, stop IDs or lat,lon) | `SW1A1AA/to/E14 5AB` |
+| `BikePoint` | All cycle-hire docks with bikes/empty docks | `—` |
+| `app_key` | Optional key | `<TFL_APP_KEY>` |
+
+```python
+import os
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    params = {"app_key": os.environ["TFL_APP_KEY"]} if os.getenv("TFL_APP_KEY") else None
+    lines = get("https://api.tfl.gov.uk/Line/Mode/tube,elizabeth-line,dlr/Status", params=params)
+    bikes = get("https://api.tfl.gov.uk/BikePoint", params=params)
+    nbikes = sum(int(next((p["value"] for p in b["additionalProperties"] if p["key"] == "NbBikes"), 0)) for b in bikes)
+    show({"line_status": {l["name"]: l["lineStatuses"][0]["statusSeverityDescription"] for l in lines},
+          "status_counts": Counter(l["lineStatuses"][0]["statusSeverityDescription"] for l in lines).most_common(),
+          "bike_docks": len(bikes), "bikes_available": nbikes}, max_items=15)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
+
+```json
+{
+  "line_status": {
+    "Bakerloo": "Good Service",
+    "Central": "Good Service",
+    "Circle": "Good Service",
+    "District": "Good Service",
+    "DLR": "Good Service",
+    "Elizabeth line": "Good Service",
+    "Hammersmith & City": "Good Service",
+    "Jubilee": "Good Service",
+    "Metropolitan": "Good Service",
+    "Northern": "Good Service",
+    "Piccadilly": "Good Service",
+    "Victoria": "Good Service",
+    "Waterloo & City": "Good Service"
+  },
+  "status_counts": [
+    [
+      "Good Service",
+      13
+    ]
+  ],
+  "bike_docks": 799,
+  "bikes_available": 8387
+}
+```
+</details>
+
+---
+
+### TomTom Traffic API
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.tomtom.com/traffic-api/documentation/tomtom-maps/v1/product-information/introduction |
+| **Auth** | API key (query `key`) |
+| **Register / token** | Create a free account at https://developer.tomtom.com and copy the default API key. Free tier: 2,500 non-tile requests/day. Also includes routing, search and map APIs. |
+| **Env var** | `TOMTOM_API_KEY` |
+| **Script** | [`scripts/transportation_geo/tomtom_traffic.py`](scripts/transportation_geo/tomtom_traffic.py) |
+
+**What you can get:**
+
+- Traffic flow for a road segment: current vs. free-flow speed and travel time, confidence, road closures
+- Traffic incidents (accidents, jams, roadworks) in a bounding box with delays
+- Flow and incident map tiles
+
+**Capstone ideas:** Congestion indices for a city, incident impact on travel times, traffic vs. weather/events models.
+
+**Endpoint:** `GET https://api.tomtom.com/traffic/services/{4 \| 5}/{flowSegmentData \| incidentDetails}/...`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `flowSegmentData/{style}/{zoom}/json?point=lat,lon` | Flow on the road nearest a point; style absolute \| relative | `absolute/10/json?point=38.8977,-77.0365` |
+| `unit` | KMPH \| MPH | `MPH` |
+| `/traffic/services/5/incidentDetails?bbox=&fields=` | Incidents in a box (v5) | `bbox=-77.12,38.80,-76.91,38.99` |
+| `key` | Your API key | `<TOMTOM_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    f = get("https://api.tomtom.com/traffic/services/4/flowSegmentData/absolute/10/json",
+            params={"point": "38.8977,-77.0365", "unit": "MPH", "key": key("TOMTOM_API_KEY")})["flowSegmentData"]
+    show({"point": "38.8977,-77.0365 (Washington, DC)", "current_speed_mph": f["currentSpeed"],
+          "free_flow_speed_mph": f["freeFlowSpeed"],
+          "congestion_pct": round(100 * (1 - f["currentSpeed"] / f["freeFlowSpeed"])),
+          "current_travel_time_s": f["currentTravelTime"], "free_flow_travel_time_s": f["freeFlowTravelTime"],
+          "confidence": f["confidence"], "road_closure": f["roadClosure"]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "point": "38.8977,-77.0365 (Washington, DC)",
+  "current_speed_mph": 18,
+  "free_flow_speed_mph": 27,
+  "congestion_pct": 33,
+  "current_travel_time_s": 214,
+  "free_flow_travel_time_s": 143,
+  "confidence": 0.98,
+  "road_closure": false
+}
 ```
 </details>
 
@@ -14777,6 +15961,85 @@ def main():
   {"route": "RD", "long_name": "Red Line", "agency": "Washington Metropolitan Area Transit Authority", "route_type": 1},
   {"route": "BL", "long_name": "Blue Line", "agency": "Washington Metropolitan Area Transit Authority", "route_type": 1}
 ]
+```
+</details>
+
+---
+
+### Wikivoyage (MediaWiki API)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.mediawiki.org/wiki/API:Main_page |
+| **Auth** | None |
+| **Register / token** | No registration. The same MediaWiki API works for Wikipedia and every Wikimedia wiki; send a descriptive User-Agent. CC BY-SA content. |
+| **Script** | [`scripts/transportation_geo/wikivoyage.py`](scripts/transportation_geo/wikivoyage.py) |
+
+**What you can get:**
+
+- Free travel guides for 30,000+ destinations: understand, get in, get around, see, do, eat, sleep, stay safe
+- Plain-text extracts, section lists, coordinates, links between destinations, page views
+
+**Capstone ideas:** Destination recommendation with NLP, travel-guide summarization, mapping attractions by coordinates.
+
+**Endpoint:** `GET https://en.wikivoyage.org/w/api.php`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `action` | query \| parse \| opensearch | `query` |
+| `prop=extracts&explaintext=1` | Plain-text content (exintro=1 for the intro only) | `—` |
+| `titles` | Page title(s), \| separated | `Washington, D.C.` |
+| `action=parse&prop=sections` | Section list of a page (then parse&section=N for one section) | `page=Washington, D.C.` |
+| `prop=coordinates` | Latitude/longitude of the destination | `—` |
+| `format` | json | `json` |
+
+```python
+from _common import get, show
+
+API = "https://en.wikivoyage.org/w/api.php"
+
+
+def main():
+    page = "Washington, D.C."
+    intro = get(API, params={"action": "query", "prop": "extracts|coordinates", "exintro": 1, "explaintext": 1,
+                             "titles": page, "format": "json"})["query"]["pages"]
+    p = next(iter(intro.values()))
+    sections = get(API, params={"action": "parse", "page": page, "prop": "sections", "format": "json"})["parse"]["sections"]
+    show({"destination": p["title"], "coordinates": (p.get("coordinates") or [{}])[0],
+          "intro": p["extract"], "top_sections": [s["line"] for s in sections if s["toclevel"] == 1]},
+         max_items=14, max_str=300)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 10:47</summary>
+
+```json
+{
+  "destination": "Washington, D.C.",
+  "coordinates": {
+    "lat": 38.90092,
+    "lon": -77.02446,
+    "primary": "",
+    "globe": "earth"
+  },
+  "intro": "Washington, D.C., the capital of the United States of America and the seat of its three branches of government, has an unparalleled collection of free, public museums, and the lion's share of the nation's most treasured monuments and memorials. The vistas on the National Mall between the Capitol, Wa...",
+  "top_sections": [
+    "Districts",
+    "Understand",
+    "Get in",
+    "Get around",
+    "See",
+    "Do",
+    "Learn",
+    "Work",
+    "Buy",
+    "Eat",
+    "Drink",
+    "Sleep",
+    "Stay safe",
+    "Stay healthy",
+    "... (4 more)"
+  ]
+}
 ```
 </details>
 

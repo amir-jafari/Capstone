@@ -1,0 +1,26 @@
+# live 2026-10-12 10:47
+{
+  "line_status": {
+    "Bakerloo": "Good Service",
+    "Central": "Good Service",
+    "Circle": "Good Service",
+    "District": "Good Service",
+    "DLR": "Good Service",
+    "Elizabeth line": "Good Service",
+    "Hammersmith & City": "Good Service",
+    "Jubilee": "Good Service",
+    "Metropolitan": "Good Service",
+    "Northern": "Good Service",
+    "Piccadilly": "Good Service",
+    "Victoria": "Good Service",
+    "Waterloo & City": "Good Service"
+  },
+  "status_counts": [
+    [
+      "Good Service",
+      13
+    ]
+  ],
+  "bike_docks": 799,
+  "bikes_available": 8387
+}
