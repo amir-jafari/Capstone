@@ -1,0 +1,58 @@
+# live 2026-10-12 11:05
+{
+  "players": 667,
+  "current_gameweek": "Gameweek 6",
+  "top_scorers_in_fpl": [
+    {
+      "player": "De Cuyper",
+      "team": "BHA",
+      "pos": "DEF",
+      "price_m": 5.1,
+      "points": 53,
+      "goals": 2,
+      "xG": "1.80",
+      "owned_pct": "34.1"
+    },
+    {
+      "player": "Groß",
+      "team": "BHA",
+      "pos": "MID",
+      "price_m": 6.0,
+      "points": 53,
+      "goals": 3,
+      "xG": "2.02",
+      "owned_pct": "38.3"
+    },
+    {
+      "player": "Tarkowski",
+      "team": "EVE",
+      "pos": "DEF",
+      "price_m": 6.2,
+      "points": 46,
+      "goals": 1,
+      "xG": "0.18",
+      "owned_pct": "18.3"
+    },
+    {
+      "player": "João Pedro",
+      "team": "CHE",
+      "pos": "FWD",
+      "price_m": 7.8,
+      "points": 45,
+      "goals": 5,
+      "xG": "2.77",
+      "owned_pct": "68.7"
+    },
+    {
+      "player": "Haaland",
+      "team": "MCI",
+      "pos": "FWD",
+      "price_m": 15.6,
+      "points": 45,
+      "goals": 6,
+      "xG": "4.82",
+      "owned_pct": "74.9"
+    },
+    "... (1 more)"
+  ]
+}

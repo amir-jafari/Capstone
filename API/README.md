@@ -2,7 +2,7 @@
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
 > census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning,
-> engineering & energy, transportation & travel, sports, and culture, media & entertainment.
+> engineering & energy, transportation & travel, sports & gaming, and culture, media & entertainment.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
 
@@ -237,32 +237,46 @@ python build_readme.py          # re-run everything & regenerate this README
 | 206 | 🗺️ Transportation, Travel & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
 | 207 | 🗺️ Transportation, Travel & Geospatial | [Wikivoyage (MediaWiki API)](#wikivoyage-mediawiki-api) | 🟢 no key | — | [`wikivoyage.py`](scripts/transportation_geo/wikivoyage.py) |
 | 208 | 🗺️ Transportation, Travel & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 209 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 210 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 211 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 212 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 213 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 214 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 215 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 216 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 217 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 218 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
-| 219 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
-| 220 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
-| 221 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
-| 222 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
-| 223 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
-| 224 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
-| 225 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
-| 226 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 227 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
-| 228 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 229 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
-| 230 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
-| 231 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
-| 232 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
-| 233 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
-| 234 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
+| 209 | 🏅 Sports & Gaming | [API-Football (API-Sports)](#api-football-api-sports) | 🔑 key | `APISPORTS_KEY` | [`api_football.py`](scripts/sports/api_football.py) |
+| 210 | 🏅 Sports & Gaming | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 211 | 🏅 Sports & Gaming | [Baseball Savant (MLB Statcast)](#baseball-savant-mlb-statcast) | 🟢 no key | — | [`baseball_savant.py`](scripts/sports/baseball_savant.py) |
+| 212 | 🏅 Sports & Gaming | [CheapShark (PC game deals)](#cheapshark-pc-game-deals) | 🟢 no key | — | [`cheapshark.py`](scripts/sports/cheapshark.py) |
+| 213 | 🏅 Sports & Gaming | [Chess.com Published-Data API](#chesscom-published-data-api) | 🟢 no key | — | [`chess_com.py`](scripts/sports/chess_com.py) |
+| 214 | 🏅 Sports & Gaming | [CollegeFootballData.com API](#collegefootballdatacom-api) | 🔑 key | `CFBD_API_KEY` | [`college_football_data.py`](scripts/sports/college_football_data.py) |
+| 215 | 🏅 Sports & Gaming | [Cricsheet (ball-by-ball cricket data)](#cricsheet-ball-by-ball-cricket-data) | 🟢 no key | — | [`cricsheet.py`](scripts/sports/cricsheet.py) |
+| 216 | 🏅 Sports & Gaming | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 217 | 🏅 Sports & Gaming | [Fantasy Premier League API](#fantasy-premier-league-api) | 🟢 no key | — | [`fantasy_premier_league.py`](scripts/sports/fantasy_premier_league.py) |
+| 218 | 🏅 Sports & Gaming | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 219 | 🏅 Sports & Gaming | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 220 | 🏅 Sports & Gaming | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 221 | 🏅 Sports & Gaming | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 222 | 🏅 Sports & Gaming | [nflverse data (NFL play-by-play & stats)](#nflverse-data-nfl-play-by-play--stats) | 🟢 no key | — | [`nflverse.py`](scripts/sports/nflverse.py) |
+| 223 | 🏅 Sports & Gaming | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 224 | 🏅 Sports & Gaming | [OpenDota API (Dota 2 esports & matches)](#opendota-api-dota-2-esports--matches) | 🟢 no key | `OPENDOTA_API_KEY (optional)` | [`opendota.py`](scripts/sports/opendota.py) |
+| 225 | 🏅 Sports & Gaming | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 226 | 🏅 Sports & Gaming | [PokéAPI](#pokapi) | 🟢 no key | — | [`pokeapi.py`](scripts/sports/pokeapi.py) |
+| 227 | 🏅 Sports & Gaming | [Riot Games API (League of Legends, Valorant, TFT)](#riot-games-api-league-of-legends-valorant-tft) | 🔑 key | `RIOT_API_KEY` | [`riot_games.py`](scripts/sports/riot_games.py) |
+| 228 | 🏅 Sports & Gaming | [Sleeper API (fantasy football)](#sleeper-api-fantasy-football) | 🟢 no key | — | [`sleeper.py`](scripts/sports/sleeper.py) |
+| 229 | 🏅 Sports & Gaming | [Speedrun.com API](#speedruncom-api) | 🟢 no key | — | [`speedrun_com.py`](scripts/sports/speedrun_com.py) |
+| 230 | 🏅 Sports & Gaming | [StatsBomb Open Data (soccer event data)](#statsbomb-open-data-soccer-event-data) | 🟢 no key | — | [`statsbomb_open_data.py`](scripts/sports/statsbomb_open_data.py) |
+| 231 | 🏅 Sports & Gaming | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 232 | 🎬 Culture, Media & Entertainment | [Art Institute of Chicago API](#art-institute-of-chicago-api) | 🟢 no key | — | [`art_institute_chicago.py`](scripts/culture_misc/art_institute_chicago.py) |
+| 233 | 🎬 Culture, Media & Entertainment | [Deezer API (music charts & catalog)](#deezer-api-music-charts--catalog) | 🟢 no key | — | [`deezer.py`](scripts/culture_misc/deezer.py) |
+| 234 | 🎬 Culture, Media & Entertainment | [Discogs API (music releases & marketplace)](#discogs-api-music-releases--marketplace) | 🟢 no key | `DISCOGS_TOKEN (optional)` | [`discogs.py`](scripts/culture_misc/discogs.py) |
+| 235 | 🎬 Culture, Media & Entertainment | [Google Books API](#google-books-api) | 🔑 key | `GOOGLE_BOOKS_API_KEY` | [`google_books.py`](scripts/culture_misc/google_books.py) |
+| 236 | 🎬 Culture, Media & Entertainment | [Gutendex (Project Gutenberg books)](#gutendex-project-gutenberg-books) | 🟢 no key | — | [`gutendex.py`](scripts/culture_misc/gutendex.py) |
+| 237 | 🎬 Culture, Media & Entertainment | [Internet Archive (search & metadata)](#internet-archive-search--metadata) | 🟢 no key | — | [`internet_archive.py`](scripts/culture_misc/internet_archive.py) |
+| 238 | 🎬 Culture, Media & Entertainment | [iTunes Search API (Apple music, podcasts, apps, books)](#itunes-search-api-apple-music-podcasts-apps-books) | 🟢 no key | — | [`itunes_search.py`](scripts/culture_misc/itunes_search.py) |
+| 239 | 🎬 Culture, Media & Entertainment | [Last.fm API (listening data & tags)](#lastfm-api-listening-data--tags) | 🔑 key | `LASTFM_API_KEY` | [`lastfm.py`](scripts/culture_misc/lastfm.py) |
+| 240 | 🎬 Culture, Media & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 241 | 🎬 Culture, Media & Entertainment | [MusicBrainz (open music encyclopedia)](#musicbrainz-open-music-encyclopedia) | 🟢 no key | — | [`musicbrainz.py`](scripts/culture_misc/musicbrainz.py) |
+| 242 | 🎬 Culture, Media & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 243 | 🎬 Culture, Media & Entertainment | [RAWG Video Games Database API](#rawg-video-games-database-api) | 🔑 key | `RAWG_API_KEY` | [`rawg.py`](scripts/culture_misc/rawg.py) |
+| 244 | 🎬 Culture, Media & Entertainment | [Spotify Web API](#spotify-web-api) | 🔑 key | `SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET` | [`spotify.py`](scripts/culture_misc/spotify.py) |
+| 245 | 🎬 Culture, Media & Entertainment | [SteamSpy (Steam game statistics)](#steamspy-steam-game-statistics) | 🟢 no key | — | [`steamspy.py`](scripts/culture_misc/steamspy.py) |
+| 246 | 🎬 Culture, Media & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 247 | 🎬 Culture, Media & Entertainment | [TVmaze API (TV shows & schedules)](#tvmaze-api-tv-shows--schedules) | 🟢 no key | — | [`tvmaze.py`](scripts/culture_misc/tvmaze.py) |
+| 248 | 🎬 Culture, Media & Entertainment | [Wikidata Query Service (SPARQL)](#wikidata-query-service-sparql) | 🟢 no key | — | [`wikidata_sparql.py`](scripts/culture_misc/wikidata_sparql.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -17270,7 +17284,59 @@ def main():
 
 ---
 
-## 🏅 Sports
+## 🏅 Sports & Gaming
+
+### API-Football (API-Sports)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.api-football.com/documentation-v3 |
+| **Auth** | API key (header `x-apisports-key`) |
+| **Register / token** | Register at https://dashboard.api-football.com/register for a free key: 100 requests/day. The free plan only covers some past seasons - check the dashboard. The same account works for API-Sports' basketball, NFL, hockey, F1 and other APIs. |
+| **Env var** | `APISPORTS_KEY` |
+| **Script** | [`scripts/sports/api_football.py`](scripts/sports/api_football.py) |
+
+**What you can get:**
+
+- 1,100+ soccer leagues and cups: fixtures, live scores, standings, lineups, events, statistics
+- Players and squads with season stats, top scorers, transfers, injuries
+- Pre-match odds and predictions
+
+**Capstone ideas:** Match-outcome prediction with lineups and stats, transfer-market analysis, injury impact on results.
+
+**Endpoint:** `GET https://v3.football.api-sports.io/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `leagues?country= / ?search=` | Find league IDs (39 Premier League, 140 La Liga, 2 Champions League) | `country=England` |
+| `standings?league=&season=` | League table | `league=39&season=2023` |
+| `fixtures?league=&season= / ?date= / ?live=all` | Fixtures and results | `date=2026-10-12` |
+| `players/topscorers?league=&season=` | Top scorers | `league=39&season=2023` |
+| `x-apisports-key (header)` | Your key | `<APISPORTS_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://v3.football.api-sports.io/standings", headers={"x-apisports-key": key("APISPORTS_KEY")},
+            params={"league": 39, "season": 2023})
+    table = d["response"][0]["league"]["standings"][0]
+    show([{"rank": t["rank"], "team": t["team"]["name"], "played": t["all"]["played"], "points": t["points"],
+           "goal_diff": t["goalsDiff"]} for t in table[:5]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"rank": 1, "team": "Manchester City", "played": 38, "points": 91, "goal_diff": 62},
+  {"rank": 2, "team": "Arsenal", "played": 38, "points": 89, "goal_diff": 62}
+]
+```
+</details>
+
+---
 
 ### BALLDONTLIE (NBA, NFL, MLB, ...)
 
@@ -17326,6 +17392,436 @@ def main():
 
 ---
 
+### Baseball Savant (MLB Statcast)
+
+| | |
+|:--|:--|
+| **Docs** | https://baseballsavant.mlb.com/csv-docs |
+| **Auth** | None (CSV endpoints) |
+| **Register / token** | No registration; unofficial CSV endpoints behind MLB's Statcast site. The pitch-level search returns at most ~25,000 rows per request, so query a few days at a time. Python package: `pip install pybaseball`. |
+| **Script** | [`scripts/sports/baseball_savant.py`](scripts/sports/baseball_savant.py) |
+
+**What you can get:**
+
+- Pitch-level Statcast data: velocity, spin rate, movement, release point, exit velocity, launch angle, location
+- Leaderboards: expected stats (xBA, xSLG, xwOBA), sprint speed, outs above average, bat tracking, arsenal
+- Player and game identifiers matching the MLB Stats API
+
+**Capstone ideas:** Luck vs. skill (actual vs. expected stats), pitch-outcome models, swing/launch-angle optimization.
+
+**Endpoint:** `GET https://baseballsavant.mlb.com/{leaderboard/{name} \| statcast_search/csv}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `leaderboard/expected_statistics?type=&year=&min=&csv=true` | xBA/xSLG/xwOBA vs. actual; type batter \| pitcher; min=q qualified | `type=batter&year=2025&min=q` |
+| `statcast_search/csv?all=true&type=details` | Pitch-level rows | `—` |
+| `game_date_gt / game_date_lt` | Date range for pitch search (keep it short) | `2025-09-01 / 2025-09-02` |
+| `hfSea / hfGT / player_type` | Season (2025\|), game type (R\| regular season), batter \| pitcher | `hfSea=2025%7C` |
+| `other leaderboards` | sprint_speed, outs_above_average, bat-tracking, pitch-arsenal-stats (add csv=true) | `—` |
+
+```python
+import csv
+import io
+
+from _common import get, show
+
+
+def main():
+    text = get("https://baseballsavant.mlb.com/leaderboard/expected_statistics",
+               params={"type": "batter", "year": 2025, "min": "q", "csv": "true"}, as_json=False)
+    rows = list(csv.DictReader(io.StringIO(text.lstrip("﻿"))))
+    luck = sorted(rows, key=lambda r: float(r["est_woba_minus_woba_diff"]))
+    fmt = lambda r: {"player": r["last_name, first_name"], "woba": float(r["woba"]), "xwoba": float(r["est_woba"])}
+    show({"qualified_batters_2025": len(rows),
+          "top_xwOBA": [fmt(r) for r in sorted(rows, key=lambda r: -float(r["est_woba"]))[:3]],
+          "most_unlucky (xwOBA > wOBA)": [fmt(r) for r in luck[:3]],
+          "most_lucky (wOBA > xwOBA)": [fmt(r) for r in luck[-3:]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "qualified_batters_2025": 251,
+  "top_xwOBA": [
+    {
+      "player": "Judge, Aaron",
+      "woba": 0.463,
+      "xwoba": 0.457
+    },
+    {
+      "player": "Soto, Juan",
+      "woba": 0.39,
+      "xwoba": 0.429
+    },
+    {
+      "player": "Ohtani, Shohei",
+      "woba": 0.418,
+      "xwoba": 0.425
+    }
+  ],
+  "most_unlucky (xwOBA > wOBA)": [
+    {
+      "player": "Perez, Salvador",
+      "woba": 0.311,
+      "xwoba": 0.357
+    },
+    {
+      "player": "Conforto, Michael",
+      "woba": 0.287,
+      "xwoba": 0.33
+    },
+    {
+      "player": "García Jr., Luis",
+      "woba": 0.3,
+      "xwoba": 0.339
+    }
+  ],
+  "most_lucky (wOBA > xwOBA)": [
+    {
+      "player": "Kurtz, Nick",
+      "woba": 0.419,
+      "xwoba": 0.372
+    },
+    {
+      "player": "Bader, Harrison",
+      "woba": 0.346,
+      "xwoba": 0.297
+    },
+    {
+      "player": "Andujar, Miguel",
+      "woba": 0.354,
+      "xwoba": 0.298
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### CheapShark (PC game deals)
+
+| | |
+|:--|:--|
+| **Docs** | https://apidocs.cheapshark.com/ |
+| **Auth** | None |
+| **Register / token** | No registration. Be reasonable with request volume (they throttle heavy use). Covers ~30 stores (Steam, GOG, Humble, Epic, Fanatical...). |
+| **Script** | [`scripts/sports/cheapshark.py`](scripts/sports/cheapshark.py) |
+
+**What you can get:**
+
+- Current deals: sale price, normal price, savings %, Metacritic score, Steam rating, store, release date
+- Price lookups by game title or Steam app ID, cheapest price ever
+- Store list
+
+**Capstone ideas:** Discount strategies and timing, price vs. review score, how quickly game prices decay after release.
+
+**Endpoint:** `GET https://www.cheapshark.com/api/1.0/{deals \| games \| stores}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `storeID` | Store (1 = Steam; list via /stores) | `1` |
+| `upperPrice / lowerPrice` | Price range in USD | `15` |
+| `sortBy` | Deal Rating \| Title \| Savings \| Price \| Metacritic \| Reviews \| Release \| Store \| Recent | `Metacritic` |
+| `metacritic / steamRating` | Minimum scores | `80` |
+| `games?title= · games?id=` | Find a game / its deals and cheapest ever price | `title=hades` |
+| `pageSize / pageNumber` | Paging (max 60) | `5` |
+
+```python
+from _common import get, show
+
+
+def main():
+    deals = get("https://www.cheapshark.com/api/1.0/deals", params={
+        "storeID": 1, "upperPrice": 15, "metacritic": 85, "sortBy": "Savings", "pageSize": 6})
+    stores = get("https://www.cheapshark.com/api/1.0/stores")
+    show({"stores_tracked": sum(s["isActive"] for s in stores), "steam_deals_under_15_metacritic_85_plus": [
+        {"title": d["title"], "sale": float(d["salePrice"]), "normal": float(d["normalPrice"]),
+         "savings_pct": round(float(d["savings"])), "metacritic": int(d["metacriticScore"]),
+         "steam_rating": d.get("steamRatingText")} for d in deals]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "stores_tracked": 14,
+  "steam_deals_under_15_metacritic_85_plus": [
+    {
+      "title": "Deaths Door",
+      "sale": 1.99,
+      "normal": 19.99,
+      "savings_pct": 90,
+      "metacritic": 85,
+      "steam_rating": "Very Positive"
+    },
+    {
+      "title": "The Talos Principle 2",
+      "sale": 2.99,
+      "normal": 29.99,
+      "savings_pct": 90,
+      "metacritic": 88,
+      "steam_rating": "Very Positive"
+    },
+    {
+      "title": "Dungeon Siege",
+      "sale": 0.97,
+      "normal": 6.99,
+      "savings_pct": 86,
+      "metacritic": 86,
+      "steam_rating": "Very Positive"
+    },
+    {
+      "title": "The Talos Principle",
+      "sale": 4.49,
+      "normal": 29.99,
+      "savings_pct": 85,
+      "metacritic": 85,
+      "steam_rating": "Overwhelmingly Positive"
+    },
+    {
+      "title": "Homeworld Remastered Collection",
+      "sale": 5.24,
+      "normal": 34.99,
+      "savings_pct": 85,
+      "metacritic": 86,
+      "steam_rating": "Very Positive"
+    },
+    "... (1 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### Chess.com Published-Data API
+
+| | |
+|:--|:--|
+| **Docs** | https://www.chess.com/news/view/published-data-api |
+| **Auth** | None |
+| **Register / token** | No registration. Read-only public data; serial requests are unlimited, parallel requests may be rate-limited (HTTP 429). Complements the Lichess entry. |
+| **Script** | [`scripts/sports/chess_com.py`](scripts/sports/chess_com.py) |
+
+**What you can get:**
+
+- Leaderboards for daily, rapid, blitz, bullet, puzzles
+- Player profiles and ratings; titled players (GM, IM, WGM...)
+- Monthly game archives with full PGN (moves, clocks, openings)
+- Clubs, tournaments, team matches, country players
+
+**Capstone ideas:** Rating-system analysis, opening popularity by rating, cheating detection, time-pressure blunders.
+
+**Endpoint:** `GET https://api.chess.com/pub/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `leaderboards` | All leaderboards | `—` |
+| `titled/{title}` | Usernames with a title: GM \| WGM \| IM \| WIM \| FM \| ... | `titled/GM` |
+| `player/{username} · player/{username}/stats` | Profile and ratings | `player/hikaru/stats` |
+| `player/{username}/games/archives · /games/{YYYY}/{MM}` | Monthly game archives (PGN) | `player/hikaru/games/2026/09` |
+| `country/{iso}/players` | Players by country | `country/US/players` |
+
+```python
+from _common import get, show
+
+
+def main():
+    lb = get("https://api.chess.com/pub/leaderboards")
+    gms = get("https://api.chess.com/pub/titled/GM")["players"]
+    stats = get("https://api.chess.com/pub/player/hikaru/stats")
+    show({"titled_GMs_on_chess_com": len(gms),
+          "live_blitz_top5": [{"rank": p["rank"], "username": p["username"], "title": p.get("title"), "rating": p["score"]}
+                              for p in lb["live_blitz"][:5]],
+          "hikaru_ratings": {k.replace("chess_", ""): v["last"]["rating"] for k, v in stats.items() if k.startswith("chess_")}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "titled_GMs_on_chess_com": 1743,
+  "live_blitz_top5": [
+    {
+      "rank": 1,
+      "username": "Hikaru",
+      "title": "GM",
+      "rating": 3482
+    },
+    {
+      "rank": 2,
+      "username": "MagnusCarlsen",
+      "title": "GM",
+      "rating": 3396
+    },
+    {
+      "rank": 3,
+      "username": "nihalsarin",
+      "title": "GM",
+      "rating": 3358
+    },
+    {
+      "rank": 4,
+      "username": "Sina-Movahed",
+      "title": "GM",
+      "rating": 3356
+    },
+    {
+      "rank": 5,
+      "username": "legendisback1",
+      "title": "GM",
+      "rating": 3345
+    }
+  ],
+  "hikaru_ratings": {
+    "daily": 2239,
+    "rapid": 2838,
+    "bullet": 3403,
+    "blitz": 3484
+  }
+}
+```
+</details>
+
+---
+
+### CollegeFootballData.com API
+
+| | |
+|:--|:--|
+| **Docs** | https://api.collegefootballdata.com/ |
+| **Auth** | API key (Bearer token) |
+| **Register / token** | Get a free key at https://collegefootballdata.com/key (emailed). Free tier: 1,000 calls/month; Patreon tiers raise it. Python package: `pip install cfbd`. |
+| **Env var** | `CFBD_API_KEY` |
+| **Script** | [`scripts/sports/college_football_data.py`](scripts/sports/college_football_data.py) |
+
+**What you can get:**
+
+- Every FBS/FCS game since 1869: scores, venues, attendance, betting lines, Elo ratings
+- Play-by-play with EPA, drives, team and player season stats, recruiting rankings, AP/coaches polls
+- Advanced metrics: SP+, success rate, explosiveness, win probability
+
+**Capstone ideas:** Recruiting rankings vs. on-field results, conference realignment effects, upset prediction.
+
+**Endpoint:** `GET https://api.collegefootballdata.com/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `games?year=&week=&team=&conference=` | Games and results | `year=2025&team=Navy` |
+| `rankings?year=&week=` | AP, Coaches and Playoff polls | `year=2025&week=10` |
+| `stats/season?year=&team=` | Team season stats | `—` |
+| `recruiting/teams?year=` | Team recruiting rankings | `year=2025` |
+| `plays?year=&week=&team=` | Play-by-play | `—` |
+| `Authorization (header)` | Bearer <key> | `Bearer <CFBD_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    games = get("https://api.collegefootballdata.com/games", headers={"Authorization": f"Bearer {key('CFBD_API_KEY')}"},
+                params={"year": 2025, "team": "Navy"})
+    show([{"week": g["week"], "home": g["homeTeam"], "home_points": g["homePoints"], "away": g["awayTeam"],
+           "away_points": g["awayPoints"]} for g in games[:6]])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"week": 1, "home": "Navy", "home_points": 52, "away": "VMI", "away_points": 7},
+  {"week": 2, "home": "Navy", "home_points": 38, "away": "Temple", "away_points": 11}
+]
+```
+</details>
+
+---
+
+### Cricsheet (ball-by-ball cricket data)
+
+| | |
+|:--|:--|
+| **Docs** | https://cricsheet.org/format/json/ |
+| **Auth** | None (zip downloads) |
+| **Register / token** | No registration; no REST API. One JSON file per match, zipped by competition (IPL, Tests, ODIs, T20Is, women's cricket, ...). ODC-BY licence. |
+| **Script** | [`scripts/sports/cricsheet.py`](scripts/sports/cricsheet.py) |
+
+**What you can get:**
+
+- Every delivery: batter, bowler, runs, extras, wickets (kind, fielders), over/ball number
+- Match info: teams, venue, dates, toss, result, player of the match, officials
+- 18,000+ matches since 2001
+
+**Capstone ideas:** Win-probability models for T20, toss-decision analysis, player-impact metrics, death-over strategies.
+
+**Endpoint:** `GET https://cricsheet.org/downloads/{collection}_json.zip`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `collection` | ipl \| tests \| odis \| t20s \| all \| recently_added_7 \| ... | `ipl` |
+| `file contents` | {match_id}.json with meta, info, innings[].overs[].deliveries[] | `—` |
+| `info fields` | dates, teams, venue, toss {winner, decision}, outcome {winner, by}, player_of_match | `—` |
+| `csv2 format` | {collection}_csv2.zip for one-row-per-ball CSVs | `ipl_csv2.zip` |
+
+```python
+import io
+import json
+import zipfile
+from collections import Counter
+
+import requests
+
+from _common import USER_AGENT, show
+
+
+def main():
+    z = zipfile.ZipFile(io.BytesIO(requests.get("https://cricsheet.org/downloads/ipl_json.zip",
+                                                headers={"User-Agent": USER_AGENT}, timeout=120).content))
+    infos = [json.loads(z.read(n))["info"] for n in z.namelist() if n.endswith(".json")]
+    season = max(str(i["season"]) for i in infos)
+    latest = [i for i in infos if str(i["season"]) == season]
+    decided = [i for i in latest if i["outcome"].get("winner")]  # excludes no-results and ties
+    show({"ipl_matches": len(infos), "latest_season": season, "matches_in_season": len(latest),
+          "most_wins": Counter(i["outcome"]["winner"] for i in decided).most_common(4),
+          "toss_winner_won_match_pct": round(100 * sum(i["toss"]["winner"] == i["outcome"]["winner"] for i in decided) / len(decided)),
+          "chose_to_field_after_toss_pct": round(100 * sum(i["toss"]["decision"] == "field" for i in latest) / len(latest))})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "ipl_matches": 1243,
+  "latest_season": "2026",
+  "matches_in_season": 74,
+  "most_wins": [
+    [
+      "Royal Challengers Bengaluru",
+      11
+    ],
+    [
+      "Gujarat Titans",
+      10
+    ],
+    [
+      "Rajasthan Royals",
+      9
+    ],
+    [
+      "Sunrisers Hyderabad",
+      9
+    ]
+  ],
+  "toss_winner_won_match_pct": 51,
+  "chose_to_field_after_toss_pct": 82
+}
+```
+</details>
+
+---
+
 ### ESPN Site API (unofficial)
 
 | | |
@@ -17369,7 +17865,7 @@ def main():
         for e in d["events"]]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 20:46</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
 
 ```json
 {
@@ -17377,9 +17873,14 @@ def main():
   "week": 5,
   "games": [
     {
-      "name": "BAL @ ATL",
-      "status": "In Progress",
-      "score": "ATL 7 - BAL 3"
+      "name": "BUF @ LAR",
+      "status": "Scheduled",
+      "score": "LAR 0 - BUF 0"
+    },
+    {
+      "name": "TB @ DAL",
+      "status": "Final",
+      "score": "DAL 16 - TB 24"
     },
     {
       "name": "PHI VS JAX",
@@ -17396,12 +17897,116 @@ def main():
       "status": "Final",
       "score": "TEN 3 - HOU 26"
     },
-    {
-      "name": "CIN @ MIA",
-      "status": "Final",
-      "score": "MIA 24 - CIN 31"
-    },
     "... (10 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### Fantasy Premier League API
+
+| | |
+|:--|:--|
+| **Docs** | https://fantasy.premierleague.com/ (unofficial endpoints; community guide: https://github.com/vaastav/Fantasy-Premier-League) |
+| **Auth** | None |
+| **Register / token** | No registration for public data; undocumented endpoints behind the official game, so be gentle and cache. |
+| **Script** | [`scripts/sports/fantasy_premier_league.py`](scripts/sports/fantasy_premier_league.py) |
+
+**What you can get:**
+
+- Every Premier League player: price, total points, form, minutes, goals, assists, expected goals/assists (xG/xA), ownership %
+- Teams with strength ratings, gameweek deadlines, fixtures with difficulty ratings
+- Player history by gameweek; public manager teams and leagues
+
+**Capstone ideas:** Points prediction and squad optimization (integer programming), price-change prediction, xG vs. actual goals.
+
+**Endpoint:** `GET https://fantasy.premierleague.com/api/{resource}/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `bootstrap-static/` | Players (elements), teams, gameweeks (events), positions | `—` |
+| `fixtures/?event=` | Fixtures, optionally for one gameweek | `event=8` |
+| `element-summary/{player_id}/` | A player's gameweek history and upcoming fixtures | `element-summary/328/` |
+| `event/{gw}/live/` | Live points for every player in a gameweek | `—` |
+| `entry/{manager_id}/` | A public manager's team summary | `—` |
+
+```python
+from _common import get, show
+
+POS = {1: "GK", 2: "DEF", 3: "MID", 4: "FWD"}
+
+
+def main():
+    d = get("https://fantasy.premierleague.com/api/bootstrap-static/")
+    teams = {t["id"]: t["short_name"] for t in d["teams"]}
+    gw = next((e for e in d["events"] if e["is_current"]), None)
+    top = sorted(d["elements"], key=lambda p: -p["total_points"])[:6]
+    show({"players": len(d["elements"]), "current_gameweek": gw and gw["name"], "top_scorers_in_fpl": [
+        {"player": p["web_name"], "team": teams[p["team"]], "pos": POS[p["element_type"]], "price_m": p["now_cost"] / 10,
+         "points": p["total_points"], "goals": p["goals_scored"], "xG": p.get("expected_goals"),
+         "owned_pct": p["selected_by_percent"]} for p in top]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "players": 667,
+  "current_gameweek": "Gameweek 6",
+  "top_scorers_in_fpl": [
+    {
+      "player": "De Cuyper",
+      "team": "BHA",
+      "pos": "DEF",
+      "price_m": 5.1,
+      "points": 53,
+      "goals": 2,
+      "xG": "1.80",
+      "owned_pct": "34.1"
+    },
+    {
+      "player": "Groß",
+      "team": "BHA",
+      "pos": "MID",
+      "price_m": 6.0,
+      "points": 53,
+      "goals": 3,
+      "xG": "2.02",
+      "owned_pct": "38.3"
+    },
+    {
+      "player": "Tarkowski",
+      "team": "EVE",
+      "pos": "DEF",
+      "price_m": 6.2,
+      "points": 46,
+      "goals": 1,
+      "xG": "0.18",
+      "owned_pct": "18.3"
+    },
+    {
+      "player": "João Pedro",
+      "team": "CHE",
+      "pos": "FWD",
+      "price_m": 7.8,
+      "points": 45,
+      "goals": 5,
+      "xG": "2.77",
+      "owned_pct": "68.7"
+    },
+    {
+      "player": "Haaland",
+      "team": "MCI",
+      "pos": "FWD",
+      "price_m": 15.6,
+      "points": 45,
+      "goals": 6,
+      "xG": "4.82",
+      "owned_pct": "74.9"
+    },
+    "... (1 more)"
   ]
 }
 ```
@@ -17499,7 +18104,7 @@ def main():
         for s in d["DriverStandings"]]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 20:46</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
 
 ```json
 {
@@ -17586,7 +18191,7 @@ def main():
            "progress": u["perfs"]["blitz"]["progress"]} for u in d["users"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 20:46</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
 
 ```json
 [
@@ -17666,7 +18271,7 @@ def main():
            "run_diff": t["runDifferential"]} for t in rows], max_items=6)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 20:46</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
 
 ```json
 [
@@ -17719,6 +18324,119 @@ def main():
 
 ---
 
+### nflverse data (NFL play-by-play & stats)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/nflverse/nflverse-data |
+| **Auth** | None (CSV / Parquet downloads from GitHub releases) |
+| **Register / token** | No registration; no REST API. Files are GitHub release assets (CSV, Parquet, RDS), updated nightly in season. Python package: `pip install nflreadpy`. CC BY 4.0. |
+| **Script** | [`scripts/sports/nflverse.py`](scripts/sports/nflverse.py) |
+
+**What you can get:**
+
+- Play-by-play since 1999 with EPA, win probability, CPOE, air yards
+- Weekly and season player and team stats
+- Schedules with results, betting lines and weather; rosters, injuries, depth charts, draft picks, contracts, Next Gen Stats
+
+**Capstone ideas:** Win-probability and 4th-down decision models, player-value metrics (EPA), betting-line efficiency.
+
+**Endpoint:** `GET https://github.com/nflverse/nflverse-data/releases/download/{release}/{file}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `schedules/games.csv` | Every game since 1999: scores, spread_line, total_line, roof, temp, wind | `—` |
+| `stats_player/stats_player_week_{season}.csv` | Weekly player stats (the old player_stats release is legacy) | `stats_player_week_2026.csv` |
+| `pbp/play_by_play_{season}.parquet` | Play-by-play (~40 MB per season as CSV; use Parquet) | `play_by_play_2025.parquet` |
+| `rosters / injuries / draft_picks / contracts / nextgen_stats` | Other releases (list via the GitHub releases page) | `—` |
+| `format` | .csv \| .csv.gz \| .parquet \| .rds | `.parquet` |
+
+```python
+import csv
+import io
+from collections import defaultdict
+
+from _common import get, show
+
+BASE = "https://github.com/nflverse/nflverse-data/releases/download"
+
+
+def main():
+    rows = list(csv.DictReader(io.StringIO(get(f"{BASE}/stats_player/stats_player_week_2026.csv", as_json=False))))
+    totals = defaultdict(lambda: {"passing_yards": 0, "rushing_yards": 0, "receiving_yards": 0, "team": ""})
+    for r in rows:
+        t = totals[r["player_display_name"]]
+        t["team"] = r["team"]
+        for k in ("passing_yards", "rushing_yards", "receiving_yards"):
+            t[k] += float(r[k] or 0)
+    top = lambda k: [{"player": p, "team": v["team"], k: int(v[k])} for p, v in sorted(totals.items(), key=lambda kv: -kv[1][k])[:3]]
+    show({"season": 2026, "weeks_in_file": len({r["week"] for r in rows}),
+          "passing_leaders": top("passing_yards"), "rushing_leaders": top("rushing_yards"), "receiving_leaders": top("receiving_yards")})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "season": 2026,
+  "weeks_in_file": 5,
+  "passing_leaders": [
+    {
+      "player": "Jared Goff",
+      "team": "DET",
+      "passing_yards": 1485
+    },
+    {
+      "player": "Jordan Love",
+      "team": "GB",
+      "passing_yards": 1408
+    },
+    {
+      "player": "C.J. Stroud",
+      "team": "HOU",
+      "passing_yards": 1402
+    }
+  ],
+  "rushing_leaders": [
+    {
+      "player": "Bijan Robinson",
+      "team": "ATL",
+      "rushing_yards": 580
+    },
+    {
+      "player": "Kenneth Walker III",
+      "team": "KC",
+      "rushing_yards": 537
+    },
+    {
+      "player": "Jahmyr Gibbs",
+      "team": "DET",
+      "rushing_yards": 504
+    }
+  ],
+  "receiving_leaders": [
+    {
+      "player": "Jaxon Smith-Njigba",
+      "team": "SEA",
+      "receiving_yards": 583
+    },
+    {
+      "player": "Chris Olave",
+      "team": "NO",
+      "receiving_yards": 537
+    },
+    {
+      "player": "CeeDee Lamb",
+      "team": "DAL",
+      "receiving_yards": 507
+    }
+  ]
+}
+```
+</details>
+
+---
+
 ### NHL Web API (unofficial)
 
 | | |
@@ -17759,12 +18477,21 @@ def main():
          "PTS": t["points"], "GF": t["goalFor"], "GA": t["goalAgainst"]} for t in rows]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 20:46</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
 
 ```json
 {
-  "as_of": "2026-10-12T00:46:30Z",
+  "as_of": "2026-10-12T15:05:00Z",
   "top_teams": [
+    {
+      "team": "Carolina Hurricanes",
+      "GP": 7,
+      "W": 5,
+      "L": 1,
+      "PTS": 11,
+      "GF": 27,
+      "GA": 17
+    },
     {
       "team": "Vegas Golden Knights",
       "GP": 6,
@@ -17793,15 +18520,6 @@ def main():
       "GA": 17
     },
     {
-      "team": "Carolina Hurricanes",
-      "GP": 6,
-      "W": 4,
-      "L": 1,
-      "PTS": 9,
-      "GF": 23,
-      "GA": 16
-    },
-    {
       "team": "Tampa Bay Lightning",
       "GP": 5,
       "W": 4,
@@ -17811,6 +18529,107 @@ def main():
       "GA": 12
     },
     "... (27 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### OpenDota API (Dota 2 esports & matches)
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.opendota.com/ |
+| **Auth** | None (free tier) / API key for higher limits |
+| **Register / token** | Free tier: 60 requests/minute, 2,000/day, no key. Includes a SQL 'explorer' endpoint over pro-match data. |
+| **Env var** | `OPENDOTA_API_KEY (optional)` |
+| **Script** | [`scripts/sports/opendota.py`](scripts/sports/opendota.py) |
+
+**What you can get:**
+
+- Hero statistics: picks and wins by skill bracket and in pro matches, base attributes
+- Pro and public matches with full player stats (KDA, gold/xp per minute, items)
+- Players, teams, leagues; SQL explorer over the pro-match database
+
+**Capstone ideas:** Draft/win prediction from hero picks, meta shifts after patches, esports team rating systems.
+
+**Endpoint:** `GET https://api.opendota.com/api/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `heroStats` | Every hero with pro_pick, pro_win, pro_ban and bracket pick/win counts | `—` |
+| `proMatches` | Recent pro matches (less_than_match_id for paging) | `—` |
+| `matches/{match_id}` | Full match details | `—` |
+| `explorer?sql=` | SQL over the pro-match database (tables matches, player_matches, ...) | `sql=SELECT COUNT(*) FROM matches` |
+| `teams · leagues · players/{account_id}` | Teams, leagues, player profiles | `—` |
+| `api_key` | Optional key | `<OPENDOTA_API_KEY>` |
+
+```python
+from _common import get, show
+
+
+def main():
+    heroes = get("https://api.opendota.com/api/heroStats")
+    pro = [h for h in heroes if h.get("pro_pick", 0) >= 50]
+    show({"heroes": len(heroes), "most_picked_in_pro": [
+        {"hero": h["localized_name"], "pro_picks": h["pro_pick"], "pro_win_pct": round(100 * h["pro_win"] / h["pro_pick"], 1),
+         "pro_bans": h.get("pro_ban")} for h in sorted(pro, key=lambda h: -h["pro_pick"])[:5]],
+          "best_pro_win_rate_min_50_picks": [
+        {"hero": h["localized_name"], "pro_win_pct": round(100 * h["pro_win"] / h["pro_pick"], 1)}
+        for h in sorted(pro, key=lambda h: -h["pro_win"] / h["pro_pick"])[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "heroes": 127,
+  "most_picked_in_pro": [
+    {
+      "hero": "Dark Willow",
+      "pro_picks": 73,
+      "pro_win_pct": 56.2,
+      "pro_bans": 69
+    },
+    {
+      "hero": "Winter Wyvern",
+      "pro_picks": 70,
+      "pro_win_pct": 57.1,
+      "pro_bans": 59
+    },
+    {
+      "hero": "Hoodwink",
+      "pro_picks": 67,
+      "pro_win_pct": 50.7,
+      "pro_bans": 72
+    },
+    {
+      "hero": "Rubick",
+      "pro_picks": 62,
+      "pro_win_pct": 43.5,
+      "pro_bans": 10
+    },
+    {
+      "hero": "Windranger",
+      "pro_picks": 60,
+      "pro_win_pct": 50.0,
+      "pro_bans": 18
+    }
+  ],
+  "best_pro_win_rate_min_50_picks": [
+    {
+      "hero": "Winter Wyvern",
+      "pro_win_pct": 57.1
+    },
+    {
+      "hero": "Techies",
+      "pro_win_pct": 56.9
+    },
+    {
+      "hero": "Dark Willow",
+      "pro_win_pct": 56.2
+    }
   ]
 }
 ```
@@ -17859,7 +18678,7 @@ def main():
                             for l in laps[1:]]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 20:46</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
 
 ```json
 {
@@ -17901,6 +18720,423 @@ def main():
     },
     "... (51 more)"
   ]
+}
+```
+</details>
+
+---
+
+### PokéAPI
+
+| | |
+|:--|:--|
+| **Docs** | https://pokeapi.co/docs/v2 |
+| **Auth** | None |
+| **Register / token** | No registration. Fair use: cache responses locally (the data rarely changes). Also available as a GraphQL endpoint (beta) and a full data dump. |
+| **Script** | [`scripts/sports/pokeapi.py`](scripts/sports/pokeapi.py) |
+
+**What you can get:**
+
+- Every Pokémon: base stats, types, abilities, height/weight, moves, sprites
+- Species (evolution chains, habitats, flavor text in many languages), types and damage relations, moves, items
+- Generations and games
+
+**Capstone ideas:** Classic teaching dataset for clustering/classification, type-matchup graph analysis, team optimization.
+
+**Endpoint:** `GET https://pokeapi.co/api/v2/{resource}/{id or name}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `pokemon/{name}` | One Pokémon (stats, types, abilities) | `pikachu` |
+| `pokemon?limit=&offset=` | List all Pokémon (count in response) | `limit=100000` |
+| `type/{name}` | Type with damage relations and every Pokémon of that type | `fire` |
+| `pokemon-species/{name} · evolution-chain/{id}` | Species info and evolutions | `—` |
+| `generation/{id}` | Pokémon introduced in a generation | `1` |
+
+```python
+from _common import get, show
+
+API = "https://pokeapi.co/api/v2"
+
+
+def main():
+    p = get(f"{API}/pokemon/pikachu")
+    count = get(f"{API}/pokemon", params={"limit": 1})["count"]
+    fire = get(f"{API}/type/fire")
+    show({"total_pokemon_entries": count,
+          "pikachu": {"types": [t["type"]["name"] for t in p["types"]], "height_dm": p["height"], "weight_hg": p["weight"],
+                      "base_stats": {s["stat"]["name"]: s["base_stat"] for s in p["stats"]}},
+          "fire_type": {"pokemon": len(fire["pokemon"]),
+                        "double_damage_to": [t["name"] for t in fire["damage_relations"]["double_damage_to"]],
+                        "weak_to": [t["name"] for t in fire["damage_relations"]["double_damage_from"]]}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "total_pokemon_entries": 1351,
+  "pikachu": {
+    "types": [
+      "electric"
+    ],
+    "height_dm": 4,
+    "weight_hg": 60,
+    "base_stats": {
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "special-attack": 50,
+      "special-defense": 50,
+      "speed": 90
+    }
+  },
+  "fire_type": {
+    "pokemon": 109,
+    "double_damage_to": [
+      "bug",
+      "steel",
+      "grass",
+      "ice"
+    ],
+    "weak_to": [
+      "ground",
+      "rock",
+      "water"
+    ]
+  }
+}
+```
+</details>
+
+---
+
+### Riot Games API (League of Legends, Valorant, TFT)
+
+| | |
+|:--|:--|
+| **Docs** | https://developer.riotgames.com/apis |
+| **Auth** | API key (header `X-Riot-Token`) |
+| **Register / token** | Log in at https://developer.riotgames.com with a Riot account. The development key expires every 24 hours (regenerate it on the portal); apply for a personal or production key for longer projects. Dev-key limits: 20 requests/second, 100 per 2 minutes. Routing: platform hosts (na1, euw1, kr) vs. regional (americas, europe, asia). |
+| **Env var** | `RIOT_API_KEY` |
+| **Script** | [`scripts/sports/riot_games.py`](scripts/sports/riot_games.py) |
+
+**What you can get:**
+
+- Ranked ladders (Challenger/Grandmaster/Master) with LP and win/loss
+- Match history and full match details (champions, items, timeline)
+- Account lookups by Riot ID; champion mastery; Valorant and TFT equivalents
+
+**Capstone ideas:** Win prediction from draft and early-game stats, skill-rating dynamics, champion meta analysis.
+
+**Endpoint:** `GET https://{platform \| region}.api.riotgames.com/{game}/{api}/{version}/...`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `na1 · /lol/league/v4/challengerleagues/by-queue/{queue}` | Challenger ladder for RANKED_SOLO_5x5 | `RANKED_SOLO_5x5` |
+| `americas · /riot/account/v1/accounts/by-riot-id/{name}/{tag}` | Look up a player's PUUID | `—` |
+| `americas · /lol/match/v5/matches/by-puuid/{puuid}/ids?count=` | Recent match IDs | `count=20` |
+| `americas · /lol/match/v5/matches/{matchId}` | Full match details (/timeline for minute-by-minute) | `—` |
+| `X-Riot-Token (header)` | Your key | `<RIOT_API_KEY>` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5",
+            headers={"X-Riot-Token": key("RIOT_API_KEY")})
+    top = sorted(d["entries"], key=lambda e: -e["leaguePoints"])[:5]
+    show({"queue": "RANKED_SOLO_5x5 (NA Challenger)", "players": len(d["entries"]), "top": [
+        {"lp": e["leaguePoints"], "wins": e["wins"], "losses": e["losses"],
+         "win_pct": round(100 * e["wins"] / (e["wins"] + e["losses"]), 1)} for e in top]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "queue": "RANKED_SOLO_5x5 (NA Challenger)",
+  "players": 300,
+  "top": [
+    {"lp": 1834, "wins": 412, "losses": 331, "win_pct": 55.4},
+    {"lp": 1790, "wins": 389, "losses": 310, "win_pct": 55.7}
+  ]
+}
+```
+</details>
+
+---
+
+### Sleeper API (fantasy football)
+
+| | |
+|:--|:--|
+| **Docs** | https://docs.sleeper.com/ |
+| **Auth** | None |
+| **Register / token** | No registration; read-only. Stay under 1,000 calls/minute. Download the full player list (/players/nfl, ~5 MB) at most once a day and cache it. |
+| **Script** | [`scripts/sports/sleeper.py`](scripts/sports/sleeper.py) |
+
+**What you can get:**
+
+- Trending players (most added/dropped in fantasy leagues over the last N hours)
+- All NFL players with team, position, injury status, depth chart, IDs for other sites
+- Public leagues, rosters, matchups, drafts; current NFL week/season state
+
+**Capstone ideas:** Fantasy-market sentiment (adds/drops) vs. performance, injury news effects, draft-strategy analysis.
+
+**Endpoint:** `GET https://api.sleeper.app/v1/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `players/nfl/trending/{add \| drop}?lookback_hours=&limit=` | Trending players | `add?lookback_hours=24&limit=10` |
+| `players/nfl` | Every player keyed by player_id (large; cache daily) | `—` |
+| `state/nfl` | Current season, week and season type | `—` |
+| `league/{league_id} · /rosters · /matchups/{week}` | A public league | `—` |
+| `draft/{draft_id}/picks` | Draft results | `—` |
+
+```python
+from _common import get, show
+
+API = "https://api.sleeper.app/v1"
+
+
+def main():
+    state = get(f"{API}/state/nfl")
+    adds = get(f"{API}/players/nfl/trending/add", params={"lookback_hours": 24, "limit": 6})
+    players = get(f"{API}/players/nfl", timeout=120)  # ~5 MB: cache this in real projects
+    show({"season": state["season"], "week": state["week"], "most_added_last_24h": [
+        {"player": players.get(a["player_id"], {}).get("full_name"), "team": players.get(a["player_id"], {}).get("team"),
+         "pos": players.get(a["player_id"], {}).get("position"),
+         "injury": players.get(a["player_id"], {}).get("injury_status"), "adds": a["count"]} for a in adds]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "season": "2026",
+  "week": 5,
+  "most_added_last_24h": [
+    {
+      "player": "Darius Cooper",
+      "team": "PHI",
+      "pos": "WR",
+      "injury": null,
+      "adds": 388381
+    },
+    {
+      "player": "MarShawn Lloyd",
+      "team": "GB",
+      "pos": "RB",
+      "injury": null,
+      "adds": 353745
+    },
+    {
+      "player": "Tyler Higbee",
+      "team": "LAR",
+      "pos": "TE",
+      "injury": null,
+      "adds": 266121
+    },
+    {
+      "player": "Roschon Johnson",
+      "team": "CHI",
+      "pos": "RB",
+      "injury": null,
+      "adds": 205720
+    },
+    {
+      "player": "Brenton Strange",
+      "team": "JAX",
+      "pos": "TE",
+      "injury": null,
+      "adds": 189009
+    },
+    "... (1 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### Speedrun.com API
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/speedruncomorg/api |
+| **Auth** | None for reading |
+| **Register / token** | No registration to read (about 100 requests/minute). Data on the speedrunning community for 40,000+ games. |
+| **Script** | [`scripts/sports/speedrun_com.py`](scripts/sports/speedrun_com.py) |
+
+**What you can get:**
+
+- Games, categories, levels, platforms; leaderboards with run times and ranks
+- Individual runs with video links, verification status, dates, players
+- World-record histories over time
+
+**Capstone ideas:** How world records improve over time (learning curves), community growth by game, verification-time analysis.
+
+**Endpoint:** `GET https://www.speedrun.com/api/v1/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `games?name= · games/{id}` | Find a game; embed=categories adds its categories | `name=super mario 64` |
+| `games/{id}/records?top=` | Top runs for every category | `top=1` |
+| `leaderboards/{game}/category/{category}?top=` | One leaderboard | `—` |
+| `runs?game=&status=verified&orderby=date&direction=desc` | Run history | `—` |
+| `max / offset` | Paging (max 200) | `20` |
+
+```python
+from _common import get, show
+
+API = "https://www.speedrun.com/api/v1"
+
+
+def main():
+    game = get(f"{API}/games", params={"name": "super mario 64", "embed": "categories"})["data"][0]
+    records = get(f'{API}/games/{game["id"]}/records', params={"top": 1, "max": 20, "scope": "full-game"})["data"]
+    cats = {c["id"]: c["name"] for c in game["categories"]["data"]}
+    out = []
+    for r in records:
+        if r["runs"]:
+            run = r["runs"][0]["run"]
+            secs = run["times"]["primary_t"]
+            out.append({"category": cats.get(r["category"], r["category"]),
+                        "world_record": f"{int(secs // 3600)}:{int(secs % 3600 // 60):02d}:{secs % 60:05.2f}",
+                        "date": run.get("date")})
+    show({"game": game["names"]["international"], "released": game["released"], "world_records": out})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "game": "Super Mario 64",
+  "released": 1996,
+  "world_records": [
+    {
+      "category": "120 Star",
+      "world_record": "1:35:14.00",
+      "date": "2026-04-26"
+    },
+    {
+      "category": "70 Star",
+      "world_record": "0:46:11.00",
+      "date": "2026-02-17"
+    },
+    {
+      "category": "16 Star",
+      "world_record": "0:14:32.87",
+      "date": "2026-07-02"
+    },
+    {
+      "category": "1 Star",
+      "world_record": "0:06:53.68",
+      "date": "2026-01-14"
+    },
+    {
+      "category": "0 Star",
+      "world_record": "0:06:14.19",
+      "date": "2025-12-30"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### StatsBomb Open Data (soccer event data)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/statsbomb/open-data |
+| **Auth** | None (JSON files on GitHub) |
+| **Register / token** | No registration; free for research and education with attribution to StatsBomb (see the repo licence). Python package: `pip install statsbombpy`. |
+| **Script** | [`scripts/sports/statsbomb_open_data.py`](scripts/sports/statsbomb_open_data.py) |
+
+**What you can get:**
+
+- Every on-ball event (pass, shot, carry, pressure...) with x/y location, time, players, outcome
+- Shot xG, freeze frames, 360 data for some competitions
+- Lineups; competitions incl. World Cups, Euros, Messi's La Liga career, women's leagues
+
+**Capstone ideas:** Expected-goals (xG) models, passing networks, pressing intensity, player-style clustering.
+
+**Endpoint:** `GET https://raw.githubusercontent.com/statsbomb/open-data/master/data/{file}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `competitions.json` | All free competitions and seasons (competition_id, season_id) | `—` |
+| `matches/{competition_id}/{season_id}.json` | Matches with scores and teams | `matches/43/106.json (World Cup 2022)` |
+| `events/{match_id}.json` | Every event in a match | `events/3869685.json (2022 final)` |
+| `lineups/{match_id}.json · three-sixty/{match_id}.json` | Lineups / 360 freeze frames | `—` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+BASE = "https://raw.githubusercontent.com/statsbomb/open-data/master/data"
+
+
+def main():
+    comps = get(f"{BASE}/competitions.json")
+    matches = get(f"{BASE}/matches/43/106.json")  # FIFA World Cup 2022
+    final = max(matches, key=lambda m: m["match_date"])
+    events = get(f'{BASE}/events/{final["match_id"]}.json')
+    shots = [e for e in events if e["type"]["name"] == "Shot"]
+    xg = Counter()
+    for s in shots:
+        xg[s["team"]["name"]] += s["shot"]["statsbomb_xg"]
+    show({"free_competition_seasons": len(comps), "world_cup_2022_matches": len(matches),
+          "final": f'{final["home_team"]["home_team_name"]} {final["home_score"]}-{final["away_score"]} {final["away_team"]["away_team_name"]}',
+          "events_in_final": len(events), "event_types": Counter(e["type"]["name"] for e in events).most_common(5),
+          "shots_and_xG": {t: {"shots": sum(s["team"]["name"] == t for s in shots), "xG": round(v, 2)} for t, v in xg.items()}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
+
+```json
+{
+  "free_competition_seasons": 80,
+  "world_cup_2022_matches": 64,
+  "final": "Argentina 3-3 France",
+  "events_in_final": 4407,
+  "event_types": [
+    [
+      "Pass",
+      1263
+    ],
+    [
+      "Ball Receipt*",
+      1114
+    ],
+    [
+      "Carry",
+      940
+    ],
+    [
+      "Pressure",
+      361
+    ],
+    [
+      "Ball Recovery",
+      115
+    ]
+  ],
+  "shots_and_xG": {
+    "Argentina": {
+      "shots": 24,
+      "xG": 5.89
+    },
+    "France": {
+      "shots": 14,
+      "xG": 5.41
+    }
+  }
 }
 ```
 </details>
@@ -17951,7 +19187,7 @@ def main():
                            for e in (past.get("results") or [])]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 20:46</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 11:05</summary>
 
 ```json
 {

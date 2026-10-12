@@ -1,0 +1,33 @@
+# live 2026-10-12 11:05
+{
+  "total_pokemon_entries": 1351,
+  "pikachu": {
+    "types": [
+      "electric"
+    ],
+    "height_dm": 4,
+    "weight_hg": 60,
+    "base_stats": {
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "special-attack": 50,
+      "special-defense": 50,
+      "speed": 90
+    }
+  },
+  "fire_type": {
+    "pokemon": 109,
+    "double_damage_to": [
+      "bug",
+      "steel",
+      "grass",
+      "ice"
+    ],
+    "weak_to": [
+      "ground",
+      "rock",
+      "water"
+    ]
+  }
+}

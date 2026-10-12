@@ -1,0 +1,50 @@
+# live 2026-10-12 11:05
+{
+  "heroes": 127,
+  "most_picked_in_pro": [
+    {
+      "hero": "Dark Willow",
+      "pro_picks": 73,
+      "pro_win_pct": 56.2,
+      "pro_bans": 69
+    },
+    {
+      "hero": "Winter Wyvern",
+      "pro_picks": 70,
+      "pro_win_pct": 57.1,
+      "pro_bans": 59
+    },
+    {
+      "hero": "Hoodwink",
+      "pro_picks": 67,
+      "pro_win_pct": 50.7,
+      "pro_bans": 72
+    },
+    {
+      "hero": "Rubick",
+      "pro_picks": 62,
+      "pro_win_pct": 43.5,
+      "pro_bans": 10
+    },
+    {
+      "hero": "Windranger",
+      "pro_picks": 60,
+      "pro_win_pct": 50.0,
+      "pro_bans": 18
+    }
+  ],
+  "best_pro_win_rate_min_50_picks": [
+    {
+      "hero": "Winter Wyvern",
+      "pro_win_pct": 57.1
+    },
+    {
+      "hero": "Techies",
+      "pro_win_pct": 56.9
+    },
+    {
+      "hero": "Dark Willow",
+      "pro_win_pct": 56.2
+    }
+  ]
+}

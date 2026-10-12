@@ -1,0 +1,56 @@
+# live 2026-10-12 11:05
+{
+  "season": 2026,
+  "weeks_in_file": 5,
+  "passing_leaders": [
+    {
+      "player": "Jared Goff",
+      "team": "DET",
+      "passing_yards": 1485
+    },
+    {
+      "player": "Jordan Love",
+      "team": "GB",
+      "passing_yards": 1408
+    },
+    {
+      "player": "C.J. Stroud",
+      "team": "HOU",
+      "passing_yards": 1402
+    }
+  ],
+  "rushing_leaders": [
+    {
+      "player": "Bijan Robinson",
+      "team": "ATL",
+      "rushing_yards": 580
+    },
+    {
+      "player": "Kenneth Walker III",
+      "team": "KC",
+      "rushing_yards": 537
+    },
+    {
+      "player": "Jahmyr Gibbs",
+      "team": "DET",
+      "rushing_yards": 504
+    }
+  ],
+  "receiving_leaders": [
+    {
+      "player": "Jaxon Smith-Njigba",
+      "team": "SEA",
+      "receiving_yards": 583
+    },
+    {
+      "player": "Chris Olave",
+      "team": "NO",
+      "receiving_yards": 537
+    },
+    {
+      "player": "CeeDee Lamb",
+      "team": "DAL",
+      "receiving_yards": 507
+    }
+  ]
+}

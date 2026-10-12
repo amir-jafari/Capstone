@@ -1,0 +1,55 @@
+# live 2026-10-12 11:05
+{
+  "qualified_batters_2025": 251,
+  "top_xwOBA": [
+    {
+      "player": "Judge, Aaron",
+      "woba": 0.463,
+      "xwoba": 0.457
+    },
+    {
+      "player": "Soto, Juan",
+      "woba": 0.39,
+      "xwoba": 0.429
+    },
+    {
+      "player": "Ohtani, Shohei",
+      "woba": 0.418,
+      "xwoba": 0.425
+    }
+  ],
+  "most_unlucky (xwOBA > wOBA)": [
+    {
+      "player": "Perez, Salvador",
+      "woba": 0.311,
+      "xwoba": 0.357
+    },
+    {
+      "player": "Conforto, Michael",
+      "woba": 0.287,
+      "xwoba": 0.33
+    },
+    {
+      "player": "García Jr., Luis",
+      "woba": 0.3,
+      "xwoba": 0.339
+    }
+  ],
+  "most_lucky (wOBA > xwOBA)": [
+    {
+      "player": "Kurtz, Nick",
+      "woba": 0.419,
+      "xwoba": 0.372
+    },
+    {
+      "player": "Bader, Harrison",
+      "woba": 0.346,
+      "xwoba": 0.297
+    },
+    {
+      "player": "Andujar, Miguel",
+      "woba": 0.354,
+      "xwoba": 0.298
+    }
+  ]
+}

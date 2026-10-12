@@ -1,0 +1,26 @@
+# live 2026-10-12 11:05
+{
+  "ipl_matches": 1243,
+  "latest_season": "2026",
+  "matches_in_season": 74,
+  "most_wins": [
+    [
+      "Royal Challengers Bengaluru",
+      11
+    ],
+    [
+      "Gujarat Titans",
+      10
+    ],
+    [
+      "Rajasthan Royals",
+      9
+    ],
+    [
+      "Sunrisers Hyderabad",
+      9
+    ]
+  ],
+  "toss_winner_won_match_pct": 51,
+  "chose_to_field_after_toss_pct": 82
+}

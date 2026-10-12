@@ -1,7 +1,16 @@
-# live 2026-10-11 20:46
+# live 2026-10-12 11:05
 {
-  "as_of": "2026-10-12T00:46:30Z",
+  "as_of": "2026-10-12T15:05:00Z",
   "top_teams": [
+    {
+      "team": "Carolina Hurricanes",
+      "GP": 7,
+      "W": 5,
+      "L": 1,
+      "PTS": 11,
+      "GF": 27,
+      "GA": 17
+    },
     {
       "team": "Vegas Golden Knights",
       "GP": 6,
@@ -28,15 +37,6 @@
       "PTS": 9,
       "GF": 25,
       "GA": 17
-    },
-    {
-      "team": "Carolina Hurricanes",
-      "GP": 6,
-      "W": 4,
-      "L": 1,
-      "PTS": 9,
-      "GF": 23,
-      "GA": 16
     },
     {
       "team": "Tampa Bay Lightning",

@@ -1,0 +1,47 @@
+# live 2026-10-12 11:05
+{
+  "stores_tracked": 14,
+  "steam_deals_under_15_metacritic_85_plus": [
+    {
+      "title": "Deaths Door",
+      "sale": 1.99,
+      "normal": 19.99,
+      "savings_pct": 90,
+      "metacritic": 85,
+      "steam_rating": "Very Positive"
+    },
+    {
+      "title": "The Talos Principle 2",
+      "sale": 2.99,
+      "normal": 29.99,
+      "savings_pct": 90,
+      "metacritic": 88,
+      "steam_rating": "Very Positive"
+    },
+    {
+      "title": "Dungeon Siege",
+      "sale": 0.97,
+      "normal": 6.99,
+      "savings_pct": 86,
+      "metacritic": 86,
+      "steam_rating": "Very Positive"
+    },
+    {
+      "title": "The Talos Principle",
+      "sale": 4.49,
+      "normal": 29.99,
+      "savings_pct": 85,
+      "metacritic": 85,
+      "steam_rating": "Overwhelmingly Positive"
+    },
+    {
+      "title": "Homeworld Remastered Collection",
+      "sale": 5.24,
+      "normal": 34.99,
+      "savings_pct": 85,
+      "metacritic": 86,
+      "steam_rating": "Very Positive"
+    },
+    "... (1 more)"
+  ]
+}
