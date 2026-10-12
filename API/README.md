@@ -1,7 +1,7 @@
 # Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather & environment, finance,
-> census, housing, political science, law, health, education, science, AI & machine learning,
+> census, housing, political science, law, health, agriculture & food, education, science, AI & machine learning,
 > engineering & energy, transportation, sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
@@ -102,65 +102,75 @@ python build_readme.py          # re-run everything & regenerate this README
 | 71 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
 | 72 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
 | 73 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
-| 74 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
-| 75 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
-| 76 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
-| 77 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
-| 78 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
-| 79 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
-| 80 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 81 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 82 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 83 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 84 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 85 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 86 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 87 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 88 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 89 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 90 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 91 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 92 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 93 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 94 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 95 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 96 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 97 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 98 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
-| 99 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 100 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 101 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
-| 102 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 103 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 104 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
-| 105 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
-| 106 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
-| 107 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 108 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 109 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 110 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 111 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 112 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 113 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 114 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 115 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 116 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 117 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 118 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 119 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 120 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 121 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 122 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 123 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 124 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 125 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 126 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 127 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 128 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 129 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 130 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 131 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 132 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 74 | 🌾 Agriculture & Food | [USDA AMS Market News (MyMarketNews API)](#usda-ams-market-news-mymarketnews-api) | 🔑 key | `AMS_API_KEY` | [`ams_market_news.py`](scripts/agriculture/ams_market_news.py) |
+| 75 | 🌾 Agriculture & Food | [USDA NASS CropScape (Cropland Data Layer)](#usda-nass-cropscape-cropland-data-layer) | 🟢 no key | — | [`cropscape.py`](scripts/agriculture/cropscape.py) |
+| 76 | 🌾 Agriculture & Food | [USDA ERS — ARMS Farm Financial Data](#usda-ers--arms-farm-financial-data) | 🟢 no key | `DATA_GOV_API_KEY` | [`ers_arms.py`](scripts/agriculture/ers_arms.py) |
+| 77 | 🌾 Agriculture & Food | [USDA FAS — Production, Supply & Distribution (PSD) and trade](#usda-fas--production-supply--distribution-psd-and-trade) | 🟢 no key | `DATA_GOV_API_KEY` | [`fas_psd.py`](scripts/agriculture/fas_psd.py) |
+| 78 | 🌾 Agriculture & Food | [USDA FoodData Central](#usda-fooddata-central) | 🟢 no key | `DATA_GOV_API_KEY` | [`fooddata_central.py`](scripts/agriculture/fooddata_central.py) |
+| 79 | 🌾 Agriculture & Food | [USDA NASS Quick Stats](#usda-nass-quick-stats) | 🔑 key | `NASS_API_KEY` | [`nass_quickstats.py`](scripts/agriculture/nass_quickstats.py) |
+| 80 | 🌾 Agriculture & Food | [Open Food Facts](#open-food-facts) | 🟢 no key | — | [`open_food_facts.py`](scripts/agriculture/open_food_facts.py) |
+| 81 | 🌾 Agriculture & Food | [USDA NRCS Soil Data Access (SSURGO)](#usda-nrcs-soil-data-access-ssurgo) | 🟢 no key | — | [`soil_data_access.py`](scripts/agriculture/soil_data_access.py) |
+| 82 | 🌾 Agriculture & Food | [ISRIC SoilGrids (global soil properties)](#isric-soilgrids-global-soil-properties) | 🟢 no key | — | [`soilgrids.py`](scripts/agriculture/soilgrids.py) |
+| 83 | 🌾 Agriculture & Food | [TheMealDB (recipes)](#themealdb-recipes) | 🔑 key | `THEMEALDB_KEY (optional)` | [`themealdb.py`](scripts/agriculture/themealdb.py) |
+| 84 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
+| 85 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
+| 86 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
+| 87 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
+| 88 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
+| 89 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
+| 90 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 91 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 92 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 93 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 94 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 95 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 96 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 97 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 98 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 99 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 100 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 101 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 102 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 103 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 104 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 105 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 106 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 107 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 108 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
+| 109 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 110 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 111 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
+| 112 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 113 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 114 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
+| 115 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
+| 116 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
+| 117 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 118 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 119 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 120 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 121 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 122 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 123 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 124 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 125 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 126 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 127 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 128 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 129 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 130 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 131 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 132 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 133 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 134 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 135 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 136 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 137 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 138 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 139 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 140 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 141 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 142 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -5889,6 +5899,745 @@ def main():
     "life_expectancy": 61.6
   }
 ]
+```
+</details>
+
+---
+
+## 🌾 Agriculture & Food
+
+### USDA AMS Market News (MyMarketNews API)
+
+| | |
+|:--|:--|
+| **Docs** | https://mymarketnews.ams.usda.gov/mymarketnews-api |
+| **Auth** | API key as the Basic-auth username (empty password) |
+| **Register / token** | Create a free account at https://mymarketnews.ams.usda.gov, then generate a key under My Profile -> API Key. |
+| **Env var** | `AMS_API_KEY` |
+| **Script** | [`scripts/agriculture/ams_market_news.py`](scripts/agriculture/ams_market_news.py) |
+
+**What you can get:**
+
+- Daily/weekly wholesale and terminal-market prices for livestock, grain, dairy, cotton, fruits and vegetables
+- Cattle and hog auction reports, boxed-beef cutout values, retail feature prices
+- 1,000+ report series, most with history back to the 2000s
+
+**Capstone ideas:** Price transmission from farm to wholesale to retail, seasonality of produce prices, market-shock detection.
+
+**Endpoint:** `GET https://marsapi.ams.usda.gov/services/v1.2/reports[/{slug_id}]`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `/reports` | Catalog of report series with slug_id, title, market type | `—` |
+| `/reports/{slug_id}` | Data for one report (e.g. 2466 = national daily boxed beef cutout) | `2466` |
+| `q` | Filter expression field=value;field=value, incl. date ranges with report_begin_date | `report_begin_date=01/01/2026:10/01/2026` |
+| `allSections=true` | Return every section of multi-part reports | `true` |
+| `auth` | HTTP Basic: key as username, blank password | `(AMS_API_KEY, '')` |
+
+```python
+import requests
+
+from _common import USER_AGENT, key, show
+
+
+def main():
+    r = requests.get("https://marsapi.ams.usda.gov/services/v1.2/reports/2466", auth=(key("AMS_API_KEY"), ""),
+                     headers={"User-Agent": USER_AGENT}, params={"q": "report_begin_date=10/01/2026:10/12/2026"}, timeout=60)
+    r.raise_for_status()
+    show(r.json()["results"][:3])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"report_date": "10/09/2026", "slug_name": "AMS_2466", "report_title": "National Daily Boxed Beef Cutout & Boxed Beef Cuts",
+   "current_volume": "112", "choice_600_900_current": "362.18", "select_600_900_current": "339.40"}
+]
+```
+</details>
+
+---
+
+### USDA NASS CropScape (Cropland Data Layer)
+
+| | |
+|:--|:--|
+| **Docs** | https://nassgeodata.gmu.edu/CropScape/devhelp/help.html |
+| **Auth** | None |
+| **Register / token** | No registration. The Cropland Data Layer is a 30 m satellite-derived map of what is planted on every field in the US each year (2008-present nationally). |
+| **Script** | [`scripts/agriculture/cropscape.py`](scripts/agriculture/cropscape.py) |
+
+**What you can get:**
+
+- Acreage by crop type for any county, state, ASD or custom area (from the 30 m crop map)
+- Raster extracts (GeoTIFF) of the crop map for an area and year
+- Pixel value at a point; change between years
+
+**Capstone ideas:** Crop rotation and land-use change, irrigation/water demand estimates, pollinator-habitat studies.
+
+**Endpoint:** `GET https://nassgeodata.gmu.edu/axis2/services/CDLService/{GetCDLStat \| GetCDLFile \| GetCDLValue}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `year` | Crop year | `2023` |
+| `fips` | State (2-digit) or county (5-digit) FIPS | `19169 (Story County, Iowa)` |
+| `format` | json \| csv (GetCDLStat) - returns an XML wrapper with a returnURL to the file | `json` |
+| `bbox / crs` | Custom area for GetCDLFile / GetCDLStat (Albers coordinates) | `—` |
+| `GetCDLValue?year=&x=&y=` | Crop at a point (Albers x/y) | `—` |
+
+```python
+import re
+
+from _common import get, show
+
+ROW = re.compile(r'\{value:(\d+), count:(\d+), category:"([^"]+)", color:"[^"]*", acreage:([\d.]+)\}')
+
+
+def main():
+    wrapper = get("https://nassgeodata.gmu.edu/axis2/services/CDLService/GetCDLStat",
+                  params={"year": 2023, "fips": "19169", "format": "json"}, as_json=False)
+    file_url = re.search(r"<returnURL>(.*?)</returnURL>", wrapper).group(1)
+    text = get(file_url, as_json=False)  # JavaScript-style object (unquoted keys), so parse with a regex
+    rows = sorted(((cat, float(acres)) for _, _, cat, acres in ROW.findall(text)), key=lambda r: -r[1])
+    show({"county": "Story County, Iowa (2023)", "top_land_cover_acres": [{"category": c, "acres": a} for c, a in rows[:6]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 08:15</summary>
+
+```json
+{
+  "county": "Story County, Iowa (2023)",
+  "top_land_cover_acres": [
+    {
+      "category": "Corn",
+      "acres": 149713.6
+    },
+    {
+      "category": "Soybeans",
+      "acres": 119131.3
+    },
+    {
+      "category": "Grass/Pasture",
+      "acres": 40169.8
+    },
+    {
+      "category": "Developed/Open Space",
+      "acres": 14282.6
+    },
+    {
+      "category": "Deciduous Forest",
+      "acres": 11815.4
+    },
+    "... (1 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### USDA ERS — ARMS Farm Financial Data
+
+| | |
+|:--|:--|
+| **Docs** | https://www.ers.usda.gov/developer/data-apis/arms-data-api |
+| **Auth** | api.data.gov key (`DEMO_KEY` works at low volume) |
+| **Register / token** | Use your api.data.gov key (https://api.data.gov/signup/). The Agricultural Resource Management Survey (ARMS) is USDA's main source on farm finances and household income. |
+| **Env var** | `DATA_GOV_API_KEY` |
+| **Script** | [`scripts/agriculture/ers_arms.py`](scripts/agriculture/ers_arms.py) |
+
+**What you can get:**
+
+- Farm income statements and balance sheets (revenue, expenses, net farm income, assets, debt)
+- Breakdowns by farm typology, size, commodity specialty, region and state
+- Farm household income and operator characteristics
+
+**Capstone ideas:** Farm financial stress, small vs. large farm economics, policy (subsidy) incidence across farm types.
+
+**Endpoint:** `GET https://api.ers.usda.gov/data/arms/{surveydata \| year \| state \| report \| variable \| farmtype \| category}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `year` | Survey year(s) | `2023` |
+| `report` | Report name: income statement, balance sheet, farm business debt, operator household income, ... | `income statement` |
+| `variable` | Variable ID(s) (list via /data/arms/variable) | `kount` |
+| `farmtype / category / category_value` | Farm type and breakdown category (list via /farmtype, /category) | `category=Farm Typology` |
+| `state` | State name or 'all' | `all` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
+
+```python
+import os
+
+from _common import get, show
+
+
+def main():
+    d = get("https://api.ers.usda.gov/data/arms/surveydata", params={
+        "api_key": os.getenv("DATA_GOV_API_KEY", "DEMO_KEY"), "year": 2023, "report": "income statement",
+        "variable": "kount", "category": "Farm Typology"})
+    show({"report": "Farm Business Income Statement (2023), estimated number of farms", "by_farm_type": [
+        {"farm_type": r["categoryValue"], "farms": r["estimate"], "rse_pct": r["rse"]} for r in d["data"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 08:02</summary>
+
+```json
+{
+  "report": "Farm Business Income Statement (2023), estimated number of farms",
+  "by_farm_type": [
+    {
+      "farm_type": "Retirement farms (2011 to present)",
+      "farms": 209812,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Large farms (2011 to present)",
+      "farms": 75110,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Intermediate farms",
+      "farms": 674874,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Commercial farms",
+      "farms": 263192,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Off-farm occupation farms (2011 to present)",
+      "farms": 741922,
+      "rse_pct": 0
+    },
+    "... (6 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### USDA FAS — Production, Supply & Distribution (PSD) and trade
+
+| | |
+|:--|:--|
+| **Docs** | https://apps.fas.usda.gov/opendatawebv2/#/home |
+| **Auth** | api.data.gov key (`DEMO_KEY` works at low volume) |
+| **Register / token** | Use your api.data.gov key (https://api.data.gov/signup/). The old apps.fas.usda.gov/OpenData endpoints now return 403 - use api.fas.usda.gov as below. |
+| **Env var** | `DATA_GOV_API_KEY` |
+| **Script** | [`scripts/agriculture/fas_psd.py`](scripts/agriculture/fas_psd.py) |
+
+**What you can get:**
+
+- PSD: official USDA estimates of production, consumption, trade and stocks for ~60 commodities in every country
+- Export Sales Reporting (ESR): weekly US export sales by commodity and destination
+- GATS: US agricultural trade from Census (exports/imports by partner and product)
+
+**Capstone ideas:** Global grain-market balance and price forecasting, food-security exposure to export shocks, trade-war effects.
+
+**Endpoint:** `GET https://api.fas.usda.gov/api/psd/commodity/{commodityCode}/{world \| country/{code} \| country/all}/year/{marketYear}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `commodityCode` | From /api/psd/commodities (e.g. 0440000 corn, 0410000 wheat, 2222000 soybeans) | `0440000` |
+| `world / country/{code} / country/all` | World total, one country, or every country | `world` |
+| `marketYear` | Marketing year | `2024` |
+| `/api/psd/commodityAttributes · /unitsOfMeasure · /countries` | Lookups for attributeId, unitId, countryCode | `—` |
+| `/api/esr/exports/commodityCode/{c}/allCountries/marketYear/{y}` | Weekly export sales | `—` |
+| `/api/gats/censusExports/partnerCode/{p}/year/{y}/month/{m}` | Monthly US exports to a partner | `partnerCode/CH/year/2024/month/1` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
+
+```python
+import os
+
+from _common import get, show
+
+BASE = "https://api.fas.usda.gov/api/psd"
+
+
+def main():
+    k = {"api_key": os.getenv("DATA_GOV_API_KEY", "DEMO_KEY")}
+    attrs = {a["attributeId"]: a["attributeName"].strip() for a in get(f"{BASE}/commodityAttributes", params=k)}
+    units = {u["unitId"]: u["unitDescription"].strip() for u in get(f"{BASE}/unitsOfMeasure", params=k)}
+    rows = get(f"{BASE}/commodity/0440000/world/year/2024", params=k)  # corn, world total
+    show({"commodity": "Corn, world, market year 2024", "balance": [
+        {"attribute": attrs.get(r["attributeId"], r["attributeId"]), "value": r["value"], "unit": units.get(r["unitId"])}
+        for r in rows]}, max_items=12)
+```
+
+---
+
+### USDA FoodData Central
+
+| | |
+|:--|:--|
+| **Docs** | https://fdc.nal.usda.gov/api-guide/ |
+| **Auth** | api.data.gov key (`DEMO_KEY` works at low volume) |
+| **Register / token** | Use your api.data.gov key (https://api.data.gov/signup/ or https://fdc.nal.usda.gov/api-key-signup). 1,000 req/hour. Data are public domain (CC0). |
+| **Env var** | `DATA_GOV_API_KEY` |
+| **Script** | [`scripts/agriculture/fooddata_central.py`](scripts/agriculture/fooddata_central.py) |
+
+**What you can get:**
+
+- Nutrient profiles (energy, protein, fat, vitamins, minerals - 150+ nutrients) for 400k+ foods
+- Data types: Foundation (lab-analyzed), SR Legacy, Survey (FNDDS, what Americans eat), Branded (labels with UPC)
+- Ingredients and serving sizes for branded products
+
+**Capstone ideas:** Nutrition scoring and diet optimization, ultra-processed food classification, recipe nutrient estimation.
+
+**Endpoint:** `GET https://api.nal.usda.gov/fdc/v1/foods/search  ·  GET /fdc/v1/food/{fdcId}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Search text (supports +must -mustnot "phrases") | `cheddar cheese` |
+| `dataType` | Foundation \| SR Legacy \| Survey (FNDDS) \| Branded (repeatable) | `Foundation` |
+| `pageSize / pageNumber` | Max 200 per page | `5` |
+| `sortBy / sortOrder` | dataType.keyword \| lowercaseDescription.keyword \| fdcId \| publishedDate; asc \| desc | `fdcId / asc` |
+| `brandOwner` | Filter branded foods by owner | `Kraft Heinz` |
+| `/food/{fdcId}?nutrients=` | One food; limit to nutrient numbers | `nutrients=203,204,205` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
+
+```python
+import os
+
+from _common import get, show
+
+NUTRIENTS = {"Energy": "kcal", "Protein": "g", "Total lipid (fat)": "g", "Carbohydrate, by difference": "g"}
+
+
+def main():
+    d = get("https://api.nal.usda.gov/fdc/v1/foods/search", params={
+        "query": "cheddar cheese", "dataType": "Foundation", "pageSize": 3,
+        "api_key": os.getenv("DATA_GOV_API_KEY", "DEMO_KEY")})
+    show({"matches": d["totalHits"], "foods": [
+        {"fdcId": f["fdcId"], "description": f["description"], "category": f.get("foodCategory"),
+         "per_100g": {n["nutrientName"]: f'{n["value"]} {n["unitName"].lower()}' for n in f["foodNutrients"]
+                      if n["nutrientName"] in NUTRIENTS and n["unitName"].lower() == NUTRIENTS[n["nutrientName"]]}}
+        for f in d["foods"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 08:02</summary>
+
+```json
+{
+  "matches": 19,
+  "foods": [
+    {
+      "fdcId": 328637,
+      "description": "Cheese, cheddar",
+      "category": "Dairy and Egg Products",
+      "per_100g": {
+        "Carbohydrate, by difference": "2.44 g",
+        "Energy": "408 kcal",
+        "Protein": "23.3 g",
+        "Total lipid (fat)": "34.0 g"
+      }
+    },
+    {
+      "fdcId": 746767,
+      "description": "Cheese, swiss",
+      "category": "Dairy and Egg Products",
+      "per_100g": {
+        "Total lipid (fat)": "31.0 g",
+        "Carbohydrate, by difference": "1.44 g",
+        "Energy": "393 kcal",
+        "Protein": "27.0 g"
+      }
+    },
+    {
+      "fdcId": 747429,
+      "description": "Cheese, American, restaurant",
+      "category": "Dairy and Egg Products",
+      "per_100g": {
+        "Total lipid (fat)": "31.1 g",
+        "Protein": "17.5 g",
+        "Carbohydrate, by difference": "6.35 g",
+        "Energy": "375 kcal"
+      }
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### USDA NASS Quick Stats
+
+| | |
+|:--|:--|
+| **Docs** | https://quickstats.nass.usda.gov/api |
+| **Auth** | API key (query `key`) |
+| **Register / token** | Request a free key at https://quickstats.nass.usda.gov/api (enter email; key arrives instantly). Max 50,000 records per call - use /api/get_counts/ first to size a query. |
+| **Env var** | `NASS_API_KEY` |
+| **Script** | [`scripts/agriculture/nass_quickstats.py`](scripts/agriculture/nass_quickstats.py) |
+
+**What you can get:**
+
+- Official US agricultural statistics since the 1800s: crop acreage, yield, production, prices received
+- Livestock inventories, dairy, poultry; Census of Agriculture (farms, land, operators, sales) every 5 years
+- National, state, county and agricultural-district levels; weekly crop progress and condition
+
+**Capstone ideas:** Yield forecasting with weather/soil data, farm consolidation trends, climate impacts on county crop yields.
+
+**Endpoint:** `GET https://quickstats.nass.usda.gov/api/api_GET/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `commodity_desc` | Commodity | `CORN` |
+| `statisticcat_desc` | AREA PLANTED \| AREA HARVESTED \| YIELD \| PRODUCTION \| PRICE RECEIVED \| INVENTORY \| ... | `YIELD` |
+| `agg_level_desc` | NATIONAL \| STATE \| COUNTY \| AGRICULTURAL DISTRICT | `STATE` |
+| `state_alpha / county_name` | Location filters | `IA` |
+| `year / year__GE / year__LE` | Year, or a range with __GE / __LE suffixes | `year__GE=2015` |
+| `source_desc` | SURVEY \| CENSUS | `SURVEY` |
+| `short_desc` | Exact data-item name (most precise filter) | `CORN, GRAIN - YIELD, MEASURED IN BU / ACRE` |
+| `format / key` | JSON \| CSV \| XML; your key | `JSON` |
+| `/api/get_counts/ · /api/get_param_values/?param=` | Sibling endpoints: record count for a query; valid values of a field | `param=commodity_desc` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://quickstats.nass.usda.gov/api/api_GET/", params={
+        "key": key("NASS_API_KEY"), "short_desc": "CORN, GRAIN - YIELD, MEASURED IN BU / ACRE",
+        "agg_level_desc": "STATE", "state_alpha": "IA", "source_desc": "SURVEY", "freq_desc": "ANNUAL",
+        "reference_period_desc": "YEAR", "year__GE": 2021, "format": "JSON"})["data"]
+    show([{k: r[k] for k in ("year", "state_name", "short_desc", "Value")} for r in sorted(d, key=lambda r: -r["year"])])
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+[
+  {"year": 2025, "state_name": "IOWA", "short_desc": "CORN, GRAIN - YIELD, MEASURED IN BU / ACRE", "Value": "210.0"},
+  {"year": 2024, "state_name": "IOWA", "short_desc": "CORN, GRAIN - YIELD, MEASURED IN BU / ACRE", "Value": "211.0"},
+  {"year": 2023, "state_name": "IOWA", "short_desc": "CORN, GRAIN - YIELD, MEASURED IN BU / ACRE", "Value": "201.0"}
+]
+```
+</details>
+
+---
+
+### Open Food Facts
+
+| | |
+|:--|:--|
+| **Docs** | https://openfoodfacts.github.io/openfoodfacts-server/api/ |
+| **Auth** | None for reading |
+| **Register / token** | No registration. Send a descriptive User-Agent. Limits: 100 product reads/min, 10 searches/min - for bulk work download the full database (CSV/JSONL/Parquet) instead. ODbL licence. |
+| **Script** | [`scripts/agriculture/open_food_facts.py`](scripts/agriculture/open_food_facts.py) |
+
+**What you can get:**
+
+- 3M+ packaged food products worldwide (crowd-sourced): ingredients, nutrition facts, allergens, labels
+- Nutri-Score, NOVA processing group (1-4), Eco-Score, additives, packaging
+- Look up by barcode or search by category, brand, country
+
+**Capstone ideas:** Ultra-processed food analysis, nutrition-label vs. Nutri-Score studies, food-product image classification.
+
+**Endpoint:** `GET https://world.openfoodfacts.org/api/v2/{product/{barcode} \| search}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `product/{barcode}` | One product by EAN/UPC barcode | `product/737628064502` |
+| `categories_tags_en / brands_tags / countries_tags_en` | Search filters (English tag names) | `breakfast-cereals` |
+| `nutrition_grades_tags / nova_groups_tags` | Filter by Nutri-Score (a-e) or NOVA group (1-4) | `nova_groups_tags=4` |
+| `fields` | Comma list of fields to return | `product_name,brands,nutriscore_grade,nova_group` |
+| `page / page_size` | Paging | `1 / 5` |
+| `sort_by` | popularity_key (other sort keys exist but returned 503 when tested) | `popularity_key` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    d = get("https://world.openfoodfacts.org/api/v2/search", params={
+        "categories_tags_en": "breakfast-cereals", "countries_tags_en": "united-states", "sort_by": "popularity_key",
+        "fields": "product_name,brands,nutriscore_grade,nova_group", "page_size": 100})
+    products = d["products"]
+    show({"US_breakfast_cereals": d["count"],
+          "nutriscore_of_100_most_popular": dict(sorted(Counter(p.get("nutriscore_grade") for p in products).items(), key=str)),
+          "nova_group_of_100_most_popular": dict(sorted(Counter(p.get("nova_group") for p in products).items(), key=str)),
+          "examples": [{k: p.get(k) for k in ("product_name", "brands", "nutriscore_grade", "nova_group")} for p in products[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 08:15</summary>
+
+```json
+{
+  "US_breakfast_cereals": 3851,
+  "nutriscore_of_100_most_popular": {
+    "a": 27,
+    "b": 6,
+    "c": 35,
+    "d": 21,
+    "e": 7,
+    "unknown": 4
+  },
+  "nova_group_of_100_most_popular": {
+    "1": 16,
+    "3": 36,
+    "4": 47,
+    "null": 1
+  },
+  "examples": [
+    {
+      "product_name": "Pumpkin Seed + Flax Granola",
+      "brands": "Nature's Path Organic",
+      "nutriscore_grade": "c",
+      "nova_group": 3
+    },
+    {
+      "product_name": "Oats 'N Honey Granola Bars",
+      "brands": "Nature Valley",
+      "nutriscore_grade": "d",
+      "nova_group": 4
+    },
+    {
+      "product_name": "grape-nuts cereal",
+      "brands": "Post",
+      "nutriscore_grade": "c",
+      "nova_group": 3
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### USDA NRCS Soil Data Access (SSURGO)
+
+| | |
+|:--|:--|
+| **Docs** | https://sdmdataaccess.nrcs.usda.gov/WebServiceHelp.aspx |
+| **Auth** | None |
+| **Register / token** | No registration. Send SQL (T-SQL) queries against the national SSURGO soil database; max 100,000 rows or ~32 MB per request. |
+| **Script** | [`scripts/agriculture/soil_data_access.py`](scripts/agriculture/soil_data_access.py) |
+
+**What you can get:**
+
+- Detailed soil survey for the US: map units, components, horizons
+- Properties: texture, organic matter, pH, drainage class, available water capacity, farmland classification
+- Spatial functions to query by point or polygon (WKT)
+
+**Capstone ideas:** Soil covariates for yield models, prime-farmland loss to development, land-suitability analysis.
+
+**Endpoint:** `POST https://sdmdataaccess.sc.egov.usda.gov/tabular/post.rest`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query (JSON body)` | T-SQL against SSURGO tables: sacatalog, legend, mapunit, component, chorizon, ... | `SELECT TOP 5 areasymbol, areaname FROM sacatalog` |
+| `format (JSON body)` | JSON \| JSON+COLUMNNAME \| JSON+COLUMNNAME+METADATA \| XML | `JSON+COLUMNNAME` |
+| `SDA_Get_Mukey_from_intersection_with_WktWgs84('point(lon lat)')` | Table function: map units at a point | `point(-93.6 42.0)` |
+| `farmlndcl (mapunit)` | Farmland classification, e.g. All areas are prime farmland | `—` |
+
+```python
+import requests
+
+from _common import USER_AGENT, show
+
+SQL = """
+SELECT TOP 5 mu.musym, mu.muname, mu.farmlndcl, c.compname, c.comppct_r, c.drainagecl
+FROM mapunit mu
+JOIN component c ON c.mukey = mu.mukey
+WHERE mu.mukey IN (SELECT * FROM SDA_Get_Mukey_from_intersection_with_WktWgs84('point(-93.6 42.0)'))
+ORDER BY c.comppct_r DESC
+"""
+
+
+def main():
+    r = requests.post("https://sdmdataaccess.sc.egov.usda.gov/tabular/post.rest", timeout=60,
+                      headers={"User-Agent": USER_AGENT}, json={"query": SQL, "format": "JSON+COLUMNNAME"})
+    r.raise_for_status()
+    header, *rows = r.json()["Table"]
+    show({"point": "-93.6, 42.0 (central Iowa)", "soil_components": [dict(zip(header, row)) for row in rows]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 08:15</summary>
+
+```json
+{
+  "point": "-93.6, 42.0 (central Iowa)",
+  "soil_components": [
+    {
+      "musym": "1314",
+      "muname": "Hanlon-Spillville complex, channeled, 0 to 2 percent slopes",
+      "farmlndcl": "Farmland of statewide importance",
+      "compname": "Hanlon",
+      "comppct_r": "60",
+      "drainagecl": "Moderately well drained"
+    },
+    {
+      "musym": "1314",
+      "muname": "Hanlon-Spillville complex, channeled, 0 to 2 percent slopes",
+      "farmlndcl": "Farmland of statewide importance",
+      "compname": "Spillville",
+      "comppct_r": "30",
+      "drainagecl": "Moderately well drained"
+    },
+    {
+      "musym": "1314",
+      "muname": "Hanlon-Spillville complex, channeled, 0 to 2 percent slopes",
+      "farmlndcl": "Farmland of statewide importance",
+      "compname": "Spillville",
+      "comppct_r": "5",
+      "drainagecl": "Moderately well drained"
+    },
+    {
+      "musym": "1314",
+      "muname": "Hanlon-Spillville complex, channeled, 0 to 2 percent slopes",
+      "farmlndcl": "Farmland of statewide importance",
+      "compname": "Coland",
+      "comppct_r": "5",
+      "drainagecl": "Poorly drained"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### ISRIC SoilGrids (global soil properties)
+
+| | |
+|:--|:--|
+| **Docs** | https://rest.isric.org/soilgrids/v2.0/docs |
+| **Auth** | None |
+| **Register / token** | No registration. Fair use: ~5 calls/minute (the service is a beta). Global 250 m predictions with uncertainty. |
+| **Script** | [`scripts/agriculture/soilgrids.py`](scripts/agriculture/soilgrids.py) |
+
+**What you can get:**
+
+- Soil properties anywhere on Earth at 6 depths (0-200 cm): organic carbon, pH, clay/sand/silt, nitrogen, bulk density, CEC
+- Mean, median and 5/95% quantiles (uncertainty)
+- WRB soil classification at a point
+
+**Capstone ideas:** Soil covariates for global crop or carbon models, soil-carbon sequestration potential, land suitability.
+
+**Endpoint:** `GET https://rest.isric.org/soilgrids/v2.0/properties/query`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `lon / lat` | Point (WGS84) | `-93.6 / 42.0` |
+| `property` | soc \| phh2o \| clay \| sand \| silt \| nitrogen \| bdod \| cec \| cfvo \| ocd \| ocs (repeatable) | `soc` |
+| `depth` | 0-5cm \| 5-15cm \| 15-30cm \| 30-60cm \| 60-100cm \| 100-200cm (repeatable) | `0-5cm` |
+| `value` | mean \| Q0.05 \| Q0.5 \| Q0.95 \| uncertainty (repeatable) | `mean` |
+| `unit conversion` | Divide by unit_measure.d_factor to get target units (e.g. pH*10 -> pH) | `—` |
+| `/classification/query?lon=&lat=` | Sibling endpoint: most probable WRB soil class | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://rest.isric.org/soilgrids/v2.0/properties/query", params=[
+        ("lon", -93.6), ("lat", 42.0), ("property", "soc"), ("property", "phh2o"), ("property", "clay"),
+        ("depth", "0-5cm"), ("depth", "30-60cm"), ("value", "mean")])
+    out = {}
+    for layer in d["properties"]["layers"]:
+        f, unit = layer["unit_measure"]["d_factor"], layer["unit_measure"]["target_units"]
+        out[f'{layer["name"]} ({unit})'] = {dep["label"]: dep["values"]["mean"] / f for dep in layer["depths"]}
+    show({"point": "-93.6, 42.0 (central Iowa)", "properties": out})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 08:15</summary>
+
+```json
+{
+  "point": "-93.6, 42.0 (central Iowa)",
+  "properties": {
+    "clay (%)": {
+      "0-5cm": 29.1,
+      "30-60cm": 30.8
+    },
+    "phh2o (-)": {
+      "0-5cm": 6.5,
+      "30-60cm": 6.6
+    },
+    "soc (g/kg)": {
+      "0-5cm": 31.8,
+      "30-60cm": 7.6
+    }
+  }
+}
+```
+</details>
+
+---
+
+### TheMealDB (recipes)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.themealdb.com/api.php |
+| **Auth** | Test key `1` in the URL path (free for development) |
+| **Register / token** | The test key 1 works for development and education. Supporters get a production key with extra endpoints (multiple filters, latest meals, full list). |
+| **Env var** | `THEMEALDB_KEY (optional)` |
+| **Script** | [`scripts/agriculture/themealdb.py`](scripts/agriculture/themealdb.py) |
+
+**What you can get:**
+
+- ~600 recipes: name, category, cuisine (area), instructions, ingredients with measures, image, YouTube link
+- Filter by main ingredient, category or cuisine; random meal; ingredient and category lists
+
+**Capstone ideas:** Cuisine similarity networks from shared ingredients, recipe recommendation, ingredient-image datasets.
+
+**Endpoint:** `GET https://www.themealdb.com/api/json/v1/{key}/{endpoint}.php`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search.php?s= / ?f=` | Search by name, or by first letter | `s=Arrabiata` |
+| `lookup.php?i=` | Full recipe by ID | `i=52772` |
+| `filter.php?i= / ?c= / ?a=` | Meals by main ingredient, category or area (cuisine) | `a=Italian` |
+| `random.php` | One random meal | `—` |
+| `list.php?c=list / ?a=list / ?i=list` | All categories / areas / ingredients | `a=list` |
+
+```python
+import os
+
+from _common import get, show
+
+
+def main():
+    base = f'https://www.themealdb.com/api/json/v1/{os.getenv("THEMEALDB_KEY", "1")}'
+    areas = [a["strArea"] for a in get(f"{base}/list.php", params={"a": "list"})["meals"]]
+    italian = get(f"{base}/filter.php", params={"a": "Italian"})["meals"]
+    meal = get(f"{base}/lookup.php", params={"i": italian[0]["idMeal"]})["meals"][0]
+    ingredients = [f'{meal[f"strMeasure{i}"].strip()} {meal[f"strIngredient{i}"]}'.strip()
+                   for i in range(1, 21) if (meal.get(f"strIngredient{i}") or "").strip()]
+    show({"cuisines": len(areas), "italian_recipes": len(italian),
+          "example": {"name": meal["strMeal"], "category": meal["strCategory"], "ingredients": ingredients,
+                      "instructions": meal["strInstructions"]}}, max_items=6, max_str=200)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 08:15</summary>
+
+```json
+{
+  "cuisines": 195,
+  "italian_recipes": 21,
+  "example": {
+    "name": "Budino Di Ricotta",
+    "category": "Dessert",
+    "ingredients": [
+      "500g Ricotta",
+      "4 large Eggs",
+      "3 tbs Flour",
+      "250g Sugar",
+      "1 tsp Cinnamon",
+      "Grated Zest of 2 Lemons",
+      "... (2 more)"
+    ],
+    "instructions": "Mash the ricotta and beat well with the egg yolks, stir in the flour, sugar, cinnamon, grated lemon rind and the rum and mix well. You can do this in a food processor. Beat the egg whites until stiff,..."
+  }
+}
 ```
 </details>
 
