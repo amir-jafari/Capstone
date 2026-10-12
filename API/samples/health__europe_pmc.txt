@@ -1,0 +1,41 @@
+# live 2026-10-12 09:02
+{
+  "hits": 4925,
+  "most_cited": [
+    {
+      "title": "Global incidence, prevalence, years lived with disability (YLDs), disability-adjusted life-years (DALYs), and healthy life expectancy (HALE) for 371 diseases an...",
+      "journal": "Lancet",
+      "year": "2024",
+      "cited_by": 4469,
+      "open_access": "Y"
+    },
+    {
+      "title": "2024 Heart Disease and Stroke Statistics: A Report of US and Global Data From the American Heart Association.",
+      "journal": "Circulation",
+      "year": "2024",
+      "cited_by": 2294,
+      "open_access": "N"
+    },
+    {
+      "title": "Long COVID science, research and policy.",
+      "journal": "Nat Med",
+      "year": "2024",
+      "cited_by": 435,
+      "open_access": "N"
+    },
+    {
+      "title": "The Human Phenotype Ontology in 2024: phenotypes around the world.",
+      "journal": "Nucleic Acids Res",
+      "year": "2024",
+      "cited_by": 384,
+      "open_access": "Y"
+    },
+    {
+      "title": "Long COVID: a clinical update.",
+      "journal": "Lancet",
+      "year": "2024",
+      "cited_by": 353,
+      "open_access": "N"
+    }
+  ]
+}

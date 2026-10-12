@@ -1,0 +1,34 @@
+# live 2026-10-12 09:02
+{
+  "drug": "semaglutide, DC prescribers",
+  "prescriber_rows": 399,
+  "total_cost_usd": 20052702,
+  "by_prescriber_type": [
+    {
+      "type": "Internal Medicine",
+      "prescribers": 181,
+      "claims": 6583
+    },
+    {
+      "type": "Endocrinology",
+      "prescribers": 39,
+      "claims": 3283
+    },
+    {
+      "type": "Family Practice",
+      "prescribers": 63,
+      "claims": 1854
+    },
+    {
+      "type": "Nurse Practitioner",
+      "prescribers": 49,
+      "claims": 1264
+    },
+    {
+      "type": "Physician Assistant",
+      "prescribers": 19,
+      "claims": 751
+    },
+    "... (18 more)"
+  ]
+}

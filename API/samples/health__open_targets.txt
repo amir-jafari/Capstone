@@ -1,0 +1,32 @@
+# live 2026-10-12 09:02
+{
+  "disease": "type 2 diabetes mellitus (MONDO_0005148)",
+  "associated_targets": 10206,
+  "top_targets": [
+    {
+      "symbol": "KCNJ11",
+      "name": "potassium inwardly rectifying channel subfamily J member 11",
+      "score": 0.877
+    },
+    {
+      "symbol": "ABCC8",
+      "name": "ATP binding cassette subfamily C member 8",
+      "score": 0.876
+    },
+    {
+      "symbol": "GCK",
+      "name": "glucokinase",
+      "score": 0.868
+    },
+    {
+      "symbol": "PPARG",
+      "name": "peroxisome proliferator activated receptor gamma",
+      "score": 0.861
+    },
+    {
+      "symbol": "HNF1A",
+      "name": "HNF1 homeobox A",
+      "score": 0.85
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# live 2026-10-12 09:02
+{
+  "labels": 9,
+  "examples": [
+    {
+      "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+      "published": "Aug 19, 2026",
+      "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+    },
+    {
+      "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [A-S MEDICATION SOLUTIONS]",
+      "published": "Jul 31, 2026",
+      "setid": "42bdd912-2393-44c4-b7e0-47672ca28991"
+    },
+    {
+      "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+      "published": "Jun 30, 2026",
+      "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+    },
+    {
+      "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+      "published": "Jun 10, 2026",
+      "setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+    },
+    {
+      "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION [A-S MEDICATION SOLUTIONS]",
+      "published": "Apr 25, 2024",
+      "setid": "f5e548d0-cc79-4c34-a3f5-e20a5b8b6564"
+    }
+  ]
+}

@@ -98,79 +98,95 @@ python build_readme.py          # re-run everything & regenerate this README
 | 67 | ⚖️ Law & Justice | [Oyez (U.S. Supreme Court cases)](#oyez-us-supreme-court-cases) | 🟢 no key | — | [`oyez.py`](scripts/law/oyez.py) |
 | 68 | ⚖️ Law & Justice | [Supreme Court Database (SCDB)](#supreme-court-database-scdb) | 🟢 no key | — | [`supreme_court_database.py`](scripts/law/supreme_court_database.py) |
 | 69 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
-| 70 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
-| 71 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
-| 72 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
-| 73 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
-| 74 | 🌾 Agriculture & Food | [USDA AMS Market News (MyMarketNews API)](#usda-ams-market-news-mymarketnews-api) | 🔑 key | `AMS_API_KEY` | [`ams_market_news.py`](scripts/agriculture/ams_market_news.py) |
-| 75 | 🌾 Agriculture & Food | [USDA NASS CropScape (Cropland Data Layer)](#usda-nass-cropscape-cropland-data-layer) | 🟢 no key | — | [`cropscape.py`](scripts/agriculture/cropscape.py) |
-| 76 | 🌾 Agriculture & Food | [USDA ERS — ARMS Farm Financial Data](#usda-ers--arms-farm-financial-data) | 🟢 no key | `DATA_GOV_API_KEY` | [`ers_arms.py`](scripts/agriculture/ers_arms.py) |
-| 77 | 🌾 Agriculture & Food | [USDA FAS — Production, Supply & Distribution (PSD) and trade](#usda-fas--production-supply--distribution-psd-and-trade) | 🟢 no key | `DATA_GOV_API_KEY` | [`fas_psd.py`](scripts/agriculture/fas_psd.py) |
-| 78 | 🌾 Agriculture & Food | [USDA FoodData Central](#usda-fooddata-central) | 🟢 no key | `DATA_GOV_API_KEY` | [`fooddata_central.py`](scripts/agriculture/fooddata_central.py) |
-| 79 | 🌾 Agriculture & Food | [USDA NASS Quick Stats](#usda-nass-quick-stats) | 🔑 key | `NASS_API_KEY` | [`nass_quickstats.py`](scripts/agriculture/nass_quickstats.py) |
-| 80 | 🌾 Agriculture & Food | [Open Food Facts](#open-food-facts) | 🟢 no key | — | [`open_food_facts.py`](scripts/agriculture/open_food_facts.py) |
-| 81 | 🌾 Agriculture & Food | [USDA NRCS Soil Data Access (SSURGO)](#usda-nrcs-soil-data-access-ssurgo) | 🟢 no key | — | [`soil_data_access.py`](scripts/agriculture/soil_data_access.py) |
-| 82 | 🌾 Agriculture & Food | [ISRIC SoilGrids (global soil properties)](#isric-soilgrids-global-soil-properties) | 🟢 no key | — | [`soilgrids.py`](scripts/agriculture/soilgrids.py) |
-| 83 | 🌾 Agriculture & Food | [TheMealDB (recipes)](#themealdb-recipes) | 🔑 key | `THEMEALDB_KEY (optional)` | [`themealdb.py`](scripts/agriculture/themealdb.py) |
-| 84 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
-| 85 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
-| 86 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
-| 87 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
-| 88 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
-| 89 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
-| 90 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 91 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 92 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 93 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 94 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 95 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 96 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 97 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 98 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 99 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 100 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 101 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 102 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 103 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 104 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 105 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 106 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 107 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 108 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
-| 109 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 110 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 111 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
-| 112 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 113 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 114 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
-| 115 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
-| 116 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
-| 117 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 118 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 119 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 120 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 121 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 122 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 123 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 124 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 125 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 126 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 127 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 128 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 129 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 130 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 131 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 132 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 133 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 134 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 135 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 136 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 137 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 138 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 139 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 140 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 141 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 142 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 70 | 🩺 Health & Social Science | [ChEMBL (drug discovery bioactivity)](#chembl-drug-discovery-bioactivity) | 🟢 no key | — | [`chembl.py`](scripts/health/chembl.py) |
+| 71 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
+| 72 | 🩺 Health & Social Science | [CMS Medicare Part D Prescribers (data.cms.gov)](#cms-medicare-part-d-prescribers-datacmsgov) | 🟢 no key | — | [`cms_part_d.py`](scripts/health/cms_part_d.py) |
+| 73 | 🩺 Health & Social Science | [CMS Provider Data Catalog (Care Compare)](#cms-provider-data-catalog-care-compare) | 🟢 no key | — | [`cms_provider_data.py`](scripts/health/cms_provider_data.py) |
+| 74 | 🩺 Health & Social Science | [DailyMed (NLM drug labels)](#dailymed-nlm-drug-labels) | 🟢 no key | — | [`dailymed.py`](scripts/health/dailymed.py) |
+| 75 | 🩺 Health & Social Science | [Delphi Epidata (CMU disease surveillance)](#delphi-epidata-cmu-disease-surveillance) | 🟢 no key | `DELPHI_API_KEY (optional)` | [`delphi_epidata.py`](scripts/health/delphi_epidata.py) |
+| 76 | 🩺 Health & Social Science | [Ensembl REST API (genomics)](#ensembl-rest-api-genomics) | 🟢 no key | — | [`ensembl.py`](scripts/health/ensembl.py) |
+| 77 | 🩺 Health & Social Science | [Europe PMC](#europe-pmc) | 🟢 no key | — | [`europe_pmc.py`](scripts/health/europe_pmc.py) |
+| 78 | 🩺 Health & Social Science | [HAPI FHIR public test server (synthetic EHR data)](#hapi-fhir-public-test-server-synthetic-ehr-data) | 🟢 no key | — | [`hapi_fhir.py`](scripts/health/hapi_fhir.py) |
+| 79 | 🩺 Health & Social Science | [MedlinePlus Connect (patient education)](#medlineplus-connect-patient-education) | 🟢 no key | — | [`medlineplus_connect.py`](scripts/health/medlineplus_connect.py) |
+| 80 | 🩺 Health & Social Science | [NLM Clinical Table Search Service (ICD-10-CM, LOINC, conditions)](#nlm-clinical-table-search-service-icd-10-cm-loinc-conditions) | 🟢 no key | — | [`nlm_clinical_tables.py`](scripts/health/nlm_clinical_tables.py) |
+| 81 | 🩺 Health & Social Science | [NPPES NPI Registry (healthcare providers)](#nppes-npi-registry-healthcare-providers) | 🟢 no key | — | [`nppes_npi.py`](scripts/health/nppes_npi.py) |
+| 82 | 🩺 Health & Social Science | [Open Targets Platform (GraphQL)](#open-targets-platform-graphql) | 🟢 no key | — | [`open_targets.py`](scripts/health/open_targets.py) |
+| 83 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
+| 84 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
+| 85 | 🩺 Health & Social Science | [PubMed (NCBI E-utilities)](#pubmed-ncbi-e-utilities) | 🟢 no key | `NCBI_API_KEY (optional)` | [`pubmed.py`](scripts/health/pubmed.py) |
+| 86 | 🩺 Health & Social Science | [RxNorm / RxNav (NLM drug terminology)](#rxnorm--rxnav-nlm-drug-terminology) | 🟢 no key | — | [`rxnorm.py`](scripts/health/rxnorm.py) |
+| 87 | 🩺 Health & Social Science | [UniProt (proteins)](#uniprot-proteins) | 🟢 no key | — | [`uniprot.py`](scripts/health/uniprot.py) |
+| 88 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
+| 89 | 🩺 Health & Social Science | [WHO ICD-11 API](#who-icd-11-api) | 🔑 key | `ICD_CLIENT_ID, ICD_CLIENT_SECRET` | [`who_icd11.py`](scripts/health/who_icd11.py) |
+| 90 | 🌾 Agriculture & Food | [USDA AMS Market News (MyMarketNews API)](#usda-ams-market-news-mymarketnews-api) | 🔑 key | `AMS_API_KEY` | [`ams_market_news.py`](scripts/agriculture/ams_market_news.py) |
+| 91 | 🌾 Agriculture & Food | [USDA NASS CropScape (Cropland Data Layer)](#usda-nass-cropscape-cropland-data-layer) | 🟢 no key | — | [`cropscape.py`](scripts/agriculture/cropscape.py) |
+| 92 | 🌾 Agriculture & Food | [USDA ERS — ARMS Farm Financial Data](#usda-ers--arms-farm-financial-data) | 🟢 no key | `DATA_GOV_API_KEY` | [`ers_arms.py`](scripts/agriculture/ers_arms.py) |
+| 93 | 🌾 Agriculture & Food | [USDA FAS — Production, Supply & Distribution (PSD) and trade](#usda-fas--production-supply--distribution-psd-and-trade) | 🟢 no key | `DATA_GOV_API_KEY` | [`fas_psd.py`](scripts/agriculture/fas_psd.py) |
+| 94 | 🌾 Agriculture & Food | [USDA FoodData Central](#usda-fooddata-central) | 🟢 no key | `DATA_GOV_API_KEY` | [`fooddata_central.py`](scripts/agriculture/fooddata_central.py) |
+| 95 | 🌾 Agriculture & Food | [USDA NASS Quick Stats](#usda-nass-quick-stats) | 🔑 key | `NASS_API_KEY` | [`nass_quickstats.py`](scripts/agriculture/nass_quickstats.py) |
+| 96 | 🌾 Agriculture & Food | [Open Food Facts](#open-food-facts) | 🟢 no key | — | [`open_food_facts.py`](scripts/agriculture/open_food_facts.py) |
+| 97 | 🌾 Agriculture & Food | [USDA NRCS Soil Data Access (SSURGO)](#usda-nrcs-soil-data-access-ssurgo) | 🟢 no key | — | [`soil_data_access.py`](scripts/agriculture/soil_data_access.py) |
+| 98 | 🌾 Agriculture & Food | [ISRIC SoilGrids (global soil properties)](#isric-soilgrids-global-soil-properties) | 🟢 no key | — | [`soilgrids.py`](scripts/agriculture/soilgrids.py) |
+| 99 | 🌾 Agriculture & Food | [TheMealDB (recipes)](#themealdb-recipes) | 🔑 key | `THEMEALDB_KEY (optional)` | [`themealdb.py`](scripts/agriculture/themealdb.py) |
+| 100 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
+| 101 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
+| 102 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
+| 103 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
+| 104 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
+| 105 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
+| 106 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 107 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 108 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 109 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 110 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 111 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 112 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 113 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 114 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 115 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 116 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 117 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 118 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 119 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 120 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 121 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 122 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 123 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 124 | ⚙️ Engineering, Energy & Tech | [Electricity Maps API](#electricity-maps-api) | 🔑 key | `ELECTRICITYMAPS_TOKEN` | [`electricity_maps.py`](scripts/engineering_energy/electricity_maps.py) |
+| 125 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 126 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 127 | ⚙️ Engineering, Energy & Tech | [NASA POWER (solar & meteorological data)](#nasa-power-solar--meteorological-data) | 🟢 no key | — | [`nasa_power.py`](scripts/engineering_energy/nasa_power.py) |
+| 128 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 129 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 130 | ⚙️ Engineering, Energy & Tech | [Our World in Data — Energy dataset](#our-world-in-data--energy-dataset) | 🟢 no key | — | [`owid_energy.py`](scripts/engineering_energy/owid_energy.py) |
+| 131 | ⚙️ Engineering, Energy & Tech | [PVGIS (EU JRC photovoltaic estimates)](#pvgis-eu-jrc-photovoltaic-estimates) | 🟢 no key | — | [`pvgis.py`](scripts/engineering_energy/pvgis.py) |
+| 132 | ⚙️ Engineering, Energy & Tech | [UK Carbon Intensity API (National Grid ESO)](#uk-carbon-intensity-api-national-grid-eso) | 🟢 no key | — | [`uk_carbon_intensity.py`](scripts/engineering_energy/uk_carbon_intensity.py) |
+| 133 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 134 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 135 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 136 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 137 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 138 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 139 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 140 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 141 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 142 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 143 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 144 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 145 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 146 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 147 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 148 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 149 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 150 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 151 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 152 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 153 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 154 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 155 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 156 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 157 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 158 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -5531,7 +5547,7 @@ def main():
     show(d)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
 
 ```json
 [
@@ -5571,6 +5587,80 @@ def main():
     "year": "2023"
   }
 ]
+```
+</details>
+
+---
+
+### ChEMBL (drug discovery bioactivity)
+
+| | |
+|:--|:--|
+| **Docs** | https://chembl.gitbook.io/chembl-interface-documentation/web-services/chembl-data-web-services |
+| **Auth** | None |
+| **Register / token** | No registration. Python client: `pip install chembl_webresource_client`. |
+| **Script** | [`scripts/health/chembl.py`](scripts/health/chembl.py) |
+
+**What you can get:**
+
+- 2.4M+ bioactive molecules with structures and properties (MW, logP, Lipinski, QED)
+- 20M+ bioactivity measurements (IC50, Ki, ...) against protein targets
+- Approved drugs, mechanisms of action, indications
+
+**Capstone ideas:** QSAR / molecular property prediction, drug repurposing, target-ligand interaction models.
+
+**Endpoint:** `GET https://www.ebi.ac.uk/chembl/api/data/{resource}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `molecule/{chembl_id}` | One molecule | `molecule/CHEMBL25 (aspirin)` |
+| `molecule?pref_name__iexact= / max_phase=` | Filter molecules (Django-style lookups: __iexact, __icontains, __gte) | `max_phase=4` |
+| `activity?target_chembl_id=&standard_type=` | Bioactivity measurements | `target_chembl_id=CHEMBL203&standard_type=IC50` |
+| `mechanism?molecule_chembl_id=` | Mechanism of action (often stored on the salt form, e.g. CHEMBL1703 not CHEMBL1431) | `molecule_chembl_id=CHEMBL1703` |
+| `drug_indication?molecule_chembl_id=` | Indications (MeSH/EFO) | `—` |
+| `limit / offset` | Paging (max 1,000) | `5` |
+
+```python
+from _common import get, show
+
+BASE = "https://www.ebi.ac.uk/chembl/api/data"
+
+
+def main():
+    # Mechanisms are recorded on the approved salt form (CHEMBL1703 = metformin hydrochloride), not the parent CHEMBL1431
+    mol = get(f"{BASE}/molecule/CHEMBL1703.json")
+    mech = get(f"{BASE}/mechanism.json", params={"molecule_chembl_id": "CHEMBL1703"})["mechanisms"]
+    props = mol["molecule_properties"]
+    show({"molecule": mol["pref_name"], "max_phase": mol["max_phase"],
+          "properties": {k: props[k] for k in ("full_mwt", "alogp", "hba", "hbd", "num_ro5_violations", "qed_weighted")},
+          "mechanisms": [{"action": m["action_type"], "mechanism": m["mechanism_of_action"]} for m in mech]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "molecule": "METFORMIN HYDROCHLORIDE",
+  "max_phase": "4.0",
+  "properties": {
+    "full_mwt": "165.63",
+    "alogp": "-1.03",
+    "hba": 2,
+    "hbd": 4,
+    "num_ro5_violations": 0,
+    "qed_weighted": "0.25"
+  },
+  "mechanisms": [
+    {
+      "action": "INHIBITOR",
+      "mechanism": "Mitochondrial complex I (NADH dehydrogenase) inhibitor"
+    },
+    {
+      "action": "INHIBITOR",
+      "mechanism": "Mitochondrial glycerol-3-phosphate dehydrogenase inhibitor"
+    }
+  ]
+}
 ```
 </details>
 
@@ -5622,7 +5712,7 @@ def main():
         for s in d["studies"]]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
 
 ```json
 {
@@ -5673,6 +5763,937 @@ def main():
 
 ---
 
+### CMS Medicare Part D Prescribers (data.cms.gov)
+
+| | |
+|:--|:--|
+| **Docs** | https://data.cms.gov/provider-summary-by-type-of-service/medicare-part-d-prescribers |
+| **Auth** | None |
+| **Register / token** | No registration. Each yearly release has its own dataset UUID (listed in https://data.cms.gov/data.json). The same API serves other data.cms.gov datasets (physician services, hospital costs, ...). |
+| **Script** | [`scripts/health/cms_part_d.py`](scripts/health/cms_part_d.py) |
+
+**What you can get:**
+
+- Every prescriber's Medicare Part D prescriptions by drug: claims, 30-day fills, total cost, beneficiaries
+- Prescriber specialty and location; brand vs. generic name
+- One row per prescriber x drug (25M+ rows per year)
+
+**Capstone ideas:** Opioid and antibiotic prescribing patterns, brand-name prescribing and pharma payments (Open Payments), cost outliers.
+
+**Endpoint:** `GET https://data.cms.gov/data-api/v1/dataset/{uuid}/data`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `uuid` | Dataset release ID from data.json (2024 release shown) | `9552739e-3d05-4c1b-8eff-ecabf391e2e5` |
+| `filter[column]` | Exact-match filter on any column | `filter[Prscrbr_State_Abrvtn]=DC` |
+| `keyword` | Full-text keyword across columns | `semaglutide` |
+| `column` | Comma list of columns to return | `Prscrbr_Last_Org_Name,Gnrc_Name,Tot_Clms,Tot_Drug_Cst` |
+| `size / offset` | Max 5,000 per call | `5` |
+| `/data-api/v1/dataset/{uuid}/data/stats` | Row count for a query | `—` |
+
+```python
+from collections import defaultdict
+
+from _common import get, show
+
+URL = "https://data.cms.gov/data-api/v1/dataset/9552739e-3d05-4c1b-8eff-ecabf391e2e5/data"
+
+
+def main():
+    rows = get(URL, params={"filter[Prscrbr_State_Abrvtn]": "DC", "filter[Gnrc_Name]": "Semaglutide", "size": 5000})
+    by_type = defaultdict(lambda: {"prescribers": 0, "claims": 0})
+    for r in rows:
+        t = by_type[r["Prscrbr_Type"]]
+        t["prescribers"] += 1
+        t["claims"] += int(r["Tot_Clms"])
+    show({"drug": "semaglutide, DC prescribers", "prescriber_rows": len(rows),
+          "total_cost_usd": round(sum(float(r["Tot_Drug_Cst"]) for r in rows)),
+          "by_prescriber_type": sorted(({"type": k, **v} for k, v in by_type.items()), key=lambda x: -x["claims"])})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "drug": "semaglutide, DC prescribers",
+  "prescriber_rows": 399,
+  "total_cost_usd": 20052702,
+  "by_prescriber_type": [
+    {
+      "type": "Internal Medicine",
+      "prescribers": 181,
+      "claims": 6583
+    },
+    {
+      "type": "Endocrinology",
+      "prescribers": 39,
+      "claims": 3283
+    },
+    {
+      "type": "Family Practice",
+      "prescribers": 63,
+      "claims": 1854
+    },
+    {
+      "type": "Nurse Practitioner",
+      "prescribers": 49,
+      "claims": 1264
+    },
+    {
+      "type": "Physician Assistant",
+      "prescribers": 19,
+      "claims": 751
+    },
+    "... (18 more)"
+  ]
+}
+```
+</details>
+
+---
+
+### CMS Provider Data Catalog (Care Compare)
+
+| | |
+|:--|:--|
+| **Docs** | https://data.cms.gov/provider-data/docs |
+| **Auth** | None |
+| **Register / token** | No registration. The data behind Medicare's Care Compare sites: hospitals, nursing homes, dialysis, home health, physicians. Dataset IDs are on each dataset page. |
+| **Script** | [`scripts/health/cms_provider_data.py`](scripts/health/cms_provider_data.py) |
+
+**What you can get:**
+
+- Hospital general information and overall star ratings, readmissions, mortality, patient-experience (HCAHPS)
+- Nursing-home ratings, staffing and penalties; dialysis and home-health quality
+- SQL-like filtering, sorting and paging through the DKAN datastore API
+
+**Capstone ideas:** Hospital quality vs. ownership or neighborhood, readmission prediction, nursing-home staffing and outcomes.
+
+**Endpoint:** `GET https://data.cms.gov/provider-data/api/1/datastore/query/{datasetId}/0`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `datasetId` | Dataset ID: xubh-q36u Hospital General Information, ... | `xubh-q36u` |
+| `conditions[0][property] / [value] / [operator]` | Filters (=, <>, >, <, LIKE, IN) | `state = DC` |
+| `sorts[0][property] / [order]` | Sort | `hospital_overall_rating / desc` |
+| `limit / offset` | Max 1,500 per call | `5` |
+| `count / results` | true\|false: include total count / rows | `true` |
+| `/api/1/metastore/schemas/dataset/items` | Sibling endpoint: catalog of all datasets | `—` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    d = get("https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0", params={
+        "conditions[0][property]": "state", "conditions[0][value]": "MD", "conditions[0][operator]": "=", "limit": 200})
+    rows = d["results"]
+    show({"maryland_hospitals": d["count"],
+          "overall_star_ratings": dict(sorted(Counter(r["hospital_overall_rating"] for r in rows).items())),
+          "five_star": [{k: r[k] for k in ("facility_name", "citytown", "hospital_type", "hospital_ownership")}
+                        for r in rows if r["hospital_overall_rating"] == "5"][:3]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "maryland_hospitals": 56,
+  "overall_star_ratings": {
+    "1": 2,
+    "2": 6,
+    "3": 18,
+    "4": 9,
+    "5": 7,
+    "Not Available": 14
+  },
+  "five_star": [
+    {
+      "facility_name": "JOHNS HOPKINS HOSPITAL, THE",
+      "citytown": "BALTIMORE",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Private"
+    },
+    {
+      "facility_name": "MEDSTAR UNION MEMORIAL HOSPITAL",
+      "citytown": "BALTIMORE",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Other"
+    },
+    {
+      "facility_name": "UNIVERSITY OF MD SHORE MEDICAL CTR AT CHESTERTOWN",
+      "citytown": "CHESTERTOWN",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Private"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### DailyMed (NLM drug labels)
+
+| | |
+|:--|:--|
+| **Docs** | https://dailymed.nlm.nih.gov/dailymed/app-support-web-services.cfm |
+| **Auth** | None |
+| **Register / token** | No registration. The official FDA-submitted labels (package inserts) as Structured Product Labeling (SPL). |
+| **Script** | [`scripts/health/dailymed.py`](scripts/health/dailymed.py) |
+
+**What you can get:**
+
+- Current and historical drug labels: indications, dosage, warnings, boxed warnings, adverse reactions
+- Search by drug name, NDC, RxCUI, manufacturer, pharmacologic class
+- Label versions over time and label images
+
+**Capstone ideas:** NLP on boxed warnings and adverse-reaction sections, tracking label changes after safety signals.
+
+**Endpoint:** `GET https://dailymed.nlm.nih.gov/dailymed/services/v2/{resource}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `spls.json?drug_name= / ?rxcui= / ?ndc=` | Labels (set IDs) matching a drug | `drug_name=metformin` |
+| `labeler / published_date_comparison` | Filter by manufacturer / publication date | `labeler=Teva` |
+| `pagesize / page` | Paging (max 100) | `5` |
+| `spls/{setid}/history.json` | Versions of one label | `—` |
+| `spls/{setid}.xml` | Full label XML (sections by LOINC code) | `—` |
+| `drugnames.json?drug_name=` | Normalized drug names | `drug_name=lipitor` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json", params={"drug_name": "semaglutide",
+                                                                                   "pagesize": 5})
+    show({"labels": d["metadata"]["total_elements"],
+          "examples": [{"title": s["title"], "published": s["published_date"], "setid": s["setid"]} for s in d["data"]]},
+         max_str=140)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "labels": 9,
+  "examples": [
+    {
+      "title": "OZEMPIC (ORAL SEMAGLUTIDE) TABLET RYBELSUS (ORAL SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+      "published": "Aug 19, 2026",
+      "setid": "27f15fac-7d98-4114-a2ec-92494a91da98"
+    },
+    {
+      "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [A-S MEDICATION SOLUTIONS]",
+      "published": "Jul 31, 2026",
+      "setid": "42bdd912-2393-44c4-b7e0-47672ca28991"
+    },
+    {
+      "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION WEGOVY (SEMAGLUTIDE) TABLET [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+      "published": "Jun 30, 2026",
+      "setid": "ee06186f-2aa3-4990-a760-757579d8f77b"
+    },
+    {
+      "title": "OZEMPIC (SEMAGLUTIDE) INJECTION, SOLUTION [NOVO NORDISK PHARMACEUTICAL INDUSTRIES, LP]",
+      "published": "Jun 10, 2026",
+      "setid": "adec4fd2-6858-4c99-91d4-531f5f2a2d79"
+    },
+    {
+      "title": "WEGOVY (SEMAGLUTIDE) INJECTION, SOLUTION [A-S MEDICATION SOLUTIONS]",
+      "published": "Apr 25, 2024",
+      "setid": "f5e548d0-cc79-4c34-a3f5-e20a5b8b6564"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Delphi Epidata (CMU disease surveillance)
+
+| | |
+|:--|:--|
+| **Docs** | https://cmu-delphi.github.io/delphi-epidata/ |
+| **Auth** | None (free key raises limits) |
+| **Register / token** | Works keyless at low volume. Register at https://api.delphi.cmu.edu/epidata/admin/registration_form for a key. Python client: `pip install epidatpy`. |
+| **Env var** | `DELPHI_API_KEY (optional)` |
+| **Script** | [`scripts/health/delphi_epidata.py`](scripts/health/delphi_epidata.py) |
+
+**What you can get:**
+
+- CDC FluView: weekly influenza-like illness (ILI) rates nationally, by HHS region and state since 1997
+- COVIDcast signals (cases, hospital admissions, search trends, wastewater) by county/state
+- Nowcasts and forecasting archives with data revisions ('as of' versions)
+
+**Capstone ideas:** Flu forecasting (the CDC FluSight challenge), nowcasting with revisions, signal-combination models.
+
+**Endpoint:** `GET https://api.delphi.cmu.edu/epidata/{source}/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `source` | fluview \| fluview_clinical \| covidcast \| nidss_flu \| ... | `fluview` |
+| `regions` | nat \| hhs1..hhs10 \| state codes (fluview) | `nat` |
+| `epiweeks` | YYYYWW, list, or range YYYYWW-YYYYWW | `202530-202540` |
+| `issues / lag` | Get data as it was reported at an issue week, or with a given reporting lag | `issues=202541` |
+| `covidcast: data_source, signal, geo_type, geo_values, time_values` | COVIDcast query fields | `geo_type=state&geo_values=dc` |
+| `api_key` | Optional key | `<DELPHI_API_KEY>` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://api.delphi.cmu.edu/epidata/fluview/", params={"regions": "nat", "epiweeks": "202501-202552"})
+    rows = sorted(d["epidata"], key=lambda r: r["epiweek"])
+    peak = max(rows, key=lambda r: r["wili"])
+    show({"series": "US weighted influenza-like illness (% of visits), 2025", "weeks": len(rows),
+          "peak": {"epiweek": peak["epiweek"], "wILI_pct": peak["wili"]},
+          "last_4_weeks": [{"epiweek": r["epiweek"], "wILI_pct": r["wili"], "visits": r["num_patients"]} for r in rows[-4:]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "series": "US weighted influenza-like illness (% of visits), 2025",
+  "weeks": 52,
+  "peak": {
+    "epiweek": 202552,
+    "wILI_pct": 8.29853
+  },
+  "last_4_weeks": [
+    {
+      "epiweek": 202549,
+      "wILI_pct": 3.28462,
+      "visits": 2647927
+    },
+    {
+      "epiweek": 202550,
+      "wILI_pct": 4.11906,
+      "visits": 2678221
+    },
+    {
+      "epiweek": 202551,
+      "wILI_pct": 6.00523,
+      "visits": 2771975
+    },
+    {
+      "epiweek": 202552,
+      "wILI_pct": 8.29853,
+      "visits": 2540023
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Ensembl REST API (genomics)
+
+| | |
+|:--|:--|
+| **Docs** | https://rest.ensembl.org/ |
+| **Auth** | None |
+| **Register / token** | No registration. Max 15 requests/second (55,000/hour). Send content-type=application/json. |
+| **Script** | [`scripts/health/ensembl.py`](scripts/health/ensembl.py) |
+
+**What you can get:**
+
+- Genes, transcripts and their genomic coordinates for human and 300+ species
+- Genetic variants with consequences (VEP), population allele frequencies, phenotype associations
+- Sequences, homologues across species, regulatory features
+
+**Capstone ideas:** Variant-effect analysis pipelines, genomic feature engineering, cross-species comparison.
+
+**Endpoint:** `GET https://rest.ensembl.org/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `lookup/symbol/{species}/{symbol}` | Gene by symbol (expand=1 adds transcripts) | `lookup/symbol/homo_sapiens/BRCA1` |
+| `variation/{species}/{rsid}` | A variant: alleles, location, consequence, clinical significance; pops=1 adds population frequencies | `variation/human/rs429358?pops=1` |
+| `vep/{species}/hgvs/{notation}` | Variant Effect Predictor | `vep/human/hgvs/ENST00000366667:c.803C>T` |
+| `sequence/id/{id}?type=` | Genomic, cDNA or protein sequence | `type=protein` |
+| `homology/symbol/{species}/{symbol}` | Orthologues in other species | `—` |
+| `content-type` | application/json (query parameter or Accept header) | `application/json` |
+
+```python
+from _common import get, show
+
+BASE = "https://rest.ensembl.org"
+JSON = {"content-type": "application/json"}
+
+
+def main():
+    gene = get(f"{BASE}/lookup/symbol/homo_sapiens/APOE", params=JSON)
+    var = get(f"{BASE}/variation/human/rs429358", params={**JSON, "pops": 1})  # pops=1 adds population frequencies
+    show({"gene": {k: gene[k] for k in ("id", "display_name", "biotype", "seq_region_name", "start", "end", "description")},
+          "variant": {"id": var["name"], "location": var["mappings"][0]["location"],
+                      "alleles": var["mappings"][0]["allele_string"], "consequence": var.get("most_severe_consequence"),
+                      "gnomAD_allele_freq": {p["allele"]: p["frequency"] for p in var.get("populations", [])
+                                             if p["population"] == "gnomADg:ALL"},
+                      "clinical_significance": var.get("clinical_significance")}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "gene": {
+    "id": "ENSG00000130203",
+    "display_name": "APOE",
+    "biotype": "protein_coding",
+    "seq_region_name": "19",
+    "start": 44903787,
+    "end": 44909396,
+    "description": "apolipoprotein E [Source:HGNC Symbol;Acc:HGNC:613]"
+  },
+  "variant": {
+    "id": "rs429358",
+    "location": "19:44908684-44908684",
+    "alleles": "T/C",
+    "consequence": "missense_variant",
+    "gnomAD_allele_freq": {
+      "T": 0.8426,
+      "C": 0.1574
+    },
+    "clinical_significance": [
+      "uncertain significance",
+      "not provided",
+      "benign",
+      "likely pathogenic",
+      "pathogenic",
+      "... (6 more)"
+    ]
+  }
+}
+```
+</details>
+
+---
+
+### Europe PMC
+
+| | |
+|:--|:--|
+| **Docs** | https://europepmc.org/RestfulWebService |
+| **Auth** | None |
+| **Register / token** | No registration. Includes PubMed plus preprints, patents, guidelines and 6M+ open-access full texts. |
+| **Script** | [`scripts/health/europe_pmc.py`](scripts/health/europe_pmc.py) |
+
+**What you can get:**
+
+- Search 45M+ life-science abstracts and full texts; citation counts; open-access and preprint flags
+- Full-text XML for open-access articles
+- Text-mined annotations: genes, diseases, chemicals, organisms
+
+**Capstone ideas:** Full-text mining (methods, datasets used), preprint-to-publication tracking, citation analysis.
+
+**Endpoint:** `GET https://www.ebi.ac.uk/europepmc/webservices/rest/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Search syntax with fields: TITLE:, ABSTRACT:, AUTH:, PUB_YEAR:, OPEN_ACCESS:y, SRC:PPR (preprints) | `"long covid" AND PUB_YEAR:2025 AND OPEN_ACCESS:y` |
+| `format` | json \| xml \| dc | `json` |
+| `resultType` | idlist \| lite \| core (core adds abstract, MeSH, full-text links) | `lite` |
+| `pageSize / cursorMark` | Max 1,000; cursorMark=* then nextCursorMark | `5 / *` |
+| `sort` | Field and order, e.g. CITED desc \| P_PDATE_D desc | `CITED desc` |
+| `/{source}/{id}/fullTextXML` | Sibling endpoint: open-access full text | `/PMC9000000/fullTextXML` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://www.ebi.ac.uk/europepmc/webservices/rest/search", params={
+        "query": '"long covid" AND PUB_YEAR:2024', "format": "json", "resultType": "lite",
+        "pageSize": 5, "sort": "CITED desc"})
+    show({"hits": d["hitCount"], "most_cited": [
+        {"title": r["title"], "journal": r.get("journalTitle"), "year": r.get("pubYear"),
+         "cited_by": r.get("citedByCount"), "open_access": r.get("isOpenAccess")} for r in d["resultList"]["result"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "hits": 4925,
+  "most_cited": [
+    {
+      "title": "Global incidence, prevalence, years lived with disability (YLDs), disability-adjusted life-years (DALYs), and healthy life expectancy (HALE) for 371 diseases an...",
+      "journal": "Lancet",
+      "year": "2024",
+      "cited_by": 4469,
+      "open_access": "Y"
+    },
+    {
+      "title": "2024 Heart Disease and Stroke Statistics: A Report of US and Global Data From the American Heart Association.",
+      "journal": "Circulation",
+      "year": "2024",
+      "cited_by": 2294,
+      "open_access": "N"
+    },
+    {
+      "title": "Long COVID science, research and policy.",
+      "journal": "Nat Med",
+      "year": "2024",
+      "cited_by": 435,
+      "open_access": "N"
+    },
+    {
+      "title": "The Human Phenotype Ontology in 2024: phenotypes around the world.",
+      "journal": "Nucleic Acids Res",
+      "year": "2024",
+      "cited_by": 384,
+      "open_access": "Y"
+    },
+    {
+      "title": "Long COVID: a clinical update.",
+      "journal": "Lancet",
+      "year": "2024",
+      "cited_by": 353,
+      "open_access": "N"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### HAPI FHIR public test server (synthetic EHR data)
+
+| | |
+|:--|:--|
+| **Docs** | https://hapi.fhir.org/ |
+| **Auth** | None |
+| **Register / token** | No registration. A public sandbox of HL7 FHIR R4 - the standard API every certified US EHR exposes. Data are synthetic/test records posted by developers: never put real patient data here. |
+| **Script** | [`scripts/health/hapi_fhir.py`](scripts/health/hapi_fhir.py) |
+
+**What you can get:**
+
+- FHIR resources: Patient, Observation (labs, vitals), Condition, MedicationRequest, Encounter, Procedure ...
+- Standard FHIR search parameters, _include/_revinclude, paging bundles
+- Practice for SMART-on-FHIR apps that later run against real EHRs (Epic, Cerner)
+
+**Capstone ideas:** Learning FHIR before working with real EHR exports; building ETL from FHIR to analysis tables.
+
+**Endpoint:** `GET https://hapi.fhir.org/baseR4/{ResourceType}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `ResourceType` | Patient \| Observation \| Condition \| MedicationRequest \| Encounter \| ... | `Observation` |
+| `code` | Coded filter (LOINC/SNOMED), system\|code | `http://loinc.org\|8867-4 (heart rate)` |
+| `patient / subject` | Resources for one patient | `patient=Patient/123` |
+| `date / _lastUpdated` | Date filters with prefixes ge, le, gt, lt | `_lastUpdated=ge2026-01-01` |
+| `_count / _sort / _summary` | Page size, sort field, count-only | `_count=5 / _sort=-_lastUpdated` |
+| `_include` | Pull referenced resources into the bundle | `Observation:patient` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://hapi.fhir.org/baseR4/Observation", params={
+        "code": "http://loinc.org|8867-4", "_count": 5, "_sort": "-_lastUpdated"})  # heart rate
+    out = []
+    for e in d.get("entry", []):
+        o = e["resource"]
+        q = o.get("valueQuantity", {})
+        out.append({"id": o["id"], "code": o["code"]["coding"][0].get("display"), "value": q.get("value"),
+                    "unit": q.get("unit"), "subject": (o.get("subject") or {}).get("reference"),
+                    "effective": o.get("effectiveDateTime")})
+    show({"resourceType": d["resourceType"], "type": d["type"], "heart_rate_observations": out})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "heart_rate_observations": [
+    {
+      "id": "101367",
+      "code": "Heart rate",
+      "value": 59,
+      "unit": "beats/minute",
+      "subject": "Patient/101365",
+      "effective": "2026-10-12T18:30:17+05:30"
+    },
+    {
+      "id": "101053",
+      "code": "Heart Rate",
+      "value": 58,
+      "unit": "/min",
+      "subject": "Patient/100987",
+      "effective": "2026-10-12T11:30:00+02:00"
+    },
+    {
+      "id": "101014",
+      "code": null,
+      "value": 55,
+      "unit": "/min",
+      "subject": "Patient/100987",
+      "effective": "2026-10-12T11:15:00+02:00"
+    },
+    {
+      "id": "100991",
+      "code": "Heart Rate",
+      "value": 60,
+      "unit": "/min",
+      "subject": "Patient/100987",
+      "effective": "2025-10-12T11:00:00+02:00"
+    },
+    {
+      "id": "100936",
+      "code": "Heart rate",
+      "value": 72,
+      "unit": "beats/minute",
+      "subject": null,
+      "effective": "2026-10-12T15:00:00+08:00"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### MedlinePlus Connect (patient education)
+
+| | |
+|:--|:--|
+| **Docs** | https://medlineplus.gov/medlineplus-connect/web-service/ |
+| **Auth** | None |
+| **Register / token** | No registration. Max 100 requests/minute per IP; cache responses for 12-24 hours. |
+| **Script** | [`scripts/health/medlineplus_connect.py`](scripts/health/medlineplus_connect.py) |
+
+**What you can get:**
+
+- Consumer-friendly health topic pages (English/Spanish) matched to ICD-10-CM, SNOMED CT, RxNorm, NDC and LOINC codes
+- Summaries and links for diagnoses, medications and lab tests
+
+**Capstone ideas:** Linking coded EHR/claims data to plain-language explanations; health-literacy and readability studies.
+
+**Endpoint:** `GET https://connect.medlineplus.gov/service`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `mainSearchCriteria.v.cs` | Code system OID: ICD-10-CM 2.16.840.1.113883.6.90, RxNorm ...6.88, LOINC ...6.1, SNOMED ...6.96 | `2.16.840.1.113883.6.90` |
+| `mainSearchCriteria.v.c` | The code | `E11.9` |
+| `mainSearchCriteria.v.dn` | Optional display name | `Type 2 diabetes` |
+| `informationRecipient.languageCode.c` | en \| es | `en` |
+| `knowledgeResponseType` | application/json \| text/xml \| text/html | `application/json` |
+
+```python
+import html
+import re
+
+from _common import get, show
+
+
+def main():
+    d = get("https://connect.medlineplus.gov/service", params={
+        "mainSearchCriteria.v.cs": "2.16.840.1.113883.6.90", "mainSearchCriteria.v.c": "E11.9",
+        "knowledgeResponseType": "application/json"})["feed"]
+    show([{"title": e["title"]["_value"], "url": e["link"][0]["href"],
+           "summary": html.unescape(re.sub("<[^>]+>", " ", e["summary"]["_value"])).split(".")[0].strip() + "."}
+          for e in d["entry"]], max_str=220)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+[
+  {
+    "title": "Diabetes Type 2",
+    "url": "https://medlineplus.gov/diabetestype2.html?utm_source=mplusconnect&utm_medium=service",
+    "summary": "What is type 2 diabetes?  \n Type 2  diabetes  is a disease in which your blood glucose, or  blood sugar , levels are too high."
+  },
+  {
+    "title": "Type 2 diabetes",
+    "url": "https://medlineplus.gov/genetics/condition/type-2-diabetes?utm_source=mplusconnect&utm_medium=service",
+    "summary": "Type 2 diabetes is a disorder characterized by abnormally high levels of blood glucose, also called blood sugar."
+  },
+  {
+    "title": "Type 2 Diabetes",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes?utm_medium=ehr+service&utm_source=medlineplus+connect",
+    "summary": "Learn about the symptoms of type 2 diabetes, what causes the disease, how it’s diagnosed, and steps you can take to help prevent or delay type 2 diabetes."
+  }
+]
+```
+</details>
+
+---
+
+### NLM Clinical Table Search Service (ICD-10-CM, LOINC, conditions)
+
+| | |
+|:--|:--|
+| **Docs** | https://clinicaltables.nlm.nih.gov/ |
+| **Auth** | None |
+| **Register / token** | No registration. Built for autocomplete, so it is fast and returns compact arrays. |
+| **Script** | [`scripts/health/nlm_clinical_tables.py`](scripts/health/nlm_clinical_tables.py) |
+
+**What you can get:**
+
+- ICD-10-CM diagnosis codes, ICD-11, LOINC lab tests, SNOMED-based conditions, RxTerms drugs, HCPCS, NPI
+- Search by words or code prefix; choose returned fields
+
+**Capstone ideas:** Mapping free-text diagnoses to ICD codes, building code lookups for claims or EHR data.
+
+**Endpoint:** `GET https://clinicaltables.nlm.nih.gov/api/{table}/v3/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `table` | icd10cm \| icd11_codes \| loinc_items \| conditions \| rxterms \| hcpcs \| npi_idv \| ... | `icd10cm` |
+| `terms` | Search text (words or code prefix) | `type 2 diabetes` |
+| `sf` | Fields to search | `code,name` |
+| `df / ef` | Fields to display / extra fields to return | `df=code,name` |
+| `maxList / count / offset` | Max results (up to 500), paging | `maxList=7` |
+| `response shape` | [total, codes, extra_fields, display_rows] | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    total, codes, _, rows = get("https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search",
+                                params={"sf": "code,name", "terms": "type 2 diabetes", "maxList": 7})
+    show({"matching_ICD10CM_codes": total, "examples": [{"code": c, "name": r[1]} for c, r in zip(codes, rows)]},
+         max_items=7)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "matching_ICD10CM_codes": 94,
+  "examples": [
+    {
+      "code": "E11.65",
+      "name": "Type 2 diabetes mellitus with hyperglycemia"
+    },
+    {
+      "code": "E11.9",
+      "name": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "E10.A2",
+      "name": "Type 1 diabetes mellitus, presymptomatic, Stage 2"
+    },
+    {
+      "code": "E11.21",
+      "name": "Type 2 diabetes mellitus with diabetic nephropathy"
+    },
+    {
+      "code": "E11.36",
+      "name": "Type 2 diabetes mellitus with diabetic cataract"
+    },
+    {
+      "code": "E11.41",
+      "name": "Type 2 diabetes mellitus with diabetic mononeuropathy"
+    },
+    {
+      "code": "E11.42",
+      "name": "Type 2 diabetes mellitus with diabetic polyneuropathy"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### NPPES NPI Registry (healthcare providers)
+
+| | |
+|:--|:--|
+| **Docs** | https://npiregistry.cms.hhs.gov/api-page |
+| **Auth** | None |
+| **Register / token** | No registration. Every US healthcare provider and organization that bills insurance has a National Provider Identifier (NPI). Full monthly file available for bulk use. |
+| **Script** | [`scripts/health/nppes_npi.py`](scripts/health/nppes_npi.py) |
+
+**What you can get:**
+
+- Provider name, credential, NPI type (individual/organization), taxonomy (specialty), practice addresses
+- Search by name, specialty, city, state, ZIP
+
+**Capstone ideas:** Provider-supply maps (specialists per capita, health-care deserts), linking NPIs to Medicare claims data.
+
+**Endpoint:** `GET https://npiregistry.cms.hhs.gov/api/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `version` | API version (required) | `2.1` |
+| `number` | Look up one NPI | `1234567893` |
+| `first_name / last_name / organization_name` | Name search (* wildcard after 2 letters) | `last_name=Smith` |
+| `taxonomy_description` | Specialty text | `cardiology` |
+| `city / state / postal_code` | Location | `Washington / DC` |
+| `enumeration_type` | NPI-1 (individual) \| NPI-2 (organization) | `NPI-1` |
+| `limit / skip` | Max 200 per call; skip up to 1,000 | `5` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    d = get("https://npiregistry.cms.hhs.gov/api/", params={
+        "version": "2.1", "taxonomy_description": "pediatrics", "city": "Washington", "state": "DC",
+        "enumeration_type": "NPI-1", "limit": 200})
+    specialties = Counter(t["desc"] for r in d["results"] for t in r["taxonomies"] if t["primary"])
+    show({"pediatrics_providers_returned": d["result_count"], "primary_specialties": specialties.most_common(5),
+          "examples": [{"npi": r["number"], "name": f'{r["basic"].get("first_name", "")} {r["basic"].get("last_name", "")}',
+                        "credential": r["basic"].get("credential")} for r in d["results"][:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "pediatrics_providers_returned": 200,
+  "primary_specialties": [
+    [
+      "Nurse Practitioner, Pediatrics",
+      114
+    ],
+    [
+      "Pediatrics, Pediatric Emergency Medicine",
+      28
+    ],
+    [
+      "Pediatrics, Pediatric Infectious Diseases",
+      18
+    ],
+    [
+      "Pediatrics, Adolescent Medicine",
+      10
+    ],
+    [
+      "Pediatrics",
+      5
+    ]
+  ],
+  "examples": [
+    {
+      "npi": "1326402744",
+      "name": "ANNA ABRAMS",
+      "credential": "MD"
+    },
+    {
+      "npi": "1538620182",
+      "name": "CHIDIMMA ACHOLONU",
+      "credential": "MD MPH"
+    },
+    {
+      "npi": "1154759090",
+      "name": "OLIVIA ACKERMAN",
+      "credential": "APRN"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Open Targets Platform (GraphQL)
+
+| | |
+|:--|:--|
+| **Docs** | https://platform-docs.opentargets.org/data-access/graphql-api |
+| **Auth** | None |
+| **Register / token** | No registration. GraphQL: POST a query, get exactly the fields you ask for. Try queries in the browser at https://api.platform.opentargets.org/api/v4/graphql/browser. Diseases use EFO/MONDO IDs. |
+| **Script** | [`scripts/health/open_targets.py`](scripts/health/open_targets.py) |
+
+**What you can get:**
+
+- Target-disease association scores combining genetics, drugs, literature, animal models
+- Known drugs per disease/target with clinical phase
+- Target tractability and safety; disease ontology
+
+**Capstone ideas:** Drug-target prioritization, knowledge-graph link prediction, genetic evidence for drug repurposing.
+
+**Endpoint:** `POST https://api.platform.opentargets.org/api/v4/graphql`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search(queryString:, entityNames:)` | Find IDs for diseases, targets or drugs | `queryString: "type 2 diabetes", entityNames: ["disease"]` |
+| `disease(efoId:)` | A disease by ID (MONDO_/EFO_), with associatedTargets, knownDrugs, ... | `MONDO_0005148` |
+| `target(ensemblId:)` | A gene/protein target, with associatedDiseases, tractability, safety | `ENSG00000148795` |
+| `drug(chemblId:)` | A drug with mechanisms and indications | `CHEMBL1431` |
+| `page: {index, size}` | Paging inside list fields | `{index: 0, size: 5}` |
+
+```python
+import requests
+
+from _common import USER_AGENT, show
+
+URL = "https://api.platform.opentargets.org/api/v4/graphql"
+
+
+def gql(query):
+    r = requests.post(URL, json={"query": query}, headers={"User-Agent": USER_AGENT}, timeout=60)
+    r.raise_for_status()
+    return r.json()["data"]
+
+
+def main():
+    disease_id = gql('{ search(queryString: "type 2 diabetes", entityNames: ["disease"], page: {index: 0, size: 1})'
+                     ' { hits { id } } }')["search"]["hits"][0]["id"]
+    d = gql(f'{{ disease(efoId: "{disease_id}") {{ name associatedTargets(page: {{index: 0, size: 5}}) '
+            f'{{ count rows {{ target {{ approvedSymbol approvedName }} score }} }} }} }}')["disease"]
+    show({"disease": f'{d["name"]} ({disease_id})', "associated_targets": d["associatedTargets"]["count"],
+          "top_targets": [{"symbol": r["target"]["approvedSymbol"], "name": r["target"]["approvedName"],
+                           "score": round(r["score"], 3)} for r in d["associatedTargets"]["rows"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "disease": "type 2 diabetes mellitus (MONDO_0005148)",
+  "associated_targets": 10206,
+  "top_targets": [
+    {
+      "symbol": "KCNJ11",
+      "name": "potassium inwardly rectifying channel subfamily J member 11",
+      "score": 0.877
+    },
+    {
+      "symbol": "ABCC8",
+      "name": "ATP binding cassette subfamily C member 8",
+      "score": 0.876
+    },
+    {
+      "symbol": "GCK",
+      "name": "glucokinase",
+      "score": 0.868
+    },
+    {
+      "symbol": "PPARG",
+      "name": "peroxisome proliferator activated receptor gamma",
+      "score": 0.861
+    },
+    {
+      "symbol": "HNF1A",
+      "name": "HNF1 homeobox A",
+      "score": 0.85
+    }
+  ]
+}
+```
+</details>
+
+---
+
 ### openFDA
 
 | | |
@@ -5713,7 +6734,7 @@ def main():
     show({"drug": "semaglutide", "top_reported_reactions": d["results"]}, max_items=6)
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
 
 ```json
 {
@@ -5791,7 +6812,7 @@ def main():
     show([r for r in rows if r["year"] == latest])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:14</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
 
 ```json
 [
@@ -5826,6 +6847,231 @@ def main():
     "cantril_ladder_score": "6.816"
   }
 ]
+```
+</details>
+
+---
+
+### PubMed (NCBI E-utilities)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.ncbi.nlm.nih.gov/books/NBK25501/ |
+| **Auth** | None (optional free key raises the limit) |
+| **Register / token** | Works keyless at 3 requests/second. Create an NCBI account and generate a key under Account Settings for 10 req/s. Add tool= and email= parameters to identify yourself. |
+| **Env var** | `NCBI_API_KEY (optional)` |
+| **Script** | [`scripts/health/pubmed.py`](scripts/health/pubmed.py) |
+
+**What you can get:**
+
+- 39M+ biomedical citations: title, authors, journal, date, MeSH terms, abstracts (efetch)
+- Search with the full PubMed query language (field tags, MeSH, date ranges, publication types)
+- The same E-utilities reach Gene, Protein, Nucleotide, ClinVar, SRA and 30+ other NCBI databases
+
+**Capstone ideas:** Biomedical NLP on abstracts, research-trend analysis by MeSH topic, literature-based discovery.
+
+**Endpoint:** `GET https://eutils.ncbi.nlm.nih.gov/entrez/eutils/{esearch \| esummary \| efetch \| elink}.fcgi`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `db` | pubmed \| pmc \| gene \| protein \| clinvar \| ... | `pubmed` |
+| `term (esearch)` | Query with field tags: [mh] MeSH, [tiab] title/abstract, [dp] date, [pt] publication type | `"long covid"[tiab] AND 2025[dp]` |
+| `retmax / retstart / sort` | Page size (max 10,000), offset; sort=pub_date \| relevance | `5 / 0 / pub_date` |
+| `id (esummary, efetch)` | Comma-separated PMIDs from esearch | `39811234,39811230` |
+| `rettype / retmode (efetch)` | abstract + text, or xml for full records | `abstract / text` |
+| `usehistory` | y -> keep results server-side for large batch downloads (WebEnv + query_key) | `y` |
+| `retmode / api_key / tool / email` | json \| xml; optional key; identify your tool | `json` |
+
+```python
+import os
+
+from _common import get, show
+
+BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+
+
+def main():
+    common = {"db": "pubmed", "retmode": "json", "tool": "gwu-capstone-catalog"}
+    if os.getenv("NCBI_API_KEY"):
+        common["api_key"] = os.environ["NCBI_API_KEY"]
+    s = get(f"{BASE}/esearch.fcgi", params={**common, "term": '"long covid"[tiab] AND 2025[dp]', "retmax": 5,
+                                            "sort": "pub_date"})["esearchresult"]
+    summ = get(f"{BASE}/esummary.fcgi", params={**common, "id": ",".join(s["idlist"])})["result"]
+    show({"articles_2025": s["count"], "latest": [
+        {"pmid": i, "title": summ[i]["title"], "journal": summ[i]["source"], "pubdate": summ[i]["pubdate"]}
+        for i in summ["uids"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "articles_2025": "2142",
+  "latest": [
+    {
+      "pmid": "40462722",
+      "title": "What Are the Barriers and Supports to a Return to Health From Long COVID? A Qualitative Study Designed, Developed, and Conducted by Individuals With Lived Exper...",
+      "journal": "Qual Health Res",
+      "pubdate": "2026 Sep"
+    },
+    {
+      "pmid": "40084630",
+      "title": "Therapeutic Potential of Psilocybin for Treating Neuropsychiatric Long COVID Symptoms: A Reddit Investigation.",
+      "journal": "J Psychoactive Drugs",
+      "pubdate": "2026 Sep-Oct"
+    },
+    {
+      "pmid": "42491406",
+      "title": "COVID-19 Is Airborne AIDS: Provocative Oversimplification, Emerging Science, or Something in Between?",
+      "journal": "AJPM Focus",
+      "pubdate": "2026 Aug"
+    },
+    {
+      "pmid": "41177912",
+      "title": "\"Everything Looks Normal\": Patient Narratives of Contested Legitimacy in Long COVID Medical Encounters.",
+      "journal": "Health Commun",
+      "pubdate": "2026 Aug"
+    },
+    {
+      "pmid": "42411649",
+      "title": "Clinical neuropsychological evaluation of patients referred from a post-COVID subspeciality clinic.",
+      "journal": "Clin Neuropsychol",
+      "pubdate": "2026 Jul"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### RxNorm / RxNav (NLM drug terminology)
+
+| | |
+|:--|:--|
+| **Docs** | https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html |
+| **Auth** | None |
+| **Register / token** | No registration. Max 20 requests/second per IP. |
+| **Script** | [`scripts/health/rxnorm.py`](scripts/health/rxnorm.py) |
+
+**What you can get:**
+
+- Normalized names and RxCUI codes for every US clinical drug (ingredient, strength, dose form, brand)
+- Relationships: brand <-> generic, ingredients, drug classes (via RxClass), NDC codes
+- Approximate matching of messy drug names (e.g. from prescriptions or notes)
+
+**Capstone ideas:** Cleaning and linking medication data across datasets (Medicare Part D, FAERS, EHR extracts).
+
+**Endpoint:** `GET https://rxnav.nlm.nih.gov/REST/{resource}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `drugs.json?name=` | All clinical and branded drugs for a name | `name=metformin` |
+| `rxcui.json?name=` | RxCUI for an exact name | `name=Lipitor` |
+| `approximateTerm.json?term=&maxEntries=` | Fuzzy match for misspelled names | `term=metfromin` |
+| `rxcui/{rxcui}/related.json?tty=` | Related concepts by term type (IN ingredient, BN brand, SCD clinical drug, ...) | `rxcui/153165/related.json?tty=IN` |
+| `rxcui/{rxcui}/ndcs.json` | NDC package codes | `—` |
+| `/REST/rxclass/class/byDrugName.json?drugName=` | RxClass: therapeutic/pharmacologic classes | `drugName=metformin` |
+
+```python
+from _common import get, show
+
+
+def main():
+    groups = get("https://rxnav.nlm.nih.gov/REST/drugs.json", params={"name": "metformin"})["drugGroup"]["conceptGroup"]
+    fuzzy = get("https://rxnav.nlm.nih.gov/REST/approximateTerm.json", params={"term": "metfromin", "maxEntries": 1})
+    classes = get("https://rxnav.nlm.nih.gov/REST/rxclass/class/byDrugName.json", params={"drugName": "metformin",
+                                                                                          "relaSource": "ATC"})
+    by_type = {g["tty"]: [p["name"] for p in g.get("conceptProperties", []) if "/" not in p["name"]]  # skip combos
+               for g in groups}
+    show({"clinical_drugs (SCD)": by_type.get("SCD", [])[:4], "branded_drugs (SBD)": by_type.get("SBD", [])[:3],
+          "fuzzy_match_for_'metfromin'": fuzzy["approximateGroup"]["candidate"][0]["rxcui"],
+          "ATC_classes": sorted({c["rxclassMinConceptItem"]["className"]
+                                 for c in classes["rxclassDrugInfoList"]["rxclassDrugInfo"]})})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "clinical_drugs (SCD)": [
+    "Modified 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet",
+    "Osmotic 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet",
+    "Modified 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet",
+    "Osmotic 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet"
+  ],
+  "branded_drugs (SBD)": [
+    "24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet [Glucophage]",
+    "24 HR metformin hydrochloride 750 MG Extended Release Oral Tablet [Glucophage]",
+    "metformin hydrochloride 1000 MG Oral Tablet [Glucophage]"
+  ],
+  "fuzzy_match_for_'metfromin'": "6762",
+  "ATC_classes": [
+    "Biguanides",
+    "Combinations of oral blood glucose lowering drugs"
+  ]
+}
+```
+</details>
+
+---
+
+### UniProt (proteins)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.uniprot.org/help/api |
+| **Auth** | None |
+| **Register / token** | No registration. For large result sets use the /stream endpoint or cursor paging (Link header). |
+| **Script** | [`scripts/health/uniprot.py`](scripts/health/uniprot.py) |
+
+**What you can get:**
+
+- 250M+ protein sequences; 570k+ expert-reviewed (Swiss-Prot) entries with function, disease involvement, variants
+- Gene names, organism, subcellular location, structures (PDB/AlphaFold), GO terms, cross-references
+
+**Capstone ideas:** Protein-function prediction, disease-variant analysis, sequence datasets for ML (embeddings).
+
+**Endpoint:** `GET https://rest.uniprot.org/uniprotkb/{search \| stream \| {accession}}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query` | Query syntax: gene:, organism_id:, reviewed:true, disease:, keyword: | `gene:BRCA1 AND organism_id:9606 AND reviewed:true` |
+| `fields` | Columns to return | `accession,gene_names,protein_name,length,cc_disease` |
+| `format` | json \| tsv \| fasta \| xml | `json` |
+| `size` | Page size (max 500); follow the Link header for more | `5` |
+| `/uniprotkb/{accession}` | One entry | `/uniprotkb/P38398` |
+| `/uniref, /uniparc, /proteomes` | Other UniProt databases with the same pattern | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://rest.uniprot.org/uniprotkb/search", params={
+        "query": "gene:BRCA1 AND organism_id:9606 AND reviewed:true", "format": "json",
+        "fields": "accession,gene_names,protein_name,length,cc_disease", "size": 1})["results"][0]
+    show({"accession": d["primaryAccession"], "gene": d["genes"][0]["geneName"]["value"],
+          "protein": d["proteinDescription"]["recommendedName"]["fullName"]["value"], "length_aa": d["sequence"]["length"],
+          "diseases": [c["disease"]["diseaseId"] for c in d.get("comments", []) if c.get("disease")]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
+
+```json
+{
+  "accession": "P38398",
+  "gene": "BRCA1",
+  "protein": "Breast cancer type 1 susceptibility protein",
+  "length_aa": 1863,
+  "diseases": [
+    "Breast cancer",
+    "Breast-ovarian cancer, familial, 1",
+    "Ovarian cancer",
+    "Pancreatic cancer 4",
+    "Fanconi anemia, complementation group S"
+  ]
+}
 ```
 </details>
 
@@ -5869,7 +7115,7 @@ def main():
           for r in d["value"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:02</summary>
 
 ```json
 [
@@ -5899,6 +7145,68 @@ def main():
     "life_expectancy": 61.6
   }
 ]
+```
+</details>
+
+---
+
+### WHO ICD-11 API
+
+| | |
+|:--|:--|
+| **Docs** | https://icd.who.int/docs/icd-api/APIDoc-Version2/ |
+| **Auth** | OAuth2 client credentials (free) |
+| **Register / token** | Register at https://icd.who.int/icdapi -> View API access key(s) for a client ID and secret. Exchange them for a 1-hour token at https://icdaccessmanagement.who.int/connect/token (scope icdapi_access). A Docker image is available to run the API locally without limits. |
+| **Env var** | `ICD_CLIENT_ID, ICD_CLIENT_SECRET` |
+| **Script** | [`scripts/health/who_icd11.py`](scripts/health/who_icd11.py) |
+
+**What you can get:**
+
+- ICD-11 (the current WHO classification, in use since 2022) and ICD-10: codes, titles, definitions, synonyms
+- Search and autocoding of free text to ICD-11 codes
+- Hierarchy navigation, linearizations (MMS for mortality/morbidity)
+
+**Capstone ideas:** Automated coding of clinical text or death certificates, mapping ICD-10 to ICD-11.
+
+**Endpoint:** `GET https://id.who.int/icd/release/11/{release}/mms/{search \| autocode \| codeinfo/{code}}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `release` | Release ID | `2024-01` |
+| `q (search)` | Search text | `type 2 diabetes` |
+| `searchText (autocode)` | Free text to map to the best code | `heart attack` |
+| `flatResults / highlightingEnabled` | Flat list; turn off <em> highlighting | `true / false` |
+| `headers` | Authorization: Bearer <token>, Accept: application/json, Accept-Language: en, API-Version: v2 | `—` |
+
+```python
+import re
+
+import requests
+
+from _common import get, key, show
+
+
+def main():
+    token = requests.post("https://icdaccessmanagement.who.int/connect/token", timeout=30, data={
+        "client_id": key("ICD_CLIENT_ID"), "client_secret": key("ICD_CLIENT_SECRET"),
+        "scope": "icdapi_access", "grant_type": "client_credentials"}).json()["access_token"]
+    d = get("https://id.who.int/icd/release/11/2024-01/mms/search", params={
+        "q": "type 2 diabetes", "flatResults": "true", "highlightingEnabled": "false"}, headers={
+        "Authorization": f"Bearer {token}", "Accept": "application/json", "Accept-Language": "en", "API-Version": "v2"})
+    show({"query": "type 2 diabetes", "matches": [
+        {"code": e["theCode"], "title": re.sub("<[^>]+>", "", e["title"])} for e in d["destinationEntities"][:5]]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "query": "type 2 diabetes",
+  "matches": [
+    {"code": "5A11", "title": "Type 2 diabetes mellitus"},
+    {"code": "JA63.2", "title": "Type 2 diabetes mellitus in pregnancy"}
+  ]
+}
 ```
 </details>
 
@@ -6166,6 +7474,78 @@ def main():
         {"attribute": attrs.get(r["attributeId"], r["attributeId"]), "value": r["value"], "unit": units.get(r["unitId"])}
         for r in rows]}, max_items=12)
 ```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 09:18</summary>
+
+```json
+{
+  "commodity": "Corn, world, market year 2024",
+  "balance": [
+    {
+      "attribute": "Area Harvested",
+      "value": 206660.0,
+      "unit": "(1000 HA)"
+    },
+    {
+      "attribute": "Beginning Stocks",
+      "value": 313822.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Production",
+      "value": 1234983.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Imports",
+      "value": 186553.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "TY Imports",
+      "value": 187461.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "TY Imp. from U.S.",
+      "value": 75124.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Total Supply",
+      "value": 1735358.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Exports",
+      "value": 187583.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "TY Exports",
+      "value": 191438.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Feed Dom. Consumption",
+      "value": 785752.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "FSI Consumption",
+      "value": 466382.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Domestic Consumption",
+      "value": 1252134.0,
+      "unit": "(1000 MT)"
+    },
+    "... (3 more)"
+  ]
+}
+```
+</details>
 
 ---
 

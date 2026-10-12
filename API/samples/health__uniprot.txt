@@ -1,0 +1,14 @@
+# live 2026-10-12 09:02
+{
+  "accession": "P38398",
+  "gene": "BRCA1",
+  "protein": "Breast cancer type 1 susceptibility protein",
+  "length_aa": 1863,
+  "diseases": [
+    "Breast cancer",
+    "Breast-ovarian cancer, familial, 1",
+    "Ovarian cancer",
+    "Pancreatic cancer 4",
+    "Fanconi anemia, complementation group S"
+  ]
+}

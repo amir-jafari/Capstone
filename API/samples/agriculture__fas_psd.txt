@@ -1,0 +1,67 @@
+# live 2026-10-12 09:18
+{
+  "commodity": "Corn, world, market year 2024",
+  "balance": [
+    {
+      "attribute": "Area Harvested",
+      "value": 206660.0,
+      "unit": "(1000 HA)"
+    },
+    {
+      "attribute": "Beginning Stocks",
+      "value": 313822.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Production",
+      "value": 1234983.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Imports",
+      "value": 186553.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "TY Imports",
+      "value": 187461.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "TY Imp. from U.S.",
+      "value": 75124.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Total Supply",
+      "value": 1735358.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Exports",
+      "value": 187583.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "TY Exports",
+      "value": 191438.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Feed Dom. Consumption",
+      "value": 785752.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "FSI Consumption",
+      "value": 466382.0,
+      "unit": "(1000 MT)"
+    },
+    {
+      "attribute": "Domestic Consumption",
+      "value": 1252134.0,
+      "unit": "(1000 MT)"
+    },
+    "... (3 more)"
+  ]
+}
