@@ -1,0 +1,36 @@
+# live 2026-10-12 07:16
+{
+  "datasets": 55,
+  "latest": [
+    {
+      "name": "Precinct-Level Returns 2022 by Individual State",
+      "published": "2026-09-18",
+      "doi": "doi:10.7910/DVN/UYQIEP",
+      "files": 53
+    },
+    {
+      "name": "State Offices Precinct-Level Returns 2022",
+      "published": "2026-09-18",
+      "doi": "doi:10.7910/DVN/OAARCY",
+      "files": 3
+    },
+    {
+      "name": "U.S. Senate Precinct-Level Returns 2022",
+      "published": "2026-06-10",
+      "doi": "doi:10.7910/DVN/IAD3XR",
+      "files": 3
+    },
+    {
+      "name": "U.S. House of Representatives Precinct-Level Returns 2022",
+      "published": "2026-06-10",
+      "doi": "doi:10.7910/DVN/EOKNGW",
+      "files": 1
+    },
+    {
+      "name": "U.S. Senate statewide 1976–2024",
+      "published": "2026-05-11",
+      "doi": "doi:10.7910/DVN/PEJ5QU",
+      "files": 3
+    }
+  ]
+}

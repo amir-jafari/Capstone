@@ -1,7 +1,7 @@
 # Public API Catalog for Data Science Capstones
 
 > A curated, runnable list of free APIs across news, social media, weather, finance, census, housing,
-> political science, health, education, science, AI & machine learning, engineering, transportation,
+> political science, law, health, education, science, AI & machine learning, engineering, transportation,
 > sports, and culture.
 > Every entry has: how to register / get a token, what data you can get, the endpoint and its
 > **parameters**, a short Python example, and a **sample output**.
@@ -67,71 +67,83 @@ python build_readme.py          # re-run everything & regenerate this README
 | 36 | 🏠 Housing & Real Estate | [Zillow Research Data (ZHVI home values, ZORI rents)](#zillow-research-data-zhvi-home-values-zori-rents) | 🟢 no key | — | [`zillow_research.py`](scripts/housing/zillow_research.py) |
 | 37 | 🏛️ Political Science & Government | [ACLED (Armed Conflict Location & Event Data)](#acled-armed-conflict-location--event-data) | 🔑 key | `ACLED_EMAIL, ACLED_PASSWORD` | [`acled.py`](scripts/politics_government/acled.py) |
 | 38 | 🏛️ Political Science & Government | [Congress.gov API](#congressgov-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`congress_gov.py`](scripts/politics_government/congress_gov.py) |
-| 39 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
-| 40 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
-| 41 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
-| 42 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
-| 43 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
-| 44 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
-| 45 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
-| 46 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
-| 47 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
-| 48 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
-| 49 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
-| 50 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
-| 51 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
-| 52 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
-| 53 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
-| 54 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
-| 55 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
-| 56 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
-| 57 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
-| 58 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
-| 59 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
-| 60 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
-| 61 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
-| 62 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
-| 63 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
-| 64 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
-| 65 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
-| 66 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
-| 67 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
-| 68 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
-| 69 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
-| 70 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
-| 71 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
-| 72 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
-| 73 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
-| 74 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
-| 75 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
-| 76 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
-| 77 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
-| 78 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
-| 79 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
-| 80 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
-| 81 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
-| 82 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
-| 83 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
-| 84 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
-| 85 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
-| 86 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
-| 87 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
-| 88 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
-| 89 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
-| 90 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
-| 91 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
-| 92 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
-| 93 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
-| 94 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
-| 95 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
-| 96 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
-| 97 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
-| 98 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
-| 99 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
-| 100 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
-| 101 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
-| 102 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
-| 103 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
+| 39 | 🏛️ Political Science & Government | [European Parliament Open Data API](#european-parliament-open-data-api) | 🟢 no key | — | [`european_parliament.py`](scripts/politics_government/european_parliament.py) |
+| 40 | 🏛️ Political Science & Government | [Federal Register API](#federal-register-api) | 🟢 no key | — | [`federal_register.py`](scripts/politics_government/federal_register.py) |
+| 41 | 🏛️ Political Science & Government | [GovInfo API (U.S. Government Publishing Office)](#govinfo-api-us-government-publishing-office) | 🟢 no key | `DATA_GOV_API_KEY` | [`govinfo.py`](scripts/politics_government/govinfo.py) |
+| 42 | 🏛️ Political Science & Government | [Grants.gov Search API](#grantsgov-search-api) | 🟢 no key | — | [`grants_gov.py`](scripts/politics_government/grants_gov.py) |
+| 43 | 🏛️ Political Science & Government | [Harvard Dataverse (MIT Election Lab & replication data)](#harvard-dataverse-mit-election-lab--replication-data) | 🟢 no key | `DATAVERSE_API_TOKEN (optional)` | [`harvard_dataverse.py`](scripts/politics_government/harvard_dataverse.py) |
+| 44 | 🏛️ Political Science & Government | [Open States / Plural (US state legislatures)](#open-states--plural-us-state-legislatures) | 🔑 key | `OPENSTATES_API_KEY` | [`open_states.py`](scripts/politics_government/open_states.py) |
+| 45 | 🏛️ Political Science & Government | [OpenFEC (Federal Election Commission)](#openfec-federal-election-commission) | 🟢 no key | `DATA_GOV_API_KEY` | [`openfec.py`](scripts/politics_government/openfec.py) |
+| 46 | 🏛️ Political Science & Government | [Regulations.gov API v4](#regulationsgov-api-v4) | 🟢 no key | `DATA_GOV_API_KEY` | [`regulations_gov.py`](scripts/politics_government/regulations_gov.py) |
+| 47 | 🏛️ Political Science & Government | [Lobbying Disclosure Act (LDA) API](#lobbying-disclosure-act-lda-api) | 🟢 no key | `LDA_API_KEY (optional)` | [`senate_lda.py`](scripts/politics_government/senate_lda.py) |
+| 48 | 🏛️ Political Science & Government | [UK Parliament APIs](#uk-parliament-apis) | 🟢 no key | — | [`uk_parliament.py`](scripts/politics_government/uk_parliament.py) |
+| 49 | 🏛️ Political Science & Government | [USAJOBS Search API (federal jobs)](#usajobs-search-api-federal-jobs) | 🔑 key | `USAJOBS_API_KEY, USAJOBS_EMAIL` | [`usajobs.py`](scripts/politics_government/usajobs.py) |
+| 50 | 🏛️ Political Science & Government | [USAspending.gov](#usaspendinggov) | 🟢 no key | — | [`usaspending.py`](scripts/politics_government/usaspending.py) |
+| 51 | ⚖️ Law & Justice | [CourtListener (Free Law Project)](#courtlistener-free-law-project) | 🟢 no key | `COURTLISTENER_TOKEN (optional)` | [`courtlistener.py`](scripts/law/courtlistener.py) |
+| 52 | ⚖️ Law & Justice | [U.S. Department of Justice News API](#us-department-of-justice-news-api) | 🟢 no key | — | [`doj_press_releases.py`](scripts/law/doj_press_releases.py) |
+| 53 | ⚖️ Law & Justice | [eCFR API (Code of Federal Regulations)](#ecfr-api-code-of-federal-regulations) | 🟢 no key | — | [`ecfr.py`](scripts/law/ecfr.py) |
+| 54 | ⚖️ Law & Justice | [FBI Crime Data Explorer API](#fbi-crime-data-explorer-api) | 🟢 no key | `DATA_GOV_API_KEY` | [`fbi_crime_data.py`](scripts/law/fbi_crime_data.py) |
+| 55 | ⚖️ Law & Justice | [Oyez (U.S. Supreme Court cases)](#oyez-us-supreme-court-cases) | 🟢 no key | — | [`oyez.py`](scripts/law/oyez.py) |
+| 56 | ⚖️ Law & Justice | [Supreme Court Database (SCDB)](#supreme-court-database-scdb) | 🟢 no key | — | [`supreme_court_database.py`](scripts/law/supreme_court_database.py) |
+| 57 | 🩺 Health & Social Science | [CDC Open Data (Socrata SODA)](#cdc-open-data-socrata-soda) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`cdc_socrata.py`](scripts/health/cdc_socrata.py) |
+| 58 | 🩺 Health & Social Science | [ClinicalTrials.gov API v2](#clinicaltrialsgov-api-v2) | 🟢 no key | — | [`clinicaltrials.py`](scripts/health/clinicaltrials.py) |
+| 59 | 🩺 Health & Social Science | [openFDA](#openfda) | 🟢 no key | `OPENFDA_API_KEY (optional)` | [`openfda.py`](scripts/health/openfda.py) |
+| 60 | 🩺 Health & Social Science | [Our World in Data (Grapher API)](#our-world-in-data-grapher-api) | 🟢 no key | — | [`our_world_in_data.py`](scripts/health/our_world_in_data.py) |
+| 61 | 🩺 Health & Social Science | [WHO Global Health Observatory (GHO OData)](#who-global-health-observatory-gho-odata) | 🟢 no key | — | [`who_gho.py`](scripts/health/who_gho.py) |
+| 62 | 🎓 Education | [College Scorecard (US Dept. of Education)](#college-scorecard-us-dept-of-education) | 🟢 no key | `DATA_GOV_API_KEY` | [`college_scorecard.py`](scripts/education/college_scorecard.py) |
+| 63 | 🎓 Education | [ERIC (Education Resources Information Center)](#eric-education-resources-information-center) | 🟢 no key | — | [`eric.py`](scripts/education/eric.py) |
+| 64 | 🎓 Education | [Hipolabs Universities List](#hipolabs-universities-list) | 🟢 no key | — | [`hipolabs_universities.py`](scripts/education/hipolabs_universities.py) |
+| 65 | 🎓 Education | [NAEP — The Nation's Report Card](#naep--the-nations-report-card) | 🟢 no key | — | [`naep.py`](scripts/education/naep.py) |
+| 66 | 🎓 Education | [UNESCO Institute for Statistics (UIS) Data API](#unesco-institute-for-statistics-uis-data-api) | 🟢 no key | — | [`unesco_uis.py`](scripts/education/unesco_uis.py) |
+| 67 | 🎓 Education | [Urban Institute Education Data Portal](#urban-institute-education-data-portal) | 🟢 no key | — | [`urban_education_data.py`](scripts/education/urban_education_data.py) |
+| 68 | 🔬 Science & Research | [arXiv API](#arxiv-api) | 🟢 no key | — | [`arxiv.py`](scripts/science_research/arxiv.py) |
+| 69 | 🔬 Science & Research | [Crossref REST API](#crossref-rest-api) | 🟢 no key | — | [`crossref.py`](scripts/science_research/crossref.py) |
+| 70 | 🔬 Science & Research | [NASA Open APIs (APOD, NeoWs, DONKI, EONET...)](#nasa-open-apis-apod-neows-donki-eonet) | 🟢 no key | `DATA_GOV_API_KEY` | [`nasa.py`](scripts/science_research/nasa.py) |
+| 71 | 🔬 Science & Research | [OpenAlex (scholarly works)](#openalex-scholarly-works) | 🟢 no key | — | [`openalex.py`](scripts/science_research/openalex.py) |
+| 72 | 🔬 Science & Research | [PubChem PUG-REST](#pubchem-pug-rest) | 🟢 no key | — | [`pubchem.py`](scripts/science_research/pubchem.py) |
+| 73 | 🔬 Science & Research | [Semantic Scholar Academic Graph](#semantic-scholar-academic-graph) | 🟢 no key | `S2_API_KEY (optional)` | [`semantic_scholar.py`](scripts/science_research/semantic_scholar.py) |
+| 74 | 🤖 AI & Machine Learning | [Anthropic Claude API](#anthropic-claude-api) | 🔑 key | `ANTHROPIC_API_KEY` | [`anthropic_claude.py`](scripts/ai_ml/anthropic_claude.py) |
+| 75 | 🤖 AI & Machine Learning | [Epoch AI — Data on AI Models](#epoch-ai--data-on-ai-models) | 🟢 no key | — | [`epoch_ai.py`](scripts/ai_ml/epoch_ai.py) |
+| 76 | 🤖 AI & Machine Learning | [Google Gemini API](#google-gemini-api) | 🔑 key | `GEMINI_API_KEY` | [`google_gemini.py`](scripts/ai_ml/google_gemini.py) |
+| 77 | 🤖 AI & Machine Learning | [Hugging Face Daily Papers](#hugging-face-daily-papers) | 🟢 no key | — | [`hf_daily_papers.py`](scripts/ai_ml/hf_daily_papers.py) |
+| 78 | 🤖 AI & Machine Learning | [Hugging Face Inference Providers](#hugging-face-inference-providers) | 🟢 no key | `HF_TOKEN (needed for chat completions)` | [`hf_inference_providers.py`](scripts/ai_ml/hf_inference_providers.py) |
+| 79 | 🤖 AI & Machine Learning | [Kaggle API](#kaggle-api) | 🔑 key | `KAGGLE_USERNAME, KAGGLE_KEY` | [`kaggle.py`](scripts/ai_ml/kaggle.py) |
+| 80 | 🤖 AI & Machine Learning | [Ollama (local LLMs)](#ollama-local-llms) | 🟢 no key | `OLLAMA_MODEL (optional, default llama3.2)` | [`ollama.py`](scripts/ai_ml/ollama.py) |
+| 81 | 🤖 AI & Machine Learning | [OpenAI API](#openai-api) | 🔑 key | `OPENAI_API_KEY` | [`openai.py`](scripts/ai_ml/openai.py) |
+| 82 | 🤖 AI & Machine Learning | [OpenML](#openml) | 🟢 no key | `OPENML_API_KEY (optional)` | [`openml.py`](scripts/ai_ml/openml.py) |
+| 83 | 🤖 AI & Machine Learning | [OpenRouter](#openrouter) | 🟢 no key | `OPENROUTER_API_KEY (needed for chat completions)` | [`openrouter.py`](scripts/ai_ml/openrouter.py) |
+| 84 | 🤖 AI & Machine Learning | [UCI Machine Learning Repository](#uci-machine-learning-repository) | 🟢 no key | — | [`uci_ml_repo.py`](scripts/ai_ml/uci_ml_repo.py) |
+| 85 | ⚙️ Engineering, Energy & Tech | [US Energy Information Administration (EIA) v2](#us-energy-information-administration-eia-v2) | 🔑 key | `EIA_API_KEY` | [`eia.py`](scripts/engineering_energy/eia.py) |
+| 86 | ⚙️ Engineering, Energy & Tech | [GitHub REST API](#github-rest-api) | 🟢 no key | `GITHUB_TOKEN (optional)` | [`github.py`](scripts/engineering_energy/github.py) |
+| 87 | ⚙️ Engineering, Energy & Tech | [Hugging Face Hub API](#hugging-face-hub-api) | 🟢 no key | `HF_TOKEN (optional)` | [`huggingface.py`](scripts/engineering_energy/huggingface.py) |
+| 88 | ⚙️ Engineering, Energy & Tech | [NLR (formerly NREL) Developer Network — solar, EV charging](#nlr-formerly-nrel-developer-network--solar-ev-charging) | 🟢 no key | `DATA_GOV_API_KEY` | [`nrel.py`](scripts/engineering_energy/nrel.py) |
+| 89 | ⚙️ Engineering, Energy & Tech | [NIST National Vulnerability Database (CVE API 2.0)](#nist-national-vulnerability-database-cve-api-20) | 🟢 no key | `NVD_API_KEY (optional)` | [`nvd_cve.py`](scripts/engineering_energy/nvd_cve.py) |
+| 90 | ⚙️ Engineering, Energy & Tech | [USGS Water Services (streamflow)](#usgs-water-services-streamflow) | 🟢 no key | — | [`usgs_water.py`](scripts/engineering_energy/usgs_water.py) |
+| 91 | 🗺️ Transportation & Geospatial | [Bureau of Transportation Statistics (BTS) Open Data](#bureau-of-transportation-statistics-bts-open-data) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`bts_open_data.py`](scripts/transportation_geo/bts_open_data.py) |
+| 92 | 🗺️ Transportation & Geospatial | [US Census Geocoder](#us-census-geocoder) | 🟢 no key | — | [`census_geocoder.py`](scripts/transportation_geo/census_geocoder.py) |
+| 93 | 🗺️ Transportation & Geospatial | [Chicago Taxi & Rideshare Trips](#chicago-taxi--rideshare-trips) | 🟢 no key | `SOCRATA_APP_TOKEN (optional)` | [`chicago_taxi.py`](scripts/transportation_geo/chicago_taxi.py) |
+| 94 | 🗺️ Transportation & Geospatial | [GBFS Bike-share Feeds (Capital Bikeshare and 1,000+ systems)](#gbfs-bike-share-feeds-capital-bikeshare-and-1000-systems) | 🟢 no key | — | [`gbfs_bikeshare.py`](scripts/transportation_geo/gbfs_bikeshare.py) |
+| 95 | 🗺️ Transportation & Geospatial | [MBTA V3 API (Boston transit)](#mbta-v3-api-boston-transit) | 🟢 no key | `MBTA_API_KEY (optional)` | [`mbta.py`](scripts/transportation_geo/mbta.py) |
+| 96 | 🗺️ Transportation & Geospatial | [NHTSA Recalls, Complaints & Safety Ratings](#nhtsa-recalls-complaints--safety-ratings) | 🟢 no key | — | [`nhtsa_safety.py`](scripts/transportation_geo/nhtsa_safety.py) |
+| 97 | 🗺️ Transportation & Geospatial | [NHTSA vPIC (vehicle VIN decoder)](#nhtsa-vpic-vehicle-vin-decoder) | 🟢 no key | — | [`nhtsa_vpic.py`](scripts/transportation_geo/nhtsa_vpic.py) |
+| 98 | 🗺️ Transportation & Geospatial | [OpenStreetMap Nominatim (geocoding)](#openstreetmap-nominatim-geocoding) | 🟢 no key | — | [`nominatim.py`](scripts/transportation_geo/nominatim.py) |
+| 99 | 🗺️ Transportation & Geospatial | [OpenSky Network (live flights)](#opensky-network-live-flights) | 🟢 no key | — | [`opensky.py`](scripts/transportation_geo/opensky.py) |
+| 100 | 🗺️ Transportation & Geospatial | [OSRM (routing on OpenStreetMap)](#osrm-routing-on-openstreetmap) | 🟢 no key | — | [`osrm.py`](scripts/transportation_geo/osrm.py) |
+| 101 | 🗺️ Transportation & Geospatial | [OpenStreetMap Overpass API](#openstreetmap-overpass-api) | 🟢 no key | — | [`overpass.py`](scripts/transportation_geo/overpass.py) |
+| 102 | 🗺️ Transportation & Geospatial | [Transitland (GTFS transit data worldwide)](#transitland-gtfs-transit-data-worldwide) | 🔑 key | `TRANSITLAND_API_KEY` | [`transitland.py`](scripts/transportation_geo/transitland.py) |
+| 103 | 🗺️ Transportation & Geospatial | [WMATA (DC Metro) API](#wmata-dc-metro-api) | 🔑 key | `WMATA_API_KEY` | [`wmata.py`](scripts/transportation_geo/wmata.py) |
+| 104 | 🏅 Sports | [BALLDONTLIE (NBA, NFL, MLB, ...)](#balldontlie-nba-nfl-mlb-) | 🔑 key | `BALLDONTLIE_API_KEY` | [`balldontlie.py`](scripts/sports/balldontlie.py) |
+| 105 | 🏅 Sports | [ESPN Site API (unofficial)](#espn-site-api-unofficial) | 🟢 no key | — | [`espn.py`](scripts/sports/espn.py) |
+| 106 | 🏅 Sports | [football-data.org (soccer)](#football-dataorg-soccer) | 🔑 key | `FOOTBALL_DATA_TOKEN` | [`football_data.py`](scripts/sports/football_data.py) |
+| 107 | 🏅 Sports | [Jolpica-F1 (Ergast-compatible F1 history)](#jolpica-f1-ergast-compatible-f1-history) | 🟢 no key | — | [`jolpica_f1.py`](scripts/sports/jolpica_f1.py) |
+| 108 | 🏅 Sports | [Lichess API (chess)](#lichess-api-chess) | 🟢 no key | — | [`lichess.py`](scripts/sports/lichess.py) |
+| 109 | 🏅 Sports | [MLB Stats API](#mlb-stats-api) | 🟢 no key | — | [`mlb_stats.py`](scripts/sports/mlb_stats.py) |
+| 110 | 🏅 Sports | [NHL Web API (unofficial)](#nhl-web-api-unofficial) | 🟢 no key | — | [`nhl.py`](scripts/sports/nhl.py) |
+| 111 | 🏅 Sports | [OpenF1 (Formula 1 telemetry)](#openf1-formula-1-telemetry) | 🟢 no key | — | [`openf1.py`](scripts/sports/openf1.py) |
+| 112 | 🏅 Sports | [TheSportsDB](#thesportsdb) | 🔑 key | `THESPORTSDB_KEY (optional)` | [`thesportsdb.py`](scripts/sports/thesportsdb.py) |
+| 113 | 🎬 Culture, Books & Entertainment | [The Met Museum Collection API](#the-met-museum-collection-api) | 🟢 no key | — | [`met_museum.py`](scripts/culture_misc/met_museum.py) |
+| 114 | 🎬 Culture, Books & Entertainment | [Open Library (books)](#open-library-books) | 🟢 no key | — | [`open_library.py`](scripts/culture_misc/open_library.py) |
+| 115 | 🎬 Culture, Books & Entertainment | [TMDB (The Movie Database)](#tmdb-the-movie-database) | 🔑 key | `TMDB_TOKEN` | [`tmdb.py`](scripts/culture_misc/tmdb.py) |
 
 🟢 = runs out of the box (no key, or a public demo key)  ·  🔑 = free registration required
 
@@ -2921,7 +2933,7 @@ def main():
            "latestAction": b["latestAction"]["text"], "date": b["latestAction"]["actionDate"]} for b in bills])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
 
 ```json
 [
@@ -2956,6 +2968,114 @@ def main():
     "date": "2025-12-11"
   }
 ]
+```
+</details>
+
+---
+
+### European Parliament Open Data API
+
+| | |
+|:--|:--|
+| **Docs** | https://data.europarl.europa.eu/en/developer-corner/opendata-api |
+| **Auth** | None |
+| **Register / token** | No registration. JSON-LD responses (linked data); add format=application/ld+json. |
+| **Script** | [`scripts/politics_government/european_parliament.py`](scripts/politics_government/european_parliament.py) |
+
+**What you can get:**
+
+- Members (MEPs): country, political group, national party, mandates
+- Plenary documents, adopted texts, votes and roll calls, parliamentary questions
+- Meetings, committees, events
+
+**Capstone ideas:** Comparative legislative behavior (EU vs. US Congress), party-group cohesion, cross-national coalitions.
+
+**Endpoint:** `GET https://data.europarl.europa.eu/api/v2/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `resource` | meps \| meps/show-current \| meetings \| plenary-documents \| adopted-texts \| parliamentary-questions \| ... | `meps/show-current` |
+| `format` | application/ld+json \| application/rdf+xml \| text/turtle | `application/ld+json` |
+| `offset / limit` | Paging | `0 / 500` |
+| `country-of-representation` | Filter MEPs by country code (on meps) | `DE` |
+| `year` | Filter documents/meetings by year | `2026` |
+
+```python
+from collections import Counter
+
+from _common import get, show
+
+
+def main():
+    meps = get("https://data.europarl.europa.eu/api/v2/meps/show-current",
+               params={"format": "application/ld+json", "offset": 0, "limit": 1000})["data"]
+    show({"current_MEPs": len(meps),
+          "seats_by_group": Counter(m.get("api:political-group") for m in meps).most_common(),
+          "sample": [{k: m.get(k) for k in ("label", "api:country-of-representation", "api:political-group")} for m in meps[:3]]},
+         max_items=10)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "current_MEPs": 719,
+  "seats_by_group": [
+    [
+      "PPE",
+      184
+    ],
+    [
+      "S&D",
+      135
+    ],
+    [
+      "PfE",
+      85
+    ],
+    [
+      "ECR",
+      84
+    ],
+    [
+      "Renew",
+      78
+    ],
+    [
+      "Verts/ALE",
+      53
+    ],
+    [
+      "The Left",
+      45
+    ],
+    [
+      "NI",
+      28
+    ],
+    [
+      "ESN",
+      27
+    ]
+  ],
+  "sample": [
+    {
+      "label": "Tobiasz BOCHEŃSKI",
+      "api:country-of-representation": "PL",
+      "api:political-group": "ECR"
+    },
+    {
+      "label": "Lena DÜPONT",
+      "api:country-of-representation": "DE",
+      "api:political-group": "PPE"
+    },
+    {
+      "label": "Salvatore DE MEO",
+      "api:country-of-representation": "IT",
+      "api:political-group": "PPE"
+    }
+  ]
+}
 ```
 </details>
 
@@ -3001,7 +3121,7 @@ def main():
     show({"count": d["count"], "results": d["results"]})
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
 
 ```json
 {
@@ -3036,6 +3156,280 @@ def main():
       "executive_order_number": "14431",
       "signing_date": "2026-09-18",
       "publication_date": "2026-09-23"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### GovInfo API (U.S. Government Publishing Office)
+
+| | |
+|:--|:--|
+| **Docs** | https://api.govinfo.gov/docs/ · https://github.com/usgpo/api |
+| **Auth** | api.data.gov key (`DEMO_KEY` works at low volume) |
+| **Register / token** | Use your api.data.gov key (https://api.data.gov/signup/). 36,000 req/hour with a personal key. |
+| **Env var** | `DATA_GOV_API_KEY` |
+| **Script** | [`scripts/politics_government/govinfo.py`](scripts/politics_government/govinfo.py) |
+
+**What you can get:**
+
+- Official full text + metadata of 40+ collections: bills (BILLS), Congressional Record (CREC), US Code (USCODE)
+- Code of Federal Regulations (CFR), Federal Register (FR), federal court opinions (USCOURTS), GAO reports, budget
+- Every document as PDF, HTML, XML and MODS metadata; search across collections
+
+**Capstone ideas:** Text-as-data on bills and floor speeches, tracking legislative language diffusion, court-opinion corpora.
+
+**Endpoint:** `POST https://api.govinfo.gov/search  ·  GET https://api.govinfo.gov/collections/{collection}/{since}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `query (POST body)` | Search with field operators: collection:, congress:, docClass:, publishdate:range(...) | `collection:USCOURTS AND "qualified immunity"` |
+| `pageSize / offsetMark (POST body)` | Page size (max 1,000); offsetMark=* then the returned mark for paging | `5 / *` |
+| `sorts (POST body)` | List of {field, sortOrder} | `[{"field": "publishdate", "sortOrder": "DESC"}]` |
+| `/collections` | List collections with document counts | `—` |
+| `/collections/{code}/{lastModifiedStartDate}` | Packages added/changed since a date (pageSize, offsetMark) | `/collections/BILLS/2026-10-01T00:00:00Z` |
+| `/packages/{packageId}/summary` | One document's metadata and download links (htm, xml, pdf) | `/packages/BILLS-119hr1enr/summary` |
+| `api_key` | api.data.gov key | `DEMO_KEY` |
+
+```python
+import os
+
+import requests
+
+from _common import USER_AGENT, show
+
+
+def main():
+    r = requests.post("https://api.govinfo.gov/search", timeout=60, headers={"User-Agent": USER_AGENT},
+                      params={"api_key": os.getenv("DATA_GOV_API_KEY", "DEMO_KEY")}, json={
+                          "query": 'collection:USCOURTS AND "qualified immunity"', "pageSize": 5, "offsetMark": "*",
+                          "sorts": [{"field": "publishdate", "sortOrder": "DESC"}]})
+    r.raise_for_status()
+    d = r.json()
+    show({"matching_court_documents": d["count"], "latest": [
+        {"title": x["title"], "court": x["governmentAuthor"][0], "dateIssued": x["dateIssued"], "packageId": x["packageId"]}
+        for x in d["results"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "matching_court_documents": 77082,
+  "latest": [
+    {
+      "title": "Lightfoot et al v. Progressive Direct Insurance Company et al",
+      "court": "United States District Court Eastern District of Louisiana",
+      "dateIssued": "2026-10-09",
+      "packageId": "USCOURTS-laed-2_26-cv-00434"
+    },
+    {
+      "title": "Kushawn Miles-El v. MI, et al",
+      "court": "United States Court of Appeals for the Sixth Circuit",
+      "dateIssued": "2026-10-09",
+      "packageId": "USCOURTS-ca6-25-01140"
+    },
+    {
+      "title": "Pankratz v. The Board of County Commissioners For Roosevelt County et al",
+      "court": "United States District Court District of New Mexico",
+      "dateIssued": "2026-10-08",
+      "packageId": "USCOURTS-nmd-2_21-cv-00655"
+    },
+    {
+      "title": "Edwards v. Bierman et al",
+      "court": "United States District Court Northern District of California",
+      "dateIssued": "2026-10-08",
+      "packageId": "USCOURTS-cand-3_26-cv-05124"
+    },
+    {
+      "title": "Duckett, Alexis et al v. The Board Of Regents Of The University Of Wisconsin System et al",
+      "court": "United States District Court Western District of Wisconsin",
+      "dateIssued": "2026-10-07",
+      "packageId": "USCOURTS-wiwd-3_25-cv-00684"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Grants.gov Search API
+
+| | |
+|:--|:--|
+| **Docs** | https://www.grants.gov/api/common/search2 |
+| **Auth** | None |
+| **Register / token** | No registration for search (the applicant-side System-to-System API needs registration). |
+| **Script** | [`scripts/politics_government/grants_gov.py`](scripts/politics_government/grants_gov.py) |
+
+**What you can get:**
+
+- Every federal funding opportunity: title, number, agency, open/close dates, status, CFDA/assistance listing
+- Filters by eligibility, funding instrument and category
+- Opportunity details via fetchOpportunity
+
+**Capstone ideas:** Where federal research money goes by agency/topic over time; matching grants to university strengths.
+
+**Endpoint:** `POST https://api.grants.gov/v1/api/search2`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `keyword` | Search text | `data science` |
+| `oppStatuses` | forecasted \| posted \| closed \| archived (pipe-separated) | `forecasted\|posted` |
+| `agencies` | Agency codes (pipe-separated) | `NSF\|HHS-NIH11` |
+| `fundingCategories / eligibilities / fundingInstruments` | Category codes (e.g. ST science & technology), eligibility codes, G grant / CA cooperative agreement | `ST` |
+| `rows / startRecordNum` | Page size and offset | `5 / 0` |
+| `/v1/api/fetchOpportunity` | Sibling endpoint: full details for one opportunity (POST {opportunityId}) | `{"opportunityId": 353475}` |
+
+```python
+import requests
+
+from _common import USER_AGENT, show
+
+
+def main():
+    r = requests.post("https://api.grants.gov/v1/api/search2", timeout=60, headers={"User-Agent": USER_AGENT},
+                      json={"keyword": "data science", "oppStatuses": "forecasted|posted", "rows": 5})
+    r.raise_for_status()
+    d = r.json()["data"]
+    show({"open_or_forecasted": d["hitCount"], "opportunities": [
+        {k: o.get(k) for k in ("number", "title", "agencyCode", "openDate", "closeDate", "oppStatus")} for o in d["oppHits"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "open_or_forecasted": 884,
+  "opportunities": [
+    {
+      "number": "PD-24-7414",
+      "title": "Cyberinfrastructure for Public Access and Open Science",
+      "agencyCode": "NSF",
+      "openDate": "04/10/2024",
+      "closeDate": "",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "23-568",
+      "title": "Human Networks and Data Science (HNDS)",
+      "agencyCode": "NSF",
+      "openDate": "05/20/2023",
+      "closeDate": "01/14/2027",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "PD-24-8084",
+      "title": "Computational and Data-Enabled Science and Engineering",
+      "agencyCode": "NSF",
+      "openDate": "08/15/2024",
+      "closeDate": "",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "24-587",
+      "title": "Research on the Science and Technology Enterprise: Indicators, Statistics, and Methods (NCSES S&amp;T)",
+      "agencyCode": "NSF",
+      "openDate": "07/01/2024",
+      "closeDate": "01/19/2027",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "PD-23-277Y",
+      "title": "Research Infrastructure in the Social and Behavioral Sciences",
+      "agencyCode": "NSF",
+      "openDate": "10/05/2023",
+      "closeDate": "",
+      "oppStatus": "posted"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Harvard Dataverse (MIT Election Lab & replication data)
+
+| | |
+|:--|:--|
+| **Docs** | https://guides.dataverse.org/en/latest/api/ |
+| **Auth** | None for search and public downloads (token to deposit) |
+| **Register / token** | No registration to search or download public files. Hosts the MIT Election Data + Science Lab returns (president, Senate, House, county and precinct level) and replication data for thousands of political-science papers. |
+| **Env var** | `DATAVERSE_API_TOKEN (optional)` |
+| **Script** | [`scripts/politics_government/harvard_dataverse.py`](scripts/politics_government/harvard_dataverse.py) |
+
+**What you can get:**
+
+- Search datasets by keyword, subject, author, publication; citation and DOI for each
+- List and download each dataset's files (CSV, Stata, R) via the Data Access API
+- Election returns since 1976 from the MIT Election Lab
+
+**Capstone ideas:** Election forecasting, turnout and polarization analysis, replicating published political-science findings.
+
+**Endpoint:** `GET https://dataverse.harvard.edu/api/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Search text | `MIT Election Data` |
+| `type` | dataset \| file \| dataverse | `dataset` |
+| `subtree` | Restrict to one collection alias | `medsl` |
+| `sort / order` | name \| date; asc \| desc | `date / desc` |
+| `per_page / start` | Paging (max 1,000) | `5` |
+| `/api/datasets/:persistentId/?persistentId=doi:...` | Sibling endpoint: dataset metadata and file list | `doi:10.7910/DVN/42MVDX` |
+| `/api/access/datafile/{fileId}` | Download a file (format=original for the uploaded format) | `format=original` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://dataverse.harvard.edu/api/search", params={
+        "q": "election returns", "type": "dataset", "subtree": "medsl", "sort": "date", "order": "desc", "per_page": 5})["data"]
+    show({"datasets": d["total_count"], "latest": [
+        {"name": x["name"], "published": x.get("published_at", "")[:10], "doi": x.get("global_id"),
+         "files": x.get("fileCount")} for x in d["items"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "datasets": 55,
+  "latest": [
+    {
+      "name": "Precinct-Level Returns 2022 by Individual State",
+      "published": "2026-09-18",
+      "doi": "doi:10.7910/DVN/UYQIEP",
+      "files": 53
+    },
+    {
+      "name": "State Offices Precinct-Level Returns 2022",
+      "published": "2026-09-18",
+      "doi": "doi:10.7910/DVN/OAARCY",
+      "files": 3
+    },
+    {
+      "name": "U.S. Senate Precinct-Level Returns 2022",
+      "published": "2026-06-10",
+      "doi": "doi:10.7910/DVN/IAD3XR",
+      "files": 3
+    },
+    {
+      "name": "U.S. House of Representatives Precinct-Level Returns 2022",
+      "published": "2026-06-10",
+      "doi": "doi:10.7910/DVN/EOKNGW",
+      "files": 1
+    },
+    {
+      "name": "U.S. Senate statewide 1976–2024",
+      "published": "2026-05-11",
+      "doi": "doi:10.7910/DVN/PEJ5QU",
+      "files": 3
     }
   ]
 }
@@ -3144,7 +3538,7 @@ def main():
            "disbursements": c["disbursements"]} for c in d["results"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
 
 ```json
 [
@@ -3230,7 +3624,7 @@ def main():
           for x in d["data"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
 
 ```json
 [
@@ -3275,6 +3669,117 @@ def main():
 
 ---
 
+### Lobbying Disclosure Act (LDA) API
+
+| | |
+|:--|:--|
+| **Docs** | https://lda.gov/api/redoc/v1/ |
+| **Auth** | None (optional free key raises limits) |
+| **Register / token** | Works anonymously at low rates. Register at https://lda.gov/api/register/ for a key (header `Authorization: Token <key>`). Formerly lda.senate.gov. |
+| **Env var** | `LDA_API_KEY (optional)` |
+| **Script** | [`scripts/politics_government/senate_lda.py`](scripts/politics_government/senate_lda.py) |
+
+**What you can get:**
+
+- Every federal lobbying registration and quarterly report since 1999
+- Registrant (firm), client, income/expenses, issue codes, specific bills/issues lobbied, agencies contacted
+- Individual lobbyists (incl. former government positions), political contributions (LD-203)
+
+**Capstone ideas:** Lobbying spend vs. legislative outcomes, revolving-door networks, which industries lobby on AI or climate.
+
+**Endpoint:** `GET https://lda.gov/api/v1/{resource}/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `resource` | filings \| contributions \| registrants \| clients \| lobbyists \| constants/filing/lobbyingactivityissues | `filings` |
+| `filing_year / filing_period` | Year; first_quarter \| second_quarter \| third_quarter \| fourth_quarter | `2025 / second_quarter` |
+| `filing_specific_lobbying_issues` | Full-text search in the issues/bills lobbied | `artificial intelligence` |
+| `client_name / registrant_name` | Name search | `Microsoft` |
+| `filing_type` | RR registration, Q1-Q4 quarterly reports, ...  | `Q2` |
+| `filing_amount_reported_min / _max` | Reported income (lobbying firms) or expenses (in-house lobbying) range in USD | `100000` |
+| `page / page_size` | Paging (max 25 anonymous) | `5` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://lda.gov/api/v1/filings/", params={
+        "filing_year": 2025, "filing_specific_lobbying_issues": "artificial intelligence",
+        "filing_amount_reported_min": 1, "page_size": 10})
+    unique = {f["filing_uuid"]: f for f in d["results"]}.values()  # the same filing can appear more than once
+    show({"filings_mentioning_AI_2025": d["count"], "examples": [
+        {"client": f["client"]["name"], "registrant": f["registrant"]["name"], "period": f["filing_period_display"],
+         "amount_usd": f["income"] or f["expenses"],  # firms report income, in-house lobbyists report expenses
+         "issues": sorted({a["general_issue_code_display"] for a in f["lobbying_activities"]})[:3]}
+        for f in list(unique)[:5]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "filings_mentioning_AI_2025": 4066,
+  "examples": [
+    {
+      "client": "SAP AMERICA, INC.",
+      "registrant": "MEHLMAN CONSULTING, INC.",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "20000.00",
+      "issues": [
+        "Computer Industry",
+        "Trade (domestic/foreign)"
+      ]
+    },
+    {
+      "client": "THE TRUSTEES OF PURDUE UNIVERSITY",
+      "registrant": "DEBORAH HOHLT",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "90000.00",
+      "issues": [
+        "Agriculture",
+        "Budget/Appropriations",
+        "Education"
+      ]
+    },
+    {
+      "client": "EPIC SYSTEMS",
+      "registrant": "MCDERMOTT+ LLC",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "20000.00",
+      "issues": [
+        "Health Issues"
+      ]
+    },
+    {
+      "client": "UNIVERSITY OF TULSA",
+      "registrant": "SBL STRATEGIES, LLC",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "30000.00",
+      "issues": [
+        "Defense",
+        "Energy/Nuclear",
+        "Science/Technology"
+      ]
+    },
+    {
+      "client": "VERILY LIFE SCIENCES LLC",
+      "registrant": "MCDERMOTT+ LLC",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "10000.00",
+      "issues": [
+        "Health Issues",
+        "Medical/Disease Research/Clinical Labs",
+        "Medicare/Medicaid"
+      ]
+    }
+  ]
+}
+```
+</details>
+
+---
+
 ### UK Parliament APIs
 
 | | |
@@ -3312,7 +3817,7 @@ def main():
     show([{"title": d["Title"], "date": d["Date"][:10], "ayes": d["AyeCount"], "noes": d["NoCount"]} for d in divs])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
 
 ```json
 [
@@ -3347,6 +3852,66 @@ def main():
     "noes": 297
   }
 ]
+```
+</details>
+
+---
+
+### USAJOBS Search API (federal jobs)
+
+| | |
+|:--|:--|
+| **Docs** | https://developer.usajobs.gov/ |
+| **Auth** | API key (header `Authorization-Key`) + your email as `User-Agent` |
+| **Register / token** | Request a key at https://developer.usajobs.gov/apirequest/ (emailed). Send headers Host: data.usajobs.gov, User-Agent: <the email you registered>, Authorization-Key: <key>. |
+| **Env var** | `USAJOBS_API_KEY, USAJOBS_EMAIL` |
+| **Script** | [`scripts/politics_government/usajobs.py`](scripts/politics_government/usajobs.py) |
+
+**What you can get:**
+
+- Every open federal job posting: title, agency, grade/pay range, location, remote/telework, security clearance
+- Qualification summaries, hiring paths (public, veterans, students), open/close dates
+- Historic job announcements (separate endpoint)
+
+**Capstone ideas:** Federal hiring trends by agency and skill (e.g. demand for data scientists), pay comparisons by location.
+
+**Endpoint:** `GET https://data.usajobs.gov/api/search`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `Keyword / PositionTitle` | Search text / title | `data scientist` |
+| `LocationName / Radius` | City or state, radius in miles | `Washington, DC / 25` |
+| `Organization` | Agency subelement codes (semicolon-separated) | `HE38` |
+| `RemunerationMinimum / PayGradeLow / PayGradeHigh` | Pay filters | `100000` |
+| `HiringPath` | public \| vet \| student \| fed \| ... | `public` |
+| `DatePosted / SortField` | Days since posted; sort field (DatePosted, Salary, ...) | `7 / DatePosted` |
+| `ResultsPerPage / Page` | Max 500 per page | `5` |
+
+```python
+from _common import get, key, show
+
+
+def main():
+    d = get("https://data.usajobs.gov/api/search", headers={
+        "Host": "data.usajobs.gov", "User-Agent": key("USAJOBS_EMAIL"), "Authorization-Key": key("USAJOBS_API_KEY")},
+        params={"Keyword": "data scientist", "LocationName": "Washington, DC", "ResultsPerPage": 5})["SearchResult"]
+    show({"total": d["SearchResultCountAll"], "jobs": [
+        {"title": j["PositionTitle"], "agency": j["OrganizationName"], "location": j["PositionLocationDisplay"],
+         "pay": f'${j["PositionRemuneration"][0]["MinimumRange"]} - ${j["PositionRemuneration"][0]["MaximumRange"]}',
+         "close_date": j["ApplicationCloseDate"][:10]}
+        for j in (item["MatchedObjectDescriptor"] for item in d["SearchResultItems"])]})
+```
+
+<details><summary><b>Sample output</b> — ⚠️ illustrative (not run live: needs a key or was rate-limited; shape follows the official docs, values are examples)</summary>
+
+```json
+{
+  "total": 212,
+  "jobs": [
+    {"title": "Data Scientist", "agency": "Census Bureau", "location": "Suitland, Maryland",
+     "pay": "$104,604 - $163,282 Per Year", "close_date": "2026-10-24"}
+  ]
+}
 ```
 </details>
 
@@ -3394,7 +3959,7 @@ def main():
     show([{"agency": x["name"], "obligated_usd": round(x["amount"])} for x in r.json()["results"]])
 ```
 
-<details><summary><b>Sample output</b> — live run 2026-10-11 19:09</summary>
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
 
 ```json
 [
@@ -3419,6 +3984,571 @@ def main():
     "obligated_usd": 186422112686
   }
 ]
+```
+</details>
+
+---
+
+## ⚖️ Law & Justice
+
+### CourtListener (Free Law Project)
+
+| | |
+|:--|:--|
+| **Docs** | https://wiki.free.law/c/courtlistener/help/api/rest/v4/rest-api-v47 |
+| **Auth** | None for search (token for higher limits and most other endpoints) |
+| **Register / token** | Search works anonymously. Create a free account, then copy your token from https://www.courtlistener.com/profile/api/ (header `Authorization: Token <token>`; 5,000 req/hour). |
+| **Env var** | `COURTLISTENER_TOKEN (optional)` |
+| **Script** | [`scripts/law/courtlistener.py`](scripts/law/courtlistener.py) |
+
+**What you can get:**
+
+- Millions of court opinions (federal and state, incl. the full Caselaw Access Project history) with full text
+- PACER dockets and filings from the RECAP archive, oral-argument audio, judges and their careers
+- Citation graph: which opinions cite which (citeCount, cited opinions)
+
+**Capstone ideas:** Legal NLP (outcome prediction, topic models), citation-network influence of precedents, judge behavior.
+
+**Endpoint:** `GET https://www.courtlistener.com/api/rest/v4/search/`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `q` | Query; supports "phrases", AND/OR, field searches like caseName:(...) | `"qualified immunity"` |
+| `type` | o opinions \| r RECAP dockets \| d dockets \| p judges \| oa oral arguments | `o` |
+| `court` | Space-separated court IDs | `scotus ca4 dcd` |
+| `filed_after / filed_before` | Date range YYYY-MM-DD | `2020-01-01` |
+| `order_by` | score desc \| dateFiled desc \| citeCount desc | `citeCount desc` |
+| `cursor` | Paging cursor from the 'next' URL (20 results per page) | `—` |
+| `/api/rest/v4/opinions/{id}/` | Sibling endpoint (token): an opinion's full text (plain_text, html_with_citations) | `—` |
+
+```python
+from _common import get, show
+
+
+def main():
+    d = get("https://www.courtlistener.com/api/rest/v4/search/", params={
+        "q": '"qualified immunity"', "type": "o", "court": "scotus", "order_by": "citeCount desc"})
+    show({"scotus_opinions_mentioning_qualified_immunity": d["count"], "most_cited": [
+        {"case": r["caseName"], "date": r["dateFiled"], "cited_by": r["citeCount"], "citation": r["citation"][:1],
+         "url": "https://www.courtlistener.com" + r["absolute_url"]} for r in d["results"][:5]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "scotus_opinions_mentioning_qualified_immunity": 231,
+  "most_cited": [
+    {
+      "case": "Ashcroft v. Iqbal",
+      "date": "2009-05-18",
+      "cited_by": 160249,
+      "citation": [
+        "173 L. Ed. 2d 868"
+      ],
+      "url": "https://www.courtlistener.com/opinion/145875/ashcroft-v-iqbal/"
+    },
+    {
+      "case": "Monell v. New York City Dept. of Social Servs.",
+      "date": "1978-06-06",
+      "cited_by": 43435,
+      "citation": [
+        "56 L. Ed. 2d 611"
+      ],
+      "url": "https://www.courtlistener.com/opinion/109881/monell-v-new-york-city-dept-of-social-servs/"
+    },
+    {
+      "case": "Farmer v. Brennan",
+      "date": "1994-06-06",
+      "cited_by": 29755,
+      "citation": [
+        "128 L. Ed. 2d 811"
+      ],
+      "url": "https://www.courtlistener.com/opinion/1087956/farmer-v-brennan/"
+    },
+    {
+      "case": "Harlow v. Fitzgerald",
+      "date": "1982-06-24",
+      "cited_by": 23283,
+      "citation": [
+        "73 L. Ed. 2d 396"
+      ],
+      "url": "https://www.courtlistener.com/opinion/110763/harlow-v-fitzgerald/"
+    },
+    {
+      "case": "Graham v. Connor",
+      "date": "1989-05-15",
+      "cited_by": 17104,
+      "citation": [
+        "104 L. Ed. 2d 443"
+      ],
+      "url": "https://www.courtlistener.com/opinion/112257/graham-v-connor/"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### U.S. Department of Justice News API
+
+| | |
+|:--|:--|
+| **Docs** | https://www.justice.gov/developer |
+| **Auth** | None |
+| **Register / token** | No registration. Covers DOJ press releases (incl. all 94 U.S. Attorney's Offices) and blog posts. |
+| **Script** | [`scripts/law/doj_press_releases.py`](scripts/law/doj_press_releases.py) |
+
+**What you can get:**
+
+- 270,000+ press releases: title, date, full HTML body, DOJ components (office/division), topics
+- Prosecutions, sentencings, settlements and indictments across fraud, cybercrime, civil rights, environment...
+
+**Capstone ideas:** Enforcement-priority shifts across administrations, NLP extraction of charges and sentences, topic trends.
+
+**Endpoint:** `GET https://www.justice.gov/api/v1/{press_releases \| blog_entries}.json`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `pagesize / page` | Page size and page number (0-based) | `5 / 0` |
+| `sort / direction` | Sort field and order | `date / DESC` |
+| `parameters[title]` | Filter by words in the title (other fields: parameters[{field}]) | `fraud` |
+| `fields` | date = Unix timestamp; component[].name = DOJ office; topic[].name = subject | `—` |
+
+```python
+import datetime as dt
+import html
+import re
+
+from _common import get, show
+
+
+def main():
+    d = get("https://www.justice.gov/api/v1/press_releases.json", params={
+        "pagesize": 5, "sort": "date", "direction": "DESC", "parameters[title]": "artificial intelligence"})
+    show({"matching_releases": d["metadata"]["resultset"]["count"], "latest": [
+        {"date": dt.date.fromtimestamp(int(r["date"])).isoformat(), "title": r["title"],
+         "offices": [c["name"] for c in r.get("component") or []][:2],
+         "topics": [t.get("name") for t in r.get("topic") or []],
+         "teaser": html.unescape(re.sub("<[^>]+>", "", r.get("teaser") or "")).strip()}
+        for r in d["results"]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "matching_releases": "29",
+  "latest": [
+    {
+      "date": "2026-09-11",
+      "title": "Founder And Former CEO Of Artificial Intelligence Company Pleads Guilty To Securities Fraud",
+      "offices": [
+        "USAO - New York, Southern"
+      ],
+      "topics": [
+        "Securities, Commodities, & Investment Fraud"
+      ],
+      "teaser": "United States Attorney for the Southern District of New York, Jamie McDonald, and Assistant Director in Charge of the New York Field Office of the Federal Burea..."
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Chinese national and two U.S. citizens charged with conspiring to smuggle artificial intelligence technology to China",
+      "offices": [
+        "USAO - Georgia, Northern"
+      ],
+      "topics": [
+        "National Security"
+      ],
+      "teaser": "Stanley Yi Zheng, Matthew Kelly, and Tommy Shad English have been charged with conspiring to commit smuggling and export control violations. The three defendant..."
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Chinese National and Two U.S. Citizens Charged with Conspiring to Smuggle Artificial Intelligence Technology to China",
+      "offices": [
+        "National Security Division (NSD)",
+        "USAO - Georgia, Northern"
+      ],
+      "topics": [
+        "Export Control",
+        "National Security"
+      ],
+      "teaser": "Stanley Yi Zheng, Matthew Kelly, and Tommy Shad English have been charged with conspiring to commit smuggling and export control violations. The three defendant..."
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Three Charged With Conspiring To Unlawfully Divert U.S. Artificial Intelligence Technology To China",
+      "offices": [
+        "USAO - New York, Southern"
+      ],
+      "topics": [
+        "National Security"
+      ],
+      "teaser": "United States Attorney for the Southern District of New York, Jay Clayton, Assistant Director of the Counterintelligence and Espionage Division of the Federal B..."
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Three Charged with Conspiring to Unlawfully Divert Cutting Edge U.S. Artificial Intelligence Technology to China",
+      "offices": [
+        "Office of the Attorney General",
+        "Federal Bureau of Investigation (FBI)"
+      ],
+      "topics": [],
+      "teaser": "Today, an indictment was unsealed charging Yih-Shyan “Wally” Liaw, Ruei-Tsang “Steven” Chang, and Ting-Wei “Willy” Sun, for allegedly conspiring to divert high-..."
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### eCFR API (Code of Federal Regulations)
+
+| | |
+|:--|:--|
+| **Docs** | https://www.ecfr.gov/developers/documentation/api/v1 |
+| **Auth** | None |
+| **Register / token** | No registration. The eCFR is updated daily; the API also returns any past version of a section. |
+| **Script** | [`scripts/law/ecfr.py`](scripts/law/ecfr.py) |
+
+**What you can get:**
+
+- Full text of all 50 CFR titles (structure, XML) as of any date since 2017
+- Full-text search with section hierarchy and headings
+- Change history: which sections were amended when
+
+**Capstone ideas:** Measuring regulatory growth and complexity by agency, tracking how rules change over time, regulation NLP.
+
+**Endpoint:** `GET https://www.ecfr.gov/api/{service}/v1/{resource}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `search/v1/results?query=` | Full-text search (per_page, page, date, title filters) | `query=artificial intelligence` |
+| `search/v1/count?query=` | Number of matching sections | `query=privacy` |
+| `versioner/v1/titles.json` | All titles with latest amended / issue dates | `—` |
+| `versioner/v1/full/{date}/title-{n}.xml` | Full XML of a title (part=, section= to narrow); date must be <= the title's up_to_date_as_of, and the client must accept gzip (requests does; curl needs --compressed) | `/full/2026-10-08/title-45.xml?part=164` |
+| `versioner/v1/versions/title-{n}.json` | Version history of sections in a title | `title-45.json` |
+| `admin/v1/agencies.json` | Agencies and the CFR references they own | `—` |
+
+```python
+import re
+
+from _common import get, show
+
+
+def main():
+    d = get("https://www.ecfr.gov/api/search/v1/results", params={"query": "artificial intelligence", "per_page": 50})
+    sections = {}  # results are per matching paragraph, so keep one row per section
+    for r in d["results"]:
+        if r["hierarchy"]["section"]:
+            sections.setdefault((r["hierarchy"]["title"], r["hierarchy"]["section"]), r)
+    titles = get("https://www.ecfr.gov/api/versioner/v1/titles.json")["titles"]
+    show({"matching_paragraphs": d["meta"]["total_count"], "example_sections": [
+        {"title": r["hierarchy_headings"]["title"], "section": r["hierarchy_headings"]["section"],
+         "heading": re.sub("<[^>]+>", "", r["headings"]["section"] or ""),  # strip search-highlight tags
+         "agency_chapter": (r["headings"]["chapter"] or "").strip()}
+        for r in list(sections.values())[:5]],
+          "recently_amended_titles": [{k: t[k] for k in ("number", "name", "latest_amended_on")}
+                                      for t in sorted(titles, key=lambda t: t.get("latest_amended_on") or "", reverse=True)[:3]]})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:16</summary>
+
+```json
+{
+  "matching_paragraphs": 214,
+  "example_sections": [
+    {
+      "title": "Title 15",
+      "section": "§ 740.27",
+      "heading": "License Exception Artificial Intelligence Authorization (AIA).",
+      "agency_chapter": "Bureau of Industry and Security, Department of Commerce"
+    },
+    {
+      "title": "Title 15",
+      "section": "§ 748.3",
+      "heading": "Classification requests and advisory opinions.",
+      "agency_chapter": "Bureau of Industry and Security, Department of Commerce"
+    },
+    {
+      "title": "Title 28",
+      "section": "§ 202.301",
+      "heading": "Prohibited data-brokerage transactions.",
+      "agency_chapter": "Department of Justice"
+    },
+    {
+      "title": "Title 28",
+      "section": "§ 202.217",
+      "heading": "Employment agreement.",
+      "agency_chapter": "Department of Justice"
+    },
+    {
+      "title": "Title 15",
+      "section": "§ 742.6",
+      "heading": "Regional stability.",
+      "agency_chapter": "Bureau of Industry and Security, Department of Commerce"
+    }
+  ],
+  "recently_amended_titles": [
+    {
+      "number": 7,
+      "name": "Agriculture",
+      "latest_amended_on": "2026-10-08"
+    },
+    {
+      "number": 17,
+      "name": "Commodity and Securities Exchanges",
+      "latest_amended_on": "2026-10-08"
+    },
+    {
+      "number": 34,
+      "name": "Education",
+      "latest_amended_on": "2026-10-08"
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### FBI Crime Data Explorer API
+
+| | |
+|:--|:--|
+| **Docs** | https://cde.ucr.cjis.gov/LATEST/webapp/#/pages/docApi |
+| **Auth** | api.data.gov key (`DEMO_KEY` works but is often rate-limited here) |
+| **Register / token** | Use your api.data.gov key (https://api.data.gov/signup/), passed as API_KEY. The shared DEMO_KEY hits HTTP 429 quickly on this API, so get a personal key. |
+| **Env var** | `DATA_GOV_API_KEY` |
+| **Script** | [`scripts/law/fbi_crime_data.py`](scripts/law/fbi_crime_data.py) |
+
+**What you can get:**
+
+- Monthly offense and clearance rates (per 100k) for the nation, states and individual agencies
+- Reported counts by offense: violent, property, homicide, rape, robbery, aggravated assault, burglary, ...
+- Agency directory (ORI codes), NIBRS incident detail, hate crime, use-of-force and LEOKA data
+
+**Capstone ideas:** Crime trends and policy evaluation, clearance-rate disparities, linking crime to housing/transport data.
+
+**Endpoint:** `GET https://api.usa.gov/crime/fbi/cde/summarized/{level}/{offense}`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `level` | state/{abbr}; the docs also list national and agency/{ORI} | `state/VA` |
+| `offense` | V violent crime, P property crime, RPE rape, ROB robbery, ASS aggravated assault (full code list in the docs) | `V` |
+| `from / to` | Month range MM-YYYY | `01-2023 / 12-2023` |
+| `API_KEY` | api.data.gov key (query parameter) | `DEMO_KEY` |
+| `/agency/byStateAbbr/{abbr}` | Sibling endpoint (per the docs): agencies and ORI codes in a state | `/agency/byStateAbbr/DC` |
+
+```python
+import os
+
+from _common import get, show
+
+
+def main():
+    d = get("https://api.usa.gov/crime/fbi/cde/summarized/state/VA/V", params={
+        "from": "01-2023", "to": "12-2023", "API_KEY": os.getenv("DATA_GOV_API_KEY", "DEMO_KEY")})
+    rates = d["offenses"]["rates"]
+    show({"offense": "violent crime, monthly rate per 100k (2023)", "annual_rate_per_100k": {
+        name: round(sum(months.values()), 1) for name, months in rates.items()}})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12</summary>
+
+```json
+{
+  "offense": "violent crime, monthly rate per 100k (2023)",
+  "annual_rate_per_100k": {
+    "Virginia Offenses": 243.5,
+    "Virginia Clearances": 130.1,
+    "United States Offenses": 385.6,
+    "United States Clearances": 159.1
+  }
+}
+```
+</details>
+
+---
+
+### Oyez (U.S. Supreme Court cases)
+
+| | |
+|:--|:--|
+| **Docs** | https://github.com/walkerdb/supreme_court_transcripts (community notes; no official docs) |
+| **Auth** | None |
+| **Register / token** | No registration. Unofficial API behind oyez.org (Cornell LII / Justia): be gentle and cache results. |
+| **Script** | [`scripts/law/oyez.py`](scripts/law/oyez.py) |
+
+**What you can get:**
+
+- Every Supreme Court case: question presented, facts, conclusion, parties, lower court
+- Decision: majority/minority vote counts, winning party, how each justice voted
+- Timeline (granted/argued/decided), advocates, oral-argument audio and transcripts
+
+**Capstone ideas:** Predicting Supreme Court outcomes, oral-argument transcript analysis, justice voting blocs.
+
+**Endpoint:** `GET https://api.oyez.org/cases`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `filter` | term:{year} (the October Term) | `term:2024` |
+| `per_page` | Results per page; 0 = all cases in the term | `0` |
+| `/cases/{term}/{docket}` | Full case record with decisions, votes, advocates | `/cases/2024/23-191` |
+| `decisions[].votes[]` | Field in the case record: each justice's vote (majority / minority) | `—` |
+| `oral_argument_audio[].href` | Field in the case record: link to the transcript and audio record | `—` |
+
+```python
+import re
+
+from _common import get, show
+
+
+def main():
+    cases = get("https://api.oyez.org/cases", params={"filter": "term:2024", "per_page": 0})
+    out = []
+    for c in cases[:4]:
+        full = get(c["href"])
+        dec = (full.get("decisions") or [{}])[0]
+        out.append({"case": full["name"], "docket": full["docket_number"].strip(),
+                    "question": re.sub("<[^>]+>", "", full.get("question") or "").strip(),  # strip HTML tags
+                    "vote": f'{dec["majority_vote"]}-{dec["minority_vote"]}' if dec.get("majority_vote") is not None else None,
+                    "winner": dec.get("winning_party")})
+    show({"term_2024_cases": len(cases), "examples": out}, max_str=200)
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:17</summary>
+
+```json
+{
+  "term_2024_cases": 62,
+  "examples": [
+    {
+      "case": "Williams v. Reed",
+      "docket": "23-191",
+      "question": "Does a Section 1983 claim brought in state court require the plaintiffs to first exhaust state administrative remedies?",
+      "vote": "5-4",
+      "winner": "Williams"
+    },
+    {
+      "case": "Glossip v. Oklahoma",
+      "docket": "22-7466",
+      "question": "May Oklahoma carry out the execution of Richard Glossip in light of the prosecutorial misconduct and other errors that affected his conviction and sentencing?",
+      "vote": "6-2",
+      "winner": "Glossip"
+    },
+    {
+      "case": "Lackey v. Stinnie",
+      "docket": "23-621",
+      "question": "Is a party who obtains a preliminary injunction a “prevailing party” for purposes of being entitled to attorney’s fees under 42 U.S.C § 1988?",
+      "vote": null,
+      "winner": null
+    },
+    {
+      "case": "Bondi v. VanDerStok",
+      "docket": "23-852",
+      "question": "Did the ATF exceed its statutory authority in promulgating its Final Rule purporting to regulate so-called “ghost guns”?",
+      "vote": null,
+      "winner": null
+    }
+  ]
+}
+```
+</details>
+
+---
+
+### Supreme Court Database (SCDB)
+
+| | |
+|:--|:--|
+| **Docs** | http://scdb.wustl.edu/documentation.php |
+| **Auth** | None (CSV download) |
+| **Register / token** | No registration; no REST API. Download zipped CSVs from http://scdb.wustl.edu/data.php - a new release each year (file names carry the release, e.g. 2026_01). Case-centered and justice-centered versions. |
+| **Script** | [`scripts/law/supreme_court_database.py`](scripts/law/supreme_court_database.py) |
+
+**What you can get:**
+
+- Every Supreme Court decision since 1791 coded on 200+ variables: issue area, decision direction (liberal/conservative), vote split, parties, lower court, precedent alteration
+- Justice-centered file: how each justice voted and whether they wrote an opinion
+
+**Capstone ideas:** The standard dataset for judicial-politics research: ideal points, court ideology over time, outcome prediction.
+
+**Endpoint:** `GET http://scdb.wustl.edu/_brickFiles/{release}/SCDB_{release}_{caseCentered \| justiceCentered}_Citation.csv.zip`
+
+| Parameter | Description | Example |
+|:--|:--|:--|
+| `release` | Yearly release ID | `2026_01` |
+| `caseCentered / justiceCentered` | One row per case, or one row per justice vote | `caseCentered` |
+| `Citation / Docket / LegalProvision` | Unit of analysis inside the file name | `Citation` |
+| `key columns` | term, caseName, dateDecision, issueArea, decisionDirection (1 conservative, 2 liberal), majVotes, minVotes, chief | `—` |
+
+```python
+import csv
+import io
+import zipfile
+from collections import Counter
+
+import requests
+
+from _common import USER_AGENT, show
+
+URL = "http://scdb.wustl.edu/_brickFiles/2026_01/SCDB_2026_01_caseCentered_Citation.csv.zip"
+
+
+def main():
+    z = zipfile.ZipFile(io.BytesIO(requests.get(URL, headers={"User-Agent": USER_AGENT}, timeout=120).content))
+    rows = list(csv.DictReader(io.TextIOWrapper(z.open(z.namelist()[0]), encoding="latin-1")))
+    terms = sorted({r["term"] for r in rows})[-5:]
+    out = []
+    for t in terms:
+        cases = [r for r in rows if r["term"] == t]
+        direction = Counter(r["decisionDirection"] for r in cases)
+        out.append({"term": t, "cases": len(cases), "liberal_share": round(direction["2"] / (direction["1"] + direction["2"]), 2),
+                    "unanimous": sum(r["minVotes"] == "0" for r in cases)})
+    show({"cases_in_database": len(rows), "last_5_terms": out})
+```
+
+<details><summary><b>Sample output</b> — live run 2026-10-12 07:17</summary>
+
+```json
+{
+  "cases_in_database": 9409,
+  "last_5_terms": [
+    {
+      "term": "2021",
+      "cases": 65,
+      "liberal_share": 0.35,
+      "unanimous": 19
+    },
+    {
+      "term": "2022",
+      "cases": 58,
+      "liberal_share": 0.45,
+      "unanimous": 29
+    },
+    {
+      "term": "2023",
+      "cases": 59,
+      "liberal_share": 0.51,
+      "unanimous": 26
+    },
+    {
+      "term": "2024",
+      "cases": 64,
+      "liberal_share": 0.51,
+      "unanimous": 28
+    },
+    {
+      "term": "2025",
+      "cases": 66,
+      "liberal_share": 0.52,
+      "unanimous": 29
+    }
+  ]
+}
 ```
 </details>
 

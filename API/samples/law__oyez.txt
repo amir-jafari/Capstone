@@ -1,0 +1,34 @@
+# live 2026-10-12 07:17
+{
+  "term_2024_cases": 62,
+  "examples": [
+    {
+      "case": "Williams v. Reed",
+      "docket": "23-191",
+      "question": "Does a Section 1983 claim brought in state court require the plaintiffs to first exhaust state administrative remedies?",
+      "vote": "5-4",
+      "winner": "Williams"
+    },
+    {
+      "case": "Glossip v. Oklahoma",
+      "docket": "22-7466",
+      "question": "May Oklahoma carry out the execution of Richard Glossip in light of the prosecutorial misconduct and other errors that affected his conviction and sentencing?",
+      "vote": "6-2",
+      "winner": "Glossip"
+    },
+    {
+      "case": "Lackey v. Stinnie",
+      "docket": "23-621",
+      "question": "Is a party who obtains a preliminary injunction a “prevailing party” for purposes of being entitled to attorney’s fees under 42 U.S.C § 1988?",
+      "vote": null,
+      "winner": null
+    },
+    {
+      "case": "Bondi v. VanDerStok",
+      "docket": "23-852",
+      "question": "Did the ATF exceed its statutory authority in promulgating its Final Rule purporting to regulate so-called “ghost guns”?",
+      "vote": null,
+      "winner": null
+    }
+  ]
+}

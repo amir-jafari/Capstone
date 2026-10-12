@@ -1,0 +1,62 @@
+# live 2026-10-12 07:16
+{
+  "matching_releases": "29",
+  "latest": [
+    {
+      "date": "2026-09-11",
+      "title": "Founder And Former CEO Of Artificial Intelligence Company Pleads Guilty To Securities Fraud",
+      "offices": [
+        "USAO - New York, Southern"
+      ],
+      "topics": [
+        "Securities, Commodities, & Investment Fraud"
+      ],
+      "teaser": "United States Attorney for the Southern District of New York, Jamie McDonald, and Assistant Director in Charge of the New York Field Office of the Federal Burea..."
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Chinese national and two U.S. citizens charged with conspiring to smuggle artificial intelligence technology to China",
+      "offices": [
+        "USAO - Georgia, Northern"
+      ],
+      "topics": [
+        "National Security"
+      ],
+      "teaser": "Stanley Yi Zheng, Matthew Kelly, and Tommy Shad English have been charged with conspiring to commit smuggling and export control violations. The three defendant..."
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Chinese National and Two U.S. Citizens Charged with Conspiring to Smuggle Artificial Intelligence Technology to China",
+      "offices": [
+        "National Security Division (NSD)",
+        "USAO - Georgia, Northern"
+      ],
+      "topics": [
+        "Export Control",
+        "National Security"
+      ],
+      "teaser": "Stanley Yi Zheng, Matthew Kelly, and Tommy Shad English have been charged with conspiring to commit smuggling and export control violations. The three defendant..."
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Three Charged With Conspiring To Unlawfully Divert U.S. Artificial Intelligence Technology To China",
+      "offices": [
+        "USAO - New York, Southern"
+      ],
+      "topics": [
+        "National Security"
+      ],
+      "teaser": "United States Attorney for the Southern District of New York, Jay Clayton, Assistant Director of the Counterintelligence and Espionage Division of the Federal B..."
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Three Charged with Conspiring to Unlawfully Divert Cutting Edge U.S. Artificial Intelligence Technology to China",
+      "offices": [
+        "Office of the Attorney General",
+        "Federal Bureau of Investigation (FBI)"
+      ],
+      "topics": [],
+      "teaser": "Today, an indictment was unsealed charging Yih-Shyan “Wally” Liaw, Ruei-Tsang “Steven” Chang, and Ting-Wei “Willy” Sun, for allegedly conspiring to divert high-..."
+    }
+  ]
+}

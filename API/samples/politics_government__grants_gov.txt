@@ -1,0 +1,46 @@
+# live 2026-10-12 07:16
+{
+  "open_or_forecasted": 884,
+  "opportunities": [
+    {
+      "number": "PD-24-7414",
+      "title": "Cyberinfrastructure for Public Access and Open Science",
+      "agencyCode": "NSF",
+      "openDate": "04/10/2024",
+      "closeDate": "",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "23-568",
+      "title": "Human Networks and Data Science (HNDS)",
+      "agencyCode": "NSF",
+      "openDate": "05/20/2023",
+      "closeDate": "01/14/2027",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "PD-24-8084",
+      "title": "Computational and Data-Enabled Science and Engineering",
+      "agencyCode": "NSF",
+      "openDate": "08/15/2024",
+      "closeDate": "",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "24-587",
+      "title": "Research on the Science and Technology Enterprise: Indicators, Statistics, and Methods (NCSES S&amp;T)",
+      "agencyCode": "NSF",
+      "openDate": "07/01/2024",
+      "closeDate": "01/19/2027",
+      "oppStatus": "posted"
+    },
+    {
+      "number": "PD-23-277Y",
+      "title": "Research Infrastructure in the Social and Behavioral Sciences",
+      "agencyCode": "NSF",
+      "openDate": "10/05/2023",
+      "closeDate": "",
+      "oppStatus": "posted"
+    }
+  ]
+}

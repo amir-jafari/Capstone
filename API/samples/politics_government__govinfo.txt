@@ -1,0 +1,36 @@
+# live 2026-10-12 07:16
+{
+  "matching_court_documents": 77082,
+  "latest": [
+    {
+      "title": "Lightfoot et al v. Progressive Direct Insurance Company et al",
+      "court": "United States District Court Eastern District of Louisiana",
+      "dateIssued": "2026-10-09",
+      "packageId": "USCOURTS-laed-2_26-cv-00434"
+    },
+    {
+      "title": "Kushawn Miles-El v. MI, et al",
+      "court": "United States Court of Appeals for the Sixth Circuit",
+      "dateIssued": "2026-10-09",
+      "packageId": "USCOURTS-ca6-25-01140"
+    },
+    {
+      "title": "Pankratz v. The Board of County Commissioners For Roosevelt County et al",
+      "court": "United States District Court District of New Mexico",
+      "dateIssued": "2026-10-08",
+      "packageId": "USCOURTS-nmd-2_21-cv-00655"
+    },
+    {
+      "title": "Edwards v. Bierman et al",
+      "court": "United States District Court Northern District of California",
+      "dateIssued": "2026-10-08",
+      "packageId": "USCOURTS-cand-3_26-cv-05124"
+    },
+    {
+      "title": "Duckett, Alexis et al v. The Board Of Regents Of The University Of Wisconsin System et al",
+      "court": "United States District Court Western District of Wisconsin",
+      "dateIssued": "2026-10-07",
+      "packageId": "USCOURTS-wiwd-3_25-cv-00684"
+    }
+  ]
+}

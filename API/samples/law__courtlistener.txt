@@ -1,0 +1,51 @@
+# live 2026-10-12 07:16
+{
+  "scotus_opinions_mentioning_qualified_immunity": 231,
+  "most_cited": [
+    {
+      "case": "Ashcroft v. Iqbal",
+      "date": "2009-05-18",
+      "cited_by": 160249,
+      "citation": [
+        "173 L. Ed. 2d 868"
+      ],
+      "url": "https://www.courtlistener.com/opinion/145875/ashcroft-v-iqbal/"
+    },
+    {
+      "case": "Monell v. New York City Dept. of Social Servs.",
+      "date": "1978-06-06",
+      "cited_by": 43435,
+      "citation": [
+        "56 L. Ed. 2d 611"
+      ],
+      "url": "https://www.courtlistener.com/opinion/109881/monell-v-new-york-city-dept-of-social-servs/"
+    },
+    {
+      "case": "Farmer v. Brennan",
+      "date": "1994-06-06",
+      "cited_by": 29755,
+      "citation": [
+        "128 L. Ed. 2d 811"
+      ],
+      "url": "https://www.courtlistener.com/opinion/1087956/farmer-v-brennan/"
+    },
+    {
+      "case": "Harlow v. Fitzgerald",
+      "date": "1982-06-24",
+      "cited_by": 23283,
+      "citation": [
+        "73 L. Ed. 2d 396"
+      ],
+      "url": "https://www.courtlistener.com/opinion/110763/harlow-v-fitzgerald/"
+    },
+    {
+      "case": "Graham v. Connor",
+      "date": "1989-05-15",
+      "cited_by": 17104,
+      "citation": [
+        "104 L. Ed. 2d 443"
+      ],
+      "url": "https://www.courtlistener.com/opinion/112257/graham-v-connor/"
+    }
+  ]
+}
