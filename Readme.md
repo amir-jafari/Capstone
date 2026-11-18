@@ -19,9 +19,9 @@
 | Spring 2024 | 7 | 4 | — | 2 | 1 |
 | Fall 2024 | 3 | 3 | — | — | — |
 | Spring 2025 | 8 | 4 | 4 | — | — |
-| Fall 2025 | 1 | — | 1 | — | — |
+| Fall 2025 | 2 | 1 | 1 | — | — |
 | Spring 2026 | 5 | — | 5 | — | — |
-| **Total** | **24** | **11** | **10** | **2** | **1** |
+| **Total** | **25** | **12** | **10** | **2** | **1** |
 
 ---
 
@@ -150,15 +150,15 @@
 
 <details>
 <summary><h2>Fall 2025</h2>
-<p>1 Project &nbsp;·&nbsp; 🔄 1 Under Review</p>
+<p>2 Projects &nbsp;·&nbsp; ✅ 1 Published &nbsp;·&nbsp; 🔄 1 Under Review</p>
 </summary>
 
 <br>
 
 <table>
   <tr>
-    <td align="center"><strong>1</strong><br><sub>Total Projects</sub></td>
-    <td align="center"><strong>0</strong><br><sub>✅ Published</sub></td>
+    <td align="center"><strong>2</strong><br><sub>Total Projects</sub></td>
+    <td align="center"><strong>1</strong><br><sub>✅ Published</sub></td>
     <td align="center"><strong>0</strong><br><sub>📦 Packages</sub></td>
     <td align="center"><strong>1</strong><br><sub>🔄 Under Review</sub></td>
     <td align="center"><strong>0</strong><br><sub>⏳ Pending</sub></td>
@@ -169,6 +169,9 @@
 
 **Group 2** — [Smart School Food Service Analysis: AI-Driven Demand Forecasting and Waste Reduction Using Fairfax County Public Schools Data](https://github.com/JupiK9/fall-2025-group2.git)  
 🔄 **Under Review**
+
+**Group 12** — [Benchmark of Non-Stationary Bandit Algorithms](https://github.com/Z-HemaP/fall-2025-group12)  
+✅ **Published** · [Neural Computing & Applications →](https://link.springer.com/article/10.1007/s00521-026-12583-1)
 
 </details>
 
