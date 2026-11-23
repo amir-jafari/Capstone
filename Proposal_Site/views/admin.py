@@ -6,8 +6,8 @@ import streamlit as st
 
 from core import config, data, submissions, ui
 
-ADMIN_PW = config.secret("admin", "password")
-ADMIN_NAME = config.secret("admin", "name", config.ADVISOR_NAME)
+ADMIN_PW = config.secret("admin", "password") or config._top("password") or config._top("ADMIN_PASSWORD")
+ADMIN_NAME = config.secret("admin", "name") or config._top("name") or config.ADVISOR_NAME
 
 st.markdown("## 🔐 Reviewer dashboard")
 
