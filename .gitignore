@@ -8,3 +8,4 @@ Report_Gen/diagram_template.py
 
 Proposal_Site/.streamlit/secrets.toml
 .streamlit/secrets.toml
+Proposal_Site/HANDOFF.md
