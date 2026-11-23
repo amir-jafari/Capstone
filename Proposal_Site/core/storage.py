@@ -132,7 +132,19 @@ class GitHubStorage:
 
 
 def get_storage():
-    token = config.secret("github", "token")
+    token = config.github_token()
     if token:
         return GitHubStorage(token, config.GITHUB_REPO, config.GITHUB_BRANCH)
+    if config.on_streamlit_cloud():
+        return ReadOnlyStorage(config.REPO_ROOT)
     return LocalStorage(config.REPO_ROOT)
+
+
+class ReadOnlyStorage(LocalStorage):
+    """Used on Streamlit Cloud when no GitHub token is configured: never pretend to save."""
+    mode = "read-only (no GitHub token found in secrets)"
+
+    def commit(self, files, message):
+        raise RuntimeError(
+            "The site has no GitHub token configured, so nothing can be saved. "
+            "Add a [github] section with token = \"...\" in the app's Secrets and reboot the app.")

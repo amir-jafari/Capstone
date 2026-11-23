@@ -25,6 +25,31 @@ def secret(section: str, key: str, default=None):
         return default
 
 
+def _top(key: str):
+    try:
+        return st.secrets.get(key)
+    except Exception:
+        return None
+
+
+def github_token() -> str | None:
+    """Accept [github] token = ..., or top-level GITHUB_TOKEN / github_token."""
+    tok = secret("github", "token") or _top("GITHUB_TOKEN") or _top("github_token")
+    return str(tok).strip() if tok else None
+
+
+def secret_sections() -> list[str]:
+    """Names (never values) of the configured secrets, for diagnostics."""
+    try:
+        return [f"[{k}] " + ", ".join(v.keys()) if hasattr(v, "keys") else k for k, v in st.secrets.items()]
+    except Exception:
+        return []
+
+
+def on_streamlit_cloud() -> bool:
+    return REPO_ROOT.as_posix().startswith("/mount/src")
+
+
 GITHUB_REPO = secret("github", "repo", "amir-jafari/Capstone")
 GITHUB_BRANCH = secret("github", "branch", "main")
 ADVISOR_NAME = secret("site", "advisor_name", "Amir Jafari")

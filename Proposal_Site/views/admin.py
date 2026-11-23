@@ -12,7 +12,14 @@ ADMIN_NAME = config.secret("admin", "name", config.ADVISOR_NAME)
 st.markdown("## 🔐 Reviewer dashboard")
 
 if not ADMIN_PW:
-    st.error("No admin password configured. Add `[admin] password = \"...\"` to your Streamlit secrets.")
+    st.error("No admin password configured. Add `[admin] password = \"...\"` to your Streamlit secrets, "
+             "click Save, then reboot the app.")
+    found = config.secret_sections()
+    st.info("Secrets the app can see (names only): " + (", ".join(f"`{s}`" for s in found) if found else
+            "**none** — the secrets are empty or not valid TOML (check for curly “smart quotes” "
+            "and the `[admin]` / `[github]` header lines)."))
+    st.code('[admin]\npassword = "your-strong-password"\nname = "Amir Jafari"\n\n'
+            '[github]\ntoken = "github_pat_..."\nrepo = "amir-jafari/Capstone"\nbranch = "main"', language="toml")
     st.stop()
 
 if not st.session_state.get("is_admin"):
