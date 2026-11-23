@@ -5,9 +5,9 @@ import json
 
 import streamlit as st
 
-from core import config
+from core import config, pretty
 from core.catalog import Proposal
-from core.render import clean_field, esc, standalone_html
+from core.render import esc, standalone_html
 
 NAVY, GOLD = "#033C5A", "#AA9868"
 
@@ -87,61 +87,29 @@ def card(p: Proposal, key_prefix: str = "c"):
                   args=(p.slug,), width="stretch")
 
 
-SECTIONS = [
-    ("Objective", "Objective"), ("Dataset", "Dataset"), ("Rationale", "Rationale"),
-    ("Approach", "Approach"), ("Timeline", "Timeline"),
-    ("Expected Number of Students", "Expected Number Students"),
-    ("Research Contributions", "Research Contributions"),
-    ("Possible Issues", "Possible Issues"), ("Additional Resources", "Additional Resources"),
-]
-
-
 def proposal_view(p: Proposal, store, show_downloads: bool = True, key: str = "v"):
-    d = p.data
-    chips = status_chip(p.status) + (chip("Community", True) if p.kind == "external" else "")
-    chips += "".join(chip(t) for t in p.tags)
-    st.markdown(f'<div class="card-meta">{esc(p.term)} · Proposal #{p.number} · {esc(p.code)}</div>'
-                f'<div class="p-title">{esc(p.title)}</div><div>{chips}</div>', unsafe_allow_html=True)
-
-    main, side = st.columns([3, 1.15], gap="large")
     png = store.read(p.png)
-    with main:
-        n = 0
-        for label, k in SECTIONS:
-            text = clean_field(d.get(k, ""))
-            if not text:
-                continue
-            n += 1
-            st.markdown(f"### {n}. {label}")
-            st.markdown(text)
-            if k == "Objective" and png:
-                st.image(png, caption="Figure 1", width="stretch")
+    st.html(pretty.CSS + pretty.header_html(p))
 
-    with side:
-        rows = [("Term", p.term), ("Proposed by", d.get("Proposed by")),
-                ("Email", d.get("Proposed by email")), ("Advisor", d.get("instructor")),
-                ("Students", str(d.get("Expected Number Students", "")).strip()),
-                ("Collaborator", d.get("collaborator")), ("Funding", d.get("funding_opportunity")),
-                ("GitHub", d.get("github_repo"))]
-        dl = "".join(f"<dt>{esc(a)}</dt><dd>{esc(textwrap_short(b))}</dd>" for a, b in rows if str(b or "").strip())
-        st.markdown(f'<div class="glance"><b>At a glance</b><dl>{dl}</dl></div>', unsafe_allow_html=True)
+    if show_downloads:
+        n_ = p.number
+        md = store.read(p.file(f"proposal_{n_}.md"))
+        htm = store.read(p.file(f"proposal_{n_}.html"))
+        cols = st.columns(4)
+        if htm:
+            page = standalone_html(htm.decode("utf-8", "replace"), png, p.png.rsplit("/", 1)[1])
+            cols[0].download_button("⬇ Download HTML", page, f"{p.code}.html", "text/html",
+                                    width="stretch", key=f"{key}_h_{p.slug}")
+        if md:
+            cols[1].download_button("⬇ Download Markdown", md, f"proposal_{n_}.md", "text/markdown",
+                                    width="stretch", key=f"{key}_m_{p.slug}")
+        cols[2].download_button("⬇ input.json", json.dumps(p.data, indent=2), "input.json",
+                                "application/json", width="stretch", key=f"{key}_j_{p.slug}")
+        if p.is_public:
+            cols[3].link_button("View on GitHub ↗", config.github_folder_url(p.folder), width="stretch")
         st.write("")
-        if show_downloads:
-            n_ = p.number
-            md = store.read(p.file(f"proposal_{n_}.md"))
-            htm = store.read(p.file(f"proposal_{n_}.html"))
-            if htm:
-                page = standalone_html(htm.decode("utf-8", "replace"), png, p.png.rsplit("/", 1)[1])
-                st.download_button("⬇ Proposal (HTML)", page, f"{p.code}.html", "text/html",
-                                   width="stretch", key=f"{key}_h_{p.slug}")
-            if md:
-                st.download_button("⬇ Proposal (Markdown)", md, f"proposal_{n_}.md", "text/markdown",
-                                   width="stretch", key=f"{key}_m_{p.slug}")
-            st.download_button("⬇ input.json", json.dumps(d, indent=2), "input.json", "application/json",
-                               width="stretch", key=f"{key}_j_{p.slug}")
-            if p.is_public:
-                st.link_button("View folder on GitHub", config.github_folder_url(p.folder),
-                               width="stretch")
+
+    st.html(pretty.body_html(p, png))
 
 
 def textwrap_short(s, n: int = 160) -> str:

@@ -21,4 +21,4 @@ nav.run()
 st.markdown("---")
 st.caption(f"The George Washington University · Data Science Program · Advisor: {config.ADVISOR_NAME} "
            f"([{config.ADVISOR_EMAIL}](mailto:{config.ADVISOR_EMAIL})) · "
-           f"[Source on GitHub](https://github.com/{config.GITHUB_REPO})")
+           f"[Website]({config.SITE_URL}) · [Source on GitHub](https://github.com/{config.GITHUB_REPO})")

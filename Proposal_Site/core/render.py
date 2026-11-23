@@ -12,7 +12,7 @@ import textwrap
 from core import config
 
 LIST_RE = re.compile(r"^(\d+[.)]|[-*•])\s+")
-WEEK_RE = re.compile(r"^((?:Week|Weeks|Phase|Month)\s*[\d\-–\s]+):\s*(.*)$", re.I)
+WEEK_RE = re.compile(r"^((?:Week|Phase|Month|Sprint)s?\s*[\d\-–—&,\s]*\d)\s*[:\-–—]\s*(.*)$", re.I)
 
 
 def _escape(s: str) -> str:
@@ -21,12 +21,14 @@ def _escape(s: str) -> str:
 
 
 def _is_heading(line: str) -> bool:
-    letters = re.sub(r"[^A-Za-z]", "", line)
+    if re.fullmatch(r"\[[^\]]{3,90}\]:?", line):      # "[Understanding the RL Framework]"
+        return True
+    letters = re.sub(r"[^A-Za-z]", "", line.split("(")[0])
     return line.endswith(":") and len(line) < 110 and (
         (letters.isupper() and len(letters) > 3) or len(line.split()) <= 6)
 
 
-def clean_field(text: str) -> str:
+def clean_field(text: str, heading: str = "bold") -> str:
     """Turn the free-form, indented triple-quoted JSON text into tidy markdown."""
     if not text:
         return ""
@@ -38,7 +40,10 @@ def clean_field(text: str) -> str:
             continue
         stripped = raw.strip()
         indented = raw[:1].isspace()
-        if indented and blocks and blocks[-1][0] in ("list", "line") and not LIST_RE.match(stripped):
+        wrapped = (blocks and blocks[-1][0] == "line" and len(blocks[-1][1]) >= 60
+                   and not blocks[-1][1].endswith(":") and not WEEK_RE.match(stripped)
+                   and not LIST_RE.match(stripped) and not _is_heading(stripped))
+        if (indented or wrapped) and blocks and blocks[-1][0] in ("list", "line") and not LIST_RE.match(stripped):
             kind, prev = blocks[-1]
             blocks[-1] = (kind, prev + " " + stripped)          # continuation line
         elif LIST_RE.match(stripped):
@@ -55,7 +60,8 @@ def clean_field(text: str) -> str:
         if kind == "blank":
             out.append("")
         elif kind == "head":
-            out += ["", f"**{s}**", ""]
+            s = s.rstrip(":").strip("[]")
+            out += ["", f"#### {s}" if heading == "h4" else f"**{s}**", ""]
         elif kind == "list":
             if prev not in ("list", "blank"):
                 out.append("")

@@ -54,6 +54,7 @@ GITHUB_REPO = secret("github", "repo", "amir-jafari/Capstone")
 GITHUB_BRANCH = secret("github", "branch", "main")
 ADVISOR_NAME = secret("site", "advisor_name", "Amir Jafari")
 ADVISOR_EMAIL = secret("site", "advisor_email", "ajafari@gwu.edu")
+SITE_URL = secret("site", "url", "https://capstone-course.streamlit.app/")
 SITE_TITLE = secret("site", "title", "GWU Data Science Capstone Proposals")
 
 
