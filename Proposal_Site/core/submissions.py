@@ -109,3 +109,8 @@ def promote(store, p: Proposal, admin: str) -> str:
 
 def delete(store, p: Proposal):
     store.commit({f: None for f in store.list_files(p.folder)}, f"Delete external proposal {p.code}")
+
+
+def delete_many(store, items: list[Proposal]):
+    files = {f: None for p in items for f in store.list_files(p.folder)}
+    store.commit(files, f"Delete {len(items)} external proposal(s): " + ", ".join(p.code for p in items))

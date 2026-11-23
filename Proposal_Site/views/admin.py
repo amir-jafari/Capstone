@@ -57,10 +57,39 @@ DECISIONS = {"approved": "✅ Approve & publish", "changes_requested": "✏️ R
              "rejected": "⛔ Reject", "pending": "⏳ Keep pending"}
 
 
+def _delete(p):
+    try:
+        submissions.delete(store, p)
+        st.session_state["admin_flash"] = f"Deleted {p.code}."
+        st.rerun()
+    except Exception as e:
+        st.error(f"Delete failed: {e}")
+
+
 def review_panel(p, tab: str):
     head = (f"{ui.STATUS_STYLE.get(p.status, (p.status,))[0]}  ·  {p.code}  ·  "
             f"{p.title[:80]}{'…' if len(p.title) > 80 else ''}  ·  {p.proposer}")
     with st.expander(head, expanded=False):
+        # --- action bar, always visible at the top of the panel ---
+        a1, a2, a3 = st.columns([2, 1.3, 1.1])
+        a1.markdown(f"Status: {ui.status_chip(p.status)}", unsafe_allow_html=True)
+        promoted = (p.review or {}).get("promoted_to")
+        if promoted:
+            a2.caption(f"Promoted to `{promoted}`")
+        elif p.status == "approved":
+            if a2.button("⭐ Promote to official", key=f"pr_{tab}_{p.slug}", width="stretch",
+                         help=f"Copies it into {config.OFFICIAL}/{p.year}/{p.semester}/<next number>/"):
+                try:
+                    folder = submissions.promote(store, p, ADMIN_NAME)
+                    st.session_state["admin_flash"] = f"Promoted {p.code} → {folder}"
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Promote failed: {e}")
+        with a3.popover("🗑 Delete", width="stretch"):
+            st.write(f"Permanently delete **{p.code}** and its folder from GitHub?")
+            if st.button("Yes, delete", key=f"del_{tab}_{p.slug}", type="primary"):
+                _delete(p)
+
         view, act = st.tabs(["Proposal", "Review & comments"])
         with view:
             ui.proposal_view(p, store, key=f"adm_{tab}_{p.slug}")
@@ -84,29 +113,6 @@ def review_panel(p, tab: str):
                         except Exception as e:
                             st.error(f"Save failed: {e}")
 
-            c1, c2 = st.columns(2)
-            promoted = (p.review or {}).get("promoted_to")
-            if promoted:
-                c1.info(f"Promoted to `{promoted}`")
-            elif p.status == "approved":
-                if c1.button("⭐ Promote to official Proposals", key=f"pr_{tab}_{p.slug}", width="stretch",
-                             help=f"Copies it into {config.OFFICIAL}/{p.year}/{p.semester}/<next number>/"):
-                    try:
-                        folder = submissions.promote(store, p, ADMIN_NAME)
-                        st.session_state["admin_flash"] = f"Promoted {p.code} → {folder}"
-                        st.rerun()
-                    except Exception as e:
-                        st.error(f"Promote failed: {e}")
-            with c2.popover("🗑 Delete submission", width="stretch"):
-                st.write("Permanently remove this submission folder (e.g. spam).")
-                if st.button("Yes, delete", key=f"del_{tab}_{p.slug}", type="primary"):
-                    try:
-                        submissions.delete(store, p)
-                        st.session_state["admin_flash"] = f"Deleted {p.code}."
-                        st.rerun()
-                    except Exception as e:
-                        st.error(f"Delete failed: {e}")
-
 
 queue = [p for p in ext if p.status == "pending"]
 t1, t2, t3 = st.tabs([f"Review queue ({len(queue)})", f"All community submissions ({len(ext)})", "Help"])
@@ -118,6 +124,18 @@ with t1:
 with t2:
     flt = st.segmented_control("Status", ["All"] + list(DECISIONS), default="All",
                                format_func=lambda s: "All" if s == "All" else ui.STATUS_STYLE[s][0])
+    rejected = [p for p in ext if p.status == "rejected"]
+    if rejected:
+        with st.popover(f"🗑 Delete all rejected ({len(rejected)})"):
+            st.write("Permanently delete these submissions from GitHub (one commit):")
+            st.markdown("\n".join(f"- {p.code} · {ui.esc(p.title[:70])}" for p in rejected))
+            if st.button("Yes, delete all rejected", type="primary", key="del_all_rejected"):
+                try:
+                    submissions.delete_many(store, rejected)
+                    st.session_state["admin_flash"] = f"Deleted {len(rejected)} rejected submission(s)."
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Delete failed: {e}")
     for p in ext:
         if flt in (None, "All") or p.status == flt:
             review_panel(p, "all")
