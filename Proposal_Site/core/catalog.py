@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import re
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 from core import config
 from core.render import plain_summary
@@ -11,21 +11,6 @@ from core.render import plain_summary
 PATH_RE = re.compile(
     rf"^{re.escape(config.ARXIV)}/(Proposals|External)/(\d{{4}})/({'|'.join(config.SEMESTERS)})/(\d+)/input\.json$"
 )
-
-# Topic tags: (label, keyword regexes). Matched on the title + start of the objective.
-TOPICS = [
-    ("LLMs & NLP", r"\bllms?\b|language model|\bnlp\b|\bnlg\b|\brag\b|langchain|langgraph|chatbot|genai|misinformation|sentiment|text\b"),
-    ("Computer Vision", r"\bimage|vision|video|\bcnn|diffusion|satellite|land cover|segmentation|deprived areas"),
-    ("Reinforcement Learning", r"reinforcement|bandit|regret|\bmodrl\b|\brl\b"),
-    ("Time Series", r"time series|forecast|google trends|inflation|tseda"),
-    ("Graph ML", r"graph neural|\bgnn|\bpyg\b"),
-    ("Healthcare", r"health|medical|medicine|\beeg\b|autism|seizure|clinical|meal"),
-    ("Finance & Economics", r"financ|market predict|inflation|stock"),
-    ("Interpretability", r"explainab|interpretab|\bxai\b|shap\b|sparse autoencoder"),
-    ("Neural Networks", r"self.organizing|\bsom\b|nnsom|neural network design"),
-    ("Software & Tools", r"\bpackage\b|\blibrary\b|streamlit app|open source|toolbox|platform"),
-    ("Data Engineering", r"web mining|data acquisition|document processing|scrap"),
-]
 
 
 @dataclass
@@ -37,7 +22,6 @@ class Proposal:
     folder: str          # repo-relative folder path
     data: dict
     review: dict | None = None
-    tags: list[str] = field(default_factory=list)
 
     @property
     def slug(self) -> str:
@@ -85,11 +69,6 @@ class Proposal:
                         ("project_name", "Objective", "Dataset", "Approach", "Proposed by")).lower()
 
 
-def _tags(data: dict) -> list[str]:
-    text = (data.get("project_name", "") + " " + data.get("Objective", "")[:600]).lower()
-    return [label for label, rx in TOPICS if re.search(rx, text)][:4]
-
-
 def _load_json(store, path: str) -> dict | None:
     raw = store.read(path)
     if raw is None:
@@ -117,7 +96,7 @@ def load_all(store) -> list[Proposal]:
         folder = path.rsplit("/", 1)[0]
         review = _load_json(store, f"{folder}/review.json") if kind == "external" else None
         out.append(Proposal(kind, int(m.group(2)), m.group(3), int(m.group(4)), folder,
-                            data, review, _tags(data)))
+                            data, review))
     out.sort(key=lambda p: (-p.year, -config.SEMESTER_ORDER[p.semester], p.kind != "official", p.number))
     return out
 

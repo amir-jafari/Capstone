@@ -1,5 +1,5 @@
-"""Landing page + searchable gallery + single proposal view (?p=<slug>)."""
-from collections import Counter, OrderedDict
+"""Landing page: browse proposals by year and semester, and the single proposal view (?p=<slug>)."""
+from collections import OrderedDict
 
 import streamlit as st
 
@@ -22,22 +22,15 @@ def _hero(items):
         f"""<div class="hero"><div class="eyebrow">The George Washington University · Data Science Program</div>
         <h1>{ui.esc(config.SITE_TITLE)}</h1>
         <p>Explore every capstone project proposed for the program — objectives, datasets, approaches and
-        timelines — or propose a project of your own for a student team to take on.</p></div>""",
+        timelines — by year and semester.</p></div>""",
         unsafe_allow_html=True)
     terms = {(p.year, p.semester) for p in items}
-    topics = Counter(t for p in items for t in p.tags)
     stats = [(len(items), "Proposals"), (len(terms), "Semesters"),
-             (sum(p.kind == "external" for p in items), "Community projects"), (len(topics), "Topic areas")]
-    cols = st.columns(4)
-    for c, (n, l) in zip(cols, stats):
-        c.markdown(f'<div class="stat"><div class="n">{n}</div><div class="l">{l}</div></div>',
+             (len({p.year for p in items}), "Years")]
+    for c, (n, label) in zip(st.columns(3), stats):
+        c.markdown(f'<div class="stat"><div class="n">{n}</div><div class="l">{label}</div></div>',
                    unsafe_allow_html=True)
     st.write("")
-    a, b, _ = st.columns([1.2, 1.2, 3])
-    if a.button("💡 Propose a project", type="primary", width="stretch"):
-        st.switch_page("views/submit.py")
-    if b.button("🔎 Check a submission", width="stretch"):
-        st.switch_page("views/status.py")
 
 
 def page():
@@ -48,30 +41,16 @@ def page():
 
     _hero(items)
 
-    st.markdown("#### Browse proposals")
-    f1, f2, f3, f4 = st.columns([2.4, 1.2, 1.1, 1.1])
-    q = f1.text_input("Search", placeholder="Search titles, datasets, methods, people…",
-                      label_visibility="collapsed")
     years = sorted({p.year for p in items}, reverse=True)
-    ysel = f2.multiselect("Year", years, placeholder="All years", label_visibility="collapsed")
-    ssel = f3.selectbox("Semester", ["All semesters", "Spring", "Fall"], label_visibility="collapsed")
-    src = f4.selectbox("Source", ["All sources", "Program", "Community"], label_visibility="collapsed")
-    topic_counts = Counter(t for p in items for t in p.tags)
-    topics = st.pills("Topics", [t for t, _ in topic_counts.most_common()], selection_mode="multi",
-                      label_visibility="collapsed")
-
-    words = q.lower().split()
+    c1, c2, _ = st.columns([1, 1, 2])
+    year = c1.selectbox("Year", ["All years"] + years)
+    sem = c2.selectbox("Semester", ["All semesters"] + [s for s in config.SEMESTERS
+                                                         if any(p.semester == s for p in items)])
     shown = [p for p in items
-             if all(w in p.search_blob() for w in words)
-             and (not ysel or p.year in ysel)
-             and (ssel == "All semesters" or p.semester == ssel)
-             and (src == "All sources" or (src == "Community") == (p.kind == "external"))
-             and (not topics or set(topics) & set(p.tags))]
-
+             if (year == "All years" or p.year == year) and (sem == "All semesters" or p.semester == sem)]
     if not shown:
-        st.info("No proposals match these filters.")
+        st.info("No proposals for this selection.")
         return
-    st.caption(f"Showing {len(shown)} of {len(items)} proposals")
 
     groups = OrderedDict()
     for p in shown:
@@ -80,8 +59,7 @@ def page():
         st.markdown(f'<div class="term-head"><h3>{term}</h3><span>{len(ps)} proposal'
                     f'{"s" if len(ps) != 1 else ""}</span></div>', unsafe_allow_html=True)
         for i in range(0, len(ps), 3):
-            cols = st.columns(3)
-            for col, p in zip(cols, ps[i:i + 3]):
+            for col, p in zip(st.columns(3), ps[i:i + 3]):
                 with col:
                     ui.card(p)
 

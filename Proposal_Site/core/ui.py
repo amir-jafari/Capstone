@@ -81,7 +81,7 @@ def card(p: Proposal, key_prefix: str = "c"):
             f'<div class="card-meta">{esc(p.term)} · #{p.number}</div>'
             f'<div class="card-title">{esc(title)}</div>'
             f'<div class="card-sum">{esc(p.summary)}</div>'
-            f'<div>{badge}{"".join(chip(t) for t in p.tags[:3])}</div>',
+            f'<div>{badge}</div>',
             unsafe_allow_html=True)
         st.button("View proposal →", key=f"{key_prefix}_{p.slug}", on_click=open_proposal,
                   args=(p.slug,), width="stretch")

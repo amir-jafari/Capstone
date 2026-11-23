@@ -166,7 +166,6 @@ def header_html(p) -> str:
     tags = f'<span class="pp-tag st" style="background:{st_bg}">{esc(st_label)}</span>'
     if p.kind == "external":
         tags += '<span class="pp-tag">Community</span>'
-    tags += "".join(f'<span class="pp-tag">{esc(t)}</span>' for t in p.tags)
     people = []
     if d.get("Proposed by"):
         email = (d.get("Proposed by email") or "").strip()

@@ -4,7 +4,7 @@ A Streamlit site for the capstone proposals in `Report_Gen/Arxiv/`.
 
 | Page | Who | What |
 |---|---|---|
-| **Proposals** (home) | everyone | Landing page, stats, search, year/semester/source filters, topic chips, cards grouped by semester, full proposal view with figure and HTML/Markdown/JSON downloads |
+| **Proposals** (home) | everyone | Landing page, browse by year and semester, cards grouped by semester, full proposal view with figure and HTML/Markdown/JSON downloads |
 | **Propose a project** | everyone | Form with the same fields as `Report_Gen/json_gen.py`; saves to `Report_Gen/Arxiv/External/` |
 | **Check submission** | everyone | Pick semester + number → status, public reviewer comments; submitter edits & resubmits after confirming their email |
 | **Reviewer** | you (password) | Review queue, approve / request changes / reject, comments (public or internal), promote to official, delete spam |
@@ -82,4 +82,4 @@ Cloud also redeploys when the repo changes, so the app may restart briefly after
 - Submitter names/emails are stored in the (public) repo, same as existing proposals — the form says so.
 - Internal (non-public) reviewer comments are hidden on the site but still live in `review.json` in the repo.
 - Basic spam protection: field validation, hidden honeypot field, 5 MB image limit. Use **Delete** for spam.
-- Topic chips are keyword-based (`core/catalog.py → TOPICS`); edit the regexes to tune them.
+- New proposals made with Report_Gen (json_gen.py → script.py) appear on the site automatically once pushed — no registration step.
