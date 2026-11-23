@@ -11,15 +11,13 @@ Your proposal is reviewed by the program; once approved it is published on this 
             unsafe_allow_html=True)
 
 if done := st.session_state.get("submitted"):
-    code, access = done
-    st.success(f"Thank you! Your proposal was submitted as **{code}**.")
-    st.markdown("Save your **access code** — you need it with your submission ID to check the "
-                "review status, read the reviewer's comments, and resubmit:")
-    st.code(f"Submission ID: {code}\nAccess code:   {access}", language=None)
-    st.warning("The access code is shown only once.")
+    y, sem, n = done
+    st.success(f"Thank you! Your proposal was submitted as **{sem} {y} · Proposal #{n}**.")
+    st.markdown(f"To check its review status and the reviewer's comments, open **Check submission** "
+                f"and choose **{sem} {y}** → **#{n}**. No login is needed.")
     c1, c2 = st.columns(2)
     if c1.button("Check status", width="stretch"):
-        st.switch_page("views/status.py")
+        st.switch_page("views/status.py", query_params={"y": str(y), "s": sem, "n": str(n)})
     if c2.button("Submit another proposal", width="stretch"):
         del st.session_state["submitted"]
         st.rerun()
@@ -39,8 +37,7 @@ if fields:
     try:
         with st.spinner("Saving your proposal…"):
             png = submissions.to_png(fig)
-            code, access, _ = submissions.create(data.store(), fields, png)
-        st.session_state["submitted"] = (code, access)
+            st.session_state["submitted"] = submissions.create(data.store(), fields, png)
         st.rerun()
     except Exception as e:
         st.error(f"Sorry, the proposal could not be saved: {e}")

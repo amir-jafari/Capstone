@@ -144,7 +144,7 @@ with t3:
 - Submissions are saved to `{config.EXTERNAL}/<Year>/<Semester>/<N>/` with the same files as your
   Report_Gen proposals (`input.json`, `proposal_N.md`, `proposal_N.html`, figure) plus `review.json`.
 - **Approve** publishes the proposal on the public site (Community badge).
-- **Request changes** lets the submitter edit and resubmit using their access code.
+- **Request changes** lets the submitter edit and resubmit (they confirm their email on the Check submission page).
 - **Promote** copies an approved proposal into `{config.OFFICIAL}/` with the next official number.
 - Your own proposals keep coming from the Report_Gen pipeline as before — the site picks up every
   folder under `{config.OFFICIAL}/` automatically.

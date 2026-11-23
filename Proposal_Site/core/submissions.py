@@ -1,11 +1,8 @@
 """Create / update / review / promote external proposals. All writes go through store.commit()."""
 from __future__ import annotations
 
-import hashlib
-import hmac
 import io
 import json
-import secrets
 from datetime import datetime, timezone
 
 from core import config
@@ -15,14 +12,6 @@ from core.render import build_md_html
 
 def now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
-
-
-def _hash(code: str) -> str:
-    return hashlib.sha256(code.strip().encode()).hexdigest()
-
-
-def check_code(review: dict | None, code: str) -> bool:
-    return bool(review) and hmac.compare_digest(review.get("access_code_sha256", ""), _hash(code))
 
 
 def to_png(upload_bytes: bytes | None) -> bytes | None:
@@ -49,22 +38,21 @@ def _proposal_files(folder: str, data: dict, png: bytes | None) -> dict[str, byt
     return files
 
 
-def create(store, fields: dict, png: bytes | None) -> tuple[str, str, str]:
-    """Save a new external submission. Returns (code, access_code, folder)."""
+def create(store, fields: dict, png: bytes | None) -> tuple[int, str, int]:
+    """Save a new external submission. Returns (year, semester, number)."""
     y, s = int(fields["Year"]), fields["Semester"]
     n = next_number(store, config.EXTERNAL, y, s)
     folder = f"{config.EXTERNAL}/{y}/{s}/{n}"
     data = {"Version": str(n), "Year": str(y), "Semester": s, **{k: v for k, v in fields.items()
                                                                    if k not in ("Year", "Semester")}}
-    access = secrets.token_urlsafe(8)
     review = {"status": "pending", "submitted_at": now(), "updated_at": now(),
-              "access_code_sha256": _hash(access), "promoted_to": None,
+              "promoted_to": None,
               "history": [{"at": now(), "by": data.get("Proposed by", "submitter"),
                            "action": "submitted", "comment": "", "public": True}]}
     files = _proposal_files(folder, data, png)
     files[f"{folder}/review.json"] = json.dumps(review, indent=2).encode()
     store.commit(files, f"External proposal submitted: {y} {s} #{n} - {data['project_name'][:60]}")
-    return f"E-{y}-{s}-{n}", access, folder
+    return y, s, n
 
 
 def resubmit(store, p: Proposal, fields: dict, png: bytes | None, note: str):
