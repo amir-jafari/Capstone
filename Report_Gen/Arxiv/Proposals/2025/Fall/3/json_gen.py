@@ -393,7 +393,7 @@ data_to_save = \
 
         # -----------------------------------------------------------------------------------------------------------------------
         "Proposed by": "Dr. Amir Jafari and Dr. Gabriela Rosenblau in collaboration with Department of Psychological & Brain Sciences",
-        "Proposed by email": "ajafari@gwu.edu, grosenblau@email.gwu.edu>",
+        "Proposed by email": "ajafari@gwu.edu, grosenblau@email.gwu.edu",
         "instructor": "Amir Jafari",
         "instructor_email": "ajafari@gwu.edu",
         "collaborator": "Department of Psychological & Brain Sciences",

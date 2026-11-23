@@ -1,7 +1,7 @@
 {
   "Version": "1",
   "Year": "2024",
-  "Semester": "Fall",
+  "Semester": "Spring",
   "project_name": "Neural Network Design Streamlit App ",
   "Objective": " \n            The goal of this project is to convert all the Neural Network Design Demos from Pyqt to streamlit App. \n            Currently all the demos are in pyqt environment and can be installed by pip (https://pypi.org/project/nndesigndemos/).\n            In the project, you job is is converting All the current demos which is written in python and uses pyqt widgets to \n            Streamlit webapp. And then create a container that can be deployed in the web domain. The final product is using the \n            demos by providing a user a link that opens up a webpage and all the demos will be accessed through internet.\n            ",
   "Dataset": "\n            No Dataset is needed for this project .  \n            ",

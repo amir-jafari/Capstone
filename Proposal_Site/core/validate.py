@@ -47,7 +47,7 @@ def check_data(data: dict) -> tuple[list[str], list[str]]:
     if g("Semester") and g("Semester") not in config.SEMESTERS:
         errors.append(f'"Semester" must be one of {config.SEMESTERS} (got "{g("Semester")}")')
     for k in ("Proposed by email", "instructor_email"):
-        if g(k) and not EMAIL_RE.match(g(k)):
+        if g(k) and not all(EMAIL_RE.match(e.strip()) for e in g(k).split(",")):   # comma-separated allowed
             errors.append(f'"{k}" is not a valid email ("{g(k)}")')
     if g("Timeline") and sum(bool(WEEK_RE.match(l.strip().replace("**", "")))
                              for l in g("Timeline").splitlines()) < 2:

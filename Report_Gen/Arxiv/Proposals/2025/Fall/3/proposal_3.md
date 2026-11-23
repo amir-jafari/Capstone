@@ -2,7 +2,7 @@
 # Capstone Proposal
 ## Predictive Modeling and Explainable AI for Autism Spectrum Disorder Diagnosis: Advanced Machine Learning Analysis of SFARI-Supported Datasets
 ### Proposed by: Dr. Amir Jafari and Dr. Gabriela Rosenblau in collaboration with Department of Psychological & Brain Sciences
-#### Email: ajafari@gwu.edu, grosenblau@email.gwu.edu>
+#### Email: ajafari@gwu.edu, grosenblau@email.gwu.edu
 #### Advisor: Amir Jafari
 #### The George Washington University, Washington DC  
 #### Data Science Program

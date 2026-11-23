@@ -1,7 +1,7 @@
 {
   "Version": "2",
   "Year": "2024",
-  "Semester": "Fall",
+  "Semester": "Spring",
   "project_name": "Self Organizing Map (SOM) Package ",
   "Objective": " \n            The goal of this project is to build a python Self Organizing Map (SOM) package can be used for Neural Network \n            community. We have the initial python training code which can be used and organized. The main goal is to create\n            a user friendly python package which has all the necessary functionality like train and predict. The SOM package\n            has a variety of visualization which we need to implement. We have the basic codes  however we want them to be\n            used in the package. For example we have 4 different source of data like NLP, Computer Vision, Tabular and Timeseries.\n            We have different way to visualize them (Basic figures like SOM grid and the distance will stay same accross all dataset)\n            , however for specific data we will develop different figures. We need to use the basic built data from \n            different source like Sklearn, torch ,and etc. Then we will train the SOM and use the visualization to cluster the data.\n            After the package is built we need to create multiple example for each dataset and compare them with Kmeans and other\n            classical clustering algorithm.  \n            ",
   "Dataset": "\n            Built is dataset can be used for NLP, Computer Vision, Tabular and Timeseries datasets.  \n            ",
