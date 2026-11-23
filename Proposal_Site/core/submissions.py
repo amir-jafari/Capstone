@@ -5,7 +5,7 @@ import io
 import json
 from datetime import datetime, timezone
 
-from core import config
+from core import config, fmt, validate
 from core.catalog import Proposal, next_number
 from core.render import build_md_html
 
@@ -26,10 +26,17 @@ def to_png(upload_bytes: bytes | None) -> bytes | None:
 
 
 def _proposal_files(folder: str, data: dict, png: bytes | None) -> dict[str, bytes]:
+    """Same files, key order and text layout as a Report_Gen proposal folder."""
+    data = fmt.canonical(data)
+    errors, _ = validate.check_data(data)
+    if errors:   # never write a proposal that breaks the standard format
+        raise ValueError("The proposal does not follow the standard format: " + "; ".join(errors))
     md, html = build_md_html(data)
     v, y, s = data["Version"], data["Year"], data["Semester"]
+    base = "Proposals" if folder.startswith(config.OFFICIAL) else "External"
     files = {
-        f"{folder}/input.json": json.dumps(data, indent=2, ensure_ascii=False).encode("utf-8"),
+        f"{folder}/input.json": fmt.input_json(data),
+        f"{folder}/json_gen.py": fmt.json_gen_py(data, base),
         f"{folder}/proposal_{v}.md": md,
         f"{folder}/proposal_{v}.html": html,
     }

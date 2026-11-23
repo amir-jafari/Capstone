@@ -30,6 +30,28 @@ and the review history.
 Nothing in `Report_Gen/` changed — keep making proposals exactly as before; the site
 picks up every folder automatically.
 
+## One standard format
+
+Every proposal folder — yours or a website submission — has the same files and the same
+`input.json` layout as `Report_Gen/json_gen.py` (same keys, same order, text stored like the
+`"""..."""` blocks). Website submissions also get a `json_gen.py` copy, exactly like yours.
+
+`core/validate.py` defines the standard; the website refuses to save anything with errors.
+Check your own proposals after the usual Report_Gen steps:
+
+```bash
+cd Report_Gen
+python json_gen.py            # fill the fields, writes Arxiv/Proposals/<Year>/<Semester>/<N>/input.json
+python script.py              # writes proposal_N.md / proposal_N.html
+cd ..
+python Proposal_Site/check_proposals.py 2027 Spring 1     # check that one proposal
+python Proposal_Site/check_proposals.py                   # check all (add --external for submissions)
+```
+
+`x` lines are errors (missing/empty required fields, bad email, year/semester/version not matching
+the folder, missing md/html). `!` lines are warnings (no figure, no `Week N:` timeline, optional
+fields missing).
+
 ## Run locally
 
 ```bash

@@ -8,6 +8,7 @@ from datetime import date
 import streamlit as st
 
 from core import config
+from core.examples import EXAMPLE
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 MAX_FIG = 5 * 1024 * 1024
@@ -44,12 +45,15 @@ def proposal_form(key: str, prefill: dict | None = None, lock_term: bool = False
     with st.form(key, border=True):
         st.markdown("##### 1 · About you")
         c1, c2 = st.columns(2)
-        name = c1.text_input("Your name *", pre.get("Proposed by", ""))
-        email = c2.text_input("Your email *", pre.get("Proposed by email", ""))
+        name = c1.text_input("Your name *", pre.get("Proposed by", ""), placeholder=EXAMPLE["Proposed by"])
+        email = c2.text_input("Your email *", pre.get("Proposed by email", ""),
+                              placeholder=EXAMPLE["Proposed by email"])
         c3, c4 = st.columns(2)
         collab = c3.text_input("Organization / collaborator", pre.get("collaborator", ""),
+                               placeholder=EXAMPLE["collaborator"],
                                help="Company, lab, agency, or department sponsoring the project.")
         funding = c4.text_input("Funding opportunity", pre.get("funding_opportunity", ""),
+                                placeholder=EXAMPLE["funding_opportunity"],
                                 help="Optional: any funding, internship, or compute support attached.")
 
         st.markdown("##### 2 · Project")
@@ -59,22 +63,26 @@ def proposal_form(key: str, prefill: dict | None = None, lock_term: bool = False
             term = (int(pre["Year"]), pre["Semester"])
         else:
             term = st.selectbox("Target semester *", opts, format_func=lambda x: f"{x[1]} {x[0]}")
-        title = st.text_input("Project title *", pre.get("project_name", ""), max_chars=250)
+        title = st.text_input("Project title *", pre.get("project_name", ""), max_chars=250,
+                              placeholder=EXAMPLE["project_name"])
         c5, c6 = st.columns(2)
         students = c5.selectbox("Expected number of students *", ["1", "2", "3", "4", "5", "1-2", "2-3", "3-4"],
                                 index=["1", "2", "3", "4", "5", "1-2", "2-3", "3-4"].index(
                                     str(pre.get("Expected Number Students", "2")).strip())
                                 if str(pre.get("Expected Number Students", "2")).strip()
                                 in ["1", "2", "3", "4", "5", "1-2", "2-3", "3-4"] else 1)
-        repo = c6.text_input("GitHub repo (optional)", pre.get("github_repo", ""), placeholder="owner/repo")
+        repo = c6.text_input("GitHub repo (optional)", pre.get("github_repo", ""), placeholder=EXAMPLE["github_repo"])
 
+        st.caption("The grey text in each box is an example project in the program's proposal format — "
+                   "replace it with your own. Keep the same structure (numbered Key Objectives, "
+                   "one line per week in the Timeline) so every proposal reads the same.")
         vals = {}
-        for k, h, req in [("Objective", 220, True), ("Dataset", 160, True), ("Rationale", 160, True),
-                          ("Approach", 220, True), ("Timeline", 200, True),
-                          ("Research Contributions", 120, False), ("Possible Issues", 120, False),
-                          ("Additional Resources", 100, False)]:
+        for k, h, req in [("Objective", 380, True), ("Dataset", 300, True), ("Rationale", 200, True),
+                          ("Approach", 380, True), ("Timeline", 320, True),
+                          ("Research Contributions", 160, False), ("Possible Issues", 160, False),
+                          ("Additional Resources", 140, False)]:
             vals[k] = st.text_area(f"{k}{' *' if req else ''}", _clean(pre.get(k, "")), height=h,
-                                   help=HELP[k], placeholder=HELP[k])
+                                   help=HELP[k], placeholder=EXAMPLE[k])
 
         st.markdown("##### 3 · Figure (optional)")
         fig = st.file_uploader("A diagram of the pipeline or idea (PNG/JPG, max 5 MB)",
