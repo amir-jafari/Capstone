@@ -1,7 +1,7 @@
 {
   "status": "rejected",
   "submitted_at": "2026-11-23T22:05:18+00:00",
-  "updated_at": "2026-11-23T22:07:24+00:00",
+  "updated_at": "2026-11-23T22:07:26+00:00",
   "access_code_sha256": "1f563394a2b94bf2faaa3341da33a1075c669a8238f5c5af883cd97d716045b8",
   "promoted_to": null,
   "history": [
@@ -13,7 +13,7 @@
       "public": true
     },
     {
-      "at": "2026-11-23T22:07:24+00:00",
+      "at": "2026-11-23T22:07:26+00:00",
       "by": "Amir Jafari",
       "action": "rejected",
       "comment": "Test",
