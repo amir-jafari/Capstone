@@ -1,0 +1,4 @@
+streamlit>=1.46
+mistune>=3.0
+requests>=2.31
+pillow>=10.0

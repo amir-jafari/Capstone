@@ -5,3 +5,6 @@ __pycache__/
 .env
 Report_Gen/HANDOFF.md
 Report_Gen/diagram_template.py
+
+Proposal_Site/.streamlit/secrets.toml
+.streamlit/secrets.toml

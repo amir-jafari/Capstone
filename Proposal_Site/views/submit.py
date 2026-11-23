@@ -1,0 +1,46 @@
+"""Public page: anyone can propose a capstone project."""
+import streamlit as st
+
+from core import data, submissions
+from core.form import proposal_form
+
+st.markdown("""<div class="hero"><div class="eyebrow">Industry · Government · Research partners</div>
+<h1>Propose a capstone project</h1>
+<p>Have a real problem and data? Propose it for a team of GWU Data Science master's students.
+Your proposal is reviewed by the program; once approved it is published on this site.</p></div>""",
+            unsafe_allow_html=True)
+
+if done := st.session_state.get("submitted"):
+    code, access = done
+    st.success(f"Thank you! Your proposal was submitted as **{code}**.")
+    st.markdown("Save your **access code** — you need it with your submission ID to check the "
+                "review status, read the reviewer's comments, and resubmit:")
+    st.code(f"Submission ID: {code}\nAccess code:   {access}", language=None)
+    st.warning("The access code is shown only once.")
+    c1, c2 = st.columns(2)
+    if c1.button("Check status", width="stretch"):
+        st.switch_page("views/status.py")
+    if c2.button("Submit another proposal", width="stretch"):
+        del st.session_state["submitted"]
+        st.rerun()
+    st.stop()
+
+with st.expander("What makes a strong proposal?", icon="💡"):
+    st.markdown("""
+- **A clear, testable objective** — what question will be answered or what will be built.
+- **Accessible data** — public, or data you can share with the students under a clear agreement.
+- **Right-sized scope** — one semester (~14 weeks) for a team of 2–4 students, with realistic compute.
+- **A concrete approach and timeline** — milestones the team can check off week by week.
+- Browse past proposals on the home page for examples of the expected depth.
+""")
+
+fields, fig, _ = proposal_form("new_proposal")
+if fields:
+    try:
+        with st.spinner("Saving your proposal…"):
+            png = submissions.to_png(fig)
+            code, access, _ = submissions.create(data.store(), fields, png)
+        st.session_state["submitted"] = (code, access)
+        st.rerun()
+    except Exception as e:
+        st.error(f"Sorry, the proposal could not be saved: {e}")
