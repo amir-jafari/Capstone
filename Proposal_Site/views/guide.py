@@ -35,8 +35,8 @@ STEPS = [
                          "Keep it — it is how you find your proposal again."),
     ("Follow the review", "Check <i>Check submission</i>. If the status is <i>Changes requested</i>, read the "
                           "comments, click <i>Modify this proposal</i>, confirm your email and resubmit."),
-    ("Get published", "Once <b style='display:inline'>approved</b>, your proposal is listed here on the "
-                      "Proposals page for students to choose."),
+    ("Get published", "Once <strong>approved</strong>, your proposal is listed on the "
+                      "<i>Proposals</i> tab for students to choose."),
 ]
 
 
