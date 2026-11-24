@@ -59,10 +59,20 @@ CSS = """
 .pp-sec{background:#fff;border:1px solid #e3e9ee;border-radius:18px;padding:1.6rem 1.9rem 1.3rem;margin-bottom:1.1rem;
   box-shadow:0 2px 10px rgba(3,60,90,.05);scroll-margin-top:80px;}
 .pp-sec-h{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid #eef2f5;}
+details.pp-sec{padding-top:1.1rem;padding-bottom:1.1rem;}
+details.pp-sec>summary{list-style:none;cursor:pointer;}
+details.pp-sec>summary::-webkit-details-marker{display:none;}
+details.pp-sec:not([open])>summary.pp-sec-h{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+details.pp-sec:not([open]):hover{border-color:#c9d6df;box-shadow:0 4px 14px rgba(3,60,90,.08);}
+.pp-sec-h .pp-hint{flex:1;min-width:0;font-size:.88rem;color:#7a8794;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+details.pp-sec[open] .pp-hint{display:none;}
+.pp-sec-h .pp-chev{flex:none;font-size:.9rem;color:#033C5A;transition:transform .2s;margin-left:.3rem;}
+details.pp-sec[open] .pp-chev{transform:rotate(90deg);}
 .pp-num{flex:none;width:2.1rem;height:2.1rem;border-radius:50%;background:linear-gradient(135deg,#AA9868,#c9b78a);color:#fff;
   font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.95rem;}
 .pp-sec-h h2{font-family:'Source Serif 4',Georgia,serif;font-size:1.45rem;margin:0;padding:0;color:#033C5A;font-weight:700;}
 .pp-sec-h .ic{margin-left:auto;font-size:1.3rem;opacity:.85;}
+.pp-sec-h h2{flex:none;}
 .pp-body{font-size:1rem;line-height:1.72;color:#2b3640;}
 .pp-body p{margin:0 0 .85rem;}
 .pp-body h4{font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;color:#8a7440;margin:1.3rem 0 .55rem;font-weight:700;}
@@ -180,7 +190,14 @@ def header_html(p) -> str:
             f'<div class="pp-tags">{tags}</div><div class="pp-people">{"".join(people)}</div></div></div>')
 
 
-def body_html(p, png: bytes | None) -> str:
+def _hint(text: str, n: int = 110) -> str:
+    t = re.sub(r"[#*_`>\[\]]|\(https?://\S+\)", "", " ".join(str(text).split()))
+    return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + "…"
+
+
+def body_html(p, png: bytes | None, expand_all: bool = False) -> str:
+    """Sections are collapsible <details> panels: Objective (with the figure) always opens,
+    the others show a one-line preview until clicked, or all open with `expand_all`."""
     d = p.data
     facts = [("Semester", p.term), ("Team size", team_size(d.get("Expected Number Students", ""))),
              ("Proposal", f"#{p.number}"), ("Funding", (d.get("funding_opportunity") or "").strip()),
@@ -189,7 +206,6 @@ def body_html(p, png: bytes | None) -> str:
                          for a, b in facts if b and b.strip().lower() not in ("none", "n/a", "na", "-", "tbd"))
 
     present = [(lbl, k, ic) for lbl, k, ic in SECTIONS if str(d.get(k, "")).strip()]
-    toc = "".join(f'<a href="#pp-{p.slug}-{i}">{ic} {esc(lbl)}</a>' for i, (lbl, _, ic) in enumerate(present, 1))
 
     secs = []
     for i, (lbl, k, ic) in enumerate(present, 1):
@@ -204,8 +220,10 @@ def body_html(p, png: bytes | None) -> str:
             inner = _timeline(text) or _body(text)
         else:
             inner = _body(text)
-        secs.append(f'<section class="pp-sec" id="pp-{p.slug}-{i}"><div class="pp-sec-h"><div class="pp-num">{i}</div>'
-                    f'<h2>{esc(lbl)}</h2><span class="ic">{ic}</span></div><div class="pp-body">{inner}</div></section>')
+        is_open = " open" if (expand_all or k == "Objective") else ""
+        secs.append(f'<details class="pp-sec" id="pp-{p.slug}-{i}"{is_open}><summary class="pp-sec-h">'
+                    f'<div class="pp-num">{i}</div><h2>{esc(lbl)}</h2>'
+                    f'<span class="pp-hint">{esc(_hint(text))}</span><span class="ic">{ic}</span>'
+                    f'<span class="pp-chev">▶</span></summary><div class="pp-body">{inner}</div></details>')
 
-    return (f'<div class="pp"><div class="pp-facts">{facts_html}</div><div class="pp-toc">{toc}</div>'
-            f'{"".join(secs)}</div>')
+    return f'<div class="pp"><div class="pp-facts">{facts_html}</div>{"".join(secs)}</div>'

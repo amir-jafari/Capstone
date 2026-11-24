@@ -116,7 +116,11 @@ def proposal_view(p: Proposal, store, show_downloads: bool = True, key: str = "v
             cols[3].link_button("View on GitHub ↗", config.github_folder_url(p.folder), width="stretch")
         st.write("")
 
-    st.html(pretty.body_html(p, png))
+    c1, c2 = st.columns([3, 1], vertical_alignment="center")
+    c1.caption("Click a section to open or close it.")
+    mode = c2.segmented_control("Sections", ["Collapse", "Expand all"], default="Collapse",
+                                key=f"{key}_x_{p.slug}", label_visibility="collapsed")
+    st.html(pretty.body_html(p, png, expand_all=(mode == "Expand all")))
 
 
 def textwrap_short(s, n: int = 160) -> str:
