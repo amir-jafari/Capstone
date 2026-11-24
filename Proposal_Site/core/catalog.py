@@ -50,7 +50,9 @@ class Proposal:
 
     @property
     def is_public(self) -> bool:
-        return self.kind == "official" or self.status == "approved"
+        # an approved external proposal is shown through its copy in Proposals/ once it has one
+        return self.kind == "official" or (self.status == "approved"
+                                           and not (self.review or {}).get("promoted_to"))
 
     @property
     def summary(self) -> str:

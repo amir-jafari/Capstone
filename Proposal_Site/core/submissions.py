@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import io
 import json
+import re
 from datetime import datetime, timezone
 
 from core import config, fmt, validate
@@ -75,37 +76,76 @@ def resubmit(store, p: Proposal, fields: dict, png: bytes | None, note: str):
     store.commit(files, f"External proposal resubmitted: {p.code}")
 
 
-def review(store, p: Proposal, status: str, comment: str, public: bool, admin: str):
+def _official_copy(store, p: Proposal) -> list[str]:
+    """Files of the official copy made when `p` was approved ([] if none / it no longer matches).
+
+    Safety: only a folder Proposals/{year}/{semester}/{N} whose project name still matches the
+    external proposal is ever touched, so a manually made official proposal is never deleted."""
+    folder = (p.review or {}).get("promoted_to")
+    if not folder or not re.fullmatch(rf"{re.escape(config.OFFICIAL)}/{p.year}/{p.semester}/\d+", folder):
+        return []
+    raw = store.read(f"{folder}/input.json")
+    try:
+        name = json.loads(raw.decode("utf-8", "replace")).get("project_name", "") if raw else None
+    except json.JSONDecodeError:
+        name = None
+    if name is None or name.strip() != p.title:
+        return []
+    return store.list_files(folder)
+
+
+def _publish_files(store, p: Proposal, r: dict, admin: str) -> dict[str, bytes]:
+    """Copy `p` into Proposals/{year}/{semester}/{next number}/ and record it in review dict `r`."""
+    y, s = p.year, p.semester
+    n = next_number(store, config.OFFICIAL, y, s)     # highest existing number + 1
+    folder = f"{config.OFFICIAL}/{y}/{s}/{n}"
+    files = _proposal_files(folder, {**p.data, "Version": str(n)}, store.read(p.png))
+    r["promoted_to"] = folder
+    r.setdefault("history", []).append(
+        {"at": now(), "by": admin, "action": "promoted", "public": True,
+         "comment": f"Added to the official proposals as {y} {s} #{n}."})
+    return files
+
+
+def review(store, p: Proposal, status: str, comment: str, public: bool, admin: str) -> str | None:
+    """Save a decision. Approving copies the proposal into Proposals/ with the next number;
+    moving an approved proposal to another status removes that copy again.
+    Returns the official folder when one was created."""
     r = dict(p.review or {})
     r["status"] = status
     r["updated_at"] = now()
     r.setdefault("history", []).append(
         {"at": now(), "by": admin, "action": status, "comment": comment, "public": public})
-    store.commit({f"{p.folder}/review.json": json.dumps(r, indent=2).encode()},
-                 f"Review {p.code}: {status}")
+    files, created = {}, None
+    existing = _official_copy(store, p)
+    if status == "approved":
+        if not existing:
+            files = _publish_files(store, p, r, admin)
+            created = r["promoted_to"]
+    elif existing:
+        files = {f: None for f in existing}
+        r["promoted_to"] = None
+    files[f"{p.folder}/review.json"] = json.dumps(r, indent=2).encode()
+    msg = f"Review {p.code}: {status}" + (f" -> {created}" if created else "")
+    store.commit(files, msg)
+    return created
 
 
 def promote(store, p: Proposal, admin: str) -> str:
-    """Copy an approved external proposal into the official Proposals numbering."""
-    y, s = p.year, p.semester
-    n = next_number(store, config.OFFICIAL, y, s)
-    folder = f"{config.OFFICIAL}/{y}/{s}/{n}"
-    data = {**p.data, "Version": str(n)}
-    files = _proposal_files(folder, data, store.read(p.png))
+    """Copy an already-approved proposal into Proposals/ (for ones approved before auto-copy)."""
     r = dict(p.review or {})
-    r["promoted_to"] = folder
-    r.setdefault("history", []).append(
-        {"at": now(), "by": admin, "action": "promoted", "public": True,
-         "comment": f"Added to the official proposals as {y} {s} #{n}."})
+    files = _publish_files(store, p, r, admin)
     files[f"{p.folder}/review.json"] = json.dumps(r, indent=2).encode()
-    store.commit(files, f"Promote {p.code} to official proposals {y}/{s}/{n}")
-    return folder
+    store.commit(files, f"Promote {p.code} to official proposals {r['promoted_to']}")
+    return r["promoted_to"]
 
 
 def delete(store, p: Proposal):
-    store.commit({f: None for f in store.list_files(p.folder)}, f"Delete external proposal {p.code}")
+    """Delete the external folder and its official copy in Proposals/ (if any)."""
+    files = {f: None for f in store.list_files(p.folder) + _official_copy(store, p)}
+    store.commit(files, f"Delete external proposal {p.code}")
 
 
 def delete_many(store, items: list[Proposal]):
-    files = {f: None for p in items for f in store.list_files(p.folder)}
+    files = {f: None for p in items for f in store.list_files(p.folder) + _official_copy(store, p)}
     store.commit(files, f"Delete {len(items)} external proposal(s): " + ", ".join(p.code for p in items))

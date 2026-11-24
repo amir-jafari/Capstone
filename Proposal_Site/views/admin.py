@@ -53,7 +53,7 @@ for c, s in zip(cols, ["pending", "changes_requested", "approved", "rejected"]):
                unsafe_allow_html=True)
 st.write("")
 
-DECISIONS = {"approved": "✅ Approve & publish", "changes_requested": "✏️ Request changes",
+DECISIONS = {"approved": "✅ Approve → Proposals", "changes_requested": "✏️ Request changes",
              "rejected": "⛔ Reject", "pending": "⏳ Keep pending"}
 
 
@@ -75,9 +75,9 @@ def review_panel(p, tab: str):
         a1.markdown(f"Status: {ui.status_chip(p.status)}", unsafe_allow_html=True)
         promoted = (p.review or {}).get("promoted_to")
         if promoted:
-            a2.caption(f"Promoted to `{promoted}`")
-        elif p.status == "approved":
-            if a2.button("⭐ Promote to official", key=f"pr_{tab}_{p.slug}", width="stretch",
+            a2.caption("In Proposals as `" + "/".join(promoted.split("/")[-3:]) + "`")
+        elif p.status == "approved":   # approved before approving copied automatically
+            if a2.button("📁 Copy to Proposals", key=f"pr_{tab}_{p.slug}", width="stretch",
                          help=f"Copies it into {config.OFFICIAL}/{p.year}/{p.semester}/<next number>/"):
                 try:
                     folder = submissions.promote(store, p, ADMIN_NAME)
@@ -86,7 +86,8 @@ def review_panel(p, tab: str):
                 except Exception as e:
                     st.error(f"Promote failed: {e}")
         with a3.popover("🗑 Delete", width="stretch"):
-            st.write(f"Permanently delete **{p.code}** and its folder from GitHub?")
+            st.write(f"Permanently delete **{p.code}** and its folder from GitHub?"
+                     + (f" Its copy `{promoted}` is deleted too." if promoted else ""))
             if st.button("Yes, delete", key=f"del_{tab}_{p.slug}", type="primary"):
                 _delete(p)
 
@@ -107,8 +108,11 @@ def review_panel(p, tab: str):
                         st.warning("Nothing to save.")
                     else:
                         try:
-                            submissions.review(store, p, dec, comment.strip(), public, ADMIN_NAME)
-                            st.session_state["admin_flash"] = f"Saved review for {p.code}: {dec}."
+                            made = submissions.review(store, p, dec, comment.strip(), public, ADMIN_NAME)
+                            st.session_state["admin_flash"] = (
+                                f"Saved review for {p.code}: {dec}."
+                                + (f" Copied to {made}." if made else "")
+                                + (f" Removed its copy {promoted}." if promoted and dec != "approved" else ""))
                             st.rerun()
                         except Exception as e:
                             st.error(f"Save failed: {e}")
@@ -127,7 +131,8 @@ with t2:
     rejected = [p for p in ext if p.status == "rejected"]
     if rejected:
         with st.popover(f"🗑 Delete all rejected ({len(rejected)})"):
-            st.write("Permanently delete these submissions from GitHub (one commit):")
+            st.write("Permanently delete these submissions from GitHub (one commit), "
+                     "including any copies in Proposals/:")
             st.markdown("\n".join(f"- {p.code} · {ui.esc(p.title[:70])}" for p in rejected))
             if st.button("Yes, delete all rejected", type="primary", key="del_all_rejected"):
                 try:
@@ -143,9 +148,14 @@ with t3:
     st.markdown(f"""
 - Submissions are saved to `{config.EXTERNAL}/<Year>/<Semester>/<N>/` with the same files as your
   Report_Gen proposals (`input.json`, `proposal_N.md`, `proposal_N.html`, figure) plus `review.json`.
-- **Approve** publishes the proposal on the public site (Community badge).
+- **Approve** copies the proposal into `{config.OFFICIAL}/<Year>/<Semester>/<N>/`, where N is the
+  next free number in that semester (e.g. you made 3 by hand → it becomes 4). The External folder
+  is kept as it is (it holds the review history), and the site shows the Proposals copy.
+- Changing an approved proposal to another status, or **deleting** it, also removes its copy from
+  `{config.OFFICIAL}/` (only if that folder still holds the same project name — your own
+  proposals are never touched).
 - **Request changes** lets the submitter edit and resubmit (they confirm their email on the Check submission page).
-- **Promote** copies an approved proposal into `{config.OFFICIAL}/` with the next official number.
+- **Copy to Proposals** appears only on proposals approved before this was automatic.
 - Your own proposals keep coming from the Report_Gen pipeline as before — the site picks up every
   folder under `{config.OFFICIAL}/` automatically.
 """)
