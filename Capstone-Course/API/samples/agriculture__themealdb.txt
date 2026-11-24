@@ -1,0 +1,19 @@
+# live 2026-10-12 08:15
+{
+  "cuisines": 195,
+  "italian_recipes": 21,
+  "example": {
+    "name": "Budino Di Ricotta",
+    "category": "Dessert",
+    "ingredients": [
+      "500g Ricotta",
+      "4 large Eggs",
+      "3 tbs Flour",
+      "250g Sugar",
+      "1 tsp Cinnamon",
+      "Grated Zest of 2 Lemons",
+      "... (2 more)"
+    ],
+    "instructions": "Mash the ricotta and beat well with the egg yolks, stir in the flour, sugar, cinnamon, grated lemon rind and the rum and mix well. You can do this in a food processor. Beat the egg whites until stiff,..."
+  }
+}

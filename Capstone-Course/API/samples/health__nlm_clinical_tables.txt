@@ -1,0 +1,34 @@
+# live 2026-10-12 09:02
+{
+  "matching_ICD10CM_codes": 94,
+  "examples": [
+    {
+      "code": "E11.65",
+      "name": "Type 2 diabetes mellitus with hyperglycemia"
+    },
+    {
+      "code": "E11.9",
+      "name": "Type 2 diabetes mellitus without complications"
+    },
+    {
+      "code": "E10.A2",
+      "name": "Type 1 diabetes mellitus, presymptomatic, Stage 2"
+    },
+    {
+      "code": "E11.21",
+      "name": "Type 2 diabetes mellitus with diabetic nephropathy"
+    },
+    {
+      "code": "E11.36",
+      "name": "Type 2 diabetes mellitus with diabetic cataract"
+    },
+    {
+      "code": "E11.41",
+      "name": "Type 2 diabetes mellitus with diabetic mononeuropathy"
+    },
+    {
+      "code": "E11.42",
+      "name": "Type 2 diabetes mellitus with diabetic polyneuropathy"
+    }
+  ]
+}

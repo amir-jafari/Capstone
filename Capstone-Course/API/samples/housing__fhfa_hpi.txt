@@ -1,0 +1,23 @@
+# live 2026-10-11 21:03
+{
+  "series": "US purchase-only HPI, seasonally adjusted (Jan 1991 = 100)",
+  "latest": [
+    {
+      "month": "2026-04",
+      "index_sa": 440.89
+    },
+    {
+      "month": "2026-05",
+      "index_sa": 442.29
+    },
+    {
+      "month": "2026-06",
+      "index_sa": 442.34
+    },
+    {
+      "month": "2026-07",
+      "index_sa": 443.52
+    }
+  ],
+  "yoy_change_pct": 2.57
+}

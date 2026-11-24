@@ -1,0 +1,48 @@
+# live 2026-10-12 09:53
+{
+  "entry_level_data_jobs": 103,
+  "top_locations_on_page": [
+    [
+      "Albuquerque, NM",
+      10
+    ],
+    [
+      "Los Lunas, NM",
+      2
+    ],
+    [
+      "Rio Rancho, NM",
+      2
+    ],
+    [
+      "Shelton, CT",
+      1
+    ]
+  ],
+  "examples": [
+    {
+      "title": "Cake Decorator",
+      "company": "Walmart",
+      "locations": [
+        "Albuquerque, NM"
+      ],
+      "published": "2025-08-25"
+    },
+    {
+      "title": "Meat Cutter and Wrapper",
+      "company": "Walmart",
+      "locations": [
+        "Albuquerque, NM"
+      ],
+      "published": "2025-08-13"
+    },
+    {
+      "title": "Cake Decorator",
+      "company": "Walmart",
+      "locations": [
+        "Albuquerque, NM"
+      ],
+      "published": "2025-08-25"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# live 2026-10-12 09:53
+{
+  "Finland": {
+    "tertiary_gross_enrollment_pct": "90.3 (2018)",
+    "secondary_gross_enrollment_pct": "154.8 (2018)",
+    "education_spending_pct_GDP": "6.4 (2017)"
+  },
+  "India": {
+    "tertiary_gross_enrollment_pct": "28.6 (2019)",
+    "secondary_gross_enrollment_pct": "73.8 (2019)",
+    "education_spending_pct_GDP": "3.8 (2013)"
+  },
+  "Korea, Rep.": {
+    "tertiary_gross_enrollment_pct": "95.9 (2018)",
+    "secondary_gross_enrollment_pct": "98.5 (2018)",
+    "education_spending_pct_GDP": "4.3 (2016)"
+  },
+  "United States": {
+    "tertiary_gross_enrollment_pct": "88.3 (2018)",
+    "secondary_gross_enrollment_pct": "99.3 (2018)",
+    "education_spending_pct_GDP": "5.0 (2014)"
+  },
+  "Brazil": {
+    "tertiary_gross_enrollment_pct": "43.5 (2011)",
+    "secondary_gross_enrollment_pct": "95.3 (2011)",
+    "education_spending_pct_GDP": "6.3 (2017)"
+  }
+}

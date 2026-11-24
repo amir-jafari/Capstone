@@ -1,0 +1,32 @@
+# live 2026-10-12 08:02
+{
+  "report": "Farm Business Income Statement (2023), estimated number of farms",
+  "by_farm_type": [
+    {
+      "farm_type": "Retirement farms (2011 to present)",
+      "farms": 209812,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Large farms (2011 to present)",
+      "farms": 75110,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Intermediate farms",
+      "farms": 674874,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Commercial farms",
+      "farms": 263192,
+      "rse_pct": 0
+    },
+    {
+      "farm_type": "Off-farm occupation farms (2011 to present)",
+      "farms": 741922,
+      "rse_pct": 0
+    },
+    "... (6 more)"
+  ]
+}

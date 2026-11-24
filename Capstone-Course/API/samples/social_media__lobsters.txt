@@ -1,0 +1,63 @@
+# live 2026-10-12 11:32
+{
+  "front_page_stories": 25,
+  "tag_counts": [
+    [
+      "vibecoding",
+      5
+    ],
+    [
+      "linux",
+      2
+    ],
+    [
+      "mobile",
+      2
+    ],
+    [
+      "c",
+      2
+    ],
+    [
+      "vcs",
+      2
+    ],
+    "... (1 more)"
+  ],
+  "top": [
+    {
+      "title": "'AI' is Not a Tool",
+      "score": 62,
+      "comments": 23,
+      "tags": [
+        "vibecoding"
+      ]
+    },
+    {
+      "title": "Linus Torvalds Working On A Hefty Linux Kernel Improvement With Claude Code",
+      "score": 20,
+      "comments": 19,
+      "tags": [
+        "linux",
+        "vibecoding"
+      ]
+    },
+    {
+      "title": "Living in the Weimar era of Ruby",
+      "score": 10,
+      "comments": 1,
+      "tags": [
+        "ruby",
+        "vibecoding"
+      ]
+    },
+    {
+      "title": "Writing a Demoscene Intro for the ZX Spectrum",
+      "score": 16,
+      "comments": 0,
+      "tags": [
+        "retrocomputing"
+      ]
+    }
+  ]
+}

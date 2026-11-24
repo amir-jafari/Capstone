@@ -1,0 +1,23 @@
+# live 2026-10-12 09:02
+{
+  "molecule": "METFORMIN HYDROCHLORIDE",
+  "max_phase": "4.0",
+  "properties": {
+    "full_mwt": "165.63",
+    "alogp": "-1.03",
+    "hba": 2,
+    "hbd": 4,
+    "num_ro5_violations": 0,
+    "qed_weighted": "0.25"
+  },
+  "mechanisms": [
+    {
+      "action": "INHIBITOR",
+      "mechanism": "Mitochondrial complex I (NADH dehydrogenase) inhibitor"
+    },
+    {
+      "action": "INHIBITOR",
+      "mechanism": "Mitochondrial glycerol-3-phosphate dehydrogenase inhibitor"
+    }
+  ]
+}

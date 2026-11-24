@@ -1,0 +1,38 @@
+# live 2026-10-12 11:32
+[
+  {
+    "title": "Incident with Actions, Pull Requests and Issues",
+    "url": "https://www.githubstatus.com/incidents/93njd414rpbx",
+    "score": 94,
+    "by": "dkpk",
+    "descendants": 66
+  },
+  {
+    "title": "The Making Of Super Mario 64 – full Giles Goddard interview (2001)",
+    "url": "https://pixelatron.com/blog/the-making-of-super-mario-64-full-giles-goddard-interview-ngc/",
+    "score": 98,
+    "by": "gregsadetsky",
+    "descendants": 31
+  },
+  {
+    "title": "Fingerprints are the new cookies",
+    "url": "https://royfish.dev/fingerprints-are-the-new-cookies",
+    "score": 566,
+    "by": "royfish",
+    "descendants": 271
+  },
+  {
+    "title": "Secret of Orange Cats Revealed After 60-Year Search",
+    "url": "https://www.sciencealert.com/secret-of-orange-cats-finally-revealed-after-60-year-search",
+    "score": 109,
+    "by": "bookofjoe",
+    "descendants": 87
+  },
+  {
+    "title": "QGIS bans AI assisted contributions",
+    "url": "https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387",
+    "score": 275,
+    "by": "bwnkl",
+    "descendants": 278
+  }
+]

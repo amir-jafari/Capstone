@@ -1,0 +1,62 @@
+# live 2026-10-12 09:53
+{
+  "company": "Airbnb",
+  "open_jobs": 159,
+  "jobs_by_department": [
+    [
+      "Software Engineering",
+      41
+    ],
+    [
+      "Community Support",
+      18
+    ],
+    [
+      "Business Development",
+      14
+    ],
+    [
+      "Product Management",
+      14
+    ],
+    [
+      "Business Operations/Analysis",
+      8
+    ]
+  ],
+  "top_locations": [
+    [
+      "United States",
+      36
+    ],
+    [
+      "United States ",
+      22
+    ],
+    [
+      "Canada",
+      12
+    ],
+    [
+      "Remote - USA",
+      8
+    ]
+  ],
+  "latest": [
+    {
+      "title": "Market Manager, UK",
+      "location": "London, United Kingdom",
+      "updated": "2026-10-12"
+    },
+    {
+      "title": "Support Specialist, R1",
+      "location": "Gurugram, India",
+      "updated": "2026-10-11"
+    },
+    {
+      "title": "Staff Software Engineer, Streaming Infrastructure",
+      "location": "United States",
+      "updated": "2026-10-09"
+    }
+  ]
+}

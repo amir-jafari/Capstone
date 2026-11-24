@@ -1,0 +1,31 @@
+# live 2026-10-11 20:51
+{
+  "models_available": 127,
+  "sample_models": [
+    {
+      "id": "Qwen/Qwen3.8-27B",
+      "providers": 5,
+      "cheapest_input_usd_per_M": 0.2
+    },
+    {
+      "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "providers": 5,
+      "cheapest_input_usd_per_M": 0.2
+    },
+    {
+      "id": "zai-org/GLM-5.3-Flash",
+      "providers": 7,
+      "cheapest_input_usd_per_M": 0.15
+    },
+    {
+      "id": "zai-org/GLM-5.3",
+      "providers": 7,
+      "cheapest_input_usd_per_M": 0.9
+    },
+    {
+      "id": "meta-llama/Llama-3.1-8B-Instruct",
+      "providers": 4,
+      "cheapest_input_usd_per_M": 0.02
+    }
+  ]
+}

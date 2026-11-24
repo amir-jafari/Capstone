@@ -1,0 +1,46 @@
+# live 2026-10-11 20:46
+{
+  "total": 10,
+  "schools": [
+    {
+      "name": "George Washington University",
+      "undergrads": 11182,
+      "admit_rate": 0.4709,
+      "tuition_out_of_state": 67710,
+      "completion_rate": 0.8433,
+      "median_earnings_10yr": 90873
+    },
+    {
+      "name": "Howard University",
+      "undergrads": 10108,
+      "admit_rate": 0.4134,
+      "tuition_out_of_state": 35810,
+      "completion_rate": 0.6426,
+      "median_earnings_10yr": 63066
+    },
+    {
+      "name": "Strayer University-Global Region",
+      "undergrads": 9376,
+      "admit_rate": null,
+      "tuition_out_of_state": 13920,
+      "completion_rate": 0.1254,
+      "median_earnings_10yr": 40092
+    },
+    {
+      "name": "Georgetown University",
+      "undergrads": 7569,
+      "admit_rate": 0.1291,
+      "tuition_out_of_state": 68017,
+      "completion_rate": 0.9493,
+      "median_earnings_10yr": 103494
+    },
+    {
+      "name": "American University",
+      "undergrads": 7266,
+      "admit_rate": 0.6196,
+      "tuition_out_of_state": 58771,
+      "completion_rate": 0.7873,
+      "median_earnings_10yr": 77370
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# live 2026-10-12 08:15
+{
+  "county": "Story County, Iowa (2023)",
+  "top_land_cover_acres": [
+    {
+      "category": "Corn",
+      "acres": 149713.6
+    },
+    {
+      "category": "Soybeans",
+      "acres": 119131.3
+    },
+    {
+      "category": "Grass/Pasture",
+      "acres": 40169.8
+    },
+    {
+      "category": "Developed/Open Space",
+      "acres": 14282.6
+    },
+    {
+      "category": "Deciduous Forest",
+      "acres": 11815.4
+    },
+    "... (1 more)"
+  ]
+}

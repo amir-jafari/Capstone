@@ -1,0 +1,57 @@
+# live 2026-10-12 10:46
+{
+  "trains_in_feed": 186,
+  "active": 164,
+  "busiest_routes": [
+    [
+      "Northeast Regional",
+      22
+    ],
+    [
+      "Corridor",
+      22
+    ],
+    [
+      "Brightline",
+      10
+    ],
+    [
+      "Pacific Surfliner",
+      8
+    ],
+    [
+      "Acela",
+      7
+    ]
+  ],
+  "northeast_corridor_now": [
+    {
+      "route": "Northeast Regional",
+      "train": "67",
+      "speed_mph": 79,
+      "heading": "E",
+      "event": "Williamsburg"
+    },
+    {
+      "route": "Northeast Regional",
+      "train": "94",
+      "speed_mph": 68,
+      "heading": "NW",
+      "event": "Richmond Staples Mill Road"
+    },
+    {
+      "route": "Northeast Regional",
+      "train": "471",
+      "speed_mph": 82,
+      "heading": "S",
+      "event": "New Haven State Street"
+    },
+    {
+      "route": "Northeast Regional",
+      "train": "1082",
+      "speed_mph": 84,
+      "heading": "NE",
+      "event": "Baltimore Airport"
+    }
+  ]
+}

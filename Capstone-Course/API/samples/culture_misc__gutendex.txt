@@ -1,0 +1,41 @@
+# live 2026-10-12 10:09
+{
+  "matching_books": 1387,
+  "most_downloaded": [
+    {
+      "id": 1661,
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Doyle, Arthur Conan",
+      "downloads": 96353,
+      "plain_text": "https://www.gutenberg.org/files/1661/1661-0.txt"
+    },
+    {
+      "id": 2554,
+      "title": "Crime and Punishment",
+      "author": "Dostoyevsky, Fyodor",
+      "downloads": 76289,
+      "plain_text": "https://www.gutenberg.org/ebooks/2554.txt.utf-8"
+    },
+    {
+      "id": 65238,
+      "title": "The Secret of Chimneys",
+      "author": "Christie, Agatha",
+      "downloads": 50307,
+      "plain_text": "https://www.gutenberg.org/files/65238/65238-0.txt"
+    },
+    {
+      "id": 28780,
+      "title": "Peter the Brazen: A Mystery Story of Modern China",
+      "author": "Worts, George F. (George Frank)",
+      "downloads": 40745,
+      "plain_text": "https://www.gutenberg.org/files/28780/28780-8.txt"
+    },
+    {
+      "id": 38983,
+      "title": "The Camp Fire Girls Solve a Mystery; Or, The Christmas Adventure at Carver House",
+      "author": "Frey, Hildegard G.",
+      "downloads": 37424,
+      "plain_text": "https://www.gutenberg.org/files/38983/38983-0.txt"
+    }
+  ]
+}

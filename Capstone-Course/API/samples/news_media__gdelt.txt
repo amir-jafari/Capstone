@@ -1,0 +1,38 @@
+# live 2026-10-11 19:14
+[
+  {
+    "title": "Meta Platforms ( NASDAQ : META ) Shares Unloaded by Rep . Maria Elvira Salazar",
+    "domain": "themarketsdaily.com",
+    "seendate": "20261010T064500Z",
+    "language": "English",
+    "sourcecountry": "United States"
+  },
+  {
+    "title": "We Must Embrace , Not Pause , AI and Data Centers",
+    "domain": "townhall.com",
+    "seendate": "20261010T064500Z",
+    "language": "English",
+    "sourcecountry": "United States"
+  },
+  {
+    "title": "Op - ed : West Virginia AI future depends on 7 , 000 bridges",
+    "domain": "newsandsentinel.com",
+    "seendate": "20261010T064500Z",
+    "language": "English",
+    "sourcecountry": "United States"
+  },
+  {
+    "title": "How AI is changing lawyers , billable hours and legal careers",
+    "domain": "cnbc.com",
+    "seendate": "20261010T064500Z",
+    "language": "English",
+    "sourcecountry": "United States"
+  },
+  {
+    "title": "Mobileye Global ( NASDAQ : MBLY ) Stock Gets Price Target Cut from UBS Group",
+    "domain": "themarketsdaily.com",
+    "seendate": "20261010T064500Z",
+    "language": "English",
+    "sourcecountry": "United States"
+  }
+]

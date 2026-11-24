@@ -1,0 +1,24 @@
+# live 2026-10-12 10:09
+{
+  "artist": "Nirvana",
+  "discography_entries": 2248,
+  "main_masters": [
+    "1988 Love Buzz b/w Big Cheese",
+    "1988 Nirvana",
+    "1989 Bleach",
+    "1989 Blew",
+    "1990 Lithium",
+    "... (1 more)"
+  ],
+  "nevermind": {
+    "year": 1991,
+    "genres": [
+      "Rock"
+    ],
+    "styles": [
+      "Grunge",
+      "Alternative Rock"
+    ],
+    "tracks": 12
+  }
+}

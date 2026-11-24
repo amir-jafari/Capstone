@@ -1,0 +1,17 @@
+# live 2026-10-12 09:53
+{
+  "matches": 188,
+  "top_match": "data scientist",
+  "isco_code": "2511.3",
+  "essential_skills": 23,
+  "examples": [
+    "perform data cleansing",
+    "collect ICT data",
+    "handle data samples",
+    "data mining",
+    "information extraction",
+    "data models",
+    "resource description framework query language",
+    "visual presentation techniques"
+  ]
+}

@@ -1,0 +1,46 @@
+# live 2026-10-12 10:34
+{
+  "matching_datasets": 1635,
+  "latest": [
+    {
+      "title": "HYGIENIC ASSESSMENT OF THE IMPACT OF HOUSEHOLD AIR POLLUTION ON WOMEN'S HEALTH IN MOUNTAIN RURAL HOUSEHOLDS (A CASE STUDY OF THE SOKH DISTRICT)",
+      "doi": "10.5281/zenodo.23275943",
+      "published": "2026-10-10",
+      "files": 1,
+      "license": "cc-by-4.0",
+      "downloads": 0
+    },
+    {
+      "title": "ATMOSFERA IFLOSLANISHINING TARQALISH JARAYONINI DIFFERENSIAL TENGLAMALAR ASOSIDA MATEMATIK MODELLASHTIRISH",
+      "doi": "10.5281/zenodo.23274049",
+      "published": "2026-10-10",
+      "files": 1,
+      "license": "cc-by-4.0",
+      "downloads": 2
+    },
+    {
+      "title": "Data and code for: How well does MERRA-2 HAQAST CNN PM2.5 capture county annual levels and year-to-year anomalies in the contiguous United States?",
+      "doi": "10.5281/zenodo.23271818",
+      "published": "2026-10-10",
+      "files": 1,
+      "license": "cc-by-4.0",
+      "downloads": 1
+    },
+    {
+      "title": "Health Indices Dataset from Clinical Study A - TOLIFE Project",
+      "doi": "10.5281/zenodo.23263785",
+      "published": "2026-10-09",
+      "files": 2,
+      "license": "cc-by-4.0",
+      "downloads": 199
+    },
+    {
+      "title": "Code, trained PINN models and derived results for: Air Purifier Performance in an Occupied Office: Field CADR and Effectiveness from a Reconstructed Device-Off ...",
+      "doi": "10.5281/zenodo.23240775",
+      "published": "2026-10-08",
+      "files": 10,
+      "license": "cc-by-4.0",
+      "downloads": 27
+    }
+  ]
+}

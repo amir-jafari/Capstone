@@ -1,0 +1,38 @@
+# live 2026-10-12 08:15
+{
+  "US_breakfast_cereals": 3851,
+  "nutriscore_of_100_most_popular": {
+    "a": 27,
+    "b": 6,
+    "c": 35,
+    "d": 21,
+    "e": 7,
+    "unknown": 4
+  },
+  "nova_group_of_100_most_popular": {
+    "1": 16,
+    "3": 36,
+    "4": 47,
+    "null": 1
+  },
+  "examples": [
+    {
+      "product_name": "Pumpkin Seed + Flax Granola",
+      "brands": "Nature's Path Organic",
+      "nutriscore_grade": "c",
+      "nova_group": 3
+    },
+    {
+      "product_name": "Oats 'N Honey Granola Bars",
+      "brands": "Nature Valley",
+      "nutriscore_grade": "d",
+      "nova_group": 4
+    },
+    {
+      "product_name": "grape-nuts cereal",
+      "brands": "Post",
+      "nutriscore_grade": "c",
+      "nova_group": 3
+    }
+  ]
+}

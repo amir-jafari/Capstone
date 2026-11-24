@@ -1,0 +1,50 @@
+# live 2026-10-12 09:53
+{
+  "company": "Ramp",
+  "open_jobs": 166,
+  "by_department": [
+    [
+      "Sales",
+      67
+    ],
+    [
+      "Engineering",
+      38
+    ],
+    [
+      "People & Talent",
+      14
+    ],
+    [
+      "Product",
+      9
+    ],
+    [
+      "Marketing",
+      7
+    ]
+  ],
+  "remote_share": 0.9,
+  "with_salary": [
+    {
+      "title": "Security Engineer, Cloud",
+      "location": "New York, NY (HQ)",
+      "compensation": "$211.4K – $290.6K • Offers Equity"
+    },
+    {
+      "title": "Mobile Engineer, Android",
+      "location": "New York, NY (HQ)",
+      "compensation": "$189K – $330K • Offers Equity"
+    },
+    {
+      "title": "Software Engineer, Frontend",
+      "location": "New York, NY (HQ)",
+      "compensation": "$143.2K – $284K • Offers Equity"
+    },
+    {
+      "title": "Credit Risk Associate",
+      "location": "New York, NY (HQ)",
+      "compensation": "$108K – $200K • Offers Equity"
+    }
+  ]
+}

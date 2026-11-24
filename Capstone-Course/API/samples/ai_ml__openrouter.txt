@@ -1,0 +1,37 @@
+# live 2026-10-11 20:51
+{
+  "models_available": 458,
+  "free_models": 19,
+  "newest": [
+    {
+      "id": "stepfun/step-5-preview",
+      "context_length": 1000000,
+      "usd_per_M_input": 1.0,
+      "usd_per_M_output": 2.7
+    },
+    {
+      "id": "anthropic/claude-haiku-5.5",
+      "context_length": 1000000,
+      "usd_per_M_input": 0.1,
+      "usd_per_M_output": 0.5
+    },
+    {
+      "id": "anthropic/claude-haiku-5.5:batch",
+      "context_length": 1000000,
+      "usd_per_M_input": 0.05,
+      "usd_per_M_output": 0.25
+    },
+    {
+      "id": "google/gemini-nano-banana-2.1",
+      "context_length": 65536,
+      "usd_per_M_input": 1.5,
+      "usd_per_M_output": 7.5
+    },
+    {
+      "id": "mistralai/mistral-large-4-0",
+      "context_length": 1048576,
+      "usd_per_M_input": 0.68,
+      "usd_per_M_output": 2.09
+    }
+  ]
+}

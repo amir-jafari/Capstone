@@ -1,0 +1,25 @@
+# live 2026-10-12 07:40
+{
+  "office": "LWX",
+  "forecast": [
+    {
+      "name": "Columbus Day",
+      "temperature": 74,
+      "temperatureUnit": "F",
+      "shortForecast": "Rain Showers Likely then Mostly Cloudy"
+    },
+    {
+      "name": "Tonight",
+      "temperature": 57,
+      "temperatureUnit": "F",
+      "shortForecast": "Mostly Clear"
+    },
+    {
+      "name": "Tuesday",
+      "temperature": 81,
+      "temperatureUnit": "F",
+      "shortForecast": "Sunny"
+    }
+  ],
+  "active_alerts_VA": []
+}

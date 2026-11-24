@@ -1,0 +1,59 @@
+# live 2026-10-12 07:16
+{
+  "current_MEPs": 719,
+  "seats_by_group": [
+    [
+      "PPE",
+      184
+    ],
+    [
+      "S&D",
+      135
+    ],
+    [
+      "PfE",
+      85
+    ],
+    [
+      "ECR",
+      84
+    ],
+    [
+      "Renew",
+      78
+    ],
+    [
+      "Verts/ALE",
+      53
+    ],
+    [
+      "The Left",
+      45
+    ],
+    [
+      "NI",
+      28
+    ],
+    [
+      "ESN",
+      27
+    ]
+  ],
+  "sample": [
+    {
+      "label": "Tobiasz BOCHEŃSKI",
+      "api:country-of-representation": "PL",
+      "api:political-group": "ECR"
+    },
+    {
+      "label": "Lena DÜPONT",
+      "api:country-of-representation": "DE",
+      "api:political-group": "PPE"
+    },
+    {
+      "label": "Salvatore DE MEO",
+      "api:country-of-representation": "IT",
+      "api:political-group": "PPE"
+    }
+  ]
+}

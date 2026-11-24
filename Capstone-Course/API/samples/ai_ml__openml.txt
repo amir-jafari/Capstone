@@ -1,0 +1,43 @@
+# live 2026-10-11 20:51
+[
+  {
+    "id": 3,
+    "name": "kr-vs-kp",
+    "instances": 3196,
+    "features": 37,
+    "classes": 2,
+    "missing_values": 0
+  },
+  {
+    "id": 12,
+    "name": "mfeat-factors",
+    "instances": 2000,
+    "features": 217,
+    "classes": 10,
+    "missing_values": 0
+  },
+  {
+    "id": 14,
+    "name": "mfeat-fourier",
+    "instances": 2000,
+    "features": 77,
+    "classes": 10,
+    "missing_values": 0
+  },
+  {
+    "id": 16,
+    "name": "mfeat-karhunen",
+    "instances": 2000,
+    "features": 65,
+    "classes": 10,
+    "missing_values": 0
+  },
+  {
+    "id": 18,
+    "name": "mfeat-morphological",
+    "instances": 2000,
+    "features": 7,
+    "classes": 10,
+    "missing_values": 0
+  }
+]

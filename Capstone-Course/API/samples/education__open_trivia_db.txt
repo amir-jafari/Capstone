@@ -1,0 +1,33 @@
+# live 2026-10-12 09:53
+{
+  "categories": 24,
+  "computer_science_questions": [
+    {
+      "question": "What does the 'S' in the RSA encryption algorithm stand for?",
+      "answer": "Shamir",
+      "distractors": [
+        "Secure",
+        "Schottky",
+        "Stable"
+      ]
+    },
+    {
+      "question": "Generally, which component of a computer draws the most power?",
+      "answer": "Video Card",
+      "distractors": [
+        "Hard Drive",
+        "Processor",
+        "Power Supply"
+      ]
+    },
+    {
+      "question": "In the programming language \"Python\", which of these statements would display the string \"Hello World\" correctly?",
+      "answer": "print(\"Hello World\")",
+      "distractors": [
+        "console.log(\"Hello World\")",
+        "echo \"Hello World\"",
+        "printf(\"Hello World\")"
+      ]
+    }
+  ]
+}

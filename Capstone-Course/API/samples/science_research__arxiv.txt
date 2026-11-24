@@ -1,0 +1,32 @@
+# live 2026-10-12 10:34
+[
+  {
+    "title": "Tracing and Taming Hallucinated Terms via Subsequence-Association Filtering and Breadth-Aware Selection for LLM Query Expansion",
+    "published": "2026-10-09T16:22:16Z",
+    "authors": [
+      "Amit Kumar Jaiswal",
+      "Sagar Uprety",
+      "Prayag Tiwari"
+    ],
+    "abstract": "Large language models (LLMs) are now a standard source of query expansion terms but they hallucinate. They inject non existent entities and off-topic terms that add ranking noise and can hurt strong r..."
+  },
+  {
+    "title": "Adaptive DHiSparse: Speculative Decoding over a Load-Adaptive KV Hierarchy",
+    "published": "2026-10-09T15:02:35Z",
+    "authors": [
+      "Naji Alazhar",
+      "Wassel Alazhar"
+    ],
+    "abstract": "Long-context serving runs out of KV memory before the hardware reaches its useful throughput. HiSparse stores history in host memory and fetches only the selected entries, but it uses one cache budget..."
+  },
+  {
+    "title": "Verifiable Retrieval for Legal Reasoning through Structure-driven Knowledge Graph",
+    "published": "2026-10-09T14:56:31Z",
+    "authors": [
+      "Ibrahim Siddig",
+      "Sviatoslav Tugeev",
+      "Munir Georges"
+    ],
+    "abstract": "Any automation within reliability-critical contexts such as medicine or law has to be transparent and verifiable. Despite their advantages, current LLM-based systems do not meet these requirements due..."
+  }
+]

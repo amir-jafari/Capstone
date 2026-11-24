@@ -1,0 +1,43 @@
+# live 2026-10-12 10:46
+{
+  "from": "NSR:StopPlace:59872",
+  "to": "NSR:StopPlace:59983",
+  "trips": [
+    {
+      "departs": "2026-10-12T17:54:00+02:00",
+      "duration_h": 3.2,
+      "legs": [
+        "rail R12",
+        "foot",
+        "air",
+        "foot",
+        "tram 1",
+        "... (1 more)"
+      ]
+    },
+    {
+      "departs": "2026-10-12T17:50:00+02:00",
+      "duration_h": 3.4,
+      "legs": [
+        "rail FLY2",
+        "foot",
+        "air",
+        "foot",
+        "bus FB50",
+        "... (1 more)"
+      ]
+    },
+    {
+      "departs": "2026-10-12T17:24:00+02:00",
+      "duration_h": 3.8,
+      "legs": [
+        "rail RE11",
+        "foot",
+        "air",
+        "foot",
+        "bus FB50",
+        "... (1 more)"
+      ]
+    }
+  ]
+}

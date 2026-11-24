@@ -9,7 +9,7 @@
 ## Resources
 
 - 🎓 **[Capstone Proposals Website](https://capstone-course.streamlit.app/)** — browse all capstone proposals by semester and topic, propose a new project for a student team, and check a submission's review status.
-- 🔌 **[Public API Catalog](API/README.md)** — 262 free APIs across news, social media, weather & environment, finance, census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning, engineering & energy, transportation & travel, sports & gaming, and culture, media & entertainment, each with sign-up steps, a runnable Python example, and sample output.
+- 🔌 **[Public API Catalog](Capstone-Course/API/README.md)** — 262 free APIs across news, social media, weather & environment, finance, census, housing, political science, law, health, agriculture & food, education, jobs & labor, science & space, AI & machine learning, engineering & energy, transportation & travel, sports & gaming, and culture, media & entertainment, each with sign-up steps, a runnable Python example, and sample output.
 
 ---
 

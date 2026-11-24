@@ -1,0 +1,20 @@
+# live 2026-10-12 07:41
+{
+  "period": "2026-10-12T11:00Z - 2026-10-12T11:30Z",
+  "intensity_gCO2_per_kWh": {
+    "forecast": 91,
+    "actual": 93,
+    "index": "moderate"
+  },
+  "generation_mix_pct": {
+    "wind": 43,
+    "gas": 16.3,
+    "imports": 14.9,
+    "nuclear": 11.2,
+    "biomass": 7.8,
+    "solar": 6.6,
+    "coal": 0,
+    "other": 0,
+    "hydro": 0
+  }
+}

@@ -1,0 +1,32 @@
+# live 2026-10-12 07:40
+{
+  "current": {
+    "time": "2026-10-12T07:30",
+    "interval": 900,
+    "temperature_2m": 14.0,
+    "relative_humidity_2m": 90,
+    "wind_speed_10m": 10.5
+  },
+  "daily": {
+    "time": [
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14"
+    ],
+    "temperature_2m_max": [
+      22.1,
+      24.7,
+      31.2
+    ],
+    "temperature_2m_min": [
+      14.2,
+      12.8,
+      19.0
+    ],
+    "precipitation_sum": [
+      1.8,
+      0.0,
+      0.0
+    ]
+  }
+}

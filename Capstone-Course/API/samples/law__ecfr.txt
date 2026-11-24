@@ -1,0 +1,53 @@
+# live 2026-10-12 07:16
+{
+  "matching_paragraphs": 214,
+  "example_sections": [
+    {
+      "title": "Title 15",
+      "section": "§ 740.27",
+      "heading": "License Exception Artificial Intelligence Authorization (AIA).",
+      "agency_chapter": "Bureau of Industry and Security, Department of Commerce"
+    },
+    {
+      "title": "Title 15",
+      "section": "§ 748.3",
+      "heading": "Classification requests and advisory opinions.",
+      "agency_chapter": "Bureau of Industry and Security, Department of Commerce"
+    },
+    {
+      "title": "Title 28",
+      "section": "§ 202.301",
+      "heading": "Prohibited data-brokerage transactions.",
+      "agency_chapter": "Department of Justice"
+    },
+    {
+      "title": "Title 28",
+      "section": "§ 202.217",
+      "heading": "Employment agreement.",
+      "agency_chapter": "Department of Justice"
+    },
+    {
+      "title": "Title 15",
+      "section": "§ 742.6",
+      "heading": "Regional stability.",
+      "agency_chapter": "Bureau of Industry and Security, Department of Commerce"
+    }
+  ],
+  "recently_amended_titles": [
+    {
+      "number": 7,
+      "name": "Agriculture",
+      "latest_amended_on": "2026-10-08"
+    },
+    {
+      "number": 17,
+      "name": "Commodity and Securities Exchanges",
+      "latest_amended_on": "2026-10-08"
+    },
+    {
+      "number": 34,
+      "name": "Education",
+      "latest_amended_on": "2026-10-08"
+    }
+  ]
+}

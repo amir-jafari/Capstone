@@ -1,0 +1,31 @@
+# live 2026-10-12 09:02
+{
+  "series": "US weighted influenza-like illness (% of visits), 2025",
+  "weeks": 52,
+  "peak": {
+    "epiweek": 202552,
+    "wILI_pct": 8.29853
+  },
+  "last_4_weeks": [
+    {
+      "epiweek": 202549,
+      "wILI_pct": 3.28462,
+      "visits": 2647927
+    },
+    {
+      "epiweek": 202550,
+      "wILI_pct": 4.11906,
+      "visits": 2678221
+    },
+    {
+      "epiweek": 202551,
+      "wILI_pct": 6.00523,
+      "visits": 2771975
+    },
+    {
+      "epiweek": 202552,
+      "wILI_pct": 8.29853,
+      "visits": 2540023
+    }
+  ]
+}

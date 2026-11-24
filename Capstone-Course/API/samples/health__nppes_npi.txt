@@ -1,0 +1,43 @@
+# live 2026-10-12 09:02
+{
+  "pediatrics_providers_returned": 200,
+  "primary_specialties": [
+    [
+      "Nurse Practitioner, Pediatrics",
+      114
+    ],
+    [
+      "Pediatrics, Pediatric Emergency Medicine",
+      28
+    ],
+    [
+      "Pediatrics, Pediatric Infectious Diseases",
+      18
+    ],
+    [
+      "Pediatrics, Adolescent Medicine",
+      10
+    ],
+    [
+      "Pediatrics",
+      5
+    ]
+  ],
+  "examples": [
+    {
+      "npi": "1326402744",
+      "name": "ANNA ABRAMS",
+      "credential": "MD"
+    },
+    {
+      "npi": "1538620182",
+      "name": "CHIDIMMA ACHOLONU",
+      "credential": "MD MPH"
+    },
+    {
+      "npi": "1154759090",
+      "name": "OLIVIA ACKERMAN",
+      "credential": "APRN"
+    }
+  ]
+}

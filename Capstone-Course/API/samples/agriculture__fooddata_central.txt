@@ -1,0 +1,39 @@
+# live 2026-10-12 08:02
+{
+  "matches": 19,
+  "foods": [
+    {
+      "fdcId": 328637,
+      "description": "Cheese, cheddar",
+      "category": "Dairy and Egg Products",
+      "per_100g": {
+        "Carbohydrate, by difference": "2.44 g",
+        "Energy": "408 kcal",
+        "Protein": "23.3 g",
+        "Total lipid (fat)": "34.0 g"
+      }
+    },
+    {
+      "fdcId": 746767,
+      "description": "Cheese, swiss",
+      "category": "Dairy and Egg Products",
+      "per_100g": {
+        "Total lipid (fat)": "31.0 g",
+        "Carbohydrate, by difference": "1.44 g",
+        "Energy": "393 kcal",
+        "Protein": "27.0 g"
+      }
+    },
+    {
+      "fdcId": 747429,
+      "description": "Cheese, American, restaurant",
+      "category": "Dairy and Egg Products",
+      "per_100g": {
+        "Total lipid (fat)": "31.1 g",
+        "Protein": "17.5 g",
+        "Carbohydrate, by difference": "6.35 g",
+        "Energy": "375 kcal"
+      }
+    }
+  ]
+}

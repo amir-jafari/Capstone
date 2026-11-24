@@ -1,0 +1,26 @@
+# live 2026-10-12 09:53
+{
+  "DC_jobs_2022": 656985,
+  "blocks_with_jobs": 3991,
+  "jobs_by_sector": {
+    "Professional/scientific/technical": 123488,
+    "Public administration": 119176,
+    "Health care": 71852,
+    "Educational services": 51368,
+    "Accommodation & food": 55310
+  },
+  "top_tracts_by_jobs": [
+    [
+      "11001010700",
+      81880
+    ],
+    [
+      "11001980000",
+      58911
+    ],
+    [
+      "11001005802",
+      58565
+    ]
+  ]
+}

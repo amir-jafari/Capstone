@@ -1,0 +1,47 @@
+# live 2026-10-12 09:02
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "heart_rate_observations": [
+    {
+      "id": "101367",
+      "code": "Heart rate",
+      "value": 59,
+      "unit": "beats/minute",
+      "subject": "Patient/101365",
+      "effective": "2026-10-12T18:30:17+05:30"
+    },
+    {
+      "id": "101053",
+      "code": "Heart Rate",
+      "value": 58,
+      "unit": "/min",
+      "subject": "Patient/100987",
+      "effective": "2026-10-12T11:30:00+02:00"
+    },
+    {
+      "id": "101014",
+      "code": null,
+      "value": 55,
+      "unit": "/min",
+      "subject": "Patient/100987",
+      "effective": "2026-10-12T11:15:00+02:00"
+    },
+    {
+      "id": "100991",
+      "code": "Heart Rate",
+      "value": 60,
+      "unit": "/min",
+      "subject": "Patient/100987",
+      "effective": "2025-10-12T11:00:00+02:00"
+    },
+    {
+      "id": "100936",
+      "code": "Heart rate",
+      "value": 72,
+      "unit": "beats/minute",
+      "subject": null,
+      "effective": "2026-10-12T15:00:00+08:00"
+    }
+  ]
+}

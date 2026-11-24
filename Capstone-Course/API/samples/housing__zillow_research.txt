@@ -1,0 +1,36 @@
+# live 2026-10-11 21:03
+{
+  "month": "2026-08-31",
+  "metros": [
+    {
+      "region": "United States",
+      "typical_home_value": 368697,
+      "yoy_change_pct": 1.2
+    },
+    {
+      "region": "New York, NY",
+      "typical_home_value": 735075,
+      "yoy_change_pct": 4.7
+    },
+    {
+      "region": "Los Angeles, CA",
+      "typical_home_value": 952601,
+      "yoy_change_pct": 1.2
+    },
+    {
+      "region": "Chicago, IL",
+      "typical_home_value": 357265,
+      "yoy_change_pct": 4.9
+    },
+    {
+      "region": "Dallas, TX",
+      "typical_home_value": 360437,
+      "yoy_change_pct": -2.3
+    },
+    {
+      "region": "Houston, TX",
+      "typical_home_value": 305001,
+      "yoy_change_pct": -1.9
+    }
+  ]
+}

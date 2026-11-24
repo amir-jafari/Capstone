@@ -1,0 +1,45 @@
+# live 2026-10-12 10:10
+{
+  "best_picture_winners": [
+    {
+      "year": "2026",
+      "film": "One Battle After Another",
+      "director": "Paul Thomas Anderson"
+    },
+    {
+      "year": "2025",
+      "film": "Anora",
+      "director": "Sean Baker"
+    },
+    {
+      "year": "2024",
+      "film": "Oppenheimer",
+      "director": "Christopher Nolan"
+    },
+    {
+      "year": "2023",
+      "film": "Everything Everywhere All at Once",
+      "director": "Dan Kwan"
+    },
+    {
+      "year": "2023",
+      "film": "Everything Everywhere All at Once",
+      "director": "Daniel Scheinert"
+    },
+    {
+      "year": "2022",
+      "film": "CODA",
+      "director": "Siân Héder"
+    },
+    {
+      "year": "2021",
+      "film": "Nomadland",
+      "director": "Chloé Zhao"
+    },
+    {
+      "year": "2020",
+      "film": "Parasite",
+      "director": "Bong Joon-ho"
+    }
+  ]
+}

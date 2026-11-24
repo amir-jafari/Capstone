@@ -1,0 +1,18 @@
+# live 2026-10-12 09:02
+[
+  {
+    "title": "Diabetes Type 2",
+    "url": "https://medlineplus.gov/diabetestype2.html?utm_source=mplusconnect&utm_medium=service",
+    "summary": "What is type 2 diabetes?  \n Type 2  diabetes  is a disease in which your blood glucose, or  blood sugar , levels are too high."
+  },
+  {
+    "title": "Type 2 diabetes",
+    "url": "https://medlineplus.gov/genetics/condition/type-2-diabetes?utm_source=mplusconnect&utm_medium=service",
+    "summary": "Type 2 diabetes is a disorder characterized by abnormally high levels of blood glucose, also called blood sugar."
+  },
+  {
+    "title": "Type 2 Diabetes",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes?utm_medium=ehr+service&utm_source=medlineplus+connect",
+    "summary": "Learn about the symptoms of type 2 diabetes, what causes the disease, how it’s diagnosed, and steps you can take to help prevent or delay type 2 diabetes."
+  }
+]

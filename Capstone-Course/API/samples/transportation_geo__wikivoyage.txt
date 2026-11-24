@@ -1,0 +1,28 @@
+# live 2026-10-12 10:47
+{
+  "destination": "Washington, D.C.",
+  "coordinates": {
+    "lat": 38.90092,
+    "lon": -77.02446,
+    "primary": "",
+    "globe": "earth"
+  },
+  "intro": "Washington, D.C., the capital of the United States of America and the seat of its three branches of government, has an unparalleled collection of free, public museums, and the lion's share of the nation's most treasured monuments and memorials. The vistas on the National Mall between the Capitol, Wa...",
+  "top_sections": [
+    "Districts",
+    "Understand",
+    "Get in",
+    "Get around",
+    "See",
+    "Do",
+    "Learn",
+    "Work",
+    "Buy",
+    "Eat",
+    "Drink",
+    "Sleep",
+    "Stay safe",
+    "Stay healthy",
+    "... (4 more)"
+  ]
+}

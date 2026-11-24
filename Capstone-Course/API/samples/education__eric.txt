@@ -1,0 +1,58 @@
+# live 2026-10-11 20:46
+{
+  "numFound": 3226,
+  "docs": [
+    {
+      "id": "EJ1475514",
+      "title": "The Role of the Expressive Therapies Continuum in Human Creativity in the Age of AI",
+      "author": [
+        "Nancy S. Choe",
+        "Lisa D. Hinz"
+      ],
+      "source": "Art Therapy: Journal of the American Art Therapy Association",
+      "publicationdateyear": 2025
+    },
+    {
+      "id": "EJ1493662",
+      "title": "Information Literacy in the Artificial Intelligence Era: A Proposed Framework",
+      "author": [
+        "Radwan Ali",
+        "Matthew L. Wilson"
+      ],
+      "source": "Communications in Information Literacy",
+      "publicationdateyear": 2025
+    },
+    {
+      "id": "EJ1494133",
+      "title": "&quot;The Cat Sat on the …?&quot; Why Generative AI Has Limited Creativity",
+      "author": [
+        "David H. Cropley"
+      ],
+      "source": "Journal of Creative Behavior",
+      "publicationdateyear": 2025
+    },
+    {
+      "id": "EJ1475713",
+      "title": "Machine Bias. How Do Generative Language Models Answer Opinion Polls?",
+      "author": [
+        "Julien Boelaert",
+        "Samuel Coavoux",
+        "Étienne Ollion",
+        "Ivaylo Petev",
+        "Patrick Präg"
+      ],
+      "source": "Sociological Methods & Research",
+      "publicationdateyear": 2025
+    },
+    {
+      "id": "EJ1470444",
+      "title": "Use of Artificial Neural Network in Educational Laboratory Applications: Low-Velocity Impact Test",
+      "author": [
+        "Yusuf Uzun",
+        "Mehmet Kayrici"
+      ],
+      "source": "Journal of Education in Science, Environment and Health",
+      "publicationdateyear": 2025
+    }
+  ]
+}

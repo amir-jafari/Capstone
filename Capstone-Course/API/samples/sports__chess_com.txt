@@ -1,0 +1,42 @@
+# live 2026-10-12 11:05
+{
+  "titled_GMs_on_chess_com": 1743,
+  "live_blitz_top5": [
+    {
+      "rank": 1,
+      "username": "Hikaru",
+      "title": "GM",
+      "rating": 3482
+    },
+    {
+      "rank": 2,
+      "username": "MagnusCarlsen",
+      "title": "GM",
+      "rating": 3396
+    },
+    {
+      "rank": 3,
+      "username": "nihalsarin",
+      "title": "GM",
+      "rating": 3358
+    },
+    {
+      "rank": 4,
+      "username": "Sina-Movahed",
+      "title": "GM",
+      "rating": 3356
+    },
+    {
+      "rank": 5,
+      "username": "legendisback1",
+      "title": "GM",
+      "rating": 3345
+    }
+  ],
+  "hikaru_ratings": {
+    "daily": 2239,
+    "rapid": 2838,
+    "bullet": 3403,
+    "blitz": 3484
+  }
+}

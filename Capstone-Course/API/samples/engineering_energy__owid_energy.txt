@@ -1,0 +1,48 @@
+# live 2026-10-12 07:41
+[
+  {
+    "country": "China",
+    "year": "2025",
+    "renewables_share_elec_pct": 37.0,
+    "solar_pct": 11.1,
+    "wind_pct": 10.7,
+    "coal_pct": 54.3,
+    "carbon_intensity_g_per_kWh": 525
+  },
+  {
+    "country": "Germany",
+    "year": "2025",
+    "renewables_share_elec_pct": 59.1,
+    "solar_pct": 17.9,
+    "wind_pct": 27.2,
+    "coal_pct": 20.6,
+    "carbon_intensity_g_per_kWh": 330
+  },
+  {
+    "country": "India",
+    "year": "2025",
+    "renewables_share_elec_pct": 24.1,
+    "solar_pct": 9.4,
+    "wind_pct": 5.0,
+    "coal_pct": 70.8,
+    "carbon_intensity_g_per_kWh": 670
+  },
+  {
+    "country": "United States",
+    "year": "2025",
+    "renewables_share_elec_pct": 25.6,
+    "solar_pct": 8.6,
+    "wind_pct": 10.3,
+    "coal_pct": 16.3,
+    "carbon_intensity_g_per_kWh": 384
+  },
+  {
+    "country": "World",
+    "year": "2025",
+    "renewables_share_elec_pct": 33.8,
+    "solar_pct": 8.7,
+    "wind_pct": 8.5,
+    "coal_pct": 33.0,
+    "carbon_intensity_g_per_kWh": 458
+  }
+]

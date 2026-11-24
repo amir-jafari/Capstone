@@ -1,0 +1,19 @@
+# live 2026-10-12 09:02
+{
+  "clinical_drugs (SCD)": [
+    "Modified 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet",
+    "Osmotic 24 HR metformin hydrochloride 1000 MG Extended Release Oral Tablet",
+    "Modified 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet",
+    "Osmotic 24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet"
+  ],
+  "branded_drugs (SBD)": [
+    "24 HR metformin hydrochloride 500 MG Extended Release Oral Tablet [Glucophage]",
+    "24 HR metformin hydrochloride 750 MG Extended Release Oral Tablet [Glucophage]",
+    "metformin hydrochloride 1000 MG Oral Tablet [Glucophage]"
+  ],
+  "fuzzy_match_for_'metfromin'": "6762",
+  "ATC_classes": [
+    "Biguanides",
+    "Combinations of oral blood glucose lowering drugs"
+  ]
+}

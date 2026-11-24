@@ -1,0 +1,45 @@
+# live 2026-10-12 10:09
+{
+  "top_tracks": [
+    {
+      "position": 1,
+      "title": "Dracula (with JENNIE)",
+      "artist": "Tame Impala",
+      "duration_s": 209,
+      "explicit": true
+    },
+    {
+      "position": 2,
+      "title": "Boston",
+      "artist": "STELLA LEFTY",
+      "duration_s": 170,
+      "explicit": false
+    },
+    {
+      "position": 3,
+      "title": "Choosin' Texas",
+      "artist": "Ella Langley",
+      "duration_s": 232,
+      "explicit": false
+    },
+    {
+      "position": 4,
+      "title": "Be Her",
+      "artist": "Ella Langley",
+      "duration_s": 217,
+      "explicit": false
+    },
+    {
+      "position": 5,
+      "title": "Been By Now",
+      "artist": "Morgan Wallen",
+      "duration_s": 213,
+      "explicit": false
+    }
+  ],
+  "top_artists": [
+    "Taylor Swift",
+    "Drake",
+    "Bad Bunny"
+  ]
+}

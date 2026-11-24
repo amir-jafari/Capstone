@@ -1,0 +1,10 @@
+# live 2026-10-12
+{
+  "offense": "violent crime, monthly rate per 100k (2023)",
+  "annual_rate_per_100k": {
+    "Virginia Offenses": 243.5,
+    "Virginia Clearances": 130.1,
+    "United States Offenses": 385.6,
+    "United States Clearances": 159.1
+  }
+}

@@ -1,0 +1,32 @@
+# live 2026-10-12 09:02
+{
+  "maryland_hospitals": 56,
+  "overall_star_ratings": {
+    "1": 2,
+    "2": 6,
+    "3": 18,
+    "4": 9,
+    "5": 7,
+    "Not Available": 14
+  },
+  "five_star": [
+    {
+      "facility_name": "JOHNS HOPKINS HOSPITAL, THE",
+      "citytown": "BALTIMORE",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Private"
+    },
+    {
+      "facility_name": "MEDSTAR UNION MEMORIAL HOSPITAL",
+      "citytown": "BALTIMORE",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Other"
+    },
+    {
+      "facility_name": "UNIVERSITY OF MD SHORE MEDICAL CTR AT CHESTERTOWN",
+      "citytown": "CHESTERTOWN",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Private"
+    }
+  ]
+}

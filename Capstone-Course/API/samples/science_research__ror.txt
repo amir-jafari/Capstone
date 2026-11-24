@@ -1,0 +1,19 @@
+# live 2026-10-12 10:34
+{
+  "affiliation_input": "Department of Statistics, George Washington University, Washington DC",
+  "matched": true,
+  "score": 1.0,
+  "ror_id": "https://ror.org/00y4zzh67",
+  "name": "George Washington University",
+  "types": [
+    "education",
+    "funder"
+  ],
+  "established": 1821,
+  "external_ids": {
+    "fundref": "100007108",
+    "grid": "grid.253615.6",
+    "isni": "0000 0004 1936 9510",
+    "wikidata": "Q432637"
+  }
+}

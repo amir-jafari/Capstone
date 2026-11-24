@@ -1,0 +1,63 @@
+# live 2026-10-12 10:34
+{
+  "confirmed_planets": 6445,
+  "by_discovery_method": [
+    {
+      "discoverymethod": "Transit",
+      "n": 4781
+    },
+    {
+      "discoverymethod": "Radial Velocity",
+      "n": 1203
+    },
+    {
+      "discoverymethod": "Microlensing",
+      "n": 292
+    },
+    {
+      "discoverymethod": "Imaging",
+      "n": 97
+    },
+    {
+      "discoverymethod": "Transit Timing Variations",
+      "n": 29
+    }
+  ],
+  "nearest_earth_size_temperate": [
+    {
+      "pl_name": "GJ 1061 d",
+      "disc_year": 2020,
+      "pl_rade": 1.16,
+      "pl_eqt": 242.03,
+      "sy_dist": 3.67278
+    },
+    {
+      "pl_name": "Teegarden's Star c",
+      "disc_year": 2019,
+      "pl_rade": 1.02,
+      "pl_eqt": 209.0,
+      "sy_dist": 3.83078
+    },
+    {
+      "pl_name": "GJ 1002 b",
+      "disc_year": 2022,
+      "pl_rade": 1.03,
+      "pl_eqt": 230.9,
+      "sy_dist": 4.84867
+    },
+    {
+      "pl_name": "TRAPPIST-1 f",
+      "disc_year": 2017,
+      "pl_rade": 1.045,
+      "pl_eqt": 217.7,
+      "sy_dist": 12.42988881
+    },
+    {
+      "pl_name": "TRAPPIST-1 e",
+      "disc_year": 2017,
+      "pl_rade": 0.92,
+      "pl_eqt": 249.7,
+      "sy_dist": 12.42988881
+    }
+  ]
+}

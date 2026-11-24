@@ -1,0 +1,37 @@
+# live 2026-10-11 20:46
+{
+  "count": 71,
+  "largest_DC_districts": [
+    {
+      "lea_name": "District of Columbia Public Schools",
+      "enrollment": 50131,
+      "number_of_schools": 116,
+      "teachers_total_fte": 4389
+    },
+    {
+      "lea_name": "KIPP DC PCS",
+      "enrollment": 7361,
+      "number_of_schools": 20,
+      "teachers_total_fte": 596
+    },
+    {
+      "lea_name": "Friendship PCS",
+      "enrollment": 4609,
+      "number_of_schools": 15,
+      "teachers_total_fte": 419
+    },
+    {
+      "lea_name": "DC Prep PCS",
+      "enrollment": 2128,
+      "number_of_schools": 6,
+      "teachers_total_fte": 177
+    },
+    {
+      "lea_name": "Carlos Rosario International PCS",
+      "enrollment": 1984,
+      "number_of_schools": 0,
+      "teachers_total_fte": 0
+    },
+    "... (66 more)"
+  ]
+}

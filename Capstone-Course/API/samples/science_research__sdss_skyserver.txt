@@ -1,0 +1,24 @@
+# live 2026-10-12 10:34
+{
+  "sample": "all SDSS spectra with good redshifts (zWarning = 0)",
+  "by_class": [
+    {
+      "class": "GALAXY",
+      "count": 2639535,
+      "mean_z": 0.405,
+      "max_z": 2.0
+    },
+    {
+      "class": "QSO",
+      "count": 753228,
+      "mean_z": 1.709,
+      "max_z": 7.04
+    },
+    {
+      "class": "STAR",
+      "count": 890744,
+      "mean_z": -0.0,
+      "max_z": 0.0
+    }
+  ]
+}

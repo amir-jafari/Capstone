@@ -1,0 +1,58 @@
+# live 2026-10-12 07:16
+{
+  "filings_mentioning_AI_2025": 4066,
+  "examples": [
+    {
+      "client": "SAP AMERICA, INC.",
+      "registrant": "MEHLMAN CONSULTING, INC.",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "20000.00",
+      "issues": [
+        "Computer Industry",
+        "Trade (domestic/foreign)"
+      ]
+    },
+    {
+      "client": "THE TRUSTEES OF PURDUE UNIVERSITY",
+      "registrant": "DEBORAH HOHLT",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "90000.00",
+      "issues": [
+        "Agriculture",
+        "Budget/Appropriations",
+        "Education"
+      ]
+    },
+    {
+      "client": "EPIC SYSTEMS",
+      "registrant": "MCDERMOTT+ LLC",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "20000.00",
+      "issues": [
+        "Health Issues"
+      ]
+    },
+    {
+      "client": "UNIVERSITY OF TULSA",
+      "registrant": "SBL STRATEGIES, LLC",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "30000.00",
+      "issues": [
+        "Defense",
+        "Energy/Nuclear",
+        "Science/Technology"
+      ]
+    },
+    {
+      "client": "VERILY LIFE SCIENCES LLC",
+      "registrant": "MCDERMOTT+ LLC",
+      "period": "1st Quarter (Jan 1 - Mar 31)",
+      "amount_usd": "10000.00",
+      "issues": [
+        "Health Issues",
+        "Medical/Disease Research/Clinical Labs",
+        "Medicare/Medicaid"
+      ]
+    }
+  ]
+}

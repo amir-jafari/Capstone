@@ -1,0 +1,43 @@
+# live 2026-10-12 11:05
+{
+  "season": "2026",
+  "week": 5,
+  "most_added_last_24h": [
+    {
+      "player": "Darius Cooper",
+      "team": "PHI",
+      "pos": "WR",
+      "injury": null,
+      "adds": 388381
+    },
+    {
+      "player": "MarShawn Lloyd",
+      "team": "GB",
+      "pos": "RB",
+      "injury": null,
+      "adds": 353745
+    },
+    {
+      "player": "Tyler Higbee",
+      "team": "LAR",
+      "pos": "TE",
+      "injury": null,
+      "adds": 266121
+    },
+    {
+      "player": "Roschon Johnson",
+      "team": "CHI",
+      "pos": "RB",
+      "injury": null,
+      "adds": 205720
+    },
+    {
+      "player": "Brenton Strange",
+      "team": "JAX",
+      "pos": "TE",
+      "injury": null,
+      "adds": 189009
+    },
+    "... (1 more)"
+  ]
+}

@@ -1,0 +1,46 @@
+# live 2026-10-12 09:53
+{
+  "remote_data_jobs": 15,
+  "candidate_location": [
+    [
+      "Worldwide",
+      5
+    ],
+    [
+      "Northern America, LATAM, Europe, APAC",
+      3
+    ],
+    [
+      "Americas, Europe, Israel",
+      2
+    ],
+    [
+      "USA, UK, India, Australia, Ireland, New Zealand, Philippines, Pakistan, Singapore, Mexico",
+      1
+    ]
+  ],
+  "with_salary_pct": 53,
+  "examples": [
+    {
+      "title": "Inside Sales Contractor",
+      "company_name": "Credit Wellness, LLC",
+      "job_type": "full_time",
+      "salary": "OTE $25k - $35k",
+      "publication_date": "2026-10-08T21:47:32"
+    },
+    {
+      "title": "Tier III Service Desk Engineer",
+      "company_name": "Unio Digital",
+      "job_type": "full_time",
+      "salary": "",
+      "publication_date": "2026-10-07T01:11:09"
+    },
+    {
+      "title": "Software Engineer / AI Code Trainer (Python, Web, Full Stack)",
+      "company_name": "CodeForAI",
+      "job_type": "contract",
+      "salary": "$45-$120/Hour",
+      "publication_date": "2026-10-05T05:15:43"
+    }
+  ]
+}

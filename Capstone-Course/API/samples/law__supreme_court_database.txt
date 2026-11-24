@@ -1,0 +1,36 @@
+# live 2026-10-12 07:17
+{
+  "cases_in_database": 9409,
+  "last_5_terms": [
+    {
+      "term": "2021",
+      "cases": 65,
+      "liberal_share": 0.35,
+      "unanimous": 19
+    },
+    {
+      "term": "2022",
+      "cases": 58,
+      "liberal_share": 0.45,
+      "unanimous": 29
+    },
+    {
+      "term": "2023",
+      "cases": 59,
+      "liberal_share": 0.51,
+      "unanimous": 26
+    },
+    {
+      "term": "2024",
+      "cases": 64,
+      "liberal_share": 0.51,
+      "unanimous": 28
+    },
+    {
+      "term": "2025",
+      "cases": 66,
+      "liberal_share": 0.52,
+      "unanimous": 29
+    }
+  ]
+}

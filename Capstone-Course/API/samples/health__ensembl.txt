@@ -1,0 +1,30 @@
+# live 2026-10-12 09:02
+{
+  "gene": {
+    "id": "ENSG00000130203",
+    "display_name": "APOE",
+    "biotype": "protein_coding",
+    "seq_region_name": "19",
+    "start": 44903787,
+    "end": 44909396,
+    "description": "apolipoprotein E [Source:HGNC Symbol;Acc:HGNC:613]"
+  },
+  "variant": {
+    "id": "rs429358",
+    "location": "19:44908684-44908684",
+    "alleles": "T/C",
+    "consequence": "missense_variant",
+    "gnomAD_allele_freq": {
+      "T": 0.8426,
+      "C": 0.1574
+    },
+    "clinical_significance": [
+      "uncertain significance",
+      "not provided",
+      "benign",
+      "likely pathogenic",
+      "pathogenic",
+      "... (6 more)"
+    ]
+  }
+}

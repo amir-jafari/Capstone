@@ -1,0 +1,28 @@
+# live 2026-10-12 07:40
+{
+  "series": "Contiguous U.S. January-December Average Temperature (Degrees Fahrenheit)",
+  "warmest_years": [
+    {
+      "year": "2024",
+      "avg_temp_F": 55.48
+    },
+    {
+      "year": "2012",
+      "avg_temp_F": 55.27
+    },
+    {
+      "year": "2016",
+      "avg_temp_F": 54.9
+    },
+    {
+      "year": "2025",
+      "avg_temp_F": 54.62
+    },
+    {
+      "year": "2017",
+      "avg_temp_F": 54.54
+    }
+  ],
+  "first_decade_avg": 51.42,
+  "last_decade_avg": 54.23
+}

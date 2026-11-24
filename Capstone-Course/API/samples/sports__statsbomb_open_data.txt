@@ -1,0 +1,39 @@
+# live 2026-10-12 11:05
+{
+  "free_competition_seasons": 80,
+  "world_cup_2022_matches": 64,
+  "final": "Argentina 3-3 France",
+  "events_in_final": 4407,
+  "event_types": [
+    [
+      "Pass",
+      1263
+    ],
+    [
+      "Ball Receipt*",
+      1114
+    ],
+    [
+      "Carry",
+      940
+    ],
+    [
+      "Pressure",
+      361
+    ],
+    [
+      "Ball Recovery",
+      115
+    ]
+  ],
+  "shots_and_xG": {
+    "Argentina": {
+      "shots": 24,
+      "xG": 5.89
+    },
+    "France": {
+      "shots": 14,
+      "xG": 5.41
+    }
+  }
+}
