@@ -66,14 +66,23 @@ def create(store, fields: dict, png: bytes | None) -> tuple[int, str, int]:
 
 
 def resubmit(store, p: Proposal, fields: dict, png: bytes | None, note: str):
+    """The submitter edited the proposal: save it and send it back to review (status pending).
+    If it was approved, its copy in Proposals/ is taken down until it is approved again; the
+    number is remembered (`official_number`) so re-approving puts it back in the same place."""
     data = {**p.data, **{k: v for k, v in fields.items() if k not in ("Year", "Semester")}}
     review = dict(p.review or {})
+    action = "edited" if review.get("status", "pending") == "pending" else "resubmitted"
+    copy = _official_copy(store, p)        # must run before the title can change
     review["status"] = "pending"
     review["updated_at"] = now()
     review.setdefault("history", []).append(
-        {"at": now(), "by": data.get("Proposed by", "submitter"), "action": "resubmitted",
+        {"at": now(), "by": data.get("Proposed by", "submitter"), "action": action,
          "comment": note, "public": True})
     files = _proposal_files(p.folder, data, png)
+    if copy:
+        review["official_number"] = int(review["promoted_to"].rsplit("/", 1)[1])
+        review["promoted_to"] = None
+        files.update({f: None for f in copy})
     files[f"{p.folder}/review.json"] = json.dumps(review, indent=2).encode()
     store.commit(files, f"External proposal resubmitted: {p.code}")
 
@@ -99,7 +108,11 @@ def _official_copy(store, p: Proposal) -> list[str]:
 def _publish_files(store, p: Proposal, r: dict, admin: str) -> dict[str, bytes]:
     """Copy `p` into Proposals/{year}/{semester}/{next number}/ and record it in review dict `r`."""
     y, s = p.year, p.semester
-    n = next_number(store, config.OFFICIAL, y, s)     # highest existing number + 1
+    old = r.pop("official_number", None)              # its number before it was edited, if free
+    if old and not store.list_files(f"{config.OFFICIAL}/{y}/{s}/{old}"):
+        n = old
+    else:
+        n = next_number(store, config.OFFICIAL, y, s)  # highest existing number + 1
     folder = f"{config.OFFICIAL}/{y}/{s}/{n}"
     files = _proposal_files(folder, {**p.data, "Version": str(n)}, store.read(p.png))
     r["promoted_to"] = folder

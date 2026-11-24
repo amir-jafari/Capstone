@@ -61,8 +61,15 @@ with st.container(border=True):
     st.markdown("##### 💬 Review activity")
     ui.comments_view(p.review)
 
-if p.status == "changes_requested":
-    with st.expander("✏️ Edit and resubmit", expanded=False):
+EDIT_NOTE = {
+    "pending": "You can change your proposal while it waits for review.",
+    "changes_requested": "Make the changes the reviewer asked for, then resubmit.",
+    "approved": "Editing an approved proposal sends it back for review: it is taken off the "
+                "Proposals page until the reviewer approves it again.",
+}
+if p.status in EDIT_NOTE:
+    with st.expander("✏️ Modify this proposal", expanded=p.status == "changes_requested"):
+        st.caption(EDIT_NOTE[p.status])
         email = st.text_input("Confirm the submitter's email to edit this proposal")
         if email:
             if email.strip().lower() != p.data.get("Proposed by email", "").strip().lower():
@@ -70,13 +77,16 @@ if p.status == "changes_requested":
             else:
                 fields, fig, note = proposal_form("resubmit", prefill=p.data, lock_term=True,
                                                   has_figure=data.store().read(p.png) is not None,
-                                                  submit_label="Resubmit for review")
+                                                  submit_label="Save changes" if p.status == "pending"
+                                                  else "Resubmit for review")
                 if fields:
                     try:
                         with st.spinner("Saving…"):
                             png = submissions.to_png(fig) if fig else data.store().read(p.png)
                             submissions.resubmit(data.store(), p, fields, png, note)
-                        st.session_state["status_flash"] = "Resubmitted! The status is back to *Pending review*."
+                        st.session_state["status_flash"] = (
+                            "Saved! Your changes are waiting for review." if p.status == "pending"
+                            else "Resubmitted! The status is back to *Pending review*.")
                         st.rerun()
                     except Exception as e:
                         st.error(f"Could not save: {e}")
