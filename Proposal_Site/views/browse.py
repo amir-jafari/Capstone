@@ -55,15 +55,15 @@ def page():
     groups = OrderedDict()
     for p in shown:
         groups.setdefault(p.term, []).append(p)
-    # One collapsible group per semester: the newest is open, older ones closed (all open if only one).
+    # One collapsible group per semester, all closed by default (open only if the filter leaves one).
     st.markdown("""<style>
       [data-testid="stExpander"] summary p{font-size:1.2rem;color:#033C5A;}
       [data-testid="stExpander"] details{border-radius:14px;}
     </style>""", unsafe_allow_html=True)
     st.caption("Click a semester to show or hide its proposals.")
-    for idx, (term, ps) in enumerate(groups.items()):
+    for term, ps in groups.items():
         label = f"**{term}** · {len(ps)} proposal{'s' if len(ps) != 1 else ''}"
-        with st.expander(label, expanded=(idx == 0 or len(groups) == 1)):
+        with st.expander(label, expanded=(len(groups) == 1)):
             for i in range(0, len(ps), 3):
                 for col, p in zip(st.columns(3), ps[i:i + 3]):
                     with col:
