@@ -1,4 +1,4 @@
-"""Landing page: browse proposals by year and semester, and the single proposal view (?p=<slug>)."""
+"""Proposals page (/proposals): browse proposals by year and semester, and the single proposal view (?p=<slug>)."""
 from collections import OrderedDict
 
 import streamlit as st

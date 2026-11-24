@@ -10,8 +10,8 @@ st.set_page_config(page_title="Capstone Proposals · GWU Data Science", page_ico
 ui.inject_css()
 
 pages = [
-    st.Page("views/guide.py", title="How it works", icon="❓", url_path="how-it-works"),
-    st.Page("views/browse.py", title="Proposals", icon="🏠", default=True),
+    st.Page("views/guide.py", title="How it works", icon="❓", default=True),
+    st.Page("views/browse.py", title="Proposals", icon="🏠", url_path="proposals"),
     st.Page("views/submit.py", title="Propose a project", icon="💡", url_path="submit"),
     st.Page("views/status.py", title="Check submission", icon="🔎", url_path="status"),
     st.Page("views/admin.py", title="Reviewer", icon="🔐", url_path="admin"),

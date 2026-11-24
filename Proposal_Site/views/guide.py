@@ -1,7 +1,11 @@
-"""How it works: what each tab does and how to get a proposal approved."""
+"""Landing page — How it works: what each tab does and how to get a proposal approved."""
 import streamlit as st
 
 from core import ui
+
+# Old links to a proposal (site/?p=<slug>) were made when Proposals was the landing page.
+if "p" in st.query_params:
+    st.switch_page("views/browse.py", query_params={"p": st.query_params["p"]})
 
 st.markdown("""<div class="hero"><div class="eyebrow">The George Washington University · Data Science Program</div>
 <h1>How it works</h1>
