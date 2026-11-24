@@ -49,7 +49,7 @@ python Proposal_Site/check_proposals.py                   # check all (add --ext
 ```
 
 `x` lines are errors (missing/empty required fields, bad email, year/semester/version not matching
-the folder, missing md/html). `!` lines are warnings (no figure, no `Week N:` timeline, optional
+the folder, missing md/html, missing figure). `!` lines are warnings (no `Week N:` timeline, optional
 fields missing).
 
 ## Run locally

@@ -69,6 +69,7 @@ if p.status == "changes_requested":
                 st.error("That email doesn't match the one on this submission.")
             else:
                 fields, fig, note = proposal_form("resubmit", prefill=p.data, lock_term=True,
+                                                  has_figure=data.store().read(p.png) is not None,
                                                   submit_label="Resubmit for review")
                 if fields:
                     try:

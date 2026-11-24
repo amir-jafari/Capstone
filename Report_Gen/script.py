@@ -91,8 +91,10 @@ if __name__ == "__main__":
     html_file = f"proposal_{json_data['Version']}.html"
     convert_md_to_html(output_file_path + md_file, output_file_path + html_file)
 
-    try:
-        shutil.copy(f"{json_data['Year']}_{json_data['Semester']}_{json_data['Version']}.png", output_file_path)
-    except FileNotFoundError:
-        print('No Figure is needed.')
+    figure = f"{json_data['Year']}_{json_data['Semester']}_{json_data['Version']}.png"
+    if os.path.isfile(figure):
+        shutil.copy(figure, output_file_path)
+    elif not os.path.isfile(output_file_path + figure):
+        raise SystemExit(f"Figure {figure} is required: put it in the Report_Gen folder "
+                         f"(build it from diagram_template.py) and run script.py again.")
     print(f"proposal_{json_data['Version']}.md generated successfully.")

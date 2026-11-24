@@ -101,7 +101,7 @@ def check_folder(store, folder: str) -> tuple[list[str], list[str]]:
         if name not in files:
             errors.append(f"{name} is missing (run Report_Gen/script.py)")
     if m and f"{m.group(1)}_{m.group(2)}_{m.group(3)}.png" not in files:
-        warnings.append(f"no figure {m.group(1)}_{m.group(2)}_{m.group(3)}.png")
+        errors.append(f"figure {m.group(1)}_{m.group(2)}_{m.group(3)}.png is missing (required)")
     if "json_gen.py" not in files:
         warnings.append("json_gen.py copy is missing")
     else:

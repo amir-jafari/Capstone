@@ -39,8 +39,10 @@ def _clean(s: str) -> str:
 
 
 def proposal_form(key: str, prefill: dict | None = None, lock_term: bool = False,
-                  submit_label: str = "Submit proposal"):
-    """Returns (fields | None, png_bytes | None, extra_note)."""
+                  submit_label: str = "Submit proposal", has_figure: bool = False):
+    """Returns (fields | None, png_bytes | None, extra_note).
+
+    A figure is required; `has_figure` = the proposal being edited already has one (keep it)."""
     pre = prefill or {}
     with st.form(key, border=True):
         st.markdown("##### 1 · About you")
@@ -84,8 +86,9 @@ def proposal_form(key: str, prefill: dict | None = None, lock_term: bool = False
             vals[k] = st.text_area(f"{k}{' *' if req else ''}", _clean(pre.get(k, "")), height=h,
                                    help=HELP[k], placeholder=EXAMPLE[k])
 
-        st.markdown("##### 3 · Figure (optional)")
-        fig = st.file_uploader("A diagram of the pipeline or idea (PNG/JPG, max 5 MB)",
+        st.markdown("##### 3 · Figure *")
+        fig = st.file_uploader("A diagram of the pipeline or idea (PNG/JPG, max 5 MB)"
+                               + (" — leave empty to keep the current figure" if has_figure else " *"),
                                type=["png", "jpg", "jpeg"])
         note = ""
         if prefill:
@@ -111,6 +114,8 @@ def proposal_form(key: str, prefill: dict | None = None, lock_term: bool = False
             errors.append(f"**{k}** needs more detail (at least 80 characters).")
     if len(vals["Timeline"].strip()) < 20:
         errors.append("Please add a timeline.")
+    if fig is None and not has_figure:
+        errors.append("Please upload a **figure** (a diagram of the pipeline or idea) — it is required.")
     if fig is not None and fig.size > MAX_FIG:
         errors.append("The figure is larger than 5 MB.")
     if not agree:

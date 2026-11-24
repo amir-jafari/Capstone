@@ -30,6 +30,8 @@ def _proposal_files(folder: str, data: dict, png: bytes | None) -> dict[str, byt
     """Same files, key order and text layout as a Report_Gen proposal folder."""
     data = fmt.canonical(data)
     errors, _ = validate.check_data(data)
+    if not png:
+        errors.append("a figure (PNG/JPG) is required")
     if errors:   # never write a proposal that breaks the standard format
         raise ValueError("The proposal does not follow the standard format: " + "; ".join(errors))
     md, html = build_md_html(data)
