@@ -58,6 +58,23 @@ CSS = f"""
 .sec h2 {{color:{NAVY};}}
 .comment {{border-left:3px solid {GOLD}; padding:.4rem .8rem; margin:.4rem 0; background:rgba(170,152,104,.08); border-radius:0 8px 8px 0;}}
 .comment small {{color:#6b7785;}}
+.how-h {{color:{NAVY}; font-size:1.45rem; font-weight:800; margin:1.6rem 0 .2rem;}}
+.how-sub {{color:#5b6875; font-size:.95rem; margin:0 0 .9rem;}}
+.tabs-grid {{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.8rem; margin-bottom:.4rem;}}
+.tab-card {{background:#fff; border:1px solid #e3e9ee; border-radius:16px; padding:1rem 1.1rem;
+  box-shadow:0 1px 3px rgba(3,60,90,.05);}}
+.tab-card .ti {{font-size:1.5rem;}}
+.tab-card .tn {{font-weight:700; color:{NAVY}; font-size:1.05rem; margin:.25rem 0 .1rem;}}
+.tab-card .tw {{font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:{GOLD}; margin-bottom:.4rem;}}
+.tab-card .td {{font-size:.9rem; color:#47525e; line-height:1.5;}}
+.steps {{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:.8rem; counter-reset:st;}}
+.step {{position:relative; background:rgba(3,60,90,.04); border:1px solid rgba(3,60,90,.10); border-radius:14px;
+  padding:1rem 1rem .9rem 1rem; counter-increment:st;}}
+.step:before {{content:counter(st); display:flex; align-items:center; justify-content:center; width:1.9rem; height:1.9rem;
+  border-radius:50%; background:linear-gradient(135deg,{GOLD},#c9b78a); color:#fff; font-weight:700; margin-bottom:.5rem;}}
+.step b {{display:block; color:{NAVY}; margin-bottom:.25rem;}}
+.step span {{font-size:.87rem; color:#47525e; line-height:1.5;}}
+.legend {{margin:.8rem 0 0; font-size:.88rem; color:#47525e; line-height:1.9;}}
 .st-key-hp_website {{position:absolute; left:-9999px; height:0; overflow:hidden;}}
 </style>
 """
