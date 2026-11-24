@@ -21,7 +21,14 @@ STATUS_STYLE = {
 
 CSS = f"""
 <style>
-.block-container {{padding-top: 2.2rem; max-width: 1250px;}}
+.block-container {{padding-top: 5.5rem; max-width: 1250px;}}
+/* top navigation tabs: bigger and easier to see */
+[data-testid="stHeader"] {{min-height: 4.5rem;}}
+[data-testid="stTopNavLinkContainer"] {{margin: 0 .25rem;}}
+[data-testid="stTopNavLink"] {{padding: .55rem 1.1rem !important; border-radius: 10px;}}
+[data-testid="stTopNavLink"] span, [data-testid="stTopNavLink"] p {{
+  font-size: 1.25rem !important; font-weight: 600; line-height: 1.4 !important;}}
+[data-testid="stTopNavLink"] [data-testid="stIconEmoji"] {{font-size: 1.45rem !important;}}
 .hero {{background: linear-gradient(120deg, {NAVY} 0%, #0b5d8a 65%, #3d7fa6 100%);
   color: #fff; padding: 2.4rem 2.4rem 2rem; border-radius: 20px; margin-bottom: 1.4rem;
   position: relative; overflow: hidden;}}
