@@ -45,7 +45,7 @@ Your repository name **MUST** follow this specific pattern:
 
 Your project should follow the folder structure outlined in the sample capstone project. Please use this as your template:
 
-**📂 Reference Template:** [Sample Capstone Structure](https://github.com/amir-jafari/Capstone/tree/main/Capstone-Course/Sample_Capstone)
+**📂 Reference Template:** [Sample Capstone Structure](https://github.com/amir-jafari/Capstone/tree/main/Capstone/Sample_Capstone)
 
 
 
@@ -100,7 +100,7 @@ Before diving into your project, make sure you've completed:
 ## 📚 Resources
 
 - [GitHub Collaboration Guide](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests)
-- [Sample Capstone Project](https://github.com/amir-jafari/Capstone/tree/main/Capstone-Course/Sample_Capstone)
+- [Sample Capstone Project](https://github.com/amir-jafari/Capstone/tree/main/Capstone/Sample_Capstone)
 - [Markdown Guide](https://www.markdownguide.org/)
 
 ---

@@ -52,7 +52,7 @@ Your project should follow the folder structure outlined in the sample capstone 
 1. **For Collaboration:** Add `amir-capstone-jafari` as a collaborator to YOUR project repository
 2. **For Template:** Use the `amir-jafari` repository structure as your template
 
-**📂 Template Repository:** [amir-jafari Capstone Structure](https://github.com/amir-jafari/Capstone/tree/main/Capstone-Course/Sample_Capstone)
+**📂 Template Repository:** [amir-jafari Capstone Structure](https://github.com/amir-jafari/Capstone/tree/main/Capstone/Sample_Capstone)
 
 ### 📋 Required Folder Structure:
 
@@ -215,7 +215,7 @@ Before diving into your project, make sure you've completed:
 ## 📚 Resources
 
 - [GitHub Collaboration Guide](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests)
-- [amir-jafari Template Repository](https://github.com/amir-jafari/Capstone/tree/main/Capstone-Course/Sample_Capstone)
+- [amir-jafari Template Repository](https://github.com/amir-jafari/Capstone/tree/main/Capstone/Sample_Capstone)
 - [Markdown Guide](https://www.markdownguide.org/)
 
 ---
