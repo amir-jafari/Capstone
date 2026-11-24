@@ -103,10 +103,21 @@ def load_all(store) -> list[Proposal]:
     return out
 
 
+def used_numbers(store, base: str, year: int, semester: str) -> set[int]:
+    return {int(m.group(1)) for p in store.list_files(f"{base}/{year}/{semester}")
+            if (m := re.match(rf"^{re.escape(base)}/{year}/{semester}/(\d+)/", p))}
+
+
 def next_number(store, base: str, year: int, semester: str) -> int:
-    nums = [int(m.group(1)) for p in store.list_files(f"{base}/{year}/{semester}")
-            if (m := re.match(rf"^{re.escape(base)}/{year}/{semester}/(\d+)/", p))]
-    return max(nums, default=0) + 1
+    """Highest existing number + 1 (used for Proposals/)."""
+    return max(used_numbers(store, base, year, semester), default=0) + 1
+
+
+def lowest_free_number(store, base: str, year: int, semester: str) -> int:
+    """Smallest positive number not in use, so External/ stays numbered 1..N without gaps:
+    with {2, 3} left after #1 was deleted, the next submission gets 1."""
+    used = used_numbers(store, base, year, semester)
+    return next(n for n in range(1, len(used) + 2) if n not in used)
 
 
 def find(proposals: list[Proposal], slug: str) -> Proposal | None:

@@ -7,7 +7,7 @@ import re
 from datetime import datetime, timezone
 
 from core import config, fmt, validate
-from core.catalog import Proposal, next_number
+from core.catalog import Proposal, lowest_free_number, next_number
 from core.render import build_md_html
 
 
@@ -51,7 +51,7 @@ def _proposal_files(folder: str, data: dict, png: bytes | None) -> dict[str, byt
 def create(store, fields: dict, png: bytes | None) -> tuple[int, str, int]:
     """Save a new external submission. Returns (year, semester, number)."""
     y, s = int(fields["Year"]), fields["Semester"]
-    n = next_number(store, config.EXTERNAL, y, s)
+    n = lowest_free_number(store, config.EXTERNAL, y, s)   # fills gaps left by deletions
     folder = f"{config.EXTERNAL}/{y}/{s}/{n}"
     data = {"Version": str(n), "Year": str(y), "Semester": s, **{k: v for k, v in fields.items()
                                                                    if k not in ("Year", "Semester")}}

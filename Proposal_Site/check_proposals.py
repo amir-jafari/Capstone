@@ -42,6 +42,16 @@ def main(argv):
             print(f"          x {e}")
         for w in warnings:
             print(f"          ! {w}")
+    if "--external" in argv:                       # External/ should be numbered 1..N per semester
+        terms = {}
+        for f in folders:
+            if m := re.search(rf"^{re.escape(config.EXTERNAL)}/(\d{{4}})/(\w+)/(\d+)$", f):
+                terms.setdefault((m.group(1), m.group(2)), set()).add(int(m.group(3)))
+        for (y, s), nums in sorted(terms.items()):
+            missing = sorted(set(range(1, max(nums) + 1)) - nums)
+            if missing:
+                print(f"[note ] External/{y}/{s}: free number(s) {missing} - "
+                      f"the next submission reuses #{missing[0]}")
     print(f"\n{len(folders)} proposals checked: {n_err} with errors, {n_warn} with warnings.")
     return 1 if n_err else 0
 

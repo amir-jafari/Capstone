@@ -25,13 +25,29 @@ HELP = {
 }
 
 
-def term_options() -> list[tuple[int, str]]:
+FORM_SEMESTERS = ["Spring", "Fall"]   # semesters offered in the form
+YEARS_AHEAD = 5                        # Year dropdown: this year .. this year + YEARS_AHEAD
+
+
+def _term_key(term: tuple[int, str]) -> tuple[int, int]:
+    return term[0], config.SEMESTER_ORDER[term[1]]
+
+
+def current_term() -> tuple[int, str]:
     t = date.today()
-    y = t.year
-    seq = [(y, "Spring"), (y, "Fall"), (y + 1, "Spring"), (y + 1, "Fall"), (y + 2, "Spring")]
-    cur = (y, "Spring") if t.month <= 5 else (y, "Fall")
-    order = lambda x: (x[0], config.SEMESTER_ORDER[x[1]])
-    return [x for x in seq if order(x) > order(cur)][:3]
+    return (t.year, "Spring") if t.month <= 5 else (t.year, "Fall")
+
+
+def next_term() -> tuple[int, str]:
+    """First semester after the current one (the form's default)."""
+    y, s = current_term()
+    later = [(y, x) for x in FORM_SEMESTERS] + [(y + 1, x) for x in FORM_SEMESTERS]
+    return next(t for t in later if _term_key(t) > _term_key((y, s)))
+
+
+def year_options() -> list[int]:
+    y = next_term()[0]                   # first year that still has an open semester
+    return list(range(y, y + YEARS_AHEAD + 1))
 
 
 def _clean(s: str) -> str:
@@ -59,12 +75,16 @@ def proposal_form(key: str, prefill: dict | None = None, lock_term: bool = False
                                 help="Optional: any funding, internship, or compute support attached.")
 
         st.markdown("##### 2 · Project")
-        opts = term_options()
         if lock_term:
             st.caption(f"Target semester: **{pre.get('Semester')} {pre.get('Year')}**")
             term = (int(pre["Year"]), pre["Semester"])
         else:
-            term = st.selectbox("Target semester *", opts, format_func=lambda x: f"{x[1]} {x[0]}")
+            dy, ds = next_term()
+            years = year_options()
+            cy, cs = st.columns(2)
+            ty = cy.selectbox("Target year *", years, index=years.index(dy))
+            ts = cs.selectbox("Target semester *", FORM_SEMESTERS, index=FORM_SEMESTERS.index(ds))
+            term = (int(ty), ts)
         title = st.text_input("Project title *", pre.get("project_name", ""), max_chars=250,
                               placeholder=EXAMPLE["project_name"])
         c5, c6 = st.columns(2)
@@ -103,6 +123,9 @@ def proposal_form(key: str, prefill: dict | None = None, lock_term: bool = False
     errors = []
     if hp:
         errors.append("Submission rejected.")
+    if not lock_term and _term_key(term) <= _term_key(current_term()):
+        errors.append(f"The target semester must be after the current one ({' '.join(current_term()[::-1])}) "
+                      f"— pick {next_term()[1]} {next_term()[0]} or later.")
     if len(name.strip()) < 2:
         errors.append("Please enter your name.")
     if not EMAIL_RE.match(email.strip()):
